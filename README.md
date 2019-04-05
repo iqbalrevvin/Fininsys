@@ -1,2 +1,2 @@
 # Fininsys
-Financial &amp; Information
+Financial &amp; Information System
