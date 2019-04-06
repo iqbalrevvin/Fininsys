@@ -672,7 +672,7 @@
                     </div>
                     <div class="m-widget3__body">
                         <p class="m-widget3__text">
-                            TEST COLABORATOR Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.
+                                DSFADFADFASDGDFGSDFGSFGSDFGSDFGSD
                         </p>
                     </div>
                 </div>
