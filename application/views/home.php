@@ -672,7 +672,7 @@
                     </div>
                     <div class="m-widget3__body">
                         <p class="m-widget3__text">
-                                DSFADFADFASDGDFGSDFGSFGSDFGSDFGSD
+                                DSFADFADFASDGDFGSDFGSFGSDF
                         </p>
                     </div>
                 </div>
