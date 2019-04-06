@@ -672,7 +672,7 @@
                     </div>
                     <div class="m-widget3__body">
                         <p class="m-widget3__text">
-                            Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.
+                            test123 test123 Lorem ipsum dolor sit amet,consectetuer edipiscing elit,sed diam nonummy nibh euismod tinciduntut laoreet doloremagna aliquam erat volutpat.
                         </p>
                     </div>
                 </div>
