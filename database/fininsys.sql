@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Apr 2019 pada 13.49
+-- Generation Time: 08 Apr 2019 pada 16.25
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -114,7 +114,45 @@ INSERT INTO `groups_menu` (`id_groups`, `id_menu`) VALUES
 (1, 102),
 (3, 102),
 (1, 103),
-(3, 103);
+(3, 103),
+(1, 104),
+(3, 104),
+(1, 105),
+(3, 105),
+(1, 106),
+(3, 106),
+(1, 108),
+(3, 108),
+(1, 109),
+(3, 109),
+(1, 110),
+(3, 110),
+(1, 111),
+(3, 111),
+(1, 112),
+(3, 112),
+(1, 113),
+(3, 113),
+(1, 114),
+(3, 114),
+(1, 115),
+(3, 115),
+(1, 116),
+(3, 116),
+(1, 117),
+(3, 117),
+(1, 118),
+(3, 118),
+(1, 119),
+(3, 119),
+(1, 120),
+(3, 120),
+(1, 121),
+(3, 121),
+(1, 122),
+(3, 122),
+(1, 123),
+(3, 123);
 
 -- --------------------------------------------------------
 
@@ -180,9 +218,28 @@ INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`,
 (96, 3, 1, 'Hak Akses', 'users', 'config/groups', '', 85, 0),
 (99, 1, 1, 'Menu Management', 'list', 'config/header_menu', '', 92, 0),
 (100, 2, 1, 'Icon', 'lifebuoy', 'config/icon', '', 92, 0),
-(101, 2, 2, 'Lembaga', 'buildings', '#', '', 0, 0),
+(101, 0, 2, 'Lembaga', 'buildings', '#', '', 0, 0),
 (102, 1, 2, 'Data Sekolah', 'home', 'Sekolah', '', 101, 0),
-(103, 2, 2, 'Data Ponpes', 'home', 'Ponpes', '', 101, 0);
+(103, 2, 2, 'Data Ponpes', 'home', 'Ponpes', '', 101, 0),
+(104, 2, 2, 'Sekolah', 'home-1', '#', '', 0, 0),
+(105, 1, 2, 'Program Studi', 'interface-9', 'prodi', '', 104, 0),
+(106, 2, 2, 'Kelas', 'home', 'kelas', '', 104, 0),
+(108, 3, 2, 'Akademik', 'edit-1', '#', '', 0, 0),
+(109, 1, 2, 'Kurikulum', 'tabs', 'kurikulum', '', 108, 0),
+(110, 2, 2, 'Ekstrakulikuler', 'music', 'ekstrakulikuler', '', 108, 0),
+(111, 3, 2, 'Mata Pelajaran', 'list', 'matpel', '', 108, 0),
+(112, 4, 2, 'Peserta Didik', 'users', '#', '', 0, 0),
+(113, 1, 2, 'Data Peserta Didik', 'users', 'pesertadidik', '', 112, 0),
+(114, 5, 2, 'Tenaga Pendidik', 'users-1', '#', '', 0, 0),
+(115, 1, 2, 'Data Tenaga Pendidik', 'users-1', '', 'tenagapendidik', 114, 0),
+(116, 3, 2, 'Jabatan Struktural', 'medal', 'jabatan', '', 104, 0),
+(117, 6, 2, 'Data Pendukung', 'cogwheel-2', '#', '', 0, 0),
+(118, 0, 2, 'Data Alamat', 'map-location', '#', '', 117, 0),
+(119, 1, 2, 'Data Desa', 'placeholder-3', 'datadesa', '', 117, 118),
+(120, 2, 2, 'Data Kecamatan', 'placeholder-3', 'datakecamatan', '', 117, 118),
+(121, 3, 2, 'Data Kab/Kota', 'placeholder-3', 'datakabupaten', '', 117, 118),
+(122, 4, 2, 'Data Provinsi', 'placeholder-3', 'dataprovinsi', '', 117, 118),
+(123, 2, 2, 'Data Pekerjaan', 'presentation', 'datapekerjaan', '', 117, 0);
 
 -- --------------------------------------------------------
 
@@ -238,7 +295,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1554394235, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
-(2, '::1', 'iqbalrevvin', '$2y$08$f/k81A2BSMWDketqFDGro.oO4jp0qfX2WZLMpCqgc5YAwaMnYqIs2', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1554398107, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
+(2, '::1', 'iqbalrevvin', '$2y$08$f/k81A2BSMWDketqFDGro.oO4jp0qfX2WZLMpCqgc5YAwaMnYqIs2', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1554727568, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
 
 -- --------------------------------------------------------
 
@@ -385,7 +442,7 @@ ALTER TABLE `login_attempts`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
 -- AUTO_INCREMENT for table `settings`
