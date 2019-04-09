@@ -72,7 +72,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!--end::Base Styles -->
     <link href="<?= base_url('assets/vendors/datatables-metronic/datatables.bundle.css') ?>" rel="stylesheet" type="text/css" /> 
     <link href="<?= base_url('assets/js/plugins/iCheck/square/blue.css') ?>" rel="stylesheet" type="text/css" /> 
-    <link rel="shortcut icon" href="<?= base_url('assets/image/favicon.ico') ?>" />
+    <link rel="shortcut icon" href="<?= base_url('assets/image/'.$settings->logo) ?>" />
    <!--GroceryCRUD CSS-->
     <?php if (isset($css_files)) : ?>
         <?php foreach($css_files as $file): ?>

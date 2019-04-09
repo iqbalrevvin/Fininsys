@@ -38,14 +38,14 @@
     	<link href="<?= base_url('assets/css/style.bundle.css') ?>" rel="stylesheet" type="text/css" />
     	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/js/plugins/iCheck/square/blue.css') ?>">
 		<!--end::Base Styles -->
-		<link rel="shortcut icon" href="<?= base_url('Assets/image/logo.png') ?>" />
+		<link rel="shortcut icon" href="<?= base_url('Assets/image/'.$settings->logo) ?>" />
 	</head>
 	<!-- end::Head -->
     <!-- end::Body -->
 	<body  class="m--skin- m-header--fixed  m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
 		<!-- begin:: Page -->
 		<div class="m-grid m-grid--hor m-grid--root m-page">
-			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-grid--tablet-and-mobile m-grid--hor-tablet-and-mobile m-login m-login--1 m-login--signin" id="m_login" 
+			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-login m-login--1 m-login--signin" id="m_login" 
 			style="background-image: url(<?= base_url('assets/image/bg/bg-3.jpg') ?>);">
 				<div class="m-grid__item m-grid__item--order-tablet-and-mobile-2 m-login__aside">
 					<div class="m-stack m-stack--hor m-stack--desktop">
@@ -53,16 +53,17 @@
 							<div class="m-login__wrapper">
 								<div class="m-login__logo">
 									<a href="#">
-										<img src="<?= base_url('assets/image/big_logo.png') ?>" width="120" >
+										<img src="<?= base_url('assets/image/'.$settings->logo) ?>" width="120" >
 									</a>
 								</div>
 								<div class="m-login__signin">
 									<div class="m-login__head">
 										<h3 class="m-login__title">
-											Masuk Ke <?= $title ?>
+											<?= $settings->instansi ?><br>
+											<small class="">Financial & Information System</small><br>
+											<small class="">Versi <?= $settings->versi ?></small>
 										</h3>
 									</div>
-									
 									<?= $page ?>
 								</div>
 								<div class="m-login__signup">

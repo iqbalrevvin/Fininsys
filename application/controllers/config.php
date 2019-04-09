@@ -43,7 +43,7 @@ class Config extends CI_Controller {
 
     	$crud->set_theme('datatables');
     	$crud->set_table('users');
-    	$crud->set_subject('Users');
+    	$crud->set_subject('Pengguna');
     	$crud->set_field_upload('photo','assets/image/admin');
     	$crud->columns('photo','username','email','groups','active');
     	if ($this->uri->segment(3) !== 'read')
@@ -89,7 +89,7 @@ class Config extends CI_Controller {
 		$crud = new grocery_CRUD();
 
 		$crud->set_table('groups');
-		$crud->set_subject('Groups');
+		$crud->set_subject('Hak Akses');
 
 		//VIEW
 		$output = $crud->render();
@@ -184,7 +184,7 @@ class Config extends CI_Controller {
 		$crud = new grocery_CRUD();
 		$crud->set_theme('datatables');
 		$crud->set_table('settings');
-		$crud->set_subject('Settings');
+		$crud->set_subject('Pengaturan Aplikasi');
 		$crud->set_field_upload('logo','assets/image');
 		$crud->columns('logo','judul','instansi','alamat','versi');
 		$crud->unset_add();

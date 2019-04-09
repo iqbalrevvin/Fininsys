@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08 Apr 2019 pada 16.25
+-- Generation Time: 09 Apr 2019 pada 16.06
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `fininsys`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `detail_peserta_didik`
+--
+
+CREATE TABLE `detail_peserta_didik` (
+  `idDetail_pd` int(111) NOT NULL,
+  `idPd` int(111) NOT NULL,
+  `idKelas` int(11) NOT NULL,
+  `tgl_masuk` date NOT NULL,
+  `nisn` char(10) NOT NULL,
+  `nipd` varchar(15) NOT NULL,
+  `pindahan` enum('Ya','Tidak') NOT NULL,
+  `tgl_pindah` date NOT NULL,
+  `pindah_di_semester` varchar(2) NOT NULL,
+  `tidak_naik_kelas` enum('Ya','Tidak') NOT NULL,
+  `tidak_naik_semester` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -177,6 +197,18 @@ INSERT INTO `header_menu` (`id_header_menu`, `sort`, `header`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `kelas`
+--
+
+CREATE TABLE `kelas` (
+  `idKelas` int(11) NOT NULL,
+  `idProdi` int(11) NOT NULL,
+  `nama_kelas` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `login_attempts`
 --
 
@@ -244,6 +276,84 @@ INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`,
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `ortu_peserta_didik`
+--
+
+CREATE TABLE `ortu_peserta_didik` (
+  `idOrtu_pd` int(111) NOT NULL,
+  `idPd` int(111) NOT NULL,
+  `NIK_ayah` char(16) NOT NULL,
+  `nama_ayah` varchar(100) NOT NULL,
+  `tahun_lahir_ayah` char(4) NOT NULL,
+  `pendidikan_ayah` varchar(10) NOT NULL,
+  `pekerjaan_ayah` varchar(50) NOT NULL,
+  `penghasilan_ayah` varchar(100) NOT NULL,
+  `NIK_ibu` char(16) NOT NULL,
+  `nama_ibu` varchar(100) NOT NULL,
+  `tahun_lahir_ibu` char(4) NOT NULL,
+  `pendidikan_ibu` varchar(10) NOT NULL,
+  `pekerjaan_ibu` varchar(50) NOT NULL,
+  `penghasilan_ibu` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `peserta_didik`
+--
+
+CREATE TABLE `peserta_didik` (
+  `idPd` int(111) NOT NULL,
+  `NIK_pd` char(16) NOT NULL,
+  `nama_pd` varchar(100) NOT NULL,
+  `jk_pd` enum('Laki-Laki','Perempuan') NOT NULL,
+  `tempat_lahir_pd` varchar(50) NOT NULL,
+  `agama` varchar(15) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `desa` varchar(50) NOT NULL,
+  `kecamatan` varchar(50) NOT NULL,
+  `kabupaten` varchar(50) NOT NULL,
+  `provinsi` varchar(50) NOT NULL,
+  `no_telp_pd` varchar(14) NOT NULL,
+  `email_pd` varchar(100) NOT NULL,
+  `foto_pd` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `program_studi`
+--
+
+CREATE TABLE `program_studi` (
+  `idProdi` int(11) NOT NULL,
+  `idSekolah` int(11) NOT NULL,
+  `nama_prodi` varchar(100) NOT NULL,
+  `singkatan_prodi` varchar(50) NOT NULL,
+  `jumlah_semester` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `sekolah`
+--
+
+CREATE TABLE `sekolah` (
+  `idSekolah` int(11) NOT NULL,
+  `jenjang_sekolah` enum('SD','SMP','SMA','SMK') NOT NULL,
+  `npsn` int(11) NOT NULL,
+  `nama_sekolah` int(11) NOT NULL,
+  `alamat_sekolah` varchar(100) NOT NULL,
+  `desa_sekolah` varchar(50) NOT NULL,
+  `kecamatan_sekolah` varchar(50) NOT NULL,
+  `kabupaten_sekolah` varchar(50) NOT NULL,
+  `provinsi_sekolah` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `settings`
 --
 
@@ -295,7 +405,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1554394235, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
-(2, '::1', 'iqbalrevvin', '$2y$08$f/k81A2BSMWDketqFDGro.oO4jp0qfX2WZLMpCqgc5YAwaMnYqIs2', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1554727568, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
+(2, '::1', 'iqbalrevvin', '$2y$08$f/k81A2BSMWDketqFDGro.oO4jp0qfX2WZLMpCqgc5YAwaMnYqIs2', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1554799049, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
 
 -- --------------------------------------------------------
 
@@ -372,6 +482,16 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
+-- Indexes for table `detail_peserta_didik`
+--
+ALTER TABLE `detail_peserta_didik`
+  ADD PRIMARY KEY (`idDetail_pd`),
+  ADD UNIQUE KEY `nisn` (`nisn`),
+  ADD UNIQUE KEY `nipd` (`nipd`),
+  ADD KEY `idPd` (`idPd`),
+  ADD KEY `idKelas` (`idKelas`);
+
+--
 -- Indexes for table `groups`
 --
 ALTER TABLE `groups`
@@ -384,6 +504,13 @@ ALTER TABLE `header_menu`
   ADD PRIMARY KEY (`id_header_menu`);
 
 --
+-- Indexes for table `kelas`
+--
+ALTER TABLE `kelas`
+  ADD PRIMARY KEY (`idKelas`),
+  ADD KEY `idProdi` (`idProdi`);
+
+--
 -- Indexes for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
@@ -394,6 +521,34 @@ ALTER TABLE `login_attempts`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id_menu`);
+
+--
+-- Indexes for table `ortu_peserta_didik`
+--
+ALTER TABLE `ortu_peserta_didik`
+  ADD PRIMARY KEY (`idOrtu_pd`),
+  ADD UNIQUE KEY `NIK_ayah` (`NIK_ayah`),
+  ADD KEY `idPd` (`idPd`),
+  ADD KEY `NIK_ibu` (`NIK_ibu`);
+
+--
+-- Indexes for table `peserta_didik`
+--
+ALTER TABLE `peserta_didik`
+  ADD PRIMARY KEY (`idPd`);
+
+--
+-- Indexes for table `program_studi`
+--
+ALTER TABLE `program_studi`
+  ADD PRIMARY KEY (`idProdi`),
+  ADD KEY `idSekolah` (`idSekolah`);
+
+--
+-- Indexes for table `sekolah`
+--
+ALTER TABLE `sekolah`
+  ADD PRIMARY KEY (`idSekolah`);
 
 --
 -- Indexes for table `settings`
@@ -421,6 +576,12 @@ ALTER TABLE `users_groups`
 --
 
 --
+-- AUTO_INCREMENT for table `detail_peserta_didik`
+--
+ALTER TABLE `detail_peserta_didik`
+  MODIFY `idDetail_pd` int(111) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
@@ -433,6 +594,12 @@ ALTER TABLE `header_menu`
   MODIFY `id_header_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `kelas`
+--
+ALTER TABLE `kelas`
+  MODIFY `idKelas` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
@@ -443,6 +610,30 @@ ALTER TABLE `login_attempts`
 --
 ALTER TABLE `menu`
   MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+
+--
+-- AUTO_INCREMENT for table `ortu_peserta_didik`
+--
+ALTER TABLE `ortu_peserta_didik`
+  MODIFY `idOrtu_pd` int(111) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `peserta_didik`
+--
+ALTER TABLE `peserta_didik`
+  MODIFY `idPd` int(111) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `program_studi`
+--
+ALTER TABLE `program_studi`
+  MODIFY `idProdi` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sekolah`
+--
+ALTER TABLE `sekolah`
+  MODIFY `idSekolah` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -465,6 +656,31 @@ ALTER TABLE `users_groups`
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
+
+--
+-- Ketidakleluasaan untuk tabel `detail_peserta_didik`
+--
+ALTER TABLE `detail_peserta_didik`
+  ADD CONSTRAINT `detail_peserta_didik_ibfk_1` FOREIGN KEY (`idPd`) REFERENCES `peserta_didik` (`idPd`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `detail_peserta_didik_ibfk_4` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`) ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `kelas`
+--
+ALTER TABLE `kelas`
+  ADD CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`idProdi`) REFERENCES `program_studi` (`idProdi`) ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `ortu_peserta_didik`
+--
+ALTER TABLE `ortu_peserta_didik`
+  ADD CONSTRAINT `ortu_peserta_didik_ibfk_1` FOREIGN KEY (`idPd`) REFERENCES `peserta_didik` (`idPd`) ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `program_studi`
+--
+ALTER TABLE `program_studi`
+  ADD CONSTRAINT `program_studi_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `users_groups`
