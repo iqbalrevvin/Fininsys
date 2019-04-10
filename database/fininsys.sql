@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09 Apr 2019 pada 16.06
+-- Generation Time: 10 Apr 2019 pada 10.46
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -21,6 +21,78 @@ SET time_zone = "+00:00";
 --
 -- Database: `fininsys`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `alamat_desa`
+--
+
+CREATE TABLE `alamat_desa` (
+  `idDesa` int(111) NOT NULL,
+  `nama_desa` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `alamat_desa`
+--
+
+INSERT INTO `alamat_desa` (`idDesa`, `nama_desa`) VALUES
+(1, 'Cintadamai');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `alamat_kabupaten`
+--
+
+CREATE TABLE `alamat_kabupaten` (
+  `idKabupaten` int(111) NOT NULL,
+  `nama_kabupaten` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `alamat_kabupaten`
+--
+
+INSERT INTO `alamat_kabupaten` (`idKabupaten`, `nama_kabupaten`) VALUES
+(1, 'Garut');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `alamat_kecamatan`
+--
+
+CREATE TABLE `alamat_kecamatan` (
+  `idKecamatan` int(111) NOT NULL,
+  `nama_kecamatan` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `alamat_kecamatan`
+--
+
+INSERT INTO `alamat_kecamatan` (`idKecamatan`, `nama_kecamatan`) VALUES
+(1, 'Sukaresmi');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `alamat_provinsi`
+--
+
+CREATE TABLE `alamat_provinsi` (
+  `idProvinsi` int(111) NOT NULL,
+  `nama_provinsi` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `alamat_provinsi`
+--
+
+INSERT INTO `alamat_provinsi` (`idProvinsi`, `nama_provinsi`) VALUES
+(1, 'Jawa Barat');
 
 -- --------------------------------------------------------
 
@@ -251,7 +323,7 @@ INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`,
 (99, 1, 1, 'Menu Management', 'list', 'config/header_menu', '', 92, 0),
 (100, 2, 1, 'Icon', 'lifebuoy', 'config/icon', '', 92, 0),
 (101, 0, 2, 'Lembaga', 'buildings', '#', '', 0, 0),
-(102, 1, 2, 'Data Sekolah', 'home', 'Sekolah', '', 101, 0),
+(102, 1, 2, 'Data Sekolah', 'home', 'lembaga/sekolah', '', 101, 0),
 (103, 2, 2, 'Data Ponpes', 'home', 'Ponpes', '', 101, 0),
 (104, 2, 2, 'Sekolah', 'home-1', '#', '', 0, 0),
 (105, 1, 2, 'Program Studi', 'interface-9', 'prodi', '', 104, 0),
@@ -267,10 +339,10 @@ INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`,
 (116, 3, 2, 'Jabatan Struktural', 'medal', 'jabatan', '', 104, 0),
 (117, 6, 2, 'Data Pendukung', 'cogwheel-2', '#', '', 0, 0),
 (118, 0, 2, 'Data Alamat', 'map-location', '#', '', 117, 0),
-(119, 1, 2, 'Data Desa', 'placeholder-3', 'datadesa', '', 117, 118),
-(120, 2, 2, 'Data Kecamatan', 'placeholder-3', 'datakecamatan', '', 117, 118),
-(121, 3, 2, 'Data Kab/Kota', 'placeholder-3', 'datakabupaten', '', 117, 118),
-(122, 4, 2, 'Data Provinsi', 'placeholder-3', 'dataprovinsi', '', 117, 118),
+(119, 1, 2, 'Data Desa', 'placeholder-3', 'datapendukung/alamat/desa', '', 117, 118),
+(120, 2, 2, 'Data Kecamatan', 'placeholder-3', 'datapendukung/alamat/kecamatan', '', 117, 118),
+(121, 3, 2, 'Data Kab/Kota', 'placeholder-3', 'datapendukung/alamat/kabupaten', '', 117, 118),
+(122, 4, 2, 'Data Provinsi', 'placeholder-3', 'datapendukung/alamat/provinsi', '', 117, 118),
 (123, 2, 2, 'Data Pekerjaan', 'presentation', 'datapekerjaan', '', 117, 0);
 
 -- --------------------------------------------------------
@@ -343,13 +415,21 @@ CREATE TABLE `sekolah` (
   `idSekolah` int(11) NOT NULL,
   `jenjang_sekolah` enum('SD','SMP','SMA','SMK') NOT NULL,
   `npsn` int(11) NOT NULL,
-  `nama_sekolah` int(11) NOT NULL,
+  `nama_sekolah` varchar(100) NOT NULL,
   `alamat_sekolah` varchar(100) NOT NULL,
-  `desa_sekolah` varchar(50) NOT NULL,
-  `kecamatan_sekolah` varchar(50) NOT NULL,
-  `kabupaten_sekolah` varchar(50) NOT NULL,
-  `provinsi_sekolah` varchar(50) NOT NULL
+  `desa_sekolah` int(50) DEFAULT NULL,
+  `kecamatan_sekolah` int(50) DEFAULT NULL,
+  `kabupaten_sekolah` int(50) DEFAULT NULL,
+  `provinsi_sekolah` int(50) DEFAULT NULL,
+  `logo_sekolah` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `sekolah`
+--
+
+INSERT INTO `sekolah` (`idSekolah`, `jenjang_sekolah`, `npsn`, `nama_sekolah`, `alamat_sekolah`, `desa_sekolah`, `kecamatan_sekolah`, `kabupaten_sekolah`, `provinsi_sekolah`, `logo_sekolah`) VALUES
+(1, 'SMP', 69953278, 'SMP Plus RR', 'Kp. Buleud RT 02 RW 04', 1, 1, 1, 1, '5e18e-logo-smp-baru.jpg');
 
 -- --------------------------------------------------------
 
@@ -405,7 +485,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1554394235, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
-(2, '::1', 'iqbalrevvin', '$2y$08$f/k81A2BSMWDketqFDGro.oO4jp0qfX2WZLMpCqgc5YAwaMnYqIs2', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1554799049, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
+(2, '::1', 'iqbalrevvin', '$2y$08$f/k81A2BSMWDketqFDGro.oO4jp0qfX2WZLMpCqgc5YAwaMnYqIs2', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1554822496, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
 
 -- --------------------------------------------------------
 
@@ -482,6 +562,30 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
+-- Indexes for table `alamat_desa`
+--
+ALTER TABLE `alamat_desa`
+  ADD PRIMARY KEY (`idDesa`);
+
+--
+-- Indexes for table `alamat_kabupaten`
+--
+ALTER TABLE `alamat_kabupaten`
+  ADD PRIMARY KEY (`idKabupaten`);
+
+--
+-- Indexes for table `alamat_kecamatan`
+--
+ALTER TABLE `alamat_kecamatan`
+  ADD PRIMARY KEY (`idKecamatan`);
+
+--
+-- Indexes for table `alamat_provinsi`
+--
+ALTER TABLE `alamat_provinsi`
+  ADD PRIMARY KEY (`idProvinsi`);
+
+--
 -- Indexes for table `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
@@ -548,7 +652,11 @@ ALTER TABLE `program_studi`
 -- Indexes for table `sekolah`
 --
 ALTER TABLE `sekolah`
-  ADD PRIMARY KEY (`idSekolah`);
+  ADD PRIMARY KEY (`idSekolah`),
+  ADD KEY `desa_sekolah` (`desa_sekolah`),
+  ADD KEY `kecamatan_sekolah` (`kecamatan_sekolah`),
+  ADD KEY `kabupaten_sekolah` (`kabupaten_sekolah`),
+  ADD KEY `provinsi_sekolah` (`provinsi_sekolah`);
 
 --
 -- Indexes for table `settings`
@@ -574,6 +682,30 @@ ALTER TABLE `users_groups`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `alamat_desa`
+--
+ALTER TABLE `alamat_desa`
+  MODIFY `idDesa` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `alamat_kabupaten`
+--
+ALTER TABLE `alamat_kabupaten`
+  MODIFY `idKabupaten` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `alamat_kecamatan`
+--
+ALTER TABLE `alamat_kecamatan`
+  MODIFY `idKecamatan` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `alamat_provinsi`
+--
+ALTER TABLE `alamat_provinsi`
+  MODIFY `idProvinsi` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `detail_peserta_didik`
@@ -633,7 +765,7 @@ ALTER TABLE `program_studi`
 -- AUTO_INCREMENT for table `sekolah`
 --
 ALTER TABLE `sekolah`
-  MODIFY `idSekolah` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -681,6 +813,15 @@ ALTER TABLE `ortu_peserta_didik`
 --
 ALTER TABLE `program_studi`
   ADD CONSTRAINT `program_studi_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `sekolah`
+--
+ALTER TABLE `sekolah`
+  ADD CONSTRAINT `sekolah_ibfk_1` FOREIGN KEY (`desa_sekolah`) REFERENCES `alamat_desa` (`idDesa`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `sekolah_ibfk_2` FOREIGN KEY (`kecamatan_sekolah`) REFERENCES `alamat_kecamatan` (`idKecamatan`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `sekolah_ibfk_3` FOREIGN KEY (`kabupaten_sekolah`) REFERENCES `alamat_kabupaten` (`idKabupaten`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `sekolah_ibfk_4` FOREIGN KEY (`provinsi_sekolah`) REFERENCES `alamat_provinsi` (`idProvinsi`) ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `users_groups`
