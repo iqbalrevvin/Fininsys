@@ -38,7 +38,7 @@
     	<link href="<?= base_url('assets/css/style.bundle.css') ?>" rel="stylesheet" type="text/css" />
     	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/js/plugins/iCheck/square/blue.css') ?>">
 		<!--end::Base Styles -->
-		<link rel="shortcut icon" href="<?= base_url('Assets/image/'.$settings->logo) ?>" />
+		<link rel="shortcut icon" href="<?= base_url('assets/image/'.$settings->logo) ?>" />
 	</head>
 	<!-- end::Head -->
     <!-- end::Body -->
