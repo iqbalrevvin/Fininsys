@@ -1,5 +1,3 @@
-
-
 <div id="m_quick_sidebar" class="m-quick-sidebar m-quick-sidebar--tabbed m-quick-sidebar--skin-light">
     <div class="m-quick-sidebar__content m--hide">
         <span id="m_quick_sidebar_close" class="m-quick-sidebar__close"><i class="la la-close"></i></span>
@@ -21,7 +19,7 @@
                         <div class="m-messenger__wrapper">
                             <div class="m-messenger__message m-messenger__message--in">
                                 <div class="m-messenger__message-pic">
-                                    <img src="assets/app/media/img//users/user3.jpg" alt="" />
+                                    <img src="" alt="" />
                                 </div>
                                 <div class="m-messenger__message-body">
                                     <div class="m-messenger__message-arrow"></div>
@@ -51,7 +49,7 @@
                         <div class="m-messenger__wrapper">
                             <div class="m-messenger__message m-messenger__message--in">
                                 <div class="m-messenger__message-pic">
-                                    <img src="assets/app/media/img//users/user3.jpg" alt="" />
+                                    <img src="" alt="" />
                                 </div>
                                 <div class="m-messenger__message-body">
                                     <div class="m-messenger__message-arrow"></div>
@@ -82,7 +80,7 @@
                         <div class="m-messenger__wrapper">
                             <div class="m-messenger__message m-messenger__message--in">
                                 <div class="m-messenger__message-pic">
-                                    <img src="assets/app/media/img//users/user3.jpg" alt="" />
+                                    <img src="" alt="" />
                                 </div>
                                 <div class="m-messenger__message-body">
                                     <div class="m-messenger__message-arrow"></div>
@@ -155,7 +153,7 @@
                         <div class="m-messenger__wrapper">
                             <div class="m-messenger__message m-messenger__message--in">
                                 <div class="m-messenger__message-pic">
-                                    <img src="assets/app/media/img//users/user3.jpg" alt="" />
+                                    <img src="" alt="" />
                                 </div>
                                 <div class="m-messenger__message-body">
                                     <div class="m-messenger__message-arrow"></div>
