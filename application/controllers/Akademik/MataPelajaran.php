@@ -35,7 +35,6 @@ class MataPelajaran extends CI_Controller {
 		$crud->callback_column('nama_mata_pelajaran',array($this,'nama_callback'));
 		/*--------------*/
 
-
 		$output 		= $crud->render();
 		$data['judul'] 	= 'Daftar Mata Pelajaran';
 		$template 		= 'admin_template';
