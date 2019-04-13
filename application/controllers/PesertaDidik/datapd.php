@@ -15,7 +15,15 @@ class Datapd extends CI_Controller {
 		$crud->set_table('peserta_didik');
 		$crud->set_subject('Data Peserta Didik');
 
+		$crud->set_field_upload('foto_pd', 'assets/image/foto_pd');
+
+
 		$crud->display_as('nama_pd', 'Nama Peserta Didik');
+		$crud->display_as('NIK_pd', 'NIK Peserta Didik');
+		$crud->display_as('jk_pd', 'Jenis Kelamin');
+		$crud->display_as('tempat_lahir_pd', 'Tempat Lahir');
+
+
 
 		$crud->required_fields('NIK_pd','nama_pd', 'jk_pd', 'tempat_lahir_pd', 'agama');
 
