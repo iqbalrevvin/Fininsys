@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11 Apr 2019 pada 21.30
+-- Generation Time: 13 Apr 2019 pada 15.26
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -466,7 +466,7 @@ INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`,
 (110, 5, 2, 'Ekstrakulikuler', 'music', 'akademik/ekstrakulikuler', '', 108, 0),
 (111, 4, 2, 'Mata Pelajaran', 'list', 'akademik/matapelajaran', '', 108, 0),
 (112, 4, 2, 'Peserta Didik', 'users', '#', '', 0, 0),
-(113, 1, 2, 'Data Peserta Didik', 'users', 'pesertadidik', '', 112, 0),
+(113, 1, 2, 'Data Peserta Didik', 'users', 'pesertadidik/datapd', '', 112, 0),
 (114, 5, 2, 'Tenaga Pendidik', 'users-1', '#', '', 0, 0),
 (115, 1, 2, 'Data Tenaga Pendidik', 'users-1', '', 'tenagapendidik', 114, 0),
 (116, 3, 2, 'Jabatan Struktural', 'medal', 'sekolah/jabatan', '', 104, 0),
@@ -571,7 +571,8 @@ CREATE TABLE `sekolah` (
 --
 
 INSERT INTO `sekolah` (`idSekolah`, `jenjang_sekolah`, `npsn`, `nama_sekolah`, `alamat_sekolah`, `desa_sekolah`, `kecamatan_sekolah`, `kabupaten_sekolah`, `provinsi_sekolah`, `logo_sekolah`) VALUES
-(1, 'SMP', 69953278, 'SMP Plus RR', 'Kp. Buleud RT 02 RW 04', 1, 1, 1, 1, '5e18e-logo-smp-baru.jpg');
+(1, 'SMP', 69953278, 'SMP Plus RR', 'Kp. Buleud RT 02 RW 04', 1, 1, 1, 1, '5e18e-logo-smp-baru.jpg'),
+(2, 'SMK', 12345678, 'SMK-Plus', 'Garut', 1, 1, 1, 1, '');
 
 -- --------------------------------------------------------
 
@@ -647,7 +648,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1554394235, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
-(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1555007716, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
+(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1555158952, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
 
 -- --------------------------------------------------------
 
@@ -937,7 +938,7 @@ ALTER TABLE `header_menu`
 -- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
-  MODIFY `idJabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idJabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `kelas`
@@ -997,7 +998,7 @@ ALTER TABLE `program_studi`
 -- AUTO_INCREMENT for table `sekolah`
 --
 ALTER TABLE `sekolah`
-  MODIFY `idSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `settings`
