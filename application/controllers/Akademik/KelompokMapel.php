@@ -23,6 +23,10 @@ class KelompokMapel extends CI_Controller {
 		/*VALIDATION*/
 		$crud->required_fields('nama_kelompok');
 
+		/*Callback*/
+		$crud->callback_column('nama_kelompok_mapel',array($this,'nama_callback'));
+		/*-----------------------------------*/
+
 		$output 		= $crud->render();
 		$data['judul'] 	= 'Daftar Sekolah';;
 		$data['crumb'] 	= ['Sekolah' => ''];
@@ -30,6 +34,11 @@ class KelompokMapel extends CI_Controller {
 		$view 			= 'grocery';
 
 		$this->outputview->output_admin($view, $template, $data, $output);
+	}
+
+	function nama_callback($value, $primary_key = null){
+		$value = '<b>'.$value.'</b>';
+		return $value;
 	}
 
 }

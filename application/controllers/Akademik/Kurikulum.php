@@ -17,12 +17,12 @@ class Kurikulum extends CI_Controller {
 		$crud->set_table('kurikulum');
 		$crud->set_theme('datatables');
 		$crud->set_subject('Daftar Kurikulum');
-		$crud->columns('nama_kurikulum','idSekolah','idTahun_ajaran');
+		$crud->columns('nama_kurikulum','idSekolah');
 		$crud->display_as('idSekolah', 'Sekolah');
 		$crud->display_as('idTahun_ajaran', 'Tahun Pelajaran');
 
 		/*RELATION*/
-		$crud->set_relation('idTahun_ajaran','tahun_ajaran','nama_tahun_ajaran');
+		#$crud->set_relation('idTahun_ajaran','tahun_ajaran','nama_tahun_ajaran');
 		$crud->set_relation('idSekolah', 'sekolah', 'nama_sekolah');	
 		/*----------------------------*/
 

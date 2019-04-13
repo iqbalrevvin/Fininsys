@@ -13,7 +13,7 @@ class Kelas extends CI_Controller {
 
 		$crud->set_table('kelas');
 		$crud->set_subject('Daftar Kelas');
-		$crud->columns('sekolah','nama_kelas','idProdi');
+		$crud->columns('nama_kelas','sekolah','idProdi');
 		$crud->display_as('idProdi', 'Program Studi');
 
 		#$crud->set_field_upload('');
