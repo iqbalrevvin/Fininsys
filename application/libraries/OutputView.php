@@ -76,6 +76,7 @@ class OutputView {
 				$data['scriptView'] = '<script'.$view[1];
 			}
 		}
+		
 		$this->CI->load->view('template/'.$template, $data);
 	}
 

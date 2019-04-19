@@ -21,11 +21,6 @@
 		    <!--iki tampil table'e-->
 		<div class="m-portlet__body">
 			<div class="flexigrid crud-form box" data-unique-hash="<?php echo $unique_hash; ?>">
-				<div class="box-header with-border">
-					<!--<h3 class="box-title"><i class="fa fa-plus-circle"></i> <?php echo $this->l('form_add'); ?> <?php echo $subject?> </h3>-->
-					<div id='report-error' class='report-div error alert alert-danger' role="alert"></div>
-				</div>
-
 				<div id='main-table-box' class="box-body">
 					<?php echo form_open( $insert_url, 'method="post" class="form-horizontal" id="crudForm" autocomplete="off" enctype="multipart/form-data"'); ?>
 			    
@@ -65,6 +60,10 @@
 					<span class='small-loading' id='FormLoading'><img src="<?php echo base_url('assets/svg/loading-spin-primary.svg') ?>" alt="loading..."> <?php echo $this->l('form_insert_loading'); ?></span>
 					<?php echo form_close(); ?>
 				</div>
+			</div>
+			<div class="box-header with-border">
+				<!--<h3 class="box-title"><i class="fa fa-plus-circle"></i> <?php echo $this->l('form_add'); ?> <?php echo $subject?> </h3>-->
+				<div id='report-error' class='report-div error alert alert-danger' role="alert"></div>
 			</div>
 		</div>
 

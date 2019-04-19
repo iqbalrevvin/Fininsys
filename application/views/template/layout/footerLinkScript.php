@@ -1,6 +1,6 @@
 <!--begin::Base Scripts -->
 <script src="<?= base_url('assets/js/jquery.min.js') ?>" type="text/javascript"></script>
-<script src="<?= base_url('assets/vendors/jquery-ui/jquery-ui.min.css') ?>" type="text/javascript"></script>
+<!--<script src="<?= base_url('assets/vendors/jquery-ui/jquery-ui.min.css') ?>" type="text/javascript"></script>-->
 <script src="<?= base_url('assets/vendors/highchart/highcharts.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/vendors/pace-preload/pace.js') ?>" type="text/javascript"></script>
 <!--BOOTSRAP FILE UPLOAD-->
@@ -9,7 +9,7 @@
 
 <!--Alertify JS-->
 <script src="<?= base_url('assets/js/alertify.min.js') ?>"></script>
-<script src="<?= base_url('assets/js/dashboard.js') ?>" type="text/javascript"></script>
+<!--<script src="<?= base_url('assets/js/dashboard.js') ?>" type="text/javascript"></script>-->
 <script src="<?= base_url('assets/js/vendors.bundle.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/scripts.bundle.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/vendors/datatables-metronic/datatables.bundle.js') ?>" type="text/javascript"></script>

@@ -6,8 +6,15 @@
     color: #fff; 
     background: #424242;
 }
+#loader-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+
+}
 .info{
-	margin-top: 14%;
+  margin-top: 14%;
 }
 .user-menu{
   text-transform: capitalize;
@@ -17,15 +24,15 @@
 }
 /*FIX BUG GROCERY*/
 .small-loading{
-	padding-left:10px;
-	padding-top:1px;
-	display: none;
+  padding-left:10px;
+  padding-top:1px;
+  display: none;
 }
 .report-div{
- 	display:none;
+  display:none;
 }
 .datepicker-input-clear{
-	cursor: pointer;
+  cursor: pointer;
 }
 .tDiv2,
 .tDiv3{

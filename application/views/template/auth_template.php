@@ -142,7 +142,7 @@
 		<script src="<?= base_url('assets/js/scripts.bundle.js') ?>" type="text/javascript"></script>
 
 		<!--JS Plugins-->
-		<script src="<?php echo base_url('assets/js-adminlte/plugins/iCheck/icheck.min.js') ?>"></script>
+		<script src="<?php echo base_url('assets/js/plugins/iCheck/icheck.min.js') ?>"></script>
 		<!--begin::Page Scripts -->
 		<script src="<?= base_url('assets/js/pages/login/login.js') ?>" type="text/javascript"></script>
 		<script>
