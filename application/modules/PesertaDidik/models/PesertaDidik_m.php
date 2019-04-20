@@ -12,6 +12,13 @@ public function insertDetail($data){
 	$this->db->insert('ortu_peserta_didik', $data);
 }
 
+public function getNameProfil($id){
+	$query = $this->db->get_where('peserta_didik', ['NIK_pd' => $id]);
+	$execute = $query->row();
+
+	return $execute;
+}
+
 public function profil($id){
 	$this->db->select('*');
 	$this->db->from('peserta_didik');

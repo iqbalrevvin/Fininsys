@@ -23,7 +23,7 @@ class Listpd extends CI_Controller {
 		$crud->display_as('NIK_pd', 'NIK Peserta Didik');
 		$crud->display_as('jk_pd', 'Jenis Kelamin');
 		$crud->display_as('tempat_lahir_pd', 'Tempat Lahir');
-		$crud->columns('NIK_pd', 'tempat_lahir_pd', 'tanggal_lahir_pd', 'nama_pd', 'jk_pd', 'no_telp_pd');
+		$crud->columns('NIK_pd', 'nama_pd', 'tempat_lahir_pd', 'tanggal_lahir_pd', 'jk_pd', 'no_telp_pd');
 		$crud->add_action('Profil', 'fa fa-user', '', '',array($this,'profilLink'));
 		$crud->set_rules('NIK_pd','NIK Siswa','required|numeric|max_length[16]|min_length[16]');
 		$crud->unset_read();
@@ -31,10 +31,13 @@ class Listpd extends CI_Controller {
 		/*RELASI*/
 
 		/*-----------------------------------------------*/
-		$crud->unset_add_fields('kelurahan','kecamatan', 'kota', 'provinsi');
+		$crud->unset_add_fields('kelurahan','kecamatan', 'kota', 'provinsi', 'alamat');
+		$crud->unset_edit_fields('kelurahan','kecamatan', 'kota', 'provinsi', 'alamat');
 
-		#$crud->required_fields('NIK_pd','nama_pd', 'jk_pd', 'tempat_lahir_pd', 'agama', 'no_telp_pd');
+		$crud->required_fields('NIK_pd','nama_pd', 'jk_pd', 'tempat_lahir_pd', 'agama', 'no_telp_pd');
 		$crud->callback_after_insert(array($this,'insertDetail'));
+		$crud->callback_column('nama_pd',array($this,'nama_callback'));
+		#$crud->callback_column('NIK_pd',array($this,'nik_callback'));
 		#$crud->callback_insert(array($this,'insert'));
 		
 
@@ -52,6 +55,11 @@ class Listpd extends CI_Controller {
 		return $value;
 	}
 
+	function nik_callback($value, $primary_key = null){
+		$value = '<b>'.$value.'</b>';
+		return $value;
+	}
+
 	function insertDetail($post_array){
 		
 		$nik 	= $post_array['NIK_pd'];
@@ -64,7 +72,7 @@ class Listpd extends CI_Controller {
 	}
 
 	function profilLink($primary_key, $row){
-		return site_url('pesertadidik/profil').'?ID='.$row->NIK_pd;
+		return site_url('PesertaDidik/Profil').'?ID='.$row->NIK_pd;
 	}
 
 }

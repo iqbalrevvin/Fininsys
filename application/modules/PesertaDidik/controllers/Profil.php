@@ -8,11 +8,18 @@ class Profil extends CI_Controller {
 		$this->load->library('OutputView');
 		$this->load->model('PesertaDidik/PesertaDidik_m');
 		$this->load->helper('fotoGender_helper');
+		$this->load->helper('tglIndo_helper');
 	}
 	public function index(){
 		#$id 			= $this->input->post('ID');
 		#$data['profil'] = $this->PesertaDidik_m->profil($id);
-		$data['judul'] 	= 'Profil Peserta Didik';
+		$id 			= $this->input->get('ID');
+		$profil 		= $this->PesertaDidik_m->getNameProfil($id);
+		#$data['judul'] 	= 'Profil Peserta Didik('.$id.')';
+		$data['crumb']  = [
+							'Peserta Didik' => 'PesertaDidik',
+							$profil->nama_pd => ''
+						];
 		$template      	= 'admin_template';
 		$view          	= 'PesertaDidik/profil.php';
         $this->outputview->output_admin($view, $template, $data);

@@ -50,5 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'auth';
+$route['PesertaDidik'] = 'pesertadidik/listpd';
+$route['PesertaDidik/Profil'] = 'pesertadidik/profil';
+
 $route['404_override'] = 'error';
-$route['translate_uri_dashes'] = FALSE;
+$route['translate_uri_dashes'] = TRUE;
