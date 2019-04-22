@@ -50,7 +50,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'auth';
+//PESERTA DIDIK
 $route['PesertaDidik'] = 'pesertadidik/listpd';
+$route['PesertaDidik/index/(:any)/(:num)'] = 'pesertadidik/listpd/index/edit/$1';
+$route['PesertaDidik/index/(:any)'] = 'pesertadidik/listpd/index/add';
+//TENAGA PENDIDIK
+$route['TenagaPendidik'] = 'TenagaPendidik/list-tenpen';
+$route['TenagaPendidik/index/(:any)'] = 'TenagaPendidik/list-tenpen/index/add';
+$route['TenagaPendidik/index/(:any)/(:num)'] = 'TenagaPendidik/list-tenpen/index/edit/$1';
+#$route['PesertaDidik/(:num)'] = 'pesertadidik/listpd/index/edit/$1';
 $route['PesertaDidik/Profil'] = 'pesertadidik/profil';
 
 $route['404_override'] = 'error';
