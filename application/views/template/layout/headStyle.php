@@ -60,17 +60,19 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <!--end::Web font -->
     
-    <!--<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css') ?>">-->
+    <!--<link rel="stylesheet" href="<?php #echo base_url('assets/css/bootstrap.min.css') ?>">-->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/alertify.min.css') ?>">
+    
+
+    <link href="<?= base_url('assets/css/vendors.bundle.css') ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets/css/style.bundle.css') ?>" rel="stylesheet" type="text/css" />    
      <!--BOOTSTRAP FILE UPLOAD-->
     <link href="<?= base_url('assets/vendors/bootstrap-fileupload/bootstrap-fileupload.css') ?>" rel="stylesheet" />
      <!-- PRELOADER -->
     <link rel="stylesheet" href="<?= base_url('assets/vendors/pace-preload/blue/pace-theme-center-simple.css') ?>" />
-
-    <link href="<?= base_url('assets/css/vendors.bundle.css') ?>" rel="stylesheet" type="text/css" />
-    <link href="<?= base_url('assets/css/style.bundle.css') ?>" rel="stylesheet" type="text/css" />    
     <!--end::Base Styles -->
     <link href="<?= base_url('assets/vendors/datatables-metronic/datatables.bundle.css') ?>" rel="stylesheet" type="text/css" /> 
+    <link href="<?= base_url('assets/vendors/jquery-ui-bundle/jquery-ui.bundle.css') ?>" type="text/css" rel="stylesheet"  />
     <link href="<?= base_url('assets/js/plugins/iCheck/square/blue.css') ?>" rel="stylesheet" type="text/css" /> 
     <link rel="shortcut icon" href="<?= base_url('assets/image/'.$settings->logo) ?>" />
    <!--GroceryCRUD CSS-->

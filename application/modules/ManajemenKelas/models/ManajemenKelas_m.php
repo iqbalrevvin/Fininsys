@@ -7,33 +7,24 @@ class ManajemenKelas_m extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('kelas');
 		/*RELASI*/
+		$this->db->join('program_studi', 'kelas.idProdi = program_studi.idProdi', 'left');
+		$this->db->join('sekolah', 'program_studi.idSekolah = sekolah.idSekolah', 'left');
 		/*---------*/
-		$this->db->order_by('nama_kelas', 'desc');
+		$this->db->order_by('sekolah.nama_sekolah desc, kelas.nama_kelas desc');
 		$query = $this->db->get();
 		$execute = $query->result();
 
 		return $execute;
 	}
 
-	function kelas(){
-		$this->db->select('*');
-		$this->db->from('kelas');
-		/*RELASI*/
-		/*---------*/
-		$this->db->order_by('nama_kelas', 'desc');
-		$query = $this->db->get();
-		$execute = $query->row();
-
-		return $execute;
-	}
-
 	public function getPesdik($idKelas){
 		$this->db->select('*');
-		$this->db->from('detail_peserta_didik');
+		$this->db->from('peserta_didik');
 		$this->db->where('idKelas', $idKelas);
 		/*RELASI*/
+		$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
 		/*---------*/
-		$this->db->order_by('NIK_pd', 'desc');
+		$this->db->order_by('peserta_didik.NIK_pd', 'desc');
 		$query = $this->db->get();
 		$execute = $query->result();
 

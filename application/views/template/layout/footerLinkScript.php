@@ -1,7 +1,11 @@
 <!--begin::Base Scripts -->
 <script src="<?= base_url('assets/js/jquery.min.js') ?>" type="text/javascript"></script>
-<!--<script src="<?= base_url('assets/vendors/jquery-ui/jquery-ui.min.css') ?>" type="text/javascript"></script>-->
+
+<script src="<?= base_url('assets/vendors/jquery-ui/jquery-ui.min.js') ?>" type="text/javascript"></script>
+
 <!--<script src="<?= base_url('assets/vendors/highchart/highcharts.js') ?>" type="text/javascript"></script>-->
+
+
 <script src="<?= base_url('assets/vendors/pace-preload/pace.js') ?>" type="text/javascript"></script>
 <!--BOOTSRAP FILE UPLOAD-->
 <script src="<?= base_url('assets/vendors/bootstrap-fileupload/bootstrap-fileupload.js') ?>"></script>
@@ -9,14 +13,16 @@
 
 <!--Alertify JS-->
 <script src="<?= base_url('assets/js/alertify.min.js') ?>"></script>
-<script src="<?= base_url('assets/js/dashboard.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/vendors.bundle.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/scripts.bundle.js') ?>" type="text/javascript"></script>
+<script src="<?= base_url('assets/vendors/jquery-ui-bundle/jquery-ui.bundle.js') ?>" type="text/javascript"></script>
+<script src="<?= base_url('assets/js/components/dragable.js') ?>"></script>
 <script src="<?= base_url('assets/vendors/datatables-metronic/datatables.bundle.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/components/blockui.js') ?>"></script>
 <script src="<?= base_url('assets/js/demo/bootstrap-maxlength.js') ?>"></script>
 <script src="<?= base_url('assets/js/demo/bootstrap-select.js') ?>"></script>
 <script src="<?= base_url('assets/js/demo/select2.js') ?>"></script>
+
 
 
 <!-- GroceryCRUD JS -->
@@ -45,6 +51,7 @@
 
     jQuery(document).ready(function() {
       BootstrapDatepicker.init()
+      //PortletDraggable.init()
     });
      paceOptions = {
         ajax: false,
@@ -118,6 +125,30 @@
   }
 //-----------------------------------------------------
 
+/*var PortletDraggable = {
+    init: function() {
+        $(".m_sortable_portlets").sortable({
+            connectWith: ".m-portlet__head",
+            items: ".m-portlet",
+            opacity: .8,
+            handle: ".m-portlet__head",
+            coneHelperSize: !0,
+            placeholder: "m-portlet--sortable-placeholder",
+            forcePlaceholderSize: !0,
+            tolerance: "pointer",
+            helper: "clone",
+            tolerance: "pointer",
+            forcePlaceholderSize: !0,
+            helper: "clone",
+            cancel: ".m-portlet--sortable-empty",
+            revert: 250,
+            update: function(e, t) {
+                t.item.prev().hasClass("m-portlet--sortable-empty") && t.item.prev().before(t.item)
+            }
+        })
+    }
+};
+*/
 // FUNGSI REFRESH
 function refresh() {
     window.location.reload();

@@ -27,8 +27,8 @@
 
 <script>
 	$(document).ready(function() {
-		formRegisterView()
-		function formRegisterView(){
+		profilView()
+		function profilView(){
           var id = $('#dataID').val();
           $.ajax({
               url: '<?= base_url('PesertaDidik/Profil/getProfil') ?>',
