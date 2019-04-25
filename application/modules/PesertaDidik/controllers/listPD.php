@@ -23,6 +23,9 @@ class Listpd extends CI_Controller {
 		$crud->display_as('NIK_pd', 'NIK Peserta Didik');
 		$crud->display_as('jk_pd', 'Jenis Kelamin');
 		$crud->display_as('tempat_lahir_pd', 'Tempat Lahir');
+		$crud->display_as('facebook', 'Link Facebook');
+		$crud->display_as('instagram', 'Link Instagram');
+		$crud->display_as('twitter', 'Link Twitter');
 		$crud->columns('NIK_pd', 'nama_pd', 'tempat_lahir_pd', 'tanggal_lahir_pd', 'jk_pd', 'no_telp_pd');
 		$crud->add_action('Profil', 'fa fa-user', '', '',array($this,'profilLink'));
 		$crud->set_rules('NIK_pd','NIK Siswa','required|numeric|max_length[16]|min_length[16]');

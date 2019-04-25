@@ -12,15 +12,21 @@ class ManajemenKelas extends CI_Controller {
 
 	public function index(){
 
-		$listKelas 			= $this->ManajemenKelas_m->listing();
-
-		$data['listKelas'] 	= $listKelas;
+		
 		#$data['siswa'] 		= $this->ManajemenKelas_m->getPesdik($idKelas);
 		$data['judul'] 		= 'Manajemen Kelas';
 		$template      		= 'admin_template';
 		$view          		= 'manajemenKelas';
 
 		$this->outputview->output_admin($view, $template, $data);
+	}
+
+	public function getManajemenKelas(){
+		
+		$listKelas 			= $this->ManajemenKelas_m->listing();
+		$data['listKelas'] 	= $listKelas;
+
+		$this->load->view('kontenManajemenKelas', $data, FALSE);
 	}
 
 }
