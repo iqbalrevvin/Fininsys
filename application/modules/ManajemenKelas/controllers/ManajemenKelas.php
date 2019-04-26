@@ -7,19 +7,26 @@ class ManajemenKelas extends CI_Controller {
 		parent::__construct();
 		$this->load->library('OutputView');
 		$this->load->model('ManajemenKelas_m');
+		$this->load->helper('fotoGender');
 	}
 
 	public function index(){
 
-		$listKelas 			= $this->ManajemenKelas_m->listing();
-
-		$data['listKelas'] 	= $listKelas;
+		
 		#$data['siswa'] 		= $this->ManajemenKelas_m->getPesdik($idKelas);
 		$data['judul'] 		= 'Manajemen Kelas';
 		$template      		= 'admin_template';
 		$view          		= 'manajemenKelas';
 
 		$this->outputview->output_admin($view, $template, $data);
+	}
+
+	public function getManajemenKelas(){
+		
+		$listKelas 			= $this->ManajemenKelas_m->listing();
+		$data['listKelas'] 	= $listKelas;
+
+		$this->load->view('kontenManajemenKelas', $data, FALSE);
 	}
 
 }

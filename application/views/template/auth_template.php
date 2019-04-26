@@ -140,7 +140,6 @@
 		<!--begin::Global Theme Bundle -->
 		<script src="<?= base_url('assets/js/vendors.bundle.js') ?>" type="text/javascript"></script>
 		<script src="<?= base_url('assets/js/scripts.bundle.js') ?>" type="text/javascript"></script>
-
 		<!--JS Plugins-->
 		<script src="<?php echo base_url('assets/js/plugins/iCheck/icheck.min.js') ?>"></script>
 		<!--begin::Page Scripts -->
