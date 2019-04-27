@@ -15,9 +15,9 @@
 <script src="<?= base_url('assets/js/alertify.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/vendors.bundle.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/scripts.bundle.js') ?>" type="text/javascript"></script>
-<script src="<?= base_url('assets/vendors/jquery-ui-bundle/jquery-ui.bundle.js') ?>" type="text/javascript"></script>
-<script src="<?= base_url('assets/js/components/dragable.js') ?>"></script>
+
 <script src="<?= base_url('assets/vendors/datatables-metronic/datatables.bundle.js') ?>" type="text/javascript"></script>
+<script src="<?= base_url('assets/vendors/datatables/datatables.bundle.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/components/blockui.js') ?>"></script>
 <script src="<?= base_url('assets/js/demo/bootstrap-maxlength.js') ?>"></script>
 <script src="<?= base_url('assets/js/demo/bootstrap-select.js') ?>"></script>

@@ -72,6 +72,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" href="<?= base_url('assets/vendors/pace-preload/blue/pace-theme-center-simple.css') ?>" />
     <!--end::Base Styles -->
     <link href="<?= base_url('assets/vendors/datatables-metronic/datatables.bundle.css') ?>" rel="stylesheet" type="text/css" /> 
+    <link href="<?= base_url('assets/vendors/datatables/datatables.bundle.css') ?>" rel="stylesheet" type="text/css" />
     <link href="<?= base_url('assets/vendors/jquery-ui-bundle/jquery-ui.bundle.css') ?>" type="text/css" rel="stylesheet"  />
     <link href="<?= base_url('assets/js/plugins/iCheck/square/blue.css') ?>" rel="stylesheet" type="text/css" /> 
     <link rel="shortcut icon" href="<?= base_url('assets/image/'.$settings->logo) ?>" />

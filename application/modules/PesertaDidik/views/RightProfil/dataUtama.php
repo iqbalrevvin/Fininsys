@@ -57,7 +57,7 @@
 		<div class="form-group m-form__group">
 			<div class="col-xs-12 col-sm-6 col-lg-6">
 				<label>Tanggal Lahir</label>
-					<input type="text" class="form-control m-input  m-input--air m_datepicker_modal" 
+					<input type="text" class="form-control m-input  m-input--air m_datepicker_nonModal" 
 						placeholder="Format : yyyy-mm-dd Atau Pilih Dengan Kalender" id="tanggalLahir" 
 						name="tanggalLahir" value="<?= $profil->tanggal_lahir_pd ?>" />
 			</div>
@@ -65,9 +65,9 @@
 		<div class="form-group m-form__group">
 			<div class="col-xs-12 col-sm-6 col-lg-6">
 				<label>Agama</label>
-				<input type="text" class="form-control m-input  m-input--air m_datepicker_modal" 
+				<!-- <input type="text" class="form-control m-input  m-input--air m_datepicker_modal" 
 					placeholder="Format : yyyy-mm-dd Atau Pilih Dengan Kalender" id="tanggalLahir" name="tanggalLahir" 
-					value="<?= $profil->tanggal_lahir_pd ?>" />
+					value="<?= $profil->tanggal_lahir_pd ?>" /> -->
 			</div>
 		</div>
 	    <div class="m-portlet__body">	

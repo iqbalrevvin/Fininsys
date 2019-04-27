@@ -22,7 +22,6 @@ class ManajemenKelas extends CI_Controller {
 	}
 
 	public function getManajemenKelas(){
-		
 		$listKelas 			= $this->ManajemenKelas_m->listing();
 		$data['listKelas'] 	= $listKelas;
 

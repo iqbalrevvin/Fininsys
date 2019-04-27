@@ -7,9 +7,9 @@
     </div>
 </div>
 <input type="hidden" id="dataID" value="<?= $kelas->idKelas ?>"></input>
+
 <script>
 	$(document).ready(function() {
-
 		kontenView()
 		function kontenView(){
 			var DatatableHtmlTableDemo = {
@@ -127,6 +127,7 @@
               }
           });
         } 
+       
 
         /*TOMBOL RELOAD*/
         $(document).on('click', '#reloadTabel', function(e) {
@@ -138,27 +139,23 @@
 	        $id     = $(this).data('id');
 	        $nama 	= $(this).data('nama');
 	        //$noIdnt = $(this).data('idnt');
-	      
-		   
-		        $("#loadKeluarKelas"+$id).html("<img src='<?= base_url('assets/image/loading.gif') ?>' width='35' height='35'>");
-		        //$('#loadKeluarKelas'+$id).show();
-		        $.ajax({
-		            type: "POST",
-		            url: '<?= base_url('ManajemenKelas/KelolaKelas/keluarKelas') ?>',
-		            async: true,
-		            data: {
-		                NIK_pd 			: $id,
-		                keluar    		: 1
-		            },
-		            success: function(){
-		                /*swal("Deleted!", "Data Tenaga Pendidik Bernama : \""+$tenpen+"\" Berhasil di Hapus", "success");*/
-		                toastr.error("\""+$nama+"\" Berhasil Dikeluarkan Dari Kelas ", "Keluar Dari Kelas");
-		                kontenView();
-		                $("#loadKeluarKelas").hide();
-		            }
-		        });
-		    
-		    
+	        $("#loadKeluarKelas"+$id).html("<img src='<?= base_url('assets/image/loading.gif') ?>' width='35' height='35'>");
+	        //$('#loadKeluarKelas'+$id).show();
+	        $.ajax({
+	            type: "POST",
+	            url: '<?= base_url('ManajemenKelas/KelolaKelas/keluarKelas') ?>',
+	            async: true,
+	            data: {
+	                NIK_pd 			: $id,
+	                keluar    		: 1
+	            },
+	            success: function(){
+	                /*swal("Deleted!", "Data Tenaga Pendidik Bernama : \""+$tenpen+"\" Berhasil di Hapus", "success");*/
+	                toastr.error("\""+$nama+"\" Berhasil Dikeluarkan Dari Kelas ", "Keluar Dari Kelas");
+	                kontenView();
+	                $("#loadKeluarKelas").hide();
+	            }
+	        });
 		});
 	});
 
