@@ -65,8 +65,8 @@
 	      		success: function(){
 	      			mApp.unblock("#portlet"+id);
 	      			$("div[data-id='"+id+"']").fadeOut("fast",function(){
-						$(this).remove();
-					});
+						    $(this).remove();
+					     });
 	      			head();
 					//$("small[data-id='jumlahSiswa']").load();
 					/*kontenView();*/

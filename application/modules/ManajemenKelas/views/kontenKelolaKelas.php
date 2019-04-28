@@ -78,7 +78,7 @@
             <tbody>
                 <?php $no = 1; ?>
                 <?php foreach ($dataSiswaKelas as $siswa): ?>
-                    <tr>
+                    <tr data-id=<?= $siswa->NIK_pd ?>>
                         <td><?= $no++ ?></td>
                         <td><b><?= $siswa->nama_pd ?></b></td>
                         <td><?= $siswa->jk_pd ?></td>
@@ -117,7 +117,7 @@
                 </button>
             </div>
          
-                <div class="m-portlet m-portlet--mobile">
+                <div class="m-portlet m-portlet--mobile" id="kontenTambahSiswa">
                     <div class="m-portlet__head">
                         <div class="m-portlet__head-caption">
                             <div class="m-portlet__head-title">
@@ -126,10 +126,11 @@
                                 </h3>
                             </div>
                         </div>
+
                         <div class="m-portlet__head-tools">
                             <ul class="m-portlet__nav">
                                 <li class="m-portlet__nav-item">
-                                    <button type="button" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air">
+                                    <button type="button" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air" id="btnTambahSiswa">
                                         <span>
                                             <i class="la la-plus"></i>
                                             <span>Tambahkan</span>

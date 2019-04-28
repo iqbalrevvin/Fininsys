@@ -7,6 +7,7 @@
     </div>
 </div>
 <input type="hidden" id="dataID" value="<?= $kelas->idKelas ?>"></input>
+<input type="hidden" id="namaKelas" value="<?= $kelas->nama_kelas ?>"></input>
 
 <script>
 	$(document).ready(function() {
@@ -159,13 +160,70 @@
 	            success: function(){
 	                /*swal("Deleted!", "Data Tenaga Pendidik Bernama : \""+$tenpen+"\" Berhasil di Hapus", "success");*/
 	                toastr.error("\""+$nama+"\" Berhasil Dikeluarkan Dari Kelas ", "Keluar Dari Kelas");
-	                kontenView();
+	                $("tr[data-id='"+$id+"']").fadeOut("slow",function(){
+						    $(this).remove();
+					     });
 	                $("#loadKeluarKelas").hide();
 	            }
 	        });
 		});
+		/*TOMBOL TAMBAH SISWA KE KELAS*/
+    	$(document).on('click', '#btnTambahSiswa', function() {
+    		var namaKelas = $('#namaKelas').val();
+    		var list_id = [];
+    		$(".data-check:checked").each(function() {
+            	list_id.push(this.value);
+    		});
+    		if(list_id.length > 0){
+	    		swal({
+			        title: "KONFIRMASI TINDAKAN!",
+			        text: +list_id.length+" Data Siswa Akan Dimasukan Kedalam Kelas "+namaKelas,
+			        type: "info",
+			        showCancelButton: true,
+			        confirmButtonColor: "#DD6B55",
+			        confirmButtonText: "Ya, Lanjutkan!",
+			        cancelButtonText: "Tidak, Kembali!",
+			        closeOnConfirm: false,
+			        closeOnCancel: false
+	    		}).then((result) => {
+	      			if(result.value) {
+	        			mApp.block("#kontenTambahSiswa", {
+				          overlayColor: "#000000",
+				          type: "loader",
+				          state: "primary",
+				          message: "<b>Menambakan Data Siswa Ke Kelas "+namaKelas+"...</b>"
+				      	});
+	        			$.ajax({
+			                type: "POST",
+			                data: {id:list_id},
+			                url: "<?php echo site_url('person/ajax_bulk_delete')?>",
+			                dataType: "JSON",
+			                success: function(data)
+			                {
+			                    if(data.status){
+			                        kontenView();
+			                        mApp.unblock("#kontenTambahSiswa");
+			                    }
+			                    else{
+			                        alert('Gagal Memproses Data');
+			                        mApp.unblock("#kontenTambahSiswa");
+			                    }
+			                    
+			                },
+			                error: function (jqXHR, textStatus, errorThrown){
+			                    alert('Gagal Memproses Data, Coba Kembali Atau Hubungi Pihak Pengembang!');
+			                    mApp.unblock("#kontenTambahSiswa");
+			                }
+			            });
+	      			}/*KONDISI JIKA MEMILIH YA UNTUK MEMASUKAN DATA SISWA*/
+	    		});
+	    	}else{
+	    		toastr.error("Pilih Terlebih Dahulu Siswa Yang Akan Dimasukan Ke Kelas "+namaKelas, "Pilih Siswa!");
+	    	}
+		});
+    /*---------------*/
 	});
 
-//LOAD TABEL DATA TENAGA PENDIDIK
+	
     
 </script>
