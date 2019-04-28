@@ -53,16 +53,19 @@
                             </span>
                         </span>
                     </a>
-                    <a href="#" id="reloadTabel" class="btn btn-lg btn-secondary m-btn m-btn--icon m-btn--icon-only m-btn--pill" title="Reload Tabel">
-                        <i class="flaticon-refresh"></i>
-                    </a>
+                    <button type="button" class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" id="reloadTabel">
+                        <span>
+                            <i class="flaticon-refresh"></i>
+                            <span>Muat Ulang</span>
+                        </span>
+                    </button>
                     <div class="m-separator m-separator--dashed d-xl-none"></div>
                 </div>
             </div>
         </div>
         <i>*Klik Tombol <b><i class="la la-trash"></i></b> Untuk Mengeuarkan Siswa Dari Kelas</i>
         <!--begin: Datatable -->
-        <table class="nasabah-datatable" id="" width="100%">
+        <table class="siswakelas-datatable" id="" width="100%">
             <thead>
                 <tr>
                     <th data-field="no">#</th>
@@ -103,113 +106,6 @@
     </div>
 </div>
 
-<!--begin::Modal-->
-<div class="modal fade" id="viewModalSiswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h6 class="modal-title" id="exampleModalLabel">
-                    <i>Pilih Siswa Lalu Klik Tombol</i> <b class="text-info"><i class="la la-plus"></i> Tambahkan</b>
-                </h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-         
-                <div class="m-portlet m-portlet--mobile" id="kontenTambahSiswa">
-                    <div class="m-portlet__head">
-                        <div class="m-portlet__head-caption">
-                            <div class="m-portlet__head-title">
-                                <h3 class="m-portlet__head-text">
-                                    Daftar Siswa
-                                </h3>
-                            </div>
-                        </div>
 
-                        <div class="m-portlet__head-tools">
-                            <ul class="m-portlet__nav">
-                                <li class="m-portlet__nav-item">
-                                    <button type="button" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air" id="btnTambahSiswa">
-                                        <span>
-                                            <i class="la la-plus"></i>
-                                            <span>Tambahkan</span>
-                                        </span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="m-portlet__body">
-                        <!--begin: Datatable -->
-                        <table class="table table-striped- table-bordered table-hover table-checkable" id="tabelPilihSiswa">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <label class="m-checkbox m-checkbox--bold m-checkbox--state-success">
-                                            <input type="checkbox" id="check-all"><small>Pilih Semua</small>
-                                                <span></span>
-                                        </label>
-                                    </th>
-                                    <th>NIK Siswa</th>
-                                    <th>Jenis Kelamin</th>
-                                    <th>NIPD</th>
-                                    <th>NISN</th>
-                                    <th>Sekolah</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- END EXAMPLE TABLE PORTLET-->
-          
-        </div>
-    </div>
-</div>
 
 <!--end::Modal-->
-
-<script>
-var DatatablesBasicPaginations = {
-    init: function() {
-        tabel = $("#tabelPilihSiswa").DataTable({
-            responsive:!0,
-            "processing": true, //Feature control the processing indicator.
-            "serverSide": true, //Feature control DataTables' server-side processing mode.
-            "order": [], //Initial no order.
-            //scrollY: "50vh",
-            //scrollX: !0,
-
-            scrollCollapse: !0,
-            pagingType: "full_numbers",
-            "ajax": {
-                "url": "<?= site_url('ManajemenKelas/KelolaKelas/listPilihSiswa') ?>",
-                "type": "POST"
-            },
-            "columnDefs": [
-                { 
-                    "targets": [ 0 ], //first column
-                    "orderable": false, //set not orderable
-                },
-                { 
-                    "targets": [ -1 ], //last column
-                    "orderable": true, //set not orderable
-                },
-
-            ],
-        })
-    }
-};
-//check all
-$("#check-all").click(function () {
-    $(".data-check").prop('checked', $(this).prop('checked'));
-});
-jQuery(document).ready(function() {
-    DatatablesBasicPaginations.init()
-});
-</script>

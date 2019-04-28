@@ -6,17 +6,97 @@
         </span>
     </div>
 </div>
+<!--begin::Modal-->
+<div class="modal fade" id="viewModalSiswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">
+                    <i>Pilih Siswa Lalu Klik Tombol</i> <b class="text-info"><i class="la la-plus"></i> Tambahkan</b>
+                </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+         
+                <div class="m-portlet m-portlet--mobile" id="kontenTambahSiswa">
+                    <div class="m-portlet__head">
+                        <div class="m-portlet__head-caption">
+                            <div class="m-portlet__head-title">
+                                <h3 class="m-portlet__head-text">
+                                    Daftar Siswa
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div class="m-portlet__head-tools">
+                            <ul class="m-portlet__nav">
+                                <li class="m-portlet__nav-item">
+                                    <button type="button" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air" id="btnTambahSiswa">
+                                        <span>
+                                            <i class="la la-plus"></i>
+                                            <span>Tambahkan</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="m-portlet__nav-item">
+                                    <button type="button" class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" 
+                                        id="reloadTabelPilihSiswa">
+                                        <span>
+                                            <i class="flaticon-refresh"></i>
+                                            <span>Muat Ulang</span>
+                                        </span>
+                                    </button>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="m-portlet__body">
+                        <!--begin: Datatable -->
+                        <table class="table table-striped- table-bordered table-hover table-checkable" id="tabelPilihSiswa">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label class="m-checkbox m-checkbox--bold m-checkbox--state-success">
+                                            <input type="checkbox" id="check-all"><small>Pilih Semua</small>
+                                                <span></span>
+                                        </label>
+                                    </th>
+                                    <th>NIK Siswa</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>NIPD</th>
+                                    <th>NISN</th>
+                                    <th>Sekolah</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- END EXAMPLE TABLE PORTLET-->
+          
+        </div>
+    </div>
+</div>
+
 <input type="hidden" id="dataID" value="<?= $kelas->idKelas ?>"></input>
 <input type="hidden" id="namaKelas" value="<?= $kelas->nama_kelas ?>"></input>
 
 <script>
 	$(document).ready(function() {
 		kontenView()
+		DatatablesBasicPaginations.init()
 		function kontenView(){
 			var DatatableHtmlTableDemo = {
 	            init: function() {
 	                var e;
-	                e = $(".nasabah-datatable").mDatatable({
+	                e = $(".siswakelas-datatable").mDatatable({
 	                    data: {
 	                        saveState: {
 	                            cookie: !1
@@ -142,6 +222,11 @@
         	kontenView().load();
     	});
     	/*---------------*/
+    	/*TOMBOL RELOAD TABEL PILIH SISWA*/
+        $(document).on('click', '#reloadTabelPilihSiswa', function(e) {
+        	 tabel.ajax.reload(null,false); //reload datatable ajax 
+    	});
+    	/*---------------*/
     	//TOMBOL DELETE TENAGA PENDIDIK
 	    $(document).on('click', '#btnKeluar', function() {
 	        $id     = $(this).data('id');
@@ -160,16 +245,18 @@
 	            success: function(){
 	                /*swal("Deleted!", "Data Tenaga Pendidik Bernama : \""+$tenpen+"\" Berhasil di Hapus", "success");*/
 	                toastr.error("\""+$nama+"\" Berhasil Dikeluarkan Dari Kelas ", "Keluar Dari Kelas");
-	                $("tr[data-id='"+$id+"']").fadeOut("slow",function(){
+	                $("tr[data-id='"+$id+"']").fadeOut("fast",function(){
 						    $(this).remove();
 					     });
 	                $("#loadKeluarKelas").hide();
 	            }
 	        });
 		});
+
 		/*TOMBOL TAMBAH SISWA KE KELAS*/
     	$(document).on('click', '#btnTambahSiswa', function() {
-    		var namaKelas = $('#namaKelas').val();
+    		var namaKelas 	= $('#namaKelas').val();
+    		var idKelas 	= $('#dataID').val();
     		var list_id = [];
     		$(".data-check:checked").each(function() {
             	list_id.push(this.value);
@@ -183,8 +270,7 @@
 			        confirmButtonColor: "#DD6B55",
 			        confirmButtonText: "Ya, Lanjutkan!",
 			        cancelButtonText: "Tidak, Kembali!",
-			        closeOnConfirm: false,
-			        closeOnCancel: false
+
 	    		}).then((result) => {
 	      			if(result.value) {
 	        			mApp.block("#kontenTambahSiswa", {
@@ -195,17 +281,24 @@
 				      	});
 	        			$.ajax({
 			                type: "POST",
-			                data: {id:list_id},
-			                url: "<?php echo site_url('person/ajax_bulk_delete')?>",
+			                data: {
+			                	id:list_id,
+			                	kelasID:idKelas
+			                },
+			                url: "<?php echo site_url('ManajemenKelas/KelolaKelas/tambahSiswaKelas')?>",
 			                dataType: "JSON",
 			                success: function(data)
 			                {
+
 			                    if(data.status){
+			                    	mApp.unblock("#kontenTambahSiswa");
+			                    	/*$('#viewModalSiswa').modal('hide');
+			                    	$('#modalwindow').modal('hide');*/
+			                    	tabel.ajax.reload(null,false); //reload datatable ajax 
 			                        kontenView();
-			                        mApp.unblock("#kontenTambahSiswa");
 			                    }
 			                    else{
-			                        alert('Gagal Memproses Data');
+			                        alert('Gagal Memproses Data, Muat Ulang Halaman Lalu Coba Kembali!');
 			                        mApp.unblock("#kontenTambahSiswa");
 			                    }
 			                    
@@ -223,7 +316,41 @@
 		});
     /*---------------*/
 	});
+	//TABEL SISWA BELLUM MASUK KELAS
+	var DatatablesBasicPaginations = {
+	    init: function() {
+	        tabel = $("#tabelPilihSiswa").DataTable({
+	            responsive:!0,
+	            "processing": true, //Feature control the processing indicator.
+	            "serverSide": true, //Feature control DataTables' server-side processing mode.
+	            "order": [], //Initial no order.
+	            //scrollY: "50vh",
+	            //scrollX: !0,
 
-	
+	            scrollCollapse: !0,
+	            pagingType: "full_numbers",
+	            "ajax": {
+	                "url": "<?= site_url('ManajemenKelas/KelolaKelas/listPilihSiswa') ?>",
+	                "type": "POST"
+	            },
+	            "columnDefs": [
+	                { 
+	                    "targets": [ 0 ], //first column
+	                    "orderable": false, //set not orderable
+	                },
+	                { 
+	                    "targets": [ -1 ], //last column
+	                    "orderable": true, //set not orderable
+	                },
+
+	            ],
+	        })
+	    }
+	};
+
+	//check all
+	$("#check-all").click(function () {
+	    $(".data-check").prop('checked', $(this).prop('checked'));
+	});
     
 </script>

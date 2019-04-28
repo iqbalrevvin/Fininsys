@@ -78,6 +78,20 @@ class KelolaKelas extends CI_Controller {
 		echo json_encode($output);
 	}
 
+	public function tambahSiswaKelas(){
+		$listPD = $this->input->post('id');
+		$kelasID = $this->input->post('kelasID');
+		foreach ($listPD as $id) {
+			$data = [
+			    'NIK_pd' => $id,
+			    'idKelas' => $kelasID
+			];
+			$this->ManajemenKelas_m->tambahSiswaKelas($data);
+		}
+		echo json_encode(array("status" => TRUE));
+
+	}
+
 }
 
 /* End of file KelolaKelas.php */

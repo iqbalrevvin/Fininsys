@@ -116,6 +116,11 @@ class ManajemenKelas_m extends CI_Model {
 		return $this->db->count_all_results();
 	}
 
+	public function tambahSiswaKelas($data){
+		$this->db->where('NIK_pd', $data['NIK_pd']);
+		$this->db->update('detail_peserta_didik', $data);
+	}
+
 
 }
 
