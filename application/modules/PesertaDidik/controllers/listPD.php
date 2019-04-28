@@ -26,13 +26,14 @@ class Listpd extends CI_Controller {
 		$crud->display_as('facebook', 'Link Facebook');
 		$crud->display_as('instagram', 'Link Instagram');
 		$crud->display_as('twitter', 'Link Twitter');
-		$crud->columns('NIK_pd', 'nama_pd', 'tempat_lahir_pd', 'tanggal_lahir_pd', 'jk_pd', 'no_telp_pd');
+		$crud->display_as('idSekolah', 'Sekolah');
+		$crud->columns('NIK_pd', 'nama_pd', 'tempat_lahir_pd', 'tanggal_lahir_pd', 'jk_pd', 'no_telp_pd', 'idSekolah');
 		$crud->add_action('Profil', 'fa fa-user', '', '',array($this,'profilLink'));
 		$crud->set_rules('NIK_pd','NIK Siswa','required|numeric|max_length[16]|min_length[16]');
 		$crud->unset_read();
 
 		/*RELASI*/
-
+		$crud->set_relation('idSekolah','sekolah','nama_sekolah');
 		/*-----------------------------------------------*/
 		$crud->unset_add_fields('kelurahan','kecamatan', 'kota', 'provinsi', 'alamat');
 		$crud->unset_edit_fields('kelurahan','kecamatan', 'kota', 'provinsi', 'alamat');

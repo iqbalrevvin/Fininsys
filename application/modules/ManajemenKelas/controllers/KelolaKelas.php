@@ -52,7 +52,7 @@ class KelolaKelas extends CI_Controller {
 		foreach ($list as $person) {
 			$no++;
 			$row = array();
-			$row[] = '<label class="m-checkbox m-checkbox--bold m-checkbox--state-success">
+			$row[] = '<label class="m-checkbox m-checkbox--solid m-checkbox--success">
 						<input type="checkbox" class="m-checkbox m-checkbox--bold m-checkbox--state-success data-check" value="'.$person->NIK_pd.'"> Pilih
 						<span></span>
                       </label>
@@ -61,7 +61,7 @@ class KelolaKelas extends CI_Controller {
 			$row[] = $person->jk_pd;
 			$row[] = $person->nisn;
 			$row[] = $person->nipd;
-			$row[] = $person->pindahan;
+			$row[] = $person->nama_sekolah;
 
 
 		

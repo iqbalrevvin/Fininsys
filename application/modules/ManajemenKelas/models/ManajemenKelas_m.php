@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ManajemenKelas_m extends CI_Model {
 	var $table = 'peserta_didik';
-	var $column_order = array(null,'nama_pd','jk_pd','','',''); //set column field database for datatable orderable
-	var $column_search = array('detail_peserta_didik.NIK_pd','nama_pd','nipd'); //set column field database for datatable searchable just firstname , lastname , address are searchable
+	var $column_order = array(null,'nama_pd','jk_pd','nipd','nisn', 'nama_sekolah'); //set column field database for datatable orderable
+	var $column_search = array('detail_peserta_didik.NIK_pd','nama_pd','nipd', 'nama_sekolah'); //set column field database for datatable searchable just firstname , lastname , address are searchable
 	var $order = array('peserta_didik.NIK_pd' => 'desc'); // default order 
 
 	public function getNamaKelas($idKelas){
@@ -41,6 +41,7 @@ class ManajemenKelas_m extends CI_Model {
 		$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
 		$this->db->join('kelas', 'detail_peserta_didik.idKelas = kelas.idKelas', 'left');
 		$this->db->join('program_studi', 'kelas.idProdi = program_studi.idProdi', 'left');
+		$this->db->join('sekolah', 'peserta_didik.idSekolah = sekolah.idSekolah', 'left');
 		/*---------*/
 		$this->db->order_by('peserta_didik.NIK_pd', 'desc');
 		$query = $this->db->get();
@@ -59,6 +60,7 @@ class ManajemenKelas_m extends CI_Model {
 		
 		$this->db->from($this->table);
 		$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
+		$this->db->join('sekolah', 'peserta_didik.idSekolah= sekolah.idSekolah', 'left');
 		$this->db->where('detail_peserta_didik.idKelas', Null);
 
 		$i = 0;

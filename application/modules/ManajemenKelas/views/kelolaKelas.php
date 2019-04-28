@@ -56,9 +56,9 @@
 	                            field: "no",
 	                            //title: "No.",
 	                            //locked: {left: 'lg'},
-	                            sortable: true,
-	                            sortable: 'asc',
-	                            width: 10,
+	                            //sortable: true,
+	                            //sortable: 'asc',
+	                            width: 20,
 	                            //responsive: {visible: 'lg'},
 	                        },
 	                        {
@@ -66,7 +66,7 @@
 	                            //title: "Nama Tenaga Pendidik",
 	                            //locked: {left: 'lg'},
 	                            sortable: true,
-	                            sortable: 'asc',
+	                            //sortable: 'asc',
 	                            width: 175,
 	                            //responsive: {visible: 'lg'},
 	                        },
@@ -96,10 +96,17 @@
 	                            //responsive: {visible: 'lg'},
 	                        },
 	                        {
-	                            field: "prodi",
+	                            field: "sekolah",
 	                            //sortable: 'asc',
 	                            textAlign: "left",
-	                            width: 100,
+	                            width: 200,
+	                            //responsive: {visible: 'lg'},
+	                        },
+	                        {
+	                            field: "action",
+	                            //sortable: 'asc',
+	                            textAlign: "left",
+	                            width: 75,
 	                            //responsive: {visible: 'lg'},
 	                        },
 	                        
@@ -127,7 +134,7 @@
               }
           });
         } 
-       
+
 
         /*TOMBOL RELOAD*/
         $(document).on('click', '#reloadTabel', function(e) {

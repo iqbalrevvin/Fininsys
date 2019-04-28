@@ -71,7 +71,7 @@
                     <th data-field="noIdentitas">No. Identitas</th>
                     <th data-field="NIPD">NIPD</th>
                     <th data-field="NISN">NISN</th>
-                    <th data-field="prodi">Program Studi</th>
+                    <th data-field="sekolah">Sekolah</th>
                     <th data-field="action">Act</th>
                 </tr>
             </thead>
@@ -85,7 +85,7 @@
                         <td><?= $siswa->NIK_pd ?></td>
                         <td><?= value($siswa->nipd) ?></td>
                         <td><?= value($siswa->nisn) ?></td>
-                        <td><?= $siswa->nama_prodi ?></td>
+                        <td><?= $siswa->nama_sekolah ?></td>
                         <td align="left" class="m-datatable__cell">
                             <button id="btnKeluar" class="m-portlet__nav-link btn m-btn m-btn--hover-danger m-btn--icon m-btn--icon-only m-btn--pill" 
                                      title="Keluarkan <?= $siswa->nama_pd ?> Dari Kelas <?= $kelas->nama_kelas ?>" 
@@ -109,12 +109,14 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h6 class="modal-title" id="exampleModalLabel"><i>Pilih Siswa Lalu Klik Tombol <b>Tambahkan</b></i></h6>
+                <h6 class="modal-title" id="exampleModalLabel">
+                    <i>Pilih Siswa Lalu Klik Tombol</i> <b class="text-info"><i class="la la-plus"></i> Tambahkan</b>
+                </h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="m-content">
+         
                 <div class="m-portlet m-portlet--mobile">
                     <div class="m-portlet__head">
                         <div class="m-portlet__head-caption">
@@ -127,7 +129,7 @@
                         <div class="m-portlet__head-tools">
                             <ul class="m-portlet__nav">
                                 <li class="m-portlet__nav-item">
-                                    <a href="#" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air">
+                                    <button type="button" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air">
                                         <span>
                                             <i class="la la-plus"></i>
                                             <span>Tambahkan</span>
@@ -144,7 +146,7 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        <label class="m-checkbox m-checkbox--solid m-checkbox--success">
+                                        <label class="m-checkbox m-checkbox--bold m-checkbox--state-success">
                                             <input type="checkbox" id="check-all"><small>Pilih Semua</small>
                                                 <span></span>
                                         </label>
@@ -153,8 +155,7 @@
                                     <th>Jenis Kelamin</th>
                                     <th>NIPD</th>
                                     <th>NISN</th>
-                                    <th>Program Studi</th>
-
+                                    <th>Sekolah</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -165,7 +166,7 @@
                 </div>
 
                 <!-- END EXAMPLE TABLE PORTLET-->
-            </div>
+          
         </div>
     </div>
 </div>
