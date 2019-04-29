@@ -296,6 +296,7 @@
 			                    	$('#modalwindow').modal('hide');*/
 			                    	tabel.ajax.reload(null,false); //reload datatable ajax 
 			                        kontenView();
+			                        toastr.success("Siswa Berhasil Ditambahkan Ke Kelas "+namaKelas, "Siswa Ditambahkan");
 			                    }
 			                    else{
 			                        alert('Gagal Memproses Data, Muat Ulang Halaman Lalu Coba Kembali!');
