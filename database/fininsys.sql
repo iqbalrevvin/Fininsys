@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Apr 2019 pada 09.06
--- Versi server: 10.1.34-MariaDB
--- Versi PHP: 5.6.37
+-- Generation Time: 29 Apr 2019 pada 02.02
+-- Versi Server: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -120,10 +120,10 @@ CREATE TABLE `detail_peserta_didik` (
 --
 
 INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `tgl_masuk`, `nisn`, `nipd`, `pindahan`, `tgl_pindah`, `pindah_di_semester`, `tidak_naik_kelas`, `tidak_naik_semester`, `status_pd`) VALUES
-(21, '8080808080808080', 3, NULL, NULL, '171810234', NULL, NULL, '', 'Tidak', '', 'Aktif'),
-(24, '1234567893234987', 1, NULL, NULL, '171810005', NULL, NULL, '', 'Tidak', '', 'Aktif'),
-(25, '2341123576867867', 2, NULL, NULL, NULL, NULL, NULL, '', 'Tidak', '', 'Aktif'),
-(26, '5656453453113434', 2, NULL, NULL, NULL, NULL, NULL, '', 'Tidak', '', 'Aktif'),
+(21, '8080808080808080', NULL, NULL, NULL, '171810234', NULL, NULL, '', 'Tidak', '', 'Aktif'),
+(24, '1234567893234987', NULL, NULL, NULL, '171810005', NULL, NULL, '', 'Tidak', '', 'Aktif'),
+(25, '2341123576867867', NULL, NULL, NULL, NULL, NULL, NULL, '', 'Tidak', '', 'Aktif'),
+(26, '5656453453113434', NULL, NULL, NULL, NULL, NULL, NULL, '', 'Tidak', '', 'Aktif'),
 (27, '3205170511050010', NULL, NULL, NULL, NULL, NULL, NULL, '', 'Tidak', '', 'Aktif'),
 (28, '3205212702040000', NULL, NULL, NULL, NULL, NULL, NULL, '', 'Tidak', '', 'Aktif'),
 (29, '3205211809040000', NULL, NULL, NULL, NULL, NULL, NULL, '', 'Tidak', '', 'Aktif'),
@@ -90872,6 +90872,7 @@ CREATE TABLE `ortu_tenaga_pendidik` (
 
 CREATE TABLE `peserta_didik` (
   `idPd` int(111) NOT NULL,
+  `idSekolah` int(11) DEFAULT NULL,
   `NIK_pd` char(16) NOT NULL,
   `nama_pd` varchar(100) NOT NULL,
   `jk_pd` enum('Laki-Laki','Perempuan') NOT NULL,
@@ -90895,36 +90896,36 @@ CREATE TABLE `peserta_didik` (
 -- Dumping data untuk tabel `peserta_didik`
 --
 
-INSERT INTO `peserta_didik` (`idPd`, `NIK_pd`, `nama_pd`, `jk_pd`, `tempat_lahir_pd`, `tanggal_lahir_pd`, `agama`, `alamat`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `no_telp_pd`, `email_pd`, `foto_pd`, `facebook`, `instagram`, `twitter`) VALUES
-(18, '8080808080808080', 'Tester', 'Laki-Laki', 'Garut', '2018-11-12', 'Islam', '', NULL, NULL, NULL, '', '', '', '', '', '', ''),
-(21, '1234567893234987', 'Ucup Syahrudin', 'Laki-Laki', 'Garut', '2019-04-16', 'Islam', '', NULL, NULL, NULL, '', '081223588347', '', '', NULL, NULL, NULL),
-(22, '2341123576867867', 'Jajang Hidayat', 'Laki-Laki', 'Garut', '2019-04-09', 'Islam', '', NULL, NULL, NULL, '', '082344434543', '', '', NULL, NULL, NULL),
-(23, '5656453453113434', 'Ranti Suranti', 'Perempuan', 'Garut', '2019-04-14', 'Islam', '', NULL, NULL, NULL, '', '0823444788347', '', '', NULL, NULL, NULL),
-(24, '3205170511050010', 'Achmar Farid Ryven', 'Laki-Laki', 'Garut', '2006-04-04', 'Islam', '', NULL, NULL, NULL, '', '085277889900', '', '', NULL, NULL, NULL),
-(25, '3205212702040000', 'Adi Tia Lesmana', 'Laki-Laki', 'Garut', '2004-02-27', 'Islam', '', NULL, NULL, NULL, '', '085123456789', '', '', NULL, NULL, NULL),
-(26, '3205211809040000', 'Agus Sukarno', 'Laki-Laki', 'Garut', '2004-10-18', 'Islam', '', NULL, NULL, NULL, '', '085213456543', '', '', NULL, NULL, NULL),
-(27, '3205211003060000', 'Aldi Ahmad Muharom', 'Laki-Laki', 'Garut', '2006-03-20', 'Islam', '', NULL, NULL, NULL, '', '085212345678', '', '', NULL, NULL, NULL),
-(28, '3273024304060010', 'Alifa Mutiara Zahra', 'Perempuan', 'Garut', '2006-04-03', 'Islam', '', NULL, NULL, NULL, '', '08212345678', '', '', NULL, NULL, NULL),
-(29, '3205210206050000', 'Aliyansah', 'Laki-Laki', 'Garut', '2005-06-02', 'Islam', '', NULL, NULL, NULL, '', '08128765345', '', '', NULL, NULL, NULL),
-(30, '3205216309060000', 'Alpa Resta', 'Perempuan', 'Garut', '2006-02-24', 'Islam', '', NULL, NULL, NULL, '', '082176534356', '', '', NULL, NULL, NULL),
-(31, '3205056106050010', 'Alysha Nurfiddina Putri Muslim', 'Perempuan', 'Garut', '2006-06-21', 'Islam', '', NULL, NULL, NULL, '', '082165748379', '', '', NULL, NULL, NULL),
-(32, '3211116207070000', 'Annisa Malika Utami', 'Perempuan', 'Garut', '2007-07-22', 'Islam', '', NULL, NULL, NULL, '', '0987653674837', '', '', NULL, NULL, NULL),
-(33, '3205176104040010', 'Annisa Wangi Nusantara', 'Perempuan', 'Garut', '2004-04-21', 'Islam', '', NULL, NULL, NULL, '', '081267854352', '', '', NULL, NULL, NULL),
-(34, '3205172407050000', 'Ardy Putra Nurjaman', 'Laki-Laki', 'Garut', '0000-00-00', 'Islam', '', NULL, NULL, NULL, '', '089765432453', '', '', NULL, NULL, NULL),
-(35, '3205210911040000', 'Arya Prasetya', 'Laki-Laki', 'Timika', '2002-12-28', 'Islam', '', NULL, NULL, NULL, '', '082367898223', '', '', NULL, NULL, NULL),
-(36, '3276055002040010', 'Aryani Febriyanti', 'Perempuan', 'Garut', '2004-02-10', 'Islam', '', NULL, NULL, NULL, '', '082187645367', '', '', NULL, NULL, NULL),
-(37, '3204096003060000', 'Aulia Khoiru Nisa', 'Perempuan', 'Garut', '2006-03-20', 'Islam', '', NULL, NULL, NULL, '', '082134567893', '', '', NULL, NULL, NULL),
-(38, '3211116111050000', 'Aulia Putri Madinah', 'Perempuan', 'Garut', '2005-11-21', 'Islam', '', NULL, NULL, NULL, '', '081234523456', '', '', NULL, NULL, NULL),
-(39, '3207035502780000', 'Azri Akbar Khoiri', 'Laki-Laki', 'Garut', '2005-05-01', 'Islam', '', NULL, NULL, NULL, '', '09873637463722', '', '', NULL, NULL, NULL),
-(40, '3205210506050010', 'Bayu Permana', 'Laki-Laki', 'Garut', '2005-05-05', 'Islam', '', NULL, NULL, NULL, '', '089374846387', '', '', NULL, NULL, NULL),
-(41, '3205210509050000', 'Bima Budiarto Mulya', 'Laki-Laki', 'Garut', '2005-09-05', 'Islam', '', NULL, NULL, NULL, '', '082137465847', '', '', NULL, NULL, NULL),
-(42, '3204290310050000', 'Boyke Rofiqu Ikhwan', 'Laki-Laki', 'Garut', '2005-10-03', 'Islam', '', NULL, NULL, NULL, '', '082183746574', '', '', NULL, NULL, NULL),
-(43, '3205211404030000', 'Cep Lham  Nurhakim', 'Laki-Laki', 'Garut', '2003-04-14', 'Islam', '', NULL, NULL, NULL, '', '081267363546', '', '', NULL, NULL, NULL),
-(44, '3205214408050010', 'Dea Anita', 'Perempuan', 'Garut', '2004-08-04', 'Islam', '', NULL, NULL, NULL, '', '082176534256', '', '', NULL, NULL, NULL),
-(45, '3204546070500000', 'Devana Kayyisa Wibawa', 'Perempuan', 'Garut', '2005-07-06', 'Islam', '', NULL, NULL, NULL, '', '082174657483', '', '', NULL, NULL, NULL),
-(46, '3205215611030000', 'Devi Sapitri', 'Perempuan', 'Garut', '2003-11-16', 'Islam', '', NULL, NULL, NULL, '', '081236456575', '', '', NULL, NULL, NULL),
-(47, '3205214605050000', 'Dewi Mulyani', 'Perempuan', 'Garut', '2005-05-06', 'Islam', '', NULL, NULL, NULL, '', '098465768574', '', '', NULL, NULL, NULL),
-(48, '3205214104060000', 'Dinda Apriliani', 'Perempuan', 'Garut', '2006-04-19', 'Islam', '', NULL, NULL, NULL, '', '081236475867', '', '', NULL, NULL, NULL);
+INSERT INTO `peserta_didik` (`idPd`, `idSekolah`, `NIK_pd`, `nama_pd`, `jk_pd`, `tempat_lahir_pd`, `tanggal_lahir_pd`, `agama`, `alamat`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `no_telp_pd`, `email_pd`, `foto_pd`, `facebook`, `instagram`, `twitter`) VALUES
+(18, 1, '8080808080808080', 'Tester', 'Laki-Laki', 'Garut', '2018-11-12', 'Islam', '', NULL, NULL, NULL, '', '64554356345634', '', '', NULL, NULL, NULL),
+(21, 1, '1234567893234987', 'Ucup Syahrudin', 'Laki-Laki', 'Garut', '2019-04-16', 'Islam', '', NULL, NULL, NULL, '', '081223588347', '', '', NULL, NULL, NULL),
+(22, 1, '2341123576867867', 'Jajang Hidayat', 'Laki-Laki', 'Garut', '2019-04-09', 'Islam', '', NULL, NULL, NULL, '', '082344434543', '', '', NULL, NULL, NULL),
+(23, 1, '5656453453113434', 'Ranti Suranti', 'Perempuan', 'Garut', '2019-04-14', 'Islam', '', NULL, NULL, NULL, '', '0823444788347', '', '', NULL, NULL, NULL),
+(24, 1, '3205170511050010', 'Achmar Farid Ryven', 'Laki-Laki', 'Garut', '2006-04-04', 'Islam', '', NULL, NULL, NULL, '', '085277889900', '', '', NULL, NULL, NULL),
+(25, 1, '3205212702040000', 'Adi Tia Lesmana', 'Laki-Laki', 'Garut', '2004-02-27', 'Islam', '', NULL, NULL, NULL, '', '085123456789', '', '', NULL, NULL, NULL),
+(26, 1, '3205211809040000', 'Agus Sukarno', 'Laki-Laki', 'Garut', '2004-10-18', 'Islam', '', NULL, NULL, NULL, '', '085213456543', '', '', NULL, NULL, NULL),
+(27, 1, '3205211003060000', 'Aldi Ahmad Muharom', 'Laki-Laki', 'Garut', '2006-03-20', 'Islam', '', NULL, NULL, NULL, '', '085212345678', '', '', NULL, NULL, NULL),
+(28, 1, '3273024304060010', 'Alifa Mutiara Zahra', 'Perempuan', 'Garut', '2006-04-03', 'Islam', '', NULL, NULL, NULL, '', '08212345678', '', '', NULL, NULL, NULL),
+(29, 1, '3205210206050000', 'Aliyansah', 'Laki-Laki', 'Garut', '2005-06-02', 'Islam', '', NULL, NULL, NULL, '', '08128765345', '', '', NULL, NULL, NULL),
+(30, 1, '3205216309060000', 'Alpa Resta', 'Perempuan', 'Garut', '2006-02-24', 'Islam', '', NULL, NULL, NULL, '', '082176534356', '', '', NULL, NULL, NULL),
+(31, 1, '3205056106050010', 'Alysha Nurfiddina Putri Muslim', 'Perempuan', 'Garut', '2006-06-21', 'Islam', '', NULL, NULL, NULL, '', '082165748379', '', '', NULL, NULL, NULL),
+(32, 1, '3211116207070000', 'Annisa Malika Utami', 'Perempuan', 'Garut', '2007-07-22', 'Islam', '', NULL, NULL, NULL, '', '0987653674837', '', '', NULL, NULL, NULL),
+(33, 1, '3205176104040010', 'Annisa Wangi Nusantara', 'Perempuan', 'Garut', '2004-04-21', 'Islam', '', NULL, NULL, NULL, '', '081267854352', '', '', NULL, NULL, NULL),
+(34, 1, '3205172407050000', 'Ardy Putra Nurjaman', 'Laki-Laki', 'Garut', '0000-00-00', 'Islam', '', NULL, NULL, NULL, '', '089765432453', '', '', NULL, NULL, NULL),
+(35, 1, '3205210911040000', 'Arya Prasetya', 'Laki-Laki', 'Timika', '2002-12-28', 'Islam', '', NULL, NULL, NULL, '', '082367898223', '', '', NULL, NULL, NULL),
+(36, 1, '3276055002040010', 'Aryani Febriyanti', 'Perempuan', 'Garut', '2004-02-10', 'Islam', '', NULL, NULL, NULL, '', '082187645367', '', '', NULL, NULL, NULL),
+(37, 1, '3204096003060000', 'Aulia Khoiru Nisa', 'Perempuan', 'Garut', '2006-03-20', 'Islam', '', NULL, NULL, NULL, '', '082134567893', '', '', NULL, NULL, NULL),
+(38, 1, '3211116111050000', 'Aulia Putri Madinah', 'Perempuan', 'Garut', '2005-11-21', 'Islam', '', NULL, NULL, NULL, '', '081234523456', '', '', NULL, NULL, NULL),
+(39, 1, '3207035502780000', 'Azri Akbar Khoiri', 'Laki-Laki', 'Garut', '2005-05-01', 'Islam', '', NULL, NULL, NULL, '', '09873637463722', '', '', NULL, NULL, NULL),
+(40, 1, '3205210506050010', 'Bayu Permana', 'Laki-Laki', 'Garut', '2005-05-05', 'Islam', '', NULL, NULL, NULL, '', '089374846387', '', '', NULL, NULL, NULL),
+(41, 1, '3205210509050000', 'Bima Budiarto Mulya', 'Laki-Laki', 'Garut', '2005-09-05', 'Islam', '', NULL, NULL, NULL, '', '082137465847', '', '', NULL, NULL, NULL),
+(42, 1, '3204290310050000', 'Boyke Rofiqu Ikhwan', 'Laki-Laki', 'Garut', '2005-10-03', 'Islam', '', NULL, NULL, NULL, '', '082183746574', '', '', NULL, NULL, NULL),
+(43, 1, '3205211404030000', 'Cep Lham  Nurhakim', 'Laki-Laki', 'Garut', '2003-04-14', 'Islam', '', NULL, NULL, NULL, '', '081267363546', '', '', NULL, NULL, NULL),
+(44, 1, '3205214408050010', 'Dea Anita', 'Perempuan', 'Garut', '2004-08-04', 'Islam', '', NULL, NULL, NULL, '', '082176534256', '', '', NULL, NULL, NULL),
+(45, 1, '3204546070500000', 'Devana Kayyisa Wibawa', 'Perempuan', 'Garut', '2005-07-06', 'Islam', '', NULL, NULL, NULL, '', '082174657483', '', '', NULL, NULL, NULL),
+(46, 1, '3205215611030000', 'Devi Sapitri', 'Perempuan', 'Garut', '2003-11-16', 'Islam', '', NULL, NULL, NULL, '', '081236456575', '', '', NULL, NULL, NULL),
+(47, 1, '3205214605050000', 'Dewi Mulyani', 'Perempuan', 'Garut', '2005-05-06', 'Islam', '', NULL, NULL, NULL, '', '098465768574', '', '', NULL, NULL, NULL),
+(48, 1, '3205214104060000', 'Dinda Apriliani', 'Perempuan', 'Garut', '2006-04-19', 'Islam', '', NULL, NULL, NULL, '', '081236475867', '', '', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -91123,7 +91124,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1555619530, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
-(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1556224001, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
+(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1556490263, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
 
 -- --------------------------------------------------------
 
@@ -91148,7 +91149,7 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `view_header_menu`
+-- Stand-in structure for view `view_header_menu`
 -- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `view_header_menu` (
@@ -91161,7 +91162,7 @@ CREATE TABLE `view_header_menu` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `view_menu`
+-- Stand-in structure for view `view_menu`
 -- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `view_menu` (
@@ -91200,31 +91201,31 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
--- Indeks untuk tabel `alamat_desa`
+-- Indexes for table `alamat_desa`
 --
 ALTER TABLE `alamat_desa`
   ADD PRIMARY KEY (`idDesa`);
 
 --
--- Indeks untuk tabel `alamat_kabupaten`
+-- Indexes for table `alamat_kabupaten`
 --
 ALTER TABLE `alamat_kabupaten`
   ADD PRIMARY KEY (`idKabupaten`);
 
 --
--- Indeks untuk tabel `alamat_kecamatan`
+-- Indexes for table `alamat_kecamatan`
 --
 ALTER TABLE `alamat_kecamatan`
   ADD PRIMARY KEY (`idKecamatan`);
 
 --
--- Indeks untuk tabel `alamat_provinsi`
+-- Indexes for table `alamat_provinsi`
 --
 ALTER TABLE `alamat_provinsi`
   ADD PRIMARY KEY (`idProvinsi`);
 
 --
--- Indeks untuk tabel `detail_peserta_didik`
+-- Indexes for table `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   ADD PRIMARY KEY (`idDetail_pd`),
@@ -91234,7 +91235,7 @@ ALTER TABLE `detail_peserta_didik`
   ADD KEY `NIK_pd` (`NIK_pd`);
 
 --
--- Indeks untuk tabel `detail_tenaga_pendidik`
+-- Indexes for table `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
   ADD PRIMARY KEY (`idDetail_tenpen`),
@@ -91246,43 +91247,43 @@ ALTER TABLE `detail_tenaga_pendidik`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `ekstrakulikuler`
+-- Indexes for table `ekstrakulikuler`
 --
 ALTER TABLE `ekstrakulikuler`
   ADD PRIMARY KEY (`idEkstrakulikuler`);
 
 --
--- Indeks untuk tabel `groups`
+-- Indexes for table `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `header_menu`
+-- Indexes for table `header_menu`
 --
 ALTER TABLE `header_menu`
   ADD PRIMARY KEY (`id_header_menu`);
 
 --
--- Indeks untuk tabel `jabatan`
+-- Indexes for table `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`idJabatan`);
 
 --
--- Indeks untuk tabel `kabupaten`
+-- Indexes for table `kabupaten`
 --
 ALTER TABLE `kabupaten`
   ADD PRIMARY KEY (`id_kab`);
 
 --
--- Indeks untuk tabel `kecamatan`
+-- Indexes for table `kecamatan`
 --
 ALTER TABLE `kecamatan`
   ADD PRIMARY KEY (`id_kec`);
 
 --
--- Indeks untuk tabel `kelas`
+-- Indexes for table `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`idKelas`),
@@ -91290,19 +91291,19 @@ ALTER TABLE `kelas`
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indeks untuk tabel `kelompok_mapel`
+-- Indexes for table `kelompok_mapel`
 --
 ALTER TABLE `kelompok_mapel`
   ADD PRIMARY KEY (`idKelompok_mapel`);
 
 --
--- Indeks untuk tabel `kelurahan`
+-- Indexes for table `kelurahan`
 --
 ALTER TABLE `kelurahan`
   ADD PRIMARY KEY (`id_kel`);
 
 --
--- Indeks untuk tabel `kurikulum`
+-- Indexes for table `kurikulum`
 --
 ALTER TABLE `kurikulum`
   ADD PRIMARY KEY (`idKurikulum`),
@@ -91310,13 +91311,13 @@ ALTER TABLE `kurikulum`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `login_attempts`
+-- Indexes for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `mata_pelajaran`
+-- Indexes for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
   ADD PRIMARY KEY (`idMata_pelajaran`),
@@ -91324,13 +91325,13 @@ ALTER TABLE `mata_pelajaran`
   ADD KEY `idKelompok_mapel` (`idKelompok_mapel`);
 
 --
--- Indeks untuk tabel `menu`
+-- Indexes for table `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id_menu`);
 
 --
--- Indeks untuk tabel `ortu_peserta_didik`
+-- Indexes for table `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   ADD PRIMARY KEY (`idOrtu_pd`),
@@ -91340,35 +91341,36 @@ ALTER TABLE `ortu_peserta_didik`
   ADD KEY `NIK_pd` (`NIK_pd`);
 
 --
--- Indeks untuk tabel `ortu_tenaga_pendidik`
+-- Indexes for table `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   ADD PRIMARY KEY (`idOrtu_tenpen`),
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indeks untuk tabel `peserta_didik`
+-- Indexes for table `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
   ADD PRIMARY KEY (`idPd`),
   ADD UNIQUE KEY `NIK_pd_2` (`NIK_pd`),
-  ADD KEY `NIK_pd` (`NIK_pd`);
+  ADD KEY `NIK_pd` (`NIK_pd`),
+  ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `program_studi`
+-- Indexes for table `program_studi`
 --
 ALTER TABLE `program_studi`
   ADD PRIMARY KEY (`idProdi`),
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `provinsi`
+-- Indexes for table `provinsi`
 --
 ALTER TABLE `provinsi`
   ADD PRIMARY KEY (`id_prov`);
 
 --
--- Indeks untuk tabel `sekolah`
+-- Indexes for table `sekolah`
 --
 ALTER TABLE `sekolah`
   ADD PRIMARY KEY (`idSekolah`),
@@ -91378,32 +91380,32 @@ ALTER TABLE `sekolah`
   ADD KEY `provinsi_sekolah` (`provinsi_sekolah`);
 
 --
--- Indeks untuk tabel `settings`
+-- Indexes for table `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id_settings`);
 
 --
--- Indeks untuk tabel `tahun_ajaran`
+-- Indexes for table `tahun_ajaran`
 --
 ALTER TABLE `tahun_ajaran`
   ADD PRIMARY KEY (`idTahun_ajaran`);
 
 --
--- Indeks untuk tabel `tenaga_pendidik`
+-- Indexes for table `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
   ADD PRIMARY KEY (`idTenpen`),
   ADD UNIQUE KEY `NIK_tenpen_2` (`NIK_tenpen`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `users_groups`
+-- Indexes for table `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD PRIMARY KEY (`id`),
@@ -91412,161 +91414,161 @@ ALTER TABLE `users_groups`
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_desa`
+-- AUTO_INCREMENT for table `alamat_desa`
 --
 ALTER TABLE `alamat_desa`
   MODIFY `idDesa` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_kabupaten`
+-- AUTO_INCREMENT for table `alamat_kabupaten`
 --
 ALTER TABLE `alamat_kabupaten`
   MODIFY `idKabupaten` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_kecamatan`
+-- AUTO_INCREMENT for table `alamat_kecamatan`
 --
 ALTER TABLE `alamat_kecamatan`
   MODIFY `idKecamatan` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_provinsi`
+-- AUTO_INCREMENT for table `alamat_provinsi`
 --
 ALTER TABLE `alamat_provinsi`
   MODIFY `idProvinsi` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `detail_peserta_didik`
+-- AUTO_INCREMENT for table `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   MODIFY `idDetail_pd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT untuk tabel `detail_tenaga_pendidik`
+-- AUTO_INCREMENT for table `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
   MODIFY `idDetail_tenpen` int(111) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `ekstrakulikuler`
+-- AUTO_INCREMENT for table `ekstrakulikuler`
 --
 ALTER TABLE `ekstrakulikuler`
   MODIFY `idEkstrakulikuler` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `groups`
+-- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `header_menu`
+-- AUTO_INCREMENT for table `header_menu`
 --
 ALTER TABLE `header_menu`
   MODIFY `id_header_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `jabatan`
+-- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
   MODIFY `idJabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `kelas`
+-- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `idKelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `kelompok_mapel`
+-- AUTO_INCREMENT for table `kelompok_mapel`
 --
 ALTER TABLE `kelompok_mapel`
   MODIFY `idKelompok_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `kurikulum`
+-- AUTO_INCREMENT for table `kurikulum`
 --
 ALTER TABLE `kurikulum`
   MODIFY `idKurikulum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `login_attempts`
+-- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `mata_pelajaran`
+-- AUTO_INCREMENT for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
   MODIFY `idMata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `menu`
+-- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
--- AUTO_INCREMENT untuk tabel `ortu_peserta_didik`
+-- AUTO_INCREMENT for table `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   MODIFY `idOrtu_pd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT untuk tabel `ortu_tenaga_pendidik`
+-- AUTO_INCREMENT for table `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   MODIFY `idOrtu_tenpen` int(111) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `peserta_didik`
+-- AUTO_INCREMENT for table `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
   MODIFY `idPd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT untuk tabel `program_studi`
+-- AUTO_INCREMENT for table `program_studi`
 --
 ALTER TABLE `program_studi`
   MODIFY `idProdi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `sekolah`
+-- AUTO_INCREMENT for table `sekolah`
 --
 ALTER TABLE `sekolah`
   MODIFY `idSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `settings`
+-- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id_settings` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tahun_ajaran`
+-- AUTO_INCREMENT for table `tahun_ajaran`
 --
 ALTER TABLE `tahun_ajaran`
   MODIFY `idTahun_ajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tenaga_pendidik`
+-- AUTO_INCREMENT for table `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
   MODIFY `idTenpen` int(111) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `users_groups`
+-- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
@@ -91620,6 +91622,12 @@ ALTER TABLE `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   ADD CONSTRAINT `ortu_tenaga_pendidik_ibfk_1` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `peserta_didik`
+--
+ALTER TABLE `peserta_didik`
+  ADD CONSTRAINT `peserta_didik_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `program_studi`
