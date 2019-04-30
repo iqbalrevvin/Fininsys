@@ -40,7 +40,7 @@ class ManajemenKelas_m extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('peserta_didik');
 		$this->db->where('detail_peserta_didik.idKelas', $idKelas);
-		$this->db->where('detail_peserta_didik.status_pd', 'Aktif');
+		$this->db->where('peserta_didik.status_pd', 'Aktif');
 		/*RELASI*/
 		$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
 		$this->db->join('kelas', 'detail_peserta_didik.idKelas = kelas.idKelas', 'left');

@@ -13,8 +13,8 @@
     </div>
     <div class="m-portlet__body">
         <div class="form-group m-form__group row">
-        <label class="col-form-label"><b>Wali Kelas :</b></label>
-        <div class="col-lg-5 col-md-7 col-sm-12 m-select2 m-select2--air m-select2--pill inputBlock">
+            <label class="col-form-label"><b>Wali Kelas :</b></label>
+            <div class="col-lg-5 col-md-7 col-sm-12 m-select2 m-select2--air m-select2--pill inputBlock">
                 <select class="form-control m_select2" id="pilihWaliKelas">
                     <option value="<?= $kelas->NIK_tenpen ?>"><?= $kelas->nama_tenpen ?> | <?= $kelas->nama_sekolah ?></option>
                     <?php foreach ($dataWaliKelas as $data): ?>

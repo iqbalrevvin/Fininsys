@@ -12,6 +12,7 @@ public function insertDetail($data){
 	$this->db->insert('ortu_peserta_didik', $data);
 }
 
+
 public function getNameProfil($id){
 	$query = $this->db->get_where('peserta_didik', ['NIK_pd' => $id]);
 	$execute = $query->row();
@@ -24,6 +25,8 @@ public function profil($id){
 	$this->db->from('peserta_didik');
 	$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
 	$this->db->join('ortu_peserta_didik', 'peserta_didik.NIK_pd = ortu_peserta_didik.NIK_pd', 'RIGTH');
+	$this->db->join('kelas', 'detail_peserta_didik.idKelas = kelas.idKelas', 'left');
+	$this->db->join('program_studi', 'kelas.idProdi = program_studi.idProdi', 'left');
 	$this->db->where('peserta_didik.NIK_pd', $id);
 	$query 		= $this->db->get();
 	$execute 	= $query->row();

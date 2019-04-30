@@ -5,12 +5,15 @@
 				<div class="m-card-profile__pic">
 					<div class="m-card-profile__pic-wrapper">
 						<img src="<?= base_url('assets/image/foto_pd/'.fotoGender($profil->foto_pd, $profil->jk_pd)) ?>" 
-							alt="<?= $profil->nama_pd ?>" height="100"/>
+							alt="<?= $profil->nama_pd ?>" height="150"/>
 					</div>
 				</div>
 				<div class="m-card-profile__details">
 					<span class="m-card-profile__name"><?= $profil->nama_pd ?></span>
-					<a href="" class="m-card-profile__email m-link"><?= $profil->NIK_pd ?></a>
+					<span class="m-card "><?= $profil->NIK_pd ?></a><br>
+					<span class="m-card ">Tingkat : (<?= grade($profil->tahun_angkatan, $profil->jumlah_semester) ?>)</a><br>
+					<span class="m-card ">Semester : (<?= semester($profil->tahun_angkatan, $profil->jumlah_semester) ?>)</a>
+
 				</div>
 			</div>
 			<ul class="m-nav m-nav--hover-bg m-portlet-fit--sides">

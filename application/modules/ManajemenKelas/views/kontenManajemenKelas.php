@@ -62,7 +62,7 @@
 						                            </a>
 						                        </span><br>
 						                        <span class="m-widget3__time">
-						                            <?= $pd->nipd ?> | <?= $pd->NIK_pd ?>
+						                            <?= $pd->nipd ?> | Tingkat : <?= grade($pd->tahun_angkatan ,$pd->jumlah_semester) ?>
 						                        </span>
 						                    </div>
 						                    <button class="btnKeluarSiswa btn btn-secondary m-btn--air m-btn--pill m--font-danger" 

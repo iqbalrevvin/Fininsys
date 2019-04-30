@@ -9,6 +9,8 @@ class Profil extends CI_Controller {
 		$this->load->model('PesertaDidik/PesertaDidik_m');
 		$this->load->helper('fotoGender_helper');
 		$this->load->helper('tglIndo_helper');
+		$this->load->helper('semester_helper');
+		$this->load->helper('grade_helper');
 	}
 	public function index(){
 		#$id 			= $this->input->post('ID');
