@@ -12,6 +12,9 @@ class ManajemenKelas_m extends CI_Model {
 		$this->db->from('kelas');
 		$this->db->where('idKelas', $idKelas);
 
+		$this->db->join('tenaga_pendidik', 'tenaga_pendidik.NIK_tenpen = kelas.NIk_tenpen', 'left');
+		$this->db->join('sekolah', 'sekolah.idSekolah = tenaga_pendidik.idSekolah', 'left');
+
 		$query = $this->db->get();
 		$execute = $query->row();
 
@@ -24,6 +27,7 @@ class ManajemenKelas_m extends CI_Model {
 		/*RELASI*/
 		$this->db->join('program_studi', 'kelas.idProdi = program_studi.idProdi', 'left');
 		$this->db->join('sekolah', 'program_studi.idSekolah = sekolah.idSekolah', 'left');
+		$this->db->join('tenaga_pendidik', 'tenaga_pendidik.NIK_tenpen = kelas.NIK_tenpen', 'left');
 		/*---------*/
 		$this->db->order_by('sekolah.nama_sekolah desc, kelas.nama_kelas desc');
 		$query = $this->db->get();
@@ -48,6 +52,20 @@ class ManajemenKelas_m extends CI_Model {
 		$execute = $query->result();
 
 		return $execute;
+	}
+
+	public function getWaliKelas(){
+		$this->db->select('NIK_tenpen, nama_tenpen, tenaga_pendidik.idSekolah, nama_sekolah');
+		$this->db->from('tenaga_pendidik');
+		$this->db->join('sekolah', 'tenaga_pendidik.idSekolah = sekolah.idSekolah', 'left');
+		$query 		= $this->db->get();
+		$execute 	= $query->result();
+		return $execute;
+	}
+
+	public function setWaliKelas($data){
+		$this->db->where('idKelas', $data['idKelas']);
+		$this->db->update('kelas', $data);
 	}
 
 	public function getKeluarKelas($data){

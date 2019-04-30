@@ -51,12 +51,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'auth';
 //PESERTA DIDIK
-$route['PesertaDidik'] = 'pesertadidik/listpd';
+$route['PesertaDidik/listpd'] = 'pesertadidik/listpd';
 $route['PesertaDidik/(:any)'] = 'pesertadidik/listpd/index';
 $route['PesertaDidik/index/(:any)/(:num)'] = 'pesertadidik/listpd/index/edit/$1';
 $route['PesertaDidik/index/(:any)'] = 'pesertadidik/listpd/index/add';
 //TENAGA PENDIDIK
-$route['TenagaPendidik'] = 'TenagaPendidik/list-tenpen';
+$route['TenagaPendidik/list-tenpen'] = 'TenagaPendidik/list-tenpen';
 $route['TenagaPendidik/index/(:any)'] = 'TenagaPendidik/list-tenpen/index/add';
 $route['TenagaPendidik/index/(:any)/(:num)'] = 'TenagaPendidik/list-tenpen/index/edit/$1';
 #$route['PesertaDidik/(:num)'] = 'pesertadidik/listpd/index/edit/$1';

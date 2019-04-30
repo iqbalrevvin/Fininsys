@@ -17,8 +17,6 @@ class Listpd extends CI_Controller {
 		$crud->set_table('peserta_didik');
 		$crud->set_subject('Data Utama Peserta Didik');
 
-		$crud->set_field_upload('foto_pd', 'assets/image/foto_pd');
-
 		$crud->display_as('nama_pd', 'Nama Peserta Didik');
 		$crud->display_as('NIK_pd', 'NIK Peserta Didik');
 		$crud->display_as('jk_pd', 'Jenis Kelamin');
@@ -30,8 +28,9 @@ class Listpd extends CI_Controller {
 		$crud->columns('NIK_pd', 'nama_pd', 'tempat_lahir_pd', 'tanggal_lahir_pd', 'jk_pd', 'no_telp_pd', 'idSekolah');
 		$crud->add_action('Profil', 'fa fa-user', '', '',array($this,'profilLink'));
 		$crud->set_rules('NIK_pd','NIK Siswa','required|numeric|max_length[16]|min_length[16]');
+		$crud->set_rules('email_tenpen','Email','valid_email');
 		$crud->unset_read();
-
+		$crud->set_field_upload('foto_pd', 'assets/image/foto_pd');
 		/*RELASI*/
 		$crud->set_relation('idSekolah','sekolah','nama_sekolah');
 		/*-----------------------------------------------*/

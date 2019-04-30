@@ -6,12 +6,24 @@
                     <i class="flaticon-users-1"></i>
                 </span>
                 <h3 class="m-portlet__head-text">
-                    Daftar Siswa Kelas <?= $kelas->nama_kelas ?>
+                    Kelas : <?= $kelas->nama_kelas ?> | Wali Kelas : <?= $kelas->nama_tenpen ?>
                 </h3>
             </div>
         </div>
     </div>
     <div class="m-portlet__body">
+        <div class="form-group m-form__group row">
+        <label class="col-form-label"><b>Wali Kelas :</b></label>
+        <div class="col-lg-5 col-md-7 col-sm-12 m-select2 m-select2--air m-select2--pill inputBlock">
+                <select class="form-control m_select2" id="pilihWaliKelas">
+                    <option value="<?= $kelas->NIK_tenpen ?>"><?= $kelas->nama_tenpen ?> | <?= $kelas->nama_sekolah ?></option>
+                    <?php foreach ($dataWaliKelas as $data): ?>
+                        <option value="<?= $data->NIK_tenpen ?>"><?= $data->nama_tenpen ?> | <?= $data->nama_sekolah ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+
         <!--begin: Search Form -->
         <div class="m-form m-form--label-align-right m--margin-top-20 m--margin-bottom-30">
             <div class="row align-items-center">
@@ -53,6 +65,7 @@
                             </span>
                         </span>
                     </a>
+                    
                     <button type="button" class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" id="reloadTabel">
                         <span>
                             <i class="flaticon-refresh"></i>
@@ -106,6 +119,7 @@
     </div>
 </div>
 
-
+<script src="<?= base_url('assets/js/demo/bootstrap-select.js') ?>"></script>
+<script src="<?= base_url('assets/js/demo/select2.js') ?>"></script>
 
 <!--end::Modal-->

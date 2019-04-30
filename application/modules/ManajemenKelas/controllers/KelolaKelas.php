@@ -27,8 +27,10 @@ class KelolaKelas extends CI_Controller {
 		$idKelas 				= $this->input->post('ID');
 		$namaKelas 				= $this->ManajemenKelas_m->getNamaKelas($idKelas);
 		$dataSiswaKelas 		= $this->ManajemenKelas_m->getPesdik($idKelas);
+		$dataWaliKelas 			= $this->ManajemenKelas_m->getWaliKelas();
 		$data['kelas'] 			= $namaKelas;
 		$data['dataSiswaKelas'] = $dataSiswaKelas;
+		$data['dataWaliKelas'] 	= $dataWaliKelas;
 
 		$this->load->view('kontenKelolaKelas', $data, FALSE);
 	}
@@ -43,6 +45,36 @@ class KelolaKelas extends CI_Controller {
 			$this->ManajemenKelas_m->getKeluarKelas($data);
 		}
 		#$this->load->view('', $data, FALSE);
+	}
+
+	public function setWaliKelas(){
+		$validate 	= $this->form_validation;
+			$validate->set_rules(
+					'waliKelas', 'Wali Kelas', 'is_unique[kelas.NIK_tenpen]',
+					array('is_unique' => 'Wali Kelas Yang Dipilih Sudah Menjabat Dikelas Lain!')
+				);
+		if($this->input->post('setWali')){
+			
+			if($validate->run() == TRUE){
+				$callback = [
+			    	'status' 	=> 'sukses',
+			    	'pesan' 	=> 'Tenaga Pendidik Terpilih Berhasil Diatur Sebagai Wali Kelas' 
+				];
+				$NIK_tenpen = $this->input->post('waliKelas');
+				$kelasID = $this->input->post('kelasID');
+				$data = [
+				    'NIK_tenpen' => $NIK_tenpen,
+				    'idKelas' => $kelasID
+				];
+				$this->ManajemenKelas_m->setWaliKelas($data);
+			}else{
+				$callback = [
+			    	'status' 	=> 'gagal',
+			    	'pesan' 	=> validation_errors()
+				];
+			}
+			echo json_encode($callback);
+		}
 	}
 
 	public function listPilihSiswa(){
@@ -89,7 +121,6 @@ class KelolaKelas extends CI_Controller {
 			$this->ManajemenKelas_m->tambahSiswaKelas($data);
 		}
 		echo json_encode(array("status" => TRUE));
-
 	}
 
 }

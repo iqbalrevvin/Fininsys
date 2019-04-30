@@ -20,7 +20,7 @@ class Kelas extends CI_Controller {
 		#$crud->set_field_upload('');
 
 		/*RELATION*/
-		$crud->set_relation('idProdi','program_studi','nama_prodi');
+		#$crud->set_relation('idProdi','program_studi','nama_prodi');
 		$crud->set_relation('NIK_tenpen','tenaga_pendidik','nama_tenpen');
 		#$crud->set_relation('idSekolah','sekolah','nama_sekolah');
 

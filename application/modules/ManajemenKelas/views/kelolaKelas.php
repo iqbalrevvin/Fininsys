@@ -1,3 +1,4 @@
+
 <div id="resultKonten">
     <div class="m-blockui" id="loader-center">
         <span>Memuat Data Kelas <?= $kelas->nama_kelas ?>. .</span>
@@ -6,7 +7,9 @@
         </span>
     </div>
 </div>
-<!--begin::Modal-->
+
+
+<!--begin::Modal TAMBAH SISWA KELAS-->
 <div class="modal fade" id="viewModalSiswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -19,68 +22,65 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-         
-                <div class="m-portlet m-portlet--mobile" id="kontenTambahSiswa">
-                    <div class="m-portlet__head">
-                        <div class="m-portlet__head-caption">
-                            <div class="m-portlet__head-title">
-                                <h3 class="m-portlet__head-text">
-                                    Daftar Siswa
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div class="m-portlet__head-tools">
-                            <ul class="m-portlet__nav">
-                                <li class="m-portlet__nav-item">
-                                    <button type="button" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air" id="btnTambahSiswa">
-                                        <span>
-                                            <i class="la la-plus"></i>
-                                            <span>Tambahkan</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="m-portlet__nav-item">
-                                    <button type="button" class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" 
-                                        id="reloadTabelPilihSiswa">
-                                        <span>
-                                            <i class="flaticon-refresh"></i>
-                                            <span>Muat Ulang</span>
-                                        </span>
-                                    </button>
-                                </li>
-
-
-                            </ul>
+            <div class="m-portlet m-portlet--mobile" id="kontenTambahSiswa">
+                <div class="m-portlet__head">
+                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title">
+                            <h3 class="m-portlet__head-text">
+                                Daftar Siswa
+                            </h3>
                         </div>
                     </div>
-                    <div class="m-portlet__body">
-                        <!--begin: Datatable -->
-                        <table class="table table-striped- table-bordered table-hover table-checkable" id="tabelPilihSiswa">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <label class="m-checkbox m-checkbox--bold m-checkbox--state-success">
-                                            <input type="checkbox" id="check-all"><small>Pilih Semua</small>
-                                                <span></span>
-                                        </label>
-                                    </th>
-                                    <th>NIK Siswa</th>
-                                    <th>Jenis Kelamin</th>
-                                    <th>NIPD</th>
-                                    <th>NISN</th>
-                                    <th>Sekolah</th>
-                                </tr>
-                            </thead>
-                            <tbody>
 
-                            </tbody>
-                        </table>
+                    <div class="m-portlet__head-tools">
+                        <ul class="m-portlet__nav">
+                            <li class="m-portlet__nav-item">
+                                <button type="button" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air" id="btnTambahSiswa">
+                                    <span>
+                                        <i class="la la-plus"></i>
+                                        <span>Tambahkan</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="m-portlet__nav-item">
+                                <button type="button" class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" 
+                                    id="reloadTabelPilihSiswa">
+                                    <span>
+                                        <i class="flaticon-refresh"></i>
+                                        <span>Muat Ulang</span>
+                                    </span>
+                                </button>
+                            </li>
+
+
+                        </ul>
                     </div>
                 </div>
+                <div class="m-portlet__body">
+                    <!--begin: Datatable -->
+                    <table class="table table-striped- table-bordered table-hover table-checkable" id="tabelPilihSiswa">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="m-checkbox m-checkbox--bold m-checkbox--state-success">
+                                        <input type="checkbox" id="check-all"><small>Pilih Semua</small>
+                                            <span></span>
+                                    </label>
+                                </th>
+                                <th>NIK Siswa</th>
+                                <th>Jenis Kelamin</th>
+                                <th>NIPD</th>
+                                <th>NISN</th>
+                                <th>Sekolah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                <!-- END EXAMPLE TABLE PORTLET-->
-          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->
         </div>
     </div>
 </div>
@@ -316,6 +316,44 @@
 	    	}
 		});
     /*---------------*/
+    	/*SET WALI KELAS*/
+   		$(document).on('change', '#pilihWaliKelas', function (e) {
+			mApp.block(".inputBlock");
+			$waliKelas 	= $('#pilihWaliKelas').val();
+			$kelasID 	= $('#dataID').val();
+			$.ajax({
+				url: '<?= base_url('ManajemenKelas/KelolaKelas/setWaliKelas') ?>',
+				type : 'POST',
+				//async: true,
+				//dataType: '',
+				data: {
+					waliKelas 	: $waliKelas,
+					kelasID 	: $kelasID,
+					setWali 	: 1
+				},
+				dataType: 'json',
+				beforeSend: function(e) {
+					if(e && e.overrideMimeType) {
+						e.overrideMimeType('application/jsoncharset=UTF-8')
+					}
+				},
+				success: function (response) {
+					if(response.status == 'sukses'){
+						//alert($kelasID);
+						toastr.success(response.pesan, "Wali Kelas Diatur");
+						//mApp.unblock(".inputBlock");
+						kontenView();
+					}else{
+						toastr.error(response.pesan, "Gagal");
+						kontenView();
+					}
+				},
+				error: function (xhr, ajaxOptions, thrownError) { // Ketika terjadi error
+				alert(xhr.responseText) // munculkan alert
+			}
+			})
+		});
+		/*------------------*/
 	});
 	//TABEL SISWA BELLUM MASUK KELAS
 	var DatatablesBasicPaginations = {
@@ -353,5 +391,10 @@
 	$("#check-all").click(function () {
 	    $(".data-check").prop('checked', $(this).prop('checked'));
 	});
+
+	/*PILIH WALI KELAS*/
+	/*JANGKA SIMPANAN TIPE REKENING*/
+
+/*------------------------------------------------------------------------------*/
     
 </script>

@@ -14,17 +14,25 @@ class List_tenpen extends CI_Controller {
 
 		$crud->set_table('tenaga_pendidik');
 		$crud->set_subject('Tenaga Pendidik');
-		$crud->columns('NIK_tenpen', 'nama_tenpen', 'JK_tenpen', 'no_telp_tenpen');
+		$crud->columns('NIK_tenpen', 'nama_tenpen', 'jk_tenpen', 'no_telp_tenpen', 'idSekolah');
 		$crud->display_as('nama_tenpen', 'Nama Tenaga Pendidik');
 		$crud->display_as('NIK_tenpen', 'NIK Tenaga Didik');
 		$crud->display_as('jk_tenpen', 'Jenis Kelamin');
 		$crud->display_as('tempat_lahir', 'Tempat Lahir');
-		$crud->display_as('no_telp_tenpen', 'No. Telp Tenpen');
+		$crud->display_as('no_telp_tenpen', 'No. Telp');
+		$crud->display_as('email_tenpen', 'Email');
+		$crud->display_as('foto_tenpen', 'Foto');
+		$crud->display_as('idSekolah', 'Sekolah');
 		$crud->add_action('Profil', 'fa fa-user', '', '',array($this,'profilLink'));
 		$crud->set_rules('NIK_tenpen','NIK Tenaga Pendidik','required|numeric|max_length[16]|min_length[16]');
+		$crud->set_rules('email_tenpen','Email','valid_email');
 		$crud->unset_read();
 
-		#$crud->required_fields('NIK_tenpen','nama_tenpen', 'jk_tenpen', 'agama', 'no_telp_tenpen');
+		/*RELASI*/
+		$crud->set_relation('idSekolah','sekolah','nama_sekolah');
+		/*-----------------------------------------------*/
+
+		$crud->required_fields('NIK_tenpen','nama_tenpen', 'jk_tenpen', 'agama', 'no_telp_tenpen', 'email_tenpen');
 
 		$crud->set_field_upload('foto_tenpen');
 		$crud->unset_add_fields('kelurahan','kecamatan', 'kota', 'provinsi', 'alamat');

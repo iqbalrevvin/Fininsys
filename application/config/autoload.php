@@ -60,7 +60,7 @@ $autoload['packages'] = array(APPPATH.'third_party');
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
 
-$autoload['libraries'] = array('database','session','ion_auth');
+$autoload['libraries'] = array('database','session','ion_auth', 'form_validation');
 
 /*
 | -------------------------------------------------------------------
