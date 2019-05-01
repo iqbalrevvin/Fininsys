@@ -8,6 +8,15 @@ class TenagaPendidik_m extends CI_Model {
 		$this->db->insert('ortu_tenaga_pendidik', $data);
 	}
 
+	public function getTenpen(){
+		$this->db->select('NIK_tenpen, nama_tenpen');
+		$this->db->from('tenaga_pendidik');
+		$query = $this->db->get();
+		
+		return $query;
+		
+	}
+
 }
 
 /* End of file TenagaPendidik_m.php */

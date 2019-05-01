@@ -7,6 +7,7 @@ class Kelas extends CI_Controller {
 		parent::__construct();
 		$this->load->library('outputView');
 		$this->load->library('grocery_CRUD');
+		$this->load->model('TenagaPendidik/TenagaPendidik_m');
 	}
 	public function index(){
 		$crud 		= new grocery_CRUD();
@@ -20,15 +21,20 @@ class Kelas extends CI_Controller {
 		#$crud->set_field_upload('');
 
 		/*RELATION*/
-		#$crud->set_relation('idProdi','program_studi','nama_prodi');
-		$crud->set_relation('NIK_tenpen','tenaga_pendidik','nama_tenpen');
+		$crud->set_relation('idProdi','program_studi','nama_prodi');
+		#$crud->set_relation('NIK_tenpen','tenaga_pendidik','nama_tenpen');
 		#$crud->set_relation('idSekolah','sekolah','nama_sekolah');
 
 		/*VALIDATION*/
 		$crud->required_fields('idProdi', 'nama_kelas', 'NIK_tenpen');
 		#$crud->set_rules('jumlah_semester', 'jumlah_semester', 'max_length[2]');
 		/*------------*/
-
+		$listTenpen = $this->TenagaPendidik_m->getTenpen();
+		$finalArray = array();
+		foreach ($listTenpen->result() as $row){
+				$finalArray[$row->NIK_tenpen]=$row->nama_tenpen;
+		}
+		$crud->field_type('NIK_tenpen','dropdown',$finalArray);
 		/*CALLBACK*/
 		$crud->callback_column('sekolah',array($this,'sekolah_callback'));
 		$crud->callback_column('nama_kelas',array($this,'kelas_callback'));

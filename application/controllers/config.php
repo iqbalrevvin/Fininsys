@@ -137,7 +137,6 @@ class Config extends CI_Controller {
 	}
 
 	function edit_user_callback($post_array, $primary_key) {
-
 		$identity = $post_array[$this->config->item('identity', 'ion_auth')];
 		$groups   = $post_array['groups'];
 		$old 	  = $post_array['old_password'];
