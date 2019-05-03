@@ -94,9 +94,6 @@ class KelolaKelas extends CI_Controller {
 			$row[] = $person->nisn;
 			$row[] = $person->nipd;
 			$row[] = $person->nama_sekolah;
-
-
-		
 			$data[] = $row;
 		}
 

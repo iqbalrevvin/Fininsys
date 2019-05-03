@@ -68,6 +68,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="<?= base_url('assets/css/style.bundle.css') ?>" rel="stylesheet" type="text/css" />    
      <!--BOOTSTRAP FILE UPLOAD-->
     <link href="<?= base_url('assets/vendors/bootstrap-fileupload/bootstrap-fileupload.css') ?>" rel="stylesheet" />
+
      <!-- PRELOADER -->
     <link rel="stylesheet" href="<?= base_url('assets/vendors/pace-preload/blue/pace-theme-center-simple.css') ?>" />
     <!--end::Base Styles -->
@@ -75,6 +76,9 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="<?= base_url('assets/vendors/datatables/datatables.bundle.css') ?>" rel="stylesheet" type="text/css" />
     <link href="<?= base_url('assets/vendors/jquery-ui-bundle/jquery-ui.bundle.css') ?>" type="text/css" rel="stylesheet"  />
     <link href="<?= base_url('assets/js/plugins/iCheck/square/blue.css') ?>" rel="stylesheet" type="text/css" /> 
+    <link href="<?= base_url('assets/vendors/x-editable/bootstrap-editable.css') ?>" rel="stylesheet" type="text/css" /> 
+
+
     <link rel="shortcut icon" href="<?= base_url('assets/image/'.$settings->logo) ?>" />
    <!--GroceryCRUD CSS-->
     <?php if (isset($css_files)) : ?>

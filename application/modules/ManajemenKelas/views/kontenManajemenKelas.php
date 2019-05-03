@@ -7,26 +7,17 @@
 					<div class="m-portlet__head-caption">
 						<div class="m-portlet__head-title">
 							<span class="m-portlet__head-icon">
-								<i class="flaticon-placeholder-2"></i>
+								<i class="flaticon-presentation"></i>
 							</span>
-							<h3 class="m-portlet__head-text">
+							<h4 class="m-portlet__head-text">
 								<?= $kelas->nama_kelas ?> | <?= $kelas->nama_prodi ?> | <?= $kelas->nama_sekolah ?> 
 								<?php $jumlah = count($this->ManajemenKelas_m->getPesdik($kelas->idKelas)); ?>
 								<small data-id="jumlahSiswa">(<?= $jumlah ?> Siswa)</small>
-							</h3>
+							</h4>
 						</div>
 					</div>
 					<div class="m-portlet__head-tools">
 						<ul class="m-portlet__nav">
-							<!-- <li class="m-portlet__nav-item">
-								<a href="#" m-portlet-tool="toggle" title="Perkecil" class="m-portlet__nav-link m-portlet__nav-link--icon">
-									<i class="la la-angle-down"></i>
-								</a>
-							</li>
-							<li class="m-portlet__nav-item">
-								<a href="#" m-portlet-tool="remove" class="m-portlet__nav-link m-portlet__nav-link--icon">
-								<i class="la la-close"></i></a>
-							</li> -->
 							<li class="m-portlet__nav-item">
 								<a href="#" m-portlet-tool="reload" class="m-portlet__nav-link m-portlet__nav-link--icon"
 									data-id=<?= $kelas->idKelas ?> id="reloadKelas">

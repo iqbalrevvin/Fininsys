@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/Fininsys/';
+$config['base_url']	= 'http://192.168.43.118/Fininsys/';
 /*
 |--------------------------------------------------------------------------
 | Index File

@@ -47,8 +47,24 @@ class LegerNilai extends CI_Controller {
 	}
 
 	function profilLink($primary_key, $row){
-		return site_url('LegerNilai/KelolaLeger').'/'.$primary_key;
+		return site_url('LegerNilai/KelolaNilai').'?IDMaster='.$primary_key;
 	}
+
+	public function KelolaNilai(){
+		$idMasterLeger 			= $this->input->get('IDMaster');
+		$getMapel 				= $this->LegerNilai_m->getMapel();
+		$data['mapel'] 			= $getMapel;
+		$data['MasterLeger'] 	= $this->LegerNilai_m->detailLeger($idMasterLeger);
+		$view 					= 'KelolaNilai/kontenKelolaNIlai';
+		$template 				= 'admin_template';
+		$data['crumb'] = array( 
+				'Leger Nilai' => 'LegerNilai',
+				'Kelola Nilai' => '' 
+			);
+		
+		$this->outputview->output_admin($view, $template, $data);
+	}
+
 
 }
 

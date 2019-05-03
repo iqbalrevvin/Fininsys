@@ -9,6 +9,7 @@
 <script src="<?= base_url('assets/vendors/pace-preload/pace.js') ?>" type="text/javascript"></script>
 <!--BOOTSRAP FILE UPLOAD-->
 <script src="<?= base_url('assets/vendors/bootstrap-fileupload/bootstrap-fileupload.js') ?>"></script>
+
 <!---///////////////////////////////////////////////////-->
 
 <!--Alertify JS-->
@@ -22,6 +23,7 @@
 <script src="<?= base_url('assets/js/demo/bootstrap-maxlength.js') ?>"></script>
 <script src="<?= base_url('assets/js/demo/bootstrap-select.js') ?>"></script>
 <script src="<?= base_url('assets/js/demo/select2.js') ?>"></script>
+<script src="<?= base_url('assets/vendors/x-editable/bootstrap-editable.min.js') ?>"></script>
 
 
 
@@ -29,8 +31,6 @@
 <?php if (isset($js_files)) { foreach($js_files as $file): ?> 
     <script src="<?php echo $file; ?>"></script>
 <?php endforeach; } ?>
-
-
 
 <script>
     site         = '<?php echo site_url(); ?>';
@@ -51,8 +51,10 @@
 
     jQuery(document).ready(function() {
       BootstrapDatepicker.init()
+      //DatatablesBasicPaginations.init();
       //PortletDraggable.init()
     });
+    
      paceOptions = {
         ajax: false,
         document: false,

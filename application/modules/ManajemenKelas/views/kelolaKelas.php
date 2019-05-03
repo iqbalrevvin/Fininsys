@@ -8,7 +8,6 @@
     </div>
 </div>
 
-
 <!--begin::Modal TAMBAH SISWA KELAS-->
 <div class="modal fade" id="viewModalSiswa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
     aria-hidden="true">

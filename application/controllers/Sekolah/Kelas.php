@@ -14,14 +14,16 @@ class Kelas extends CI_Controller {
 
 		$crud->set_table('kelas');
 		$crud->set_subject('Daftar Kelas');
-		$crud->columns('nama_kelas','sekolah','idProdi', 'NIK_tenpen');
+		$crud->columns('nama_kelas','sekolah','idProdi', 'NIK_tenpen', 'idKurikulum');
 		$crud->display_as('idProdi', 'Program Studi');
 		$crud->display_as('NIK_tenpen', 'Wali Kelas');
+		$crud->display_as('idKurikulum', 'Kurikulum');
 
 		#$crud->set_field_upload('');
 
 		/*RELATION*/
 		$crud->set_relation('idProdi','program_studi','nama_prodi');
+		$crud->set_relation('idKurikulum', 'kurikulum', 'nama_kurikulum');
 		#$crud->set_relation('NIK_tenpen','tenaga_pendidik','nama_tenpen');
 		#$crud->set_relation('idSekolah','sekolah','nama_sekolah');
 

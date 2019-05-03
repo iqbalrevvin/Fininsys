@@ -65,7 +65,6 @@
                             </span>
                         </span>
                     </a>
-                    
                     <button type="button" class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" id="reloadTabel">
                         <span>
                             <i class="flaticon-refresh"></i>
