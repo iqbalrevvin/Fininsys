@@ -108,7 +108,7 @@ class LegerNilai extends CI_Controller {
 	public function getKontenMapel(){
 		$idMasterLeger = $this->input->post('id');
 		$data['listMapel'] = $this->LegerNilai_m->getKontenMapel($idMasterLeger);
-		$this->load->view('KelolaNIlai/kontenKelolaMapel', $data, FALSE);
+		$this->load->view('KelolaNilai/kontenKelolaMapel', $data, FALSE);
 	}
 
 	public function tambahMapelNilai(){
@@ -145,6 +145,33 @@ class LegerNilai extends CI_Controller {
 			];
 		}
 		echo json_encode($callback);
+	}
+
+	public function hapusKontenMapel(){
+		$idLeger = $this->input->post('id');
+		$this->LegerNilai_m->hapusKontenMapel($idLeger);
+	}
+
+	public function getKontenKelolaNilai(){
+		$idKelas 	= $this->input->post('idKelas');
+		$idLeger 	= $this->input->post('idLeger');
+		$namaMapel 	= $this->input->post('namaMapel');
+		$listSiswa 	= $this->LegerNilai_m->getlistPD($idKelas);
+		/*foreach ($listSiswa as $pd) {
+			$NIK = $pd->NIK_pd;
+			$nilai = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
+			if(count($nilai) == 0){
+				$data['nilai'] = $nilai->nilai_pengetahuan;
+			}else{
+				$data['nilai'] = 0;
+			}
+		}*/
+		#$data['nilai'] = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
+		$data['listSiswa'] = $listSiswa;
+		$data['namaMapel'] = $namaMapel;
+		$data['idLeger'] = $idLeger;
+
+		$this->load->view('KelolaNilai/kontenKelolaNilai', $data, FALSE);
 	}
 
 

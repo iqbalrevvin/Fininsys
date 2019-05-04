@@ -105,12 +105,36 @@ class LegerNilai_m extends CI_Model {
 	public function getKontenMapel($idMasterLeger){
 		$this->db->select('*');
 		$this->db->from('leger');
+		$this->db->join('master_leger', 'leger.idMaster_leger = master_leger.idMaster_leger', 'left');
 		$this->db->join('mata_pelajaran', 'leger.idMata_pelajaran = mata_pelajaran.idMata_pelajaran', 'left');
 		$this->db->join('tenaga_pendidik', 'leger.NIK_tenpen = tenaga_pendidik.NIK_tenpen', 'left');
-		$this->db->where('idMaster_leger', $idMasterLeger);
+		$this->db->where('leger.idMaster_leger', $idMasterLeger);
 		$this->db->order_by('leger.no_urut_mapel', 'asc');
 		$query = $this->db->get();
 		$execute = $query->result();
+		return $execute;
+	}
+
+	public function hapusKontenMapel($idLeger){
+		$this->db->where('idLeger', $idLeger);
+		$this->db->delete('leger');
+	}
+
+	public function getlistPD($idKelas){
+		$this->db->select('*');
+		$this->db->from('peserta_didik');
+		$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
+		$this->db->where('detail_peserta_didik.idKelas', $idKelas);
+		$query 		= $this->db->get();
+		$execute 	= $query->result();
+		return $execute;
+	}
+	public function getNilaiPD($NIK, $idLeger){
+		$this->db->select('*');
+		$this->db->from('leger_nilai');
+		$this->db->where('NIK_pd', $NIK);
+		$this->db->where('idLeger', $idLeger);
+		$execute = $this->db->get();
 		return $execute;
 	}
 

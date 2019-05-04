@@ -25,7 +25,7 @@
 	</div>
 	<div class="m-portlet__body">
         <div class="m-widget3">
-	        <div class="m-scrollable" data-scrollable="true" style="height: 500px; overflow: auto;">
+	        <div class="m-scrollable" data-scrollable="true" style="height: 400px; overflow: auto;">
     			<?php foreach ($listMapel as $data): ?>
     				<div data-id="<?= $data->idLeger ?>" id="listMapel<?= $data->idLeger ?>">
 			        	<div class="m-widget3__item">
@@ -40,8 +40,9 @@
 			                        </span>
 			                    </div>
 			                </div>
-			                <a href="#" class="btnKelolaNilaii btn btn-sm btn-success m-btn m-btn--pill m-btn--air" 
-		                    	data-id="" data-nama="">
+			                <a href="#" class="btnKelolaNilai btn btn-sm btn-success m-btn m-btn--pill m-btn--air" 
+		                    	data-kelas="<?= $data->idKelas ?>" data-leger="<?= $data->idLeger ?>" 
+		                    	data-mapel="<?= $data->nama_mata_pelajaran ?>">
 		                        <b>Kelola Nilai</b>
 		                    </a>
 		                    <button class="btnHapusMapel btn btn-sm btn-danger m-btn m-btn--pill m-btn--air" 
@@ -79,7 +80,7 @@
 			          message: "<b>Menghapus Mata Pelajaran "+namaMapel+"...</b>"
 			      	});
         			$.ajax({
-			      		url: '',
+			      		url: '<?= base_url('LegerNilai/hapusKontenMapel') ?>',
 			      		type: 'POST',
 			      		data: {
 			      			namaMapel 		: namaMapel,
@@ -97,6 +98,33 @@
 
 		});
     	/*---------------*/
+
+    	/*KONTEN NILAI*/
+		$(document).on('click', '.btnKelolaNilai', function(e) {
+			$('#resultKontenKelolaNilai').fadeOut("slow");
+			$('#loadKontenKelolaNilai').show().html('<div class="m-blockui" id="loader-center"><span>Memuat Data Nilai Siswa</span><span><div class="m-loader m-loader--brand"></div></span></div>');
+	    	var idKelas 			= $(this).data('kelas');
+	    	var namaMapel			= $(this).data('mapel');
+	    	var idLeger				= $(this).data('leger');
+	    	$.ajax({
+	          url: '<?= base_url('LegerNilai/getKontenKelolaNilai') ?>',
+	          type: 'POST',
+	          async: true,
+	          data:{
+	          	idKelas 	: idKelas,
+	          	idLeger 	: idLeger,
+	          	namaMapel 	: namaMapel,
+	            show: 1
+	          },
+	          	success: function(response){
+	              	$('#resultKontenKelolaNilai').fadeIn("slow").html(response);
+	              	$('#loadKontenKelolaNilai').hide();
+	              	//$("#jenisNasabah").selectpicker();
+	          	}
+	      	});
+			
+		});
+	/*---------------------------------------------------------*/
 
 	});
 </script>
