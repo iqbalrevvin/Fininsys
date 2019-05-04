@@ -54,7 +54,6 @@ class List_tenpen extends CI_Controller {
 	}
 
 	function insertDetail($post_array){
-		
 		$nik 	= $post_array['NIK_tenpen'];
 		$data = [
 		    'NIK_tenpen' => $nik,

@@ -3,6 +3,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class LegerNilai_m extends CI_Model {
 
+	public function insertMasterLeger($data){
+		$idKelas 		= $data['idKelas'];
+		$tahunAngkatan 	= $data['tahun_angkatan'];
+		$semester 		= $data['semester'];
+		$this->db->select('idKelas, tahun_angkatan, semester');
+		$this->db->from('master_leger');
+		$this->db->where('idKelas', $idKelas);
+		$this->db->where('tahun_angkatan', $tahunAngkatan);
+		$this->db->where('semester', $semester);
+		$qrCek = $this->db->get();
+		$exeCek = $qrCek->num_rows();
+		if($exeCek == 0){
+			$this->db->insert('master_leger', $data);
+		}else{
+			$this->db->insert('', $data);
+		}
+	}
+
+	public function updateMasterLeger($data, $id){
+		$idKelas 		= $data['idKelas'];
+		$tahunAngkatan 	= $data['tahun_angkatan'];
+		$semester 		= $data['semester'];
+		$this->db->select('idKelas, tahun_angkatan, semester');
+		$this->db->from('master_leger');
+		$this->db->where('idKelas', $idKelas);
+		$this->db->where('tahun_angkatan', $tahunAngkatan);
+		$this->db->where('semester', $semester);
+		$qrCek = $this->db->get();
+		$exeCek = $qrCek->num_rows();
+		if($exeCek == 0){
+			$this->db->where('idMaster_leger', $id);
+			$this->db->update('master_leger', $data);
+		}else{
+			$this->db->update('', $data);
+		}
+	}
 	public function getKelas(){
 		$this->db->select('kelas.*,tenaga_pendidik.NIK_tenpen, tenaga_pendidik.nama_tenpen, 
 							program_studi.idProdi, program_studi.nama_prodi,
@@ -36,8 +72,45 @@ class LegerNilai_m extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('mata_pelajaran');
 		$this->db->join('kelompok_mapel', 'mata_pelajaran.idKelompok_mapel = kelompok_mapel.idKelompok_mapel', 'left');
+		$this->db->order_by('nama_mata_pelajaran', 'asc');
 		$query 		= $this->db->get();
 		$execute 	= $query->result();
+		return $execute;
+	}
+
+	public function getTenpen(){
+		$this->db->select('NIK_tenpen, nama_tenpen, nama_sekolah');
+		$this->db->from('tenaga_pendidik');
+		$this->db->join('sekolah', 'tenaga_pendidik.idSekolah = sekolah.idSekolah', 'left');
+		$this->db->order_by('tenaga_pendidik.nama_tenpen', 'asc');
+		$query = $this->db->get();
+		return $query->result();
+		
+	}
+
+	public function cekMapelNilaiKelas($data){
+		$this->db->select('idMaster_leger, idMata_pelajaran');
+		$this->db->from('leger');
+		$this->db->where('idMaster_leger', $data['idMaster_leger']);
+		$this->db->where('idMata_pelajaran', $data['idMata_pelajaran']);
+		$query = $this->db->get();
+		$execute = $query->num_rows();
+		return $execute;
+	}
+
+	public function addMapelLeger($data){
+		$this->db->insert('leger', $data);
+	}
+
+	public function getKontenMapel($idMasterLeger){
+		$this->db->select('*');
+		$this->db->from('leger');
+		$this->db->join('mata_pelajaran', 'leger.idMata_pelajaran = mata_pelajaran.idMata_pelajaran', 'left');
+		$this->db->join('tenaga_pendidik', 'leger.NIK_tenpen = tenaga_pendidik.NIK_tenpen', 'left');
+		$this->db->where('idMaster_leger', $idMasterLeger);
+		$this->db->order_by('leger.no_urut_mapel', 'asc');
+		$query = $this->db->get();
+		$execute = $query->result();
 		return $execute;
 	}
 

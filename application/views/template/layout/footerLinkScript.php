@@ -25,8 +25,6 @@
 <script src="<?= base_url('assets/js/demo/select2.js') ?>"></script>
 <script src="<?= base_url('assets/vendors/x-editable/bootstrap-editable.min.js') ?>"></script>
 
-
-
 <!-- GroceryCRUD JS -->
 <?php if (isset($js_files)) { foreach($js_files as $file): ?> 
     <script src="<?php echo $file; ?>"></script>
@@ -54,7 +52,13 @@
       //DatatablesBasicPaginations.init();
       //PortletDraggable.init()
     });
-    
+    // Fungsi Input HANYA ANGKA
+    function inputAngka(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+            return true;
+    }
      paceOptions = {
         ajax: false,
         document: false,

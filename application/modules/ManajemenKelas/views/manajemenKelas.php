@@ -12,7 +12,7 @@
 		kontenView()
 
 		function kontenView(){
-          var id = $('#dataID').val();
+          //var id = $('#dataID').val();
           $.ajax({
               url: '<?= base_url('ManajemenKelas/getManajemenKelas') ?>',
               type: 'POST',

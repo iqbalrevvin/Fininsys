@@ -314,7 +314,7 @@
 	    		toastr.error("Pilih Terlebih Dahulu Siswa Yang Akan Dimasukan Ke Kelas "+namaKelas, "Pilih Siswa!");
 	    	}
 		});
-    /*---------------*/
+    	/*---------------*/
     	/*SET WALI KELAS*/
    		$(document).on('change', '#pilihWaliKelas', function (e) {
 			mApp.block(".inputBlock");
