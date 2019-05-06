@@ -18,7 +18,7 @@ class LegerNilai extends CI_Controller {
 		$crud->set_subject('Master Leger Nilai');
 		$crud->display_as('idKelas', 'Kelas');
 		$crud->unset_read();
-		$crud->add_action('Kelola Nilai', 'fa fa-cog', '', '',array($this,'profilLink'));
+		$crud->add_action('Kelola', 'fa fa-cog', '', '',array($this,'profilLink'));
 
 		/*LIST DATA KELAS*/
 		$listKelas = $this->LegerNilai_m->getKelas();

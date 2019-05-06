@@ -136,7 +136,7 @@ class LegerNilai_m extends CI_Model {
 		return $execute;
 	}
 	public function getListNilaiPD($idLeger){
-		$this->db->select('leger_nilai.*,peserta_didik.NIK_pd, peserta_didik.nama_pd');
+		$this->db->select('leger_nilai.*,peserta_didik.NIK_pd, peserta_didik.nama_pd, peserta_didik.nipd');
 		$this->db->from('leger_nilai');
 		$this->db->join('peserta_didik', 'leger_nilai.NIK_pd = peserta_didik.NIK_pd', 'left');
 		$this->db->where('leger_nilai.idLeger', $idLeger);
@@ -166,6 +166,7 @@ class LegerNilai_m extends CI_Model {
 	public function tambahNilaiSiswa($data){
 		$this->db->select('*');
 		$this->db->from('leger_nilai');
+		$this->db->where('idLeger', $data['idLeger']);
 		$this->db->where('NIK_pd', $data['NIK_pd']);
 		$query = $this->db->get();
 		$cekData = $query->num_rows();

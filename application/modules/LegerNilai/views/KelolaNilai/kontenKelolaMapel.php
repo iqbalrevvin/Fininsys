@@ -87,6 +87,7 @@
 			                id    			: id
 			           	},
 			      		success: function(){
+			      			$('#resultKontenKelolaNilai').fadeOut("slow");
 			      			mApp.unblock("#portlet"+id);
 			      			$("div[data-id='"+id+"']").fadeOut("slow",function(){
 							    $(this).remove();

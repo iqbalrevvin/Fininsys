@@ -18,6 +18,8 @@ class Kelas extends CI_Controller {
 		$crud->display_as('idProdi', 'Program Studi');
 		$crud->display_as('NIK_tenpen', 'Wali Kelas');
 		$crud->display_as('idKurikulum', 'Kurikulum');
+		$crud->add_action('Kelola', 'fa fa-cog', '', '',array($this,'kelolaLink'));
+		$crud->unset_read();
 
 		#$crud->set_field_upload('');
 
@@ -69,6 +71,10 @@ class Kelas extends CI_Controller {
 	function kelas_callback($value, $primary_key = null){
 		$value = '<b>'.$value.'</b>';
 		return $value;
+	}
+
+	function kelolaLink($primary_key, $row){
+		return site_url('ManajemenKelas/KelolaKelas').'?IDKelas='.$primary_key;
 	}
 
 }

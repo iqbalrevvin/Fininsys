@@ -137,9 +137,17 @@
 			                title: "Proses Berhasil",
 			                text: "Mata Pelajaran Berhasil Ditambahkan ",
 			                type: "success",
+			                timer: 5e3,
+			                onOpen: function() {
+			                    swal.showLoading()
+			                    setTimeout(function () {
+			                        //$("#loading").hide();
+			                        refresh();
+			                    }, 1500);  
+			                }
 			            });
-			            $("#formTambahMapel")[0].reset();
-			            $('#modalTambahMapel').modal('hide');
+			            /*$("#formTambahMapel")[0].reset();
+			            $('#modalTambahMapel').modal('hide');*/
 			            kontenMapel();
 			        }else if(response.status == 'ganda'){
 			        	swal({

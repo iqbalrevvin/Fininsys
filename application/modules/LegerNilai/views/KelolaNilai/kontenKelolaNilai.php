@@ -12,7 +12,7 @@
                     <div class="m-portlet__head-caption">
                         <div class="m-portlet__head-title">
                             <h3 class="m-portlet__head-text">
-                                Daftar Siswa <?= $angkatan ?>
+                                Daftar Siswa Angkatan <?= $angkatan ?>
                             </h3>
                         </div>
                     </div>
@@ -45,6 +45,8 @@
                 <div class="m-portlet__body">
                 <input type="hidden" id="idLeger" value="<?= $idLeger ?>"></input>
                 <input type="hidden" id="namaMapel" value="<?= $namaMapel ?>"></input>
+                <input type="hidden" id="idKelas" value="<?= $idKelas ?>"></input>
+                <input type="hidden" id="angkatan" value="<?= $angkatan ?>"></input>
                     <!--begin: Datatable -->
                     <table class="table table-striped- table-bordered table-hover table-checkable" id="tabelSiswaPenilaian">
                         <thead>
@@ -143,7 +145,7 @@
                         <tbody>
                         	<?php foreach ($listNilai as $data): ?>
 	                        	<tr data-id=''>
-	                        		<td><?= $idLeger ?></td>
+	                        		<td><?= $data->nipd ?></td>
 	                				<td style="width: 200px; text-align: left;">
 	                					<b><?= $data->nama_pd ?></b>
 	                				</td>
@@ -214,6 +216,8 @@ function dataNilaiSiswa(){
 
 	$('.nilaiPengetahuan').editable({
 		//id : $(this).data('id'),
+		anim : 'true',
+		onblur : 'submit',
 		showbuttons: false,
         mode: 'inline',   
         type: 'number',
@@ -251,6 +255,8 @@ $("#check-all").click(function () {
 $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 	var idLeger 	= $('#idLeger').val();
 	var mapel 		= $('#namaMapel').val();
+	var angkatan 	= $('#angkatan').val();
+	var idKelas 	= $('#idkelas').val();
 	var list_id = [];
 	$(".data-check:checked").each(function() {
     	list_id.push(this.value);
@@ -277,7 +283,10 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 	                type: "POST",
 	                data: {
 	                	id:list_id,
-	                	idLeger:idLeger
+	                	idLeger:idLeger,
+	                	idKelas:idKelas,
+	                	angkatan:angkatan,
+	                	show:1,
 	                },
 	                url: "<?php echo site_url('LegerNilai/tambahPenilainSiswa')?>",
 	                dataType: "JSON",
@@ -289,6 +298,9 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 	                    	/*tabelNilaiSiswa.ajax.reload(null,false);*/ //reload datatable ajax 
 	                        /*kontenView();*/
 	                        $('#resultKontenKelolaNilai').fadeOut("slow");
+	                        $('#loadKontenKelolaNilai').show().html('<div class="m-blockui" id="loader-center"><span>Data Penilaian Siswa Diperbarui, <b>Silahkan Klik Kembali Kelola Nilai!</b></span><span></span></div>');
+	                        //$('#loadKontenKelolaNilai').fadeOut("slow");
+	                        //$('#resultKontenKelolaNilai').fadeIn("slow");
 	                        toastr.success("Siswa Berhasil Ditambahkan Ke Penilain Mata Pelajaran"+mapel, "Siswa Ditambahkan");
 	                    }
 	                    else{
