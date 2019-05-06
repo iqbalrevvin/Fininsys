@@ -115,7 +115,7 @@
 	          	idKelas 	: idKelas,
 	          	idLeger 	: idLeger,
 	          	namaMapel 	: namaMapel,
-	          	angaktan 	: angkatan,
+	          	angkatan 	: angkatan,
 	            show: 1
 	          },
 	          	success: function(response){

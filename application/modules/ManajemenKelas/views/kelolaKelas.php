@@ -288,7 +288,6 @@
 			                dataType: "JSON",
 			                success: function(data)
 			                {
-
 			                    if(data.status){
 			                    	mApp.unblock("#kontenTambahSiswa");
 			                    	/*$('#viewModalSiswa').modal('hide');

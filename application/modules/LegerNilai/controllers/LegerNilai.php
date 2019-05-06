@@ -172,6 +172,7 @@ class LegerNilai extends CI_Controller {
 			}
 		}*/
 		#$data['nilai'] = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
+		$data['angkatan'] = $angkatan;
 		$data['idKelas'] 	= $idKelas;
 		$data['listSiswa'] = $listSiswa;
 		$data['listNilai'] = $listNilai;
@@ -181,8 +182,17 @@ class LegerNilai extends CI_Controller {
 		$this->load->view('KelolaNilai/kontenKelolaNilai', $data, FALSE);
 	}
 
-	public function getListModalSiswa(){
-		
+	public function tambahPenilainSiswa(){
+		$listPD = $this->input->post('id');
+		$idLeger = $this->input->post('idLeger');
+		foreach ($listPD as $id) {
+			$data = [
+			    'NIK_pd' => $id,
+			    'idLeger' => $idLeger
+			];
+			$this->LegerNilai_m->tambahNilaiSiswa($data);
+		}
+		echo json_encode(array("status" => TRUE));
 	}
 
 	public function simpanNilai(){

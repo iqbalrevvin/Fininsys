@@ -7,12 +7,12 @@
 					<span aria-hidden="true" class="la la-remove"></span>
 				</button>
 			</div>
-			<div class="m-portlet m-portlet--mobile" id="kontenTambahSiswa">
+			<div class="m-portlet m-portlet--mobile" id="kontenTambahPenilaianSiswa">
                 <div class="m-portlet__head">
                     <div class="m-portlet__head-caption">
                         <div class="m-portlet__head-title">
                             <h3 class="m-portlet__head-text">
-                                Daftar Siswa 
+                                Daftar Siswa <?= $angkatan ?>
                             </h3>
                         </div>
                     </div>
@@ -20,7 +20,8 @@
                     <div class="m-portlet__head-tools">
                         <ul class="m-portlet__nav">
                             <li class="m-portlet__nav-item">
-                                <button type="button" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air" id="btnTambahSiswa">
+                                <button type="button" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air" 
+                                	id="btnTambahPenilaiSiswa">
                                     <span>
                                         <i class="la la-plus"></i>
                                         <span>Tambahkan</span>
@@ -42,6 +43,8 @@
                     </div>
                 </div>
                 <div class="m-portlet__body">
+                <input type="hidden" id="idLeger" value="<?= $idLeger ?>"></input>
+                <input type="hidden" id="namaMapel" value="<?= $namaMapel ?>"></input>
                     <!--begin: Datatable -->
                     <table class="table table-striped- table-bordered table-hover table-checkable" id="tabelSiswaPenilaian">
                         <thead>
@@ -53,9 +56,10 @@
                                     </label>
                                 </th>
                                 <th>Nama Siswa</th>
-                                <th>Jenis Kelamin</th>
+                                <th>JK</th>
                                 <th>NIPD</th>
                                 <th>Kelas</th>
+                                <th>Angkatan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,7 +69,7 @@
 	                        			<label class="m-checkbox m-checkbox--solid m-checkbox--success">
 											<input type="checkbox" 
 												class="m-checkbox m-checkbox--bold m-checkbox--state-success data-check" 
-												value=""> Pilih
+												value="<?= $data->NIK_pd ?>"> Pilih
 											<span></span>
 					                     </label>
 	                        		</td>
@@ -73,6 +77,7 @@
 	                        		<td><?= $data->jk_pd ?></td>
 	                        		<td><?= $data->nipd ?></td>
 	                        		<td><?= $data->nama_kelas ?></td>
+	                        		<td><?= $data->tahun_angkatan ?></td>
 	                        	</tr>
 	                        <?php endforeach; ?>
                         </tbody>
@@ -136,23 +141,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                        	<?php foreach ($listSiswa as $data): ?>
-                        		<?php $count = $this->LegerNilai_m->getNilaiPD($data->NIK_pd, $idLeger)->num_rows(); ?>
-                        		<?php $nilai = $this->LegerNilai_m->getNilaiPD($data->NIK_pd, $idLeger)->row(); ?>
-                        		<?php 
-                        			if($count == 0){
-                        				$idNilai 			= NULL;
-                        				$nilaiPengetahuan 	= NULL;
-                        				$nilaiKeterampilan 	= NULL;
-                        				$nilaiSikap 		= NULL;
-                        			}else{
-                        				$idNilai 			= $nilai->idLeger_nilai;
-                        				$nilaiPengetahuan 	= $nilai->nilai_pengetahuan;
-                        				$nilaiKeterampilan 	= $nilai->nilai_keterampilan;
-                        				$nilaiSikap 		= $nilai->nilai_sikap;
-                        			} 
-                        		?>
-	                        	<tr data-id='<?= $idNilai ?>'>
+                        	<?php foreach ($listNilai as $data): ?>
+	                        	<tr data-id=''>
 	                        		<td><?= $idLeger ?></td>
 	                				<td style="width: 200px; text-align: left;">
 	                					<b><?= $data->nama_pd ?></b>
@@ -163,34 +153,22 @@
 	    									data-title="Nilai Pengetahuan" 
 	    									data-name="nilai_pengetahuan"
 	    									data-nik ="<?= $data->NIK_pd ?>"
-	    									data-pk="<?= $idNilai ?>">
-	    									<?= $nilaiPengetahuan ?>
+	    									data-pk="<?= $data->idLeger_nilai ?>">
+	    									<?= $data->nilai_pengetahuan ?>
 	  									</a>
 	                				</td>
-	                				<!-- <td style="text-align: center;">
-	                					<span class='span-nama caption' data-id='<?= $idNilai ?>'>
-	                						<?= $nilaiPengetahuan ?>
-	                					</span> 
-	                					<input type='text' 
-	                						class='field-nilaiPengetahuan form-control editor m_maxlength_2' 
-	                						value='<?= $nilaiPengetahuan ?>' 
-	                						data-id='<?= $idNilai ?>' maxlength="2"
-	                						data-nik='<?= $data->NIK_pd ?>'
-	                						data-leger='<?= $idLeger ?>'
-	                						onkeypress="return inputAngka(event)"/>	
-	                				</td> -->
 	                				<td style="text-align: center;">
 	                					<a href="#" class="nilaiKeterampilan" id="2" 
 	    									data-type="number" data-placement="left" data-title="Nilai Keterampilan" 
 	    									data-name="nilaiPengetahuan" data-pk='2'>
-	    									<?= $nilaiKeterampilan ?>
+	    									<?= $data->nilai_keterampilan ?>
 	  									</a>
 	                				</td>
 	                				<td style="text-align: center;">
 	                					<a href="#" class="nilaiSikap" id="2" 
 	    									data-type="number" data-placement="left" data-title="Nilai Sikap" 
 	    									data-name="nilaiSikap" data-pk='2'>
-	    									<?= $nilaiSikap ?>
+	    									<?= $data->nilai_sikap ?>
 	  									</a>
 	                				</td>
 	                				<td style="text-align: center;">dfssdfaf</td>
@@ -216,7 +194,7 @@
 <script src="<?= base_url('assets/vendors/datatables/datatables.bundle.js') ?>" type="text/javascript"></script>
 <script>
 jQuery(document).ready(function() {
-    DatatablesBasicHeaders.init() 
+    dataNilaiSiswa() 
     DatatablesBasicPaginations.init()
 });
 
@@ -224,53 +202,15 @@ var DatatablesBasicPaginations = {
     init: function() {
         $("#tabelSiswaPenilaian").DataTable({
             responsive: !1,
-
         })
     }
 };
 
-var DatatablesBasicHeaders = {
-    init: function() {
-        $("#m_table_1").DataTable({
-            responsive: !1,
-
-        })
-    }
-};
-
-/*$(document).on("keydown",".editor",function(e){
-	if(e.keyCode==13){
-		var target=$(e.target);
-		var value=target.val();
-		var id=target.attr("data-id");
-		var nik=target.attr("data-nik");
-		var leger=target.attr("data-leger");
-		var data={
-			id 		: id,
-			nik 	: nik,
-			leger 	: leger,
-			value 	: value,
-		};
-		if(target.is(".field-nilaiPengetahuan")){
-			data.modul="nilai_pengetahuan";
-		}else if(target.is(".field-email")){
-			data.modul="email";
-		}else if(target.is(".field-phone")){
-			data.modul="phone";
-		}
-		$.ajax({
-			data:data,
-			url:"<?= base_url('LegerNilai/simpanNilai2') ?>",
-			type:"post",
-			cache:false,
-			dataType: "json",
-			success: function(a){
-			 target.hide();
-			 target.siblings("span[class~='caption']").html(value).fadeIn();
-			}
-		})
-	}
-});*/
+function dataNilaiSiswa(){
+	$("#m_table_1").DataTable({
+        responsive: !1,
+    })
+}
 
 	$('.nilaiPengetahuan').editable({
 		//id : $(this).data('id'),
@@ -301,10 +241,77 @@ var DatatablesBasicHeaders = {
 		}
     });
 
-
-
 //check all
 $("#check-all").click(function () {
     $(".data-check").prop('checked', $(this).prop('checked'));
 });
+
+
+/*TOMBOL TAMBAH SISWA KE KELAS*/
+$(document).on('click', '#btnTambahPenilaiSiswa', function() {
+	var idLeger 	= $('#idLeger').val();
+	var mapel 		= $('#namaMapel').val();
+	var list_id = [];
+	$(".data-check:checked").each(function() {
+    	list_id.push(this.value);
+	});
+	if(list_id.length > 0){
+		swal({
+	        title: "KONFIRMASI TINDAKAN!",
+	        text: +list_id.length+" Data Siswa Akan Ditambahkan Untuk Penilaian Mata Pelajaran "+mapel,
+	        type: "info",
+	        showCancelButton: true,
+	        confirmButtonColor: "#DD6B55",
+	        confirmButtonText: "Ya, Lanjutkan!",
+	        cancelButtonText: "Tidak, Kembali!",
+
+		}).then((result) => {
+  			if(result.value) {
+    			mApp.block("#kontenTambahPenilaianSiswa", {
+		          overlayColor: "#000000",
+		          type: "loader",
+		          state: "primary",
+		          message: "<b>Menambakan Data Siswa Ke Penilaian Mata Pelajaran "+mapel+"...</b>"
+		      	});
+    			$.ajax({
+	                type: "POST",
+	                data: {
+	                	id:list_id,
+	                	idLeger:idLeger
+	                },
+	                url: "<?php echo site_url('LegerNilai/tambahPenilainSiswa')?>",
+	                dataType: "JSON",
+	                success: function(data)
+	                {
+	                    if(data.status){
+	                    	mApp.unblock("#kontenTambahPenilaianSiswa");
+	                    	$('#modalTambahSiswa').modal('hide');
+	                    	/*tabelNilaiSiswa.ajax.reload(null,false);*/ //reload datatable ajax 
+	                        /*kontenView();*/
+	                        $('#resultKontenKelolaNilai').fadeOut("slow");
+	                        toastr.success("Siswa Berhasil Ditambahkan Ke Penilain Mata Pelajaran"+mapel, "Siswa Ditambahkan");
+	                    }
+	                    else{
+	                        alert('Gagal Memproses Data, Muat Ulang Halaman Lalu Coba Kembali!');
+	                        mApp.unblock("#kontenTambahPenilaianSiswa");
+	                    }
+	                    
+	                },
+	                error: function (jqXHR, textStatus, errorThrown){
+	                    alert('Gagal Memproses Data, Coba Kembali Atau Hubungi Pihak Pengembang!');
+	                    mApp.unblock("#kontenTambahPenilaianSiswa");
+	                    console.log();
+	                }
+	            });
+  			}/*KONDISI JIKA MEMILIH YA UNTUK MEMASUKAN DATA SISWA*/
+		});
+	}else{
+		toastr.error("Pilih Terlebih Dahulu Siswa Untuk Penilaian Mata Pelajaran "+mapel, "Pilih Siswa!");
+	}
+});
+/*---------------*/
+
+
+
+
 </script>

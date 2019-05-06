@@ -129,13 +129,18 @@ class LegerNilai_m extends CI_Model {
 		$this->db->join('kelas', 'detail_peserta_didik.idKelas = kelas.idKelas', 'left');
 		$this->db->where('peserta_didik.tahun_angkatan', $angkatan);
 		$this->db->where('detail_peserta_didik.idKelas', $idKelas);
+		$this->db->where('peserta_didik.status_pd', 'Aktif');
 
 		$query 		= $this->db->get();
 		$execute 	= $query->result();
 		return $execute;
 	}
 	public function getListNilaiPD($idLeger){
-		$query 		= $this->db->get('leger_nilai');
+		$this->db->select('leger_nilai.*,peserta_didik.NIK_pd, peserta_didik.nama_pd');
+		$this->db->from('leger_nilai');
+		$this->db->join('peserta_didik', 'leger_nilai.NIK_pd = peserta_didik.NIK_pd', 'left');
+		$this->db->where('leger_nilai.idLeger', $idLeger);
+		$query 		= $this->db->get();
 		$execute 	= $query->result();
 		return $execute; 
 	}
@@ -157,17 +162,17 @@ class LegerNilai_m extends CI_Model {
 		return $jmlCek;
 	}
 
-	public function tambahIdNilai($data, $pk){
-		$this->db->select('idLeger_nilai, NIK_pd');
+
+	public function tambahNilaiSiswa($data){
+		$this->db->select('*');
 		$this->db->from('leger_nilai');
-		$this->db->where('idLeger_nilai', $pk);
-		$cekData = $this->db->get();
-		$jmlCek = $cekData->num_rows();
-		if($jmlCek == 0){
+		$this->db->where('NIK_pd', $data['NIK_pd']);
+		$query = $this->db->get();
+		$cekData = $query->num_rows();
+		if($cekData == 0){
 			$execute = $this->db->insert('leger_nilai', $data);
 		}else{
-			$this->db->where('idLeger_nilai', $pk);
-			$execute = $this->db->update('leger_nilai', $data);
+			$execute = '';
 		}
 		return $execute;
 	}
