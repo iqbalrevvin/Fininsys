@@ -62,6 +62,7 @@ class LegerNilai_m extends CI_Model {
 		$this->db->from('master_leger');
 		$this->db->join('leger', 'master_leger.idMaster_leger = leger.idMaster_leger', 'left');
 		$this->db->join('leger_nilai', 'leger.idLeger = leger_nilai.idLeger', 'left');
+		$this->db->join('kelas', 'master_leger.idKelas = kelas.idKelas', 'left');
 		$this->db->where('master_leger.idMaster_leger', $idMasterLeger);
 		$query 		= $this->db->get();
 		$execute 	= $query->row();
@@ -101,6 +102,7 @@ class LegerNilai_m extends CI_Model {
 	public function addMapelLeger($data){
 		$this->db->insert('leger', $data);
 	}
+	
 
 	public function getKontenMapel($idMasterLeger){
 		$this->db->select('*');
@@ -120,14 +122,22 @@ class LegerNilai_m extends CI_Model {
 		$this->db->delete('leger');
 	}
 
-	public function getlistPD($idKelas){
+	public function getlistPD($idKelas, $angkatan){
 		$this->db->select('*');
 		$this->db->from('peserta_didik');
 		$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
+		$this->db->join('kelas', 'detail_peserta_didik.idKelas = kelas.idKelas', 'left');
+		$this->db->where('peserta_didik.tahun_angkatan', $angkatan);
 		$this->db->where('detail_peserta_didik.idKelas', $idKelas);
+
 		$query 		= $this->db->get();
 		$execute 	= $query->result();
 		return $execute;
+	}
+	public function getListNilaiPD($idLeger){
+		$query 		= $this->db->get('leger_nilai');
+		$execute 	= $query->result();
+		return $execute; 
 	}
 	public function getNilaiPD($NIK, $idLeger){
 		$this->db->select('*');
@@ -135,6 +145,64 @@ class LegerNilai_m extends CI_Model {
 		$this->db->where('NIK_pd', $NIK);
 		$this->db->where('idLeger', $idLeger);
 		$execute = $this->db->get();
+		return $execute;
+	}
+
+	public function cekDataNilai(){
+		$this->db->select('idLeger_nilai, NIK_pd');
+		$this->db->from('leger_nilai');
+		$this->db->where('idLeger_nilai', $pk);
+		$cekData = $this->db->get();
+		$jmlCek = $cekData->num_rows();
+		return $jmlCek;
+	}
+
+	public function tambahIdNilai($data, $pk){
+		$this->db->select('idLeger_nilai, NIK_pd');
+		$this->db->from('leger_nilai');
+		$this->db->where('idLeger_nilai', $pk);
+		$cekData = $this->db->get();
+		$jmlCek = $cekData->num_rows();
+		if($jmlCek == 0){
+			$execute = $this->db->insert('leger_nilai', $data);
+		}else{
+			$this->db->where('idLeger_nilai', $pk);
+			$execute = $this->db->update('leger_nilai', $data);
+		}
+		return $execute;
+	}
+	
+	public function simpanNilai($data, $pk){
+		$this->db->select('*');
+		$this->db->from('leger_nilai');
+		$this->db->where('idLeger_nilai', $pk);
+		$cekNilai = $this->db->get();
+		$jmlCek = $cekNilai->num_rows();
+		if($jmlCek == 0){
+			$execute = $this->db->insert('leger_nilai', $data);
+		}else{
+			$this->db->where('idLeger_nilai', $pk);
+			$execute = $this->db->update('leger_nilai', $data);
+		}
+		return $execute;
+	}
+	public function simpanNilai2($id,$idLeger,$nik,$value,$modul){
+		$this->db->select('*');
+		$this->db->from('leger_nilai');
+		$this->db->where('idLeger_nilai', $id);
+		$cekNilai = $this->db->get();
+		$jmlCek = $cekNilai->num_rows();
+		if($jmlCek == 0){
+			$execute = $this->db->insert('leger_nilai', array(
+															'idLeger' 	=> $idLeger, 
+															'NIK_pd' 	=> $nik,
+															$modul=>$value
+														)
+										);
+		}else{
+			$this->db->where(array("idLeger_nilai"=>$id));
+			$execute = $this->db->update("leger_nilai",array($modul=>$value));
+		}
 		return $execute;
 	}
 

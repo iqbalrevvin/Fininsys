@@ -98,11 +98,11 @@ class KelolaKelas extends CI_Controller {
 		}
 
 		$output = array(
-						"draw" => $this->input->post('draw'),
-						"recordsTotal" => $this->ManajemenKelas_m->count_all(),
-						"recordsFiltered" => $this->ManajemenKelas_m->count_filtered(),
-						"data" => $data,
-				);
+			"draw" => $this->input->post('draw'),
+			"recordsTotal" => $this->ManajemenKelas_m->count_all(),
+			"recordsFiltered" => $this->ManajemenKelas_m->count_filtered(),
+			"data" => $data,
+		);
 		//output to json format
 		echo json_encode($output);
 	}

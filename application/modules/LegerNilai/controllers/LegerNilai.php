@@ -9,6 +9,7 @@ class LegerNilai extends CI_Controller {
 		$this->load->library('grocery_CRUD');
 		$this->load->model('LegerNilai_m');
 		$this->load->model('TenagaPendidik/TenagaPendidik_m');
+		$this->load->model('DataTableSiswa_m');
 	}
 	public function index(){
 		$crud = new grocery_CRUD();
@@ -30,7 +31,7 @@ class LegerNilai extends CI_Controller {
 
 		$crud->required_fields('idKelas', 'tahun_angkatan', 'semester');
 
-		/*LIST DATA KELAS*/
+		/*LIST DATA TAHUN AJARAN*/
 		$listTahunAngkatan = $this->LegerNilai_m->getTahunAjaran();
 		$finalArray = array();
 		foreach ($listTahunAngkatan->result() as $row){
@@ -131,7 +132,9 @@ class LegerNilai extends CI_Controller {
 			    	'status' 	=> 'sukses',
 			    	'pesan' 	=> 'Data Berhasil Ditambahkan' 
 				];
+				
 				$this->LegerNilai_m->addMapelLeger($data);
+				
 			}else{
 				$callback = [
 			    	'status' 	=> 'ganda',
@@ -156,7 +159,9 @@ class LegerNilai extends CI_Controller {
 		$idKelas 	= $this->input->post('idKelas');
 		$idLeger 	= $this->input->post('idLeger');
 		$namaMapel 	= $this->input->post('namaMapel');
-		$listSiswa 	= $this->LegerNilai_m->getlistPD($idKelas);
+		$angkatan 	= $this->input->post('angkatan');
+		$listSiswa 	= $this->LegerNilai_m->getlistPD($idKelas, $angkatan);
+		$listNilai  = $this->LegerNilai_m->getListNilaiPD($idLeger);
 		/*foreach ($listSiswa as $pd) {
 			$NIK = $pd->NIK_pd;
 			$nilai = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
@@ -167,13 +172,31 @@ class LegerNilai extends CI_Controller {
 			}
 		}*/
 		#$data['nilai'] = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
+		$data['idKelas'] 	= $idKelas;
 		$data['listSiswa'] = $listSiswa;
+		$data['listNilai'] = $listNilai;
 		$data['namaMapel'] = $namaMapel;
 		$data['idLeger'] = $idLeger;
 
 		$this->load->view('KelolaNilai/kontenKelolaNilai', $data, FALSE);
 	}
 
+	public function getListModalSiswa(){
+		
+	}
+
+	public function simpanNilai(){
+		$NIK 	= $this->input->post('nik');
+		$field 	= $this->input->post('name');
+		$pk 	= $this->input->post('pk');
+		$value 	= $this->input->post('value');
+
+		$data = [
+		    $field => $value,
+		    //'NIK_pd' => $NIK
+		];
+		$this->LegerNilai_m->simpanNilai($data, $pk);
+	}
 
 }
 

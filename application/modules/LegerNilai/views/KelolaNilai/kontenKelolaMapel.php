@@ -25,24 +25,24 @@
 	</div>
 	<div class="m-portlet__body">
         <div class="m-widget3">
-	        <div class="m-scrollable" data-scrollable="true" style="height: 400px; overflow: auto;">
+	        <div class="m-scrollable" data-scrollable="true" style="height: 360px; overflow: auto;">
     			<?php foreach ($listMapel as $data): ?>
     				<div data-id="<?= $data->idLeger ?>" id="listMapel<?= $data->idLeger ?>">
 			        	<div class="m-widget3__item">
 			                <div class="m-widget3__header">
 			                    <div class="m-widget3__info">
 			                        <span class="m-widget3__username">
-			                            <b><?= $data->nama_mata_pelajaran ?></b> | <?= $data->nama_tenpen ?>
+			                            <b>(<?= $data->no_urut_mapel ?>)<?= $data->nama_mata_pelajaran ?></b> | <?= $data->nama_tenpen ?>
 			                        </span><br>
 			                        <span class="m-widget3__time" contenteditable="true">
 			                            KKM Pengetahuan : <?= $data->kkm_pengetahuan ?> | 
-			                            KKM Keterampilan : <?= $data->kkm_keterampilan ?>
+			                            KKM Keterampilan : <?= $data->kkm_keterampilan ?> 
 			                        </span>
 			                    </div>
 			                </div>
 			                <a href="#" class="btnKelolaNilai btn btn-sm btn-success m-btn m-btn--pill m-btn--air" 
 		                    	data-kelas="<?= $data->idKelas ?>" data-leger="<?= $data->idLeger ?>" 
-		                    	data-mapel="<?= $data->nama_mata_pelajaran ?>">
+		                    	data-mapel="<?= $data->nama_mata_pelajaran ?>" data-angkatan="<?= $data->tahun_angkatan ?>">
 		                        <b>Kelola Nilai</b>
 		                    </a>
 		                    <button class="btnHapusMapel btn btn-sm btn-danger m-btn m-btn--pill m-btn--air" 
@@ -106,6 +106,7 @@
 	    	var idKelas 			= $(this).data('kelas');
 	    	var namaMapel			= $(this).data('mapel');
 	    	var idLeger				= $(this).data('leger');
+	    	var angkatan 			= $(this).data('angkatan');
 	    	$.ajax({
 	          url: '<?= base_url('LegerNilai/getKontenKelolaNilai') ?>',
 	          type: 'POST',
@@ -114,6 +115,7 @@
 	          	idKelas 	: idKelas,
 	          	idLeger 	: idLeger,
 	          	namaMapel 	: namaMapel,
+	          	angaktan 	: angkatan,
 	            show: 1
 	          },
 	          	success: function(response){

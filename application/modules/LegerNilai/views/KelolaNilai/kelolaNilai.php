@@ -78,7 +78,6 @@
 		        </span>
 		    </div>
 		</div>
-		<?php #require('kontenKelolaMapel.php') ?>
 	</div>
 
 	<div class="col-lg-7">

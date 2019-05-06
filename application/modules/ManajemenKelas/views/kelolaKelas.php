@@ -66,7 +66,7 @@
                                             <span></span>
                                     </label>
                                 </th>
-                                <th>NIK Siswa</th>
+                                <th>Nama Siswa</th>
                                 <th>Jenis Kelamin</th>
                                 <th>NIPD</th>
                                 <th>NISN</th>
@@ -392,7 +392,7 @@
 	});
 
 	/*PILIH WALI KELAS*/
-	/*JANGKA SIMPANAN TIPE REKENING*/
+
 
 /*------------------------------------------------------------------------------*/
     

@@ -12,6 +12,7 @@ class Listpd extends CI_Controller {
 	}
 
 	public function index(){
+		$this->load->model('LegerNilai/LegerNilai_m');
 		$crud 		= new grocery_CRUD();
 
 		$crud->set_table('peserta_didik');
@@ -45,6 +46,15 @@ class Listpd extends CI_Controller {
 		#$crud->add_fields('idSekolah','tahun_angkatan','NIK_pd', 'nama_pd', 'jk_pd', 'tampat_lahir_pd', 'tanggal_lahir_pd', 'agama', 'no_telp_pd', 'email_pd', 'foto_pd', 'facebook', 'instagram', 'twitter');
 		$crud->unset_add_fields('kelurahan','kecamatan', 'kota', 'provinsi', 'alamat');
 		$crud->unset_edit_fields('kelurahan','kecamatan', 'kota', 'provinsi', 'alamat');
+
+		/*LIST DATA TAHUN AJARAN*/
+		$listTahunAngkatan = $this->LegerNilai_m->getTahunAjaran();
+		$finalArray = array();
+		foreach ($listTahunAngkatan->result() as $row){
+				$finalArray[substr($row->nama_tahun_ajaran,0,4)]=$row->nama_tahun_ajaran;
+		}
+		$crud->field_type('tahun_angkatan','dropdown',$finalArray);
+		/*----------------------------------------------------*/
 
 		$crud->required_fields('NIK_pd','tahun_angkatan','nisn','nipd','nama_pd', 'jk_pd', 'tempat_lahir_pd', 'agama', 'no_telp_pd');
 		$crud->callback_after_insert(array($this,'insertDetail'));
