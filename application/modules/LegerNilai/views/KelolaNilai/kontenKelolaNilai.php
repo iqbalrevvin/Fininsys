@@ -28,17 +28,6 @@
                                     </span>
                                 </a>
                             </li>
-                            <li class="m-portlet__nav-item">
-                                <button type="button" class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" 
-                                    id="reloadTabelPilihSiswa">
-                                    <span>
-                                        <i class="flaticon-refresh"></i>
-                                        <span>Muat Ulang</span>
-                                    </span>
-                                </button>
-                            </li>
-
-
                         </ul>
                     </div>
                 </div>
@@ -129,7 +118,9 @@
 								</th>
 								<th style="text-align: center;" colspan="2" scope="col">Nilai Umum</th>
 								<th style="text-align: center;" colspan="3" scope="col">Nilai Prilaku</th>
-								<th style="width: auto; height: auto; text-align: center; vertical-align: middle;" rowspan="2" >Deskripsi</th>
+								<th style="width: auto; height: auto; text-align: center; vertical-align: middle;" rowspan="2" >
+									Catatan
+								</th>
 							</tr>
                             <tr>
                                 <th style="text-align: center;">NIPD</th>
@@ -139,7 +130,6 @@
                                 <th style="text align: center;">Sikap</th>
                                 <th style="text-align: center;">Sosial</th>
                                 <th style="text-align: center;">Spritual</th>
-                                
                             </tr>
                         </thead>
                         <tbody>
@@ -161,21 +151,45 @@
 	                				</td>
 	                				<td style="text-align: center;">
 	                					<a href="#" class="nilaiKeterampilan" id="2" 
-	    									data-type="number" data-placement="left" data-title="Nilai Keterampilan" 
-	    									data-name="nilaiPengetahuan" data-pk='2'>
+	    									data-type="number" data-placement="left" 
+	    									data-title="Nilai Keterampilan" 
+	    									data-name="nilai_keterampilan" 
+	    									data-pk='<?= $data->idLeger_nilai ?>'>
 	    									<?= $data->nilai_keterampilan ?>
 	  									</a>
 	                				</td>
 	                				<td style="text-align: center;">
-	                					<a href="#" class="nilaiSikap" id="2" 
-	    									data-type="number" data-placement="left" data-title="Nilai Sikap" 
-	    									data-name="nilaiSikap" data-pk='2'>
+	                					<a href="#" class="nilaiSikap"
+	    									data-type="select" data-placement="left" data-title="Nilai Sikap" 
+	    									data-name="nilai_sikap" 
+	    									data-pk='<?= $data->idLeger_nilai ?>'>
 	    									<?= $data->nilai_sikap ?>
 	  									</a>
 	                				</td>
-	                				<td style="text-align: center;">dfssdfaf</td>
-	                				<td style="text-align: center;">dfssdfaf</td>
-	                				<td style="text-align: center;">dfssdfaf</td>
+	                				<td style="text-align: center;">
+	                					<a href="#" class="nilaiSosial"
+	    									data-type="select" data-placement="left" data-title="Nilai Sosial" 
+	    									data-name="nilai_sosial" 
+	    									data-pk='<?= $data->idLeger_nilai ?>'>
+	    									<?= $data->nilai_sosial ?>
+	  									</a>
+	                				</td>
+	                				<td style="text-align: center;">
+	                					<a href="#" class="nilaiSpritual"
+	    									data-type="select" data-placement="left" data-title="Nilai Spritual" 
+	    									data-name="nilai_spritual" 
+	    									data-pk='<?= $data->idLeger_nilai ?>'>
+	    									<?= $data->nilai_spritual ?>
+	  									</a>
+	                				</td>
+	                				<td style="text-align: center;">
+	                					<a href="#" class="catatan"
+	    									data-type="text" data-placement="left" data-title="Deskripsi" 
+	    									data-name="catatan" 
+	    									data-pk='<?= $data->idLeger_nilai ?>'>
+	    									<?= $data->catatan ?>
+	  									</a>
+	                				</td>
 	                			</tr>
 	                		<?php endforeach; ?>
                         </tbody>
@@ -217,7 +231,7 @@ function dataNilaiSiswa(){
 	$('.nilaiPengetahuan').editable({
 		//id : $(this).data('id'),
 		anim : 'true',
-		onblur : 'submit',
+		//onblur : 'submit',
 		showbuttons: false,
         mode: 'inline',   
         type: 'number',
@@ -232,16 +246,113 @@ function dataNilaiSiswa(){
 		}
     });
     $('.nilaiKeterampilan').editable({
+		//id : $(this).data('id'),
+		anim : 'true',
+		//onblur : 'submit',
+		showbuttons: false,
         mode: 'inline',   
         type: 'number',
         step: '1.00',
         min: '0.00',
         max: '100',
         emptytext: 'Kosong',
-        title: 'Enter Value',   
-        url : '',
+        title: 'Enter Value',
+        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
         ajaxOptions: {
-		    type: 'POST'
+		    type: 'POST',
+		}
+    });
+
+    $('.nilaiSikap').editable({
+		//id : $(this).data('id'),
+		anim : 'true',
+		//onblur : 'submit',
+		showbuttons: false,
+        mode: 'inline',   
+        type: 'number',
+        step: '1.00',
+        min: '0.00',
+        max: '100',
+        emptytext: 'Kosong',
+        title: 'Enter Value',
+        source: [
+        	{value: "A", text: "A"}, 
+        	{value: "B", text: "B"},
+        	{value: "C", text: "C"},
+        	{value: "D", text: "D"},
+        	{value: "E", text: "E"},
+        ],
+        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
+        ajaxOptions: {
+		    type: 'POST',
+		}
+    });
+
+    $('.nilaiSosial').editable({
+		//id : $(this).data('id'),
+		anim : 'true',
+		//onblur : 'submit',
+		showbuttons: false,
+        mode: 'inline',   
+        type: 'number',
+        step: '1.00',
+        min: '0.00',
+        max: '100',
+        emptytext: 'Kosong',
+        title: 'Enter Value',
+        source: [
+        	{value: "A", text: "A"}, 
+        	{value: "B", text: "B"},
+        	{value: "C", text: "C"},
+        	{value: "D", text: "D"},
+        	{value: "E", text: "E"},
+        ],
+        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
+        ajaxOptions: {
+		    type: 'POST',
+		}
+    });
+
+    $('.nilaiSpritual').editable({
+		//id : $(this).data('id'),
+		anim : 'true',
+		//onblur : 'submit',
+		showbuttons: false,
+        mode: 'inline',   
+        type: 'number',
+        step: '1.00',
+        min: '0.00',
+        max: '100',
+        emptytext: 'Kosong',
+        title: 'Enter Value',
+        source: [
+        	{value: "A", text: "A"}, 
+        	{value: "B", text: "B"},
+        	{value: "C", text: "C"},
+        	{value: "D", text: "D"},
+        	{value: "E", text: "E"},
+        ],
+        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
+        ajaxOptions: {
+		    type: 'POST',
+		}
+    });
+
+    $('.catatan').editable({
+		//id : $(this).data('id'),
+		anim : 'true',
+		onblur : 'submit',
+		showbuttons: false,
+        mode: 'inline',   
+        type: 'number',
+        step: '1.00',
+        min: '0.00',
+        max: '100',
+        emptytext: 'Kosong',
+        title: 'Enter Value',
+        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
+        ajaxOptions: {
+		    type: 'POST',
 		}
     });
 
@@ -298,10 +409,15 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 	                    	/*tabelNilaiSiswa.ajax.reload(null,false);*/ //reload datatable ajax 
 	                        /*kontenView();*/
 	                        $('#resultKontenKelolaNilai').fadeOut("slow");
-	                        $('#loadKontenKelolaNilai').show().html('<div class="m-blockui" id="loader-center"><span>Data Penilaian Siswa Diperbarui, <b>Silahkan Klik Kembali Kelola Nilai!</b></span><span></span></div>');
+	                        $('#loadKontenKelolaNilai').show().html('<div class="m-blockui" id="loader-center"><span>Data Penilaian Siswa Diperbarui, <b class="text-success">Silahkan Klik Kembali Kelola Nilai!</b></span><span></span></div>');
 	                        //$('#loadKontenKelolaNilai').fadeOut("slow");
 	                        //$('#resultKontenKelolaNilai').fadeIn("slow");
 	                        toastr.success("Siswa Berhasil Ditambahkan Ke Penilain Mata Pelajaran"+mapel, "Siswa Ditambahkan");
+	                        swal({
+				                title: "Siswa Ditambahkan",
+				                text: "Siswa berhasil ditambahkan, silahkan klik kembali kelola nilai!",
+				                type: "success",
+				            });
 	                    }
 	                    else{
 	                        alert('Gagal Memproses Data, Muat Ulang Halaman Lalu Coba Kembali!');
@@ -318,7 +434,7 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
   			}/*KONDISI JIKA MEMILIH YA UNTUK MEMASUKAN DATA SISWA*/
 		});
 	}else{
-		toastr.error("Pilih Terlebih Dahulu Siswa Untuk Penilaian Mata Pelajaran "+mapel, "Pilih Siswa!");
+		toastr.error("Pilih Terlebih Dahulu Siswa Untuk Penilaian Mata Pelajaran ", "Pilih Siswa!");
 	}
 });
 /*---------------*/

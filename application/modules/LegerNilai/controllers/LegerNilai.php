@@ -16,9 +16,10 @@ class LegerNilai extends CI_Controller {
 
 		$crud->set_table('master_leger');
 		$crud->set_subject('Master Leger Nilai');
-		$crud->display_as('idKelas', 'Kelas');
+		$crud->display_as('idKelas', 'Kelas/Sekolah');
 		$crud->unset_read();
-		$crud->add_action('Kelola', 'fa fa-cog', '', '',array($this,'profilLink'));
+		$crud->add_action('Nilai Reguler', 'fa fa-cog', '', '',array($this,'linkReguler'));
+		$crud->add_action('Nilai Ekskul', 'fa fa-cog', '', '',array($this,'linkEkskul'));
 
 		/*LIST DATA KELAS*/
 		$listKelas = $this->LegerNilai_m->getKelas();
@@ -31,6 +32,7 @@ class LegerNilai extends CI_Controller {
 
 		$crud->required_fields('idKelas', 'tahun_angkatan', 'semester');
 
+		
 		/*LIST DATA TAHUN AJARAN*/
 		$listTahunAngkatan = $this->LegerNilai_m->getTahunAjaran();
 		$finalArray = array();
@@ -52,7 +54,12 @@ class LegerNilai extends CI_Controller {
 		$this->outputview->output_admin($view, $template, $data, $output);
 	}
 
-	function profilLink($primary_key, $row){
+
+	function linkReguler($primary_key, $row){
+		return site_url('LegerNilai/KelolaNilai').'?IDMaster='.$primary_key;
+	}
+
+	function linkEkskul($primary_key, $row){
 		return site_url('LegerNilai/KelolaNilai').'?IDMaster='.$primary_key;
 	}
 
@@ -100,7 +107,7 @@ class LegerNilai extends CI_Controller {
 		$template 				= 'admin_template';
 		$data['crumb'] = array( 
 				'Leger Nilai' => 'LegerNilai',
-				'Kelola Nilai' => '' 
+				'Kelola Nilai Reguler' => '' 
 			);
 		
 		$this->outputview->output_admin($view, $template, $data);
