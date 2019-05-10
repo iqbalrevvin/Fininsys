@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2019 at 05:30 PM
+-- Generation Time: May 10, 2019 at 10:50 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -103,15 +103,30 @@ INSERT INTO `alamat_provinsi` (`idProvinsi`, `nama_provinsi`) VALUES
 CREATE TABLE `deskripsi_nilai_prilaku` (
   `idDeskripsi_nilai` int(11) NOT NULL,
   `nilai_deskripsi` char(1) NOT NULL,
-  `deskripsi` text NOT NULL
+  `deskripsi` text NOT NULL,
+  `jenis_nilai_deskripsi` enum('Nilai Sikap','Nilai Sosial','Nilai Spritual') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `deskripsi_nilai_prilaku`
 --
 
-INSERT INTO `deskripsi_nilai_prilaku` (`idDeskripsi_nilai`, `nilai_deskripsi`, `deskripsi`) VALUES
-(1, 'A', 'test a');
+INSERT INTO `deskripsi_nilai_prilaku` (`idDeskripsi_nilai`, `nilai_deskripsi`, `deskripsi`, `jenis_nilai_deskripsi`) VALUES
+(1, 'A', '<p>Sikap Siswa Bersangkutan Sangat Baik</p>\n', 'Nilai Sikap'),
+(2, 'B', '<p>Nilai Sikap Siswa Bersangkutan Baik</p>\n', 'Nilai Sikap'),
+(3, 'C', '<p>Sikap Siswa Bersangkutan Cukup Baik</p>\n', 'Nilai Sikap'),
+(4, 'D', '<p>Sikap Siswa Bersangkutan Kurang Baik</p>\n', 'Nilai Sikap'),
+(5, 'E', '<p>Nilai Siswa Bersangkutan Tidak Baik</p>\n', 'Nilai Sikap'),
+(8, 'A', '<p>Sosial Siswa Bersangkutan Sangat Baik</p>\n', 'Nilai Sosial'),
+(9, 'B', '<p>Sosial Siswa Bersangkutan Baik</p>\n', 'Nilai Sosial'),
+(10, 'C', '<p>Sosial Siswa Bersangkutan Cukup Baik</p>\n', 'Nilai Sosial'),
+(11, 'D', '<p>Sosial Siswa Bersangkutan Kurang Baik</p>\n', 'Nilai Sosial'),
+(12, 'E', '<p>Sosial Siswa Bersangkutan Tidak Baik</p>\n', 'Nilai Sosial'),
+(13, 'A', '<p>Spritual Siswa Sangat Baik</p>\n', 'Nilai Spritual'),
+(14, 'B', '<p>Spritual Siswa Bersangkutan Baik</p>\n', 'Nilai Spritual'),
+(15, 'C', '<p>Spritual Siswa Bersangkutan Cukup Baik</p>\n', 'Nilai Spritual'),
+(16, 'D', '<p>Spritual Siswa Bersangkutan Kurang Baik</p>\n', 'Nilai Spritual'),
+(17, 'E', '<p>Spritual Siswa Bersangkutan Tidak Baik</p>\n', 'Nilai Spritual');
 
 -- --------------------------------------------------------
 
@@ -90785,10 +90800,31 @@ CREATE TABLE `leger` (
 --
 
 INSERT INTO `leger` (`idLeger`, `idMaster_leger`, `idMata_pelajaran`, `NIK_tenpen`, `kkm_pengetahuan`, `kkm_keterampilan`, `no_urut_mapel`) VALUES
-(28, 1, 3, '3205081706920001', 75, 75, 1),
-(30, 1, 6, '3205081706920001', 75, 75, 4),
-(31, 1, 7, '3205081706920001', 75, 75, 2),
-(32, 6, 3, '3205081706920001', 75, 75, 1);
+(32, 6, 3, '3205081706920001', 75, 75, 1),
+(38, 6, 7, '3205054909940006', 75, 75, 2),
+(46, 1, 3, '3205081706920001', 75, 75, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leger_ekskul`
+--
+
+CREATE TABLE `leger_ekskul` (
+  `idLeger_ekskul` int(111) NOT NULL,
+  `idMaster_leger` int(111) NOT NULL,
+  `ekstrakulikuler` varchar(100) NOT NULL,
+  `pembimbing` varchar(100) NOT NULL,
+  `no_urut_ekskul` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `leger_ekskul`
+--
+
+INSERT INTO `leger_ekskul` (`idLeger_ekskul`, `idMaster_leger`, `ekstrakulikuler`, `pembimbing`, `no_urut_ekskul`) VALUES
+(4, 1, 'Baca Tulis Quran', 'Agus Fahmi', 1),
+(5, 1, 'Paskibra', 'Dini Endah Purwati Ningsih', 2);
 
 -- --------------------------------------------------------
 
@@ -90804,29 +90840,54 @@ CREATE TABLE `leger_nilai` (
   `nilai_keterampilan` int(2) DEFAULT NULL,
   `nilai_sikap` char(1) DEFAULT NULL,
   `nilai_sosial` char(1) DEFAULT NULL,
-  `nilai_spritual` char(1) DEFAULT NULL
+  `nilai_spritual` char(1) DEFAULT NULL,
+  `catatan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `leger_nilai`
 --
 
-INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetahuan`, `nilai_keterampilan`, `nilai_sikap`, `nilai_sosial`, `nilai_spritual`) VALUES
-(299, 28, '3205170511050010', 80, NULL, NULL, NULL, NULL),
-(300, 28, '3205210911040000', 78, NULL, NULL, NULL, NULL),
-(301, 28, '3205210509050000', 67, NULL, NULL, NULL, NULL),
-(305, 31, '3205170511050010', 78, NULL, NULL, NULL, NULL),
-(306, 31, '3205210911040000', 56, NULL, NULL, NULL, NULL),
-(307, 31, '3205210509050000', 67, NULL, NULL, NULL, NULL),
-(308, 30, '3205170511050010', NULL, NULL, NULL, NULL, NULL),
-(309, 30, '3205210911040000', NULL, NULL, NULL, NULL, NULL),
-(310, 30, '3205210509050000', NULL, NULL, NULL, NULL, NULL),
-(312, 32, '3205212702040000', 75, NULL, NULL, NULL, NULL),
-(313, 32, '3205211809040000', 56, NULL, NULL, NULL, NULL),
-(314, 32, '3205211003060000', 67, NULL, NULL, NULL, NULL),
-(315, 32, '3205211404030000', 45, NULL, NULL, NULL, NULL),
-(316, 32, '3205214408050010', 67, NULL, NULL, NULL, NULL),
-(317, 32, '3205214104060000', 78, NULL, NULL, NULL, NULL);
+INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetahuan`, `nilai_keterampilan`, `nilai_sikap`, `nilai_sosial`, `nilai_spritual`, `catatan`) VALUES
+(312, 32, '3205212702040000', 75, NULL, NULL, NULL, NULL, NULL),
+(313, 32, '3205211809040000', 56, NULL, NULL, NULL, NULL, NULL),
+(314, 32, '3205211003060000', 67, NULL, NULL, NULL, NULL, NULL),
+(315, 32, '3205211404030000', 45, NULL, NULL, NULL, NULL, NULL),
+(316, 32, '3205214408050010', 67, NULL, NULL, NULL, NULL, NULL),
+(317, 32, '3205214104060000', 78, NULL, NULL, NULL, NULL, NULL),
+(330, 38, '3205212702040000', 78, 90, 'B', 'A', 'B', 'tes'),
+(331, 38, '3205211809040000', 78, 67, 'B', 'B', 'A', 'test'),
+(332, 38, '3205211003060000', 56, 56, 'B', 'B', 'A', 'test'),
+(333, 38, '3205211404030000', 80, 90, 'A', 'A', 'A', 'tes'),
+(334, 38, '3205214408050010', 65, 90, 'B', 'A', 'B', 'test'),
+(335, 38, '3205214104060000', 67, 89, 'B', 'A', 'D', 'test'),
+(351, 46, '3205170511050010', 87, 89, 'B', NULL, NULL, NULL),
+(352, 46, '3205210911040000', 78, 87, 'B', 'A', NULL, NULL),
+(353, 46, '3205210509050000', 80, 78, 'B', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leger_nilai_ekskul`
+--
+
+CREATE TABLE `leger_nilai_ekskul` (
+  `idLeger_nilai_ekskul` int(111) NOT NULL,
+  `idLeger_ekskul` int(111) NOT NULL,
+  `NIK_pd` char(16) NOT NULL,
+  `nilai_ekskul` char(1) NOT NULL,
+  `deskripsi_nilai_ekskul` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `leger_nilai_ekskul`
+--
+
+INSERT INTO `leger_nilai_ekskul` (`idLeger_nilai_ekskul`, `idLeger_ekskul`, `NIK_pd`, `nilai_ekskul`, `deskripsi_nilai_ekskul`) VALUES
+(10, 4, '3205210509050000', 'B', 'dfgdfgsdfg'),
+(13, 5, '3205170511050010', 'B', ''),
+(14, 5, '3205210911040000', '', ''),
+(15, 5, '3205210509050000', '', '');
 
 -- --------------------------------------------------------
 
@@ -90950,7 +91011,7 @@ INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`,
 (127, 2, 3, 'Penilaian', 'statistics', '#', '', 0, 0),
 (128, 2, 3, 'Kelola Leger Nilai', 'line-graph', 'LegerNilai', '', 127, 0),
 (129, 0, 3, 'Jabatan Tenaga Pendidik', 'customer', 'JabatanTenpen', '', 0, 0),
-(130, 1, 3, 'Atur Nilai Deskripsi', 'doc', 'SetNilaiDeskripsi', '', 127, 0);
+(130, 1, 3, 'Atur Nilai Deskripsi', 'doc', 'DeskripsiNilai', '', 127, 0);
 
 -- --------------------------------------------------------
 
@@ -91337,7 +91398,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1555619530, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
-(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1557128094, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
+(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1557501197, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314');
 
 -- --------------------------------------------------------
 
@@ -91442,7 +91503,6 @@ ALTER TABLE `alamat_provinsi`
 --
 ALTER TABLE `deskripsi_nilai_prilaku`
   ADD PRIMARY KEY (`idDeskripsi_nilai`),
-  ADD UNIQUE KEY `nilai_deskripsi` (`nilai_deskripsi`),
   ADD KEY `nilai_deskripsi_2` (`nilai_deskripsi`);
 
 --
@@ -91547,6 +91607,13 @@ ALTER TABLE `leger`
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
+-- Indexes for table `leger_ekskul`
+--
+ALTER TABLE `leger_ekskul`
+  ADD PRIMARY KEY (`idLeger_ekskul`),
+  ADD KEY `idMaster_leger` (`idMaster_leger`);
+
+--
 -- Indexes for table `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
@@ -91556,6 +91623,14 @@ ALTER TABLE `leger_nilai`
   ADD KEY `nilai_sikap` (`nilai_sikap`),
   ADD KEY `nilai_sosial` (`nilai_sosial`),
   ADD KEY `nilai_spritual` (`nilai_spritual`);
+
+--
+-- Indexes for table `leger_nilai_ekskul`
+--
+ALTER TABLE `leger_nilai_ekskul`
+  ADD PRIMARY KEY (`idLeger_nilai_ekskul`),
+  ADD KEY `NIK_pd` (`NIK_pd`),
+  ADD KEY `idLeger_ekskul` (`idLeger_ekskul`);
 
 --
 -- Indexes for table `login_attempts`
@@ -91698,7 +91773,7 @@ ALTER TABLE `alamat_provinsi`
 -- AUTO_INCREMENT for table `deskripsi_nilai_prilaku`
 --
 ALTER TABLE `deskripsi_nilai_prilaku`
-  MODIFY `idDeskripsi_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idDeskripsi_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `detail_peserta_didik`
@@ -91764,13 +91839,25 @@ ALTER TABLE `kurikulum`
 -- AUTO_INCREMENT for table `leger`
 --
 ALTER TABLE `leger`
-  MODIFY `idLeger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `idLeger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `leger_ekskul`
+--
+ALTER TABLE `leger_ekskul`
+  MODIFY `idLeger_ekskul` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
-  MODIFY `idLeger_nilai` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=318;
+  MODIFY `idLeger_nilai` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=357;
+
+--
+-- AUTO_INCREMENT for table `leger_nilai_ekskul`
+--
+ALTER TABLE `leger_nilai_ekskul`
+  MODIFY `idLeger_nilai_ekskul` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `login_attempts`
@@ -91903,6 +91990,12 @@ ALTER TABLE `leger`
   ADD CONSTRAINT `leger_ibfk_4` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON UPDATE CASCADE;
 
 --
+-- Constraints for table `leger_ekskul`
+--
+ALTER TABLE `leger_ekskul`
+  ADD CONSTRAINT `leger_ekskul_ibfk_1` FOREIGN KEY (`idMaster_leger`) REFERENCES `master_leger` (`idMaster_leger`) ON UPDATE CASCADE;
+
+--
 -- Constraints for table `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
@@ -91911,6 +92004,12 @@ ALTER TABLE `leger_nilai`
   ADD CONSTRAINT `leger_nilai_ibfk_3` FOREIGN KEY (`nilai_sikap`) REFERENCES `deskripsi_nilai_prilaku` (`nilai_deskripsi`) ON UPDATE CASCADE,
   ADD CONSTRAINT `leger_nilai_ibfk_4` FOREIGN KEY (`nilai_sosial`) REFERENCES `deskripsi_nilai_prilaku` (`nilai_deskripsi`) ON UPDATE CASCADE,
   ADD CONSTRAINT `leger_nilai_ibfk_5` FOREIGN KEY (`nilai_spritual`) REFERENCES `deskripsi_nilai_prilaku` (`nilai_deskripsi`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `leger_nilai_ekskul`
+--
+ALTER TABLE `leger_nilai_ekskul`
+  ADD CONSTRAINT `leger_nilai_ekskul_ibfk_1` FOREIGN KEY (`idLeger_ekskul`) REFERENCES `leger_ekskul` (`idLeger_ekskul`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `master_leger`
