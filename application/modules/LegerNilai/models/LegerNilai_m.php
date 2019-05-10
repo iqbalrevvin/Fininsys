@@ -39,6 +39,7 @@ class LegerNilai_m extends CI_Model {
 			$this->db->update('', $data);
 		}
 	}
+
 	public function getKelas(){
 		$this->db->select('kelas.*,tenaga_pendidik.NIK_tenpen, tenaga_pendidik.nama_tenpen, 
 							program_studi.idProdi, program_studi.nama_prodi,
@@ -192,6 +193,7 @@ class LegerNilai_m extends CI_Model {
 		}
 		return $execute;
 	}
+
 	public function simpanNilai2($id,$idLeger,$nik,$value,$modul){
 		$this->db->select('*');
 		$this->db->from('leger_nilai');
@@ -211,6 +213,92 @@ class LegerNilai_m extends CI_Model {
 		}
 		return $execute;
 	}
+
+	/*----------------------------------------------------------------------*/
+	public function getEkskul(){
+		$this->db->select('*');
+		$this->db->from('ekstrakulikuler');
+		$this->db->order_by('nama_ekstrakulikuler', 'asc');
+		$query 		= $this->db->get();
+		$execute 	= $query->result();
+		return $execute;
+	}
+
+	public function getKontenEkskul($idMasterLeger){
+		$this->db->select('*');
+		$this->db->from('leger_ekskul');
+		$this->db->join('master_leger', 'leger_ekskul.idMaster_leger = master_leger.idMaster_leger', 'left');
+		$this->db->where('leger_ekskul.idMaster_leger', $idMasterLeger);
+		$this->db->order_by('leger_ekskul.no_urut_ekskul', 'asc');
+		$query = $this->db->get();
+		$execute = $query->result();
+		return $execute;
+	}
+
+	public function cekEkskulNilai($data){
+		$this->db->select('idMaster_leger, ekstrakulikuler');
+		$this->db->from('leger_ekskul');
+		$this->db->where('idMaster_leger', $data['idMaster_leger']);
+		$this->db->where('ekstrakulikuler', $data['ekstrakulikuler']);
+		$query = $this->db->get();
+		$execute = $query->num_rows();
+		return $execute;
+	}
+
+	public function addEkskulLeger($data){
+		$this->db->insert('leger_ekskul', $data);
+	}
+
+	public function hapusKontenEkskul($idLegerEkskul){
+		$this->db->where('idLeger_ekskul', $idLegerEkskul);
+		$this->db->delete('leger_ekskul');
+	}
+
+	public function getListNilaiEkskulPD($idLeger){
+		$this->db->select('leger_nilai_ekskul.*,peserta_didik.NIK_pd, peserta_didik.nama_pd, peserta_didik.nipd');
+		$this->db->from('leger_nilai_ekskul');
+		$this->db->join('peserta_didik', 'leger_nilai_ekskul.NIK_pd = peserta_didik.NIK_pd', 'left');
+		$this->db->where('leger_nilai_ekskul.idLeger_ekskul', $idLeger);
+		$query 		= $this->db->get();
+		$execute 	= $query->result();
+		return $execute; 
+	}
+
+	public function tambahNilaiEkskulSiswa($data){
+		$this->db->select('*');
+		$this->db->from('leger_nilai_ekskul');
+		$this->db->where('idLeger_ekskul', $data['idLeger_ekskul']);
+		$this->db->where('NIK_pd', $data['NIK_pd']);
+		$query = $this->db->get();
+		$cekData = $query->num_rows();
+		if($cekData == 0){
+			$execute = $this->db->insert('leger_nilai_ekskul', $data);
+		}else{
+			$execute = '';
+		}
+		return $execute;
+	}
+
+	public function simpanNilaiEkskul($data, $pk){
+		$this->db->select('*');
+		$this->db->from('leger_nilai_ekskul');
+		$this->db->where('idLeger_nilai_ekskul', $pk);
+		$cekNilai = $this->db->get();
+		$jmlCek = $cekNilai->num_rows();
+		if($jmlCek == 0){
+			$execute = $this->db->insert('leger_nilai_ekskul', $data);
+		}else{
+			$this->db->where('idLeger_nilai_ekskul', $pk);
+			$execute = $this->db->update('leger_nilai_ekskul', $data);
+		}
+		return $execute;
+	}
+
+	public function hapusPenilaianSiswaEkskul($id){
+		$this->db->where('idLeger_nilai_ekskul', $id);
+		$this->db->delete('leger_nilai_ekskul');
+	}
+
 
 }
 

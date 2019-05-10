@@ -60,7 +60,7 @@ class LegerNilai extends CI_Controller {
 	}
 
 	function linkEkskul($primary_key, $row){
-		return site_url('LegerNilai/KelolaNilai').'?IDMaster='.$primary_key;
+		return site_url('LegerNilai/KelolaNilaiEkskul').'?IDMaster='.$primary_key;
 	}
 
 	function insertMasterLeger($post_array){
@@ -92,6 +92,7 @@ class LegerNilai extends CI_Controller {
 		return $updateMasterLeger;
 	}
 
+	/*-------------------------KELOLA LEGER NILAI--------------------*/
 
 	public function KelolaNilai(){
 		$idMasterLeger 			= $this->input->get('IDMaster');
@@ -214,6 +215,131 @@ class LegerNilai extends CI_Controller {
 		];
 		$this->LegerNilai_m->simpanNilai($data, $pk);
 	}
+
+
+
+
+
+
+
+	/*-------------------NILAI EKSKUL---------------------*/
+
+	public function KelolaNilaiEkskul(){
+		$idMasterLeger 			= $this->input->get('IDMaster');
+		$getEkskul 				= $this->LegerNilai_m->getEkskul();
+		$getTenpen 				= $this->LegerNilai_m->getTenpen();
+
+		$data['idMasterLeger'] 	= $idMasterLeger;
+		$data['tenpen'] 		= $getTenpen;
+		$data['ekskul'] 		= $getEkskul;
+		$data['MasterLeger'] 	= $this->LegerNilai_m->detailLeger($idMasterLeger);
+		$view 					= 'KelolaNilaiEkskul/kelolaNilaiEkskul';
+		$template 				= 'admin_template';
+		$data['crumb'] = array( 
+				'Leger Nilai' => 'LegerNilai',
+				'Kelola Nilai Ekstrakulikuler' => '' 
+			);
+		
+		$this->outputview->output_admin($view, $template, $data);
+	}
+
+	public function getKontenEkskul(){
+		$idMasterLeger = $this->input->post('id');
+		$data['listEkskul'] = $this->LegerNilai_m->getKontenEkskul($idMasterLeger);
+		$this->load->view('KelolaNilaiEkskul/kontenKelolaEkskul', $data, FALSE);
+	}
+
+	public function tambahEkskulNilai(){
+		$i = $this->input;
+		$data = [
+		    'idMaster_leger' 	=> $i->post('idMaster'),
+		    'ekstrakulikuler' 	=> $i->post('pilihEkskul'),
+		    'pembimbing' 		=> $i->post('pembimbingEkskul'),
+		    'no_urut_ekskul' 	=> $i->post('noUrut')
+		];
+		$cekEkskul = $this->LegerNilai_m->cekEkskulNilai($data);
+		if($cekEkskul == 0){
+			$callback = [
+		    	'status' 	=> 'sukses',
+		    	'pesan' 	=> 'Data Berhasil Ditambahkan' 
+			];
+			$this->LegerNilai_m->addEkskulLeger($data);
+			
+		}else{
+			$callback = [
+		    	'status' 	=> 'ganda',
+		    	'pesan' 	=> 'Data Mapel Yang Ditambahkan Sudah Tersedia' 
+			];
+		}
+
+		echo json_encode($callback);
+	}
+	public function hapusKontenEkskul(){
+		$idLegerEkskul = $this->input->post('id');
+		$this->LegerNilai_m->hapusKontenEkskul($idLegerEkskul);
+	}
+
+	public function getKontenKelolaNilaiEkskul(){
+		$idKelas 	= $this->input->post('idKelas');
+		$idLeger 	= $this->input->post('idLeger');
+		$namaEkskul = $this->input->post('namaEkskul');
+		$angkatan 	= $this->input->post('angkatan');
+		$listSiswa 	= $this->LegerNilai_m->getlistPD($idKelas, $angkatan);
+		$listNilai  = $this->LegerNilai_m->getListNilaiEkskulPD($idLeger);
+		/*foreach ($listSiswa as $pd) {
+			$NIK = $pd->NIK_pd;
+			$nilai = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
+			if(count($nilai) == 0){
+				$data['nilai'] = $nilai->nilai_pengetahuan;
+			}else{
+				$data['nilai'] = 0;
+			}
+		}*/
+		#$data['nilai'] = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
+		$data['angkatan'] 	= $angkatan;
+		$data['idKelas'] 	= $idKelas;
+		$data['listSiswa'] 	= $listSiswa;
+		$data['listNilai'] 	= $listNilai;
+		$data['namaEkskul'] = $namaEkskul;
+		$data['idLeger'] 	= $idLeger;
+
+		$this->load->view('KelolaNilaiEkskul/kontenKelolaNilaiEkskul', $data, FALSE);
+	}
+
+	public function tambahPenilaianEkskulSiswa(){
+		$listPD = $this->input->post('id');
+		$idLeger = $this->input->post('idLeger');
+		foreach ($listPD as $id) {
+			$data = [
+			    'NIK_pd' => $id,
+			    'idLeger_ekskul' => $idLeger
+			];
+			$this->LegerNilai_m->tambahNilaiEkskulSiswa($data);
+		}
+		echo json_encode(array("status" => TRUE));
+	}
+
+	public function simpanNilaiEkskul(){
+		$NIK 	= $this->input->post('nik');
+		$field 	= $this->input->post('name');
+		$pk 	= $this->input->post('pk');
+		$value 	= $this->input->post('value');
+
+		$data = [
+		    $field => $value,
+		    //'NIK_pd' => $NIK
+		];
+		$this->LegerNilai_m->simpanNilaiEkskul($data, $pk);
+	}
+
+	public function hapusPenilaianSiswaEkskul(){
+		$id = $this->input->post('id');
+		$this->LegerNilai_m->hapusPenilaianSiswaEkskul($id);
+	}
+
+
+
+	/*-----------------------------------------------------*/
 
 }
 

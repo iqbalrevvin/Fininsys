@@ -1,21 +1,3 @@
-<div class="modal fade modalInput" id="modalInformasiPenilaian" role="dialog" aria-labelledby="" aria-hidden="true">
-	<div class="modal-dialog modal-sm" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="">Informasi Penilaian</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true" class="la la-remove"></span>
-				</button>
-			</div>
-			<div class="m-portlet m-portlet--mobile" id="kontenTambahPenilaianSiswa">
-                <div class="m-portlet__body">
-                	Tekan Enter Setelah Mengisi Nilai Pengetahuan & Keterampilan!
-                </div>
-            </div>
-		</div>
-	</div>
-</div>
-
 <div class="modal fade modalInput" id="modalTambahSiswa" role="dialog" aria-labelledby="" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
@@ -51,7 +33,7 @@
                 </div>
                 <div class="m-portlet__body">
                 <input type="hidden" id="idLeger" value="<?= $idLeger ?>"></input>
-                <input type="hidden" id="namaMapel" value="<?= $namaMapel ?>"></input>
+                <input type="hidden" id="namaEkskul" value="<?= $namaEkskul ?>"></input>
                 <input type="hidden" id="idKelas" value="<?= $idKelas ?>"></input>
                 <input type="hidden" id="angkatan" value="<?= $angkatan ?>"></input>
                     <!--begin: Datatable -->
@@ -107,19 +89,12 @@
 					<i class="flaticon-users-1"></i>
 				</span>
 				<h3 class="m-portlet__head-text">
-					Nilai Siswa | <?= $namaMapel ?> 
+					Nilai Siswa | <?= $namaEkskul ?> 
 				</h3>
 			</div>
 		</div>
 		<div class="m-portlet__head-tools">
 			<ul class="m-portlet__nav">
-				<li class="m-portlet__nav-item">
-					<a href="#" m-portlet-tool="reload" class="m-portlet__nav-link m-portlet__nav-link--icon"
-						data-toggle="modal" data-target="#modalInformasiPenilaian" data-backdrop="static" 
-						data-keyboard="true" title="Informasi Penilaian" data-placement="top" data-skin="dark">
-						<i class="flaticon-information"></i></a>
-					</a>
-				</li>
 				<li class="m-portlet__nav-item">
 					<a href="#" m-portlet-tool="reload" class="m-portlet__nav-link m-portlet__nav-link--icon"
 						data-toggle="modal" data-target="#modalTambahSiswa" data-backdrop="static" 
@@ -141,80 +116,54 @@
 								<th style="width: 200px; text-align: center;" colspan="2" scope="col">
 									Informasi Siswa
 								</th>
-								<th style="text-align: center;" colspan="2" scope="col">Nilai Umum</th>
-								<th style="text-align: center;" colspan="3" scope="col">Nilai Prilaku</th>
-								<th style="width: auto; height: auto; text-align: center; vertical-align: middle;" rowspan="2" >
-									Catatan
-								</th>
+								<th style="text-align: center;" colspan="2" scope="col">Penilaian Ekstrakulikuler</th>
+								
 							</tr>
                             <tr>
+                            	<th style="text-align: center;">Hapus Siswa</th>
                                 <th style="text-align: center;">NIPD</th>
                                 <th style="width: 200px; text-align: center;">NamaPesertaDidik</th>
-                                <th style="text-align: center;">Pengetahuan</th>
-                                <th style="text-align: center;">Keterampilan</th>
-                                <th style="text align: center;">Sikap</th>
-                                <th style="text-align: center;">Sosial</th>
-                                <th style="text-align: center;">Spritual</th>
+                                <th style="text-align: center;">Nilai</th>
+                                <th style="text-align: center;">Deskripsi</th>
                             </tr>
                         </thead>
                         <tbody>
                         	<?php foreach ($listNilai as $data): ?>
-	                        	<tr data-id=''>
+	                        	<tr data-id='<?= $data->idLeger_nilai_ekskul ?>'>
+	                        		<td style="text-align: center;">
+	                        			<i id="loadHapusSiswa<?= $data->idLeger_nilai_ekskul ?>"></i>
+	                        			<button id="btnHapusSiswa" 
+	                        				class="m-portlet__nav-link btn m-btn m-btn--hover-danger 
+	                        				m-btn--icon m-btn--icon-only m-btn--pill btnHapusSiswa" 
+                                     		title="Hapus <?= $data->nama_pd ?> Dari Penilaian" 
+                                     		data-name="<?= $data->nama_pd ?>" 
+                                     		data-id=<?= $data->idLeger_nilai_ekskul ?>>   
+                                    		<i class="la la-trash"></i>                      
+                            			</button>
+	                        		</td>
 	                        		<td><?= $data->nipd ?></td>
 	                				<td style="width: 200px; text-align: left;">
 	                					<b><?= $data->nama_pd ?></b>
 	                				</td>
 	                				<td style="text-align: center;">
-	                					<a href="#" class="nilaiPengetahuan pengetahuan" id="nilaiPengetahuan" 
-	    									data-type="number" data-placement="left" 
-	    									data-title="Nilai Pengetahuan" 
-	    									data-name="nilai_pengetahuan"
+	                					<a href="#" class="nilaiEkskul pengetahuan" id="nilaiEkskul" 
+	    									data-type="select" data-placement="left" 
+	    									data-title="Nilai Ekstrakulikuler" 
+	    									data-name="nilai_ekskul"
 	    									data-nik ="<?= $data->NIK_pd ?>"
-	    									data-pk="<?= $data->idLeger_nilai ?>">
-	    									<?= $data->nilai_pengetahuan ?>
+	    									data-pk="<?= $data->idLeger_nilai_ekskul ?>">
+	    									<?= $data->nilai_ekskul ?>
 	  									</a>
 	                				</td>
 	                				<td style="text-align: center;">
-	                					<a href="#" class="nilaiKeterampilan" id="2" 
-	    									data-type="number" data-placement="left" 
-	    									data-title="Nilai Keterampilan" 
-	    									data-name="nilai_keterampilan" 
-	    									data-pk='<?= $data->idLeger_nilai ?>'>
-	    									<?= $data->nilai_keterampilan ?>
+	                					<a href="#" class="nilaiDeskripsi" id="2" 
+	    									data-type="text" data-placement="left" 
+	    									data-title="Nilai Deskripsi" 
+	    									data-name="deskripsi_nilai_ekskul" 
+	    									data-pk='<?= $data->idLeger_nilai_ekskul ?>'>
+	    									<?= $data->deskripsi_nilai_ekskul ?>
 	  									</a>
-	                				</td>
-	                				<td style="text-align: center;">
-	                					<a href="#" class="nilaiSikap"
-	    									data-type="select" data-placement="left" data-title="Nilai Sikap" 
-	    									data-name="nilai_sikap" 
-	    									data-pk='<?= $data->idLeger_nilai ?>'>
-	    									<?= $data->nilai_sikap ?>
-	  									</a>
-	                				</td>
-	                				<td style="text-align: center;">
-	                					<a href="#" class="nilaiSosial"
-	    									data-type="select" data-placement="left" data-title="Nilai Sosial" 
-	    									data-name="nilai_sosial" 
-	    									data-pk='<?= $data->idLeger_nilai ?>'>
-	    									<?= $data->nilai_sosial ?>
-	  									</a>
-	                				</td>
-	                				<td style="text-align: center;">
-	                					<a href="#" class="nilaiSpritual"
-	    									data-type="select" data-placement="left" data-title="Nilai Spritual" 
-	    									data-name="nilai_spritual" 
-	    									data-pk='<?= $data->idLeger_nilai ?>'>
-	    									<?= $data->nilai_spritual ?>
-	  									</a>
-	                				</td>
-	                				<td style="text-align: center;">
-	                					<a href="#" class="catatan"
-	    									data-type="text" data-placement="left" data-title="Deskripsi" 
-	    									data-name="catatan" 
-	    									data-pk='<?= $data->idLeger_nilai ?>'>
-	    									<?= $data->catatan ?>
-	  									</a>
-	                				</td>
+	                				</td>                				
 	                			</tr>
 	                		<?php endforeach; ?>
                         </tbody>
@@ -253,42 +202,7 @@ function dataNilaiSiswa(){
     })
 }
 
-	$('.nilaiPengetahuan').editable({
-		//id : $(this).data('id'),
-		anim : 'true',
-		//onblur : 'submit',
-		showbuttons: false,
-        mode: 'inline',   
-        type: 'number',
-        step: '1.00',
-        min: '0.00',
-        max: '100',
-        emptytext: 'Kosong',
-        title: 'Enter Value',
-        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
-        ajaxOptions: {
-		    type: 'POST',
-		}
-    });
-    $('.nilaiKeterampilan').editable({
-		//id : $(this).data('id'),
-		anim : 'true',
-		//onblur : 'submit',
-		showbuttons: false,
-        mode: 'inline',   
-        type: 'number',
-        step: '1.00',
-        min: '0.00',
-        max: '100',
-        emptytext: 'Kosong',
-        title: 'Enter Value',
-        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
-        ajaxOptions: {
-		    type: 'POST',
-		}
-    });
-
-    $('.nilaiSikap').editable({
+    $('.nilaiEkskul').editable({
 		//id : $(this).data('id'),
 		anim : 'true',
 		//onblur : 'submit',
@@ -307,63 +221,13 @@ function dataNilaiSiswa(){
         	{value: "D", text: "D"},
         	{value: "E", text: "E"},
         ],
-        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
+        url : '<?= base_url('LegerNilai/simpanNilaiEkskul') ?>',
         ajaxOptions: {
 		    type: 'POST',
 		}
     });
 
-    $('.nilaiSosial').editable({
-		//id : $(this).data('id'),
-		anim : 'true',
-		//onblur : 'submit',
-		showbuttons: false,
-        mode: 'inline',   
-        type: 'number',
-        step: '1.00',
-        min: '0.00',
-        max: '100',
-        emptytext: 'Kosong',
-        title: 'Enter Value',
-        source: [
-        	{value: "A", text: "A"}, 
-        	{value: "B", text: "B"},
-        	{value: "C", text: "C"},
-        	{value: "D", text: "D"},
-        	{value: "E", text: "E"},
-        ],
-        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
-        ajaxOptions: {
-		    type: 'POST',
-		}
-    });
-
-    $('.nilaiSpritual').editable({
-		//id : $(this).data('id'),
-		anim : 'true',
-		//onblur : 'submit',
-		showbuttons: false,
-        mode: 'inline',   
-        type: 'number',
-        step: '1.00',
-        min: '0.00',
-        max: '100',
-        emptytext: 'Kosong',
-        title: 'Enter Value',
-        source: [
-        	{value: "A", text: "A"}, 
-        	{value: "B", text: "B"},
-        	{value: "C", text: "C"},
-        	{value: "D", text: "D"},
-        	{value: "E", text: "E"},
-        ],
-        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
-        ajaxOptions: {
-		    type: 'POST',
-		}
-    });
-
-    $('.catatan').editable({
+    $('.nilaiDeskripsi').editable({
 		//id : $(this).data('id'),
 		anim : 'true',
 		onblur : 'submit',
@@ -375,7 +239,7 @@ function dataNilaiSiswa(){
         max: '100',
         emptytext: 'Kosong',
         title: 'Enter Value',
-        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
+        url : '<?= base_url('LegerNilai/simpanNilaiEkskul') ?>',
         ajaxOptions: {
 		    type: 'POST',
 		}
@@ -390,7 +254,7 @@ $("#check-all").click(function () {
 /*TOMBOL TAMBAH SISWA KE KELAS*/
 $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 	var idLeger 	= $('#idLeger').val();
-	var mapel 		= $('#namaMapel').val();
+	var namaEkskul 	= $('#namaEkskul').val();
 	var angkatan 	= $('#angkatan').val();
 	var idKelas 	= $('#idkelas').val();
 	var list_id = [];
@@ -400,7 +264,7 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 	if(list_id.length > 0){
 		swal({
 	        title: "KONFIRMASI TINDAKAN!",
-	        text: +list_id.length+" Data Siswa Akan Ditambahkan Untuk Penilaian Mata Pelajaran "+mapel,
+	        text: +list_id.length+" Data Siswa Akan Ditambahkan Untuk Penilaian Ekstrakulikuler "+namaEkskul,
 	        type: "info",
 	        showCancelButton: true,
 	        confirmButtonColor: "#DD6B55",
@@ -413,7 +277,7 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 		          overlayColor: "#000000",
 		          type: "loader",
 		          state: "primary",
-		          message: "<b>Menambakan Data Siswa Ke Penilaian Mata Pelajaran "+mapel+"...</b>"
+		          message: "<b>Menambakan Data Siswa Ke Penilaian Ekstrakulikuler "+namaEkskul+"...</b>"
 		      	});
     			$.ajax({
 	                type: "POST",
@@ -424,7 +288,7 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 	                	angkatan:angkatan,
 	                	show:1,
 	                },
-	                url: "<?php echo site_url('LegerNilai/tambahPenilainSiswa')?>",
+	                url: "<?php echo site_url('LegerNilai/tambahPenilaianEkskulSiswa')?>",
 	                dataType: "JSON",
 	                success: function(data)
 	                {
@@ -437,7 +301,7 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 	                        $('#loadKontenKelolaNilai').show().html('<div class="m-blockui" id="loader-center"><span>Data Penilaian Siswa Diperbarui, <b class="text-success">Silahkan Klik Kembali Kelola Nilai!</b></span><span></span></div>');
 	                        //$('#loadKontenKelolaNilai').fadeOut("slow");
 	                        //$('#resultKontenKelolaNilai').fadeIn("slow");
-	                        toastr.success("Siswa Berhasil Ditambahkan Ke Penilain Mata Pelajaran"+mapel, "Siswa Ditambahkan");
+	                        toastr.success("Siswa Berhasil Ditambahkan Ke Penilain Ekstrakulikuler"+namaEkskul, "Siswa Ditambahkan");
 	                        swal({
 				                title: "Siswa Ditambahkan",
 				                text: "Siswa berhasil ditambahkan, silahkan klik kembali kelola nilai!",
@@ -463,6 +327,39 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 	}
 });
 /*---------------*/
+
+	/*TOMBOL HAPUS MAPEL*/
+	$(document).on('click', '.btnHapusSiswa', function() {
+		var namaSiswa 		= $(this).data('name');
+		var id 				= $(this).data('id');
+		swal({
+	        title: "KONFIRMASI TINDAKAN!",
+	        text: "Siswa Yang Dipilih Akan Dihapus Dari Penilaian",
+	        type: "warning",
+	        showCancelButton: true,
+	        confirmButtonColor: "#DD6B55",
+	        confirmButtonText: "Ya, Lanjutkan!",
+	        cancelButtonText: "Tidak, Kembali!",
+		}).then((result) => {
+  			if(result.value) {
+  				$("#loadHapusSiswa"+id).html("<img src='<?= base_url('assets/image/loading.gif') ?>' width='35' height='35'>");
+    			$.ajax({
+		      		url: '<?= base_url('LegerNilai/hapusPenilaianSiswaEkskul') ?>',
+		      		type: 'POST',
+		      		data: {
+		                id    			: id
+		           	},
+		      		success: function(){
+		      			$("tr[data-id='"+id+"']").fadeOut("slow",function(){
+						    $(this).remove();
+						});
+		      		}
+		      	})
+  			}
+		});
+
+	});
+    /*---------------*/
 
 
 
