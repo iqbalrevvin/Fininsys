@@ -135,7 +135,7 @@
         			if(response.status == 'sukses'){
         				swal({
 			                title: "Proses Berhasil",
-			                text: "Mata Pelajaran Berhasil Ditambahkan ",
+			                text: response.pesan,
 			                type: "success",
 			                timer: 5e3,
 			                onOpen: function() {

@@ -24,8 +24,8 @@
             </div>
 		</div>
 	</div>   -->
-
-<form class="m-form m-form--fit m-form--label-align-right">
+<form class="m-form m-form--fit m-form--label-align-right" id="formEditProfil" method="POST">
+	<div id="resultErrorDataUtama"></div>
 	<div class="form-group m-form__group m--margin-top-10 m--hide">
 		<div class="alert m-alert m-alert--default" role="alert">
 			The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.
@@ -40,7 +40,7 @@
 		<div class="col-xs-12 col-sm-12 col-lg-10">
 			<label>NIK Peserta Didik*</label>
 			<input type="text" class="form-control m-input m-input--air" maxlength="16" type="text" 
-				placeholder="NIK Peserta Didik" value="<?= $profil->NIK_pd ?>" disabled>
+				placeholder="NIK Peserta Didik" value="<?= $profil->NIK_pd ?>" name="NIK_pd" id="NIK_pd" readonly>
 			<span class="m-form__help">NIK Peserta Didik Hanya Dapat Diubah Di Daftar Peserta Didik</span>
 		</div>
 	</div>
@@ -88,20 +88,15 @@
 					name="tanggalLahir" value="<?= $profil->tanggal_lahir_pd ?>" />
 		</div>
 	</div>
-	<div class="form-group">
-		<div class="col-xs-12 col-sm-6 col-lg-6">
-			<label>Agama</label>
-			<!-- <input type="text" class="form-control m-input  m-input--air m_datepicker_modal" 
-				placeholder="Format : yyyy-mm-dd Atau Pilih Dengan Kalender" id="tanggalLahir" name="tanggalLahir" 
-				value="<?= $profil->tanggal_lahir_pd ?>" /> -->
-		</div>
-	</div>
-    
+
 	<div class="m-portlet__foot m-portlet__foot--fit">
 		<div class="m-form__actions">
 			<div class="row">
 				<div class="col-7">
-					<button type="reset" class="btn btn-accent m-btn m-btn--air m-btn--custom">Perbarui Data</button>&nbsp;&nbsp;
+					<button type="button" 
+						class="btn btn-accent m-btn m-btn--air m-btn--custom" id="btnDataUtama">
+						Perbarui Data <span id="btnLoading" ></span>
+					</button>&nbsp;&nbsp;
 					<!-- <button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">Kembali</button> -->
 				</div>
 			</div>
@@ -110,3 +105,41 @@
 	</div>
 </form>
 
+<script>
+	$(document).on('click', '#btnDataUtama', function(e) {
+		base_url = '<?= base_url() ?>';
+		$("#btnLoading").html('<img src="' + base_url + 'assets/svg/loading-spin.svg" alt=""> ');
+		var data = $('#formEditProfil').serialize();
+        	$.ajax({
+        		url: '<?= base_url('PesertaDidik/Profil/editProfilPD') ?>',
+        		type: 'POST',
+        		dataType: 'json',
+        		data: data,
+        		beforeSend: function(e) {
+					if(e && e.overrideMimeType) {
+						e.overrideMimeType('application/jsoncharset=UTF-8')
+					}
+				},
+        		success: function(response){
+        			if(response.status == 'sukses'){
+        				swal({
+			                title: response.title,
+			                text: response.pesan,
+			                type: "success",
+			                timer: 5e3,
+			                onOpen: function() {
+			                    swal.showLoading()
+			                    setTimeout(function () {
+			                        //$("#loading").hide();
+			                        refresh();
+			                    }, 1500);  
+			                }
+			            });
+			        }else{
+        				toastr.error(response.pesan, response.title);
+        				$("#btnLoading").fadeOut();
+        			}
+        		}
+        	})
+	});
+</script>

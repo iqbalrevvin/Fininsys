@@ -138,7 +138,7 @@ class LegerNilai extends CI_Controller {
 			if($cekMapel == 0){
 				$callback = [
 			    	'status' 	=> 'sukses',
-			    	'pesan' 	=> 'Data Berhasil Ditambahkan' 
+			    	'pesan' 	=> 'Data Mata Pelajaran Berhasil Ditambahkan' 
 				];
 				
 				$this->LegerNilai_m->addMapelLeger($data);

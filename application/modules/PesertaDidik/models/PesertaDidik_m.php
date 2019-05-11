@@ -34,6 +34,11 @@ public function profil($id){
 	return $execute;
 }
 
+public function editProfilPD($id, $data){
+	$this->db->where('NIK_pd', $id);
+	$this->db->update('peserta_didik', $data);
+}
+
 /*public function profil($id)
 {
 	$query = $this->db->get_where('peserta_didik',array('NIK_pd' => $id));
