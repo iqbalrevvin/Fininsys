@@ -27,18 +27,57 @@ public function profil($id){
 	$this->db->join('ortu_peserta_didik', 'peserta_didik.NIK_pd = ortu_peserta_didik.NIK_pd', 'RIGTH');
 	$this->db->join('kelas', 'detail_peserta_didik.idKelas = kelas.idKelas', 'left');
 	$this->db->join('program_studi', 'kelas.idProdi = program_studi.idProdi', 'left');
+	$this->db->join('provinsi', 'peserta_didik.idProvinsi = provinsi.id_prov', 'left');
+	$this->db->join('kabupaten', 'peserta_didik.idKabupaten = kabupaten.id_kab', 'left');
+	$this->db->join('kecamatan', 'peserta_didik.idKecamatan = kecamatan.id_kec', 'left');
+	$this->db->join('kelurahan', 'peserta_didik.idKelurahan = kelurahan.id_kel', 'left');
+	//$this->db->join('kelurahan', 'peserta_didik.idKelurahan = kelurahan.id_kel', 'left');
 	$this->db->where('peserta_didik.NIK_pd', $id);
 	$query 		= $this->db->get();
 	$execute 	= $query->row();
-
 	return $execute;
 }
+
 
 public function editProfilPD($id, $data){
 	$this->db->where('NIK_pd', $id);
 	$this->db->update('peserta_didik', $data);
 }
 
+public function kelurahanTerpilih($id){
+	$this->db->select('*');
+	$this->db->from('peserta_didik');
+	$this->db->where('NIK_pd', $id);
+	$query = $this->db->get();
+	$id = $query->row();
+
+	$this->db->select('*');
+	$this->db->from('kelurahan');
+	$this->db->where('id_kec', $id->idKecamatan);
+	$execute = $this->db->get()->result();
+	return $execute;
+}
+
+public function listKelurahan($idKecamatan){
+	$this->db->where('id_kec', $idKecamatan);
+	$query = $this->db->get('kelurahan');
+	$execute = $query->result();
+	return $execute;
+}
+
+public function listKecamatan($idKabupaten){
+	$this->db->where('id_kab', $idKabupaten);
+	$query = $this->db->get('kecamatan');
+	$execute = $query->result();
+	return $execute;
+}
+
+public function listKabupaten($idProvinsi){
+	$this->db->where('id_prov', $idProvinsi);
+	$query = $this->db->get('kabupaten');
+	$execute = $query->result();
+	return $execute;
+}
 /*public function profil($id)
 {
 	$query = $this->db->get_where('peserta_didik',array('NIK_pd' => $id));

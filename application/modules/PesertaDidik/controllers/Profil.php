@@ -7,10 +7,13 @@ class Profil extends CI_Controller {
 		parent::__construct();
 		$this->load->library('OutputView');
 		$this->load->model('PesertaDidik/PesertaDidik_m');
+		$this->load->model('AlamatChain_m');
 		$this->load->helper('fotoGender_helper');
 		$this->load->helper('tglIndo_helper');
 		$this->load->helper('semester_helper');
 		$this->load->helper('grade_helper');
+		$this->load->helper('value_helper');
+
 	}
 	public function index(){
 		#$id 			= $this->input->post('ID');
@@ -28,12 +31,18 @@ class Profil extends CI_Controller {
 	}
 
 	public function getProfil(){
-		$i 				= $this->input;
-		$id 			= $i->post('ID');
-		$data['profil'] = $this->PesertaDidik_m->profil($id);
+		$i 						= $this->input;
+		$id 					= $i->post('ID');
+		$profil 				= $this->PesertaDidik_m->profil($id);
+		//$listKelurahan 			= $this->PesertaDidik_m->kelurahanTerpilih($id);
+		$data = [
+		    'provinsi' 		=> $this->AlamatChain_m->getProvinsi(),
+		    'profil' 		=> $profil
+		];
 
         $this->load->view('getProfil', $data);
 	}
+
 
 	public function editProfilPD(){
 		$i 			= $this->input;
@@ -64,6 +73,27 @@ class Profil extends CI_Controller {
 			    'pesan' 	=> validation_errors()
 			];
 		}
+		echo json_encode($callback);	
+	}
+
+	public function editAlamatPD(){
+		$i 			= $this->input;
+		$id 		= $this->input->post('NIK_pd');
+
+		$data = [
+		    'idProvinsi' 		=> $i->post('provinsi'),
+		    'idKabupaten' 		=> $i->post('kabupaten'),
+		    'idKecamatan' 		=> $i->post('kecamatan'),
+		    'idKelurahan' 		=> $i->post('kelurahan'),
+		];
+
+		$this->PesertaDidik_m->editProfilPD($id, $data);
+		$callback = [
+		    'status' 	=> 'sukses',
+		    'title' 	=> 'Proses Berhasil',
+		    'pesan' 	=> 'Data Alamat Peserta Didik Berhasil Diperbarui' 
+		];
+	
 		echo json_encode($callback);	
 	}
 

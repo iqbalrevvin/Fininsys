@@ -24,88 +24,270 @@
             </div>
 		</div>
 	</div>   -->
-<form class="m-form m-form--fit m-form--label-align-right" id="formEditProfil" method="POST">
-	<div id="resultErrorDataUtama"></div>
-	<div class="form-group m-form__group m--margin-top-10 m--hide">
-		<div class="alert m-alert m-alert--default" role="alert">
-			The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.
+	<form class="m-form m-form--fit m-form--label-align-right" id="formEditProfil" method="POST">
+		<div id="resultErrorDataUtama"></div>
+		<div class="form-group m-form__group m--margin-top-10 m--hide">
+			<div class="alert m-alert m-alert--default" role="alert">
+				The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.
+			</div>
 		</div>
-	</div>
-	<div class="form-group ">
-		<div class="col-10">
-			<h3 class="m-form__section">Data Personal</h3>
+		<div class="form-group ">
+			<div class="col-10">
+				<h3 class="m-form__section">Data Personal</h3>
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-xs-12 col-sm-12 col-lg-10">
-			<label>NIK Peserta Didik*</label>
-			<input type="text" class="form-control m-input m-input--air" maxlength="16" type="text" 
-				placeholder="NIK Peserta Didik" value="<?= $profil->NIK_pd ?>" name="NIK_pd" id="NIK_pd" readonly>
-			<span class="m-form__help">NIK Peserta Didik Hanya Dapat Diubah Di Daftar Peserta Didik</span>
+		<div class="form-group">
+			<div class="col-xs-12 col-sm-12 col-lg-10">
+				<label>NIK Peserta Didik*</label>
+				<input type="text" class="form-control m-input m-input--air" maxlength="16" type="text" 
+					placeholder="NIK Peserta Didik" value="<?= $profil->NIK_pd ?>" name="NIK_pd" id="NIK_pd" readonly>
+				<span class="m-form__help">NIK Peserta Didik Hanya Dapat Diubah Di Daftar Peserta Didik</span>
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-xs-12 col-sm-12 col-lg-10">
-			<label>Nama Peserta Didik*</label>
-				<input type="text" class="form-control m-input  m-input--air" maxlength="100" type="text" 
-					placeholder="Nama Peserta Didik" id="nama" name="nama" value="<?= $profil->nama_pd ?>">
+		<div class="form-group">
+			<div class="col-xs-12 col-sm-12 col-lg-10">
+				<label>Nama Peserta Didik*</label>
+					<input type="text" class="form-control m-input  m-input--air" maxlength="100" type="text" 
+						placeholder="Nama Peserta Didik" id="nama" name="nama" value="<?= $profil->nama_pd ?>">
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air">
-			<label>Jenis Kelamin*</label>
-				<select class="form-control m_select2_hiding" name="JK" id="JK">	
-				<option value="">Pilih Jenis Kelamin</option>
-				<option value="Laki-Laki" <?php if($profil->jk_pd == 'Laki-Laki'){echo "selected";} ?>>Laki - Laki</option>
-				<option value="Perempuan" <?php if($profil->jk_pd == 'Perempuan'){echo "selected";} ?>>Perempuan</option>
-			</select>
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air">
-			<label>Agama</label>
-				<select name="agama" id="agama" class="form-control m_select2_hiding">
-					<option value="">Pilih Agama</option>
-                    <option value="Islam" <?php if($profil->agama == 'Islam'){echo "selected";} ?>>Islam</option>
-					<option value="Kristen" <?php if($profil->agama == 'Kristen'){echo "selected";} ?>>Kristen</option>
-					<option value="Khatolik" <?php if($profil->agama == 'Khatolik'){echo "selected";} ?>>Khatolik</option>
-					<option value="Hindu" <?php if($profil->agama == 'Hindu'){echo "selected";} ?>>Hindu</option>
-					<option value="Budha" <?php if($profil->agama == 'Budha'){echo "selected";} ?>>Budha</option>
+		<div class="form-group">
+			<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air">
+				<label>Jenis Kelamin*</label>
+					<select class="form-control m_select2_hiding" name="JK" id="JK">	
+					<option value="">Pilih Jenis Kelamin</option>
+					<option value="Laki-Laki" <?php if($profil->jk_pd == 'Laki-Laki'){echo "selected";} ?>>Laki - Laki</option>
+					<option value="Perempuan" <?php if($profil->jk_pd == 'Perempuan'){echo "selected";} ?>>Perempuan</option>
 				</select>
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-xs-12 col-sm-8 col-lg-8">
-			<label>Tempat Lahir</label>
-				<input type="text" class="form-control m-input m-input--air" maxlength="50" type="text" placeholder="Inputkan Tempat Lahir Maksimal 50 Karakter" id="tempatLahir" name="tempatLahir" value="<?= $profil->tempat_lahir_pd ?>">
+		<div class="form-group">
+			<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air">
+				<label>Agama</label>
+					<select name="agama" id="agama" class="form-control m_select2_hiding">
+						<option value="">Pilih Agama</option>
+	                    <option value="Islam" <?php if($profil->agama == 'Islam'){echo "selected";} ?>>Islam</option>
+						<option value="Kristen" <?php if($profil->agama == 'Kristen'){echo "selected";} ?>>Kristen</option>
+						<option value="Khatolik" <?php if($profil->agama == 'Khatolik'){echo "selected";} ?>>Khatolik</option>
+						<option value="Hindu" <?php if($profil->agama == 'Hindu'){echo "selected";} ?>>Hindu</option>
+						<option value="Budha" <?php if($profil->agama == 'Budha'){echo "selected";} ?>>Budha</option>
+					</select>
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-xs-12 col-sm-6 col-lg-6">
-			<label>Tanggal Lahir</label>
-				<input type="text" class="form-control m-input  m-input--air m_datepicker_nonModal" 
-					placeholder="Format : yyyy-mm-dd Atau Pilih Dengan Kalender" id="tanggalLahir" 
-					name="tanggalLahir" value="<?= $profil->tanggal_lahir_pd ?>" />
+		<div class="form-group">
+			<div class="col-xs-12 col-sm-8 col-lg-8">
+				<label>Tempat Lahir</label>
+					<input type="text" class="form-control m-input m-input--air" maxlength="50" type="text" placeholder="Inputkan Tempat Lahir Maksimal 50 Karakter" id="tempatLahir" name="tempatLahir" value="<?= $profil->tempat_lahir_pd ?>">
+			</div>
 		</div>
-	</div>
+		<div class="form-group">
+			<div class="col-xs-12 col-sm-6 col-lg-6">
+				<label>Tanggal Lahir</label>
+					<input type="text" class="form-control m-input  m-input--air m_datepicker_nonModal" 
+						placeholder="Format : yyyy-mm-dd Atau Pilih Dengan Kalender" id="tanggalLahir" 
+						name="tanggalLahir" value="<?= $profil->tanggal_lahir_pd ?>" />
+			</div>
+		</div>
 
-	<div class="m-portlet__foot m-portlet__foot--fit">
-		<div class="m-form__actions">
-			<div class="row">
-				<div class="col-7">
-					<button type="button" 
-						class="btn btn-accent m-btn m-btn--air m-btn--custom" id="btnDataUtama">
-						Perbarui Data <span id="btnLoading" ></span>
-					</button>&nbsp;&nbsp;
-					<!-- <button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">Kembali</button> -->
+		<div class="m-portlet__foot m-portlet__foot--fit">
+			<div class="m-form__actions">
+				<div class="row">
+					<div class="col-7">
+						<button type="button" 
+							class="btn btn-accent m-btn m-btn--air m-btn--custom" id="btnDataUtama">
+							Perbarui Data Utama <span id="btnLoading" ></span>
+						</button>&nbsp;&nbsp;
+						<!-- <button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">Kembali</button> -->
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	</div>
-</form>
+	</form>
 
+	<form class="m-form m-form--fit m-form--label-align-right" id="formEditDataAlamat" method="POST">
+	<input type="hidden" value="<?= $profil->NIK_pd ?>" name="NIK_pd" id="NIK_pd">
+		<div id="resultErrorDataAlamat"></div>
+		<div class="form-group ">
+			<div class="col-10">
+				<h3 class="m-form__section">Data Alamat</h3>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air">
+				<label>Data Provinsi*</label>
+					<select class="form-control m_select2" name="provinsi" id="provinsi">	
+					<option value="">Pilih Provinsi</option>
+					<?php foreach ($provinsi as $provinsi): ?>
+						<option <?= $profil->idProvinsi == $provinsi->id_prov ? 'selected="selected"' : '' ?> 
+							value="<?= $provinsi->id_prov ?>"><?= $provinsi->nama_provinsi ?></option>
+					<?php endforeach ?>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air kabupaten">
+				<label>Data Kota*</label>	
+					<select class="form-control m_select2" name="kabupaten" id="kabupaten">	
+					<?php if($profil->idProvinsi != 0): ?>
+						<?php $listKabupaten = $this->PesertaDidik_m->listKabupaten($profil->idProvinsi) ?>
+						<?php foreach ($listKabupaten as $list): ?>
+							<option value="">Pilih Kecamatan</option>
+							<option <?= $list->id_kab == $profil->idKabupaten ? 'selected="selected"' : '' ?> 
+								value="<?= $list->id_kab ?>"><?= $list->nama_kabupaten ?></option>
+						<?php endforeach ?>
+					<?php else: ?>
+						<option>Pilih Terlebih Dahulu Provinsi</option>
+					<?php endif; ?>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air kecamatan">
+				<label>Data Kecamatan*</label>	
+					<select class="form-control m_select2" name="kecamatan" id="kecamatan">	
+					<?php if($profil->idKabupaten != 0): ?>
+						<?php $listKecamatan = $this->PesertaDidik_m->listKecamatan($profil->idKabupaten) ?>
+						<?php foreach ($listKecamatan as $list): ?>
+							<option value="">Pilih Kecamatan</option>
+							<option <?= $list->id_kec == $profil->idKecamatan ? 'selected="selected"' : '' ?> 
+								value="<?= $list->id_kec ?>"><?= $list->nama_kecamatan ?></option>
+						<?php endforeach ?>
+					<?php else: ?>
+						<option>Pilih Terlebih Dahulu Kabupaten</option>
+					<?php endif; ?>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air kelurahan">
+				<label>Data Kelurahan*</label>	
+					<select class="form-control m_select2" name="kelurahan" id="kelurahan">	
+					<?php if($profil->idKecamatan != 0): ?>
+						<?php $listKelurahan = $this->PesertaDidik_m->listKelurahan($profil->idKecamatan) ?>
+						<?php foreach ($listKelurahan as $list): ?>
+							<option value="">Pilih Kelurahan</option>
+							<option <?= $list->id_kel == $profil->idKelurahan ? 'selected="selected"' : '' ?> 
+								value="<?= $list->id_kel ?>"><?= $list->nama_kelurahan ?></option>
+						<?php endforeach ?>
+					<?php else: ?>
+						<option>Pilih Terlebih Dahulu Kecamatan</option>
+					<?php endif; ?>
+				</select>
+			</div>
+		</div>
+	
+		<div class="m-portlet__foot m-portlet__foot--fit">
+			<div class="m-form__actions">
+				<div class="row">
+					<div class="col-7">
+						<button type="button" 
+							class="btn btn-accent m-btn m-btn--air m-btn--custom" id="btnDataAlamat">
+							Perbarui Data Alamat<span id="btnalamatLoading" ></span>
+						</button>&nbsp;&nbsp;
+						<!-- <button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">Kembali</button> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<script src="<?php echo base_url('assets/js/jquery.chained.min.js') ?>"></script>
 <script>
+
+jQuery(document).ready(function() {
+
+	/*ALAMAT KABUPATEN*/
+	$("#provinsi").change(function(){ 
+		mApp.block(".kabupaten", {
+          overlayColor: "#000000",
+          type: "loader",
+          state: "primary",
+          message: "<b>Memuat Data Kabupaten...</b>"
+      	});
+		$.ajax({
+			type: "POST", // Method pengiriman data bisa dengan GET atau POST
+			url: "<?= base_url('AlamatChain/listKota'); ?>", // Isi dengan url/path file php yang dituju
+			data: {
+				idProvinsi : $("#provinsi").val()
+			}, // data yang akan dikirim ke file yang dituju
+			dataType: "json",
+			beforeSend: function(e) {
+				if(e && e.overrideMimeType) {
+					e.overrideMimeType("application/json;charset=UTF-8");
+				}
+			},
+			success: function(response){ 
+				mApp.unblock(".kabupaten");
+				$("#kabupaten").html(response.listKota).show();
+			},
+			error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
+				alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
+			}
+		});
+	});
+	/*ALAMAT KECAMATAN*/
+	$("#kabupaten").change(function(){ 
+		mApp.block(".kecamatan", {
+          overlayColor: "#000000",
+          type: "loader",
+          state: "primary",
+          message: "<b>Memuat Data Kecamatan...</b>"
+      	});
+		$.ajax({
+			type: "POST", // Method pengiriman data bisa dengan GET atau POST
+			url: "<?= base_url('AlamatChain/listKecamatan'); ?>", // Isi dengan url/path file php yang dituju
+			data: {
+				idKabupaten : $("#kabupaten").val()
+			}, // data yang akan dikirim ke file yang dituju
+			dataType: "json",
+			beforeSend: function(e) {
+				if(e && e.overrideMimeType) {
+					e.overrideMimeType("application/json;charset=UTF-8");
+				}
+			},
+			success: function(response){ 
+				mApp.unblock(".kecamatan");
+				$("#kecamatan").html(response.listKecamatan).show();
+			},
+			error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
+				alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
+			}
+		});
+	});
+	
+	/*ALAMAT KELURAHAN*/
+	$("#kecamatan").change(function(){ 
+		mApp.block(".kelurahan", {
+          overlayColor: "#000000",
+          type: "loader",
+          state: "primary",
+          message: "<b>Memuat Data Kelurahan...</b>"
+      	});
+		$.ajax({
+			type: "POST", // Method pengiriman data bisa dengan GET atau POST
+			url: "<?= base_url('AlamatChain/listKelurahan'); ?>", // Isi dengan url/path file php yang dituju
+			data: {
+				idKecamatan : $("#kecamatan").val()
+			}, // data yang akan dikirim ke file yang dituju
+			dataType: "json",
+			beforeSend: function(e) {
+				if(e && e.overrideMimeType) {
+					e.overrideMimeType("application/json;charset=UTF-8");
+				}
+			},
+			success: function(response){ 
+				mApp.unblock(".kelurahan");
+				$("#kelurahan").html(response.listKelurahan).show();
+			},
+			error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
+				alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
+			}
+		});
+	});
+
+});
+	/*FORM EDIT DATA UTAMA*/
 	$(document).on('click', '#btnDataUtama', function(e) {
 		base_url = '<?= base_url() ?>';
 		$("#btnLoading").html('<img src="' + base_url + 'assets/svg/loading-spin.svg" alt=""> ');
@@ -142,4 +324,46 @@
         		}
         	})
 	});
+	/*--------------------------------------------------------------*/
+
+	/*FORM EDIT DATA ALAMAT*/
+	$(document).on('click', '#btnDataAlamat', function(e) {
+		base_url = '<?= base_url() ?>';
+		$("#btnalamatLoading").html('<img src="' + base_url + 'assets/svg/loading-spin.svg" alt=""> ');
+		var data = $('#formEditDataAlamat').serialize();
+        	$.ajax({
+        		url: '<?= base_url('PesertaDidik/Profil/editAlamatPD') ?>',
+        		type: 'POST',
+        		dataType: 'json',
+        		data: data,
+        		beforeSend: function(e) {
+					if(e && e.overrideMimeType) {
+						e.overrideMimeType('application/jsoncharset=UTF-8')
+					}
+				},
+        		success: function(response){
+        			if(response.status == 'sukses'){
+        				swal({
+			                title: response.title,
+			                text: response.pesan,
+			                type: "success",
+			                timer: 5e3,
+			                onOpen: function() {
+			                    swal.showLoading()
+			                    setTimeout(function () {
+			                        //$("#loading").hide();
+			                        refresh();
+			                    }, 1500);  
+			                }
+			            });
+			        }else{
+        				toastr.error(response.pesan, response.title);
+        				$("#btnalamatLoading").fadeOut();
+        			}
+        		}
+        	})
+	});
+	/*--------------------------------------------------------------*/
+	
+
 </script>

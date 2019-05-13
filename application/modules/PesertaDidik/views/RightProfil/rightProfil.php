@@ -33,7 +33,7 @@
 				<?php require('dataUtama.php') ?>
 			</div>
 			<div class="tab-pane " id="m_user_profile_tab_2">
-				Data Alamat
+				<?php require('dataAlamat.php') ?>
 			</div>
 			<div class="tab-pane " id="m_user_profile_tab_3">
 				Data Orang Tua
@@ -45,8 +45,9 @@
 	</div>
 </div>
 
-<script src="<?= base_url('assets/js/demo/select2.js') ?>"></script>
+
 <script src="<?= base_url('assets/js/demo/bootstrap-datepicker.js') ?>"></script>
+<script src="<?= base_url('assets/js/demo/select2.js') ?>"></script>
 
 <script>
 	//DATE PICKER INITIAL
