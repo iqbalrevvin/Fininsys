@@ -105,7 +105,7 @@
 	</form>
 
 	<form class="m-form m-form--fit m-form--label-align-right" id="formEditDataAlamat" method="POST">
-	<input type="hidden" value="<?= $profil->NIK_pd ?>" name="NIK_pd" id="NIK_pd">
+		<input type="hidden" value="<?= $profil->NIK_pd ?>" name="NIK_pd" id="NIK_pd">
 		<div id="resultErrorDataAlamat"></div>
 		<div class="form-group ">
 			<div class="col-10">
@@ -182,7 +182,7 @@
 					<div class="col-7">
 						<button type="button" 
 							class="btn btn-accent m-btn m-btn--air m-btn--custom" id="btnDataAlamat">
-							Perbarui Data Alamat<span id="btnalamatLoading" ></span>
+							Perbarui Alamat<span id="btnalamatLoading" ></span>
 						</button>&nbsp;&nbsp;
 						<!-- <button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">Kembali</button> -->
 					</div>

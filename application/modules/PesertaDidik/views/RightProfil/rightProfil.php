@@ -11,7 +11,7 @@
 					</li>
 					<li class="nav-item m-tabs__item">
 						<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_2" role="tab">
-							Data Alamat
+							Data Kontak
 						</a>
 					</li>
 					<li class="nav-item m-tabs__item">
@@ -21,7 +21,7 @@
 					</li>
 					<li class="nav-item m-tabs__item">
 						<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_user_profile_tab_4" role="tab">
-							Data Orang Tua
+							Data Akademik
 						</a>
 					</li>
 				</ul>
@@ -33,13 +33,13 @@
 				<?php require('dataUtama.php') ?>
 			</div>
 			<div class="tab-pane " id="m_user_profile_tab_2">
-				<?php require('dataAlamat.php') ?>
+				<?php require('dataKontak.php') ?>
 			</div>
 			<div class="tab-pane " id="m_user_profile_tab_3">
 				Data Orang Tua
 			</div>
 			<div class="tab-pane " id="m_user_profile_tab_4">
-				Data Kontak
+				Data Akademik
 			</div>
 		</div>
 	</div>

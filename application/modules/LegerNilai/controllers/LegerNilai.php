@@ -217,11 +217,6 @@ class LegerNilai extends CI_Controller {
 	}
 
 
-
-
-
-
-
 	/*-------------------NILAI EKSKUL---------------------*/
 
 	public function KelolaNilaiEkskul(){

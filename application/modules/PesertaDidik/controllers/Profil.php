@@ -97,6 +97,18 @@ class Profil extends CI_Controller {
 		echo json_encode($callback);	
 	}
 
+	public function editKontak(){
+		$field 	= $this->input->post('name');
+		$pk 	= $this->input->post('pk');
+		$value 	= $this->input->post('value');
+
+		$data = [
+		    $field => $value,
+		    //'NIK_pd' => $NIK
+		];
+		$this->PesertaDidik_m->editKontak($data, $pk);
+	}
+
 }
 
 /* End of file ProfilPD.php */
