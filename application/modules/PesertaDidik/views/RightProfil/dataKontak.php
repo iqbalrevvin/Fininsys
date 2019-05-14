@@ -50,19 +50,6 @@
 	  			</a>
 			</div>
 		</div>
-		<div class="m-portlet__foot m-portlet__foot--fit">
-			<div class="m-form__actions">
-				<div class="row">
-					<div class="col-7">
-						<button type="button" 
-							class="btn btn-accent m-btn m-btn--air m-btn--custom" id="btnDataAlamat">
-							Perbarui Data Kontak<span id="btnKontakLoading"></span>
-						</button>&nbsp;&nbsp;
-						<!-- <button type="reset" class="btn btn-secondary m-btn m-btn--air m-btn--custom">Kembali</button> -->
-					</div>
-				</div>
-			</div>
-		</div>
 	</form>						
 </div>
 

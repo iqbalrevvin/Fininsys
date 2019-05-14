@@ -109,6 +109,17 @@ class Profil extends CI_Controller {
 		$this->PesertaDidik_m->editKontak($data, $pk);
 	}
 
+	public function editOrangTua(){
+		$field 	= $this->input->post('name');
+		$pk 	= $this->input->post('pk');
+		$value 	= $this->input->post('value');
+		$data = [
+		    $field => $value,
+		    //'NIK_pd' => $NIK
+		];
+		$this->PesertaDidik_m->editOrangTua($data, $pk);
+	}
+
 }
 
 /* End of file ProfilPD.php */

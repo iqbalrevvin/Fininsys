@@ -70,6 +70,11 @@ public function editKontak($data, $pk){
 	$this->db->where('idPd', $pk);
 	$this->db->update('peserta_didik', $data);
 }
+
+public function editOrangTua($data, $pk){
+	$this->db->where('NIK_pd', $pk);
+	$this->db->update('ortu_peserta_didik', $data);
+}
 /*public function profil($id)
 {
 	$query = $this->db->get_where('peserta_didik',array('NIK_pd' => $id));

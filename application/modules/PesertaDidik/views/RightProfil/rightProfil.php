@@ -36,7 +36,7 @@
 				<?php require('dataKontak.php') ?>
 			</div>
 			<div class="tab-pane " id="m_user_profile_tab_3">
-				Data Orang Tua
+				<?php require('dataOrangTua.php');  ?>
 			</div>
 			<div class="tab-pane " id="m_user_profile_tab_4">
 				Data Akademik
