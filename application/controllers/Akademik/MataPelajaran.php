@@ -15,11 +15,11 @@ class MataPelajaran extends CI_Controller {
 
 		$crud->set_table('mata_pelajaran');
 		$crud->set_subject('Daftar Mata Pelajaran');
-		$crud->columns('no_urut_mapel', 'nama_mata_pelajaran', 'idKurikulum', 'idKelompok_mapel', 'sekolah');
+		$crud->columns('nama_mata_pelajaran', 'idKurikulum', 'idKelompok_mapel', 'sekolah');
 		$crud->display_as('idKurikulum', 'Kurikulum');
 		$crud->display_as('idKelompok_mapel', 'Kelompok Mapel');
 		$crud->display_as('no_urut_mapel', 'No. Urut');
-		$crud->order_by('no_urut_mapel', 'asc');
+		#$crud->order_by('no_urut_mapel', 'asc');
 
 		/*RELATION*/
 		$crud->set_relation('idKurikulum','kurikulum','nama_kurikulum');
