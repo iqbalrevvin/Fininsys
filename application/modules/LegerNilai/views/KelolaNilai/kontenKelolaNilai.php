@@ -256,7 +256,7 @@ function dataNilaiSiswa(){
 	$('.nilaiPengetahuan').editable({
 		//id : $(this).data('id'),
 		anim : 'true',
-		//onblur : 'submit',
+		onblur : 'submit',
 		showbuttons: false,
         mode: 'inline',   
         type: 'number',
@@ -273,7 +273,7 @@ function dataNilaiSiswa(){
     $('.nilaiKeterampilan').editable({
 		//id : $(this).data('id'),
 		anim : 'true',
-		//onblur : 'submit',
+		onblur : 'submit',
 		showbuttons: false,
         mode: 'inline',   
         type: 'number',

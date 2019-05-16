@@ -3,7 +3,7 @@
 if (! function_exists('value')){
 	function value($value){
 		if($value == ''){
-			$getValue = '<i>Belum Diisi</i>';
+			$getValue = 'Belum Diisi';
 		}else{
 			$getValue = $value;
 		}

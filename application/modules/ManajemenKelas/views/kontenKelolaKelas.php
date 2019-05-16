@@ -113,7 +113,6 @@
                 <?php endforeach ?>
             </tbody>
         </table>
-
         <!--end: Datatable -->
     </div>
 </div>
