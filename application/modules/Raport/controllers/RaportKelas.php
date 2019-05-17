@@ -8,21 +8,18 @@ class RaportKelas extends CI_Controller {
 		$this->load->library('Outputview');
 		$this->load->model('ListData_m');
 		$this->load->model('Raport_m');
+		$this->load->helper('value_helper');
 	}
-	public function index(){
-		$listSemester 			= $this->Raport_m->listSemester();
+	public function index(){	
 		$listSekolah 			= $this->ListData_m->listSekolah();
 		$listKelas 				= $this->ListData_m->listKelas();
 		$view 					= 'RaportKelas/raportKelas';
 		$template 				= 'admin_template';
 		$data['judul'] 			= 'Cetak Raport Per Kelas';
-		$data['listSemester'] 	= $listSemester;
 		$data['listSekolah'] 	= $listSekolah;
 		$data['listKelas'] 		= $listKelas;
 		$this->outputview->output_admin($view, $template, $data);
 	}
-
-	
 
 	public function getListKelas(){
 		$idSekolah = $this->input->post('idSekolah');
@@ -39,11 +36,48 @@ class RaportKelas extends CI_Controller {
 		echo json_encode($callback); 
 	}
 
+	public function getListAngkatan(){
+		$idKelas = $this->input->post('idKelas');
+		$listAngkatan = $this->Raport_m->listAngkatan($idKelas);
+
+
+		$lists = "<option value=''>Pilih Angkatan</option>";
+		
+		foreach($listAngkatan as $list){
+			$lists .= "<option value='".$list->tahun_angkatan."'>".$list->tahun_angkatan."</option>";
+		}
+		$callback = array('listAngkatan'=>$lists); 
+
+		echo json_encode($callback); 
+	}
+
+
+	public function getListSemester(){
+		$idKelas 		= $this->input->post('kelas');
+		$angkatan 		= $this->input->post('angkatan');
+		$listSemester 	= $this->Raport_m->listSemester($idKelas, $angkatan);
+
+		$lists = '<select class="form-control" name="pilihSemester" id="pilihSemester">';
+		$lists .= "<option value=''>Pilih Semester</option>";
+		
+		foreach($listSemester as $list){
+			$lists .= "<option value='".$list->semester."'>".$list->semester."</option>";
+		}
+		$callback = array('listSemester'=>$lists); 
+
+		echo json_encode($callback); 
+	}
 
 	public function tampilSiswaKelas(){
-		$idKelas 	= $this->input->post('idKelas');
-		$dataSiswa 	= $this->Raport_m->tampilSiswaKelas($idKelas);
-		$data['dataSiswa'] = $dataSiswa;
+		$angkatan 					= $this->input->post('angkatan');
+		$idKelas 					= $this->input->post('idKelas');
+		$semester 					= $this->input->post('semester');
+		$masterLeger 				= $this->Raport_m->identiMasterLeger($idKelas, $angkatan, $semester);
+		$dataSiswa 					= $this->Raport_m->tampilSiswaKelas($angkatan, $idKelas);
+		$data['dataSiswa'] 			= $dataSiswa;
+		$data['semester'] 			= $semester;
+		$data['idMasterLeger'] 		= $masterLeger;
+
 		$this->load->view('RaportKelas/daftarSiswa', $data, FALSE);
 	}
 

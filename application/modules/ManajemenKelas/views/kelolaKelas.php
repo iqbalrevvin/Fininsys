@@ -74,7 +74,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                         </tbody>
                     </table>
                 </div>
@@ -198,21 +197,21 @@
 	            }
         	};
 
-          var id = $('#dataID').val();
-          $.ajax({
-              url: '<?= base_url('ManajemenKelas/KelolaKelas/getKontenKelolaKelas') ?>',
-              type: 'POST',
-              async: true,
-              data:{
-                  ID : id,
-                  show: 1
-              },
-              success: function(response){
-                  $('#resultKonten').html(response);
-                  DatatableHtmlTableDemo.init()
-                  //$("#jenisNasabah").selectpicker();
-              }
-          });
+	         var id = $('#dataID').val();
+	         $.ajax({
+	             url: '<?= base_url('ManajemenKelas/KelolaKelas/getKontenKelolaKelas') ?>',
+	             type: 'POST',
+	             async: true,
+	             data:{
+	                ID : id,
+	                show: 1
+	            },
+	            success: function(response){
+	                $('#resultKonten').html(response);
+	                 DatatableHtmlTableDemo.init()
+	                //$("#jenisNasabah").selectpicker();
+	            }
+	        });
         } 
 
 
