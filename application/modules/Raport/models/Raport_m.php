@@ -56,7 +56,7 @@ class Raport_m extends CI_Model {
  		return $execute;
  	}
 
- 	public function sumNilaiPengetahuan($idMasterLeger, $NIK){
+ 	public function sumNilaiPengetahuan($idMasterLeger, $NIK=NULL){
  		$this->db->select_sum('nilai_pengetahuan');
  		$this->db->from('leger');
  		$this->db->join('leger_nilai', 'leger.idLeger = leger_nilai.idLeger', 'left');
@@ -76,6 +76,26 @@ class Raport_m extends CI_Model {
  		$execute = $query->row();
  		return $execute;
  	}
+
+ 	public function sumNilaiKelas($idMasterLeger){
+ 		$this->db->select_sum('nilai_pengetahuan');
+ 		$this->db->select_sum('nilai_keterampilan');
+ 		$this->db->from('leger');
+ 		$this->db->join('leger_nilai', 'leger.idLeger = leger_nilai.idLeger', 'left');
+ 		$this->db->where('leger.idMaster_leger', $idMasterLeger);
+ 		$this->db->group_by('NIk_pd');
+ 		$this->db->order_by('nilai_pengetahuan', 'desc');
+ 		$query = $this->db->get();
+ 		$execute = $query->result();
+ 		return $execute;
+ 	}
+
+ 	public function rankSystem($value, $arrayValue=NULL){
+ 		$query = $this->db->query("SELECT FIND_IN_SET($value, $arrayValue) AS rank");
+ 		$execute = $query->row();
+ 		return $execute;
+ 	}
+
 
 }
 

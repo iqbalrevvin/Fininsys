@@ -37,11 +37,9 @@ class RaportKelas extends CI_Controller {
 	}
 
 	public function getListAngkatan(){
-		$idKelas = $this->input->post('idKelas');
-		$listAngkatan = $this->Raport_m->listAngkatan($idKelas);
-
-
-		$lists = "<option value=''>Pilih Angkatan</option>";
+		$idKelas 		= $this->input->post('idKelas');
+		$listAngkatan 	= $this->Raport_m->listAngkatan($idKelas);
+		$lists 			= "<option value=''>Pilih Angkatan</option>";
 		
 		foreach($listAngkatan as $list){
 			$lists .= "<option value='".$list->tahun_angkatan."'>".$list->tahun_angkatan."</option>";
@@ -74,9 +72,11 @@ class RaportKelas extends CI_Controller {
 		$semester 					= $this->input->post('semester');
 		$masterLeger 				= $this->Raport_m->identiMasterLeger($idKelas, $angkatan, $semester);
 		$dataSiswa 					= $this->Raport_m->tampilSiswaKelas($angkatan, $idKelas);
+		//$dataTest 					= $this->Raport_m->dataTest();
 		$data['dataSiswa'] 			= $dataSiswa;
 		$data['semester'] 			= $semester;
 		$data['idMasterLeger'] 		= $masterLeger;
+		//$data['dataTest'] 			= $dataTest;
 
 		$this->load->view('RaportKelas/daftarSiswa', $data, FALSE);
 	}

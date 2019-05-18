@@ -1,7 +1,7 @@
 <li class="m-menu__item  m-menu__item--submenu m-menu__item--submenu-fullheight" aria-haspopup="true" m-menu-submenu-toggle="click" 
     m-menu-dropdown-toggle-class="m-aside-menu-overlay--on">
 	<a href="javascript:;" class="m-menu__link m-menu__toggle">
-    	<i class="m-menu__link-icon flaticon-laptop"></i>
+    	<i class="m-menu__link-icon flaticon-menu-button"></i>
     	<span class="m-menu__link-text"><?= $settings->judul ?></span>
     	<i class="m-menu__ver-arrow la la-angle-right"></i>
 	</a>

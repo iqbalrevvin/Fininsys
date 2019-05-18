@@ -103,13 +103,23 @@
         </tr>
     </thead>
     <tbody>
+    	<?php $sumNilaiKelas = $this->Raport_m->sumNilaiKelas($idMasterLeger); ?>
+    	<?php foreach ($sumNilaiKelas as $data): ?>
+	    	<?php $sumNilaiPengetahuan = $data->nilai_pengetahuan ?>
+	    	<?php $sumNilaiKeterampilan = $data->nilai_keterampilan ?>
+	    	<?php $nilaiKelas[] = $sumNilaiPengetahuan+$sumNilaiKeterampilan ?>
+		<?php endforeach ?>
     	<?php $no = 1; ?>
     	<?php foreach ($dataSiswa as $list): ?>
-	    	<?php $idKelas = $list->idKelas; ?>
-	    	<?php $angkatan = $list->tahun_angkatan; ?>
+	    	<?php $idKelas 				= $list->idKelas; ?>
+	    	<?php $angkatan 			= $list->tahun_angkatan; ?>
 	    	<?php $countMapel 			= $this->Raport_m->countMapel($idMasterLeger, $list->NIK_pd); ?>
 	    	<?php $jmlNilaiPengetahuan 	= $this->Raport_m->sumNilaiPengetahuan($idMasterLeger, $list->NIK_pd); ?>
 	    	<?php $jmlNilaiKeterampilan = $this->Raport_m->sumNilaiKeterampilan($idMasterLeger, $list->NIK_pd); ?>
+	    	<?php $nilaiAkhir 			= $jmlNilaiPengetahuan->nilai_pengetahuan+$jmlNilaiKeterampilan->nilai_keterampilan; ?>
+	    	<?php #$valueArray 			= "'1530,1531,1624,654,'"; ?>
+	    	<?php $valueArray 			= implode(',',$nilaiKelas); ?>
+	  	
            <tr data-id=>
                 <td><?= $no++ ?></td>
                 <td><?= value($list->nipd) ?></td>
@@ -119,7 +129,10 @@
                 <td><b><?= $countMapel ?></b></td>
                 <td><b><?= value($jmlNilaiPengetahuan->nilai_pengetahuan); ?></b></td>
                 <td><b><?= value($jmlNilaiKeterampilan->nilai_keterampilan); ?></b></td>
-                <td><b>1</b></td>
+                <td>
+                	<?php $rank = $this->Raport_m->rankSystem($nilaiAkhir, "'$valueArray'");  ?>
+					<?= $rank->rank ?>
+                </td>               
                 <td align="left" class="m-datatable__cell">
                     <div class="m-section__content">
 						<div class="m-dropdown m-dropdown--inline m-dropdown--small m-dropdown--arrow m-dropdown--align-left" 
@@ -171,6 +184,31 @@
          <?php endforeach ?>
     </tbody>
 </table>
+
+
+
+<!-- <table class="" id="" width="100%">
+    <thead>
+        <tr>
+            <th data-field="no">#</th>
+            <th data-field="">NIK</th>
+            <th data-field="">Nilai</th>
+            <th>Ranking</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    	<?php $no = 1; ?>
+    	<?php foreach ($dataTest as $list): ?>
+           <tr data-id=>
+                <td><?= $no++ ?></td>
+            	<td><?= $list->NIK_pd ?></td>
+            	<td><?= $list->nilai_pengetahuan ?></td>
+            	<td></td>
+            </tr>
+         <?php endforeach ?>
+    </tbody>
+</table> -->
 
 <!--end: Datatable -->
 
