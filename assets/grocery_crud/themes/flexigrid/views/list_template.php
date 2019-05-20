@@ -62,7 +62,7 @@
 							<li class="m-portlet__nav-item">
 								<a href='<?php echo $add_url?>' 
 									title='<?php echo $this->l('list_add'); ?> <?php echo $subject?>'
-									class="add-anchor btn btn-sm m-btn m-btn--gradient-from-primary m-btn--gradient-to-accent">
+									class="add-anchor btn btn-sm m-btn m-btn--gradient-from-primary m-btn--gradient-to-accent navigation">
 									<span>
 										<i class="la la-plus"></i>
 										<span class="add"><?php echo $this->l('list_add'); ?> <?php echo $subject?></span>
