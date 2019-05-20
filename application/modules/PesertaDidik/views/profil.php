@@ -40,6 +40,7 @@
               },
               success: function(response){
                   $('#resultProfil').html(response);
+                  BootstrapDatepicker.init()
                   //$("#jenisNasabah").selectpicker();
               }
           });

@@ -8,6 +8,7 @@ class Profil extends CI_Controller {
 		$this->load->library('OutputView');
 		$this->load->model('PesertaDidik/PesertaDidik_m');
 		$this->load->model('AlamatChain_m');
+		$this->load->model('ListData_m');
 		$this->load->helper('fotoGender_helper');
 		$this->load->helper('tglIndo_helper');
 		$this->load->helper('semester_helper');
@@ -33,6 +34,7 @@ class Profil extends CI_Controller {
 	public function getProfil(){
 		$i 						= $this->input;
 		$id 					= $i->post('ID');
+		$idSiswa 				= $id;
 		$profil 				= $this->PesertaDidik_m->profil($id);
 		//$listKelurahan 			= $this->PesertaDidik_m->kelurahanTerpilih($id);
 		$data = [
@@ -118,6 +120,10 @@ class Profil extends CI_Controller {
 		    //'NIK_pd' => $NIK
 		];
 		$this->PesertaDidik_m->editOrangTua($data, $pk);
+	}
+
+	public function selectKelas(){
+		
 	}
 
 }

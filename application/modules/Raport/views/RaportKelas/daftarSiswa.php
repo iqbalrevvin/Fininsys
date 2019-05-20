@@ -1,5 +1,4 @@
 <!--begin: Search Form -->
-
 <div class="m-form m-form--label-align-right m--margin-top-10 m--margin-bottom-10">
     <div class="row align-items-center">
         <div class="col-xl-8 order-2 order-xl-1">
@@ -131,7 +130,7 @@
                 <td><b><?= value($jmlNilaiKeterampilan->nilai_keterampilan); ?></b></td>
                 <td>
                 	<?php $rank = $this->Raport_m->rankSystem($nilaiAkhir, "'$valueArray'");  ?>
-					<?= $rank->rank ?>
+					<b class="m--font-focus"><?= $rank->rank ?></b>
                 </td>               
                 <td align="left" class="m-datatable__cell">
                     <div class="m-section__content">
@@ -149,7 +148,8 @@
 													<span class="m-nav__section-text">Cetak Halaman Raport</span>
 												</li>
 												<li class="m-nav__item">
-													<a href="" class="m-nav__link">
+													<a href="<?= base_url('Raport/CetakRaport/SelfPrint?StudentID='.$list->NIK_pd.'&MasterID='.$idMasterLeger) ?>" 
+                                                    class="m-nav__link" target="_blank">
 														<i class="m-nav__link-icon flaticon-notes"></i>
 														<span class="m-nav__link-text">Hal. Cover</span>
 													</a>

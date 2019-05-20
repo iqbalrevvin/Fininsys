@@ -23,6 +23,7 @@ public function getNameProfil($id){
 public function profil($id){
 	$this->db->select('*');
 	$this->db->from('peserta_didik');
+	$this->db->join('sekolah', 'peserta_didik.idSekolah = sekolah.idSekolah', 'left');
 	$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
 	$this->db->join('ortu_peserta_didik', 'peserta_didik.NIK_pd = ortu_peserta_didik.NIK_pd', 'left');
 	$this->db->join('kelas', 'detail_peserta_didik.idKelas = kelas.idKelas', 'left');
@@ -74,6 +75,27 @@ public function editKontak($data, $pk){
 public function editOrangTua($data, $pk){
 	$this->db->where('NIK_pd', $pk);
 	$this->db->update('ortu_peserta_didik', $data);
+}
+
+public function listKelas($idSekolah){
+	$this->db->select('*');
+	$this->db->from('kelas');
+	$this->db->join('program_studi', 'kelas.idProdi = program_studi.idProdi', 'left');
+	$this->db->join('sekolah', 'program_studi.idSekolah = sekolah.idSekolah', 'left');
+	$this->db->where('program_studi.idSekolah', $idSekolah);
+	$query = $this->db->get();
+	$execute = $query->result();
+	return $execute;
+}
+
+public function jumlahSemester($idKelas){
+	$this->db->select('*');
+	$this->db->from('program_studi');
+	$this->db->join('kelas', 'program_studi.idProdi = kelas.idProdi', 'left');
+	$this->db->where('kelas.idKelas', $idKelas);
+	$query = $this->db->get();
+	$execute = $query->row();
+	return $execute;
 }
 /*public function profil($id)
 {

@@ -1,3 +1,4 @@
+ 
 var Select2 = {
     init: function() {
         $(".m_select2").select2({
@@ -102,4 +103,5 @@ var Select2 = {
 };
 jQuery(document).ready(function() {
     Select2.init()
+
 });

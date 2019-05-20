@@ -10,9 +10,10 @@
 				</div>
 				<div class="m-card-profile__details">
 					<span class="m-card-profile__name"><?= $profil->nama_pd ?></span>
-					<span class="m-card "><?= $profil->NIK_pd ?></a><br>
-					<span class="m-card ">Tingkat : (<?= grade($profil->tahun_angkatan, $profil->jumlah_semester) ?>)</a><br>
-					<span class="m-card ">Semester : (<?= semester($profil->tahun_angkatan, $profil->jumlah_semester) ?>)</a>
+					<span class="m-card"><b><?= $profil->nama_sekolah ?></b></span><br>
+					<span class="m-card"><?= $profil->NIK_pd ?></a><br>
+					<span class="m-card ">Tingkat : <?= grade($profil->tahun_angkatan, $profil->jumlah_semester) ?></a><br>
+					<span class="m-card ">Semester : <?= semester($profil->tahun_angkatan, $profil->jumlah_semester) ?></a>
 
 				</div>
 			</div>

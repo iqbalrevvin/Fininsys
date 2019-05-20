@@ -36,6 +36,7 @@
 				<h3 class="m-form__section">Data Personal</h3>
 			</div>
 		</div>
+
 		<div class="form-group">
 			<div class="col-xs-12 col-sm-12 col-lg-10">
 				<label>NIK Peserta Didik*</label>
@@ -52,7 +53,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air">
+			<div class="col-xs-12 col-sm-6 col-lg-3 m-select2 m-select2--air">
 				<label>Jenis Kelamin*</label>
 					<select class="form-control m_select2_hiding" name="JK" id="JK">	
 					<option value="">Pilih Jenis Kelamin</option>
@@ -62,7 +63,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air">
+			<div class="col-xs-12 col-sm-6 col-lg-3 m-select2 m-select2--air">
 				<label>Agama</label>
 					<select name="agama" id="agama" class="form-control m_select2_hiding">
 						<option value="">Pilih Agama</option>
@@ -77,17 +78,19 @@
 		<div class="form-group">
 			<div class="col-xs-12 col-sm-8 col-lg-8">
 				<label>Tempat Lahir</label>
-					<input type="text" class="form-control m-input m-input--air" maxlength="50" type="text" placeholder="Inputkan Tempat Lahir Maksimal 50 Karakter" id="tempatLahir" name="tempatLahir" value="<?= $profil->tempat_lahir_pd ?>">
+					<input type="text" class="form-control m-input m-input--air" placeholder="Inputkan Tempat Lahir Maksimal 50 Karakter" 
+					id="tempatLahir" name="tempatLahir" value="<?= $profil->tempat_lahir_pd ?>">
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="col-xs-12 col-sm-6 col-lg-6">
 				<label>Tanggal Lahir</label>
-					<input type="text" class="form-control m-input  m-input--air m_datepicker_nonModal" 
+					<input type="text" class="form-control m-input m-input--air m_datepicker_nonModal" 
 						placeholder="Format : yyyy-mm-dd Atau Pilih Dengan Kalender" id="tanggalLahir" 
 						name="tanggalLahir" value="<?= $profil->tanggal_lahir_pd ?>" />
 			</div>
 		</div>
+	
 
 		<div class="m-portlet__foot m-portlet__foot--fit">
 			<div class="m-form__actions">
@@ -192,178 +195,9 @@
 	</form>
 </div>
 
-<script src="<?php echo base_url('assets/js/jquery.chained.min.js') ?>"></script>
 <script>
 
-jQuery(document).ready(function() {
 
-	/*ALAMAT KABUPATEN*/
-	$("#provinsi").change(function(){ 
-		mApp.block(".kabupaten", {
-          overlayColor: "#000000",
-          type: "loader",
-          state: "primary",
-          message: "<b>Memuat Data Kabupaten...</b>"
-      	});
-		$.ajax({
-			type: "POST", // Method pengiriman data bisa dengan GET atau POST
-			url: "<?= base_url('AlamatChain/listKota'); ?>", // Isi dengan url/path file php yang dituju
-			data: {
-				idProvinsi : $("#provinsi").val()
-			}, // data yang akan dikirim ke file yang dituju
-			dataType: "json",
-			beforeSend: function(e) {
-				if(e && e.overrideMimeType) {
-					e.overrideMimeType("application/json;charset=UTF-8");
-				}
-			},
-			success: function(response){ 
-				mApp.unblock(".kabupaten");
-				$("#kabupaten").html(response.listKota).show();
-			},
-			error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
-				alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
-			}
-		});
-	});
-	/*ALAMAT KECAMATAN*/
-	$("#kabupaten").change(function(){ 
-		mApp.block(".kecamatan", {
-          overlayColor: "#000000",
-          type: "loader",
-          state: "primary",
-          message: "<b>Memuat Data Kecamatan...</b>"
-      	});
-		$.ajax({
-			type: "POST", // Method pengiriman data bisa dengan GET atau POST
-			url: "<?= base_url('AlamatChain/listKecamatan'); ?>", // Isi dengan url/path file php yang dituju
-			data: {
-				idKabupaten : $("#kabupaten").val()
-			}, // data yang akan dikirim ke file yang dituju
-			dataType: "json",
-			beforeSend: function(e) {
-				if(e && e.overrideMimeType) {
-					e.overrideMimeType("application/json;charset=UTF-8");
-				}
-			},
-			success: function(response){ 
-				mApp.unblock(".kecamatan");
-				$("#kecamatan").html(response.listKecamatan).show();
-			},
-			error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
-				alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
-			}
-		});
-	});
-	
-	/*ALAMAT KELURAHAN*/
-	$("#kecamatan").change(function(){ 
-		mApp.block(".kelurahan", {
-          overlayColor: "#000000",
-          type: "loader",
-          state: "primary",
-          message: "<b>Memuat Data Kelurahan...</b>"
-      	});
-		$.ajax({
-			type: "POST", // Method pengiriman data bisa dengan GET atau POST
-			url: "<?= base_url('AlamatChain/listKelurahan'); ?>", // Isi dengan url/path file php yang dituju
-			data: {
-				idKecamatan : $("#kecamatan").val()
-			}, // data yang akan dikirim ke file yang dituju
-			dataType: "json",
-			beforeSend: function(e) {
-				if(e && e.overrideMimeType) {
-					e.overrideMimeType("application/json;charset=UTF-8");
-				}
-			},
-			success: function(response){ 
-				mApp.unblock(".kelurahan");
-				$("#kelurahan").html(response.listKelurahan).show();
-			},
-			error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
-				alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
-			}
-		});
-	});
-
-});
-	/*FORM EDIT DATA UTAMA*/
-	$(document).on('click', '#btnDataUtama', function(e) {
-		base_url = '<?= base_url() ?>';
-		$("#btnLoading").html('<img src="' + base_url + 'assets/svg/loading-spin.svg" alt=""> ');
-		var data = $('#formEditProfil').serialize();
-        	$.ajax({
-        		url: '<?= base_url('PesertaDidik/Profil/editProfilPD') ?>',
-        		type: 'POST',
-        		dataType: 'json',
-        		data: data,
-        		beforeSend: function(e) {
-					if(e && e.overrideMimeType) {
-						e.overrideMimeType('application/jsoncharset=UTF-8')
-					}
-				},
-        		success: function(response){
-        			if(response.status == 'sukses'){
-        				swal({
-			                title: response.title,
-			                text: response.pesan,
-			                type: "success",
-			                timer: 5e3,
-			                onOpen: function() {
-			                    swal.showLoading()
-			                    setTimeout(function () {
-			                        //$("#loading").hide();
-			                        refresh();
-			                    }, 1500);  
-			                }
-			            });
-			        }else{
-        				toastr.error(response.pesan, response.title);
-        				$("#btnLoading").fadeOut();
-        			}
-        		}
-        	})
-	});
-	/*--------------------------------------------------------------*/
-
-	/*FORM EDIT DATA ALAMAT*/
-	$(document).on('click', '#btnDataAlamat', function(e) {
-		base_url = '<?= base_url() ?>';
-		$("#btnalamatLoading").html('<img src="' + base_url + 'assets/svg/loading-spin.svg" alt=""> ');
-		var data = $('#formEditDataAlamat').serialize();
-        	$.ajax({
-        		url: '<?= base_url('PesertaDidik/Profil/editAlamatPD') ?>',
-        		type: 'POST',
-        		dataType: 'json',
-        		data: data,
-        		beforeSend: function(e) {
-					if(e && e.overrideMimeType) {
-						e.overrideMimeType('application/jsoncharset=UTF-8')
-					}
-				},
-        		success: function(response){
-        			if(response.status == 'sukses'){
-        				swal({
-			                title: response.title,
-			                text: response.pesan,
-			                type: "success",
-			                timer: 5e3,
-			                onOpen: function() {
-			                    swal.showLoading()
-			                    setTimeout(function () {
-			                        //$("#loading").hide();
-			                        refresh();
-			                    }, 1500);  
-			                }
-			            });
-			        }else{
-        				toastr.error(response.pesan, response.title);
-        				$("#btnalamatLoading").fadeOut();
-        			}
-        		}
-        	})
-	});
-	/*--------------------------------------------------------------*/
 	
 
 </script>

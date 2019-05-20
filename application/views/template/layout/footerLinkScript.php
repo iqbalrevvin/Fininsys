@@ -17,8 +17,11 @@
 <script src="<?= base_url('assets/js/vendors.bundle.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/scripts.bundle.js') ?>" type="text/javascript"></script>
 
-<script src="<?= base_url('assets/vendors/datatables-metronic/datatables.bundle.js') ?>" type="text/javascript"></script>
-<script src="<?= base_url('assets/vendors/datatables/datatables.bundle.js') ?>" type="text/javascript"></script>
+<?php if ($this->uri->segment(1) == 'ManajemenKelas' || $this->uri->segment(1) == 'LegerNilai'): ?>
+  <script src="<?= base_url('assets/vendors/datatables-metronic/datatables.bundle.js') ?>" type="text/javascript"></script>
+  <script src="<?= base_url('assets/vendors/datatables/datatables.bundle.js') ?>" type="text/javascript"></script>
+<?php endif; ?>
+
 <script src="<?= base_url('assets/js/components/blockui.js') ?>"></script>
 <script src="<?= base_url('assets/js/demo/bootstrap-maxlength.js') ?>"></script>
 <script src="<?= base_url('assets/js/demo/bootstrap-select.js') ?>"></script>
@@ -52,6 +55,7 @@
       //DatatablesBasicPaginations.init();
       //PortletDraggable.init()
     });
+
     // Fungsi Input HANYA ANGKA
     function inputAngka(evt) {
         var charCode = (evt.which) ? evt.which : event.keyCode

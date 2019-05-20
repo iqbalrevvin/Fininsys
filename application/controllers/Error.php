@@ -15,13 +15,15 @@ class Error extends CI_Controller {
 		if (!$this->ion_auth->logged_in()) {
 			$template      = 'auth_template';
 			$view          = 'error_page/error_404';
-	        $this->outputview->output_front($view, $template);
+	        /*$this->outputview->output_front($view, $template);*/
+	       $this->load->view('error_page/error_404');
 		}else{
 			$data['judul'] = '404 Error Page';
 			$data['crumb'] = array( '404 Error' => '' );
 			$template      = 'admin_template';
 			$view          = 'error_page/error_404';
-	        $this->outputview->output_admin($view, $template, $data);
+	        /*$this->outputview->output_admin($view, $template, $data);*/
+	         $this->load->view('error_page/error_404');
 	    }
 	}
 }

@@ -49,19 +49,19 @@
 						<?php endforeach ?>
 					</select>
 				</div>
-				<div class="row col-md-3 col-3 pilihKelas">
+				<div class="row col-md-2 col-3 pilihKelas">
 					<b>Pilih Kelas</b> : &nbsp;
                     <select class="form-control m_select2" name="pilihKelas" id="pilihKelas">	
 						<option value="">Kelas</option>
 					</select>
 				</div>
-            	<div class="row col-md-2 col-2 pilihAngkatan">
-                	<b>Pilih Angkatan</b> : &nbsp;
+            	<div class="row col-md-2 col-1 pilihAngkatan">
+                	<b>Angkatan</b> : &nbsp;
                     <select class="form-control m_select2_hiding" name="pilihAngkatan" id="pilihAngkatan">	
 						<option value="">Pilih Angkatan</option>
 					</select>
 				</div>
-            	<div class="row col-md-2 col-2 pilihSemester">
+            	<div class="row col-md-2 col-1 pilihSemester">
                 	<b>Pilih Semester</b> : &nbsp;
                     <select class="form-control m_select2_hiding" name="pilihSemester" id="pilihSemester">	
 						<option value="">Pilih Semester</option>
@@ -70,6 +70,10 @@
 						<?php endforeach ?>
 					</select>
 				</div>
+				<div class="row col-md-2 col-1 pilihSemester">
+                	<b>Titimangsa</b> : &nbsp;
+                   <input type="date" class="form-control m-input m-input--air" id="titimangsaRaport" name="titimangsaRaport">
+				</div>
 
 				<div class="row col-md-2 col-2">
 					TampilKan Data : &nbsp;
@@ -77,14 +81,12 @@
 						Tampilkan <span id="btnTampilLoading"></span>
 					</button>
 				</div>
-				<div class="row col-md-2 col-2">
-					Keterangan : &nbsp;
-					<button type="button" class="btn btn-accent m-btn m-btn--air m-btn--custom" id="btnKeterangan" data-toggle="modal" 
-						data-target="#modalKeterangan" title="Keterangan">
-						Keterangan
-					</button>
+				<div class="row col-md-3 col-3">
+					<a href="#" class="btn btn-info m-btn m-btn--icon m-btn--icon-only" data-toggle="modal" 
+                        data-target="#modalKeterangan" title="Keterangan">
+						<i class="la la-info"></i>
+					</a>
 				</div>
-				
             </div>
         </div>
     </div>
@@ -94,9 +96,7 @@
 </div>
 
 <script>
-jQuery(document).ready(function() {
 
-});
 	/*PILIH KELAS*/
 	$("#pilihSekolah").change(function(){ 
 		mApp.block(".pilihKelas", {
@@ -194,7 +194,8 @@ jQuery(document).ready(function() {
 	/*------------------------------------------------------------------------------------------------------*/
 	/*TOMBOL TAMPIL SISWA BERDASARKAN KELAS*/
 	$(document).on('click', '#btnTampilSiswa', function(e) {
-		if($('#pilihSekolah').val()=="" || $('#pilihKelas').val()=="" || $('#pilihAngkatan').val()=="" || $('#pilihSemester').val()==""){
+		if($('#pilihSekolah').val()=="" || $('#pilihKelas').val()=="" || $('#pilihAngkatan').val()=="" 
+			|| $('#pilihSemester').val()=="" || $('#titimangsaRaport').val()==""){
 			toastr.error("Lengkapi Parameter Sekolah, Kelas, Angkatan & Semester", "Gagal Memproses");
 		}else{
 			mApp.block(".portletTampil", {

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Bulan Mei 2019 pada 05.14
--- Versi server: 10.1.34-MariaDB
--- Versi PHP: 5.6.37
+-- Generation Time: May 20, 2019 at 11:07 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alamat_desa`
+-- Table structure for table `alamat_desa`
 --
 
 CREATE TABLE `alamat_desa` (
@@ -34,7 +34,7 @@ CREATE TABLE `alamat_desa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `alamat_desa`
+-- Dumping data for table `alamat_desa`
 --
 
 INSERT INTO `alamat_desa` (`idDesa`, `nama_desa`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `alamat_desa` (`idDesa`, `nama_desa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alamat_kabupaten`
+-- Table structure for table `alamat_kabupaten`
 --
 
 CREATE TABLE `alamat_kabupaten` (
@@ -52,7 +52,7 @@ CREATE TABLE `alamat_kabupaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `alamat_kabupaten`
+-- Dumping data for table `alamat_kabupaten`
 --
 
 INSERT INTO `alamat_kabupaten` (`idKabupaten`, `nama_kabupaten`) VALUES
@@ -61,7 +61,7 @@ INSERT INTO `alamat_kabupaten` (`idKabupaten`, `nama_kabupaten`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alamat_kecamatan`
+-- Table structure for table `alamat_kecamatan`
 --
 
 CREATE TABLE `alamat_kecamatan` (
@@ -70,7 +70,7 @@ CREATE TABLE `alamat_kecamatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `alamat_kecamatan`
+-- Dumping data for table `alamat_kecamatan`
 --
 
 INSERT INTO `alamat_kecamatan` (`idKecamatan`, `nama_kecamatan`) VALUES
@@ -79,7 +79,7 @@ INSERT INTO `alamat_kecamatan` (`idKecamatan`, `nama_kecamatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alamat_provinsi`
+-- Table structure for table `alamat_provinsi`
 --
 
 CREATE TABLE `alamat_provinsi` (
@@ -88,7 +88,7 @@ CREATE TABLE `alamat_provinsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `alamat_provinsi`
+-- Dumping data for table `alamat_provinsi`
 --
 
 INSERT INTO `alamat_provinsi` (`idProvinsi`, `nama_provinsi`) VALUES
@@ -97,7 +97,7 @@ INSERT INTO `alamat_provinsi` (`idProvinsi`, `nama_provinsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `deskripsi_nilai_prilaku`
+-- Table structure for table `deskripsi_nilai_prilaku`
 --
 
 CREATE TABLE `deskripsi_nilai_prilaku` (
@@ -108,7 +108,7 @@ CREATE TABLE `deskripsi_nilai_prilaku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `deskripsi_nilai_prilaku`
+-- Dumping data for table `deskripsi_nilai_prilaku`
 --
 
 INSERT INTO `deskripsi_nilai_prilaku` (`idDeskripsi_nilai`, `nilai_deskripsi`, `deskripsi`, `jenis_nilai_deskripsi`) VALUES
@@ -131,154 +131,153 @@ INSERT INTO `deskripsi_nilai_prilaku` (`idDeskripsi_nilai`, `nilai_deskripsi`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_peserta_didik`
+-- Table structure for table `detail_peserta_didik`
 --
 
 CREATE TABLE `detail_peserta_didik` (
   `idDetail_pd` int(111) NOT NULL,
   `NIK_pd` char(16) NOT NULL,
   `idKelas` int(11) DEFAULT NULL,
-  `tgl_masuk` date DEFAULT NULL,
-  `pindahan` enum('Ya','Tidak') DEFAULT NULL,
-  `tgl_pindah` date DEFAULT NULL,
+  `pindahan` enum('Ya','Tidak') DEFAULT 'Tidak',
+  `tgl_pindah` int(2) DEFAULT NULL,
   `pindah_di_semester` varchar(2) NOT NULL,
   `tidak_naik_kelas` enum('Ya','Tidak') NOT NULL DEFAULT 'Tidak',
   `tidak_naik_semester` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_peserta_didik`
+-- Dumping data for table `detail_peserta_didik`
 --
 
-INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `tgl_masuk`, `pindahan`, `tgl_pindah`, `pindah_di_semester`, `tidak_naik_kelas`, `tidak_naik_semester`) VALUES
-(21, '8080808080808081', 1, '2017-07-20', NULL, NULL, '', 'Tidak', ''),
-(24, '1234567893234987', 3, NULL, NULL, NULL, '', 'Tidak', ''),
-(25, '2341123576867867', 3, NULL, NULL, NULL, '', 'Tidak', ''),
-(26, '5656453453113434', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(27, '3205170511050010', 1, NULL, NULL, NULL, '', 'Tidak', ''),
-(28, '3205212702040000', 2, NULL, NULL, NULL, '', 'Tidak', ''),
-(29, '3205211809040000', 2, NULL, NULL, NULL, '', 'Tidak', ''),
-(30, '3205211003060000', 2, NULL, NULL, NULL, '', 'Tidak', ''),
-(31, '3273024304060010', 3, NULL, NULL, NULL, '', 'Tidak', ''),
-(32, '3205210206050000', 1, NULL, NULL, NULL, '', 'Tidak', ''),
-(33, '3205216309060000', 4, NULL, NULL, NULL, '', 'Tidak', ''),
-(34, '3205056106050010', 3, NULL, NULL, NULL, '', 'Tidak', ''),
-(35, '3211116207070000', 3, NULL, NULL, NULL, '', 'Tidak', ''),
-(36, '3205176104040010', 1, NULL, NULL, NULL, '', 'Tidak', ''),
-(37, '3205172407050000', 1, NULL, NULL, NULL, '', 'Tidak', ''),
-(38, '3205210911040000', 1, NULL, NULL, NULL, '', 'Tidak', ''),
-(39, '3276055002040010', 3, NULL, NULL, NULL, '', 'Tidak', ''),
-(40, '3204096003060000', 3, NULL, NULL, NULL, '', 'Tidak', ''),
-(41, '3211116111050000', 4, NULL, NULL, NULL, '', 'Tidak', ''),
-(42, '3207035502780000', 4, NULL, NULL, NULL, '', 'Tidak', ''),
-(43, '3205210506050010', 1, NULL, NULL, NULL, '', 'Tidak', ''),
-(44, '3205210509050000', 1, NULL, NULL, NULL, '', 'Tidak', ''),
-(45, '3204290310050000', 3, NULL, NULL, NULL, '', 'Tidak', ''),
-(46, '3205211404030000', 2, NULL, NULL, NULL, '', 'Tidak', ''),
-(47, '3205214408050010', 2, NULL, NULL, NULL, '', 'Tidak', ''),
-(48, '3204546070500000', 3, NULL, NULL, NULL, '', 'Tidak', ''),
-(49, '3205215611030000', 4, NULL, NULL, NULL, '', 'Tidak', ''),
-(50, '3205214605050000', 4, NULL, NULL, NULL, '', 'Tidak', ''),
-(51, '3205214104060000', 2, NULL, NULL, NULL, '', 'Tidak', ''),
-(52, '3205074110940000', 5, NULL, NULL, NULL, '', 'Tidak', ''),
-(53, '3205074120940000', 5, NULL, NULL, NULL, '', 'Tidak', ''),
-(54, '3205074130940000', 5, NULL, NULL, NULL, '', 'Tidak', ''),
-(55, '3205074140940000', 5, NULL, NULL, NULL, '', 'Tidak', ''),
-(56, '3205074150940000', 5, NULL, NULL, NULL, '', 'Tidak', ''),
-(57, '3205074160940000', 6, NULL, NULL, NULL, '', 'Tidak', ''),
-(58, '3205074170940000', 6, NULL, NULL, NULL, '', 'Tidak', ''),
-(59, '3205074180940000', 6, NULL, NULL, NULL, '', 'Tidak', ''),
-(60, '3205074190940000', 6, NULL, NULL, NULL, '', 'Tidak', ''),
-(61, '3205074200940000', 6, NULL, NULL, NULL, '', 'Tidak', ''),
-(62, '3201012707050001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(63, '3276056503040010', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(64, '3205216802060001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(65, '3205217012050003', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(66, '3205172311050002', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(67, '3205171908030004', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(68, '3204080902060002', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(69, '3205214810030002', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(70, '1007362003002732', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(71, '3273055606810002', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(72, '3273265906050001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(73, '3175083011050004', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(74, '3205216002050001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(75, '3205214510030002', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(76, '3205020405050006', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(77, '3205212510090001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(78, '3205312112040003', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(79, '3673010305060003', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(80, '7303022706060001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(81, '3210156806060001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(82, '3205214606030004', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(83, '3205417009050001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(84, '3205065508060005', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(85, '3277020908040009', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(86, '3205174510060003', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(87, '3205215411040001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(88, '3205212009050001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(89, '3205215206050003', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(90, '3276055912050005', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(91, '3204280208060007', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(92, '3205021504040008', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(93, '3205021306040005', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(94, '3207181801060004', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(95, '3204080902060012', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(96, '3273240510108234', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(97, '3204375503060006', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(98, '3205056410050002', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(99, '3205214909030005', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(100, '3205171608040003', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(101, '3204323007050009', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(102, '3205172908040006', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(103, '3205214103050002', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(104, '3205072401060001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(105, '3204322307030009', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(106, '3204321911050001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(107, '3205041911030007', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(108, '3205091907040005', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(109, '3204282210050019', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(110, '3277012203050004', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(111, '3205051704060005', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(112, '1050203005055001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(113, '3210151304050001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(114, '3216061803060006', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(115, '3273152809060005', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(116, '3205212310050001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(117, '3273282210050001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(118, '3306025508060001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(119, '3210155806060062', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(120, '3205215003040007', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(121, '3205216809040001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(122, '3205210704090001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(123, '3205410703050002', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(124, '3205211512030001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(125, '3205215308060001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(126, '3205210107060001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(127, '3205174405050004', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(128, '3204320104055535', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(129, '3205211101060005', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(130, '3205214510050005', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(131, '3205211107060002', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(132, '3205210402070003', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(133, '3205210401060004', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(134, '3205213105040001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(135, '3674020305040004', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(136, '3175074904060001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(137, '3205212309050004', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(138, '3205216805060002', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(139, '3205211403060004', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(140, '3205210702050001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(141, '3205210102070001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(142, '1050156903065001', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(143, '3204090810060010', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(144, '1007362003002698', NULL, NULL, NULL, NULL, '', 'Tidak', ''),
-(145, '1050192612035001', NULL, NULL, NULL, NULL, '', 'Tidak', '');
+INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `pindahan`, `tgl_pindah`, `pindah_di_semester`, `tidak_naik_kelas`, `tidak_naik_semester`) VALUES
+(21, '8080808080808081', NULL, NULL, NULL, '0', 'Tidak', ''),
+(24, '1234567893234987', 3, NULL, NULL, '0', 'Tidak', ''),
+(25, '2341123576867867', 3, 'Tidak', NULL, '0', 'Tidak', ''),
+(26, '5656453453113434', NULL, NULL, NULL, '0', 'Tidak', ''),
+(27, '3205170511050010', 1, NULL, NULL, '0', 'Tidak', ''),
+(28, '3205212702040000', 2, NULL, NULL, '0', 'Tidak', ''),
+(29, '3205211809040000', 2, NULL, NULL, '0', 'Tidak', ''),
+(30, '3205211003060000', 2, NULL, NULL, '0', 'Tidak', ''),
+(31, '3273024304060010', 3, NULL, NULL, '0', 'Tidak', ''),
+(32, '3205210206050000', 1, NULL, NULL, '0', 'Tidak', ''),
+(33, '3205216309060000', 4, NULL, NULL, '0', 'Tidak', ''),
+(34, '3205056106050010', 3, NULL, NULL, '0', 'Tidak', ''),
+(35, '3211116207070000', 3, NULL, NULL, '0', 'Tidak', ''),
+(36, '3205176104040010', 1, NULL, NULL, '0', 'Tidak', ''),
+(37, '3205172407050000', 1, NULL, NULL, '0', 'Tidak', ''),
+(38, '3205210911040000', 1, NULL, NULL, '0', 'Tidak', ''),
+(39, '3276055002040010', 3, NULL, NULL, '0', 'Tidak', ''),
+(40, '3204096003060000', 3, NULL, NULL, '0', 'Tidak', ''),
+(41, '3211116111050000', NULL, NULL, NULL, '0', 'Tidak', ''),
+(42, '3207035502780000', 4, NULL, NULL, '0', 'Tidak', ''),
+(43, '3205210506050010', 1, NULL, NULL, '0', 'Tidak', ''),
+(44, '3205210509050000', 1, NULL, NULL, '0', 'Tidak', ''),
+(45, '3204290310050000', 3, NULL, NULL, '0', 'Tidak', ''),
+(46, '3205211404030000', 2, NULL, NULL, '0', 'Tidak', ''),
+(47, '3205214408050010', 2, NULL, NULL, '0', 'Tidak', ''),
+(48, '3204546070500000', 3, NULL, NULL, '0', 'Tidak', ''),
+(49, '3205215611030000', 4, NULL, NULL, '0', 'Tidak', ''),
+(50, '3205214605050000', NULL, NULL, NULL, '0', 'Tidak', ''),
+(51, '3205214104060000', 2, NULL, NULL, '0', 'Tidak', ''),
+(52, '3205074110940000', 5, NULL, NULL, '0', 'Tidak', ''),
+(53, '3205074120940000', 5, NULL, NULL, '0', 'Tidak', ''),
+(54, '3205074130940000', 5, NULL, NULL, '0', 'Tidak', ''),
+(55, '3205074140940000', 5, NULL, NULL, '0', 'Tidak', ''),
+(56, '3205074150940000', 5, NULL, NULL, '0', 'Tidak', ''),
+(57, '3205074160940000', 6, NULL, NULL, '0', 'Tidak', ''),
+(58, '3205074170940000', 6, NULL, NULL, '0', 'Tidak', ''),
+(59, '3205074180940000', 6, NULL, NULL, '0', 'Tidak', ''),
+(60, '3205074190940000', 6, NULL, NULL, '0', 'Tidak', ''),
+(61, '3205074200940000', 6, NULL, NULL, '0', 'Tidak', ''),
+(62, '3201012707050001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(63, '3276056503040010', NULL, NULL, NULL, '0', 'Tidak', ''),
+(64, '3205216802060001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(65, '3205217012050003', NULL, NULL, NULL, '0', 'Tidak', ''),
+(66, '3205172311050002', NULL, NULL, NULL, '0', 'Tidak', ''),
+(67, '3205171908030004', NULL, NULL, NULL, '0', 'Tidak', ''),
+(68, '3204080902060002', NULL, NULL, NULL, '0', 'Tidak', ''),
+(69, '3205214810030002', NULL, NULL, NULL, '0', 'Tidak', ''),
+(70, '1007362003002732', NULL, NULL, NULL, '0', 'Tidak', ''),
+(71, '3273055606810002', NULL, NULL, NULL, '0', 'Tidak', ''),
+(72, '3273265906050001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(73, '3175083011050004', NULL, NULL, NULL, '0', 'Tidak', ''),
+(74, '3205216002050001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(75, '3205214510030002', NULL, NULL, NULL, '0', 'Tidak', ''),
+(76, '3205020405050006', NULL, NULL, NULL, '0', 'Tidak', ''),
+(77, '3205212510090001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(78, '3205312112040003', NULL, NULL, NULL, '0', 'Tidak', ''),
+(79, '3673010305060003', NULL, NULL, NULL, '0', 'Tidak', ''),
+(80, '7303022706060001', 4, NULL, NULL, '0', 'Tidak', ''),
+(81, '3210156806060001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(82, '3205214606030004', NULL, NULL, NULL, '0', 'Tidak', ''),
+(83, '3205417009050001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(84, '3205065508060005', NULL, NULL, NULL, '0', 'Tidak', ''),
+(85, '3277020908040009', NULL, NULL, NULL, '0', 'Tidak', ''),
+(86, '3205174510060003', NULL, NULL, NULL, '0', 'Tidak', ''),
+(87, '3205215411040001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(88, '3205212009050001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(89, '3205215206050003', NULL, NULL, NULL, '0', 'Tidak', ''),
+(90, '3276055912050005', NULL, NULL, NULL, '0', 'Tidak', ''),
+(91, '3204280208060007', NULL, NULL, NULL, '0', 'Tidak', ''),
+(92, '3205021504040008', NULL, NULL, NULL, '0', 'Tidak', ''),
+(93, '3205021306040005', NULL, NULL, NULL, '0', 'Tidak', ''),
+(94, '3207181801060004', NULL, NULL, NULL, '0', 'Tidak', ''),
+(95, '3204080902060012', NULL, NULL, NULL, '0', 'Tidak', ''),
+(96, '3273240510108234', NULL, NULL, NULL, '0', 'Tidak', ''),
+(97, '3204375503060006', NULL, NULL, NULL, '0', 'Tidak', ''),
+(98, '3205056410050002', NULL, NULL, NULL, '0', 'Tidak', ''),
+(99, '3205214909030005', NULL, NULL, NULL, '0', 'Tidak', ''),
+(100, '3205171608040003', NULL, NULL, NULL, '0', 'Tidak', ''),
+(101, '3204323007050009', NULL, NULL, NULL, '0', 'Tidak', ''),
+(102, '3205172908040006', NULL, NULL, NULL, '0', 'Tidak', ''),
+(103, '3205214103050002', NULL, NULL, NULL, '0', 'Tidak', ''),
+(104, '3205072401060001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(105, '3204322307030009', NULL, NULL, NULL, '0', 'Tidak', ''),
+(106, '3204321911050001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(107, '3205041911030007', NULL, NULL, NULL, '0', 'Tidak', ''),
+(108, '3205091907040005', NULL, NULL, NULL, '0', 'Tidak', ''),
+(109, '3204282210050019', NULL, NULL, NULL, '0', 'Tidak', ''),
+(110, '3277012203050004', NULL, NULL, NULL, '0', 'Tidak', ''),
+(111, '3205051704060005', NULL, NULL, NULL, '0', 'Tidak', ''),
+(112, '1050203005055001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(113, '3210151304050001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(114, '3216061803060006', NULL, NULL, NULL, '0', 'Tidak', ''),
+(115, '3273152809060005', NULL, NULL, NULL, '0', 'Tidak', ''),
+(116, '3205212310050001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(117, '3273282210050001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(118, '3306025508060001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(119, '3210155806060062', NULL, NULL, NULL, '0', 'Tidak', ''),
+(120, '3205215003040007', NULL, NULL, NULL, '0', 'Tidak', ''),
+(121, '3205216809040001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(122, '3205210704090001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(123, '3205410703050002', NULL, NULL, NULL, '0', 'Tidak', ''),
+(124, '3205211512030001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(125, '3205215308060001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(126, '3205210107060001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(127, '3205174405050004', NULL, NULL, NULL, '0', 'Tidak', ''),
+(128, '3204320104055535', NULL, NULL, NULL, '0', 'Tidak', ''),
+(129, '3205211101060005', NULL, NULL, NULL, '0', 'Tidak', ''),
+(130, '3205214510050005', NULL, NULL, NULL, '0', 'Tidak', ''),
+(131, '3205211107060002', NULL, NULL, NULL, '0', 'Tidak', ''),
+(132, '3205210402070003', NULL, NULL, NULL, '0', 'Tidak', ''),
+(133, '3205210401060004', NULL, NULL, NULL, '0', 'Tidak', ''),
+(134, '3205213105040001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(135, '3674020305040004', NULL, NULL, NULL, '0', 'Tidak', ''),
+(136, '3175074904060001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(137, '3205212309050004', NULL, NULL, NULL, '0', 'Tidak', ''),
+(138, '3205216805060002', NULL, NULL, NULL, '0', 'Tidak', ''),
+(139, '3205211403060004', NULL, NULL, NULL, '0', 'Tidak', ''),
+(140, '3205210702050001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(141, '3205210102070001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(142, '1050156903065001', NULL, NULL, NULL, '0', 'Tidak', ''),
+(143, '3204090810060010', NULL, NULL, NULL, '0', 'Tidak', ''),
+(144, '1007362003002698', NULL, NULL, NULL, '0', 'Tidak', ''),
+(145, '1050192612035001', NULL, NULL, NULL, '0', 'Tidak', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_tenaga_pendidik`
+-- Table structure for table `detail_tenaga_pendidik`
 --
 
 CREATE TABLE `detail_tenaga_pendidik` (
@@ -297,7 +296,7 @@ CREATE TABLE `detail_tenaga_pendidik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_tenaga_pendidik`
+-- Dumping data for table `detail_tenaga_pendidik`
 --
 
 INSERT INTO `detail_tenaga_pendidik` (`idDetail_tenpen`, `NIK_tenpen`, `NUPTK`, `NIP`, `NIY_NIGK`, `NPWP`, `nama_wajib_pajak`, `kewarganegaraan`, `nama_negara`, `status_perkawinan`, `nama_pasangan`, `pekerjaan_pasangan`) VALUES
@@ -320,7 +319,7 @@ INSERT INTO `detail_tenaga_pendidik` (`idDetail_tenpen`, `NIK_tenpen`, `NUPTK`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ekstrakulikuler`
+-- Table structure for table `ekstrakulikuler`
 --
 
 CREATE TABLE `ekstrakulikuler` (
@@ -330,7 +329,7 @@ CREATE TABLE `ekstrakulikuler` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ekstrakulikuler`
+-- Dumping data for table `ekstrakulikuler`
 --
 
 INSERT INTO `ekstrakulikuler` (`idEkstrakulikuler`, `nama_ekstrakulikuler`, `Keterangan`) VALUES
@@ -341,7 +340,7 @@ INSERT INTO `ekstrakulikuler` (`idEkstrakulikuler`, `nama_ekstrakulikuler`, `Ket
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `groups`
+-- Table structure for table `groups`
 --
 
 CREATE TABLE `groups` (
@@ -351,7 +350,7 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `groups`
+-- Dumping data for table `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
@@ -364,7 +363,7 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `groups_header`
+-- Table structure for table `groups_header`
 --
 
 CREATE TABLE `groups_header` (
@@ -373,7 +372,7 @@ CREATE TABLE `groups_header` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `groups_header`
+-- Dumping data for table `groups_header`
 --
 
 INSERT INTO `groups_header` (`id_header_menu`, `id_groups`) VALUES
@@ -388,7 +387,7 @@ INSERT INTO `groups_header` (`id_header_menu`, `id_groups`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `groups_menu`
+-- Table structure for table `groups_menu`
 --
 
 CREATE TABLE `groups_menu` (
@@ -397,7 +396,7 @@ CREATE TABLE `groups_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `groups_menu`
+-- Dumping data for table `groups_menu`
 --
 
 INSERT INTO `groups_menu` (`id_groups`, `id_menu`) VALUES
@@ -486,12 +485,18 @@ INSERT INTO `groups_menu` (`id_groups`, `id_menu`) VALUES
 (1, 129),
 (3, 129),
 (1, 130),
-(3, 130);
+(3, 130),
+(1, 131),
+(3, 131),
+(1, 132),
+(3, 132),
+(1, 133),
+(3, 133);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `header_menu`
+-- Table structure for table `header_menu`
 --
 
 CREATE TABLE `header_menu` (
@@ -501,7 +506,7 @@ CREATE TABLE `header_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `header_menu`
+-- Dumping data for table `header_menu`
 --
 
 INSERT INTO `header_menu` (`id_header_menu`, `sort`, `header`) VALUES
@@ -512,7 +517,7 @@ INSERT INTO `header_menu` (`id_header_menu`, `sort`, `header`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jabatan`
+-- Table structure for table `jabatan`
 --
 
 CREATE TABLE `jabatan` (
@@ -522,7 +527,7 @@ CREATE TABLE `jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jabatan`
+-- Dumping data for table `jabatan`
 --
 
 INSERT INTO `jabatan` (`idJabatan`, `nama_jabatan`, `keterangan_jabatan`) VALUES
@@ -543,7 +548,7 @@ INSERT INTO `jabatan` (`idJabatan`, `nama_jabatan`, `keterangan_jabatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jabatan_tenpen`
+-- Table structure for table `jabatan_tenpen`
 --
 
 CREATE TABLE `jabatan_tenpen` (
@@ -553,7 +558,7 @@ CREATE TABLE `jabatan_tenpen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jabatan_tenpen`
+-- Dumping data for table `jabatan_tenpen`
 --
 
 INSERT INTO `jabatan_tenpen` (`idJabatan_tenpen`, `NIK_tenpen`, `idJabatan`) VALUES
@@ -567,21 +572,21 @@ INSERT INTO `jabatan_tenpen` (`idJabatan_tenpen`, `NIK_tenpen`, `idJabatan`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kabupaten`
+-- Table structure for table `kabupaten`
 --
 
 CREATE TABLE `kabupaten` (
   `id_kab` char(4) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `id_prov` char(2) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `nama` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `nama_kabupaten` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `id_jenis` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kabupaten`
+-- Dumping data for table `kabupaten`
 --
 
-INSERT INTO `kabupaten` (`id_kab`, `id_prov`, `nama`, `id_jenis`) VALUES
+INSERT INTO `kabupaten` (`id_kab`, `id_prov`, `nama_kabupaten`, `id_jenis`) VALUES
 ('1101', '11', 'KAB. ACEH SELATAN', 1),
 ('1102', '11', 'KAB. ACEH TENGGARA', 1),
 ('1103', '11', 'KAB. ACEH TIMUR', 1),
@@ -1100,20 +1105,20 @@ INSERT INTO `kabupaten` (`id_kab`, `id_prov`, `nama`, `id_jenis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kecamatan`
+-- Table structure for table `kecamatan`
 --
 
 CREATE TABLE `kecamatan` (
   `id_kec` char(6) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `id_kab` char(4) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `nama` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
+  `nama_kecamatan` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kecamatan`
+-- Dumping data for table `kecamatan`
 --
 
-INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama`) VALUES
+INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama_kecamatan`) VALUES
 ('110101', '1101', 'Bakongan'),
 ('110102', '1101', 'Kluet Utara'),
 ('110103', '1101', 'Kluet Selatan'),
@@ -2618,7 +2623,7 @@ INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama`) VALUES
 ('170508', '1705', 'Seluma Barat'),
 ('170509', '1705', 'Seluma Timur'),
 ('170510', '1705', 'Seluma Utara');
-INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama`) VALUES
+INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama_kecamatan`) VALUES
 ('170511', '1705', 'Seluma Selatan'),
 ('170512', '1705', 'Talo Kecil'),
 ('170513', '1705', 'Ulu Talo'),
@@ -4220,7 +4225,7 @@ INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama`) VALUES
 ('332913', '3329', 'Tanjung'),
 ('332914', '3329', 'Bulakamba'),
 ('332915', '3329', 'Larangan');
-INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama`) VALUES
+INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama_kecamatan`) VALUES
 ('332916', '3329', 'Ketanggungan'),
 ('332917', '3329', 'Banjarharjo'),
 ('337101', '3371', 'Magelang Selatan'),
@@ -5854,7 +5859,7 @@ INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama`) VALUES
 ('620403', '6204', 'Karau Kuala'),
 ('620404', '6204', 'Dusun Utara'),
 ('620405', '6204', 'Gn. Bintang Awai');
-INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama`) VALUES
+INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama_kecamatan`) VALUES
 ('620406', '6204', 'Dusun Selatan'),
 ('620501', '6205', 'Montallat'),
 ('620502', '6205', 'Gunung Timang'),
@@ -7417,7 +7422,7 @@ INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama`) VALUES
 ('820411', '8204', 'Kayoa Barat'),
 ('820412', '8204', 'Kayoa Selatan'),
 ('820413', '8204', 'Kayoa Utara');
-INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama`) VALUES
+INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama_kecamatan`) VALUES
 ('820414', '8204', 'Bacan Barat Utara'),
 ('820415', '8204', 'Kasiruta Barat'),
 ('820416', '8204', 'Kasiruta Timur'),
@@ -8216,7 +8221,7 @@ INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelas`
+-- Table structure for table `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -8228,7 +8233,7 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kelas`
+-- Dumping data for table `kelas`
 --
 
 INSERT INTO `kelas` (`idKelas`, `idKurikulum`, `idProdi`, `NIK_tenpen`, `nama_kelas`) VALUES
@@ -8242,7 +8247,7 @@ INSERT INTO `kelas` (`idKelas`, `idKurikulum`, `idProdi`, `NIK_tenpen`, `nama_ke
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelompok_mapel`
+-- Table structure for table `kelompok_mapel`
 --
 
 CREATE TABLE `kelompok_mapel` (
@@ -8252,32 +8257,33 @@ CREATE TABLE `kelompok_mapel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kelompok_mapel`
+-- Dumping data for table `kelompok_mapel`
 --
 
 INSERT INTO `kelompok_mapel` (`idKelompok_mapel`, `nama_kelompok_mapel`, `keterangan`) VALUES
-(1, 'Kelompok A', 'Mata Pelajaran Wajib'),
-(2, 'Kelompok B', 'Mata Pelajaran Muatan Lokal'),
-(3, 'Kelompok C', 'Mata Pelajaran Peminatan/Kejuruan');
+(1, 'Kelompok A(Wajib)', 'Mata Pelajaran Wajib'),
+(2, 'Kelompok B(Wajib)', 'Mata Pelajaran Wajib'),
+(4, 'Kelompok B (Muatan Lokal)', 'Mata Pelajaran Muatan Lokal'),
+(5, 'Kelompok C (Peminatan/Kejuruan)', 'Mata Pelajaran Peminatan / Kejuruan');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelurahan`
+-- Table structure for table `kelurahan`
 --
 
 CREATE TABLE `kelurahan` (
   `id_kel` char(10) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `id_kec` char(6) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
-  `nama` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci,
+  `nama_kelurahan` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci,
   `id_jenis` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kelurahan`
+-- Dumping data for table `kelurahan`
 --
 
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1101012001', '110101', 'Keude Bakongan', 4),
 ('1101012002', '110101', 'Ujung Mangki', 4),
 ('1101012003', '110101', 'Ujung Padang', 4),
@@ -9438,7 +9444,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1103242006', '110324', 'Sri Mulya', 4),
 ('1104012003', '110401', 'Delung Sekinel', 4),
 ('1104012005', '110401', 'Gelampang Gading', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1104012006', '110401', 'Gewat', 4),
 ('1104012008', '110401', 'Jamat', 4),
 ('1104012009', '110401', 'Kemerleng', 4),
@@ -10642,7 +10648,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1106232008', '110623', 'Cot Meulangeun', 4),
 ('1106232009', '110623', 'Cot Madi', 4),
 ('1106232010', '110623', 'Bung Sidom', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1106232011', '110623', 'Cot Karieng', 4),
 ('1106232012', '110623', 'Gampong Blang', 4),
 ('1106232013', '110623', 'Cot Malem', 4),
@@ -11847,7 +11853,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1108122005', '110812', 'Rawa', 4),
 ('1108122006', '110812', 'Punti Pulo Agam', 4),
 ('1108122007', '110812', 'Alue Pangkat', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1108122008', '110812', 'Teungoh Pulo Agam', 4),
 ('1108122009', '110812', 'Hueng', 4),
 ('1108122010', '110812', 'Pulo U', 4),
@@ -13031,9 +13037,9 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1111152010', '111115', 'Pante B. Kumbang', 4),
 ('1111152011', '111115', 'Pante B. Bkt. Panyang', 4),
 ('1111152012', '111115', 'Alue Krueb', 4),
-('1111152013', '111115', 'Alue Let', 4),
-('1111152014', '111115', 'Paloh Mampre', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1111152013', '111115', 'Alue Let', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
+('1111152014', '111115', 'Paloh Mampre', 4),
 ('1111152015', '111115', 'Buket Sudan', 4),
 ('1111152016', '111115', 'Awe Geutah', 4),
 ('1111152017', '111115', 'Cot Saleuet', 4),
@@ -14224,10 +14230,10 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1118012012', '111801', 'Meunasah Lhok', 4),
 ('1118012013', '111801', 'Meuraksa', 4),
 ('1118012014', '111801', 'Pulo U', 4),
-('1118012015', '111801', 'Geuleudah', 4),
+('1118012015', '111801', 'Geuleudah', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1118012016', '111801', 'Dayah Timur', 4),
-('1118012017', '111801', 'Bunot', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1118012017', '111801', 'Bunot', 4),
 ('1118012018', '111801', 'Glimpang Tutong', 4),
 ('1118012019', '111801', 'Meunasah Hagu', 4),
 ('1118012020', '111801', 'Pohroh', 4),
@@ -15395,9 +15401,9 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1203142034', '120314', 'Arse Hanopan', 4),
 ('1203142035', '120314', 'Nanggar Jati Hutapadang', 4),
 ('1203142036', '120314', 'Nanggar Jati', 4),
-('1203142037', '120314', 'Natambang Roncitan', 4),
-('1203142038', '120314', 'Dalihan Natolu', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1203142037', '120314', 'Natambang Roncitan', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
+('1203142038', '120314', 'Dalihan Natolu', 4),
 ('1203201004', '120320', 'Pasar Sempurna', 3),
 ('1203202002', '120320', 'Huraba', 4),
 ('1203202014', '120320', 'Mombang Boru', 4),
@@ -16580,10 +16586,10 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1207332006', '120733', 'Psr. V Kebun Kelapa', 4),
 ('1207332007', '120733', 'Beringin', 4),
 ('1207332008', '120733', 'Sidoarjo II R', 4),
-('1207332009', '120733', 'Karang Anyer', 4),
+('1207332009', '120733', 'Karang Anyer', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1207332010', '120733', 'Sidodadi Ramonia', 4),
-('1207332011', '120733', 'Tumpatan', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1207332011', '120733', 'Tumpatan', 4),
 ('1208012001', '120801', 'Silampuyang', 4),
 ('1208012002', '120801', 'Marihat Baris', 4),
 ('1208012003', '120801', 'Dolok Marlawan', 4),
@@ -17742,11 +17748,11 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1213032003', '121303', 'Hutaimbaru', 4),
 ('1213032004', '121303', 'Huta Bangun', 4),
 ('1213032005', '121303', 'Huta Tinggi', 4),
-('1213032006', '121303', 'Pagur', 4),
+('1213032006', '121303', 'Pagur', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1213032007', '121303', 'Pardomuan', 4),
 ('1213032008', '121303', 'Parmompang', 4),
-('1213032009', '121303', 'Ranto Natas', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1213032009', '121303', 'Ranto Natas', 4),
 ('1213032010', '121303', 'Sirangkap', 4),
 ('1213032011', '121303', 'Tanjung', 4),
 ('1213032012', '121303', 'Tebing Tinggi', 4),
@@ -18917,12 +18923,12 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1218022013', '121802', 'Kota Galuh', 4),
 ('1218022015', '121802', 'Lidah Tanah', 4),
 ('1218022016', '121802', 'Lubuk Bayas', 4),
-('1218022017', '121802', 'Lubuk Cemara', 4),
+('1218022017', '121802', 'Lubuk Cemara', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1218022018', '121802', 'Lubuk Dendang', 4),
 ('1218022019', '121802', 'Lubuk Rotan', 4),
 ('1218022020', '121802', 'Melati II', 4),
-('1218022024', '121802', 'Pematang Sijonam', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1218022024', '121802', 'Pematang Sijonam', 4),
 ('1218022025', '121802', 'Pematang Tatal', 4),
 ('1218022028', '121802', 'Suka Beras', 4),
 ('1218022029', '121802', 'Sukajadi', 4),
@@ -20089,13 +20095,13 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1223062004', '122306', 'Sungai Raja', 4),
 ('1223062005', '122306', 'Perkebunan Berangir', 4),
 ('1223062006', '122306', 'Silumajang', 4),
-('1223062007', '122306', 'Pulo Jantan', 4),
+('1223062007', '122306', 'Pulo Jantan', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1223062008', '122306', 'Kampung Pajak', 4),
 ('1223062009', '122306', 'Meranti Omas', 4),
 ('1223062010', '122306', 'Hatapang', 4),
 ('1223062011', '122306', 'Pasang Lela', 4),
-('1223062012', '122306', 'Simpang Marbau', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1223062012', '122306', 'Simpang Marbau', 4),
 ('1223062013', '122306', 'Bangun Rejo', 4),
 ('1223071001', '122307', 'Bandar Durian', 3),
 ('1223072002', '122307', 'Poldung', 4),
@@ -21258,12 +21264,12 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1305062001', '130506', 'Campago', 4),
 ('1305062002', '130506', 'Sikucur', 4),
 ('1305072001', '130507', 'Kuranji Hulu', 4),
-('1305072002', '130507', 'Malai III Koto', 4),
+('1305072002', '130507', 'Malai III Koto', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1305072003', '130507', 'Batu Gadang Kuranji Hulu', 4),
 ('1305072004', '130507', 'Sungai Sirah Kuranji Hulu', 4),
 ('1305082001', '130508', 'Kuranji Hilir', 4),
-('1305082002', '130508', 'Pilubang', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1305082002', '130508', 'Pilubang', 4),
 ('1305082003', '130508', 'Guguak Kuranji Hilir', 4),
 ('1305082004', '130508', 'Koto Tinggi Kuranji Hilir', 4),
 ('1305092001', '130509', 'III Koto Aur Malintang', 4),
@@ -22427,13 +22433,13 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1402142009', '140214', 'Peladangan', 4),
 ('1402142010', '140214', 'Koto Tuo', 4),
 ('1403011001', '140301', 'Kota Bengkalis', 3),
-('1403011002', '140301', 'Damon', 3),
+('1403011002', '140301', 'Damon', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1403011003', '140301', 'Rimba Sekampung', 3),
 ('1403012004', '140301', 'Kelapapati', 4),
 ('1403012005', '140301', 'Pedekik', 4),
 ('1403012006', '140301', 'Pangkalan Batang', 4),
-('1403012007', '140301', 'Sebauk', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1403012007', '140301', 'Sebauk', 4),
 ('1403012008', '140301', 'Teluklatak', 4),
 ('1403012009', '140301', 'Meskom', 4),
 ('1403012010', '140301', 'Senggoro', 4),
@@ -23599,13 +23605,13 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1409132010', '140913', 'Kasang Limau Sundai', 4),
 ('1409132011', '140913', 'Koto Rajo', 4),
 ('1409132012', '140913', 'Tanjung', 4),
-('1409132013', '140913', 'Sungaisorik', 4),
+('1409132013', '140913', 'Sungaisorik', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1409132014', '140913', 'Rawang Oguang', 4),
 ('1409141015', '140914', 'Beringin Jaya', 3),
 ('1409142001', '140914', 'Pulaukomang Sentajo', 4),
 ('1409142002', '140914', 'Muaro Sentajo', 4),
-('1409142003', '140914', 'Koto Sentajo', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1409142003', '140914', 'Koto Sentajo', 4),
 ('1409142004', '140914', 'Kampung Baru Sentajo', 4),
 ('1409142005', '140914', 'Pulaukopung Sentajo', 4),
 ('1409142006', '140914', 'Teratak Air Hitam', 4),
@@ -24775,14 +24781,14 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1506021016', '150602', 'Patunas', 3),
 ('1506021017', '150602', 'Sriwijaya', 3),
 ('1506021018', '150602', 'Sungainibung', 3),
-('1506022003', '150602', 'Tungkal I', 4),
+('1506022003', '150602', 'Tungkal I', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1506022014', '150602', 'Teluksialang', 4),
 ('1506031001', '150603', 'Teluknilau', 3),
 ('1506032006', '150603', 'Parit Pudin', 4),
 ('1506032007', '150603', 'Sungaiserindit', 4),
 ('1506032008', '150603', 'Mekar Jati', 4),
-('1506032012', '150603', 'Sungaipampang', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1506032012', '150603', 'Sungaipampang', 4),
 ('1506032013', '150603', 'Parit Sidang', 4),
 ('1506032014', '150603', 'Sungaijering', 4),
 ('1506032015', '150603', 'Parit Bilal', 4),
@@ -25957,14 +25963,14 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1603082008', '160308', 'Pulau Panggung', 4),
 ('1603082009', '160308', 'Karya Nyata', 4),
 ('1603082010', '160308', 'Perapau', 4),
-('1603092001', '160309', 'Tenam Bungkuk', 4),
+('1603092001', '160309', 'Tenam Bungkuk', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1603092002', '160309', 'Kota Padang', 4),
 ('1603092003', '160309', 'Gunung Agung', 4),
 ('1603092004', '160309', 'Sri Tanjung', 4),
 ('1603092005', '160309', 'Tebing Abang', 4),
 ('1603092006', '160309', 'Batu Surau', 4),
-('1603092007', '160309', 'Tanjung Raya', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1603092007', '160309', 'Tanjung Raya', 4),
 ('1603092008', '160309', 'Muara Tenang', 4),
 ('1603092009', '160309', 'Rekimai Jaya', 4),
 ('1603092010', '160309', 'Palak Tanah', 4),
@@ -27150,14 +27156,14 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1607152001', '160715', 'Bentayan', 4),
 ('1607152002', '160715', 'Teluktenggulang', 4),
 ('1607152004', '160715', 'Suka Mulya', 4),
-('1607152005', '160715', 'Suka Raja', 4),
+('1607152005', '160715', 'Suka Raja', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1607152006', '160715', 'Karang Anyar', 4),
 ('1607152007', '160715', 'Karang Asam', 4),
 ('1607152008', '160715', 'Marga Rahayu', 4),
 ('1607152009', '160715', 'Sido Mulyo', 4),
 ('1607152010', '160715', 'Keluang', 4),
-('1607152011', '160715', 'Bumi Serdang', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1607152011', '160715', 'Bumi Serdang', 4),
 ('1607152012', '160715', 'Karang Mulya', 4),
 ('1607152013', '160715', 'Sukakarya', 4),
 ('1607152014', '160715', 'Panca Mulya', 4),
@@ -28330,15 +28336,15 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1671011002', '167101', 'Ilir', 3),
 ('1671011003', '167101', 'Ilir', 3),
 ('1671011004', '167101', 'Ilir', 3),
-('1671011005', '167101', 'Ilir', 3),
+('1671011005', '167101', 'Ilir', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1671011006', '167101', 'Ilir', 3),
 ('1671011007', '167101', 'Kemang Manis', 3),
 ('1671021001', '167102', 'Ulu', 3),
 ('1671021002', '167102', 'Ulu', 3),
 ('1671021003', '167102', 'Ulu', 3),
 ('1671021004', '167102', 'Ulu', 3),
-('1671021005', '167102', 'Ulu', 3);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1671021005', '167102', 'Ulu', 3),
 ('1671021006', '167102', 'Ulu', 3),
 ('1671021007', '167102', 'Ulu', 3),
 ('1671021008', '167102', 'Ulu', 3),
@@ -29522,14 +29528,14 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1706022007', '170602', 'Pasar Sebelah', 4),
 ('1706022008', '170602', 'Ujung Padang', 4),
 ('1706022010', '170602', 'Pondok Batu', 4),
-('1706022011', '170602', 'Tanah Rekah', 4),
+('1706022011', '170602', 'Tanah Rekah', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1706022012', '170602', 'Selagan Jaya', 4),
 ('1706022019', '170602', 'Tanah Harapan', 4),
 ('1706032008', '170603', 'Teras Terunjam', 4),
 ('1706032009', '170603', 'Pondok Kopi', 4),
 ('1706032013', '170603', 'Setia Budi', 4),
-('1706032014', '170603', 'Tunggal Jaya', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1706032014', '170603', 'Tunggal Jaya', 4),
 ('1706032024', '170603', 'Talang Kuning', 4),
 ('1706032025', '170603', 'Teruntung', 4),
 ('1706032026', '170603', 'Karang Jaya', 4),
@@ -30706,15 +30712,15 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1803042009', '180304', 'Tanjungraja', 4),
 ('1803042010', '180304', 'Tanjungriang', 4),
 ('1803042011', '180304', 'Kemala Raja', 4),
-('1803042012', '180304', 'Sindang Marga', 4),
+('1803042012', '180304', 'Sindang Marga', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1803042013', '180304', 'Ulak Ata', 4),
 ('1803042014', '180304', 'Gunungkaton', 4),
 ('1803042015', '180304', 'Suka Mulya', 4),
 ('1803042016', '180304', 'Tanjungberingin', 4),
 ('1803042017', '180304', 'Sido Mulyo', 4),
 ('1803042018', '180304', 'Sinar Mulya', 4),
-('1803042019', '180304', 'Priangan Baru', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1803042019', '180304', 'Priangan Baru', 4),
 ('1803052001', '180305', 'Banjar Agung', 4),
 ('1803052002', '180305', 'Bumi Agung Marga', 4),
 ('1803052003', '180305', 'Pungguk Lama', 4),
@@ -31892,15 +31898,15 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1808072009', '180807', 'Gedung Meneng', 4),
 ('1808072010', '180807', 'Gedung Harapan', 4),
 ('1808072011', '180807', 'Tanjung Rejo', 4),
-('1808072012', '180807', 'Kali Papan', 4),
+('1808072012', '180807', 'Kali Papan', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1808072013', '180807', 'Mulya Sari', 4),
 ('1808072014', '180807', 'Way Limau', 4),
 ('1808072015', '180807', 'Gedung Jaya', 4),
 ('1808072016', '180807', 'Rejo Sari', 4),
 ('1808072017', '180807', 'Bandar Kasih', 4),
 ('1808072018', '180807', 'Sumber Rejeki', 4),
-('1808072019', '180807', 'Mulya Agung', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1808072019', '180807', 'Mulya Agung', 4),
 ('1808082001', '180808', 'Way Tuba', 4),
 ('1808082002', '180808', 'Karya Jaya', 4),
 ('1808082003', '180808', 'Say Umpu', 4),
@@ -33097,15 +33103,15 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('1971031007', '197103', 'Ampui', 3),
 ('1971031008', '197103', 'Rejo Sari', 3),
 ('1971041001', '197104', 'Pintu Air', 3),
-('1971041002', '197104', 'Bintang', 3),
+('1971041002', '197104', 'Bintang', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('1971041005', '197104', 'Masjid Jamik', 3),
 ('1971041006', '197104', 'Asam', 3),
 ('1971041007', '197104', 'Melintang', 3),
 ('1971041008', '197104', 'Parit Lalang', 3),
 ('1971041009', '197104', 'Keramat', 3),
 ('1971041010', '197104', 'Gajah Mada', 3),
-('1971051001', '197105', 'Taman Bunga', 3);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('1971051001', '197105', 'Taman Bunga', 3),
 ('1971051002', '197105', 'Bukitmerapin', 3),
 ('1971051004', '197105', 'Bukitsari', 3),
 ('1971051005', '197105', 'Tua Tunu', 3),
@@ -34320,7 +34326,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3202092005', '320209', 'Hegarmanah', 4),
 ('3202092006', '320209', 'Ubrug', 4),
 ('3202092007', '320209', 'Sirnajaya', 4),
-('3202092008', '320209', 'Sukaharja', 4),
+('3202092008', '320209', 'Sukaharja', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3202092009', '320209', 'Kertamukti', 4),
 ('3202092010', '320209', 'Mekarjaya', 4),
 ('3202092011', '320209', 'Damarraja', 4),
@@ -34328,8 +34335,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3202102001', '320210', 'Cikembar', 4),
 ('3202102002', '320210', 'Parakanlima', 4),
 ('3202102003', '320210', 'Bojong', 4),
-('3202102004', '320210', 'Cimanggu', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3202102004', '320210', 'Cimanggu', 4),
 ('3202102005', '320210', 'Bojongkembar', 4),
 ('3202102006', '320210', 'Sukamaju', 4),
 ('3202102007', '320210', 'Cibatu', 4),
@@ -35561,7 +35567,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3205252002', '320525', 'Cisangkal', 4),
 ('3205252003', '320525', 'Mekarwangi', 4),
 ('3205252004', '320525', 'Jayamukti', 4),
-('3205262001', '320526', 'Peundeuy', 4),
+('3205262001', '320526', 'Peundeuy', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3205262002', '320526', 'Toblong', 4),
 ('3205262003', '320526', 'Saribakti', 4),
 ('3205262004', '320526', 'Pangrumasan', 4),
@@ -35569,8 +35576,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3205262006', '320526', 'Purwajaya', 4),
 ('3205272001', '320527', 'Pameungpeuk', 4),
 ('3205272002', '320527', 'Mancagahar', 4),
-('3205272003', '320527', 'Paas', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3205272003', '320527', 'Paas', 4),
 ('3205272004', '320527', 'Mandalakasih', 4),
 ('3205272005', '320527', 'Jatimulya', 4),
 ('3205272006', '320527', 'Bojong', 4),
@@ -36798,7 +36804,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3209092003', '320909', 'Sedong Lor', 4),
 ('3209092004', '320909', 'Windujaya', 4),
 ('3209092005', '320909', 'Winduhaji', 4),
-('3209092006', '320909', 'Kertawangun', 4),
+('3209092006', '320909', 'Kertawangun', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3209092007', '320909', 'Penambangan', 4),
 ('3209092008', '320909', 'Putat', 4),
 ('3209092009', '320909', 'Panongan', 4),
@@ -36806,8 +36813,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3209102004', '320910', 'Munjul', 4),
 ('3209102005', '320910', 'Sidamulya', 4),
 ('3209102006', '320910', 'Mertapada Kulon', 4),
-('3209102007', '320910', 'Mertapada Wetan', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3209102007', '320910', 'Mertapada Wetan', 4),
 ('3209102008', '320910', 'Buntet', 4),
 ('3209102009', '320910', 'Kanci Kulon', 4),
 ('3209102010', '320910', 'Kanci', 4),
@@ -38037,7 +38043,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3212282001', '321228', 'Cangkingan', 4),
 ('3212282002', '321228', 'Jayawinangun', 4),
 ('3212282003', '321228', 'Kedokan Agung', 4),
-('3212282004', '321228', 'Kedokanbunder', 4),
+('3212282004', '321228', 'Kedokanbunder', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3212282005', '321228', 'Kedokanbunderwetan', 4),
 ('3212282006', '321228', 'Kaplongan', 4),
 ('3212282007', '321228', 'Jayalaksana', 4),
@@ -38046,8 +38053,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3212292003', '321229', 'Pagirikan', 4),
 ('3212292004', '321229', 'Pasekan', 4),
 ('3212292005', '321229', 'Karanganyar', 4),
-('3212292006', '321229', 'Totoran', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3212292006', '321229', 'Totoran', 4),
 ('3212302001', '321230', 'Bodas', 4),
 ('3212302002', '321230', 'Gadel', 4),
 ('3212302003', '321230', 'Rancajawat', 4),
@@ -39269,7 +39275,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3218102007', '321810', 'Kalijati', 4),
 ('3271011001', '327101', 'Batu Tulis', 3),
 ('3271011002', '327101', 'Bondongan', 3),
-('3271011003', '327101', 'Empang', 3),
+('3271011003', '327101', 'Empang', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3271011004', '327101', 'Lawanggintung', 3),
 ('3271011005', '327101', 'Pamoyanan', 3),
 ('3271011006', '327101', 'Ranggamekar', 3),
@@ -39278,8 +39285,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3271011009', '327101', 'Bojongkerta', 3),
 ('3271011010', '327101', 'Rancamaya', 3),
 ('3271011011', '327101', 'Kertamaya', 3),
-('3271011012', '327101', 'Harjasari', 3);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3271011012', '327101', 'Harjasari', 3),
 ('3271011013', '327101', 'Muarasari', 3),
 ('3271011014', '327101', 'Genteng', 3),
 ('3271011015', '327101', 'Pakuan', 3),
@@ -40503,7 +40509,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3303082008', '330308', 'Mangunegara', 4),
 ('3303082009', '330308', 'Karangnangka', 4),
 ('3303082010', '330308', 'Mrebet', 4),
-('3303082011', '330308', 'Bojong', 4),
+('3303082011', '330308', 'Bojong', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3303082012', '330308', 'Serayu Karanganyar', 4),
 ('3303082013', '330308', 'Serayu Larangan', 4),
 ('3303082014', '330308', 'Campakoah', 4),
@@ -40512,8 +40519,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3303082017', '330308', 'Binangun', 4),
 ('3303082018', '330308', 'Pengalusan', 4),
 ('3303082019', '330308', 'Sangkanayu', 4),
-('3303092001', '330309', 'Gandasuli', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3303092001', '330309', 'Gandasuli', 4),
 ('3303092002', '330309', 'Kalapacung', 4),
 ('3303092003', '330309', 'Karangmalang', 4),
 ('3303092004', '330309', 'Banjarsari', 4),
@@ -41754,7 +41760,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3306122027', '330612', 'Kroyolor', 4),
 ('3306122028', '330612', 'Samping', 4),
 ('3306122029', '330612', 'Wonosari', 4),
-('3306122030', '330612', 'Kaliglagah', 4),
+('3306122030', '330612', 'Kaliglagah', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3306122031', '330612', 'Kapiteran', 4),
 ('3306122032', '330612', 'Wanurojo', 4),
 ('3306122033', '330612', 'Rejowinangun', 4),
@@ -41763,8 +41770,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3306122036', '330612', 'Karangluas', 4),
 ('3306122037', '330612', 'Kedungpomahankulon', 4),
 ('3306122038', '330612', 'Sukogelap', 4),
-('3306122039', '330612', 'Gunungteges', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3306122039', '330612', 'Gunungteges', 4),
 ('3306122040', '330612', 'Purbayan', 4),
 ('3306132001', '330613', 'Puspo', 4),
 ('3306132002', '330613', 'Plipiran', 4),
@@ -43033,7 +43039,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3310172003', '331017', 'Kahuman', 4),
 ('3310172004', '331017', 'Ngaran', 4),
 ('3310172005', '331017', 'Borongan', 4),
-('3310172006', '331017', 'Nganjat', 4),
+('3310172006', '331017', 'Nganjat', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3310172007', '331017', 'Jimus', 4),
 ('3310172008', '331017', 'Turus', 4),
 ('3310172009', '331017', 'Polan', 4),
@@ -43043,8 +43050,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3310172013', '331017', 'Keprabon', 4),
 ('3310172014', '331017', 'Kranggan', 4),
 ('3310172015', '331017', 'Kebonharjo', 4),
-('3310172016', '331017', 'Janti', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3310172016', '331017', 'Janti', 4),
 ('3310172017', '331017', 'Sidowayah', 4),
 ('3310172018', '331017', 'Sidoharjo', 4),
 ('3310182001', '331018', 'Jambeyan', 4),
@@ -44317,7 +44323,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3316022013', '331602', 'Bekutuk', 4),
 ('3316022014', '331602', 'Plosorejo', 4),
 ('3316022015', '331602', 'Jeruk', 4),
-('3316022016', '331602', 'Tanggel', 4),
+('3316022016', '331602', 'Tanggel', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3316022017', '331602', 'Kalisari', 4),
 ('3316022018', '331602', 'Ngliron', 4),
 ('3316032001', '331603', 'Megeri', 4),
@@ -44327,8 +44334,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3316032005', '331603', 'Ngrawoh', 4),
 ('3316032006', '331603', 'Mendenrejo', 4),
 ('3316032007', '331603', 'Sumber', 4),
-('3316032008', '331603', 'Mojorembun', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3316032008', '331603', 'Mojorembun', 4),
 ('3316032009', '331603', 'Nglungger', 4),
 ('3316032010', '331603', 'Medalem', 4),
 ('3316042001', '331604', 'Gondel', 4),
@@ -45583,7 +45589,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3320132007', '332013', 'Margoyoso', 4),
 ('3320132008', '332013', 'Sendang', 4),
 ('3320132009', '332013', 'Kriyan', 4),
-('3320132010', '332013', 'Robayan', 4),
+('3320132010', '332013', 'Robayan', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3320132011', '332013', 'Bakalan', 4),
 ('3320132012', '332013', 'Manyargading', 4),
 ('3320142001', '332014', 'Dudak Awu', 4),
@@ -45593,8 +45600,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3320142005', '332014', 'Pendem', 4),
 ('3320142006', '332014', 'Jinggotan', 4),
 ('3320142007', '332014', 'Dermolo', 4),
-('3320142008', '332014', 'Kaliaman', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3320142008', '332014', 'Kaliaman', 4),
 ('3320142009', '332014', 'Tubanan', 4),
 ('3320142010', '332014', 'Balong', 4),
 ('3320142011', '332014', 'Kancilan', 4),
@@ -46853,7 +46859,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3325111015', '332511', 'Kauman', 3),
 ('3325111016', '332511', 'Karangasem Utara', 3),
 ('3325111017', '332511', 'Kasepuhan', 3),
-('3325111018', '332511', 'Sambong', 3),
+('3325111018', '332511', 'Sambong', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3325111019', '332511', 'Proyonanggan Utara', 3),
 ('3325111020', '332511', 'Proyonanggan Selatan', 3),
 ('3325111021', '332511', 'Karangasem Selatan', 3),
@@ -46862,8 +46869,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3325112003', '332511', 'Pasekaran', 4),
 ('3325112004', '332511', 'Kalisalak', 4),
 ('3325112005', '332511', 'Kecepak', 4),
-('3325112006', '332511', 'Klidang Wetan', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3325112006', '332511', 'Klidang Wetan', 4),
 ('3325112007', '332511', 'Klidang Lor', 4),
 ('3325112008', '332511', 'Kalipucang Wetan', 4),
 ('3325112009', '332511', 'Kalipucang Kulon', 4),
@@ -48103,7 +48109,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3373041001', '337304', 'Kecandran', 3),
 ('3373041002', '337304', 'Dukuh', 3),
 ('3373041003', '337304', 'Mangunsari', 3),
-('3373041004', '337304', 'Kalicacing', 3),
+('3373041004', '337304', 'Kalicacing', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3374011001', '337401', 'Miroto', 3),
 ('3374011002', '337401', 'Brumbungan', 3),
 ('3374011003', '337401', 'Jagalan', 3),
@@ -48113,8 +48120,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3374011007', '337401', 'Sekayu', 3),
 ('3374011008', '337401', 'Pandansari', 3),
 ('3374011009', '337401', 'Bangunharjo', 3),
-('3374011010', '337401', 'Kauman', 3);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3374011010', '337401', 'Kauman', 3),
 ('3374011011', '337401', 'Purwodinatan', 3),
 ('3374011012', '337401', 'Karangkidul', 3),
 ('3374011013', '337401', 'Pekunden', 3),
@@ -49368,7 +49374,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3503111002', '350311', 'Tamanan', 3),
 ('3503111003', '350311', 'Ngantru', 3),
 ('3503111005', '350311', 'Kelutan', 3),
-('3503111006', '350311', 'Surodakan', 3),
+('3503111006', '350311', 'Surodakan', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3503111007', '350311', 'Sumbergedong', 3),
 ('3503112001', '350311', 'Ngares', 4),
 ('3503112004', '350311', 'Karangsoko', 4),
@@ -49379,8 +49386,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3503112012', '350311', 'Parakan', 4),
 ('3503112013', '350311', 'Dawuhan', 4),
 ('3503122001', '350312', 'Wonocoyo', 4),
-('3503122002', '350312', 'Ngetal', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3503122002', '350312', 'Ngetal', 4),
 ('3503122003', '350312', 'Ngadirenggo', 4),
 ('3503122004', '350312', 'Pogalan', 4),
 ('3503122005', '350312', 'Ngulungkulon', 4),
@@ -50640,7 +50646,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3507312001', '350731', 'Slorok', 4),
 ('3507312002', '350731', 'Jatikerto', 4),
 ('3507312003', '350731', 'Ngadirejo', 4),
-('3507312004', '350731', 'Kromengan', 4),
+('3507312004', '350731', 'Kromengan', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3507312005', '350731', 'Peniwen', 4),
 ('3507312006', '350731', 'Jambuwer', 4),
 ('3507312007', '350731', 'Karangrejo', 4),
@@ -50651,8 +50658,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3507322005', '350732', 'Sumbertempur', 4),
 ('3507322006', '350732', 'Sumberdem', 4),
 ('3507322007', '350732', 'Wonosari', 4),
-('3507322008', '350732', 'Bangelan', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3507322008', '350732', 'Bangelan', 4),
 ('3507332001', '350733', 'Clumprit', 4),
 ('3507332002', '350733', 'Suwaru', 4),
 ('3507332003', '350733', 'Kademangan', 4),
@@ -51891,7 +51897,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3513152005', '351315', 'Kamalkuning', 4),
 ('3513152006', '351315', 'Tanjungsari', 4),
 ('3513152007', '351315', 'Krejengan', 4),
-('3513152008', '351315', 'Sentong', 4),
+('3513152008', '351315', 'Sentong', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3513152009', '351315', 'Sumberkatimoho', 4),
 ('3513152010', '351315', 'Karangren', 4),
 ('3513152011', '351315', 'Rawan', 4),
@@ -51902,8 +51909,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3513152016', '351315', 'Duwuhan', 4),
 ('3513152017', '351315', 'Soka\"an', 4),
 ('3513162001', '351316', 'Selogudig Kulon', 4),
-('3513162002', '351316', 'Selogudig Wetan', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3513162002', '351316', 'Selogudig Wetan', 4),
 ('3513162003', '351316', 'Ketompen', 4),
 ('3513162004', '351316', 'Karangbong', 4),
 ('3513162005', '351316', 'Karangpranti', 4),
@@ -53141,7 +53147,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3517072014', '351707', 'Rejoslamet', 4),
 ('3517072015', '351707', 'Selorejo', 4),
 ('3517072016', '351707', 'Sidokerto', 4),
-('3517072017', '351707', 'Sukomulyo', 4),
+('3517072017', '351707', 'Sukomulyo', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3517072018', '351707', 'Catakgayam', 4),
 ('3517072019', '351707', 'Wringinpitu', 4),
 ('3517082001', '351708', 'Kayangan', 4),
@@ -53152,8 +53159,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3517082006', '351708', 'Jatirejo', 4),
 ('3517082007', '351708', 'Cukir', 4),
 ('3517082008', '351708', 'Kwaron', 4),
-('3517082009', '351708', 'Watugaluh', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3517082009', '351708', 'Watugaluh', 4),
 ('3517082010', '351708', 'Pundong', 4),
 ('3517082011', '351708', 'Diwek', 4),
 ('3517082012', '351708', 'Bandung', 4),
@@ -54418,7 +54424,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3522092009', '352209', 'Mojosari', 4),
 ('3522092010', '352209', 'Balongdowo', 4),
 ('3522092011', '352209', 'Suberroto', 4),
-('3522092012', '352209', 'Pohwates', 4),
+('3522092012', '352209', 'Pohwates', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3522092013', '352209', 'Turigede', 4),
 ('3522092014', '352209', 'Bayemgede', 4),
 ('3522092015', '352209', 'Tlogorejo', 4),
@@ -54429,8 +54436,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3522092020', '352209', 'Jipo', 4),
 ('3522092021', '352209', 'Ngranggonanya', 4),
 ('3522092022', '352209', 'Mudung', 4),
-('3522092023', '352209', 'Karanggang', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3522092023', '352209', 'Karanggang', 4),
 ('3522092024', '352209', 'Sugih Waras', 4),
 ('3522092025', '352209', 'Sumbergede', 4),
 ('3522102001', '352210', 'Drajat', 4),
@@ -55680,7 +55686,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3525092001', '352509', 'Sukorejo', 4),
 ('3525092002', '352509', 'Gedangan', 4),
 ('3525092003', '352509', 'Wadeng', 4),
-('3525092004', '352509', 'Lasem', 4),
+('3525092004', '352509', 'Lasem', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3525092005', '352509', 'Kertosono', 4),
 ('3525092006', '352509', 'Sambi Pondok', 4),
 ('3525092007', '352509', 'Raci Kulon', 4),
@@ -55691,8 +55698,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3525092012', '352509', 'Srowo', 4),
 ('3525092013', '352509', 'Kauman', 4),
 ('3525092014', '352509', 'Bunderan', 4),
-('3525092015', '352509', 'Asempapak', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3525092015', '352509', 'Asempapak', 4),
 ('3525092016', '352509', 'Mriyunan', 4),
 ('3525092017', '352509', 'Mojoasem', 4),
 ('3525092018', '352509', 'Sedagaran', 4),
@@ -56923,7 +56929,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3572011006', '357201', 'Bendo', 3),
 ('3572011007', '357201', 'Kepanjenlor', 3),
 ('3572021001', '357202', 'Pakunden', 3),
-('3572021002', '357202', 'Blitar', 3),
+('3572021002', '357202', 'Blitar', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3572021003', '357202', 'Tlumpu', 3),
 ('3572021004', '357202', 'Turi', 3),
 ('3572021005', '357202', 'Karangsari', 3),
@@ -56934,8 +56941,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3572031003', '357203', 'Klampok', 3),
 ('3572031004', '357203', 'Sananwetan', 3),
 ('3572031005', '357203', 'Rembang', 3),
-('3572031006', '357203', 'Karang Tengah', 3);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3572031006', '357203', 'Karang Tengah', 3),
 ('3572031007', '357203', 'Bendogerit', 3),
 ('3573011001', '357301', 'Balearjosari', 3),
 ('3573011002', '357301', 'Arjosari', 3),
@@ -58159,7 +58165,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3603192008', '360319', 'Panongan', 4),
 ('3603201011', '360320', 'Babakan', 3),
 ('3603202002', '360320', 'Caringin', 4),
-('3603202003', '360320', 'Serdang Wetan', 4),
+('3603202003', '360320', 'Serdang Wetan', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('3603202004', '360320', 'Babat', 4),
 ('3603202005', '360320', 'Ciangir', 4),
 ('3603202006', '360320', 'Legok', 4),
@@ -58171,8 +58178,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('3603221004', '360322', 'Medang', 3),
 ('3603222002', '360322', 'Cicalengka', 4),
 ('3603222003', '360322', 'Pagedangan', 4),
-('3603222005', '360322', 'Cijantra', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('3603222005', '360322', 'Cijantra', 4),
 ('3603222006', '360322', 'Lengkong Kulon', 4),
 ('3603222007', '360322', 'Situ Gadung', 4),
 ('3603222008', '360322', 'Jatake', 4),
@@ -59413,7 +59419,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('5108042004', '510804', 'Banyatis', 4),
 ('5108042005', '510804', 'Gesing', 4),
 ('5108042006', '510804', 'Munduk', 4),
-('5108042007', '510804', 'Gobleg', 4),
+('5108042007', '510804', 'Gobleg', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('5108042008', '510804', 'Pedawa', 4),
 ('5108042009', '510804', 'Cempaga', 4),
 ('5108042010', '510804', 'Sidetapa', 4),
@@ -59426,8 +59433,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('5108042017', '510804', 'Kaliasem', 4),
 ('5108051009', '510805', 'Sukasada', 3),
 ('5108052001', '510805', 'Pancasari', 4),
-('5108052002', '510805', 'Wanagiri', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('5108052002', '510805', 'Wanagiri', 4),
 ('5108052003', '510805', 'Ambengan', 4),
 ('5108052004', '510805', 'Gitgit', 4),
 ('5108052005', '510805', 'Pegayaman', 4),
@@ -60673,7 +60679,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('5272041006', '527204', 'Nitu', 3),
 ('5272041007', '527204', 'Rabangodu Selatan', 3),
 ('5272041008', '527204', 'Rabadompu Timur', 3),
-('5272041009', '527204', 'Rite', 3),
+('5272041009', '527204', 'Rite', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('5272041010', '527204', 'Rabadompu Barat', 3),
 ('5272041011', '527204', 'Rabangodu Utara', 3),
 ('5272051001', '527205', 'Monggonao', 3),
@@ -60686,8 +60693,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('5272051008', '527205', 'Panggi', 3),
 ('5272051009', '527205', 'Manggemaci', 3),
 ('5272051010', '527205', 'Matakando', 3),
-('5301042003', '530104', 'Bokonusan', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('5301042003', '530104', 'Bokonusan', 4),
 ('5301042004', '530104', 'Otan', 4),
 ('5301042005', '530104', 'Uitao', 4),
 ('5301042006', '530104', 'Uiasa', 4),
@@ -61964,7 +61970,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('5307162003', '530716', 'Koting C', 4),
 ('5307162004', '530716', 'Koting D', 4),
 ('5307162005', '530716', 'Paubekor', 4),
-('5307162006', '530716', 'Ribang', 4),
+('5307162006', '530716', 'Ribang', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('5307172001', '530717', 'Bu Selatan', 4),
 ('5307172002', '530717', 'Bu Utara', 4),
 ('5307172003', '530717', 'Bu Watuweti', 4),
@@ -61978,8 +61985,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('5307182003', '530718', 'Baomekot', 4),
 ('5307182004', '530718', 'Kajowair', 4),
 ('5307182005', '530718', 'Hewokloang', 4),
-('5307182006', '530718', 'Heopuat', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('5307182006', '530718', 'Heopuat', 4),
 ('5307182007', '530718', 'Munerana', 4),
 ('5307192001', '530719', 'Teka Iku', 4),
 ('5307192002', '530719', 'Mekendetung', 4),
@@ -63231,7 +63237,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('5315102013', '531510', 'Watu Wangka', 4),
 ('5315102014', '531510', 'Compang Liang Ndara', 4),
 ('5315102015', '531510', 'Watu Galang', 4),
-('5316011001', '531601', 'Dhawe', 3),
+('5316011001', '531601', 'Dhawe', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('5316011003', '531601', 'Mbay I', 3),
 ('5316011005', '531601', 'Towak', 3),
 ('5316011007', '531601', 'Mbay II', 3),
@@ -63245,8 +63252,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('5316012012', '531601', 'Marapokot', 4),
 ('5316012013', '531601', 'Tonggurambang', 4),
 ('5316012014', '531601', 'Waekokak', 4),
-('5316012015', '531601', 'Ngegedhawe', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('5316012015', '531601', 'Ngegedhawe', 4),
 ('5316012016', '531601', 'Tadakisa', 4),
 ('5316012017', '531601', 'Nggolombay', 4),
 ('5316012018', '531601', 'Nangadhero', 4),
@@ -64469,7 +64475,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6104072014', '610407', 'Sinar Kuri', 4),
 ('6104072015', '610407', 'Selangkut Raya', 4),
 ('6104072016', '610407', 'Lanjut Mekar Sari', 4),
-('6104072017', '610407', 'Kepari', 4),
+('6104072017', '610407', 'Kepari', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('6104072018', '610407', 'Teluk Mutiara', 4),
 ('6104082001', '610408', 'Balai Pinang', 4),
 ('6104082002', '610408', 'Semandang Kiri', 4),
@@ -64482,8 +64489,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6104082012', '610408', 'Paoh Concong', 4),
 ('6104082013', '610408', 'Legong', 4),
 ('6104082014', '610408', 'Kenanga', 4),
-('6104082015', '610408', 'Balai Pinang Hulu', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('6104082015', '610408', 'Balai Pinang Hulu', 4),
 ('6104082016', '610408', 'Sekucing Kualan', 4),
 ('6104082017', '610408', 'Labai Hilir', 4),
 ('6104112001', '610411', 'Nanga Tayap', 4),
@@ -65678,7 +65684,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6110072002', '611007', 'Tanjung Sokan', 4),
 ('6110072003', '611007', 'Sijau', 4),
 ('6110072004', '611007', 'Keluing Taja', 4),
-('6110072005', '611007', 'Nanga Betangai', 4),
+('6110072005', '611007', 'Nanga Betangai', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('6110072006', '611007', 'Gelata', 4),
 ('6110072007', '611007', 'Nanga Ora', 4),
 ('6110072008', '611007', 'Nanga Libas', 4),
@@ -65691,8 +65698,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6110072015', '611007', 'Sepakat', 4),
 ('6110072016', '611007', 'Muara Tanjung', 4),
 ('6110072017', '611007', 'Landau Kabu', 4),
-('6110072018', '611007', 'Tanjung Mahung', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('6110072018', '611007', 'Tanjung Mahung', 4),
 ('6110082001', '611008', 'Tekelak', 4),
 ('6110082002', '611008', 'Manding', 4),
 ('6110082003', '611008', 'Nanga Belimbing', 4),
@@ -66867,7 +66873,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6207042004', '620704', 'Pembuang Hulu I', 4),
 ('6207042005', '620704', 'Pembuang Hulu II', 4),
 ('6207042006', '620704', 'Derangga', 4),
-('6207042011', '620704', 'Paring Raya', 4),
+('6207042011', '620704', 'Paring Raya', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('6207052020', '620705', 'Tumbang Bahan', 4),
 ('6207052021', '620705', 'Tumbang Kalam', 4),
 ('6207052022', '620705', 'Tusuk Belawan', 4),
@@ -66880,8 +66887,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6207052030', '620705', 'Sapundu Hantu', 4),
 ('6207052031', '620705', 'Tumbang Kubang', 4),
 ('6207052032', '620705', 'Tumbang Laku', 4),
-('6207052033', '620705', 'Tanjungpaku', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('6207052033', '620705', 'Tanjungpaku', 4),
 ('6207052034', '620705', 'Buntut Sapau', 4),
 ('6207052035', '620705', 'Tumbang Taberau', 4),
 ('6207052036', '620705', 'Riam Batang', 4),
@@ -68067,7 +68073,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6303112009', '630311', 'Tiwingan Baru', 4),
 ('6303112010', '630311', 'Belangian', 4),
 ('6303112011', '630311', 'Aranio', 4),
-('6303112012', '630311', 'Pa\'au', 4),
+('6303112012', '630311', 'Pa\'au', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('6303122001', '630312', 'Baru', 4),
 ('6303122002', '630312', 'Bawahan Pasar', 4),
 ('6303122003', '630312', 'Bawahan Seberang', 4),
@@ -68081,8 +68088,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6303122011', '630312', 'Lok Tamu', 4),
 ('6303122012', '630312', 'Sungai Jati', 4),
 ('6303122013', '630312', 'Mangkalawat', 4),
-('6303122014', '630312', 'Gunung Ulin', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('6303122014', '630312', 'Gunung Ulin', 4),
 ('6303122015', '630312', 'Tanah Abang', 4),
 ('6303132001', '630313', 'Pindahan Baru', 4),
 ('6303132002', '630313', 'Handil Purai', 4),
@@ -69260,7 +69266,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6310061002', '631006', 'Tungkaran Pangeran', 3),
 ('6310062003', '631006', 'Sari Gadung', 4),
 ('6310062004', '631006', 'Mekar Sari', 4),
-('6310062005', '631006', 'Sungaidua', 4),
+('6310062005', '631006', 'Sungaidua', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('6310062006', '631006', 'Batu Ampar', 4),
 ('6310062007', '631006', 'Gunungbesar', 4),
 ('6310062008', '631006', 'Pulaupanjang', 4),
@@ -69274,8 +69281,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6310072004', '631007', 'Selaselilau', 4),
 ('6310072005', '631007', 'Pematang Ulin', 4),
 ('6310072006', '631007', 'Batu Licin Irigasi', 4),
-('6310072007', '631007', 'Manunggal', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('6310072007', '631007', 'Manunggal', 4),
 ('6310072009', '631007', 'Sumber Wangi', 4),
 ('6310072010', '631007', 'Madu Retno', 4),
 ('6310072011', '631007', 'Maju Sejahtera', 4),
@@ -70469,7 +70475,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6471021004', '647102', 'Kariangau', 3),
 ('6471021005', '647102', 'Margo Mulyo', 3),
 ('6471021006', '647102', 'Marga Sari', 3),
-('6471031001', '647103', 'Batu Ampar', 3),
+('6471031001', '647103', 'Batu Ampar', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('6471031002', '647103', 'Gunungsamarinda', 3),
 ('6471031003', '647103', 'Karang Joang', 3),
 ('6471031004', '647103', 'Muararapak', 3),
@@ -70483,8 +70490,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('6471041006', '647104', 'Sumber Rejo', 3),
 ('6471051002', '647105', 'Sepinggan', 3),
 ('6471051006', '647105', 'Gunungbahagia', 3),
-('6471051008', '647105', 'Sepinggan Baru', 3);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('6471051008', '647105', 'Sepinggan Baru', 3),
 ('6471051009', '647105', 'Sepinggan Raya', 3),
 ('6471051010', '647105', 'Sungainangka', 3),
 ('6471051011', '647105', 'Damai Baru', 3),
@@ -71700,7 +71706,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7104021017', '710402', 'Beo Timur', 3),
 ('7104021018', '710402', 'Beo Barat', 3),
 ('7104022011', '710402', 'Bantik', 4),
-('7104022019', '710402', 'Bengel', 4),
+('7104022019', '710402', 'Bengel', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('7104022020', '710402', 'Bantik Lama', 4),
 ('7104032003', '710403', 'Alo', 4),
 ('7104032004', '710403', 'N u n u', 4),
@@ -71715,8 +71722,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7104032022', '710403', 'Alo Utara', 4),
 ('7104042006', '710404', 'E s s a n g', 4),
 ('7104042007', '710404', 'Lalue', 4),
-('7104042008', '710404', 'Bulude', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('7104042008', '710404', 'Bulude', 4),
 ('7104042016', '710404', 'Maririk', 4),
 ('7104042018', '710404', 'Essang Selatan', 4),
 ('7104042019', '710404', 'Bulude Selatan', 4),
@@ -72936,7 +72942,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7201052010', '720105', 'Kagitakan', 4),
 ('7201052011', '720105', 'Sirom', 4),
 ('7201052012', '720105', 'Poroan', 4),
-('7201052013', '720105', 'Lomba', 4),
+('7201052013', '720105', 'Lomba', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('7201052014', '720105', 'Bonebobakal', 4),
 ('7201052015', '720105', 'Baruga', 4),
 ('7201052016', '720105', 'Kotabaru', 4),
@@ -72951,8 +72958,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7201062010', '720106', 'Talima B', 4),
 ('7201062013', '720106', 'Dolom', 4),
 ('7201062014', '720106', 'Kiloma', 4),
-('7201062015', '720106', 'Ra\'u', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('7201062015', '720106', 'Ra\'u', 4),
 ('7201062016', '720106', 'Tanotu', 4),
 ('7201062017', '720106', 'Padang', 4),
 ('7201062018', '720106', 'Mamping', 4),
@@ -74210,7 +74216,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7208122010', '720812', 'Kota Raya Timur', 4),
 ('7208122011', '720812', 'Malalan', 4),
 ('7208122012', '720812', 'Kota Raya Selatan', 4),
-('7208122013', '720812', 'Maranti', 4),
+('7208122013', '720812', 'Maranti', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('7208122014', '720812', 'Ogomolos', 4),
 ('7208122015', '720812', 'Kotaraya Barat', 4),
 ('7208122016', '720812', 'Bugis Utara', 4),
@@ -74224,8 +74231,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7208132006', '720813', 'Tomoli Selatan', 4),
 ('7208132007', '720813', 'Sibalago', 4),
 ('7208132008', '720813', 'Toribulu Selatan', 4),
-('7208132009', '720813', 'Tomoli Utara', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('7208132009', '720813', 'Tomoli Utara', 4),
 ('7208142001', '720814', 'Karya Agung', 4),
 ('7208142002', '720814', 'Nunurantai', 4),
 ('7208142003', '720814', 'Palapi', 4),
@@ -75463,7 +75469,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7306072016', '730607', 'Taeng', 4),
 ('7306081001', '730608', 'Sungguminasa', 3),
 ('7306081002', '730608', 'Bonto Bontoa', 3),
-('7306081003', '730608', 'Batangkaluku', 3),
+('7306081003', '730608', 'Batangkaluku', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('7306081004', '730608', 'Tompobalang', 3),
 ('7306081005', '730608', 'Samata', 3),
 ('7306081006', '730608', 'Katangka', 3),
@@ -75478,8 +75485,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7306091001', '730609', 'Sapaya', 3),
 ('7306091010', '730609', 'Je\'nebatu', 3),
 ('7306092002', '730609', 'Bontomanai', 4),
-('7306092003', '730609', 'Buakkang', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('7306092003', '730609', 'Buakkang', 4),
 ('7306092004', '730609', 'Bissoloro', 4),
 ('7306092011', '730609', 'Rannaloe', 4),
 ('7306092012', '730609', 'Mangempang', 4),
@@ -76720,7 +76726,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7315082007', '731508', 'Tanra Tuo', 4),
 ('7315091001', '731509', 'Pammase', 3),
 ('7315091002', '731509', 'Marawi', 3),
-('7315091003', '731509', 'Pakkie', 3),
+('7315091003', '731509', 'Pakkie', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('7315091004', '731509', 'Tiroang', 3),
 ('7315091005', '731509', 'Mattiro Deceng', 3),
 ('7315101001', '731510', 'Lansirang', 3),
@@ -76735,8 +76742,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7315111003', '731511', 'Temmassarangnge', 3),
 ('7315111004', '731511', 'Mamminasae', 3),
 ('7315111005', '731511', 'Laleng Bata', 3),
-('7315111006', '731511', 'Benteng Sawito', 3);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('7315111006', '731511', 'Benteng Sawito', 3),
 ('7315121003', '731512', 'Kassa', 3),
 ('7315122001', '731512', 'Batu Lappa', 4),
 ('7315122004', '731512', 'Tapporang', 4),
@@ -77966,7 +77972,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7401082023', '740108', 'Gunung Sari', 4),
 ('7401082025', '740108', 'Mataosu Ujung', 4),
 ('7401082026', '740108', 'Ranoteta', 4),
-('7401101001', '740110', 'Wolo', 3),
+('7401101001', '740110', 'Wolo', 3);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('7401101007', '740110', 'Ulu Wolo', 3),
 ('7401102002', '740110', 'Donggala', 4),
 ('7401102003', '740110', 'Ululapao-pao', 4),
@@ -77982,8 +77989,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7401102021', '740110', 'Ulu Rina', 4),
 ('7401121001', '740112', 'Puundoho', 3),
 ('7401122002', '740112', 'Longori', 4),
-('7401122003', '740112', 'Puubunga', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('7401122003', '740112', 'Puubunga', 4),
 ('7401122004', '740112', 'Puulemo', 4),
 ('7401122005', '740112', 'Puubenua', 4),
 ('7401122006', '740112', 'Baula', 4),
@@ -79232,7 +79238,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7408032016', '740803', 'Parung Lampe', 4),
 ('7408032017', '740803', 'Puncak Harapan', 4),
 ('7408032020', '740803', 'Tetebawo', 4),
-('7408032021', '740803', 'Makkuaseng', 4),
+('7408032021', '740803', 'Makkuaseng', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('7408041004', '740804', 'Rante Angin', 3),
 ('7408042003', '740804', 'Rante Baru', 4),
 ('7408042005', '740804', 'Pohu', 4),
@@ -79249,8 +79256,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7408052009', '740805', 'Kalu-Kaluku', 4),
 ('7408052010', '740805', 'Jabal Nur', 4),
 ('7408052012', '740805', 'Jabal Kubis', 4),
-('7408052014', '740805', 'Sawanggaoha', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('7408052014', '740805', 'Sawanggaoha', 4),
 ('7408052018', '740805', 'Ainani Tajriani', 4),
 ('7408052019', '740805', 'Delang-Delang', 4),
 ('7408061003', '740806', 'Lapai', 3),
@@ -80503,7 +80509,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7503092010', '750309', 'Ilohuuuwa', 4),
 ('7503092011', '750309', 'Muara Bone', 4),
 ('7503092012', '750309', 'Cendana Putih', 4),
-('7503092013', '750309', 'Waluhu', 4),
+('7503092013', '750309', 'Waluhu', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('7503092014', '750309', 'Permata', 4),
 ('7503102001', '750310', 'Inomata', 4),
 ('7503102003', '750310', 'Tombulilato', 4),
@@ -80520,8 +80527,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('7503112004', '750311', 'Tulabolo Timur', 4),
 ('7503112005', '750311', 'Tilangobula', 4),
 ('7503112007', '750311', 'Poduwoma', 4),
-('7503112008', '750311', 'Panggulo', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('7503112008', '750311', 'Panggulo', 4),
 ('7503112009', '750311', 'Tulabolo Barat', 4),
 ('7503112010', '750311', 'Pangi', 4),
 ('7503112011', '750311', 'Tinemba', 4),
@@ -81771,7 +81777,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('8102052017', '810205', 'Haar Wassar', 4),
 ('8102052018', '810205', 'Haar Renrahantel', 4),
 ('8102052019', '810205', 'Ur', 4),
-('8102052020', '810205', 'Ohoimajang', 4),
+('8102052020', '810205', 'Ohoimajang', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('8102052021', '810205', 'Banda Efruan', 4),
 ('8102052022', '810205', 'Banda Suku Tigapuluh', 4),
 ('8102052023', '810205', 'Tuburlay', 4),
@@ -81788,8 +81795,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('8102132004', '810213', 'Rat', 4),
 ('8102132005', '810213', 'Abean', 4),
 ('8102132006', '810213', 'Mastur', 4),
-('8102132013', '810213', 'Ohoinol', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('8102132013', '810213', 'Ohoinol', 4),
 ('8102132014', '810213', 'Semawi', 4),
 ('8102132015', '810213', 'Iso', 4),
 ('8102132016', '810213', 'Disuk', 4),
@@ -83061,7 +83067,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('8203122002', '820312', 'Mawea', 4),
 ('8203122003', '820312', 'Meti', 4),
 ('8203122004', '820312', 'Katana', 4),
-('8203122005', '820312', 'Gonga', 4),
+('8203122005', '820312', 'Gonga', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('8203122006', '820312', 'Todokuiha', 4),
 ('8203132001', '820313', 'Kusuri', 4),
 ('8203132002', '820313', 'Sukamaju', 4),
@@ -83079,8 +83086,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('8203142009', '820314', 'Kira', 4),
 ('8203152001', '820315', 'Limau', 4),
 ('8203152002', '820315', 'Lalonga', 4),
-('8203152003', '820315', 'Bobisingo', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('8203152003', '820315', 'Bobisingo', 4),
 ('8203152004', '820315', 'Salimuli', 4),
 ('8203152005', '820315', 'Tutumaloleo', 4),
 ('8203152006', '820315', 'Saluta', 4),
@@ -84360,7 +84366,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('9102592007', '910259', 'Gobalimo', 4),
 ('9102592008', '910259', 'Balima', 4),
 ('9102592009', '910259', 'Yumbun', 4),
-('9102592010', '910259', 'Beam', 4),
+('9102592010', '910259', 'Beam', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('9102602001', '910260', 'Miliama', 4),
 ('9102602002', '910260', 'Asologaima', 4),
 ('9102602003', '910260', 'Kewin', 4),
@@ -84378,8 +84385,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('9102612003', '910261', 'Dewene', 4),
 ('9102612004', '910261', 'Totni', 4),
 ('9102612005', '910261', 'Tagulik', 4),
-('9102612006', '910261', 'Walak Selatan', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('9102612006', '910261', 'Walak Selatan', 4),
 ('9102612007', '910261', 'Kodlangga', 4),
 ('9102612008', '910261', 'Air Garam', 4),
 ('9102622001', '910262', 'Irilinga', 4),
@@ -85662,7 +85668,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('9110032027', '911003', 'Wari', 4),
 ('9110042001', '911004', 'Ansudu', 4),
 ('9110042002', '911004', 'Betaf', 4),
-('9110042003', '911004', 'Yamben', 4),
+('9110042003', '911004', 'Yamben', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('9110042010', '911004', 'Sunum', 4),
 ('9110042011', '911004', 'Komra', 4),
 ('9110042013', '911004', 'Betaf Dua', 4),
@@ -85680,8 +85687,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('9110092001', '911009', 'Wamariri', 4),
 ('9110092002', '911009', 'Aurimi', 4),
 ('9110092003', '911009', 'Tamaja', 4),
-('9110092004', '911009', 'Airoran', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('9110092004', '911009', 'Airoran', 4),
 ('9110092005', '911009', 'Murara', 4),
 ('9110092006', '911009', 'Sasawapece', 4),
 ('9110092011', '911009', 'Maniwa', 4),
@@ -86985,7 +86991,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('9114322007', '911432', 'Rumbepaga', 4),
 ('9114322008', '911432', 'Yimabnime', 4),
 ('9114322009', '911432', 'Wanuk', 4),
-('9114322010', '911432', 'Lamaluk', 4),
+('9114322010', '911432', 'Lamaluk', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('9114332001', '911433', 'Yuneri', 4),
 ('9114332002', '911433', 'Yido', 4),
 ('9114332003', '911433', 'Omibur', 4),
@@ -87004,8 +87011,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('9114342005', '911434', 'Weyage', 4),
 ('9114342006', '911434', 'Timer', 4),
 ('9114342007', '911434', 'Gulak', 4),
-('9114342008', '911434', 'Nowo', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('9114342008', '911434', 'Nowo', 4),
 ('9114342009', '911434', 'Gunalo', 4),
 ('9114342010', '911434', 'Korlo', 4),
 ('9114342011', '911434', 'Towolome', 4),
@@ -88312,7 +88318,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('9123122007', '912312', 'Weneogun', 4),
 ('9123122008', '912312', 'Berangwi', 4),
 ('9123132001', '912313', 'Tepogi', 4),
-('9123132002', '912313', 'Ninabua', 4),
+('9123132002', '912313', 'Ninabua', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('9123132003', '912313', 'Golikme', 4),
 ('9123132004', '912313', 'Ninengwa', 4),
 ('9123132005', '912313', 'Weri', 4),
@@ -88331,8 +88338,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('9123152001', '912315', 'Konikme', 4),
 ('9123152002', '912315', 'Giwan', 4),
 ('9123152003', '912315', 'Lugom', 4),
-('9123152004', '912315', 'Mabume', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('9123152004', '912315', 'Mabume', 4),
 ('9123152005', '912315', 'Wandoak', 4),
 ('9123152006', '912315', 'Bogun Kunik', 4),
 ('9123152007', '912315', 'Urgelo', 4),
@@ -89622,7 +89628,8 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('9204062008', '920406', 'Sasnek', 4),
 ('9204062009', '920406', 'Elles', 4),
 ('9204062011', '920406', 'Sodrofoyo', 4),
-('9204062012', '920406', 'Sfakyo', 4),
+('9204062012', '920406', 'Sfakyo', 4);
+INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
 ('9204062013', '920406', 'Wensough', 4),
 ('9204062014', '920406', 'Ween', 4),
 ('9204062015', '920406', 'Wendi', 4),
@@ -89641,8 +89648,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 ('9204092016', '920409', 'Korewatara', 4),
 ('9204092017', '920409', 'Tapas', 4),
 ('9204092018', '920409', 'Topdan', 4),
-('9204092020', '920409', 'Migrito', 4);
-INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
+('9204092020', '920409', 'Migrito', 4),
 ('9204092021', '920409', 'Daimar', 4),
 ('9204102001', '920410', 'Moswaren', 4),
 ('9204102002', '920410', 'Johsiro', 4),
@@ -90853,7 +90859,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama`, `id_jenis`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kurikulum`
+-- Table structure for table `kurikulum`
 --
 
 CREATE TABLE `kurikulum` (
@@ -90864,7 +90870,7 @@ CREATE TABLE `kurikulum` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kurikulum`
+-- Dumping data for table `kurikulum`
 --
 
 INSERT INTO `kurikulum` (`idKurikulum`, `idSekolah`, `idTahun_ajaran`, `nama_kurikulum`) VALUES
@@ -90874,7 +90880,7 @@ INSERT INTO `kurikulum` (`idKurikulum`, `idSekolah`, `idTahun_ajaran`, `nama_kur
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `leger`
+-- Table structure for table `leger`
 --
 
 CREATE TABLE `leger` (
@@ -90888,18 +90894,27 @@ CREATE TABLE `leger` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `leger`
+-- Dumping data for table `leger`
 --
 
 INSERT INTO `leger` (`idLeger`, `idMaster_leger`, `idMata_pelajaran`, `NIK_tenpen`, `kkm_pengetahuan`, `kkm_keterampilan`, `no_urut_mapel`) VALUES
-(32, 6, 3, '3205081706920001', 75, 75, 1),
-(38, 6, 7, '3205054909940006', 75, 75, 2),
-(46, 1, 3, '3205081706920001', 75, 75, 1);
+(47, 1, 1, '3205214302960006', 75, 75, 1),
+(48, 1, 2, '3205081706920001', 75, 75, 2),
+(49, 1, 3, '3205174910920006', 75, 75, 3),
+(50, 1, 4, '3205354602780001', 75, 75, 4),
+(51, 1, 5, '3205205502940004', 75, 75, 5),
+(52, 1, 6, '3205205502940004', 75, 75, 6),
+(53, 1, 7, '3205054909940006', 75, 75, 7),
+(54, 1, 8, '3205074110940002', 75, 75, 8),
+(56, 1, 9, '3205020801950006', 75, 75, 9),
+(57, 1, 11, '3205174910920006', 75, 75, 10),
+(58, 6, 1, '3205081706920001', 75, 75, 1),
+(59, 6, 2, '3205020801950006', 75, 75, 2);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `leger_ekskul`
+-- Table structure for table `leger_ekskul`
 --
 
 CREATE TABLE `leger_ekskul` (
@@ -90911,7 +90926,7 @@ CREATE TABLE `leger_ekskul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `leger_ekskul`
+-- Dumping data for table `leger_ekskul`
 --
 
 INSERT INTO `leger_ekskul` (`idLeger_ekskul`, `idMaster_leger`, `ekstrakulikuler`, `pembimbing`, `no_urut_ekskul`) VALUES
@@ -90921,7 +90936,7 @@ INSERT INTO `leger_ekskul` (`idLeger_ekskul`, `idMaster_leger`, `ekstrakulikuler
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `leger_nilai`
+-- Table structure for table `leger_nilai`
 --
 
 CREATE TABLE `leger_nilai` (
@@ -90937,30 +90952,53 @@ CREATE TABLE `leger_nilai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `leger_nilai`
+-- Dumping data for table `leger_nilai`
 --
 
 INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetahuan`, `nilai_keterampilan`, `nilai_sikap`, `nilai_sosial`, `nilai_spritual`, `catatan`) VALUES
-(312, 32, '3205212702040000', 75, NULL, NULL, NULL, NULL, NULL),
-(313, 32, '3205211809040000', 56, NULL, NULL, NULL, NULL, NULL),
-(314, 32, '3205211003060000', 67, NULL, NULL, NULL, NULL, NULL),
-(315, 32, '3205211404030000', 45, NULL, NULL, NULL, NULL, NULL),
-(316, 32, '3205214408050010', 67, NULL, NULL, NULL, NULL, NULL),
-(317, 32, '3205214104060000', 78, NULL, NULL, NULL, NULL, NULL),
-(330, 38, '3205212702040000', 78, 90, 'B', 'A', 'B', 'tes'),
-(331, 38, '3205211809040000', 78, 67, 'B', 'B', 'A', 'test'),
-(332, 38, '3205211003060000', 56, 56, 'B', 'B', 'A', 'test'),
-(333, 38, '3205211404030000', 80, 90, 'A', 'A', 'A', 'tes'),
-(334, 38, '3205214408050010', 65, 90, 'B', 'A', 'B', 'test'),
-(335, 38, '3205214104060000', 67, 89, 'B', 'A', 'D', 'test'),
-(351, 46, '3205170511050010', 87, 89, 'B', NULL, NULL, NULL),
-(352, 46, '3205210911040000', 78, 90, 'C', 'A', 'C', NULL),
-(353, 46, '3205210509050000', 80, 78, 'B', NULL, NULL, NULL);
+(354, 47, '3205170511050010', 80, 80, 'B', 'B', 'B', 'Tingkatkan Lagi Belajar'),
+(355, 48, '3205170511050010', 80, 80, 'B', 'B', 'B', NULL),
+(356, 49, '3205170511050010', 80, 80, 'B', 'B', 'B', NULL),
+(357, 50, '3205170511050010', 80, 80, 'B', 'B', 'B', NULL),
+(358, 51, '3205170511050010', 80, 80, 'B', 'B', 'B', NULL),
+(359, 52, '3205170511050010', 80, 80, 'B', 'B', 'B', NULL),
+(360, 53, '3205170511050010', 78, 80, 'B', 'B', 'B', NULL),
+(361, 54, '3205170511050010', 83, 78, 'B', 'B', 'B', NULL),
+(362, 56, '3205170511050010', 90, 90, 'B', 'B', 'B', NULL),
+(363, 57, '3205170511050010', 82, 83, 'B', 'B', 'B', NULL),
+(364, 47, '3205210911040000', 80, 76, 'B', 'B', 'A', NULL),
+(365, 47, '3205210509050000', 78, 89, 'B', 'C', 'A', NULL),
+(366, 48, '3205210911040000', 67, 78, 'A', 'B', 'C', NULL),
+(367, 48, '3205210509050000', 78, 87, 'B', 'C', 'C', NULL),
+(368, 49, '3205210911040000', 78, 89, 'B', 'C', 'B', NULL),
+(369, 49, '3205210509050000', 65, 67, 'B', 'B', 'C', NULL),
+(370, 50, '3205210911040000', 67, 78, 'B', 'B', 'B', NULL),
+(371, 50, '3205210509050000', 78, 87, 'B', 'B', 'B', NULL),
+(372, 51, '3205210911040000', 78, 82, 'B', 'B', 'A', NULL),
+(373, 51, '3205210509050000', 90, 87, 'B', 'B', 'C', NULL),
+(374, 52, '3205210911040000', 87, 77, 'B', 'B', 'C', NULL),
+(375, 52, '3205210509050000', 78, 76, 'B', 'B', 'C', NULL),
+(376, 53, '3205210911040000', 76, 54, 'B', 'B', 'B', NULL),
+(377, 53, '3205210509050000', 78, 76, 'B', 'B', 'C', NULL),
+(378, 54, '3205210911040000', 78, 77, 'B', 'B', 'A', NULL),
+(379, 54, '3205210509050000', 78, 78, 'B', 'B', 'B', NULL),
+(380, 56, '3205210911040000', 78, 76, 'B', 'B', 'A', NULL),
+(381, 56, '3205210509050000', 65, 65, 'B', 'A', 'D', NULL),
+(382, 57, '3205210911040000', 78, 76, 'B', 'B', 'B', NULL),
+(383, 57, '3205210509050000', 65, 66, 'C', 'C', 'C', NULL),
+(384, 58, '3205212702040000', 90, 90, 'B', 'A', 'A', NULL),
+(385, 58, '3205211809040000', 80, 80, 'B', 'B', 'C', NULL),
+(386, 59, '3205212702040000', 78, 88, NULL, NULL, NULL, NULL),
+(387, 59, '3205211809040000', 76, 76, NULL, NULL, NULL, NULL),
+(388, 59, '3205211003060000', 68, 68, NULL, NULL, NULL, NULL),
+(389, 59, '3205211404030000', 89, 90, NULL, NULL, NULL, NULL),
+(390, 59, '3205214408050010', 76, 78, NULL, NULL, NULL, NULL),
+(391, 59, '3205214104060000', 78, 78, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `leger_nilai_ekskul`
+-- Table structure for table `leger_nilai_ekskul`
 --
 
 CREATE TABLE `leger_nilai_ekskul` (
@@ -90972,19 +91010,18 @@ CREATE TABLE `leger_nilai_ekskul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `leger_nilai_ekskul`
+-- Dumping data for table `leger_nilai_ekskul`
 --
 
 INSERT INTO `leger_nilai_ekskul` (`idLeger_nilai_ekskul`, `idLeger_ekskul`, `NIK_pd`, `nilai_ekskul`, `deskripsi_nilai_ekskul`) VALUES
-(10, 4, '3205210509050000', 'B', 'adfasdf'),
-(13, 5, '3205170511050010', 'B', ''),
+(13, 5, '3205170511050010', 'B', 'Mengikuti Kegiatan Dengan Baik'),
 (14, 5, '3205210911040000', '', ''),
 (15, 5, '3205210509050000', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login_attempts`
+-- Table structure for table `login_attempts`
 --
 
 CREATE TABLE `login_attempts` (
@@ -90997,7 +91034,7 @@ CREATE TABLE `login_attempts` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `master_leger`
+-- Table structure for table `master_leger`
 --
 
 CREATE TABLE `master_leger` (
@@ -91008,7 +91045,7 @@ CREATE TABLE `master_leger` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `master_leger`
+-- Dumping data for table `master_leger`
 --
 
 INSERT INTO `master_leger` (`idMaster_leger`, `idKelas`, `tahun_angkatan`, `semester`) VALUES
@@ -91018,7 +91055,7 @@ INSERT INTO `master_leger` (`idMaster_leger`, `idKelas`, `tahun_angkatan`, `seme
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mata_pelajaran`
+-- Table structure for table `mata_pelajaran`
 --
 
 CREATE TABLE `mata_pelajaran` (
@@ -91029,7 +91066,7 @@ CREATE TABLE `mata_pelajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mata_pelajaran`
+-- Dumping data for table `mata_pelajaran`
 --
 
 INSERT INTO `mata_pelajaran` (`idMata_pelajaran`, `idKurikulum`, `idKelompok_mapel`, `nama_mata_pelajaran`) VALUES
@@ -91042,12 +91079,13 @@ INSERT INTO `mata_pelajaran` (`idMata_pelajaran`, `idKurikulum`, `idKelompok_map
 (7, 3, 1, 'Bahasa Inggris'),
 (8, 3, 2, 'Seni Budaya'),
 (9, 3, 2, 'Pendidikan Jasmani & Olahraga'),
-(10, 3, 2, 'Prakarya');
+(10, 3, 2, 'Prakarya'),
+(11, 3, 4, 'Basa Sunda');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `menu`
+-- Table structure for table `menu`
 --
 
 CREATE TABLE `menu` (
@@ -91063,7 +91101,7 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `menu`
+-- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`, `menu_id`, `level_one`, `level_two`) VALUES
@@ -91103,12 +91141,15 @@ INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`,
 (127, 2, 3, 'Penilaian', 'statistics', '#', '', 0, 0),
 (128, 2, 3, 'Kelola Leger Nilai', 'line-graph', 'LegerNilai', '', 127, 0),
 (129, 0, 3, 'Jabatan Tenaga Pendidik', 'customer', 'JabatanTenpen', '', 0, 0),
-(130, 1, 3, 'Atur Nilai Deskripsi', 'doc', 'DeskripsiNilai', '', 127, 0);
+(130, 1, 3, 'Atur Nilai Deskripsi', 'doc', 'DeskripsiNilai', '', 127, 0),
+(131, 3, 3, 'E-Raport', 'graphic', '#', '', 0, 0),
+(132, 1, 3, 'Raport PerKelas', 'notes', 'Raport/RaportKelas', '', 131, 0),
+(133, 2, 3, 'Raport PerSiswa', 'user-ok', 'Raport/RaportSiswa', '', 131, 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ortu_peserta_didik`
+-- Table structure for table `ortu_peserta_didik`
 --
 
 CREATE TABLE `ortu_peserta_didik` (
@@ -91129,13 +91170,13 @@ CREATE TABLE `ortu_peserta_didik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ortu_peserta_didik`
+-- Dumping data for table `ortu_peserta_didik`
 --
 
 INSERT INTO `ortu_peserta_didik` (`idOrtu_pd`, `NIK_pd`, `NIK_ayah`, `nama_ayah`, `tahun_lahir_ayah`, `pendidikan_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `NIK_ibu`, `nama_ibu`, `tahun_lahir_ibu`, `pendidikan_ibu`, `pekerjaan_ibu`, `penghasilan_ibu`) VALUES
 (2, '8080808080808081', '', '', '', '', '', '', '', '', '', '', '', ''),
-(5, '1234567893234987', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, '2341123576867867', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(5, '1234567893234987', '12345', 'test', '1978', 'S1', 'GURU', 'Rp.1.500.000-Rp.2.000.000', NULL, NULL, NULL, NULL, NULL, NULL),
+(6, '2341123576867867', NULL, NULL, NULL, 'S2', 'PNS', '>Rp.5.000.000', '12345', 'Test123', '1990', 'S1', 'SWASTA', '>Rp.5.000.000'),
 (7, '5656453453113434', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (8, '3205170511050010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (9, '3205212702040000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -91167,7 +91208,7 @@ INSERT INTO `ortu_peserta_didik` (`idOrtu_pd`, `NIK_pd`, `NIK_ayah`, `nama_ayah`
 (35, '3205074130940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (36, '3205074140940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (37, '3205074150940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(38, '3205074160940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(38, '3205074160940000', '0000000000000000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (39, '3205074170940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (40, '3205074180940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (41, '3205074190940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -91260,7 +91301,7 @@ INSERT INTO `ortu_peserta_didik` (`idOrtu_pd`, `NIK_pd`, `NIK_ayah`, `nama_ayah`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ortu_tenaga_pendidik`
+-- Table structure for table `ortu_tenaga_pendidik`
 --
 
 CREATE TABLE `ortu_tenaga_pendidik` (
@@ -91273,7 +91314,7 @@ CREATE TABLE `ortu_tenaga_pendidik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ortu_tenaga_pendidik`
+-- Dumping data for table `ortu_tenaga_pendidik`
 --
 
 INSERT INTO `ortu_tenaga_pendidik` (`idOrtu_tenpen`, `NIK_tenpen`, `nama_ayah`, `tahun_lahir_ayah`, `nama_ibu`, `tahun_lahir_ibu`) VALUES
@@ -91296,7 +91337,7 @@ INSERT INTO `ortu_tenaga_pendidik` (`idOrtu_tenpen`, `NIK_tenpen`, `nama_ayah`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `peserta_didik`
+-- Table structure for table `peserta_didik`
 --
 
 CREATE TABLE `peserta_didik` (
@@ -91312,10 +91353,10 @@ CREATE TABLE `peserta_didik` (
   `tanggal_lahir_pd` date NOT NULL,
   `agama` enum('Islam','Kristen','Khatolik','Hindu','Budha') NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `provinsi` varchar(50) DEFAULT NULL,
-  `kota` varchar(50) DEFAULT NULL,
-  `kecamatan` varchar(50) DEFAULT NULL,
-  `kelurahan` varchar(50) NOT NULL,
+  `idProvinsi` int(11) DEFAULT NULL,
+  `idKabupaten` int(11) DEFAULT NULL,
+  `idKecamatan` int(11) DEFAULT NULL,
+  `idKelurahan` char(10) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `no_telp_pd` varchar(14) NOT NULL,
   `email_pd` varchar(100) NOT NULL,
   `foto_pd` varchar(200) DEFAULT NULL,
@@ -91326,138 +91367,138 @@ CREATE TABLE `peserta_didik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `peserta_didik`
+-- Dumping data for table `peserta_didik`
 --
 
-INSERT INTO `peserta_didik` (`idPd`, `idSekolah`, `NIK_pd`, `tahun_angkatan`, `nisn`, `nipd`, `nama_pd`, `jk_pd`, `tempat_lahir_pd`, `tanggal_lahir_pd`, `agama`, `alamat`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `no_telp_pd`, `email_pd`, `foto_pd`, `facebook`, `instagram`, `twitter`, `status_pd`) VALUES
-(18, 1, '8080808080808081', 2017, '1234453453', '4352345345', 'Tester', 'Laki-Laki', 'Garut', '2018-11-12', 'Islam', '', NULL, NULL, NULL, '', '64554356345634', '', '165b0-pa-rizik.png', NULL, NULL, NULL, 'Aktif'),
-(21, 1, '1234567893234987', 2017, '4535345345', '5345345242', 'Ucup Syahrudin', 'Laki-Laki', 'Garut', '2019-04-16', 'Islam', '', NULL, NULL, NULL, '', '081223588347', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(22, 1, '2341123576867867', 2016, '1234322323', '5435435345', 'Jajang Hidayat', 'Laki-Laki', 'Garut', '2019-04-09', 'Islam', '', NULL, NULL, NULL, '', '082344434543', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(23, 1, '5656453453113434', 2017, '5345345436', '6756798678', 'Ranti Suranti', 'Perempuan', 'Garut', '2019-04-14', 'Islam', '', NULL, NULL, NULL, '', '0823444788347', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(24, 1, '3205170511050010', 2018, '4535245234', '5435452452', 'Achmar Farid Ryven', 'Laki-Laki', 'Garut', '2006-04-04', 'Islam', '', NULL, NULL, NULL, '', '085277889900', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(25, 1, '3205212702040000', 2018, '6757567567', '7679678545', 'Adi Tia Lesmana', 'Laki-Laki', 'Garut', '2004-02-27', 'Islam', '', NULL, NULL, NULL, '', '085123456789', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(26, 1, '3205211809040000', 2018, '5673450875', '4522223123', 'Agus Sukarno', 'Laki-Laki', 'Garut', '2004-10-18', 'Islam', '', NULL, NULL, NULL, '', '085213456543', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(27, 1, '3205211003060000', 2018, '6775745709', '4423253425', 'Aldi Ahmad Muharom', 'Laki-Laki', 'Garut', '2006-03-20', 'Islam', '', NULL, NULL, NULL, '', '085212345678', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(28, 1, '3273024304060010', NULL, NULL, NULL, 'Alifa Mutiara Zahra', 'Perempuan', 'Garut', '2006-04-03', 'Islam', '', NULL, NULL, NULL, '', '08212345678', '', '', NULL, NULL, NULL, 'Aktif'),
-(29, 1, '3205210206050000', NULL, NULL, NULL, 'Aliyansah', 'Laki-Laki', 'Garut', '2005-06-02', 'Islam', '', NULL, NULL, NULL, '', '08128765345', '', '', NULL, NULL, NULL, 'Aktif'),
-(30, 1, '3205216309060000', NULL, NULL, NULL, 'Alpa Resta', 'Perempuan', 'Garut', '2006-02-24', 'Islam', '', NULL, NULL, NULL, '', '082176534356', '', '', NULL, NULL, NULL, 'Aktif'),
-(31, 1, '3205056106050010', NULL, NULL, NULL, 'Alysha Nurfiddina Putri Muslim', 'Perempuan', 'Garut', '2006-06-21', 'Islam', '', NULL, NULL, NULL, '', '082165748379', '', '', NULL, NULL, NULL, 'Aktif'),
-(32, 1, '3211116207070000', NULL, NULL, NULL, 'Annisa Malika Utami', 'Perempuan', 'Garut', '2007-07-22', 'Islam', '', NULL, NULL, NULL, '', '0987653674837', '', '', NULL, NULL, NULL, 'Aktif'),
-(33, 1, '3205176104040010', NULL, NULL, NULL, 'Annisa Wangi Nusantara', 'Perempuan', 'Garut', '2004-04-21', 'Islam', '', NULL, NULL, NULL, '', '081267854352', '', '', NULL, NULL, NULL, 'Aktif'),
-(34, 1, '3205172407050000', NULL, NULL, NULL, 'Ardy Putra Nurjaman', 'Laki-Laki', 'Garut', '0000-00-00', 'Islam', '', NULL, NULL, NULL, '', '089765432453', '', '', NULL, NULL, NULL, 'Aktif'),
-(35, 1, '3205210911040000', 2018, '5343345345', '3453234534', 'Arya Prasetya', 'Laki-Laki', 'Timika', '2002-12-28', 'Islam', '', NULL, NULL, NULL, '', '082367898223', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(36, 1, '3276055002040010', NULL, NULL, NULL, 'Aryani Febriyanti', 'Perempuan', 'Garut', '2004-02-10', 'Islam', '', NULL, NULL, NULL, '', '082187645367', '', '', NULL, NULL, NULL, 'Aktif'),
-(37, 1, '3204096003060000', NULL, NULL, NULL, 'Aulia Khoiru Nisa', 'Perempuan', 'Garut', '2006-03-20', 'Islam', '', NULL, NULL, NULL, '', '082134567893', '', '', NULL, NULL, NULL, 'Aktif'),
-(38, 1, '3211116111050000', NULL, NULL, NULL, 'Aulia Putri Madinah', 'Perempuan', 'Garut', '2005-11-21', 'Islam', '', NULL, NULL, NULL, '', '081234523456', '', '', NULL, NULL, NULL, 'Aktif'),
-(39, 1, '3207035502780000', NULL, NULL, NULL, 'Azri Akbar Khoiri', 'Laki-Laki', 'Garut', '2005-05-01', 'Islam', '', NULL, NULL, NULL, '', '09873637463722', '', '', NULL, NULL, NULL, 'Aktif'),
-(40, 1, '3205210506050010', NULL, NULL, NULL, 'Bayu Permana', 'Laki-Laki', 'Garut', '2005-05-05', 'Islam', '', NULL, NULL, NULL, '', '089374846387', '', '', NULL, NULL, NULL, 'Aktif'),
-(41, 1, '3205210509050000', 2018, '6765475675', '7567456745', 'Bima Budiarto Mulya', 'Laki-Laki', 'Garut', '2005-09-05', 'Islam', '', NULL, NULL, NULL, '', '082137465847', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(42, 1, '3204290310050000', NULL, NULL, NULL, 'Boyke Rofiqu Ikhwan', 'Laki-Laki', 'Garut', '2005-10-03', 'Islam', '', NULL, NULL, NULL, '', '082183746574', '', '', NULL, NULL, NULL, 'Aktif'),
-(43, 1, '3205211404030000', 2018, '6798767545', '7689089867', 'Cep Ilham  Nurhakim', 'Laki-Laki', 'Garut', '2003-04-14', 'Islam', '', NULL, NULL, NULL, '', '081267363546', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(44, 1, '3205214408050010', 2018, '5656756745', '5765764564', 'Dea Anita', 'Perempuan', 'Garut', '2004-08-04', 'Islam', '', NULL, NULL, NULL, '', '082176534256', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(45, 1, '3204546070500000', NULL, NULL, NULL, 'Devana Kayyisa Wibawa', 'Perempuan', 'Garut', '2005-07-06', 'Islam', '', NULL, NULL, NULL, '', '082174657483', '', '', NULL, NULL, NULL, 'Aktif'),
-(46, 1, '3205215611030000', NULL, NULL, NULL, 'Devi Sapitri', 'Perempuan', 'Garut', '2003-11-16', 'Islam', '', NULL, NULL, NULL, '', '081236456575', '', '', NULL, NULL, NULL, 'Aktif'),
-(47, 1, '3205214605050000', NULL, NULL, NULL, 'Dewi Mulyani', 'Perempuan', 'Garut', '2005-05-06', 'Islam', '', NULL, NULL, NULL, '', '098465768574', '', '', NULL, NULL, NULL, 'Aktif'),
-(48, 1, '3205214104060000', 2018, '5476575675', '4567353223', 'Dinda Apriliani', 'Perempuan', 'Garut', '2006-04-19', 'Islam', '', NULL, NULL, NULL, '', '081236475867', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(49, 2, '3205074110940000', 2018, '0025423936', '181910046', 'Sela Selvia', 'Perempuan', 'Garut', '2002-11-22', 'Islam', '', NULL, NULL, NULL, '', '098736453612', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(50, 2, '3205074120940000', 2018, '0037663774', '181910024', 'Yora', 'Perempuan', 'Garut', '2003-08-31', 'Islam', '', NULL, NULL, NULL, '', '089764536272', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(51, 2, '3205074130940000', 2018, '0020289635', '181910045', 'Sandi Nasrulloh', 'Laki-Laki', 'Garut', '2002-02-11', 'Islam', '', NULL, NULL, NULL, '', '087363524152', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(52, 2, '3205074140940000', 2018, '0034771680', '181910027', 'Bilal Farel Taghsya', 'Laki-Laki', 'Bandung', '2003-01-04', 'Islam', '', NULL, NULL, NULL, '', '089272837362', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(53, 2, '3205074150940000', 2018, '0038465991', '181910031', 'Jihan Fitrianisa', 'Perempuan', 'Bandung', '2002-11-22', 'Islam', '', NULL, NULL, NULL, '', '08767261526', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(54, 2, '3205074160940000', 2018, '0477431003', '181910009', 'Maudy Meliany Deryana', 'Perempuan', ' Bandung', '2002-05-16', 'Islam', '', NULL, NULL, NULL, '', '087362516273', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(55, 2, '3205074170940000', 2018, '0020102401', '181910022', 'Wildan Ohaina Yusuf', 'Laki-Laki', 'Bandung', '1970-01-01', 'Islam', '', NULL, NULL, NULL, '', '087635462736', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(56, 2, '3205074180940000', 2018, '0031075176', '181910019', 'Satria Hadetata', 'Laki-Laki', 'Garut', '2003-04-12', 'Islam', '', NULL, NULL, NULL, '', '087736367263', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(57, 2, '3205074190940000', 2018, '0026961801', '181910016', 'Ripa Junior', 'Laki-Laki', 'Garut', '2003-03-23', 'Islam', '', NULL, NULL, NULL, '', '087635263526', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(58, 2, '3205074200940000', 2018, '0039305967', '181910030', 'Febbyana Maharani', 'Laki-Laki', 'Bandung', '2003-02-23', 'Islam', '', NULL, NULL, NULL, '', '081276352627', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(59, 1, '3201012707050001', 2017, '0051432411', '12345434', 'Ahmad Fauzan', 'Laki-Laki', 'Bogor', '2005-07-27', 'Islam', '', NULL, NULL, NULL, '', '081237483736', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(60, 1, '3276056503040010', 2016, '0040917114', '171808019', 'Farah Naura Rahmah', 'Perempuan', 'Tasikmalaya', '2004-03-25', 'Islam', '', NULL, NULL, NULL, '', '0837363536352', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(61, 1, '3205216802060001', 2018, '0069150455', '12345625', 'Yulianti', 'Perempuan', 'Garut', '2006-02-28', 'Islam', '', NULL, NULL, NULL, '', '087736747546', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(62, 1, '3205217012050003', 2018, '0061678609', '53737829', 'Tuti Nurhayati', 'Perempuan', 'Garut', '2006-12-30', 'Islam', '', NULL, NULL, NULL, '', '543789200186', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(63, 1, '3205172311050002', 2018, '0055321728', '54637899', 'Tulus Pitutur', 'Laki-Laki', 'Garut', '2005-11-23', 'Islam', '', NULL, NULL, NULL, '', '081452678765', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(64, 1, '3205171908030004', 2016, '0036893334', '161707016', 'Teguh Dwi Putra Setiawan', 'Laki-Laki', 'Garut', '2003-08-19', 'Islam', '', NULL, NULL, NULL, '', '728764536789', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(65, 1, '3204080902060002', 2018, '0053145832', '63546655', 'Wildan Khalid Wijaya', 'Laki-Laki', 'Bandung', '2005-03-01', 'Islam', '', NULL, NULL, NULL, '', '089983746354', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(66, 1, '3205214810030002', 2016, '0039108484', '161707017', 'Yulianti', 'Perempuan', 'Garut', '2003-10-08', 'Islam', '', NULL, NULL, NULL, '', '087736427654', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(67, 1, '1007362003002732', 2018, '0055500167', '16725372', 'Winarti Lestari', 'Perempuan', 'Garut', '2005-07-20', 'Islam', '', NULL, NULL, NULL, '', '0897252567217', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(68, 1, '3273055606810002', 2018, '0041660199', '1324526', 'Wildan Taupik Nurwahid', 'Laki-Laki', 'Garut', '2004-06-19', 'Islam', '', NULL, NULL, NULL, '', '08973628374625', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(69, 1, '3273265906050001', 2018, '0052946460', '167263527', 'Vanya Maula Zalfadhyla', 'Perempuan', 'Bandung', '2005-06-19', 'Islam', '', NULL, NULL, NULL, '', '089754323456', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(70, 1, '3175083011050004', 2017, '0053089820', '62748273', 'Ubayd Tsaqiif Thufayl', 'Laki-Laki', 'Jakarta', '2005-11-30', 'Islam', '', NULL, NULL, NULL, '', '098673564726', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(71, 1, '3205216002050001', 2017, '0056498440', '171807028', 'Sita Handini', 'Perempuan', 'Garut', '2005-02-20', 'Islam', '', NULL, NULL, NULL, '', '089765465765', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(72, 1, '3205214510030002', 2016, '0039530678', '161707015', 'Silpa', 'Laki-Laki', 'Garut', '2003-06-29', 'Islam', '', NULL, NULL, NULL, '', '089765354634', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(76, 1, '3205020405050006', 2018, '0059447195', '15267318', 'Irsad Asadilah Maulana', 'Laki-Laki', 'Garut', '2005-05-04', 'Islam', '', NULL, NULL, NULL, '', '087656786546', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(77, 1, '3205212510090001', 2018, '0063611930', '53672876', 'Intan Nur Azizah', 'Perempuan', 'Garut', '2006-03-06', 'Islam', '', NULL, NULL, NULL, '', '087656754678', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(78, 1, '3205312112040003', 2016, '0033728462', '171808021', 'Ikhwan Abdilah', 'Laki-Laki', 'Garut', '2004-12-21', 'Islam', '', NULL, NULL, NULL, '', '089765676453', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(79, 1, '3673010305060003', 2018, '0069583886', '16726536', 'Ibrahim Adjie', 'Laki-Laki', 'Cimahi', '2006-05-03', 'Islam', '', NULL, NULL, NULL, '', '089767643123', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(80, 1, '7303022706060001', 2018, '0068313694', '72536715', 'Hizqil Ubaidillahil Achyar', 'Laki-Laki', 'Bantaeng', '2006-06-27', 'Islam', '', NULL, NULL, NULL, '', '08976534234', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(81, 1, '3210156806060001', 2018, '0064554565', '623273846', 'Hizkia Samhan Rezayoshi', 'Perempuan', 'Majalengka', '2006-06-28', 'Islam', '', NULL, NULL, NULL, '', '087651234543', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(82, 1, '3205214606030004', 2016, '0037527580', '161707007', 'Helmina', 'Perempuan', 'Garut', '2003-06-06', 'Islam', '', NULL, NULL, NULL, '', '087827130571', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(83, 1, '3205417009050001', 2018, '0053636362', '09876543', 'Havia Khoirunnisa', 'Perempuan', 'Garut', '2005-09-30', 'Islam', '', NULL, NULL, NULL, '', '087653647284', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(84, 1, '3205065508060005', 2018, '0061584891', '87598764', 'Gusti Mujiba Ahsana', 'Perempuan', 'Garut', '2006-08-13', 'Islam', '', NULL, NULL, NULL, '', '089876728498', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(85, 1, '3277020908040009', 2017, '0049313376', '83647584', 'Ginding Luginasakti', 'Laki-Laki', 'Cimahi', '2004-08-09', 'Islam', '', NULL, NULL, NULL, '', '098753543654', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(86, 1, '3205174510060003', 2018, '0069246859', '765433454', 'Gesha Alia Feradi', 'Perempuan', 'LAMPUNG', '2006-10-05', 'Islam', '', NULL, NULL, NULL, '', '08976543435', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(87, 1, '3205215411040001', 2017, '0049589694', '78765456', 'Fitria Harlina', 'Perempuan', 'Garut', '2004-11-14', 'Islam', '', NULL, NULL, NULL, '', '098987656765', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(88, 1, '3205212009050001', 2017, '0058160582', '8987364', 'Fazar Pirdaus', 'Laki-Laki', 'Garut', '2005-09-20', 'Islam', '', NULL, NULL, NULL, '', '098765676545', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(89, 1, '3205215206050003', 2017, '3056114605', '89837465', 'Fauziah Noer Rahmi', 'Perempuan', 'Bandung', '2005-06-12', 'Islam', '', NULL, NULL, NULL, '', '098987678765', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(90, 1, '3276055912050005', 2018, '0053548385', '87679876', 'Fatimah Azzahra', 'Perempuan', 'CIAMIS	2005-12-19', '2005-12-19', 'Islam', '', NULL, NULL, NULL, '', '098789876576', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(91, 1, '3204280208060007', 2018, '0065142830', '0065142830', 'Fariel Agutian Firdaus', 'Laki-Laki', 'Garut', '2008-01-27', 'Islam', '', NULL, NULL, NULL, '', '089746547364', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(92, 1, '3205021504040008', 2016, '0049243243', '171808022', 'Faris Julfiker Irfani', 'Laki-Laki', 'Garut', '2004-04-15', 'Islam', '', NULL, NULL, NULL, '', '087362543562', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(93, 1, '3205021306040005', 2016, '0049759855', '171808023', 'Farrel Azhar Nurhidayat', 'Laki-Laki', 'Garut', '2004-06-13', 'Islam', '', NULL, NULL, NULL, '', '0584747463637', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(102, 1, '3207181801060004', 2018, '0067913377', '0067913377', 'Kamil Nugraha', 'Laki-Laki', 'Ciamis', '2006-01-18', 'Islam', '', NULL, NULL, NULL, '', '087635242673', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(104, 1, '3204080902060012', 2018, '0061698366', '0061698366', 'Sidqi Bimasakti', 'Laki-Laki', 'Bandung', '2006-02-09', 'Islam', '', NULL, NULL, NULL, '', '08736251625', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(105, 1, '3273240510108234', 2018, '0071688380', '0071688380', 'Kania Nurul Aini', 'Laki-Laki', 'Bandung', '2007-06-27', 'Islam', '', NULL, NULL, NULL, '', '08763524253', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(106, 1, '3204375503060006', 2018, '0067542725', '0067542725', 'Lahya Ghuita Maylan', 'Perempuan', 'Bandung', '2006-05-15', 'Islam', '', NULL, NULL, NULL, '', '087635242123', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(107, 1, '3205056410050002', 2016, '0056992066', '161707008', 'Laila Fitri Annisa', 'Perempuan', 'Garut', '2005-10-24', 'Islam', '', NULL, NULL, NULL, '', '089765454321', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(108, 1, '3205214909030005', 2016, '0034085844', '161707009', 'Lisbahi Aljaatsiyah', 'Perempuan', 'Garut', '2003-09-09', 'Islam', '', NULL, NULL, NULL, '', '087564746354', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(109, 1, '3205171608040003', 2018, '0046586413', '0046586413', 'Luzia Fakiha', 'Laki-Laki', 'Garut', '2004-08-16', 'Islam', '', NULL, NULL, NULL, '', '08645342532', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(110, 1, '3204323007050009', 2018, '0056553530', '0056553530', 'M. RIFQI BAHARA ILMAN', 'Laki-Laki', 'Bandung', '2005-07-30', 'Islam', '', NULL, NULL, NULL, '', '087653425241', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(111, 1, '3205172908040006', 2016, '0042129372', '0042129372', 'M.rizki Padilah', 'Laki-Laki', 'Garut', '2004-08-29', 'Islam', '', NULL, NULL, NULL, '', '084746363525', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(112, 1, '3205214103050002', 2017, '0057424439', '171807015', 'Mamay Mariam', 'Perempuan', 'Garut', '2005-03-01', 'Islam', '', NULL, NULL, NULL, '', '08765656543', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(113, 1, '3205072401060001', 2018, '0065352069', '0065352069', 'Moch Adrian Putra Hidayat', 'Laki-Laki', 'Garut', '2006-01-24', 'Islam', '', NULL, NULL, NULL, '', '08746353523', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(114, 1, '3204322307030009', 2016, '0039418541', '161707011', 'Mohamad Rizaldi', 'Laki-Laki', 'Garut', '2003-07-23', 'Islam', '', NULL, NULL, NULL, '', '087464535342', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(115, 1, '3204321911050001', 2018, '0057443607', '0057443607', 'Mohammad Azka Maulana', 'Laki-Laki', 'Bandung', '2005-11-19', 'Islam', '', NULL, NULL, NULL, '', '087645353623', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(116, 1, '3205041911030007', 2016, '0030143774', '171808020', 'Muhamad Emir Faturohman', 'Laki-Laki', 'Garut', '2003-11-19', 'Islam', '', NULL, NULL, NULL, '', '087656454536', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(117, 1, '3205091907040005', 2017, '0057107742', '171807016', 'Muhamad Razidan Anwar Fauzi', 'Laki-Laki', 'Bandung', '2004-07-19', 'Islam', '', NULL, NULL, NULL, '', '08756545463', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(118, 1, '3204282210050019', 2018, '0056770496', '0056770496', 'Muhamad Rian Darmawan', 'Laki-Laki', 'Bandung', '2005-10-22', 'Islam', '', NULL, NULL, NULL, '', '088798764532', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(119, 1, '3277012203050004', 2018, '0073463591', '0073463591', 'Muhammad Akmal Chandra Wiguna', 'Laki-Laki', 'Bandung', '2005-03-22', 'Islam', '', NULL, NULL, NULL, '', '08764536453', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(120, 1, '3205051704060005', 2018, '0065352664', '0065352664', 'Muhammad Fadli Fairuza', 'Laki-Laki', 'GARUT', '2006-04-17', 'Islam', '', NULL, NULL, NULL, '', '083213243536', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(121, 1, '1050203005055001', 2018, '0057842328', '0057842328', 'Muhammad Hilman Dzakwanurrofiq', 'Laki-Laki', 'Bandung', '2005-05-30', 'Islam', '', NULL, NULL, NULL, '', '085456567654', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(122, 1, '3210151304050001', 2017, '0052534218', '0052534218', 'Muhammad Hizkil Rezayoshi', 'Laki-Laki', 'Bandung', '2005-04-13', 'Islam', '', NULL, NULL, NULL, '', '045364758676', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(123, 1, '3216061803060006', 2018, '0064138120', '0064138120', 'Muhammad Raya Marjuwan', 'Laki-Laki', 'Bekasi', '2006-03-18', 'Islam', '', NULL, NULL, NULL, '', '084746464563', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(124, 1, '3273152809060005', 2018, '0061877002', '0061877002', 'Muhammad Ridwan Firdaus', 'Laki-Laki', 'Bandung', '2006-09-28', 'Islam', '', NULL, NULL, NULL, '', '08746453643', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(125, 1, '3205212310050001', 2017, '0056272792', '171807014', 'Mulana', 'Laki-Laki', 'Garut', '2005-10-23', 'Islam', '', NULL, NULL, NULL, '', '087653425487', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(126, 1, '3273282210050001', 2018, '0064402741', '0064402741', 'Nabila Inten Pertiwi', 'Perempuan', 'CIMAHI', '2005-10-22', 'Islam', '', NULL, NULL, NULL, '', '098734673345', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(127, 1, '3306025508060001', 2018, '0069049581', '0069049581', 'Nabilah Affan Zahrotul Kasanah', 'Perempuan', 'Purworejo', '2006-08-15', 'Islam', '', NULL, NULL, NULL, '', '08765435243', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(128, 1, '3210155806060062', 2018, '0068873945', '0068873945', 'Naila Putri Ahmaliani', 'Perempuan', 'Majalengka', '2006-06-18', 'Islam', '', NULL, NULL, NULL, '', '087654652412', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(129, 1, '3205215003040007', 2017, '0048561835', '171807019', 'Neli', 'Perempuan', 'Garut', '2004-03-10', 'Islam', '', NULL, NULL, NULL, '', '087657465743', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(130, 1, '3205216809040001', 2017, '0049835844', '171807020', 'Nuramalasari', 'Laki-Laki', 'Garut', '2004-09-28', 'Islam', '', NULL, NULL, NULL, '', '087656767687', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(131, 1, '3205210704090001', 2017, '0054805047', '171807021', 'Nyimas Rohmah Putriyani', 'Perempuan', 'Garut', '2005-06-09', 'Islam', '', NULL, NULL, NULL, '', '087654324354', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(132, 1, '3205410703050002', 2018, '0056119430', '0056119430', 'Rafli Ikhwanus Sidik', 'Laki-Laki', 'Garut', '2005-03-07', 'Islam', '', NULL, NULL, NULL, '', '087878765423', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(133, 1, '3205211512030001', 2016, '0039728107', '0039728107', 'Randi Sopiyandi', 'Laki-Laki', 'Garut', '2003-12-15', 'Islam', '', NULL, NULL, NULL, '', '08976776766', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(134, 1, '3205215308060001', 2018, '0063304482', '0063304482', 'Resa Agustina', 'Perempuan', 'Garut', '2006-08-13', 'Islam', '', NULL, NULL, NULL, '', '089876565456', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(135, 1, '3205210107060001', 2018, '0069706321', '0069706321', 'Resti Pujiyanti', 'Perempuan', 'Garut', '2006-07-01', 'Islam', '', NULL, NULL, NULL, '', '0843234543445', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(136, 1, '3205174405050004', 2017, '0057442719', '0057442719', 'Resty Melyani Setiawan', 'Perempuan', 'Garut', '2005-05-04', 'Islam', '', NULL, NULL, NULL, '', '084321324231', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(137, 1, '3204320104055535', 2018, '0067366997', '0067366997', 'Reva Ramadhani Putri', 'Perempuan', 'Bandung', '2006-10-21', 'Islam', '', NULL, NULL, NULL, '', '0984234372872', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(138, 1, '3205211101060005', 2018, '0065465770', '0065465770', 'Rian Robiana', 'Laki-Laki', 'Bandung', '2006-01-11', 'Islam', '', NULL, NULL, NULL, '', '076876766554', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(139, 1, '3205214510050005', 2017, '0057242028', '0057242028', 'Rika Sapitri', 'Perempuan', 'Garut', '2005-10-05', 'Islam', '', NULL, NULL, NULL, '', '0846453635', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(140, 1, '3205211107060002', 2018, '0061052767', '0061052767', 'Ripaldi', 'Laki-Laki', 'Garut', '2006-07-11', 'Islam', '', NULL, NULL, NULL, '', '078764464534', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(141, 1, '3205210402070003', 2018, '0075845275', '0075845275', 'Rizal Laksana', 'Laki-Laki', 'Garut', '2007-01-07', 'Islam', '', NULL, NULL, NULL, '', '0858575846746', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(142, 1, '3205210401060004', 2017, '3062177134', '3062177134', 'Robi', 'Laki-Laki', 'Garut', '2006-01-04', 'Islam', '', NULL, NULL, NULL, '', '087363534253', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(143, 1, '3205213105040001', 2017, '3042706531', '171807025', 'Roby Fauzi', 'Laki-Laki', 'Garut', '2004-05-31', 'Islam', '', NULL, NULL, NULL, '', '089765654352', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(144, 1, '3674020305040004', 2016, '0048975878', '161707013', 'Rofatan Nazwa', 'Laki-Laki', 'Bandung', '2004-05-03', 'Islam', '', NULL, NULL, NULL, '', '08746347369', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(145, 1, '3175074904060001', 2018, '0066781848', '0066781848', 'Sabrina Audy Nafisa', 'Perempuan', 'Jakarta', '2006-04-09', 'Islam', '', NULL, NULL, NULL, '', '078574647363', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(146, 1, '3205212309050004', 2017, '0053777460', '171807026', 'Sahril Hakim', 'Laki-Laki', 'Garut', '2005-09-23', 'Islam', '', NULL, NULL, NULL, '', '0874646465373', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(147, 1, '3205216805060002', 2018, '0069893398', '0069893398', 'Salsa Nurul Azmi', 'Perempuan', 'Garut', '2006-05-28', 'Islam', '', NULL, NULL, NULL, '', '084746353652', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(148, 1, '3205211403060004', 2018, '0064558407', '0064558407', 'Sandi Hermawan', 'Laki-Laki', 'Garut', '2006-03-14', 'Islam', '', NULL, NULL, NULL, '', '087654323234', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(149, 1, '3205210702050001', 2018, '0066203694', '0066203694', 'Sandi Koswara', 'Laki-Laki', 'Garut', '2005-02-07', 'Islam', '', NULL, NULL, NULL, '', '08787876545', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(150, 1, '3205210102070001', 2018, '0073971533', '0073971533', 'Sani Nur Rahmayanti', 'Perempuan', 'Garut', '2007-02-01', 'Islam', '', NULL, NULL, NULL, '', '078764756454', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(151, 1, '1050156903065001', 2018, '0068751172', '0068751172', 'Saskia Alifa Nadhira', 'Perempuan', 'Bandung', '2006-03-29', 'Islam', '', NULL, NULL, NULL, '', '087645363543', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(152, 1, '3204090810060010', 2018, '0065959989', '0065959989', 'Shaffa Fauzi Ramdhani', 'Laki-Laki', 'Bandung', '2006-10-08', 'Islam', '', NULL, NULL, NULL, '', '08757484746', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(153, 1, '1007362003002698', 2017, '3054385036', '3054385036', 'Shaqi Saputra Ardani', 'Laki-Laki', 'Garut', '2005-02-10', 'Islam', '', NULL, NULL, NULL, '', '087574646353', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(154, 1, '1050192612035001', 2016, '0037352648', '171808024', 'Fabian Haykal Bihar Ilmi', 'Laki-Laki', 'Karawang', '2003-12-26', 'Islam', '', NULL, NULL, NULL, '', '084746463736', '', NULL, NULL, NULL, NULL, 'Aktif');
+INSERT INTO `peserta_didik` (`idPd`, `idSekolah`, `NIK_pd`, `tahun_angkatan`, `nisn`, `nipd`, `nama_pd`, `jk_pd`, `tempat_lahir_pd`, `tanggal_lahir_pd`, `agama`, `alamat`, `idProvinsi`, `idKabupaten`, `idKecamatan`, `idKelurahan`, `no_telp_pd`, `email_pd`, `foto_pd`, `facebook`, `instagram`, `twitter`, `status_pd`) VALUES
+(18, 1, '8080808080808081', 2017, '1234453453', '4352345345', 'Tester', 'Laki-Laki', 'Garut', '2018-11-12', 'Islam', '', NULL, NULL, NULL, '0', '64554356345634', '', '165b0-pa-rizik.png', NULL, NULL, NULL, 'Aktif'),
+(21, 1, '1234567893234987', 2017, '4535345345', '5345345242', 'Ucup Syahrudin', 'Laki-Laki', 'Garut', '2019-04-16', 'Islam', '', 32, 3205, 320512, '3205122005', '789', 'ucup@gmail.com', NULL, 'https://facebook.com', NULL, NULL, 'Aktif'),
+(22, 1, '2341123576867867', 2016, '1234322323', '5435435345', 'Jajang Hidayat', 'Laki-Laki', 'Garut', '2019-04-09', 'Islam', '', 61, 6111, 611104, '6111042002', '082344434543', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(23, 1, '5656453453113434', 2017, '5345345436', '6756798678', 'Ranti Suranti', 'Perempuan', 'Garut', '2019-04-14', 'Islam', '', 64, 6408, 640816, '6408162002', '0823444788347', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(24, 1, '3205170511050010', 2018, '4535245234', '5435452452', 'Achmar Farid Ryven', 'Laki-Laki', 'Garut', '2006-04-04', 'Islam', '', 36, 3601, 360120, '2147483647', '085277889900', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(25, 1, '3205212702040000', 2018, '6757567567', '7679678545', 'Adi Tia Lesmana', 'Laki-Laki', 'Garut', '2004-02-27', 'Islam', '', NULL, NULL, NULL, '0', '085123456789', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(26, 1, '3205211809040000', 2018, '5673450875', '4522223123', 'Agus Sukarno', 'Laki-Laki', 'Garut', '2004-10-18', 'Islam', '', NULL, NULL, NULL, '0', '085213456543', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(27, 1, '3205211003060000', 2018, '6775745709', '4423253425', 'Aldi Ahmad Muharom', 'Laki-Laki', 'Garut', '2006-03-20', 'Islam', '', 51, 5106, 510603, '5106032004', '085212345678', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(28, 1, '3273024304060010', NULL, NULL, NULL, 'Alifa Mutiara Zahra', 'Perempuan', 'Garut', '2006-04-03', 'Islam', '', NULL, NULL, NULL, '0', '08212345678', '', '', NULL, NULL, NULL, 'Aktif'),
+(29, 1, '3205210206050000', NULL, NULL, NULL, 'Aliyansah', 'Laki-Laki', 'Garut', '2005-06-02', 'Islam', '', NULL, NULL, NULL, '0', '08128765345', '', '', NULL, NULL, NULL, 'Aktif'),
+(30, 1, '3205216309060000', NULL, NULL, NULL, 'Alpa Resta', 'Perempuan', 'Garut', '2006-02-24', 'Islam', '', NULL, NULL, NULL, '0', '082176534356', '', '', NULL, NULL, NULL, 'Aktif'),
+(31, 1, '3205056106050010', NULL, NULL, NULL, 'Alysha Nurfiddina Putri Muslim', 'Perempuan', 'Garut', '2006-06-21', 'Islam', '', NULL, NULL, NULL, '0', '082165748379', '', '', NULL, NULL, NULL, 'Aktif'),
+(32, 1, '3211116207070000', NULL, NULL, NULL, 'Annisa Malika Utami', 'Perempuan', 'Garut', '2007-07-22', 'Islam', '', NULL, NULL, NULL, '0', '0987653674837', '', '', NULL, NULL, NULL, 'Aktif'),
+(33, 1, '3205176104040010', NULL, NULL, NULL, 'Annisa Wangi Nusantara', 'Perempuan', 'Garut', '2004-04-21', 'Islam', '', NULL, NULL, NULL, '0', '081267854352', '', '', NULL, NULL, NULL, 'Aktif'),
+(34, 1, '3205172407050000', NULL, NULL, NULL, 'Ardy Putra Nurjaman', 'Laki-Laki', 'Garut', '0000-00-00', 'Islam', '', NULL, NULL, NULL, '0', '089765432453', '', '', NULL, NULL, NULL, 'Aktif'),
+(35, 1, '3205210911040000', 2018, '5343345345', '3453234534', 'Arya Prasetya', 'Laki-Laki', 'Timika', '2002-12-28', 'Islam', '', NULL, NULL, NULL, '0', '082367898223', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(36, 1, '3276055002040010', NULL, NULL, NULL, 'Aryani Febriyanti', 'Perempuan', 'Garut', '2004-02-10', 'Islam', '', NULL, NULL, NULL, '0', '082187645367', '', '', NULL, NULL, NULL, 'Aktif'),
+(37, 1, '3204096003060000', NULL, NULL, NULL, 'Aulia Khoiru Nisa', 'Perempuan', 'Garut', '2006-03-20', 'Islam', '', NULL, NULL, NULL, '0', '082134567893', '', '', NULL, NULL, NULL, 'Aktif'),
+(38, 1, '3211116111050000', NULL, NULL, NULL, 'Aulia Putri Madinah', 'Perempuan', 'Garut', '2005-11-21', 'Islam', '', NULL, NULL, NULL, '0', '081234523456', '', '', NULL, NULL, NULL, 'Aktif'),
+(39, 1, '3207035502780000', NULL, NULL, NULL, 'Azri Akbar Khoiri', 'Laki-Laki', 'Garut', '2005-05-01', 'Islam', '', 32, 3205, 320510, '3205102006', '09873637463722', '', '', NULL, NULL, NULL, 'Aktif'),
+(40, 1, '3205210506050010', NULL, NULL, NULL, 'Bayu Permana', 'Laki-Laki', 'Garut', '2005-05-05', 'Islam', '', NULL, NULL, NULL, '0', '089374846387', '', '', NULL, NULL, NULL, 'Aktif'),
+(41, 1, '3205210509050000', 2018, '6765475675', '7567456745', 'Bima Budiarto Mulya', 'Laki-Laki', 'Garut', '2005-09-05', 'Islam', '', NULL, NULL, NULL, '0', '082137465847', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(42, 1, '3204290310050000', NULL, NULL, NULL, 'Boyke Rofiqu Ikhwan', 'Laki-Laki', 'Garut', '2005-10-03', 'Islam', '', NULL, NULL, NULL, '0', '082183746574', '', '', NULL, NULL, NULL, 'Aktif'),
+(43, 1, '3205211404030000', 2018, '6798767545', '7689089867', 'Cep Ilham  Nurhakim', 'Laki-Laki', 'Garut', '2003-04-14', 'Islam', '', NULL, NULL, NULL, '0', '081267363546', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(44, 1, '3205214408050010', 2018, '5656756745', '5765764564', 'Dea Anita', 'Perempuan', 'Garut', '2004-08-04', 'Islam', '', NULL, NULL, NULL, '0', '082176534256', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(45, 1, '3204546070500000', NULL, NULL, NULL, 'Devana Kayyisa Wibawa', 'Perempuan', 'Garut', '2005-07-06', 'Islam', '', NULL, NULL, NULL, '0', '082174657483', '', '', NULL, NULL, NULL, 'Aktif'),
+(46, 1, '3205215611030000', NULL, NULL, NULL, 'Devi Sapitri', 'Perempuan', 'Garut', '2003-11-16', 'Islam', '', NULL, NULL, NULL, '0', '081236456575', '', '', NULL, NULL, NULL, 'Aktif'),
+(47, 1, '3205214605050000', NULL, NULL, NULL, 'Dewi Mulyani', 'Perempuan', 'Garut', '2005-05-06', 'Islam', '', NULL, NULL, NULL, '0', '098465768574', '', '', NULL, NULL, NULL, 'Aktif'),
+(48, 1, '3205214104060000', 2018, '5476575675', '4567353223', 'Dinda Apriliani', 'Perempuan', 'Garut', '2006-04-19', 'Islam', '', NULL, NULL, NULL, '0', '081236475867', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(49, 2, '3205074110940000', 2018, '0025423936', '181910046', 'Sela Selvia', 'Perempuan', 'Garut', '2002-11-22', 'Islam', '', NULL, NULL, NULL, '0', '098736453612', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(50, 2, '3205074120940000', 2018, '0037663774', '181910024', 'Yora', 'Perempuan', 'Garut', '2003-08-31', 'Islam', '', NULL, NULL, NULL, '0', '089764536272', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(51, 2, '3205074130940000', 2018, '0020289635', '181910045', 'Sandi Nasrulloh', 'Laki-Laki', 'Garut', '2002-02-11', 'Islam', '', NULL, NULL, NULL, '0', '087363524152', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(52, 2, '3205074140940000', 2018, '0034771680', '181910027', 'Bilal Farel Taghsya', 'Laki-Laki', 'Bandung', '2003-01-04', 'Islam', '', NULL, NULL, NULL, '0', '089272837362', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(53, 2, '3205074150940000', 2018, '0038465991', '181910031', 'Jihan Fitrianisa', 'Perempuan', 'Bandung', '2002-11-22', 'Islam', '', NULL, NULL, NULL, '0', '08767261526', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(54, 2, '3205074160940000', 2018, '0477431003', '181910009', 'Maudy Meliany Deryana', 'Perempuan', ' Bandung', '2002-05-16', 'Islam', '', NULL, NULL, NULL, '0', '087362516273', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(55, 2, '3205074170940000', 2018, '0020102401', '181910022', 'Wildan Ohaina Yusuf', 'Laki-Laki', 'Bandung', '1970-01-01', 'Islam', '', NULL, NULL, NULL, '0', '087635462736', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(56, 2, '3205074180940000', 2018, '0031075176', '181910019', 'Satria Hadetata', 'Laki-Laki', 'Garut', '2003-04-12', 'Islam', '', NULL, NULL, NULL, '0', '087736367263', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(57, 2, '3205074190940000', 2018, '0026961801', '181910016', 'Ripa Junior', 'Laki-Laki', 'Garut', '2003-03-23', 'Islam', '', NULL, NULL, NULL, '0', '087635263526', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(58, 2, '3205074200940000', 2018, '0039305967', '181910030', 'Febbyana Maharani', 'Laki-Laki', 'Bandung', '2003-02-23', 'Islam', '', NULL, NULL, NULL, '0', '081276352627', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(59, 1, '3201012707050001', 2017, '0051432411', '12345434', 'Ahmad Fauzan', 'Laki-Laki', 'Bogor', '2005-07-27', 'Islam', '', NULL, NULL, NULL, '0', '081237483736', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(60, 1, '3276056503040010', 2016, '0040917114', '171808019', 'Farah Naura Rahmah', 'Perempuan', 'Tasikmalaya', '2004-03-25', 'Islam', '', NULL, NULL, NULL, '0', '0837363536352', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(61, 1, '3205216802060001', 2018, '0069150455', '12345625', 'Yulianti', 'Perempuan', 'Garut', '2006-02-28', 'Islam', '', NULL, NULL, NULL, '0', '087736747546', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(62, 1, '3205217012050003', 2018, '0061678609', '53737829', 'Tuti Nurhayati', 'Perempuan', 'Garut', '2006-12-30', 'Islam', '', NULL, NULL, NULL, '0', '543789200186', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(63, 1, '3205172311050002', 2018, '0055321728', '54637899', 'Tulus Pitutur', 'Laki-Laki', 'Garut', '2005-11-23', 'Islam', '', NULL, NULL, NULL, '0', '081452678765', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(64, 1, '3205171908030004', 2016, '0036893334', '161707016', 'Teguh Dwi Putra Setiawan', 'Laki-Laki', 'Garut', '2003-08-19', 'Islam', '', NULL, NULL, NULL, '0', '728764536789', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(65, 1, '3204080902060002', 2018, '0053145832', '63546655', 'Wildan Khalid Wijaya', 'Laki-Laki', 'Bandung', '2005-03-01', 'Islam', '', NULL, NULL, NULL, '0', '089983746354', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(66, 1, '3205214810030002', 2016, '0039108484', '161707017', 'Yulianti', 'Perempuan', 'Garut', '2003-10-08', 'Islam', '', NULL, NULL, NULL, '0', '087736427654', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(67, 1, '1007362003002732', 2018, '0055500167', '16725372', 'Winarti Lestari', 'Perempuan', 'Garut', '2005-07-20', 'Islam', '', NULL, NULL, NULL, '0', '0897252567217', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(68, 1, '3273055606810002', 2018, '0041660199', '1324526', 'Wildan Taupik Nurwahid', 'Laki-Laki', 'Garut', '2004-06-19', 'Islam', '', NULL, NULL, NULL, '0', '08973628374625', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(69, 1, '3273265906050001', 2018, '0052946460', '167263527', 'Vanya Maula Zalfadhyla', 'Perempuan', 'Bandung', '2005-06-19', 'Islam', '', NULL, NULL, NULL, '0', '089754323456', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(70, 1, '3175083011050004', 2017, '0053089820', '62748273', 'Ubayd Tsaqiif Thufayl', 'Laki-Laki', 'Jakarta', '2005-11-30', 'Islam', '', NULL, NULL, NULL, '0', '098673564726', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(71, 1, '3205216002050001', 2017, '0056498440', '171807028', 'Sita Handini', 'Perempuan', 'Garut', '2005-02-20', 'Islam', '', NULL, NULL, NULL, '0', '089765465765', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(72, 1, '3205214510030002', 2016, '0039530678', '161707015', 'Silpa', 'Laki-Laki', 'Garut', '2003-06-29', 'Islam', '', NULL, NULL, NULL, '0', '089765354634', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(76, 1, '3205020405050006', 2018, '0059447195', '15267318', 'Irsad Asadilah Maulana', 'Laki-Laki', 'Garut', '2005-05-04', 'Islam', '', 32, 3205, 320507, '3205072010', '087656786546', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(77, 1, '3205212510090001', 2018, '0063611930', '53672876', 'Intan Nur Azizah', 'Perempuan', 'Garut', '2006-03-06', 'Islam', '', NULL, NULL, NULL, '0', '087656754678', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(78, 1, '3205312112040003', 2016, '0033728462', '171808021', 'Ikhwan Abdilah', 'Laki-Laki', 'Garut', '2004-12-21', 'Islam', '', NULL, NULL, NULL, '0', '089765676453', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(79, 1, '3673010305060003', 2018, '0069583886', '16726536', 'Ibrahim Adjie', 'Laki-Laki', 'Cimahi', '2006-05-03', 'Islam', '', NULL, NULL, NULL, '0', '089767643123', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(80, 1, '7303022706060001', 2018, '0068313694', '72536715', 'Hizqil Ubaidillahil Achyar', 'Laki-Laki', 'Bantaeng', '2006-06-27', 'Islam', '', NULL, NULL, NULL, '0', '08976534234', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(81, 1, '3210156806060001', 2018, '0064554565', '623273846', 'Hizkia Samhan Rezayoshi', 'Perempuan', 'Majalengka', '2006-06-28', 'Islam', '', NULL, NULL, NULL, '0', '087651234543', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(82, 1, '3205214606030004', 2016, '0037527580', '161707007', 'Helmina', 'Perempuan', 'Garut', '2003-06-06', 'Islam', '', NULL, NULL, NULL, '0', '087827130571', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(83, 1, '3205417009050001', 2018, '0053636362', '09876543', 'Havia Khoirunnisa', 'Perempuan', 'Garut', '2005-09-30', 'Islam', '', NULL, NULL, NULL, '0', '087653647284', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(84, 1, '3205065508060005', 2018, '0061584891', '87598764', 'Gusti Mujiba Ahsana', 'Perempuan', 'Garut', '2006-08-13', 'Islam', '', NULL, NULL, NULL, '0', '089876728498', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(85, 1, '3277020908040009', 2017, '0049313376', '83647584', 'Ginding Luginasakti', 'Laki-Laki', 'Cimahi', '2004-08-09', 'Islam', '', NULL, NULL, NULL, '0', '098753543654', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(86, 1, '3205174510060003', 2018, '0069246859', '765433454', 'Gesha Alia Feradi', 'Perempuan', 'LAMPUNG', '2006-10-05', 'Islam', '', NULL, NULL, NULL, '0', '08976543435', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(87, 1, '3205215411040001', 2017, '0049589694', '78765456', 'Fitria Harlina', 'Perempuan', 'Garut', '2004-11-14', 'Islam', '', NULL, NULL, NULL, '0', '098987656765', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(88, 1, '3205212009050001', 2017, '0058160582', '8987364', 'Fazar Pirdaus', 'Laki-Laki', 'Garut', '2005-09-20', 'Islam', '', NULL, NULL, NULL, '0', '098765676545', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(89, 1, '3205215206050003', 2017, '3056114605', '89837465', 'Fauziah Noer Rahmi', 'Perempuan', 'Bandung', '2005-06-12', 'Islam', '', NULL, NULL, NULL, '0', '098987678765', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(90, 1, '3276055912050005', 2018, '0053548385', '87679876', 'Fatimah Azzahra', 'Perempuan', 'CIAMIS	2005-12-19', '2005-12-19', 'Islam', '', NULL, NULL, NULL, '0', '098789876576', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(91, 1, '3204280208060007', 2018, '0065142830', '0065142830', 'Fariel Agutian Firdaus', 'Laki-Laki', 'Garut', '2008-01-27', 'Islam', '', NULL, NULL, NULL, '0', '089746547364', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(92, 1, '3205021504040008', 2016, '0049243243', '171808022', 'Faris Julfiker Irfani', 'Laki-Laki', 'Garut', '2004-04-15', 'Islam', '', NULL, NULL, NULL, '0', '087362543562', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(93, 1, '3205021306040005', 2016, '0049759855', '171808023', 'Farrel Azhar Nurhidayat', 'Laki-Laki', 'Garut', '2004-06-13', 'Islam', '', NULL, NULL, NULL, '0', '0584747463637', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(102, 1, '3207181801060004', 2018, '0067913377', '0067913377', 'Kamil Nugraha', 'Laki-Laki', 'Ciamis', '2006-01-18', 'Islam', '', NULL, NULL, NULL, '0', '087635242673', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(104, 1, '3204080902060012', 2018, '0061698366', '0061698366', 'Sidqi Bimasakti', 'Laki-Laki', 'Bandung', '2006-02-09', 'Islam', '', NULL, NULL, NULL, '0', '08736251625', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(105, 1, '3273240510108234', 2018, '0071688380', '0071688380', 'Kania Nurul Aini', 'Laki-Laki', 'Bandung', '2007-06-27', 'Islam', '', NULL, NULL, NULL, '0', '08763524253', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(106, 1, '3204375503060006', 2018, '0067542725', '0067542725', 'Lahya Ghuita Maylan', 'Perempuan', 'Bandung', '2006-05-15', 'Islam', '', NULL, NULL, NULL, '0', '087635242123', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(107, 1, '3205056410050002', 2016, '0056992066', '161707008', 'Laila Fitri Annisa', 'Perempuan', 'Garut', '2005-10-24', 'Islam', '', NULL, NULL, NULL, '0', '089765454321', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(108, 1, '3205214909030005', 2016, '0034085844', '161707009', 'Lisbahi Aljaatsiyah', 'Perempuan', 'Garut', '2003-09-09', 'Islam', '', NULL, NULL, NULL, '0', '087564746354', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(109, 1, '3205171608040003', 2018, '0046586413', '0046586413', 'Luzia Fakiha', 'Laki-Laki', 'Garut', '2004-08-16', 'Islam', '', NULL, NULL, NULL, '0', '08645342532', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(110, 1, '3204323007050009', 2018, '0056553530', '0056553530', 'M. RIFQI BAHARA ILMAN', 'Laki-Laki', 'Bandung', '2005-07-30', 'Islam', '', NULL, NULL, NULL, '0', '087653425241', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(111, 1, '3205172908040006', 2016, '0042129372', '0042129372', 'M.rizki Padilah', 'Laki-Laki', 'Garut', '2004-08-29', 'Islam', '', NULL, NULL, NULL, '0', '084746363525', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(112, 1, '3205214103050002', 2017, '0057424439', '171807015', 'Mamay Mariam', 'Perempuan', 'Garut', '2005-03-01', 'Islam', '', NULL, NULL, NULL, '0', '08765656543', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(113, 1, '3205072401060001', 2018, '0065352069', '0065352069', 'Moch Adrian Putra Hidayat', 'Laki-Laki', 'Garut', '2006-01-24', 'Islam', '', NULL, NULL, NULL, '0', '08746353523', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(114, 1, '3204322307030009', 2016, '0039418541', '161707011', 'Mohamad Rizaldi', 'Laki-Laki', 'Garut', '2003-07-23', 'Islam', '', NULL, NULL, NULL, '0', '087464535342', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(115, 1, '3204321911050001', 2018, '0057443607', '0057443607', 'Mohammad Azka Maulana', 'Laki-Laki', 'Bandung', '2005-11-19', 'Islam', '', NULL, NULL, NULL, '0', '087645353623', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(116, 1, '3205041911030007', 2016, '0030143774', '171808020', 'Muhamad Emir Faturohman', 'Laki-Laki', 'Garut', '2003-11-19', 'Islam', '', NULL, NULL, NULL, '0', '087656454536', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(117, 1, '3205091907040005', 2017, '0057107742', '171807016', 'Muhamad Razidan Anwar Fauzi', 'Laki-Laki', 'Bandung', '2004-07-19', 'Islam', '', NULL, NULL, NULL, '0', '08756545463', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(118, 1, '3204282210050019', 2018, '0056770496', '0056770496', 'Muhamad Rian Darmawan', 'Laki-Laki', 'Bandung', '2005-10-22', 'Islam', '', NULL, NULL, NULL, '0', '088798764532', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(119, 1, '3277012203050004', 2018, '0073463591', '0073463591', 'Muhammad Akmal Chandra Wiguna', 'Laki-Laki', 'Bandung', '2005-03-22', 'Islam', '', NULL, NULL, NULL, '0', '08764536453', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(120, 1, '3205051704060005', 2018, '0065352664', '0065352664', 'Muhammad Fadli Fairuza', 'Laki-Laki', 'GARUT', '2006-04-17', 'Islam', '', NULL, NULL, NULL, '0', '083213243536', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(121, 1, '1050203005055001', 2018, '0057842328', '0057842328', 'Muhammad Hilman Dzakwanurrofiq', 'Laki-Laki', 'Bandung', '2005-05-30', 'Islam', '', NULL, NULL, NULL, '0', '085456567654', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(122, 1, '3210151304050001', 2017, '0052534218', '0052534218', 'Muhammad Hizkil Rezayoshi', 'Laki-Laki', 'Bandung', '2005-04-13', 'Islam', '', NULL, NULL, NULL, '0', '045364758676', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(123, 1, '3216061803060006', 2018, '0064138120', '0064138120', 'Muhammad Raya Marjuwan', 'Laki-Laki', 'Bekasi', '2006-03-18', 'Islam', '', NULL, NULL, NULL, '0', '084746464563', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(124, 1, '3273152809060005', 2018, '0061877002', '0061877002', 'Muhammad Ridwan Firdaus', 'Laki-Laki', 'Bandung', '2006-09-28', 'Islam', '', NULL, NULL, NULL, '0', '08746453643', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(125, 1, '3205212310050001', 2017, '0056272792', '171807014', 'Mulana', 'Laki-Laki', 'Garut', '2005-10-23', 'Islam', '', NULL, NULL, NULL, '0', '087653425487', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(126, 1, '3273282210050001', 2018, '0064402741', '0064402741', 'Nabila Inten Pertiwi', 'Perempuan', 'CIMAHI', '2005-10-22', 'Islam', '', NULL, NULL, NULL, '0', '098734673345', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(127, 1, '3306025508060001', 2018, '0069049581', '0069049581', 'Nabilah Affan Zahrotul Kasanah', 'Perempuan', 'Purworejo', '2006-08-15', 'Islam', '', NULL, NULL, NULL, '0', '08765435243', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(128, 1, '3210155806060062', 2018, '0068873945', '0068873945', 'Naila Putri Ahmaliani', 'Perempuan', 'Majalengka', '2006-06-18', 'Islam', '', NULL, NULL, NULL, '0', '087654652412', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(129, 1, '3205215003040007', 2017, '0048561835', '171807019', 'Neli', 'Perempuan', 'Garut', '2004-03-10', 'Islam', '', NULL, NULL, NULL, '0', '087657465743', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(130, 1, '3205216809040001', 2017, '0049835844', '171807020', 'Nuramalasari', 'Laki-Laki', 'Garut', '2004-09-28', 'Islam', '', NULL, NULL, NULL, '0', '087656767687', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(131, 1, '3205210704090001', 2017, '0054805047', '171807021', 'Nyimas Rohmah Putriyani', 'Perempuan', 'Garut', '2005-06-09', 'Islam', '', NULL, NULL, NULL, '0', '087654324354', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(132, 1, '3205410703050002', 2018, '0056119430', '0056119430', 'Rafli Ikhwanus Sidik', 'Laki-Laki', 'Garut', '2005-03-07', 'Islam', '', NULL, NULL, NULL, '0', '087878765423', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(133, 1, '3205211512030001', 2016, '0039728107', '0039728107', 'Randi Sopiyandi', 'Laki-Laki', 'Garut', '2003-12-15', 'Islam', '', NULL, NULL, NULL, '0', '08976776766', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(134, 1, '3205215308060001', 2018, '0063304482', '0063304482', 'Resa Agustina', 'Perempuan', 'Garut', '2006-08-13', 'Islam', '', NULL, NULL, NULL, '0', '089876565456', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(135, 1, '3205210107060001', 2018, '0069706321', '0069706321', 'Resti Pujiyanti', 'Perempuan', 'Garut', '2006-07-01', 'Islam', '', NULL, NULL, NULL, '0', '0843234543445', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(136, 1, '3205174405050004', 2017, '0057442719', '0057442719', 'Resty Melyani Setiawan', 'Perempuan', 'Garut', '2005-05-04', 'Islam', '', NULL, NULL, NULL, '0', '084321324231', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(137, 1, '3204320104055535', 2018, '0067366997', '0067366997', 'Reva Ramadhani Putri', 'Perempuan', 'Bandung', '2006-10-21', 'Islam', '', NULL, NULL, NULL, '0', '0984234372872', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(138, 1, '3205211101060005', 2018, '0065465770', '0065465770', 'Rian Robiana', 'Laki-Laki', 'Bandung', '2006-01-11', 'Islam', '', NULL, NULL, NULL, '0', '076876766554', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(139, 1, '3205214510050005', 2017, '0057242028', '0057242028', 'Rika Sapitri', 'Perempuan', 'Garut', '2005-10-05', 'Islam', '', NULL, NULL, NULL, '0', '0846453635', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(140, 1, '3205211107060002', 2018, '0061052767', '0061052767', 'Ripaldi', 'Laki-Laki', 'Garut', '2006-07-11', 'Islam', '', NULL, NULL, NULL, '0', '078764464534', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(141, 1, '3205210402070003', 2018, '0075845275', '0075845275', 'Rizal Laksana', 'Laki-Laki', 'Garut', '2007-01-07', 'Islam', '', NULL, NULL, NULL, '0', '0858575846746', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(142, 1, '3205210401060004', 2017, '3062177134', '3062177134', 'Robi', 'Laki-Laki', 'Garut', '2006-01-04', 'Islam', '', NULL, NULL, NULL, '0', '087363534253', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(143, 1, '3205213105040001', 2017, '3042706531', '171807025', 'Roby Fauzi', 'Laki-Laki', 'Garut', '2004-05-31', 'Islam', '', NULL, NULL, NULL, '0', '089765654352', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(144, 1, '3674020305040004', 2016, '0048975878', '161707013', 'Rofatan Nazwa', 'Laki-Laki', 'Bandung', '2004-05-03', 'Islam', '', NULL, NULL, NULL, '0', '08746347369', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(145, 1, '3175074904060001', 2018, '0066781848', '0066781848', 'Sabrina Audy Nafisa', 'Perempuan', 'Jakarta', '2006-04-09', 'Islam', '', NULL, NULL, NULL, '0', '078574647363', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(146, 1, '3205212309050004', 2017, '0053777460', '171807026', 'Sahril Hakim', 'Laki-Laki', 'Garut', '2005-09-23', 'Islam', '', NULL, NULL, NULL, '0', '0874646465373', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(147, 1, '3205216805060002', 2018, '0069893398', '0069893398', 'Salsa Nurul Azmi', 'Perempuan', 'Garut', '2006-05-28', 'Islam', '', NULL, NULL, NULL, '0', '084746353652', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(148, 1, '3205211403060004', 2018, '0064558407', '0064558407', 'Sandi Hermawan', 'Laki-Laki', 'Garut', '2006-03-14', 'Islam', '', NULL, NULL, NULL, '0', '087654323234', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(149, 1, '3205210702050001', 2018, '0066203694', '0066203694', 'Sandi Koswara', 'Laki-Laki', 'Garut', '2005-02-07', 'Islam', '', NULL, NULL, NULL, '0', '08787876545', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(150, 1, '3205210102070001', 2018, '0073971533', '0073971533', 'Sani Nur Rahmayanti', 'Perempuan', 'Garut', '2007-02-01', 'Islam', '', NULL, NULL, NULL, '0', '078764756454', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(151, 1, '1050156903065001', 2018, '0068751172', '0068751172', 'Saskia Alifa Nadhira', 'Perempuan', 'Bandung', '2006-03-29', 'Islam', '', NULL, NULL, NULL, '0', '087645363543', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(152, 1, '3204090810060010', 2018, '0065959989', '0065959989', 'Shaffa Fauzi Ramdhani', 'Laki-Laki', 'Bandung', '2006-10-08', 'Islam', '', NULL, NULL, NULL, '0', '08757484746', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(153, 1, '1007362003002698', 2017, '3054385036', '3054385036', 'Shaqi Saputra Ardani', 'Laki-Laki', 'Garut', '2005-02-10', 'Islam', '', NULL, NULL, NULL, '0', '087574646353', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(154, 1, '1050192612035001', 2016, '0037352648', '171808024', 'Fabian Haykal Bihar Ilmi', 'Laki-Laki', 'Karawang', '2003-12-26', 'Islam', '', NULL, NULL, NULL, '0', '084746463736', '', NULL, NULL, NULL, NULL, 'Aktif');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `program_studi`
+-- Table structure for table `program_studi`
 --
 
 CREATE TABLE `program_studi` (
@@ -91469,7 +91510,7 @@ CREATE TABLE `program_studi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `program_studi`
+-- Dumping data for table `program_studi`
 --
 
 INSERT INTO `program_studi` (`idProdi`, `idSekolah`, `nama_prodi`, `singkatan_prodi`, `jumlah_semester`) VALUES
@@ -91479,19 +91520,19 @@ INSERT INTO `program_studi` (`idProdi`, `idSekolah`, `nama_prodi`, `singkatan_pr
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `provinsi`
+-- Table structure for table `provinsi`
 --
 
 CREATE TABLE `provinsi` (
   `id_prov` char(2) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `nama` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
+  `nama_provinsi` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `provinsi`
+-- Dumping data for table `provinsi`
 --
 
-INSERT INTO `provinsi` (`id_prov`, `nama`) VALUES
+INSERT INTO `provinsi` (`id_prov`, `nama_provinsi`) VALUES
 ('11', 'Aceh'),
 ('12', 'Sumatera Utara'),
 ('13', 'Sumatera Barat'),
@@ -91530,7 +91571,7 @@ INSERT INTO `provinsi` (`id_prov`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sekolah`
+-- Table structure for table `sekolah`
 --
 
 CREATE TABLE `sekolah` (
@@ -91547,7 +91588,7 @@ CREATE TABLE `sekolah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `sekolah`
+-- Dumping data for table `sekolah`
 --
 
 INSERT INTO `sekolah` (`idSekolah`, `jenjang_sekolah`, `npsn`, `nama_sekolah`, `alamat_sekolah`, `desa_sekolah`, `kecamatan_sekolah`, `kabupaten_sekolah`, `provinsi_sekolah`, `logo_sekolah`) VALUES
@@ -91557,7 +91598,7 @@ INSERT INTO `sekolah` (`idSekolah`, `jenjang_sekolah`, `npsn`, `nama_sekolah`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `settings`
+-- Table structure for table `settings`
 --
 
 CREATE TABLE `settings` (
@@ -91570,7 +91611,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `settings`
+-- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`id_settings`, `judul`, `instansi`, `alamat`, `logo`, `versi`) VALUES
@@ -91579,7 +91620,7 @@ INSERT INTO `settings` (`id_settings`, `judul`, `instansi`, `alamat`, `logo`, `v
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tahun_ajaran`
+-- Table structure for table `tahun_ajaran`
 --
 
 CREATE TABLE `tahun_ajaran` (
@@ -91588,7 +91629,7 @@ CREATE TABLE `tahun_ajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tahun_ajaran`
+-- Dumping data for table `tahun_ajaran`
 --
 
 INSERT INTO `tahun_ajaran` (`idTahun_ajaran`, `nama_tahun_ajaran`) VALUES
@@ -91599,7 +91640,7 @@ INSERT INTO `tahun_ajaran` (`idTahun_ajaran`, `nama_tahun_ajaran`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tenaga_pendidik`
+-- Table structure for table `tenaga_pendidik`
 --
 
 CREATE TABLE `tenaga_pendidik` (
@@ -91622,7 +91663,7 @@ CREATE TABLE `tenaga_pendidik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tenaga_pendidik`
+-- Dumping data for table `tenaga_pendidik`
 --
 
 INSERT INTO `tenaga_pendidik` (`idTenpen`, `idSekolah`, `NIK_tenpen`, `nama_tenpen`, `jk_tenpen`, `tempat_lahir`, `tanggal_lahir`, `agama`, `alamat`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `no_telp_tenpen`, `email_tenpen`, `foto_tenpen`) VALUES
@@ -91645,7 +91686,7 @@ INSERT INTO `tenaga_pendidik` (`idTenpen`, `idSekolah`, `NIK_tenpen`, `nama_tenp
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -91669,18 +91710,18 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1555619530, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
-(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1557525559, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314'),
+(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1558277900, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314'),
 (3, '::1', 'fajard', '$2y$08$iSx0LPd0We2xIwBtXj1qNuccFL/pcxmyVns7x5PpDch/zi4ju6N12', NULL, 'fajar0maulana@gmail.com', NULL, NULL, NULL, NULL, 1557525781, 1557711883, 1, 'Fajar ', 'Maulana', NULL, '081295794067');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users_groups`
+-- Table structure for table `users_groups`
 --
 
 CREATE TABLE `users_groups` (
@@ -91690,7 +91731,7 @@ CREATE TABLE `users_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `users_groups`
+-- Dumping data for table `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
@@ -91701,8 +91742,8 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `view_header_menu`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `view_header_menu`
+-- (See below for the actual view)
 --
 CREATE TABLE `view_header_menu` (
 `id_groups` int(11)
@@ -91714,8 +91755,8 @@ CREATE TABLE `view_header_menu` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `view_menu`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `view_menu`
+-- (See below for the actual view)
 --
 CREATE TABLE `view_menu` (
 `id_groups` int(11)
@@ -91733,58 +91774,58 @@ CREATE TABLE `view_menu` (
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `view_header_menu`
+-- Structure for view `view_header_menu`
 --
 DROP TABLE IF EXISTS `view_header_menu`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_header_menu`  AS  select `gh`.`id_groups` AS `id_groups`,`hm`.`id_header_menu` AS `id_header_menu`,`hm`.`header` AS `header`,`hm`.`sort` AS `sort` from (`groups_header` `gh` join `header_menu` `hm` on((`gh`.`id_header_menu` = `hm`.`id_header_menu`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`smkikaka`@`localhost` SQL SECURITY DEFINER VIEW `view_header_menu`  AS  select `gh`.`id_groups` AS `id_groups`,`hm`.`id_header_menu` AS `id_header_menu`,`hm`.`header` AS `header`,`hm`.`sort` AS `sort` from (`groups_header` `gh` join `header_menu` `hm` on((`gh`.`id_header_menu` = `hm`.`id_header_menu`))) ;
 
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `view_menu`
+-- Structure for view `view_menu`
 --
 DROP TABLE IF EXISTS `view_menu`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_menu`  AS  select `gm`.`id_groups` AS `id_groups`,`m`.`id_menu` AS `id_menu`,`m`.`sort` AS `sort`,`m`.`id_header_menu` AS `id_header_menu`,`m`.`label` AS `label`,`m`.`icon` AS `icon`,`m`.`url` AS `url`,`m`.`menu_id` AS `menu_id`,`m`.`level_one` AS `level_one`,`m`.`level_two` AS `level_two` from (`groups_menu` `gm` join `menu` `m` on((`gm`.`id_menu` = `m`.`id_menu`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`smkikaka`@`localhost` SQL SECURITY DEFINER VIEW `view_menu`  AS  select `gm`.`id_groups` AS `id_groups`,`m`.`id_menu` AS `id_menu`,`m`.`sort` AS `sort`,`m`.`id_header_menu` AS `id_header_menu`,`m`.`label` AS `label`,`m`.`icon` AS `icon`,`m`.`url` AS `url`,`m`.`menu_id` AS `menu_id`,`m`.`level_one` AS `level_one`,`m`.`level_two` AS `level_two` from (`groups_menu` `gm` join `menu` `m` on((`gm`.`id_menu` = `m`.`id_menu`))) ;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `alamat_desa`
+-- Indexes for table `alamat_desa`
 --
 ALTER TABLE `alamat_desa`
   ADD PRIMARY KEY (`idDesa`);
 
 --
--- Indeks untuk tabel `alamat_kabupaten`
+-- Indexes for table `alamat_kabupaten`
 --
 ALTER TABLE `alamat_kabupaten`
   ADD PRIMARY KEY (`idKabupaten`);
 
 --
--- Indeks untuk tabel `alamat_kecamatan`
+-- Indexes for table `alamat_kecamatan`
 --
 ALTER TABLE `alamat_kecamatan`
   ADD PRIMARY KEY (`idKecamatan`);
 
 --
--- Indeks untuk tabel `alamat_provinsi`
+-- Indexes for table `alamat_provinsi`
 --
 ALTER TABLE `alamat_provinsi`
   ADD PRIMARY KEY (`idProvinsi`);
 
 --
--- Indeks untuk tabel `deskripsi_nilai_prilaku`
+-- Indexes for table `deskripsi_nilai_prilaku`
 --
 ALTER TABLE `deskripsi_nilai_prilaku`
   ADD PRIMARY KEY (`idDeskripsi_nilai`),
   ADD KEY `nilai_deskripsi_2` (`nilai_deskripsi`);
 
 --
--- Indeks untuk tabel `detail_peserta_didik`
+-- Indexes for table `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   ADD PRIMARY KEY (`idDetail_pd`),
@@ -91792,7 +91833,7 @@ ALTER TABLE `detail_peserta_didik`
   ADD KEY `NIK_pd` (`NIK_pd`);
 
 --
--- Indeks untuk tabel `detail_tenaga_pendidik`
+-- Indexes for table `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
   ADD PRIMARY KEY (`idDetail_tenpen`),
@@ -91803,31 +91844,31 @@ ALTER TABLE `detail_tenaga_pendidik`
   ADD KEY `pekerjaan_pasangan` (`pekerjaan_pasangan`);
 
 --
--- Indeks untuk tabel `ekstrakulikuler`
+-- Indexes for table `ekstrakulikuler`
 --
 ALTER TABLE `ekstrakulikuler`
   ADD PRIMARY KEY (`idEkstrakulikuler`);
 
 --
--- Indeks untuk tabel `groups`
+-- Indexes for table `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `header_menu`
+-- Indexes for table `header_menu`
 --
 ALTER TABLE `header_menu`
   ADD PRIMARY KEY (`id_header_menu`);
 
 --
--- Indeks untuk tabel `jabatan`
+-- Indexes for table `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`idJabatan`);
 
 --
--- Indeks untuk tabel `jabatan_tenpen`
+-- Indexes for table `jabatan_tenpen`
 --
 ALTER TABLE `jabatan_tenpen`
   ADD PRIMARY KEY (`idJabatan_tenpen`),
@@ -91835,19 +91876,19 @@ ALTER TABLE `jabatan_tenpen`
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indeks untuk tabel `kabupaten`
+-- Indexes for table `kabupaten`
 --
 ALTER TABLE `kabupaten`
   ADD PRIMARY KEY (`id_kab`);
 
 --
--- Indeks untuk tabel `kecamatan`
+-- Indexes for table `kecamatan`
 --
 ALTER TABLE `kecamatan`
   ADD PRIMARY KEY (`id_kec`);
 
 --
--- Indeks untuk tabel `kelas`
+-- Indexes for table `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`idKelas`),
@@ -91856,19 +91897,19 @@ ALTER TABLE `kelas`
   ADD KEY `idKurikulum` (`idKurikulum`);
 
 --
--- Indeks untuk tabel `kelompok_mapel`
+-- Indexes for table `kelompok_mapel`
 --
 ALTER TABLE `kelompok_mapel`
   ADD PRIMARY KEY (`idKelompok_mapel`);
 
 --
--- Indeks untuk tabel `kelurahan`
+-- Indexes for table `kelurahan`
 --
 ALTER TABLE `kelurahan`
   ADD PRIMARY KEY (`id_kel`);
 
 --
--- Indeks untuk tabel `kurikulum`
+-- Indexes for table `kurikulum`
 --
 ALTER TABLE `kurikulum`
   ADD PRIMARY KEY (`idKurikulum`),
@@ -91876,7 +91917,7 @@ ALTER TABLE `kurikulum`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `leger`
+-- Indexes for table `leger`
 --
 ALTER TABLE `leger`
   ADD PRIMARY KEY (`idLeger`),
@@ -91885,14 +91926,14 @@ ALTER TABLE `leger`
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indeks untuk tabel `leger_ekskul`
+-- Indexes for table `leger_ekskul`
 --
 ALTER TABLE `leger_ekskul`
   ADD PRIMARY KEY (`idLeger_ekskul`),
   ADD KEY `idMaster_leger` (`idMaster_leger`);
 
 --
--- Indeks untuk tabel `leger_nilai`
+-- Indexes for table `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
   ADD PRIMARY KEY (`idLeger_nilai`),
@@ -91903,7 +91944,7 @@ ALTER TABLE `leger_nilai`
   ADD KEY `nilai_spritual` (`nilai_spritual`);
 
 --
--- Indeks untuk tabel `leger_nilai_ekskul`
+-- Indexes for table `leger_nilai_ekskul`
 --
 ALTER TABLE `leger_nilai_ekskul`
   ADD PRIMARY KEY (`idLeger_nilai_ekskul`),
@@ -91911,20 +91952,20 @@ ALTER TABLE `leger_nilai_ekskul`
   ADD KEY `idLeger_ekskul` (`idLeger_ekskul`);
 
 --
--- Indeks untuk tabel `login_attempts`
+-- Indexes for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `master_leger`
+-- Indexes for table `master_leger`
 --
 ALTER TABLE `master_leger`
   ADD PRIMARY KEY (`idMaster_leger`),
   ADD KEY `idKelas` (`idKelas`);
 
 --
--- Indeks untuk tabel `mata_pelajaran`
+-- Indexes for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
   ADD PRIMARY KEY (`idMata_pelajaran`),
@@ -91932,13 +91973,13 @@ ALTER TABLE `mata_pelajaran`
   ADD KEY `idKelompok_mapel` (`idKelompok_mapel`);
 
 --
--- Indeks untuk tabel `menu`
+-- Indexes for table `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id_menu`);
 
 --
--- Indeks untuk tabel `ortu_peserta_didik`
+-- Indexes for table `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   ADD PRIMARY KEY (`idOrtu_pd`),
@@ -91948,14 +91989,14 @@ ALTER TABLE `ortu_peserta_didik`
   ADD KEY `NIK_pd` (`NIK_pd`);
 
 --
--- Indeks untuk tabel `ortu_tenaga_pendidik`
+-- Indexes for table `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   ADD PRIMARY KEY (`idOrtu_tenpen`),
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indeks untuk tabel `peserta_didik`
+-- Indexes for table `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
   ADD PRIMARY KEY (`idPd`),
@@ -91966,38 +92007,38 @@ ALTER TABLE `peserta_didik`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `program_studi`
+-- Indexes for table `program_studi`
 --
 ALTER TABLE `program_studi`
   ADD PRIMARY KEY (`idProdi`),
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `provinsi`
+-- Indexes for table `provinsi`
 --
 ALTER TABLE `provinsi`
   ADD PRIMARY KEY (`id_prov`);
 
 --
--- Indeks untuk tabel `sekolah`
+-- Indexes for table `sekolah`
 --
 ALTER TABLE `sekolah`
   ADD PRIMARY KEY (`idSekolah`);
 
 --
--- Indeks untuk tabel `settings`
+-- Indexes for table `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id_settings`);
 
 --
--- Indeks untuk tabel `tahun_ajaran`
+-- Indexes for table `tahun_ajaran`
 --
 ALTER TABLE `tahun_ajaran`
   ADD PRIMARY KEY (`idTahun_ajaran`);
 
 --
--- Indeks untuk tabel `tenaga_pendidik`
+-- Indexes for table `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
   ADD PRIMARY KEY (`idTenpen`),
@@ -92005,13 +92046,13 @@ ALTER TABLE `tenaga_pendidik`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `users_groups`
+-- Indexes for table `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD PRIMARY KEY (`id`),
@@ -92020,233 +92061,233 @@ ALTER TABLE `users_groups`
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_desa`
+-- AUTO_INCREMENT for table `alamat_desa`
 --
 ALTER TABLE `alamat_desa`
   MODIFY `idDesa` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_kabupaten`
+-- AUTO_INCREMENT for table `alamat_kabupaten`
 --
 ALTER TABLE `alamat_kabupaten`
   MODIFY `idKabupaten` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_kecamatan`
+-- AUTO_INCREMENT for table `alamat_kecamatan`
 --
 ALTER TABLE `alamat_kecamatan`
   MODIFY `idKecamatan` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_provinsi`
+-- AUTO_INCREMENT for table `alamat_provinsi`
 --
 ALTER TABLE `alamat_provinsi`
   MODIFY `idProvinsi` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `deskripsi_nilai_prilaku`
+-- AUTO_INCREMENT for table `deskripsi_nilai_prilaku`
 --
 ALTER TABLE `deskripsi_nilai_prilaku`
   MODIFY `idDeskripsi_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `detail_peserta_didik`
+-- AUTO_INCREMENT for table `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   MODIFY `idDetail_pd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
--- AUTO_INCREMENT untuk tabel `detail_tenaga_pendidik`
+-- AUTO_INCREMENT for table `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
   MODIFY `idDetail_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT untuk tabel `ekstrakulikuler`
+-- AUTO_INCREMENT for table `ekstrakulikuler`
 --
 ALTER TABLE `ekstrakulikuler`
   MODIFY `idEkstrakulikuler` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `groups`
+-- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `header_menu`
+-- AUTO_INCREMENT for table `header_menu`
 --
 ALTER TABLE `header_menu`
   MODIFY `id_header_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `jabatan`
+-- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
   MODIFY `idJabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `jabatan_tenpen`
+-- AUTO_INCREMENT for table `jabatan_tenpen`
 --
 ALTER TABLE `jabatan_tenpen`
   MODIFY `idJabatan_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT untuk tabel `kelas`
+-- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `idKelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `kelompok_mapel`
+-- AUTO_INCREMENT for table `kelompok_mapel`
 --
 ALTER TABLE `kelompok_mapel`
-  MODIFY `idKelompok_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idKelompok_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `kurikulum`
+-- AUTO_INCREMENT for table `kurikulum`
 --
 ALTER TABLE `kurikulum`
   MODIFY `idKurikulum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `leger`
+-- AUTO_INCREMENT for table `leger`
 --
 ALTER TABLE `leger`
-  MODIFY `idLeger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `idLeger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT untuk tabel `leger_ekskul`
+-- AUTO_INCREMENT for table `leger_ekskul`
 --
 ALTER TABLE `leger_ekskul`
   MODIFY `idLeger_ekskul` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `leger_nilai`
+-- AUTO_INCREMENT for table `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
-  MODIFY `idLeger_nilai` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=354;
+  MODIFY `idLeger_nilai` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=392;
 
 --
--- AUTO_INCREMENT untuk tabel `leger_nilai_ekskul`
+-- AUTO_INCREMENT for table `leger_nilai_ekskul`
 --
 ALTER TABLE `leger_nilai_ekskul`
   MODIFY `idLeger_nilai_ekskul` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT untuk tabel `login_attempts`
+-- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `master_leger`
+-- AUTO_INCREMENT for table `master_leger`
 --
 ALTER TABLE `master_leger`
   MODIFY `idMaster_leger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `mata_pelajaran`
+-- AUTO_INCREMENT for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
-  MODIFY `idMata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idMata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `menu`
+-- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
--- AUTO_INCREMENT untuk tabel `ortu_peserta_didik`
+-- AUTO_INCREMENT for table `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   MODIFY `idOrtu_pd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
--- AUTO_INCREMENT untuk tabel `ortu_tenaga_pendidik`
+-- AUTO_INCREMENT for table `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   MODIFY `idOrtu_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT untuk tabel `peserta_didik`
+-- AUTO_INCREMENT for table `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
   MODIFY `idPd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 
 --
--- AUTO_INCREMENT untuk tabel `program_studi`
+-- AUTO_INCREMENT for table `program_studi`
 --
 ALTER TABLE `program_studi`
   MODIFY `idProdi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `sekolah`
+-- AUTO_INCREMENT for table `sekolah`
 --
 ALTER TABLE `sekolah`
   MODIFY `idSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `settings`
+-- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id_settings` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tahun_ajaran`
+-- AUTO_INCREMENT for table `tahun_ajaran`
 --
 ALTER TABLE `tahun_ajaran`
   MODIFY `idTahun_ajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tenaga_pendidik`
+-- AUTO_INCREMENT for table `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
   MODIFY `idTenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `users_groups`
+-- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `detail_peserta_didik`
+-- Constraints for table `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   ADD CONSTRAINT `detail_peserta_didik_ibfk_4` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `detail_peserta_didik_ibfk_5` FOREIGN KEY (`NIK_pd`) REFERENCES `peserta_didik` (`NIK_pd`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `detail_tenaga_pendidik`
+-- Constraints for table `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
   ADD CONSTRAINT `detail_tenaga_pendidik_ibfk_2` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `jabatan_tenpen`
+-- Constraints for table `jabatan_tenpen`
 --
 ALTER TABLE `jabatan_tenpen`
   ADD CONSTRAINT `jabatan_tenpen_ibfk_1` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `jabatan_tenpen_ibfk_2` FOREIGN KEY (`idJabatan`) REFERENCES `jabatan` (`idJabatan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kelas`
+-- Constraints for table `kelas`
 --
 ALTER TABLE `kelas`
   ADD CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`idProdi`) REFERENCES `program_studi` (`idProdi`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -92254,13 +92295,13 @@ ALTER TABLE `kelas`
   ADD CONSTRAINT `kelas_ibfk_3` FOREIGN KEY (`idKurikulum`) REFERENCES `kurikulum` (`idKurikulum`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kurikulum`
+-- Constraints for table `kurikulum`
 --
 ALTER TABLE `kurikulum`
   ADD CONSTRAINT `kurikulum_ibfk_3` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `leger`
+-- Constraints for table `leger`
 --
 ALTER TABLE `leger`
   ADD CONSTRAINT `leger_ibfk_1` FOREIGN KEY (`idMaster_leger`) REFERENCES `master_leger` (`idMaster_leger`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -92268,13 +92309,13 @@ ALTER TABLE `leger`
   ADD CONSTRAINT `leger_ibfk_4` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `leger_ekskul`
+-- Constraints for table `leger_ekskul`
 --
 ALTER TABLE `leger_ekskul`
   ADD CONSTRAINT `leger_ekskul_ibfk_1` FOREIGN KEY (`idMaster_leger`) REFERENCES `master_leger` (`idMaster_leger`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `leger_nilai`
+-- Constraints for table `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
   ADD CONSTRAINT `leger_nilai_ibfk_1` FOREIGN KEY (`idLeger`) REFERENCES `leger` (`idLeger`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -92284,56 +92325,56 @@ ALTER TABLE `leger_nilai`
   ADD CONSTRAINT `leger_nilai_ibfk_5` FOREIGN KEY (`nilai_spritual`) REFERENCES `deskripsi_nilai_prilaku` (`nilai_deskripsi`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `leger_nilai_ekskul`
+-- Constraints for table `leger_nilai_ekskul`
 --
 ALTER TABLE `leger_nilai_ekskul`
   ADD CONSTRAINT `leger_nilai_ekskul_ibfk_1` FOREIGN KEY (`idLeger_ekskul`) REFERENCES `leger_ekskul` (`idLeger_ekskul`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `master_leger`
+-- Constraints for table `master_leger`
 --
 ALTER TABLE `master_leger`
   ADD CONSTRAINT `master_leger_ibfk_2` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `mata_pelajaran`
+-- Constraints for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
   ADD CONSTRAINT `mata_pelajaran_ibfk_1` FOREIGN KEY (`idKurikulum`) REFERENCES `kurikulum` (`idKurikulum`) ON UPDATE CASCADE,
   ADD CONSTRAINT `mata_pelajaran_ibfk_2` FOREIGN KEY (`idKelompok_mapel`) REFERENCES `kelompok_mapel` (`idKelompok_mapel`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `ortu_peserta_didik`
+-- Constraints for table `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   ADD CONSTRAINT `ortu_peserta_didik_ibfk_1` FOREIGN KEY (`NIK_pd`) REFERENCES `peserta_didik` (`NIK_pd`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `ortu_tenaga_pendidik`
+-- Constraints for table `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   ADD CONSTRAINT `ortu_tenaga_pendidik_ibfk_1` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `peserta_didik`
+-- Constraints for table `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
   ADD CONSTRAINT `peserta_didik_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `program_studi`
+-- Constraints for table `program_studi`
 --
 ALTER TABLE `program_studi`
   ADD CONSTRAINT `program_studi_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `tenaga_pendidik`
+-- Constraints for table `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
   ADD CONSTRAINT `tenaga_pendidik_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `users_groups`
+-- Constraints for table `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,

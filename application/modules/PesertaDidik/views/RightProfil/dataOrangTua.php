@@ -134,6 +134,11 @@
         url : '<?= base_url('PesertaDidik/Profil/editOrangTua') ?>',
         ajaxOptions: {
 		    type: 'POST',
+		},
+		validate: function(value){
+		  	if($.trim(value) == ''){
+		   	 	return 'This field is required';
+		   	}
 		}
     });
     $('.namaAyah').editable({
@@ -242,6 +247,11 @@
         url : '<?= base_url('PesertaDidik/Profil/editOrangTua') ?>',
         ajaxOptions: {
 		    type: 'POST',
+		},
+		validate: function(value){
+		  	if($.trim(value) == ''){
+		   	 	return 'This field is required';
+		   	}
 		}
     });
     $('.namaIbu').editable({
