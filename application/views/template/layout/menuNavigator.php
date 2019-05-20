@@ -1,5 +1,6 @@
+
 <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
-     <li class="m-menu__item m-menu__item--rel " m-menu-submenu-toggle="click" aria-haspopup="true">
+     <li class="m-menu__item m-menu__item--rel navigation" m-menu-submenu-toggle="click" aria-haspopup="true">
         <a href="<?= base_url(); ?>" class="m-menu__link ">
             <i class="m-menu__link-icon fa fa-home"></i>
             <span class="m-menu__item-here"></span>
@@ -56,7 +57,7 @@
                                                                 <ul class="m-menu__subnav treeview-menu">
                                                                 <?php foreach ($menu_lvlTwo->result() as $lvlTwo): ?>
                                                                     <?php if ($lvlOne->id_menu == $lvlTwo->level_two): ?>
-                                                                        <li class="m-menu__item" m-menu-link-redirect="1" aria-haspopup="true"
+                                                                        <li class="m-menu__item navigation" m-menu-link-redirect="1" aria-haspopup="true"
                                                                             id="<?= $lvlTwo->menu_id ?>">
                                                                             <a href="<?= site_url($lvlTwo->url) ?>" class="m-menu__link">
                                                                             <i class="m-menu__link-icon flaticon-<?= $lvlTwo->icon ?>">
@@ -72,7 +73,7 @@
                                                             </div>
                                                         </li>
                                                     <?php }else{ ?>
-                                                        <li id="<?php echo $lvlOne->menu_id ?>" class="m-menu__item" 
+                                                        <li id="<?php echo $lvlOne->menu_id ?>" class="m-menu__item navigation" 
                                                             m-menu-link-redirect="1" aria-haspopup="true">
                                                             <a href="<?php echo site_url($lvlOne->url) ?>" 
                                                                 class="m-menu__link" class="name">
@@ -90,7 +91,7 @@
                                     </div>
                                 </li>
                             <?php }else{ ?>
-                                <li class="m-menu__item" id="<?= $menu_item->menu_id ?>" >
+                                <li class="m-menu__item navigation" id="<?= $menu_item->menu_id ?>" >
                                     <a href="<?= site_url($menu_item->url) ?>" class="m-menu__link name" 
                                         title="<?= $menu_item->label ?>">
                                         <i class="m-menu__link-icon flaticon-<?= $menu_item->icon ?>"></i>

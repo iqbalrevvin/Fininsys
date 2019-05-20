@@ -10,14 +10,15 @@
 
         <!-- begin::Body -->
         <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+            
             <!-- BEGIN: Left Aside -->
             
             <!--LEFT SIDE-->
             <?php require('leftSide.php') ?>
                 <!-- END: Left Aside -->
-                <div class="m-grid__item m-grid__item--fluid m-wrapper"> 
+                <div class="m-grid__item m-grid__item--fluid m-wrapper" >   
                     <!-- BEGIN: Subheader -->
-                    <div class="m-subheader ">
+                    <div class="m-subheader" id="loadPage">
                         <div class="d-flex align-items-center">
                             <div class="mr-auto">
                             <?php if (!isset($crumb)){ ?>
