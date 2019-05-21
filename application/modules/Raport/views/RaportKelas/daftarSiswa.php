@@ -112,9 +112,11 @@
     	<?php foreach ($dataSiswa as $list): ?>
 	    	<?php $idKelas 				= $list->idKelas; ?>
 	    	<?php $angkatan 			= $list->tahun_angkatan; ?>
+            <?php $raportModel          = $this->Raport_m; ?>
 	    	<?php $countMapel 			= $this->Raport_m->countMapel($idMasterLeger, $list->NIK_pd); ?>
 	    	<?php $jmlNilaiPengetahuan 	= $this->Raport_m->sumNilaiPengetahuan($idMasterLeger, $list->NIK_pd); ?>
 	    	<?php $jmlNilaiKeterampilan = $this->Raport_m->sumNilaiKeterampilan($idMasterLeger, $list->NIK_pd); ?>
+            <?php $nilaiPrilaku         = $this->Raport_m->nilaiPrilaku($idMasterLeger, $list->NIK_pd); ?>
 	    	<?php $nilaiAkhir 			= $jmlNilaiPengetahuan->nilai_pengetahuan+$jmlNilaiKeterampilan->nilai_keterampilan; ?>
 	    	<?php #$valueArray 			= "'1530,1531,1624,654,'"; ?>
 	    	<?php $valueArray 			= implode(',',$nilaiKelas); ?>
@@ -131,7 +133,9 @@
                 <td>
                 	<?php $rank = $this->Raport_m->rankSystem($nilaiAkhir, "'$valueArray'");  ?>
 					<b class="m--font-focus"><?= $rank->rank ?></b>
-                </td>               
+                    <?= $valueArray ?>
+                </td>    
+           
                 <td align="left" class="m-datatable__cell">
                     <div class="m-section__content">
 						<div class="m-dropdown m-dropdown--inline m-dropdown--small m-dropdown--arrow m-dropdown--align-left" 

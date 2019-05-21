@@ -131,7 +131,6 @@ class LegerNilai_m extends CI_Model {
 		$this->db->where('peserta_didik.tahun_angkatan', $angkatan);
 		$this->db->where('detail_peserta_didik.idKelas', $idKelas);
 		$this->db->where('peserta_didik.status_pd', 'Aktif');
-
 		$query 		= $this->db->get();
 		$execute 	= $query->result();
 		return $execute;

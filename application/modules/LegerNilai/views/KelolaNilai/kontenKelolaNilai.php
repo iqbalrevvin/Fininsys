@@ -30,7 +30,7 @@
                     <div class="m-portlet__head-caption">
                         <div class="m-portlet__head-title">
                             <h3 class="m-portlet__head-text">
-                                Daftar Siswa Angkatan <?= $angkatan ?>
+                                Daftar Siswa Kelas <?= $kelas->nama_kelas ?> Angkatan <?= $angkatan ?>
                             </h3>
                         </div>
                     </div>

@@ -20,10 +20,6 @@
     </div>
 </div>
 
-
-
-
-
 <div id="preloader" class="m-page--loading-enabled m-page--loading">
     <div class="m-page-loader m-page-loader--base">
         <div class="m-blockui">
@@ -70,7 +66,7 @@
 						<?php endforeach ?>
 					</select>
 				</div>
-				<div class="row col-md-2 col-1 pilihSemester">
+				<div class="row col-md-2 col-1">
                 	<b>Titimangsa</b> : &nbsp;
                    <input type="date" class="form-control m-input m-input--air" id="titimangsaRaport" name="titimangsaRaport">
 				</div>
@@ -196,7 +192,7 @@
 	$(document).on('click', '#btnTampilSiswa', function(e) {
 		if($('#pilihSekolah').val()=="" || $('#pilihKelas').val()=="" || $('#pilihAngkatan').val()=="" 
 			|| $('#pilihSemester').val()=="" || $('#titimangsaRaport').val()==""){
-			toastr.error("Lengkapi Parameter Sekolah, Kelas, Angkatan & Semester", "Gagal Memproses");
+			toastr.error("Lengkapi Parameter Sekolah, Kelas, Angkatan, Semester & Titimangsa", "Gagal Memproses");
 		}else{
 			mApp.block(".portletTampil", {
 	          overlayColor: "#000000",

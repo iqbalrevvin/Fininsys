@@ -161,7 +161,7 @@
 */
 // FUNGSI REFRESH
 $(".navigation").click(function(){
-  $("#loadPage").html('<div class="m-spinner m-spinner--brand m-spinner--sm"></div><div class="m-spinner m-spinner--primary m-spinner--sm"></div><div class="m-spinner m-spinner--success m-spinner--sm"></div><div class="m-spinner m-spinner--info m-spinner--sm"></div><div class="m-spinner m-spinner--warning m-spinner--sm"></div><div class="m-spinner m-spinner--danger m-spinner--sm"></div>');
+  $("#loadPage").html('<div class="m-spinner m-spinner--brand m-spinner--sm"></div><div class="m-spinner m-spinner--primary m-spinner--sm"></div><div class="m-spinner m-spinner--success m-spinner--sm"></div><div class="m-spinner m-spinner--info m-spinner--sm"></div><div class="m-spinner m-spinner--warning m-spinner--sm"></div><div class="m-spinner m-spinner--danger m-spinner--sm"></div> ');
 });
 /*$('a[href$="!#"]').click(function(){
   alert('Sign new href executed.'); 

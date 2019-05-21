@@ -45,7 +45,7 @@
 					                    </a>
 					                    <button class="btnHapusMapel btn btn-sm btn-danger m-btn m-btn--pill m-btn--air" 
 					                    	data-ekskul="<?= $data->ekstrakulikuler ?>" data-id="<?= $data->idLeger_ekskul ?>">
-					                        <b>Hapus Mapel</b>
+					                        <b>Hapus Ekskul</b>
 					                    </button>
 			                        </span>
 			                    </div>

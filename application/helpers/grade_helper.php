@@ -1,10 +1,14 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 function grade($tglMasuk, $jmlSmst){
   date_default_timezone_set('Asia/Jakarta');
 	$date 		= date("Y-m-d");
-	$tglMasuk 	= $tglMasuk."-06-20";
-	$timeStart 	= strtotime($tglMasuk);
-    $timeEnd 	= strtotime("$date");
+  if($tglMasuk == NULL){
+    $grade = '...';
+  }else{
+    $tglMasuk   = $tglMasuk."-06-20";
+    $timeStart  = strtotime($tglMasuk);
+    $timeEnd  = strtotime("$date");
     // Menambah bulan ini + semua bulan pada tahun sebelumnya
     $numBulan = 1 + (date("Y",$timeEnd)-date("Y",$timeStart))*12;
     // menghitung selisih bulan
@@ -99,4 +103,6 @@ function grade($tglMasuk, $jmlSmst){
         $grade = "A-".$angkatan."";
     }
     return $grade;
+  }
+	
 }

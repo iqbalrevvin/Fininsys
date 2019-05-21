@@ -10,6 +10,7 @@ class LegerNilai extends CI_Controller {
 		$this->load->model('LegerNilai_m');
 		$this->load->model('TenagaPendidik/TenagaPendidik_m');
 		$this->load->model('DataTableSiswa_m');
+		$this->load->model('GetData_m');
 	}
 	public function index(){
 		$crud = new grocery_CRUD();
@@ -170,6 +171,7 @@ class LegerNilai extends CI_Controller {
 		$angkatan 	= $this->input->post('angkatan');
 		$listSiswa 	= $this->LegerNilai_m->getlistPD($idKelas, $angkatan);
 		$listNilai  = $this->LegerNilai_m->getListNilaiPD($idLeger);
+		$kelas  	= $this->GetData_m->getDataKelas($idKelas); 
 		/*foreach ($listSiswa as $pd) {
 			$NIK = $pd->NIK_pd;
 			$nilai = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
@@ -180,12 +182,13 @@ class LegerNilai extends CI_Controller {
 			}
 		}*/
 		#$data['nilai'] = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
-		$data['angkatan'] = $angkatan;
+		$data['angkatan'] 	= $angkatan;
+		$data['kelas'] 		= $kelas; 
 		$data['idKelas'] 	= $idKelas;
-		$data['listSiswa'] = $listSiswa;
-		$data['listNilai'] = $listNilai;
-		$data['namaMapel'] = $namaMapel;
-		$data['idLeger'] = $idLeger;
+		$data['listSiswa'] 	= $listSiswa;
+		$data['listNilai'] 	= $listNilai;
+		$data['namaMapel'] 	= $namaMapel;
+		$data['idLeger'] 	= $idLeger;
 
 		$this->load->view('KelolaNilai/kontenKelolaNilai', $data, FALSE);
 	}

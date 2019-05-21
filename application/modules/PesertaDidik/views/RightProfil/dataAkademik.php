@@ -5,7 +5,17 @@
 					<h3 class="m-form__section">Data Akademik</h3>
 				</div>
 			</div>
-
+			<div class="col-xs-12 col-sm-6 col-lg-4 ">
+            	<label><b>Tahun Angkatan</b></label> : 
+            	<?php $tahunIni = date('Y') ?>
+            	<?php $tahunMulai = $tahunIni-10; ?>
+                <select class="form-control col-lg-6 " name="tahunAngkatan" id="tahunAngkatan">
+                	<option value="">Tahun Angkatan</option>
+                		<?php for ($i = $tahunMulai; $i <= $tahunIni; $i+=1): ?>
+                			<option <?= $i == $profil->tahun_angkatan ? 'selected="selected"' : '' ?> value="<?= $i ?>"><?= $i ?></option>
+                		<?php endfor; ?>
+				</select>
+			</div>
 			<div class="col-xs-12 col-sm-6 col-lg-6 m-select2 m-select2--air">
             	<label><b>Kelas & Program Studi</b></label> : 
                 <select class="form-control select2" name="idKelas" id="idKelas">	

@@ -96,6 +96,23 @@ class Raport_m extends CI_Model {
  		return $execute;
  	}
 
+ 	public function nilaiPrilaku($idMasterLeger, $NIK_pd){
+ 		$this->db->select('nilai_sikap, nilai_sosial');
+ 		$this->db->from('leger_nilai');
+ 		$this->db->join('leger', 'leger.idLeger = leger_nilai.idLeger', 'left');
+ 		$this->db->where('leger.idMaster_leger', $idMasterLeger);
+ 		$this->db->where('leger_nilai.NIK_pd', $NIK_pd);
+ 		$query 		= $this->db->get();
+ 		$execute 	= $query->row();
+ 		return $execute;
+ 	}
+
+ 	public function deskripsiNilaiPrilaku($nilai, $jenisNilai){
+ 		$query = $this->db->get_where('deskripsi_nilai_prilaku', ['nilai_deskripsi' => $nilai, 'jenis_nilai_deskripsi' => $jenisNilai]);
+ 		$execute = $query->row();
+ 		return $execute;
+ 	}
+
 
 }
 
