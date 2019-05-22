@@ -116,8 +116,12 @@ class LegerNilai extends CI_Controller {
 	}
 
 	public function getKontenMapel(){
-		$idMasterLeger = $this->input->post('id');
-		$data['listMapel'] = $this->LegerNilai_m->getKontenMapel($idMasterLeger);
+		$idMasterLeger 		= $this->input->post('id');
+		$getMapel 			= $this->LegerNilai_m->getMapel();
+		$getTenpen 			= $this->LegerNilai_m->getTenpen();
+		$data['listMapel'] 	= $this->LegerNilai_m->getKontenMapel($idMasterLeger);
+		$data['mapel'] 		= $getMapel;
+		$data['tenpen'] 	= $getTenpen;
 		$this->load->view('KelolaNilai/kontenKelolaMapel', $data, FALSE);
 	}
 
@@ -150,6 +154,34 @@ class LegerNilai extends CI_Controller {
 			    	'pesan' 	=> 'Data Mapel Yang Ditambahkan Sudah Tersedia' 
 				];
 			}
+		}else{
+			$callback = [
+			    'status' 	=> 'gagal',
+			    'pesan' 	=> validation_errors() 
+			];
+		}
+		echo json_encode($callback);
+	}
+
+	public function editMapelNilai(){
+		$validate = $this->form_validation;
+		$validate->set_rules('editKKMPengetahuan', 'Nilai KKM Pengetahun', 'max_length[2]|numeric');
+		$validate->set_rules('editKKMKeterampilan', 'Nilai KKM Keterampilan', 'max_length[2]|numeric');
+		if ($validate->run() == TRUE) {
+			$i = $this->input;
+			$idLeger = $this->input->post('idLeger');
+			$data = [
+			    //'idLeger' 			=> $i->post('id'),
+			    'NIK_tenpen' 		=> $i->post('tenpen'),
+			    'kkm_pengetahuan' 	=> $i->post('KKMPengetahuan'),
+			    'kkm_keterampilan' 	=> $i->post('KKMKeterampilan'),
+			    'no_urut_mapel' 	=> $i->post('noUrut')
+			];
+			$this->LegerNilai_m->editMapelLeger($idLeger, $data);
+			$callback = [
+			    'status' 	=> 'sukses',
+			    'pesan' 	=> 'Data Mata Pelajaran Berhasil Diperbarui' 
+			];
 		}else{
 			$callback = [
 			    'status' 	=> 'gagal',

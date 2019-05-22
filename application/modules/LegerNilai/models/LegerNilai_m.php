@@ -105,6 +105,10 @@ class LegerNilai_m extends CI_Model {
 		$this->db->insert('leger', $data);
 	}
 	
+	public function editMapelLeger($idLeger, $data){
+		$this->db->where('idLeger', $idLeger);
+		$this->db->update('leger', $data);
+	}
 
 	public function getKontenMapel($idMasterLeger){
 		$this->db->select('*');

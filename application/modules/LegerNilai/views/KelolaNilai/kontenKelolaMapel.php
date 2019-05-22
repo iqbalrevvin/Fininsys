@@ -27,12 +27,14 @@
         <div class="m-widget3">
 	        <div class="m-scrollable" data-scrollable="true" style="height: 360px; overflow: auto;">
     			<?php foreach ($listMapel as $data): ?>
+    				<?php require('modalEditMapel.php') ?>
     				<div data-id="<?= $data->idLeger ?>" id="listMapel<?= $data->idLeger ?>">
 			        	<div class="m-widget3__item">
 			                <div class="m-widget3__header">
 			                    <div class="m-widget3__info">
 			                        <span class="m-widget3__username">
-			                            <b>(<?= $data->no_urut_mapel ?>)<?= $data->nama_mata_pelajaran ?></b> | <?= $data->nama_tenpen ?>
+			                            <b>(<?= $data->no_urut_mapel ?>) <?= $data->nama_mata_pelajaran ?></b><br>
+			                            Guru Mapel : <?= $data->nama_tenpen ?>
 			                        </span><br>
 			                        <span class="m-widget3__time">
 			                            KKM Pengetahuan : <?= $data->kkm_pengetahuan ?> | 
@@ -45,8 +47,14 @@
 					                    </a>
 					                    <button class="btnHapusMapel btn btn-sm btn-danger m-btn m-btn--pill m-btn--air" 
 					                    	data-mapel="<?= $data->nama_mata_pelajaran ?>" data-id="<?= $data->idLeger ?>">
-					                        <b>Hapus Mapel</b>
+					                        <i class="flaticon-delete"></i>
 					                    </button>
+					                    <a href="#" class="btn btn-sm btn-info m-btn m-btn--pill m-btn--air"
+											data-toggle="modal" data-target="#modalEditMapel<?= $data->idLeger ?>" 
+											data-backdrop="static" data-keyboard="true" title="Edit Mata Pelajaran" 
+											data-placement="top" data-skin="dark">
+											<i class="flaticon-edit"></i>
+										</a>
 			                        </span>
 			                    </div>
 			                </div>
@@ -129,7 +137,60 @@
 	      	});
 			
 		});
-	/*---------------------------------------------------------*/
+		/*---------------------------------------------------------*/
+		/*EDIT MAPEL*/
+		/*KONTEN MATA PELAJARAN*/
+		$(document).on('click', '.btnEditMapel', function() {
+	     	modalBlockLoad()
+	     	if($('#editKKMPengetahuan').val()=="" || $('#editKKMKeterampilan').val()=="" || $('#editNoUrut').val()==""){
+	     		toastr.error("Terdapat parameter wajib yang tidak boleh kosong!", "Gagal Mengirim");
+	     		mApp.unblock(".modalInput");
+	     	}else{
+    			var id 				= $(this).data('id');
+	     		var tenpen 			= $('#editGuruPengampu'+id).val();
+	     		var KKMPengetahuan 	= $('#editKKMPengetahuan'+id).val();
+	     		var KKMKeterampilan = $('#editKKMKeterampilan'+id).val();
+	     		var noUrut 			= $('#editNoUrut'+id).val();
+	        	$.ajax({
+	        		url: '<?= base_url('LegerNilai/editMapelNilai') ?>',
+	        		type: 'POST',
+	        		dataType: 'json',
+	        		data: {
+	        			idLeger 		: id,
+	        			tenpen 			: tenpen,
+	        			KKMPengetahuan 	: KKMPengetahuan,
+	        			KKMKeterampilan : KKMKeterampilan,
+	        			noUrut 			: noUrut
+	        		},	
+	        		success: function(response){
+	        			mApp.unblock(".modalInput");
+	        			// $('#resultAddNasabah').html(result).show();
+	        			if(response.status == 'sukses'){
+	        				$('#modalEditMapel'+id).modal('hide');
+	        				swal({
+				                title: "Proses Berhasil",
+				                text: response.pesan,
+				                type: "success",
+				                timer: 5e3,
+				                onOpen: function() {
+				                    swal.showLoading()
+				                    setTimeout(function () {
+				                        //$("#loading").hide();
+				                        refresh();
+				                    }, 1500);  
+				                }
+				            });
+				            kontenMapel();
+				        }else{
+	        				mApp.unblock(".modalInput");
+	        				$('#resultErrorEditMapel').html(response.pesan).show()
+	        			}
+	        		}
+	        	})
+			}
+		});
+		/*-------------------------------------------------------*/
+		/*-----------------------------------------------------------*/
 
 	});
 </script>

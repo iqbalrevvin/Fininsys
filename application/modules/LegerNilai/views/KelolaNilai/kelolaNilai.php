@@ -59,7 +59,8 @@
 					<button type="button" id="btnTambahMapel" class="btn btn-info m-btn m-btn--custom m-btn--icon m-btn--air">
 						Tambahkan
 					</button>
-					<button type="button" class="btn btn-danger m-btn m-btn--custom m-btn--icon m-btn--air" data-dismiss="modal">
+					<button type="button" class="btn btn-danger m-btn m-btn--custom m-btn--icon m-btn--air" 
+						data-dismiss="modal">
 						Tutup
 					</button>
 				</div>
