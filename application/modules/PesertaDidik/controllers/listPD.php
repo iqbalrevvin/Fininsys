@@ -32,6 +32,7 @@ class Listpd extends CI_Controller {
 		$crud->display_as('status_pd', 'Status');
 		$crud->display_as('tahun_angkatan', 'Angkatan');
 		$crud->columns('NIK_pd', 'nama_pd', 'tahun_angkatan', 'nipd', 'jk_pd', 'idSekolah', 'status_pd');
+		$crud->unset_columns(['idProvinsi']);
 		$crud->add_action('Profil', 'fa fa-user', '', '',array($this,'profilLink'));
 		$crud->set_rules('NIK_pd','NIK Siswa','required|numeric|max_length[16]|min_length[16]');
 		$crud->set_rules('tahun_angkatan','Tahun Angkatan','required|numeric|max_length[4]|min_length[4]');
@@ -44,8 +45,8 @@ class Listpd extends CI_Controller {
 		$crud->set_relation('idSekolah','sekolah','nama_sekolah');
 		/*-----------------------------------------------*/
 		#$crud->add_fields('idSekolah','tahun_angkatan','NIK_pd', 'nama_pd', 'jk_pd', 'tampat_lahir_pd', 'tanggal_lahir_pd', 'agama', 'no_telp_pd', 'email_pd', 'foto_pd', 'facebook', 'instagram', 'twitter');
-		$crud->unset_add_fields('kelurahan','kecamatan', 'kota', 'provinsi', 'alamat');
-		$crud->unset_edit_fields('kelurahan','kecamatan', 'kota', 'provinsi', 'alamat');
+		$crud->unset_add_fields('idProvinsi','idKabupaten', 'idKecamatan', 'idKelurahan', 'alamat');
+		$crud->unset_edit_fields('idProvinsi','idKabupaten', 'idKecamatan', 'idKelurahan', 'alamat');
 
 		/*LIST DATA TAHUN AJARAN*/
 		$listTahunAngkatan = $this->LegerNilai_m->getTahunAjaran();
