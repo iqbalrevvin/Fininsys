@@ -259,7 +259,7 @@ var PortletTools = {
             }), e.on("afterRemove", function(e) {
 
             }), e.on("reload", function(e) {
-                toastr.info("Leload event fired!"), mApp.block(e.getSelf(), {
+                mApp.block(e.getSelf(), {
                     overlayColor: "#ffffff",
                     type: "loader",
                     state: "accent",
