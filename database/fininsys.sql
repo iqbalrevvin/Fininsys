@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 22, 2019 at 10:03 PM
--- Server version: 10.1.38-MariaDB-cll-lve
--- PHP Version: 7.2.7
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 22 Bulan Mei 2019 pada 18.44
+-- Versi server: 10.1.34-MariaDB
+-- Versi PHP: 5.6.37
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `smkikaka_fininsys`
+-- Database: `fininsys`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alamat_desa`
+-- Struktur dari tabel `alamat_desa`
 --
 
 CREATE TABLE `alamat_desa` (
@@ -34,7 +34,7 @@ CREATE TABLE `alamat_desa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `alamat_desa`
+-- Dumping data untuk tabel `alamat_desa`
 --
 
 INSERT INTO `alamat_desa` (`idDesa`, `nama_desa`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `alamat_desa` (`idDesa`, `nama_desa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alamat_kabupaten`
+-- Struktur dari tabel `alamat_kabupaten`
 --
 
 CREATE TABLE `alamat_kabupaten` (
@@ -52,7 +52,7 @@ CREATE TABLE `alamat_kabupaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `alamat_kabupaten`
+-- Dumping data untuk tabel `alamat_kabupaten`
 --
 
 INSERT INTO `alamat_kabupaten` (`idKabupaten`, `nama_kabupaten`) VALUES
@@ -61,7 +61,7 @@ INSERT INTO `alamat_kabupaten` (`idKabupaten`, `nama_kabupaten`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alamat_kecamatan`
+-- Struktur dari tabel `alamat_kecamatan`
 --
 
 CREATE TABLE `alamat_kecamatan` (
@@ -70,7 +70,7 @@ CREATE TABLE `alamat_kecamatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `alamat_kecamatan`
+-- Dumping data untuk tabel `alamat_kecamatan`
 --
 
 INSERT INTO `alamat_kecamatan` (`idKecamatan`, `nama_kecamatan`) VALUES
@@ -79,7 +79,7 @@ INSERT INTO `alamat_kecamatan` (`idKecamatan`, `nama_kecamatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alamat_provinsi`
+-- Struktur dari tabel `alamat_provinsi`
 --
 
 CREATE TABLE `alamat_provinsi` (
@@ -88,7 +88,7 @@ CREATE TABLE `alamat_provinsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `alamat_provinsi`
+-- Dumping data untuk tabel `alamat_provinsi`
 --
 
 INSERT INTO `alamat_provinsi` (`idProvinsi`, `nama_provinsi`) VALUES
@@ -97,7 +97,7 @@ INSERT INTO `alamat_provinsi` (`idProvinsi`, `nama_provinsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `deskripsi_nilai_prilaku`
+-- Struktur dari tabel `deskripsi_nilai_prilaku`
 --
 
 CREATE TABLE `deskripsi_nilai_prilaku` (
@@ -108,7 +108,7 @@ CREATE TABLE `deskripsi_nilai_prilaku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `deskripsi_nilai_prilaku`
+-- Dumping data untuk tabel `deskripsi_nilai_prilaku`
 --
 
 INSERT INTO `deskripsi_nilai_prilaku` (`idDeskripsi_nilai`, `nilai_deskripsi`, `deskripsi`, `jenis_nilai_deskripsi`) VALUES
@@ -131,7 +131,7 @@ INSERT INTO `deskripsi_nilai_prilaku` (`idDeskripsi_nilai`, `nilai_deskripsi`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_peserta_didik`
+-- Struktur dari tabel `detail_peserta_didik`
 --
 
 CREATE TABLE `detail_peserta_didik` (
@@ -146,7 +146,7 @@ CREATE TABLE `detail_peserta_didik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `detail_peserta_didik`
+-- Dumping data untuk tabel `detail_peserta_didik`
 --
 
 INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `pindahan`, `tgl_pindah`, `pindah_di_semester`, `tidak_naik_kelas`, `tidak_naik_semester`) VALUES
@@ -275,7 +275,7 @@ INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `pindaha
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_tenaga_pendidik`
+-- Struktur dari tabel `detail_tenaga_pendidik`
 --
 
 CREATE TABLE `detail_tenaga_pendidik` (
@@ -294,7 +294,7 @@ CREATE TABLE `detail_tenaga_pendidik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `detail_tenaga_pendidik`
+-- Dumping data untuk tabel `detail_tenaga_pendidik`
 --
 
 INSERT INTO `detail_tenaga_pendidik` (`idDetail_tenpen`, `NIK_tenpen`, `NUPTK`, `NIP`, `NIY_NIGK`, `NPWP`, `nama_wajib_pajak`, `kewarganegaraan`, `nama_negara`, `status_perkawinan`, `nama_pasangan`, `pekerjaan_pasangan`) VALUES
@@ -322,7 +322,7 @@ INSERT INTO `detail_tenaga_pendidik` (`idDetail_tenpen`, `NIK_tenpen`, `NUPTK`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ekstrakulikuler`
+-- Struktur dari tabel `ekstrakulikuler`
 --
 
 CREATE TABLE `ekstrakulikuler` (
@@ -332,7 +332,7 @@ CREATE TABLE `ekstrakulikuler` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ekstrakulikuler`
+-- Dumping data untuk tabel `ekstrakulikuler`
 --
 
 INSERT INTO `ekstrakulikuler` (`idEkstrakulikuler`, `nama_ekstrakulikuler`, `Keterangan`) VALUES
@@ -342,7 +342,7 @@ INSERT INTO `ekstrakulikuler` (`idEkstrakulikuler`, `nama_ekstrakulikuler`, `Ket
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groups`
+-- Struktur dari tabel `groups`
 --
 
 CREATE TABLE `groups` (
@@ -352,7 +352,7 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `groups`
+-- Dumping data untuk tabel `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
@@ -365,7 +365,7 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groups_header`
+-- Struktur dari tabel `groups_header`
 --
 
 CREATE TABLE `groups_header` (
@@ -374,7 +374,7 @@ CREATE TABLE `groups_header` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `groups_header`
+-- Dumping data untuk tabel `groups_header`
 --
 
 INSERT INTO `groups_header` (`id_header_menu`, `id_groups`) VALUES
@@ -389,7 +389,7 @@ INSERT INTO `groups_header` (`id_header_menu`, `id_groups`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groups_menu`
+-- Struktur dari tabel `groups_menu`
 --
 
 CREATE TABLE `groups_menu` (
@@ -398,7 +398,7 @@ CREATE TABLE `groups_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `groups_menu`
+-- Dumping data untuk tabel `groups_menu`
 --
 
 INSERT INTO `groups_menu` (`id_groups`, `id_menu`) VALUES
@@ -496,7 +496,7 @@ INSERT INTO `groups_menu` (`id_groups`, `id_menu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `header_menu`
+-- Struktur dari tabel `header_menu`
 --
 
 CREATE TABLE `header_menu` (
@@ -506,7 +506,7 @@ CREATE TABLE `header_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `header_menu`
+-- Dumping data untuk tabel `header_menu`
 --
 
 INSERT INTO `header_menu` (`id_header_menu`, `sort`, `header`) VALUES
@@ -517,7 +517,7 @@ INSERT INTO `header_menu` (`id_header_menu`, `sort`, `header`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jabatan`
+-- Struktur dari tabel `jabatan`
 --
 
 CREATE TABLE `jabatan` (
@@ -527,7 +527,7 @@ CREATE TABLE `jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jabatan`
+-- Dumping data untuk tabel `jabatan`
 --
 
 INSERT INTO `jabatan` (`idJabatan`, `nama_jabatan`, `keterangan_jabatan`) VALUES
@@ -548,7 +548,7 @@ INSERT INTO `jabatan` (`idJabatan`, `nama_jabatan`, `keterangan_jabatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jabatan_tenpen`
+-- Struktur dari tabel `jabatan_tenpen`
 --
 
 CREATE TABLE `jabatan_tenpen` (
@@ -558,7 +558,7 @@ CREATE TABLE `jabatan_tenpen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jabatan_tenpen`
+-- Dumping data untuk tabel `jabatan_tenpen`
 --
 
 INSERT INTO `jabatan_tenpen` (`idJabatan_tenpen`, `NIK_tenpen`, `idJabatan`) VALUES
@@ -572,7 +572,7 @@ INSERT INTO `jabatan_tenpen` (`idJabatan_tenpen`, `NIK_tenpen`, `idJabatan`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kabupaten`
+-- Struktur dari tabel `kabupaten`
 --
 
 CREATE TABLE `kabupaten` (
@@ -583,7 +583,7 @@ CREATE TABLE `kabupaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kabupaten`
+-- Dumping data untuk tabel `kabupaten`
 --
 
 INSERT INTO `kabupaten` (`id_kab`, `id_prov`, `nama_kabupaten`, `id_jenis`) VALUES
@@ -1105,7 +1105,7 @@ INSERT INTO `kabupaten` (`id_kab`, `id_prov`, `nama_kabupaten`, `id_jenis`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kecamatan`
+-- Struktur dari tabel `kecamatan`
 --
 
 CREATE TABLE `kecamatan` (
@@ -1115,7 +1115,7 @@ CREATE TABLE `kecamatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kecamatan`
+-- Dumping data untuk tabel `kecamatan`
 --
 
 INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama_kecamatan`) VALUES
@@ -8221,7 +8221,7 @@ INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama_kecamatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
+-- Struktur dari tabel `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -8233,7 +8233,7 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kelas`
+-- Dumping data untuk tabel `kelas`
 --
 
 INSERT INTO `kelas` (`idKelas`, `idKurikulum`, `idProdi`, `NIK_tenpen`, `nama_kelas`) VALUES
@@ -8247,7 +8247,7 @@ INSERT INTO `kelas` (`idKelas`, `idKurikulum`, `idProdi`, `NIK_tenpen`, `nama_ke
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelompok_mapel`
+-- Struktur dari tabel `kelompok_mapel`
 --
 
 CREATE TABLE `kelompok_mapel` (
@@ -8257,7 +8257,7 @@ CREATE TABLE `kelompok_mapel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kelompok_mapel`
+-- Dumping data untuk tabel `kelompok_mapel`
 --
 
 INSERT INTO `kelompok_mapel` (`idKelompok_mapel`, `nama_kelompok_mapel`, `keterangan`) VALUES
@@ -8269,7 +8269,7 @@ INSERT INTO `kelompok_mapel` (`idKelompok_mapel`, `nama_kelompok_mapel`, `ketera
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelurahan`
+-- Struktur dari tabel `kelurahan`
 --
 
 CREATE TABLE `kelurahan` (
@@ -8280,7 +8280,7 @@ CREATE TABLE `kelurahan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kelurahan`
+-- Dumping data untuk tabel `kelurahan`
 --
 
 INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
@@ -90859,7 +90859,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kurikulum`
+-- Struktur dari tabel `kurikulum`
 --
 
 CREATE TABLE `kurikulum` (
@@ -90870,7 +90870,7 @@ CREATE TABLE `kurikulum` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kurikulum`
+-- Dumping data untuk tabel `kurikulum`
 --
 
 INSERT INTO `kurikulum` (`idKurikulum`, `idSekolah`, `idTahun_ajaran`, `nama_kurikulum`) VALUES
@@ -90880,7 +90880,7 @@ INSERT INTO `kurikulum` (`idKurikulum`, `idSekolah`, `idTahun_ajaran`, `nama_kur
 -- --------------------------------------------------------
 
 --
--- Table structure for table `leger`
+-- Struktur dari tabel `leger`
 --
 
 CREATE TABLE `leger` (
@@ -90894,7 +90894,7 @@ CREATE TABLE `leger` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `leger`
+-- Dumping data untuk tabel `leger`
 --
 
 INSERT INTO `leger` (`idLeger`, `idMaster_leger`, `idMata_pelajaran`, `NIK_tenpen`, `kkm_pengetahuan`, `kkm_keterampilan`, `no_urut_mapel`) VALUES
@@ -90907,12 +90907,25 @@ INSERT INTO `leger` (`idLeger`, `idMaster_leger`, `idMata_pelajaran`, `NIK_tenpe
 (80, 9, 7, '3205214302960006', 75, 75, 4),
 (81, 9, 8, '3205026502950004', 70, 70, 12),
 (82, 9, 9, '3205172306950002', 70, 70, 9),
-(83, 7, 2, '4323354635234323', 65, 65, 2);
+(84, 7, 2, '4323354635234323', 65, 65, 2),
+(85, 7, 4, '3205216304890002', 68, 68, 4),
+(86, 7, 5, '3205054909940006', 68, 68, 5),
+(87, 7, 6, '3205354602780001', 72, 72, 6),
+(88, 7, 7, '3205205502940004', 68, 68, 7),
+(89, 7, 8, '3205026502950004', 65, 65, 8),
+(90, 7, 9, '3205172306950002', 65, 65, 9),
+(91, 8, 2, '4323354635234323', 65, 65, 2),
+(92, 8, 4, '3205216304890002', 68, 68, 4),
+(93, 8, 5, '3205054909940006', 68, 68, 5),
+(94, 8, 6, '3205354602780001', 72, 72, 6),
+(95, 8, 7, '3205205502940004', 68, 68, 7),
+(96, 8, 8, '3205026502950004', 65, 65, 8),
+(97, 8, 9, '3205172306950002', 65, 65, 9);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `leger_ekskul`
+-- Struktur dari tabel `leger_ekskul`
 --
 
 CREATE TABLE `leger_ekskul` (
@@ -90924,7 +90937,7 @@ CREATE TABLE `leger_ekskul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `leger_ekskul`
+-- Dumping data untuk tabel `leger_ekskul`
 --
 
 INSERT INTO `leger_ekskul` (`idLeger_ekskul`, `idMaster_leger`, `ekstrakulikuler`, `pembimbing`, `no_urut_ekskul`) VALUES
@@ -90940,7 +90953,7 @@ INSERT INTO `leger_ekskul` (`idLeger_ekskul`, `idMaster_leger`, `ekstrakulikuler
 -- --------------------------------------------------------
 
 --
--- Table structure for table `leger_nilai`
+-- Struktur dari tabel `leger_nilai`
 --
 
 CREATE TABLE `leger_nilai` (
@@ -90956,7 +90969,7 @@ CREATE TABLE `leger_nilai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `leger_nilai`
+-- Dumping data untuk tabel `leger_nilai`
 --
 
 INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetahuan`, `nilai_keterampilan`, `nilai_sikap`, `nilai_sosial`, `nilai_spritual`, `catatan`) VALUES
@@ -91230,7 +91243,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 -- --------------------------------------------------------
 
 --
--- Table structure for table `leger_nilai_ekskul`
+-- Struktur dari tabel `leger_nilai_ekskul`
 --
 
 CREATE TABLE `leger_nilai_ekskul` (
@@ -91242,7 +91255,7 @@ CREATE TABLE `leger_nilai_ekskul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `leger_nilai_ekskul`
+-- Dumping data untuk tabel `leger_nilai_ekskul`
 --
 
 INSERT INTO `leger_nilai_ekskul` (`idLeger_nilai_ekskul`, `idLeger_ekskul`, `NIK_pd`, `nilai_ekskul`, `deskripsi_nilai_ekskul`) VALUES
@@ -91470,7 +91483,7 @@ INSERT INTO `leger_nilai_ekskul` (`idLeger_nilai_ekskul`, `idLeger_ekskul`, `NIK
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login_attempts`
+-- Struktur dari tabel `login_attempts`
 --
 
 CREATE TABLE `login_attempts` (
@@ -91483,7 +91496,7 @@ CREATE TABLE `login_attempts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `master_leger`
+-- Struktur dari tabel `master_leger`
 --
 
 CREATE TABLE `master_leger` (
@@ -91494,7 +91507,7 @@ CREATE TABLE `master_leger` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `master_leger`
+-- Dumping data untuk tabel `master_leger`
 --
 
 INSERT INTO `master_leger` (`idMaster_leger`, `idKelas`, `tahun_angkatan`, `semester`) VALUES
@@ -91506,7 +91519,7 @@ INSERT INTO `master_leger` (`idMaster_leger`, `idKelas`, `tahun_angkatan`, `seme
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mata_pelajaran`
+-- Struktur dari tabel `mata_pelajaran`
 --
 
 CREATE TABLE `mata_pelajaran` (
@@ -91517,7 +91530,7 @@ CREATE TABLE `mata_pelajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mata_pelajaran`
+-- Dumping data untuk tabel `mata_pelajaran`
 --
 
 INSERT INTO `mata_pelajaran` (`idMata_pelajaran`, `idKurikulum`, `idKelompok_mapel`, `nama_mata_pelajaran`) VALUES
@@ -91533,12 +91546,22 @@ INSERT INTO `mata_pelajaran` (`idMata_pelajaran`, `idKurikulum`, `idKelompok_map
 (10, 3, 2, 'Prakarya'),
 (11, 3, 4, 'Basa Sunda'),
 (12, 3, 4, 'Ekonomi Syariah'),
-(13, 2, 4, 'Teknologi Informasi dan Komunikasi');
+(13, 2, 1, 'Teknologi Informasi dan Komunikasi'),
+(14, 2, 1, 'Pendidikan Agama Islam'),
+(15, 2, 1, 'Pendidikan Kewarganegaraan'),
+(16, 2, 1, 'Bahasa Indonesia'),
+(17, 2, 1, 'Bahasa Inggris'),
+(18, 2, 1, 'Matematika'),
+(19, 2, 1, 'Ilmu Pengetahuan Alam'),
+(20, 2, 1, 'Ilmu Pengetahuan Sosial'),
+(22, 2, 1, 'Pendidikan Jasmani, Olahraga dan Kesehatan'),
+(23, 2, 1, 'Teknologi Informasi dan Komunikasi'),
+(24, 2, 1, 'Seni Budaya');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Struktur dari tabel `menu`
 --
 
 CREATE TABLE `menu` (
@@ -91554,7 +91577,7 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `menu`
+-- Dumping data untuk tabel `menu`
 --
 
 INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`, `menu_id`, `level_one`, `level_two`) VALUES
@@ -91601,7 +91624,7 @@ INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ortu_peserta_didik`
+-- Struktur dari tabel `ortu_peserta_didik`
 --
 
 CREATE TABLE `ortu_peserta_didik` (
@@ -91622,7 +91645,7 @@ CREATE TABLE `ortu_peserta_didik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ortu_peserta_didik`
+-- Dumping data untuk tabel `ortu_peserta_didik`
 --
 
 INSERT INTO `ortu_peserta_didik` (`idOrtu_pd`, `NIK_pd`, `NIK_ayah`, `nama_ayah`, `tahun_lahir_ayah`, `pendidikan_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `NIK_ibu`, `nama_ibu`, `tahun_lahir_ibu`, `pendidikan_ibu`, `pekerjaan_ibu`, `penghasilan_ibu`) VALUES
@@ -91751,7 +91774,7 @@ INSERT INTO `ortu_peserta_didik` (`idOrtu_pd`, `NIK_pd`, `NIK_ayah`, `nama_ayah`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ortu_tenaga_pendidik`
+-- Struktur dari tabel `ortu_tenaga_pendidik`
 --
 
 CREATE TABLE `ortu_tenaga_pendidik` (
@@ -91764,7 +91787,7 @@ CREATE TABLE `ortu_tenaga_pendidik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ortu_tenaga_pendidik`
+-- Dumping data untuk tabel `ortu_tenaga_pendidik`
 --
 
 INSERT INTO `ortu_tenaga_pendidik` (`idOrtu_tenpen`, `NIK_tenpen`, `nama_ayah`, `tahun_lahir_ayah`, `nama_ibu`, `tahun_lahir_ibu`) VALUES
@@ -91792,7 +91815,7 @@ INSERT INTO `ortu_tenaga_pendidik` (`idOrtu_tenpen`, `NIK_tenpen`, `nama_ayah`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `peserta_didik`
+-- Struktur dari tabel `peserta_didik`
 --
 
 CREATE TABLE `peserta_didik` (
@@ -91822,7 +91845,7 @@ CREATE TABLE `peserta_didik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `peserta_didik`
+-- Dumping data untuk tabel `peserta_didik`
 --
 
 INSERT INTO `peserta_didik` (`idPd`, `idSekolah`, `NIK_pd`, `tahun_angkatan`, `nisn`, `nipd`, `nama_pd`, `jk_pd`, `tempat_lahir_pd`, `tanggal_lahir_pd`, `agama`, `alamat`, `idProvinsi`, `idKabupaten`, `idKecamatan`, `idKelurahan`, `no_telp_pd`, `email_pd`, `foto_pd`, `facebook`, `instagram`, `twitter`, `status_pd`) VALUES
@@ -91951,7 +91974,7 @@ INSERT INTO `peserta_didik` (`idPd`, `idSekolah`, `NIK_pd`, `tahun_angkatan`, `n
 -- --------------------------------------------------------
 
 --
--- Table structure for table `program_studi`
+-- Struktur dari tabel `program_studi`
 --
 
 CREATE TABLE `program_studi` (
@@ -91963,7 +91986,7 @@ CREATE TABLE `program_studi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `program_studi`
+-- Dumping data untuk tabel `program_studi`
 --
 
 INSERT INTO `program_studi` (`idProdi`, `idSekolah`, `nama_prodi`, `singkatan_prodi`, `jumlah_semester`) VALUES
@@ -91973,7 +91996,7 @@ INSERT INTO `program_studi` (`idProdi`, `idSekolah`, `nama_prodi`, `singkatan_pr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `provinsi`
+-- Struktur dari tabel `provinsi`
 --
 
 CREATE TABLE `provinsi` (
@@ -91982,7 +92005,7 @@ CREATE TABLE `provinsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `provinsi`
+-- Dumping data untuk tabel `provinsi`
 --
 
 INSERT INTO `provinsi` (`id_prov`, `nama_provinsi`) VALUES
@@ -92024,7 +92047,7 @@ INSERT INTO `provinsi` (`id_prov`, `nama_provinsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sekolah`
+-- Struktur dari tabel `sekolah`
 --
 
 CREATE TABLE `sekolah` (
@@ -92041,7 +92064,7 @@ CREATE TABLE `sekolah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sekolah`
+-- Dumping data untuk tabel `sekolah`
 --
 
 INSERT INTO `sekolah` (`idSekolah`, `jenjang_sekolah`, `npsn`, `nama_sekolah`, `alamat_sekolah`, `desa_sekolah`, `kecamatan_sekolah`, `kabupaten_sekolah`, `provinsi_sekolah`, `logo_sekolah`) VALUES
@@ -92051,7 +92074,7 @@ INSERT INTO `sekolah` (`idSekolah`, `jenjang_sekolah`, `npsn`, `nama_sekolah`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Struktur dari tabel `settings`
 --
 
 CREATE TABLE `settings` (
@@ -92064,7 +92087,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `settings`
+-- Dumping data untuk tabel `settings`
 --
 
 INSERT INTO `settings` (`id_settings`, `judul`, `instansi`, `alamat`, `logo`, `versi`) VALUES
@@ -92073,7 +92096,7 @@ INSERT INTO `settings` (`id_settings`, `judul`, `instansi`, `alamat`, `logo`, `v
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tahun_ajaran`
+-- Struktur dari tabel `tahun_ajaran`
 --
 
 CREATE TABLE `tahun_ajaran` (
@@ -92082,7 +92105,7 @@ CREATE TABLE `tahun_ajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tahun_ajaran`
+-- Dumping data untuk tabel `tahun_ajaran`
 --
 
 INSERT INTO `tahun_ajaran` (`idTahun_ajaran`, `nama_tahun_ajaran`) VALUES
@@ -92093,7 +92116,7 @@ INSERT INTO `tahun_ajaran` (`idTahun_ajaran`, `nama_tahun_ajaran`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tenaga_pendidik`
+-- Struktur dari tabel `tenaga_pendidik`
 --
 
 CREATE TABLE `tenaga_pendidik` (
@@ -92116,7 +92139,7 @@ CREATE TABLE `tenaga_pendidik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tenaga_pendidik`
+-- Dumping data untuk tabel `tenaga_pendidik`
 --
 
 INSERT INTO `tenaga_pendidik` (`idTenpen`, `idSekolah`, `NIK_tenpen`, `nama_tenpen`, `jk_tenpen`, `tempat_lahir`, `tanggal_lahir`, `agama`, `alamat`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `no_telp_tenpen`, `email_tenpen`, `foto_tenpen`) VALUES
@@ -92134,7 +92157,7 @@ INSERT INTO `tenaga_pendidik` (`idTenpen`, `idSekolah`, `NIK_tenpen`, `nama_tenp
 (13, 1, '1803141911870002', 'Randy Nova Jaya', 'Laki-Laki', 'Lampung', '1987-11-19', 'Islam', NULL, NULL, NULL, NULL, NULL, '085311113540', 0, NULL),
 (15, 1, '3205215209900009', 'Reni', 'Perempuan', 'Garut', '1990-10-12', 'Islam', NULL, NULL, NULL, NULL, NULL, '087847363523', 0, NULL),
 (16, 1, '3205216304890002', 'Risna Rahmawati', 'Perempuan', 'Garut', '1989-04-24', 'Islam', NULL, NULL, NULL, NULL, NULL, '087876736453', 0, NULL),
-(17, NULL, '3205175110950001', 'Rosyi Yuliani Hidayat', 'Perempuan', 'Garut', '1995-10-11', 'Islam', NULL, NULL, NULL, NULL, NULL, '087647363523', 0, NULL),
+(17, 1, '3205175110950001', 'Rosyi Yuliani Hidayat', 'Perempuan', 'Garut', '1995-10-11', 'Islam', NULL, NULL, NULL, NULL, NULL, '087647363523', NULL, NULL),
 (18, 1, '3205012512950009', 'Muhammad Akbar', 'Laki-Laki', 'Garut', '1996-05-15', 'Islam', NULL, NULL, NULL, NULL, NULL, '0876554645343', NULL, NULL),
 (19, 1, '1871116705000001', 'Retno Maulidi Fiddyina', 'Perempuan', 'Palembang', '2000-05-27', 'Islam', NULL, NULL, NULL, NULL, NULL, '081515931496', NULL, NULL),
 (20, 1, '3205210505940006', 'Abdul Ropik', 'Laki-Laki', 'Garut', '1994-05-05', 'Islam', NULL, NULL, NULL, NULL, NULL, '085352320400', NULL, NULL),
@@ -92144,7 +92167,7 @@ INSERT INTO `tenaga_pendidik` (`idTenpen`, `idSekolah`, `NIK_tenpen`, `nama_tenp
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -92168,13 +92191,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1555619530, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
 (2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1558446496, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314'),
-(3, '::1', 'fajard', '$2y$08$iSx0LPd0We2xIwBtXj1qNuccFL/pcxmyVns7x5PpDch/zi4ju6N12', NULL, 'fajar0maulana@gmail.com', NULL, NULL, NULL, NULL, 1557525781, 1558534874, 1, 'Fajar ', 'Maulana', NULL, '081295794067'),
+(3, '::1', 'fajard', '$2y$08$iSx0LPd0We2xIwBtXj1qNuccFL/pcxmyVns7x5PpDch/zi4ju6N12', NULL, 'fajar0maulana@gmail.com', NULL, NULL, NULL, NULL, 1557525781, 1558541038, 1, 'Fajar ', 'Maulana', NULL, '081295794067'),
 (4, '192.168.43.249', 'wkelas7a', '$2y$08$jiRvLWUxeutQoHoP4ofOn.QHliNVMuxiIMuTHnx3/U0/tNbWXM9iK', NULL, 'iissn000@gmail.com', NULL, NULL, NULL, NULL, 1558449453, 1558513824, 1, 'Iis Siti', 'Nurfadilah', '', '0817262516152'),
 (5, '192.168.43.249', 'wkelas7b', '$2y$08$F/YSQOM8jafPH74eRFkoAeaxACnUxxSt1QDuDIeTJv2jWrv8K/zYO', NULL, 'fitrirahma111@gmail.com', NULL, NULL, NULL, NULL, 1558449549, NULL, 1, 'Fitri', 'Rahmawati', NULL, '094847363726'),
 (6, '192.168.43.249', 'wkelas8', '$2y$08$tPdEeVaFbGF4jZefqARFdu6Su/oNickGJgwpzP9RviyNKiLn6jkw.', NULL, 'risnar123@gmail.com', NULL, NULL, NULL, NULL, 1558449770, 1558512542, 1, 'risna', 'rahmawati', NULL, '0696867585757'),
@@ -92183,7 +92206,7 @@ INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_groups`
+-- Struktur dari tabel `users_groups`
 --
 
 CREATE TABLE `users_groups` (
@@ -92193,7 +92216,7 @@ CREATE TABLE `users_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users_groups`
+-- Dumping data untuk tabel `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
@@ -92208,8 +92231,8 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `view_header_menu`
--- (See below for the actual view)
+-- Stand-in struktur untuk tampilan `view_header_menu`
+-- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `view_header_menu` (
 `id_groups` int(11)
@@ -92221,8 +92244,8 @@ CREATE TABLE `view_header_menu` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `view_menu`
--- (See below for the actual view)
+-- Stand-in struktur untuk tampilan `view_menu`
+-- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `view_menu` (
 `id_groups` int(11)
@@ -92240,7 +92263,7 @@ CREATE TABLE `view_menu` (
 -- --------------------------------------------------------
 
 --
--- Structure for view `view_header_menu`
+-- Struktur untuk view `view_header_menu`
 --
 DROP TABLE IF EXISTS `view_header_menu`;
 
@@ -92249,7 +92272,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Structure for view `view_menu`
+-- Struktur untuk view `view_menu`
 --
 DROP TABLE IF EXISTS `view_menu`;
 
@@ -92260,38 +92283,38 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
--- Indexes for table `alamat_desa`
+-- Indeks untuk tabel `alamat_desa`
 --
 ALTER TABLE `alamat_desa`
   ADD PRIMARY KEY (`idDesa`);
 
 --
--- Indexes for table `alamat_kabupaten`
+-- Indeks untuk tabel `alamat_kabupaten`
 --
 ALTER TABLE `alamat_kabupaten`
   ADD PRIMARY KEY (`idKabupaten`);
 
 --
--- Indexes for table `alamat_kecamatan`
+-- Indeks untuk tabel `alamat_kecamatan`
 --
 ALTER TABLE `alamat_kecamatan`
   ADD PRIMARY KEY (`idKecamatan`);
 
 --
--- Indexes for table `alamat_provinsi`
+-- Indeks untuk tabel `alamat_provinsi`
 --
 ALTER TABLE `alamat_provinsi`
   ADD PRIMARY KEY (`idProvinsi`);
 
 --
--- Indexes for table `deskripsi_nilai_prilaku`
+-- Indeks untuk tabel `deskripsi_nilai_prilaku`
 --
 ALTER TABLE `deskripsi_nilai_prilaku`
   ADD PRIMARY KEY (`idDeskripsi_nilai`),
   ADD KEY `nilai_deskripsi_2` (`nilai_deskripsi`);
 
 --
--- Indexes for table `detail_peserta_didik`
+-- Indeks untuk tabel `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   ADD PRIMARY KEY (`idDetail_pd`),
@@ -92299,7 +92322,7 @@ ALTER TABLE `detail_peserta_didik`
   ADD KEY `NIK_pd` (`NIK_pd`);
 
 --
--- Indexes for table `detail_tenaga_pendidik`
+-- Indeks untuk tabel `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
   ADD PRIMARY KEY (`idDetail_tenpen`),
@@ -92310,31 +92333,31 @@ ALTER TABLE `detail_tenaga_pendidik`
   ADD KEY `pekerjaan_pasangan` (`pekerjaan_pasangan`);
 
 --
--- Indexes for table `ekstrakulikuler`
+-- Indeks untuk tabel `ekstrakulikuler`
 --
 ALTER TABLE `ekstrakulikuler`
   ADD PRIMARY KEY (`idEkstrakulikuler`);
 
 --
--- Indexes for table `groups`
+-- Indeks untuk tabel `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `header_menu`
+-- Indeks untuk tabel `header_menu`
 --
 ALTER TABLE `header_menu`
   ADD PRIMARY KEY (`id_header_menu`);
 
 --
--- Indexes for table `jabatan`
+-- Indeks untuk tabel `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`idJabatan`);
 
 --
--- Indexes for table `jabatan_tenpen`
+-- Indeks untuk tabel `jabatan_tenpen`
 --
 ALTER TABLE `jabatan_tenpen`
   ADD PRIMARY KEY (`idJabatan_tenpen`),
@@ -92342,19 +92365,19 @@ ALTER TABLE `jabatan_tenpen`
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indexes for table `kabupaten`
+-- Indeks untuk tabel `kabupaten`
 --
 ALTER TABLE `kabupaten`
   ADD PRIMARY KEY (`id_kab`);
 
 --
--- Indexes for table `kecamatan`
+-- Indeks untuk tabel `kecamatan`
 --
 ALTER TABLE `kecamatan`
   ADD PRIMARY KEY (`id_kec`);
 
 --
--- Indexes for table `kelas`
+-- Indeks untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`idKelas`),
@@ -92363,19 +92386,19 @@ ALTER TABLE `kelas`
   ADD KEY `idKurikulum` (`idKurikulum`);
 
 --
--- Indexes for table `kelompok_mapel`
+-- Indeks untuk tabel `kelompok_mapel`
 --
 ALTER TABLE `kelompok_mapel`
   ADD PRIMARY KEY (`idKelompok_mapel`);
 
 --
--- Indexes for table `kelurahan`
+-- Indeks untuk tabel `kelurahan`
 --
 ALTER TABLE `kelurahan`
   ADD PRIMARY KEY (`id_kel`);
 
 --
--- Indexes for table `kurikulum`
+-- Indeks untuk tabel `kurikulum`
 --
 ALTER TABLE `kurikulum`
   ADD PRIMARY KEY (`idKurikulum`),
@@ -92383,7 +92406,7 @@ ALTER TABLE `kurikulum`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indexes for table `leger`
+-- Indeks untuk tabel `leger`
 --
 ALTER TABLE `leger`
   ADD PRIMARY KEY (`idLeger`),
@@ -92392,14 +92415,14 @@ ALTER TABLE `leger`
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indexes for table `leger_ekskul`
+-- Indeks untuk tabel `leger_ekskul`
 --
 ALTER TABLE `leger_ekskul`
   ADD PRIMARY KEY (`idLeger_ekskul`),
   ADD KEY `idMaster_leger` (`idMaster_leger`);
 
 --
--- Indexes for table `leger_nilai`
+-- Indeks untuk tabel `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
   ADD PRIMARY KEY (`idLeger_nilai`),
@@ -92410,7 +92433,7 @@ ALTER TABLE `leger_nilai`
   ADD KEY `nilai_spritual` (`nilai_spritual`);
 
 --
--- Indexes for table `leger_nilai_ekskul`
+-- Indeks untuk tabel `leger_nilai_ekskul`
 --
 ALTER TABLE `leger_nilai_ekskul`
   ADD PRIMARY KEY (`idLeger_nilai_ekskul`),
@@ -92418,20 +92441,20 @@ ALTER TABLE `leger_nilai_ekskul`
   ADD KEY `idLeger_ekskul` (`idLeger_ekskul`);
 
 --
--- Indexes for table `login_attempts`
+-- Indeks untuk tabel `login_attempts`
 --
 ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `master_leger`
+-- Indeks untuk tabel `master_leger`
 --
 ALTER TABLE `master_leger`
   ADD PRIMARY KEY (`idMaster_leger`),
   ADD KEY `idKelas` (`idKelas`);
 
 --
--- Indexes for table `mata_pelajaran`
+-- Indeks untuk tabel `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
   ADD PRIMARY KEY (`idMata_pelajaran`),
@@ -92439,13 +92462,13 @@ ALTER TABLE `mata_pelajaran`
   ADD KEY `idKelompok_mapel` (`idKelompok_mapel`);
 
 --
--- Indexes for table `menu`
+-- Indeks untuk tabel `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id_menu`);
 
 --
--- Indexes for table `ortu_peserta_didik`
+-- Indeks untuk tabel `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   ADD PRIMARY KEY (`idOrtu_pd`),
@@ -92455,14 +92478,14 @@ ALTER TABLE `ortu_peserta_didik`
   ADD KEY `NIK_pd` (`NIK_pd`);
 
 --
--- Indexes for table `ortu_tenaga_pendidik`
+-- Indeks untuk tabel `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   ADD PRIMARY KEY (`idOrtu_tenpen`),
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indexes for table `peserta_didik`
+-- Indeks untuk tabel `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
   ADD PRIMARY KEY (`idPd`),
@@ -92473,38 +92496,38 @@ ALTER TABLE `peserta_didik`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indexes for table `program_studi`
+-- Indeks untuk tabel `program_studi`
 --
 ALTER TABLE `program_studi`
   ADD PRIMARY KEY (`idProdi`),
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indexes for table `provinsi`
+-- Indeks untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
   ADD PRIMARY KEY (`id_prov`);
 
 --
--- Indexes for table `sekolah`
+-- Indeks untuk tabel `sekolah`
 --
 ALTER TABLE `sekolah`
   ADD PRIMARY KEY (`idSekolah`);
 
 --
--- Indexes for table `settings`
+-- Indeks untuk tabel `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id_settings`);
 
 --
--- Indexes for table `tahun_ajaran`
+-- Indeks untuk tabel `tahun_ajaran`
 --
 ALTER TABLE `tahun_ajaran`
   ADD PRIMARY KEY (`idTahun_ajaran`);
 
 --
--- Indexes for table `tenaga_pendidik`
+-- Indeks untuk tabel `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
   ADD PRIMARY KEY (`idTenpen`),
@@ -92512,13 +92535,13 @@ ALTER TABLE `tenaga_pendidik`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users_groups`
+-- Indeks untuk tabel `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD PRIMARY KEY (`id`),
@@ -92527,233 +92550,233 @@ ALTER TABLE `users_groups`
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `alamat_desa`
+-- AUTO_INCREMENT untuk tabel `alamat_desa`
 --
 ALTER TABLE `alamat_desa`
   MODIFY `idDesa` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `alamat_kabupaten`
+-- AUTO_INCREMENT untuk tabel `alamat_kabupaten`
 --
 ALTER TABLE `alamat_kabupaten`
   MODIFY `idKabupaten` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `alamat_kecamatan`
+-- AUTO_INCREMENT untuk tabel `alamat_kecamatan`
 --
 ALTER TABLE `alamat_kecamatan`
   MODIFY `idKecamatan` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `alamat_provinsi`
+-- AUTO_INCREMENT untuk tabel `alamat_provinsi`
 --
 ALTER TABLE `alamat_provinsi`
   MODIFY `idProvinsi` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `deskripsi_nilai_prilaku`
+-- AUTO_INCREMENT untuk tabel `deskripsi_nilai_prilaku`
 --
 ALTER TABLE `deskripsi_nilai_prilaku`
   MODIFY `idDeskripsi_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `detail_peserta_didik`
+-- AUTO_INCREMENT untuk tabel `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   MODIFY `idDetail_pd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
--- AUTO_INCREMENT for table `detail_tenaga_pendidik`
+-- AUTO_INCREMENT untuk tabel `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
   MODIFY `idDetail_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `ekstrakulikuler`
+-- AUTO_INCREMENT untuk tabel `ekstrakulikuler`
 --
 ALTER TABLE `ekstrakulikuler`
   MODIFY `idEkstrakulikuler` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `groups`
+-- AUTO_INCREMENT untuk tabel `groups`
 --
 ALTER TABLE `groups`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `header_menu`
+-- AUTO_INCREMENT untuk tabel `header_menu`
 --
 ALTER TABLE `header_menu`
   MODIFY `id_header_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `jabatan`
+-- AUTO_INCREMENT untuk tabel `jabatan`
 --
 ALTER TABLE `jabatan`
   MODIFY `idJabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `jabatan_tenpen`
+-- AUTO_INCREMENT untuk tabel `jabatan_tenpen`
 --
 ALTER TABLE `jabatan_tenpen`
   MODIFY `idJabatan_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `kelas`
+-- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `idKelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `kelompok_mapel`
+-- AUTO_INCREMENT untuk tabel `kelompok_mapel`
 --
 ALTER TABLE `kelompok_mapel`
   MODIFY `idKelompok_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `kurikulum`
+-- AUTO_INCREMENT untuk tabel `kurikulum`
 --
 ALTER TABLE `kurikulum`
   MODIFY `idKurikulum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `leger`
+-- AUTO_INCREMENT untuk tabel `leger`
 --
 ALTER TABLE `leger`
-  MODIFY `idLeger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `idLeger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
--- AUTO_INCREMENT for table `leger_ekskul`
+-- AUTO_INCREMENT untuk tabel `leger_ekskul`
 --
 ALTER TABLE `leger_ekskul`
   MODIFY `idLeger_ekskul` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `leger_nilai`
+-- AUTO_INCREMENT untuk tabel `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
   MODIFY `idLeger_nilai` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=712;
 
 --
--- AUTO_INCREMENT for table `leger_nilai_ekskul`
+-- AUTO_INCREMENT untuk tabel `leger_nilai_ekskul`
 --
 ALTER TABLE `leger_nilai_ekskul`
   MODIFY `idLeger_nilai_ekskul` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=236;
 
 --
--- AUTO_INCREMENT for table `login_attempts`
+-- AUTO_INCREMENT untuk tabel `login_attempts`
 --
 ALTER TABLE `login_attempts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `master_leger`
+-- AUTO_INCREMENT untuk tabel `master_leger`
 --
 ALTER TABLE `master_leger`
   MODIFY `idMaster_leger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `mata_pelajaran`
+-- AUTO_INCREMENT untuk tabel `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
-  MODIFY `idMata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idMata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT untuk tabel `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
--- AUTO_INCREMENT for table `ortu_peserta_didik`
+-- AUTO_INCREMENT untuk tabel `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   MODIFY `idOrtu_pd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
--- AUTO_INCREMENT for table `ortu_tenaga_pendidik`
+-- AUTO_INCREMENT untuk tabel `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   MODIFY `idOrtu_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `peserta_didik`
+-- AUTO_INCREMENT untuk tabel `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
   MODIFY `idPd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
 
 --
--- AUTO_INCREMENT for table `program_studi`
+-- AUTO_INCREMENT untuk tabel `program_studi`
 --
 ALTER TABLE `program_studi`
   MODIFY `idProdi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `sekolah`
+-- AUTO_INCREMENT untuk tabel `sekolah`
 --
 ALTER TABLE `sekolah`
   MODIFY `idSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `settings`
+-- AUTO_INCREMENT untuk tabel `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id_settings` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tahun_ajaran`
+-- AUTO_INCREMENT untuk tabel `tahun_ajaran`
 --
 ALTER TABLE `tahun_ajaran`
   MODIFY `idTahun_ajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tenaga_pendidik`
+-- AUTO_INCREMENT untuk tabel `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
   MODIFY `idTenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `users_groups`
+-- AUTO_INCREMENT untuk tabel `users_groups`
 --
 ALTER TABLE `users_groups`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `detail_peserta_didik`
+-- Ketidakleluasaan untuk tabel `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   ADD CONSTRAINT `detail_peserta_didik_ibfk_4` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `detail_peserta_didik_ibfk_5` FOREIGN KEY (`NIK_pd`) REFERENCES `peserta_didik` (`NIK_pd`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `detail_tenaga_pendidik`
+-- Ketidakleluasaan untuk tabel `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
   ADD CONSTRAINT `detail_tenaga_pendidik_ibfk_2` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `jabatan_tenpen`
+-- Ketidakleluasaan untuk tabel `jabatan_tenpen`
 --
 ALTER TABLE `jabatan_tenpen`
   ADD CONSTRAINT `jabatan_tenpen_ibfk_1` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `jabatan_tenpen_ibfk_2` FOREIGN KEY (`idJabatan`) REFERENCES `jabatan` (`idJabatan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `kelas`
+-- Ketidakleluasaan untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   ADD CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`idProdi`) REFERENCES `program_studi` (`idProdi`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -92761,13 +92784,13 @@ ALTER TABLE `kelas`
   ADD CONSTRAINT `kelas_ibfk_3` FOREIGN KEY (`idKurikulum`) REFERENCES `kurikulum` (`idKurikulum`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `kurikulum`
+-- Ketidakleluasaan untuk tabel `kurikulum`
 --
 ALTER TABLE `kurikulum`
   ADD CONSTRAINT `kurikulum_ibfk_3` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `leger`
+-- Ketidakleluasaan untuk tabel `leger`
 --
 ALTER TABLE `leger`
   ADD CONSTRAINT `leger_ibfk_1` FOREIGN KEY (`idMaster_leger`) REFERENCES `master_leger` (`idMaster_leger`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -92775,13 +92798,13 @@ ALTER TABLE `leger`
   ADD CONSTRAINT `leger_ibfk_4` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `leger_ekskul`
+-- Ketidakleluasaan untuk tabel `leger_ekskul`
 --
 ALTER TABLE `leger_ekskul`
   ADD CONSTRAINT `leger_ekskul_ibfk_1` FOREIGN KEY (`idMaster_leger`) REFERENCES `master_leger` (`idMaster_leger`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `leger_nilai`
+-- Ketidakleluasaan untuk tabel `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
   ADD CONSTRAINT `leger_nilai_ibfk_1` FOREIGN KEY (`idLeger`) REFERENCES `leger` (`idLeger`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -92791,56 +92814,56 @@ ALTER TABLE `leger_nilai`
   ADD CONSTRAINT `leger_nilai_ibfk_5` FOREIGN KEY (`nilai_spritual`) REFERENCES `deskripsi_nilai_prilaku` (`nilai_deskripsi`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `leger_nilai_ekskul`
+-- Ketidakleluasaan untuk tabel `leger_nilai_ekskul`
 --
 ALTER TABLE `leger_nilai_ekskul`
   ADD CONSTRAINT `leger_nilai_ekskul_ibfk_1` FOREIGN KEY (`idLeger_ekskul`) REFERENCES `leger_ekskul` (`idLeger_ekskul`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `master_leger`
+-- Ketidakleluasaan untuk tabel `master_leger`
 --
 ALTER TABLE `master_leger`
   ADD CONSTRAINT `master_leger_ibfk_2` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `mata_pelajaran`
+-- Ketidakleluasaan untuk tabel `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
   ADD CONSTRAINT `mata_pelajaran_ibfk_1` FOREIGN KEY (`idKurikulum`) REFERENCES `kurikulum` (`idKurikulum`) ON UPDATE CASCADE,
   ADD CONSTRAINT `mata_pelajaran_ibfk_2` FOREIGN KEY (`idKelompok_mapel`) REFERENCES `kelompok_mapel` (`idKelompok_mapel`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `ortu_peserta_didik`
+-- Ketidakleluasaan untuk tabel `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   ADD CONSTRAINT `ortu_peserta_didik_ibfk_1` FOREIGN KEY (`NIK_pd`) REFERENCES `peserta_didik` (`NIK_pd`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `ortu_tenaga_pendidik`
+-- Ketidakleluasaan untuk tabel `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   ADD CONSTRAINT `ortu_tenaga_pendidik_ibfk_1` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `peserta_didik`
+-- Ketidakleluasaan untuk tabel `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
   ADD CONSTRAINT `peserta_didik_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `program_studi`
+-- Ketidakleluasaan untuk tabel `program_studi`
 --
 ALTER TABLE `program_studi`
   ADD CONSTRAINT `program_studi_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `tenaga_pendidik`
+-- Ketidakleluasaan untuk tabel `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
   ADD CONSTRAINT `tenaga_pendidik_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `users_groups`
+-- Ketidakleluasaan untuk tabel `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
