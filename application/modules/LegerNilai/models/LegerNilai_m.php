@@ -74,6 +74,7 @@ class LegerNilai_m extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('mata_pelajaran');
 		$this->db->join('kelompok_mapel', 'mata_pelajaran.idKelompok_mapel = kelompok_mapel.idKelompok_mapel', 'left');
+		$this->db->join('kurikulum', 'mata_pelajaran.idKurikulum = kurikulum.idKurikulum', 'left');
 		$this->db->order_by('nama_mata_pelajaran', 'asc');
 		$query 		= $this->db->get();
 		$execute 	= $query->result();

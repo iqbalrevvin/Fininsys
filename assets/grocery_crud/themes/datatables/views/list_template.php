@@ -62,7 +62,7 @@
 				<button class="btn btn-sm m-btn--pill btn-box-tool" id="mini-refresh"><i class='la la-refresh'></i></button>
 				<ul class="m-portlet__nav">
 					<?php if(!$unset_add){ ?>
-						<li class="m-portlet__nav-item">
+						<li class="m-portlet__nav-item navigation">
 							<a href='<?php echo $add_url?>' 
 								title='<?php echo $this->l('list_add'); ?> <?php echo $subject?>'
 								class="add-anchor btn btn-sm m-btn m-btn--gradient-from-primary m-btn--gradient-to-accent">

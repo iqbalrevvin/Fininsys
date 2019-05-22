@@ -24,9 +24,9 @@
 									<i class="la la-refresh"></i>
 								</a>
 							</li>
-							<li class="m-portlet__nav-item">
+							<li class="m-portlet__nav-item navigation">
 								<a href="ManajemenKelas/KelolaKelas?IDKelas=<?= $kelas->idKelas ?>" 
-									class="m-portlet__nav-link m-portlet__nav-link--icon" 
+									class="m-portlet__nav-link m-portlet__nav-link--icon " 
 									data-skin="dark" data-toggle="m-tooltip" data-placement="top" 
 									title="Kelola Kelas <?= $kelas->nama_kelas ?>" data-original-title="Dark skin">
 								<i class="flaticon-network"></i></a>
@@ -79,3 +79,8 @@
 <script src="<?= base_url('assets/vendors/jquery-ui-bundle/jquery-ui.bundle.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/components/dragable.js') ?>" type="text/javascript"></script>
 
+<script>
+$(".navigation").click(function(){
+  $("#loadPage").html('<div class="m-spinner m-spinner--brand m-spinner--sm"></div><div class="m-spinner m-spinner--primary m-spinner--sm"></div><div class="m-spinner m-spinner--success m-spinner--sm"></div><div class="m-spinner m-spinner--info m-spinner--sm"></div><div class="m-spinner m-spinner--warning m-spinner--sm"></div><div class="m-spinner m-spinner--danger m-spinner--sm"></div> ');
+});
+</script>

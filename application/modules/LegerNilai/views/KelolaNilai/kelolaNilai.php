@@ -16,7 +16,7 @@
 						<div class="col-lg-9 col-md-9 col-sm-12 ">
 							<select class="form-control m_select2_1_modal" id="mataPelajaran" name="mataPelajaran">
 			                    <?php foreach ($mapel as $data): ?>
-			                        <option value="<?= $data->idMata_pelajaran ?>"><?= $data->nama_mata_pelajaran ?> | <?= $data->nama_kelompok_mapel ?></option>
+			                        <option value="<?= $data->idMata_pelajaran ?>"><?= $data->nama_kurikulum ?> | <?= $data->nama_mata_pelajaran ?> | <?= $data->nama_kelompok_mapel ?></option>
 			                    <?php endforeach; ?>
 			                </select>
 						</div>

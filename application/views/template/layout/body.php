@@ -31,9 +31,8 @@
                                     </li>
                                 </ul>           
                             <?php }else{ ?>
-                           
                                 <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
-                                    <li class="m-nav__item m-nav__item--home">
+                                    <li class="m-nav__item m-nav__item--home navigation">
                                         <a href="<?= base_url(); ?>" class="m-nav__link m-nav__link--icon">
                                             <i class="m-nav__link-icon la la-home"></i>
                                         </a>
@@ -47,7 +46,7 @@
                                                 $read_crumb = strpos(current_url(), '/read');
                                                 if ($add_crumb || $edit_crumb || $read_crumb) {
                                             ?>
-                                                <li class="m-nav__item">
+                                                <li class="m-nav__item navigation">
                                                     <?php 
                                                         if ($add_crumb) {
                                                             $part_link = str_replace('/add', '', current_url());
@@ -68,14 +67,14 @@
                                                 </li>
 
                                                 <li class="m-nav__separator">-</li>
-                                                <li class="m-nav__item">
+                                                <li class="m-nav__item navigation">
                                                     <a href="#" class="m-nav__link">
                                                         <span class="m-nav__link-text"><?php echo $label_new ?></span>
                                                     </a>
                                                 </li>
                                             <?php }else{ ?>
                                                 <li class="m-nav__separator">-</li>
-                                                <li class="m-nav__item">
+                                                <li class="m-nav__item navigation">
                                                     <a href="" class="m-nav__link">
                                                         <span class="m-nav__link-text"><?php echo $label ?></span>
                                                     </a>
@@ -83,7 +82,7 @@
                                             <?php } ?>
                                         <?php }else{ ?>
                                             <li class="m-nav__separator">-</li>
-                                            <li class="m-nav__item">
+                                            <li class="m-nav__item navigation">
                                                 <a href="<?php echo site_url($link) ?>" class="m-nav__link">
                                                     <span class="m-nav__link-text"><?php echo $label ?></span>
                                                 </a>
