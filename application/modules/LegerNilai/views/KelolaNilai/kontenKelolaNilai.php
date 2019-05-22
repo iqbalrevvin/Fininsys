@@ -114,6 +114,9 @@
 		<div class="m-portlet__head-tools">
 			<ul class="m-portlet__nav">
 				<li class="m-portlet__nav-item">
+					<a href="#" m-portlet-tool="fullscreen" class="m-portlet__nav-link m-portlet__nav-link--icon"><i class="la la-expand"></i></a>
+				</li>
+				<li class="m-portlet__nav-item">
 					<a href="#" m-portlet-tool="reload" class="m-portlet__nav-link m-portlet__nav-link--icon"
 						data-toggle="modal" data-target="#modalInformasiPenilaian" data-backdrop="static" 
 						data-keyboard="true" title="Informasi Penilaian" data-placement="top" data-skin="dark">
@@ -121,7 +124,7 @@
 					</a>
 				</li>
 				<li class="m-portlet__nav-item">
-					<a href="#" m-portlet-tool="reload" class="m-portlet__nav-link m-portlet__nav-link--icon"
+					<a href="#" m-portlet-tool="test" class="m-portlet__nav-link m-portlet__nav-link--icon"
 						data-toggle="modal" data-target="#modalTambahSiswa" data-backdrop="static" 
 						data-keyboard="true" title="Tambah Siswa Ke Penilaian" data-placement="top" data-skin="dark">
 						<i class="flaticon-add"></i></a>
@@ -132,8 +135,8 @@
 	</div>
 	<div class="m-portlet__body">
         <div class="m-widget3">
-	        <div class="m-scrollable m-scroller" data-scrollable="true" data-height="500" 
-	        	style="height: 360px; overflow: auto;">
+	        <div class="m-scrollable m-scroller" data-scrollable="true" data-height="360" 
+	        	style="height: 100%; overflow: auto; " data-rail-visible="1">
         		<div data-id='' id="portlet">
 		        	<table class="table table-striped- table-bordered table-hover" id="m_table_1" >
                         <thead style="border-top:5px;">
@@ -233,12 +236,48 @@
 	}
 </style>
 <script src="<?= base_url('assets/vendors/datatables/datatables.bundle.js') ?>" type="text/javascript"></script>
+
 <script>
 jQuery(document).ready(function() {
     dataNilaiSiswa() 
     DatatablesBasicPaginations.init()
+    PortletTools.init()
 });
+var PortletTools = {
+    init: function() {
+        var e;
+        toastr.options.showDuration = 1e3, (e = new mPortlet("portletNilai")).on("beforeCollapse", function(e) {
+               
+            }), e.on("afterCollapse", function(e) {
+                
+            }), e.on("beforeExpand", function(e) {
+              
+            }), e.on("afterExpand", function(e) {
+              
+            }), e.on("beforeRemove", function(e) {
+         
+            }), e.on("afterRemove", function(e) {
 
+            }), e.on("reload", function(e) {
+                toastr.info("Leload event fired!"), mApp.block(e.getSelf(), {
+                    overlayColor: "#ffffff",
+                    type: "loader",
+                    state: "accent",
+                    opacity: .3,
+                    size: "lg"
+                }), setTimeout(function() {
+                    mApp.unblock(e.getSelf())
+                }, 2e3)
+            }), e.on("afterFullscreenOn", function(e) {
+                var t = $(e.getBody()).find("> .m-scrollable");
+                t && (t.data("original-height", t.css("height")), t.css("height", "100%"), mUtil.scrollerUpdate(t[0]))
+            }), e.on("afterFullscreenOff", function(e) {
+                var t;
+                (t = $(e.getBody()).find("> .m-scrollable")) && ((t = $(e.getBody()).find("> .m-scrollable")).css("height", t.data("original-height")), mUtil.scrollerUpdate(t[0]))
+            })
+
+    }
+};
 var DatatablesBasicPaginations = {
     init: function() {
         $("#tabelSiswaPenilaian").DataTable({
