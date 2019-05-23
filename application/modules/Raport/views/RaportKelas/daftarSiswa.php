@@ -133,7 +133,6 @@
                 <td>
                 	<?php $rank = $this->Raport_m->rankSystem($nilaiAkhir, "'$valueArray'");  ?>
 					<b class="m--font-focus"><?= $rank->rank ?></b>
-                    <?= $valueArray ?>
                 </td>    
            
                 <td align="left" class="m-datatable__cell">
