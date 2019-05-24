@@ -267,6 +267,7 @@ var DatatableHtmlTableDemo = {
                     //locked: {left: 'lg'},
                     //sortable: true,
                     //sortable: 'asc',
+                    sortable: true,
                     width: 20,
                     //responsive: {visible: 'lg'},
                 },
@@ -326,8 +327,9 @@ var DatatableHtmlTableDemo = {
                 },
                 {
                     field: "peringkat",
-                    title: "#",
+                    title: "Peringkat",
                     width: 75,
+                    sortable: true,
                     textAlign: "center",
                     //responsive: {visible: 'lg'},
                 },

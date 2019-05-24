@@ -15,7 +15,7 @@ class RaportKelas extends CI_Controller {
 		$listKelas 				= $this->ListData_m->listKelas();
 		$view 					= 'RaportKelas/raportKelas';
 		$template 				= 'admin_template';
-		$data['judul'] 			= 'Cetak Raport Per Kelas';
+		$data['judul'] 			= 'Cetak Raport Kelas';
 		$data['listSekolah'] 	= $listSekolah;
 		$data['listKelas'] 		= $listKelas;
 		$this->outputview->output_admin($view, $template, $data);

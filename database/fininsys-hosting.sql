@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Bulan Mei 2019 pada 18.44
--- Versi server: 10.1.34-MariaDB
--- Versi PHP: 5.6.37
+-- Generation Time: May 24, 2019 at 08:50 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alamat_desa`
+-- Table structure for table `alamat_desa`
 --
 
 CREATE TABLE `alamat_desa` (
@@ -34,7 +34,7 @@ CREATE TABLE `alamat_desa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `alamat_desa`
+-- Dumping data for table `alamat_desa`
 --
 
 INSERT INTO `alamat_desa` (`idDesa`, `nama_desa`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `alamat_desa` (`idDesa`, `nama_desa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alamat_kabupaten`
+-- Table structure for table `alamat_kabupaten`
 --
 
 CREATE TABLE `alamat_kabupaten` (
@@ -52,7 +52,7 @@ CREATE TABLE `alamat_kabupaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `alamat_kabupaten`
+-- Dumping data for table `alamat_kabupaten`
 --
 
 INSERT INTO `alamat_kabupaten` (`idKabupaten`, `nama_kabupaten`) VALUES
@@ -61,7 +61,7 @@ INSERT INTO `alamat_kabupaten` (`idKabupaten`, `nama_kabupaten`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alamat_kecamatan`
+-- Table structure for table `alamat_kecamatan`
 --
 
 CREATE TABLE `alamat_kecamatan` (
@@ -70,7 +70,7 @@ CREATE TABLE `alamat_kecamatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `alamat_kecamatan`
+-- Dumping data for table `alamat_kecamatan`
 --
 
 INSERT INTO `alamat_kecamatan` (`idKecamatan`, `nama_kecamatan`) VALUES
@@ -79,7 +79,7 @@ INSERT INTO `alamat_kecamatan` (`idKecamatan`, `nama_kecamatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `alamat_provinsi`
+-- Table structure for table `alamat_provinsi`
 --
 
 CREATE TABLE `alamat_provinsi` (
@@ -88,7 +88,7 @@ CREATE TABLE `alamat_provinsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `alamat_provinsi`
+-- Dumping data for table `alamat_provinsi`
 --
 
 INSERT INTO `alamat_provinsi` (`idProvinsi`, `nama_provinsi`) VALUES
@@ -97,7 +97,7 @@ INSERT INTO `alamat_provinsi` (`idProvinsi`, `nama_provinsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `deskripsi_nilai_prilaku`
+-- Table structure for table `deskripsi_nilai_prilaku`
 --
 
 CREATE TABLE `deskripsi_nilai_prilaku` (
@@ -108,7 +108,7 @@ CREATE TABLE `deskripsi_nilai_prilaku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `deskripsi_nilai_prilaku`
+-- Dumping data for table `deskripsi_nilai_prilaku`
 --
 
 INSERT INTO `deskripsi_nilai_prilaku` (`idDeskripsi_nilai`, `nilai_deskripsi`, `deskripsi`, `jenis_nilai_deskripsi`) VALUES
@@ -131,7 +131,7 @@ INSERT INTO `deskripsi_nilai_prilaku` (`idDeskripsi_nilai`, `nilai_deskripsi`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_peserta_didik`
+-- Table structure for table `detail_peserta_didik`
 --
 
 CREATE TABLE `detail_peserta_didik` (
@@ -146,11 +146,11 @@ CREATE TABLE `detail_peserta_didik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_peserta_didik`
+-- Dumping data for table `detail_peserta_didik`
 --
 
 INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `pindahan`, `tgl_pindah`, `pindah_di_semester`, `tidak_naik_kelas`, `tidak_naik_semester`) VALUES
-(27, '3205170511050010', 2, NULL, NULL, '0', 'Tidak', ''),
+(27, '3275060701060002', 2, NULL, NULL, '0', 'Tidak', ''),
 (28, '3205212702040000', 4, NULL, NULL, '0', 'Tidak', ''),
 (29, '3205211809040000', 4, NULL, NULL, '0', 'Tidak', ''),
 (30, '3205211003060000', 4, NULL, NULL, '0', 'Tidak', ''),
@@ -173,7 +173,7 @@ INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `pindaha
 (47, '3205214408050010', 3, NULL, NULL, '0', 'Tidak', ''),
 (48, '3204546070500000', 1, NULL, NULL, '0', 'Tidak', ''),
 (49, '3205215611030000', 4, NULL, NULL, '0', 'Tidak', ''),
-(50, '3205214605050000', 2, NULL, NULL, '0', 'Tidak', ''),
+(50, '3205216912850001', 2, NULL, NULL, '0', 'Tidak', ''),
 (51, '3205214104060000', 4, NULL, NULL, '0', 'Tidak', ''),
 (52, '3205074110940000', 5, NULL, NULL, '0', 'Tidak', ''),
 (53, '3205074120940000', NULL, NULL, NULL, '0', 'Tidak', ''),
@@ -264,18 +264,18 @@ INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `pindaha
 (138, '3205216805060002', 1, NULL, NULL, '0', 'Tidak', ''),
 (139, '3205211403060004', 2, NULL, NULL, '0', 'Tidak', ''),
 (140, '3205210702050001', 1, NULL, NULL, '0', 'Tidak', ''),
-(141, '3205210102070001', 2, NULL, NULL, '0', 'Tidak', ''),
+(141, '3205214102070005', 2, NULL, NULL, '0', 'Tidak', ''),
 (142, '1050156903065001', 2, NULL, NULL, '0', 'Tidak', ''),
 (143, '3204090810060010', 2, NULL, NULL, '0', 'Tidak', ''),
 (144, '1007362003002698', 4, NULL, NULL, '0', 'Tidak', ''),
 (145, '1050192612035001', 3, NULL, NULL, '0', 'Tidak', ''),
-(146, '3205052305080010', 2, 'Tidak', NULL, '', 'Tidak', ''),
+(146, '3205054609060006', 2, 'Tidak', NULL, '', 'Tidak', ''),
 (147, '3204282012040002', 1, 'Tidak', NULL, '', 'Tidak', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_tenaga_pendidik`
+-- Table structure for table `detail_tenaga_pendidik`
 --
 
 CREATE TABLE `detail_tenaga_pendidik` (
@@ -294,7 +294,7 @@ CREATE TABLE `detail_tenaga_pendidik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `detail_tenaga_pendidik`
+-- Dumping data for table `detail_tenaga_pendidik`
 --
 
 INSERT INTO `detail_tenaga_pendidik` (`idDetail_tenpen`, `NIK_tenpen`, `NUPTK`, `NIP`, `NIY_NIGK`, `NPWP`, `nama_wajib_pajak`, `kewarganegaraan`, `nama_negara`, `status_perkawinan`, `nama_pasangan`, `pekerjaan_pasangan`) VALUES
@@ -317,12 +317,13 @@ INSERT INTO `detail_tenaga_pendidik` (`idDetail_tenpen`, `NIK_tenpen`, `NUPTK`, 
 (17, '1871116705000001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (18, '3205210505940006', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (19, '3205172306950002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, '4323354635234323', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(20, '4323354635234323', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, '3205324307950001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ekstrakulikuler`
+-- Table structure for table `ekstrakulikuler`
 --
 
 CREATE TABLE `ekstrakulikuler` (
@@ -332,7 +333,7 @@ CREATE TABLE `ekstrakulikuler` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ekstrakulikuler`
+-- Dumping data for table `ekstrakulikuler`
 --
 
 INSERT INTO `ekstrakulikuler` (`idEkstrakulikuler`, `nama_ekstrakulikuler`, `Keterangan`) VALUES
@@ -342,7 +343,7 @@ INSERT INTO `ekstrakulikuler` (`idEkstrakulikuler`, `nama_ekstrakulikuler`, `Ket
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `groups`
+-- Table structure for table `groups`
 --
 
 CREATE TABLE `groups` (
@@ -352,7 +353,7 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `groups`
+-- Dumping data for table `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
@@ -365,7 +366,7 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `groups_header`
+-- Table structure for table `groups_header`
 --
 
 CREATE TABLE `groups_header` (
@@ -374,7 +375,7 @@ CREATE TABLE `groups_header` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `groups_header`
+-- Dumping data for table `groups_header`
 --
 
 INSERT INTO `groups_header` (`id_header_menu`, `id_groups`) VALUES
@@ -389,7 +390,7 @@ INSERT INTO `groups_header` (`id_header_menu`, `id_groups`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `groups_menu`
+-- Table structure for table `groups_menu`
 --
 
 CREATE TABLE `groups_menu` (
@@ -398,7 +399,7 @@ CREATE TABLE `groups_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `groups_menu`
+-- Dumping data for table `groups_menu`
 --
 
 INSERT INTO `groups_menu` (`id_groups`, `id_menu`) VALUES
@@ -486,17 +487,17 @@ INSERT INTO `groups_menu` (`id_groups`, `id_menu`) VALUES
 (3, 129),
 (1, 130),
 (3, 130),
-(1, 131),
-(3, 131),
 (1, 132),
 (3, 132),
 (1, 133),
-(3, 133);
+(3, 133),
+(1, 134),
+(3, 134);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `header_menu`
+-- Table structure for table `header_menu`
 --
 
 CREATE TABLE `header_menu` (
@@ -506,7 +507,7 @@ CREATE TABLE `header_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `header_menu`
+-- Dumping data for table `header_menu`
 --
 
 INSERT INTO `header_menu` (`id_header_menu`, `sort`, `header`) VALUES
@@ -517,7 +518,7 @@ INSERT INTO `header_menu` (`id_header_menu`, `sort`, `header`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jabatan`
+-- Table structure for table `jabatan`
 --
 
 CREATE TABLE `jabatan` (
@@ -527,7 +528,7 @@ CREATE TABLE `jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jabatan`
+-- Dumping data for table `jabatan`
 --
 
 INSERT INTO `jabatan` (`idJabatan`, `nama_jabatan`, `keterangan_jabatan`) VALUES
@@ -548,7 +549,7 @@ INSERT INTO `jabatan` (`idJabatan`, `nama_jabatan`, `keterangan_jabatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jabatan_tenpen`
+-- Table structure for table `jabatan_tenpen`
 --
 
 CREATE TABLE `jabatan_tenpen` (
@@ -558,7 +559,7 @@ CREATE TABLE `jabatan_tenpen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jabatan_tenpen`
+-- Dumping data for table `jabatan_tenpen`
 --
 
 INSERT INTO `jabatan_tenpen` (`idJabatan_tenpen`, `NIK_tenpen`, `idJabatan`) VALUES
@@ -572,7 +573,7 @@ INSERT INTO `jabatan_tenpen` (`idJabatan_tenpen`, `NIK_tenpen`, `idJabatan`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kabupaten`
+-- Table structure for table `kabupaten`
 --
 
 CREATE TABLE `kabupaten` (
@@ -583,7 +584,7 @@ CREATE TABLE `kabupaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kabupaten`
+-- Dumping data for table `kabupaten`
 --
 
 INSERT INTO `kabupaten` (`id_kab`, `id_prov`, `nama_kabupaten`, `id_jenis`) VALUES
@@ -1105,7 +1106,7 @@ INSERT INTO `kabupaten` (`id_kab`, `id_prov`, `nama_kabupaten`, `id_jenis`) VALU
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kecamatan`
+-- Table structure for table `kecamatan`
 --
 
 CREATE TABLE `kecamatan` (
@@ -1115,7 +1116,7 @@ CREATE TABLE `kecamatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kecamatan`
+-- Dumping data for table `kecamatan`
 --
 
 INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama_kecamatan`) VALUES
@@ -8221,7 +8222,7 @@ INSERT INTO `kecamatan` (`id_kec`, `id_kab`, `nama_kecamatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelas`
+-- Table structure for table `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -8233,7 +8234,7 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kelas`
+-- Dumping data for table `kelas`
 --
 
 INSERT INTO `kelas` (`idKelas`, `idKurikulum`, `idProdi`, `NIK_tenpen`, `nama_kelas`) VALUES
@@ -8247,7 +8248,7 @@ INSERT INTO `kelas` (`idKelas`, `idKurikulum`, `idProdi`, `NIK_tenpen`, `nama_ke
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelompok_mapel`
+-- Table structure for table `kelompok_mapel`
 --
 
 CREATE TABLE `kelompok_mapel` (
@@ -8257,7 +8258,7 @@ CREATE TABLE `kelompok_mapel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kelompok_mapel`
+-- Dumping data for table `kelompok_mapel`
 --
 
 INSERT INTO `kelompok_mapel` (`idKelompok_mapel`, `nama_kelompok_mapel`, `keterangan`) VALUES
@@ -8269,7 +8270,7 @@ INSERT INTO `kelompok_mapel` (`idKelompok_mapel`, `nama_kelompok_mapel`, `ketera
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelurahan`
+-- Table structure for table `kelurahan`
 --
 
 CREATE TABLE `kelurahan` (
@@ -8280,7 +8281,7 @@ CREATE TABLE `kelurahan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kelurahan`
+-- Dumping data for table `kelurahan`
 --
 
 INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUES
@@ -90859,7 +90860,7 @@ INSERT INTO `kelurahan` (`id_kel`, `id_kec`, `nama_kelurahan`, `id_jenis`) VALUE
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kurikulum`
+-- Table structure for table `kurikulum`
 --
 
 CREATE TABLE `kurikulum` (
@@ -90870,7 +90871,7 @@ CREATE TABLE `kurikulum` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kurikulum`
+-- Dumping data for table `kurikulum`
 --
 
 INSERT INTO `kurikulum` (`idKurikulum`, `idSekolah`, `idTahun_ajaran`, `nama_kurikulum`) VALUES
@@ -90880,7 +90881,7 @@ INSERT INTO `kurikulum` (`idKurikulum`, `idSekolah`, `idTahun_ajaran`, `nama_kur
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `leger`
+-- Table structure for table `leger`
 --
 
 CREATE TABLE `leger` (
@@ -90894,38 +90895,60 @@ CREATE TABLE `leger` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `leger`
+-- Dumping data for table `leger`
 --
 
 INSERT INTO `leger` (`idLeger`, `idMaster_leger`, `idMata_pelajaran`, `NIK_tenpen`, `kkm_pengetahuan`, `kkm_keterampilan`, `no_urut_mapel`) VALUES
 (71, 7, 1, '1803141911870002', 70, 70, 1),
 (72, 8, 1, '1803141911870002', 70, 70, 1),
-(73, 9, 1, '1803141911870002', 70, 70, 1),
-(74, 10, 1, '1803141911870002', 70, 70, 1),
-(75, 9, 5, '3205175110950001', 75, 75, 6),
-(77, 9, 13, '3205210505940006', 75, 75, 13),
-(80, 9, 7, '3205214302960006', 75, 75, 4),
-(81, 9, 8, '3205026502950004', 70, 70, 12),
-(82, 9, 9, '3205172306950002', 70, 70, 9),
 (84, 7, 2, '4323354635234323', 65, 65, 2),
 (85, 7, 4, '3205216304890002', 68, 68, 4),
 (86, 7, 5, '3205054909940006', 68, 68, 5),
 (87, 7, 6, '3205354602780001', 72, 72, 6),
 (88, 7, 7, '3205205502940004', 68, 68, 7),
 (89, 7, 8, '3205026502950004', 65, 65, 8),
-(90, 7, 9, '3205172306950002', 65, 65, 9),
+(90, 7, 9, '3205012512950009', 65, 65, 9),
 (91, 8, 2, '4323354635234323', 65, 65, 2),
 (92, 8, 4, '3205216304890002', 68, 68, 4),
 (93, 8, 5, '3205054909940006', 68, 68, 5),
 (94, 8, 6, '3205354602780001', 72, 72, 6),
 (95, 8, 7, '3205205502940004', 68, 68, 7),
 (96, 8, 8, '3205026502950004', 65, 65, 8),
-(97, 8, 9, '3205172306950002', 65, 65, 9);
+(97, 8, 9, '3205012512950009', 65, 65, 9),
+(98, 8, 3, '3205215209900009', 69, 69, 3),
+(99, 8, 11, '3205172306950002', 65, 65, 10),
+(100, 8, 12, '3205012512950009', 65, 65, 11),
+(101, 7, 11, '3205172306950002', 65, 65, 10),
+(102, 7, 12, '3205012512950009', 65, 65, 11),
+(103, 10, 15, '4323354635234323', 75, 75, 2),
+(104, 10, 14, '1803141911870002', 70, 70, 1),
+(105, 10, 16, '3205215209900009', 75, 75, 3),
+(106, 10, 17, '3205205502940004', 75, 75, 4),
+(107, 10, 18, '3205216304890002', 75, 75, 5),
+(108, 10, 20, '3205354602780001', 75, 75, 7),
+(109, 10, 19, '3205054909940006', 75, 75, 6),
+(110, 10, 24, '3205026502950004', 72, 72, 8),
+(111, 10, 22, '3205172306950002', 75, 75, 9),
+(112, 9, 18, '3205324307950001', 75, 75, 5),
+(113, 9, 23, '3205210505940006', 75, 75, 10),
+(114, 10, 25, '3205081706920001', 75, 75, 11),
+(115, 10, 23, '3205020801950006', 75, 75, 10),
+(116, 9, 15, '4323354635234323', 75, 75, 2),
+(117, 9, 16, '3205215209900009', 75, 75, 3),
+(118, 9, 20, '3205354602780001', 75, 75, 7),
+(119, 9, 24, '3205026502950004', 75, 75, 8),
+(120, 9, 25, '3205172306950002', 75, 75, 11),
+(121, 9, 17, '3205214302960006', 75, 75, 4),
+(122, 9, 19, '3205175110950001', 75, 75, 6),
+(123, 7, 3, '3205215209900009', 69, 69, 3),
+(124, 9, 14, '1803141911870002', 75, 75, 1),
+(125, 9, 22, '3205172306950002', 75, 75, 9),
+(127, 9, 26, '3205012512950009', 75, 75, 12);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `leger_ekskul`
+-- Table structure for table `leger_ekskul`
 --
 
 CREATE TABLE `leger_ekskul` (
@@ -90937,7 +90960,7 @@ CREATE TABLE `leger_ekskul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `leger_ekskul`
+-- Dumping data for table `leger_ekskul`
 --
 
 INSERT INTO `leger_ekskul` (`idLeger_ekskul`, `idMaster_leger`, `ekstrakulikuler`, `pembimbing`, `no_urut_ekskul`) VALUES
@@ -90953,7 +90976,7 @@ INSERT INTO `leger_ekskul` (`idLeger_ekskul`, `idMaster_leger`, `ekstrakulikuler
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `leger_nilai`
+-- Table structure for table `leger_nilai`
 --
 
 CREATE TABLE `leger_nilai` (
@@ -90969,16 +90992,16 @@ CREATE TABLE `leger_nilai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `leger_nilai`
+-- Dumping data for table `leger_nilai`
 --
 
 INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetahuan`, `nilai_keterampilan`, `nilai_sikap`, `nilai_sosial`, `nilai_spritual`, `catatan`) VALUES
-(429, 71, '3205170511050010', 80, 80, 'B', 'B', 'A', NULL),
+(429, 71, '3275060701060002', 80, 80, 'B', 'B', 'A', NULL),
 (430, 71, '3211116207070000', 80, 80, 'B', 'B', 'B', NULL),
 (431, 71, '3211116111050000', 80, 80, 'B', 'A', 'B', NULL),
 (432, 71, '3205210506050010', 74, 76, 'B', 'B', 'B', NULL),
 (433, 71, '3204290310050000', 83, 80, 'B', 'B', 'B', NULL),
-(434, 71, '3205214605050000', 76, 77, 'B', 'B', 'B', NULL),
+(434, 71, '3205216912850001', 76, 77, 'B', 'B', 'B', NULL),
 (435, 71, '3205172311050002', 78, 80, 'B', 'B', 'B', NULL),
 (436, 71, '3204080902060002', 90, 80, 'B', 'A', 'A', NULL),
 (437, 71, '1007362003002732', 78, 80, 'A', 'B', 'B', NULL),
@@ -91000,10 +91023,10 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (453, 71, '3204320104055535', 80, 80, 'B', 'B', 'B', NULL),
 (454, 71, '3205211107060002', 71, 75, 'B', 'B', 'B', NULL),
 (455, 71, '3205211403060004', 72, 80, 'B', 'B', 'B', NULL),
-(456, 71, '3205210102070001', 78, 76, 'B', 'B', 'B', NULL),
+(456, 71, '3205214102070005', 78, 76, 'B', 'B', 'B', NULL),
 (457, 71, '1050156903065001', 81, 80, 'B', 'B', 'B', NULL),
 (458, 71, '3204090810060010', 79, 80, 'B', 'B', 'B', NULL),
-(459, 71, '3205052305080010', 90, 80, 'A', 'A', 'B', NULL),
+(459, 71, '3205054609060006', 90, 80, 'A', 'A', 'B', NULL),
 (460, 72, '3273024304060010', 81, 80, 'A', 'B', 'B', NULL),
 (461, 72, '3205216309060000', 75, 75, 'B', 'B', 'C', NULL),
 (462, 72, '3204096003060000', 79, 80, 'B', 'B', 'A', NULL),
@@ -91032,218 +91055,1205 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (485, 72, '3205216805060002', 78, 78, 'B', 'B', 'B', NULL),
 (486, 72, '3205210702050001', 75, 74, 'B', 'B', 'B', NULL),
 (487, 72, '3204282012040002', 80, 80, 'A', 'B', 'B', NULL),
-(488, 74, '3205210206050000', NULL, NULL, NULL, NULL, NULL, NULL),
-(489, 74, '3205210911040000', NULL, NULL, NULL, NULL, NULL, NULL),
-(490, 74, '3276055002040010', NULL, NULL, NULL, NULL, NULL, NULL),
-(491, 74, '3205211404030000', NULL, NULL, NULL, NULL, NULL, NULL),
-(492, 74, '3205214408050010', NULL, NULL, NULL, NULL, NULL, NULL),
-(493, 74, '3276056503040010', NULL, NULL, NULL, NULL, NULL, NULL),
-(494, 74, '3205171908030004', NULL, NULL, NULL, NULL, NULL, NULL),
-(495, 74, '3205214810030002', NULL, NULL, NULL, NULL, NULL, NULL),
-(496, 74, '3205214510030002', NULL, NULL, NULL, NULL, NULL, NULL),
-(497, 74, '3205312112040003', NULL, NULL, NULL, NULL, NULL, NULL),
-(498, 74, '3205214606030004', NULL, NULL, NULL, NULL, NULL, NULL),
-(499, 74, '3205021504040008', NULL, NULL, NULL, NULL, NULL, NULL),
-(500, 74, '3205021306040005', NULL, NULL, NULL, NULL, NULL, NULL),
-(501, 74, '3205056410050002', NULL, NULL, NULL, NULL, NULL, NULL),
-(502, 74, '3205214909030005', NULL, NULL, NULL, NULL, NULL, NULL),
-(503, 74, '3205172908040006', NULL, NULL, NULL, NULL, NULL, NULL),
-(504, 74, '3204322307030009', NULL, NULL, NULL, NULL, NULL, NULL),
-(505, 74, '3205041911030007', NULL, NULL, NULL, NULL, NULL, NULL),
-(506, 74, '3205211512030001', NULL, NULL, NULL, NULL, NULL, NULL),
-(507, 74, '3674020305040004', NULL, NULL, NULL, NULL, NULL, NULL),
-(508, 74, '1050192612035001', NULL, NULL, NULL, NULL, NULL, NULL),
-(509, 73, '3205212702040000', 78, 77, 'B', 'B', 'B', NULL),
-(510, 73, '3205211809040000', 78, 76, 'B', 'B', 'B', NULL),
-(511, 73, '3205211003060000', 75, 75, 'C', 'B', 'C', NULL),
-(512, 73, '3205056106050010', 83, 80, 'B', 'B', 'B', NULL),
-(513, 73, '3205176104040010', 86, 80, 'A', 'B', 'A', NULL),
-(514, 73, '3205172407050000', 81, 80, 'A', 'B', 'A', NULL),
-(515, 73, '3205210509050000', 84, 80, 'B', 'B', 'B', NULL),
-(516, 73, '3205215611030000', 86, 80, 'B', 'B', 'A', NULL),
-(517, 73, '3205214104060000', 79, 75, 'B', 'B', 'B', NULL),
-(518, 73, '3201012707050001', 75, NULL, NULL, NULL, NULL, NULL),
-(519, 73, '3175083011050004', 78, NULL, NULL, NULL, NULL, NULL),
-(520, 73, '3205216002050001', 75, 76, 'B', 'B', 'B', NULL),
-(521, 73, '3205020405050006', 80, NULL, NULL, NULL, NULL, NULL),
-(522, 73, '3277020908040009', 83, NULL, NULL, NULL, NULL, NULL),
-(523, 73, '3205215411040001', 83, NULL, NULL, NULL, NULL, NULL),
-(524, 73, '3205212009050001', 83, NULL, NULL, NULL, NULL, NULL),
-(525, 73, '3205215206050003', 78, NULL, NULL, NULL, NULL, NULL),
-(526, 73, '3205214103050002', 79, 78, 'B', 'B', 'B', NULL),
-(527, 73, '3205091907040005', 80, 80, 'A', 'A', 'B', NULL),
-(528, 73, '3210151304050001', 81, NULL, NULL, NULL, NULL, NULL),
-(529, 73, '3205212310050001', 79, 77, 'B', 'B', 'B', NULL),
-(530, 73, '3205215003040007', 79, 76, 'B', 'B', 'B', NULL),
-(531, 73, '3205216809040001', 78, 76, 'B', 'B', 'B', NULL),
-(532, 73, '3205210704090001', 77, 76, 'B', 'B', 'B', NULL),
-(533, 73, '3205174405050004', 81, NULL, NULL, NULL, NULL, NULL),
-(534, 73, '3205214510050005', 78, NULL, NULL, NULL, NULL, NULL),
-(535, 73, '3205210401060004', 75, 76, 'B', 'B', 'B', NULL),
-(536, 73, '3205213105040001', 75, 75, 'C', 'B', 'C', NULL),
-(537, 73, '3205212309050004', 77, 76, 'B', 'B', 'B', NULL),
-(538, 73, '1007362003002698', 75, 75, 'B', 'B', 'C', NULL),
-(539, 73, '3273055606810002', 79, 77, 'B', 'B', 'B', NULL),
-(540, 75, '3205212702040000', 78, 79, 'B', 'B', 'B', 'Lebih memperhatikan lagi ketika guru menjelaskan di kelas'),
-(541, 75, '3205211809040000', 79, 78, 'B', 'B', 'A', 'Belajar lebih giat lagi'),
-(542, 75, '3205211003060000', 77, 76, 'C', 'C', 'C', 'Belajar lebih giat lagi!'),
-(543, 75, '3205056106050010', 88, 80, 'C', 'B', 'A', 'tingkatkan lagi prestasinya'),
-(544, 75, '3205176104040010', 89, 80, 'B', 'A', 'A', 'jangan pernah merasa puas'),
-(545, 75, '3205172407050000', 79, 78, 'B', 'B', 'B', 'lebih memperhatikan lagi ketika guru menjelaskan di kelas'),
-(546, 75, '3205210509050000', 91, 85, 'A', 'A', 'A', 'Pertahankan Prestasimu!'),
-(547, 75, '3205215611030000', 80, 85, 'A', 'A', 'A', 'jangan pernah merasa puas'),
-(548, 75, '3205214104060000', 80, 80, 'A', 'A', 'A', 'Lebih memperhatikan lagi ketika guru menjelaskan di kelas '),
-(549, 75, '3201012707050001', 75, 75, 'C', 'B', 'B', NULL),
-(550, 75, '3273055606810002', 80, 80, 'A', 'A', 'A', 'Lebih memperhatikan lagi ketika guru menjelaskan di kelas'),
-(551, 75, '3175083011050004', 80, 79, 'A', 'B', 'A', NULL),
-(552, 75, '3205216002050001', 79, NULL, NULL, NULL, NULL, NULL),
-(553, 75, '3205020405050006', 81, 80, 'B', 'B', 'A', NULL),
-(554, 75, '3277020908040009', 78, 79, 'B', 'B', 'B', NULL),
-(555, 75, '3205215411040001', 79, 82, 'A', 'B', 'A', NULL),
-(556, 75, '3205212009050001', 78, 78, 'B', 'B', 'B', NULL),
-(557, 75, '3205215206050003', 78, 78, 'A', 'B', 'B', NULL),
-(558, 75, '3205214103050002', 87, 83, 'A', 'A', 'A', 'tingkatkan lagi prestasinya'),
-(559, 75, '3205091907040005', 79, 78, 'B', 'C', 'A', 'lebih aktif bersosialisasi '),
-(560, 75, '3210151304050001', 80, 79, 'A', 'A', 'A', NULL),
-(561, 75, '3205212310050001', 78, 78, 'B', 'B', 'B', 'lebih memperhatikan lagi ketika guru menjelaskan di kelas'),
-(562, 75, '3205215003040007', 79, 79, 'A', 'B', 'A', 'Lebih memperhatikan lagi ketika guru menjelaskan di kelas'),
-(563, 75, '3205216809040001', 79, 79, 'A', 'A', 'A', 'Lebih memperhatikan lagi ketika guru menjelaskan di kelas'),
-(564, 75, '3205210704090001', 86, 82, NULL, NULL, NULL, NULL),
-(565, 75, '3205174405050004', 83, 79, 'A', 'A', 'A', NULL),
-(566, 75, '3205214510050005', 79, 80, 'A', 'B', 'A', NULL),
-(567, 75, '3205210401060004', 79, 78, 'B', 'B', 'B', 'Lebih memperhatikan lagi ketika guru menjelaskan di kelas'),
-(568, 75, '3205213105040001', 77, 77, NULL, NULL, NULL, NULL),
-(569, 75, '3205212309050004', 78, 78, NULL, NULL, NULL, NULL),
-(570, 75, '1007362003002698', 78, 78, 'B', 'B', 'B', 'Belajar lebih giat lagi!'),
-(588, 77, '3205212702040000', 75, 77, 'B', 'B', 'B', 'Lebih Giat lagi Belajarnya'),
-(589, 77, '3205211809040000', 75, 78, 'B', 'B', 'B', 'Lebih Giat lagi Belajarnya'),
-(590, 77, '3205211003060000', 75, 76, 'C', 'C', 'B', 'Lebih Giat lagi Belajarnya'),
-(591, 77, '3205056106050010', 85, 88, 'B', 'B', 'B', NULL),
-(592, 77, '3205176104040010', 92, 94, 'A', 'A', 'B', NULL),
-(593, 77, '3205172407050000', 78, 79, 'B', 'B', 'B', 'Lebih Giat lagi Belajarnya'),
-(594, 77, '3205210509050000', 85, 87, 'B', 'B', 'B', NULL),
-(595, 77, '3205215611030000', 77, 79, 'B', 'B', 'B', NULL),
-(596, 77, '3205214104060000', 77, 78, 'B', 'B', 'B', NULL),
-(597, 77, '3201012707050001', 75, 75, 'B', 'B', 'B', 'Lebih Giat lagi Belajarnya'),
-(598, 77, '3273055606810002', 77, 78, 'B', 'B', 'B', NULL),
-(599, 77, '3175083011050004', 77, 86, 'B', 'B', 'B', NULL),
-(600, 77, '3205216002050001', 77, 78, 'B', 'B', 'B', NULL),
-(601, 77, '3205020405050006', 77, 81, 'B', 'B', 'B', NULL),
-(602, 77, '3277020908040009', 78, 84, 'A', 'B', 'A', NULL),
-(603, 77, '3205215411040001', 79, 82, 'B', 'B', 'B', NULL),
-(604, 77, '3205212009050001', 76, 78, 'B', 'B', 'B', NULL),
-(605, 77, '3205215206050003', 76, 75, 'B', 'B', 'B', NULL),
-(606, 77, '3205214103050002', 76, 77, 'B', 'B', 'B', NULL),
-(607, 77, '3205091907040005', 89, 93, 'B', 'B', 'B', NULL),
-(608, 77, '3210151304050001', 79, 83, 'B', 'B', 'B', NULL),
-(609, 77, '3205212310050001', 77, 76, 'B', 'B', 'B', 'Lebih Giat lagi Belajarnya'),
-(610, 77, '3205215003040007', 77, 76, 'B', 'B', 'B', NULL),
-(611, 77, '3205216809040001', 77, 76, 'B', 'B', 'B', NULL),
-(612, 77, '3205210704090001', 78, 77, 'B', 'B', 'B', NULL),
-(613, 77, '3205174405050004', 79, 81, 'B', 'B', 'B', NULL),
-(614, 77, '3205214510050005', 77, 78, 'B', 'B', 'B', NULL),
-(615, 77, '3205210401060004', 77, 75, 'B', 'B', 'B', 'Lebih Giat lagi Belajarnya'),
-(616, 77, '3205213105040001', 76, 76, 'C', 'C', 'C', 'Lebih Giat lagi Belajarnya !!'),
-(617, 77, '3205212309050004', 77, 79, 'C', 'B', 'B', 'Lebih Giat lagi Belajarnya !!'),
-(618, 77, '1007362003002698', 75, 76, 'C', 'B', 'C', 'Lebih Giat lagi Belajarnya'),
-(619, 80, '3205212702040000', 80, 83, 'B', 'B', 'B', NULL),
-(620, 80, '3205211809040000', 81, 84, 'C', 'C', 'C', NULL),
-(621, 80, '3205211003060000', 78, 88, 'C', 'C', 'C', NULL),
-(622, 80, '3205056106050010', 90, 85, 'B', 'B', 'B', NULL),
-(623, 80, '3205176104040010', 93, 85, 'B', 'B', 'A', NULL),
-(624, 80, '3205172407050000', 82, 82, 'B', 'B', 'B', NULL),
-(625, 80, '3205210509050000', 84, 92, 'B', 'B', 'B', NULL),
-(626, 80, '3205215611030000', 85, 84, 'A', 'B', 'B', NULL),
-(627, 80, '3205214104060000', 82, 83, 'B', 'B', 'B', NULL),
-(628, 80, '3201012707050001', 76, 80, 'C', 'C', 'C', NULL),
-(629, 80, '3273055606810002', 80, 81, 'B', 'B', 'C', NULL),
-(630, 80, '3175083011050004', 84, 83, 'B', 'B', 'B', NULL),
-(631, 80, '3205216002050001', 80, 87, 'B', 'B', 'B', NULL),
-(632, 80, '3205020405050006', 87, 85, 'B', 'B', 'B', NULL),
-(633, 80, '3277020908040009', 90, 85, 'B', 'B', 'A', NULL),
-(634, 80, '3205215411040001', 84, 90, 'B', 'B', 'B', NULL),
-(635, 80, '3205212009050001', 82, 86, 'B', 'C', 'B', NULL),
-(636, 80, '3205215206050003', 80, 81, 'B', 'B', 'B', NULL),
-(637, 80, '3205214103050002', 84, 90, 'B', 'B', 'B', NULL),
-(638, 80, '3205091907040005', 95, 90, 'B', 'C', 'B', NULL),
-(639, 80, '3210151304050001', 83, 83, 'B', 'B', 'B', NULL),
-(640, 80, '3205212310050001', 79, 82, 'C', 'C', 'B', NULL),
-(641, 80, '3205215003040007', 80, 81, 'B', 'B', 'C', NULL),
-(642, 80, '3205216809040001', 81, 90, 'B', 'B', 'B', NULL),
-(643, 80, '3205210704090001', 80, 85, 'B', 'B', 'B', NULL),
-(644, 80, '3205174405050004', 88, 91, 'B', 'B', 'B', NULL),
-(645, 80, '3205214510050005', 80, 83, 'B', 'B', 'B', NULL),
-(646, 80, '3205210401060004', 78, 80, 'C', 'C', 'C', NULL),
-(647, 80, '3205213105040001', 78, 83, 'C', 'B', 'C', NULL),
-(648, 80, '3205212309050004', 80, 79, 'C', 'B', 'C', NULL),
-(649, 80, '1007362003002698', 79, 78, 'C', 'C', 'C', NULL),
-(650, 81, '3205212702040000', NULL, NULL, NULL, NULL, NULL, NULL),
-(651, 81, '3205211809040000', 76, 78, NULL, NULL, NULL, NULL),
-(652, 81, '3205211003060000', NULL, NULL, NULL, NULL, NULL, NULL),
-(653, 81, '3205056106050010', 80, 78, NULL, NULL, NULL, NULL),
-(654, 81, '3205176104040010', 83, 81, NULL, NULL, NULL, NULL),
-(655, 81, '3205172407050000', 77, 79, NULL, NULL, NULL, NULL),
-(656, 81, '3205210509050000', NULL, NULL, NULL, NULL, NULL, NULL),
-(657, 81, '3205215611030000', 82, 78, NULL, NULL, NULL, NULL),
-(658, 81, '3205214104060000', NULL, NULL, NULL, NULL, NULL, NULL),
-(659, 81, '3201012707050001', 72, 78, 'B', 'B', 'B', NULL),
-(660, 81, '3273055606810002', NULL, NULL, NULL, NULL, NULL, NULL),
-(661, 81, '3175083011050004', 78, 78, NULL, NULL, NULL, NULL),
-(662, 81, '3205216002050001', NULL, NULL, NULL, NULL, NULL, NULL),
-(663, 81, '3205020405050006', 80, 78, NULL, NULL, NULL, NULL),
-(664, 81, '3277020908040009', 79, 79, NULL, NULL, NULL, NULL),
-(665, 81, '3205215411040001', 80, 84, NULL, NULL, NULL, NULL),
-(666, 81, '3205212009050001', 78, 78, 'B', 'B', 'B', 'B'),
-(667, 81, '3205215206050003', NULL, 81, NULL, NULL, NULL, NULL),
-(668, 81, '3205214103050002', 83, 78, NULL, NULL, NULL, NULL),
-(669, 81, '3205091907040005', 79, 78, NULL, NULL, NULL, NULL),
-(670, 81, '3210151304050001', 78, 78, NULL, NULL, NULL, NULL),
-(671, 81, '3205212310050001', 77, 78, NULL, NULL, NULL, NULL),
-(672, 81, '3205215003040007', 81, 78, NULL, NULL, NULL, NULL),
-(673, 81, '3205216809040001', 80, 80, NULL, NULL, NULL, NULL),
-(674, 81, '3205210704090001', 83, 78, NULL, NULL, NULL, NULL),
-(675, 81, '3205174405050004', 82, 78, NULL, NULL, NULL, NULL),
-(676, 81, '3205214510050005', 80, 78, NULL, NULL, NULL, NULL),
-(677, 81, '3205210401060004', NULL, NULL, NULL, NULL, NULL, NULL),
-(678, 81, '3205213105040001', NULL, 78, NULL, NULL, NULL, NULL),
-(679, 81, '3205212309050004', NULL, NULL, NULL, NULL, NULL, NULL),
-(680, 81, '1007362003002698', NULL, NULL, NULL, NULL, NULL, NULL),
-(681, 82, '3205212702040000', 71, NULL, NULL, NULL, NULL, NULL),
-(682, 82, '3205211809040000', 71, 70, 'A', 'B', NULL, NULL),
-(683, 82, '3205211003060000', 72, 72, NULL, NULL, NULL, NULL),
-(684, 82, '3205056106050010', 74, 74, 'B', 'B', NULL, NULL),
-(685, 82, '3205176104040010', 75, 74, 'B', 'B', NULL, NULL),
-(686, 82, '3205172407050000', 70, 70, 'B', 'B', NULL, NULL),
-(687, 82, '3205210509050000', 78, NULL, NULL, NULL, NULL, NULL),
-(688, 82, '3205215611030000', 70, 75, NULL, NULL, NULL, NULL),
-(689, 82, '3205214104060000', 70, 75, NULL, NULL, NULL, NULL),
-(690, 82, '3201012707050001', 70, 70, 'B', 'B', NULL, NULL),
-(691, 82, '3273055606810002', 72, 75, NULL, NULL, NULL, NULL),
-(692, 82, '3175083011050004', 76, 75, 'A', 'B', NULL, NULL),
-(693, 82, '3205216002050001', 70, 70, NULL, NULL, NULL, NULL),
-(694, 82, '3205020405050006', 74, 77, 'A', 'B', NULL, NULL),
-(695, 82, '3277020908040009', 72, 77, 'B', 'B', NULL, NULL),
-(696, 82, '3205215411040001', 76, 75, 'A', 'B', NULL, NULL),
-(697, 82, '3205212009050001', 70, 70, 'A', 'B', 'D', NULL),
-(698, 82, '3205215206050003', 72, 70, 'B', 'B', NULL, NULL),
-(699, 82, '3205214103050002', 74, 75, NULL, NULL, NULL, NULL),
-(700, 82, '3205091907040005', 72, 72, NULL, NULL, NULL, NULL),
-(701, 82, '3210151304050001', 72, 72, 'B', 'B', NULL, NULL),
-(702, 82, '3205212310050001', 71, 70, NULL, NULL, NULL, NULL),
-(703, 82, '3205215003040007', 70, 70, NULL, NULL, NULL, NULL),
-(704, 82, '3205216809040001', 71, 71, NULL, NULL, NULL, NULL),
-(705, 82, '3205210704090001', 75, 75, NULL, NULL, NULL, NULL),
-(706, 82, '3205174405050004', 72, 72, 'A', 'B', NULL, NULL),
-(707, 82, '3205214510050005', 71, 75, 'A', 'B', NULL, NULL),
-(708, 82, '3205210401060004', 71, 70, NULL, NULL, NULL, NULL),
-(709, 82, '3205213105040001', 73, 75, NULL, NULL, NULL, NULL),
-(710, 82, '3205212309050004', 72, 70, NULL, NULL, NULL, NULL),
-(711, 82, '1007362003002698', 72, 77, NULL, NULL, NULL, NULL);
+(712, 102, '3275060701060002', 76, 76, 'A', 'B', 'B', 'Ditingkatkan kembali beljarnya '),
+(713, 102, '3211116207070000', 76, 75, 'A', 'B', 'B', 'Lebih aktif dalam bersosial '),
+(714, 102, '3211116111050000', 79, 74, 'A', 'B', 'B', 'Lebih aktif dalam kegiatan belajar'),
+(715, 102, '3205210506050010', 70, 73, 'B', 'B', 'B', 'Diringkatkan kembali belajarnya'),
+(716, 102, '3204290310050000', 79, 78, 'B', 'B', 'B', 'Lebih aktif dalam belajarnya'),
+(717, 102, '3205216912850001', 80, 79, 'A', 'A', 'A', 'Dipertahankan dan ditingkatkan kembali belajarnya'),
+(718, 102, '3205172311050002', 80, 80, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarny'),
+(719, 102, '3204080902060002', 80, 80, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarny'),
+(720, 102, '1007362003002732', 79, 72, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarny'),
+(721, 102, '3273265906050001', 80, 74, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(722, 102, '7303022706060001', 76, 76, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(723, 102, '3205417009050001', 85, 73, 'B', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(724, 102, '3205174510060003', 80, 76, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(725, 102, '3207181801060004', 80, 79, 'B', 'A', 'A', 'Ditingkatkan kembali dalam belajarny'),
+(726, 102, '3205171608040003', 77, 75, 'B', 'A', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(727, 102, '3204323007050009', 78, 73, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(728, 102, '3204321911050001', 77, 74, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(729, 102, '3204282210050019', 73, 74, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(730, 102, '3277012203050004', 83, 77, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya '),
+(731, 102, '3205051704060005', 78, 78, 'B', 'A', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(732, 102, '1050203005055001', 77, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(733, 102, '3273282210050001', 81, 74, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarny'),
+(734, 102, '3205410703050002', 74, 72, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(735, 102, '3204320104055535', 83, 75, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(736, 102, '3205211107060002', 73, 73, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(737, 102, '3205211403060004', 72, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(738, 102, '3205214102070005', 80, 75, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(739, 102, '1050156903065001', 82, 74, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarny'),
+(740, 102, '3204090810060010', 75, 78, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarny'),
+(741, 102, '3205054609060006', 90, 80, 'A', 'B', 'B', 'Dioertahankan dan ditingkat kembali belajarnya '),
+(742, 101, '3275060701060002', 72, 77, 'B', 'B', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(743, 101, '3211116207070000', 76, 81, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(744, 101, '3211116111050000', 75, 81, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(745, 101, '3205210506050010', 72, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(746, 101, '3204290310050000', 73, 77, 'B', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(747, 101, '3205216912850001', 73, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(748, 101, '3205172311050002', 72, 75, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(749, 101, '3204080902060002', 78, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(750, 101, '1007362003002732', 74, 84, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(751, 101, '3273265906050001', 73, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(752, 101, '7303022706060001', 74, 81, 'B', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(753, 101, '3205417009050001', 74, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(754, 101, '3205174510060003', 73, 81, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(755, 101, '3207181801060004', 73, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(756, 101, '3205171608040003', 69, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(757, 101, '3204323007050009', 72, 77, 'B', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(758, 101, '3204321911050001', 75, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(759, 101, '3204282210050019', 70, 75, 'B', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(760, 101, '3277012203050004', 73, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(761, 101, '3205051704060005', 72, 77, 'B', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(762, 101, '1050203005055001', 77, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(763, 101, '3273282210050001', 73, 72, 'B', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(764, 101, '3205410703050002', 70, 77, 'B', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(765, 101, '3204320104055535', 76, 76, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(766, 101, '3205211107060002', 70, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(767, 101, '3205211403060004', 70, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(768, 101, '3205214102070005', 77, 81, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(769, 101, '1050156903065001', 77, 81, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(770, 101, '3204090810060010', 75, 75, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(771, 101, '3205054609060006', 76, 81, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(772, 90, '3275060701060002', 74, 76, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(773, 90, '3211116207070000', 73, 72, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(774, 90, '3211116111050000', 74, 73, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(775, 90, '3205210506050010', 73, 75, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(776, 90, '3204290310050000', 82, 80, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(777, 90, '3205216912850001', 73, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(778, 90, '3205172311050002', 79, 78, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(779, 90, '3204080902060002', 78, 76, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(780, 90, '1007362003002732', 71, 70, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(781, 90, '3273265906050001', 72, 70, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(782, 90, '7303022706060001', 70, 72, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(783, 90, '3205417009050001', 73, 72, 'B', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(784, 90, '3205174510060003', 72, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(785, 90, '3207181801060004', 80, 74, 'B', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(786, 90, '3205171608040003', 76, 75, 'B', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(787, 90, '3204323007050009', 72, 70, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(788, 90, '3204321911050001', 75, 75, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(789, 90, '3204282210050019', 74, 73, 'B', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(790, 90, '3277012203050004', 80, 76, 'B', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(791, 90, '3205051704060005', 76, 75, 'B', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(792, 90, '1050203005055001', 71, 70, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(793, 90, '3273282210050001', 73, 73, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(794, 90, '3205410703050002', 72, 73, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(795, 90, '3204320104055535', 76, 75, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(796, 90, '3205211107060002', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(797, 90, '3205211403060004', 72, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(798, 90, '3205214102070005', 72, 72, 'C', 'C', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(799, 90, '1050156903065001', 74, 73, 'A', 'B', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(800, 90, '3204090810060010', 79, 78, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(801, 90, '3205054609060006', 74, 72, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(802, 89, '3275060701060002', 81, 83, 'B', 'B', 'B', NULL),
+(803, 89, '3211116207070000', 80, 80, 'B', 'B', 'B', NULL),
+(804, 89, '3211116111050000', 83, 80, 'B', 'B', 'B', NULL),
+(805, 89, '3205210506050010', 80, 80, 'B', 'B', 'B', NULL),
+(806, 89, '3204290310050000', 82, 80, 'B', 'B', 'B', NULL),
+(807, 89, '3205216912850001', 81, 80, 'B', 'B', 'B', NULL),
+(808, 89, '3205172311050002', 78, 80, 'B', 'B', 'B', NULL),
+(809, 89, '3204080902060002', 80, 80, 'B', 'B', 'B', NULL),
+(810, 89, '1007362003002732', 79, 80, 'B', 'B', 'B', NULL),
+(811, 89, '3273265906050001', 82, 80, 'B', 'B', 'B', NULL),
+(812, 89, '7303022706060001', 80, 80, 'B', 'B', 'B', NULL),
+(813, 89, '3205417009050001', 81, 80, 'B', 'B', 'B', NULL),
+(814, 89, '3205174510060003', 81, 80, 'B', 'B', 'B', NULL),
+(815, 89, '3207181801060004', 81, 80, 'B', 'B', 'B', NULL),
+(816, 89, '3205171608040003', 83, 80, 'B', 'B', 'B', NULL),
+(817, 89, '3204323007050009', 81, 80, 'B', 'B', 'B', NULL),
+(818, 89, '3204321911050001', 81, 80, 'B', 'B', 'B', NULL),
+(819, 89, '3204282210050019', 81, 80, 'B', 'B', 'B', NULL),
+(820, 89, '3277012203050004', 79, 80, 'B', 'B', 'B', NULL),
+(821, 89, '3205051704060005', 80, 80, 'B', 'B', 'B', NULL),
+(822, 89, '1050203005055001', 81, 80, 'B', 'B', 'B', NULL),
+(823, 89, '3273282210050001', 82, 80, 'B', 'B', 'B', NULL),
+(824, 89, '3205410703050002', 79, 80, 'B', 'B', 'B', NULL),
+(825, 89, '3204320104055535', 82, 80, 'B', 'B', 'B', NULL),
+(826, 89, '3205211107060002', 78, 80, 'B', 'B', 'B', NULL),
+(827, 89, '3205211403060004', 78, 80, 'B', 'B', 'B', NULL),
+(828, 89, '3205214102070005', 81, 80, 'B', 'B', 'B', NULL),
+(829, 89, '1050156903065001', 82, 80, 'B', 'B', 'B', NULL),
+(830, 89, '3204090810060010', 81, 80, 'B', 'B', 'B', NULL),
+(831, 89, '3205054609060006', 84, 80, 'B', 'B', 'B', NULL),
+(832, 88, '3275060701060002', 86, 80, 'A', 'A', 'A', NULL),
+(833, 88, '3211116207070000', 83, 80, 'A', 'A', 'A', NULL),
+(834, 88, '3211116111050000', 83, 80, 'A', 'A', 'A', NULL),
+(835, 88, '3205210506050010', 68, 68, 'B', 'A', 'A', NULL),
+(836, 88, '3204290310050000', 88, 80, 'A', 'A', 'A', NULL),
+(837, 88, '3205216912850001', 68, 68, 'B', 'B', 'B', NULL),
+(838, 88, '3205172311050002', 87, 80, 'A', 'A', 'A', NULL),
+(839, 88, '3204080902060002', 90, 80, 'A', 'A', 'A', NULL),
+(840, 88, '1007362003002732', 68, 70, 'B', 'A', 'A', NULL),
+(841, 88, '3273265906050001', 87, 80, 'A', 'A', 'A', NULL),
+(842, 88, '7303022706060001', 70, 70, 'B', 'A', 'A', NULL),
+(843, 88, '3205417009050001', 83, 80, 'A', 'A', 'A', NULL),
+(844, 88, '3205174510060003', 69, 70, 'B', 'A', 'A', NULL),
+(845, 88, '3207181801060004', 73, 68, 'B', 'A', 'A', NULL),
+(846, 88, '3205171608040003', 68, 70, 'B', 'A', 'A', NULL),
+(847, 88, '3204323007050009', 86, 80, 'A', 'A', 'A', NULL),
+(848, 88, '3204321911050001', 68, 68, 'B', 'B', 'A', NULL),
+(849, 88, '3204282210050019', 77, 70, 'B', 'A', 'A', NULL),
+(850, 88, '3277012203050004', 84, 80, 'A', 'A', 'A', NULL),
+(851, 88, '3205051704060005', 75, 70, 'B', 'A', 'A', NULL),
+(852, 88, '1050203005055001', 83, 80, 'A', 'A', 'A', NULL),
+(853, 88, '3273282210050001', 81, 80, 'A', 'A', 'A', NULL),
+(854, 88, '3205410703050002', 75, 70, 'B', 'A', 'A', NULL),
+(855, 88, '3204320104055535', 86, 80, 'A', 'A', 'A', NULL),
+(856, 88, '3205211107060002', 68, 68, 'B', 'A', 'A', NULL),
+(857, 88, '3205211403060004', 68, 68, 'B', 'A', 'A', NULL),
+(858, 88, '3205214102070005', 68, 70, 'B', 'A', 'A', NULL),
+(859, 88, '1050156903065001', 86, 80, 'A', 'A', 'A', NULL),
+(860, 88, '3204090810060010', 76, 70, 'B', 'A', 'A', NULL),
+(861, 88, '3205054609060006', 88, 80, 'A', 'A', 'A', NULL),
+(862, 87, '3275060701060002', 80, 78, 'B', 'B', 'B', NULL),
+(863, 87, '3211116207070000', 80, 75, 'C', 'B', 'B', NULL),
+(864, 87, '3211116111050000', 85, 78, 'B', 'B', 'B', NULL),
+(865, 87, '3205210506050010', 80, 70, 'C', 'B', 'B', NULL),
+(866, 87, '3204290310050000', 90, 80, 'B', 'B', 'B', NULL),
+(867, 87, '3205216912850001', 80, 75, 'C', 'B', 'B', NULL),
+(868, 87, '3205172311050002', 80, 75, 'B', 'B', 'B', NULL),
+(869, 87, '3204080902060002', 85, 80, 'B', 'B', 'B', NULL),
+(870, 87, '1007362003002732', 80, 75, 'B', 'B', 'B', NULL),
+(871, 87, '3273265906050001', 90, 80, 'B', 'B', 'B', NULL),
+(872, 87, '7303022706060001', 80, 75, 'B', 'B', 'B', NULL),
+(873, 87, '3205417009050001', 80, 75, 'C', 'B', 'B', NULL),
+(874, 87, '3205174510060003', 78, 75, 'C', 'B', 'B', NULL),
+(875, 87, '3207181801060004', 80, 75, 'C', 'B', 'B', NULL),
+(876, 87, '3205171608040003', 75, 70, 'C', 'B', 'B', NULL),
+(877, 87, '3204323007050009', 85, 80, 'B', 'B', 'B', NULL),
+(878, 87, '3204321911050001', 75, 70, 'C', 'B', 'B', NULL),
+(879, 87, '3204282210050019', 85, 75, 'C', 'B', 'B', NULL),
+(880, 87, '3277012203050004', 80, 75, 'B', 'B', 'B', NULL),
+(881, 87, '3205051704060005', 80, 75, 'B', 'B', 'B', NULL),
+(882, 87, '1050203005055001', 80, 78, 'C', 'B', 'B', NULL),
+(883, 87, '3273282210050001', 85, 75, 'B', 'B', 'B', NULL),
+(884, 87, '3205410703050002', 85, 80, 'B', 'B', 'B', NULL),
+(885, 87, '3204320104055535', 90, 80, 'B', 'B', 'B', NULL),
+(886, 87, '3205211107060002', 80, 75, 'B', 'B', 'B', NULL),
+(887, 87, '3205211403060004', 75, 70, 'B', 'B', 'B', NULL),
+(888, 87, '3205214102070005', 80, 75, 'B', 'B', 'B', NULL),
+(889, 87, '1050156903065001', 90, 85, 'B', 'B', 'B', NULL),
+(890, 87, '3204090810060010', 75, 70, 'C', 'B', 'B', NULL),
+(891, 87, '3205054609060006', 85, 75, 'B', 'B', 'B', NULL),
+(892, 86, '3275060701060002', 72, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(893, 86, '3211116207070000', 69, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(894, 86, '3211116111050000', 71, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(895, 86, '3205210506050010', 68, 80, 'C', 'C', 'B', 'Semangat untuk lebih giat belajar'),
+(896, 86, '3204290310050000', 78, 83, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(897, 86, '3205216912850001', 69, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(898, 86, '3205172311050002', 71, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(899, 86, '3204080902060002', 80, 83, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
+(900, 86, '1007362003002732', 75, 83, 'A', 'A', 'A', 'Semangat untuk lebih giat belajar'),
+(901, 86, '3273265906050001', 72, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(902, 86, '7303022706060001', 68, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(903, 86, '3205417009050001', 71, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(904, 86, '3205174510060003', 69, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(905, 86, '3207181801060004', 71, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(906, 86, '3205171608040003', 69, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(907, 86, '3204323007050009', 81, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(908, 86, '3204321911050001', 68, 80, 'C', 'C', 'B', 'Semangat untuk lebih giat belajar'),
+(909, 86, '3204282210050019', 72, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(910, 86, '3277012203050004', 76, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(911, 86, '3205051704060005', 72, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(912, 86, '1050203005055001', 84, 82, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
+(913, 86, '3273282210050001', 73, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(914, 86, '3205410703050002', 71, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(915, 86, '3204320104055535', 71, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(916, 86, '3205211107060002', 68, 80, 'C', 'C', 'B', 'Semangat untuk lebih giat belajar'),
+(917, 86, '3205211403060004', 68, 80, 'C', 'C', 'B', 'Semangat untuk lebih giat belajar'),
+(918, 86, '3205214102070005', 72, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(919, 86, '1050156903065001', 73, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(920, 86, '3204090810060010', 70, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(921, 86, '3205054609060006', 85, 85, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
+(922, 85, '3275060701060002', 82, 84, 'A', 'A', 'A', NULL),
+(923, 85, '3211116207070000', 80, 82, 'A', 'A', 'A', NULL),
+(924, 85, '3211116111050000', 78, 80, 'B', 'B', 'A', NULL),
+(925, 85, '3205210506050010', 70, 70, 'C', 'B', 'B', NULL),
+(926, 85, '3204290310050000', 82, 84, 'A', 'B', 'A', NULL),
+(927, 85, '3205216912850001', 75, 78, 'C', 'B', 'B', NULL),
+(928, 85, '3205172311050002', 81, 84, 'B', 'B', 'B', NULL),
+(929, 85, '3204080902060002', 85, 85, 'B', 'B', 'A', NULL),
+(930, 85, '1007362003002732', 82, 82, 'B', 'B', 'A', NULL),
+(931, 85, '3273265906050001', 78, 80, 'B', 'B', 'A', NULL),
+(932, 85, '7303022706060001', 73, 75, 'B', 'B', 'B', NULL),
+(933, 85, '3205417009050001', 78, 80, 'B', 'B', 'B', NULL),
+(934, 85, '3205174510060003', 77, 80, 'B', 'B', 'B', NULL),
+(935, 85, '3207181801060004', 78, 78, 'B', 'B', 'B', NULL),
+(936, 85, '3205171608040003', 72, 73, 'C', 'B', 'B', NULL),
+(937, 85, '3204323007050009', 80, 82, 'B', 'B', 'B', NULL),
+(938, 85, '3204321911050001', 70, 70, 'C', 'B', 'B', NULL),
+(939, 85, '3204282210050019', 80, 83, 'B', 'B', 'B', NULL),
+(940, 85, '3277012203050004', 81, 84, 'B', 'B', 'B', NULL),
+(941, 85, '3205051704060005', 80, 80, 'B', 'B', 'B', NULL),
+(942, 85, '1050203005055001', 82, 84, 'B', 'B', 'A', NULL),
+(943, 85, '3273282210050001', 77, 79, 'B', 'B', 'B', NULL),
+(944, 85, '3205410703050002', 82, 85, 'B', 'B', 'A', NULL),
+(945, 85, '3204320104055535', 85, 87, 'B', 'B', 'A', NULL),
+(946, 85, '3205211107060002', 70, 73, 'B', 'B', 'B', NULL),
+(947, 85, '3205211403060004', 70, 70, 'B', 'C', 'C', NULL),
+(948, 85, '3205214102070005', 75, 75, 'C', 'B', 'B', NULL),
+(949, 85, '1050156903065001', 80, 80, 'B', 'B', 'B', NULL),
+(950, 85, '3204090810060010', 78, 78, 'B', 'B', 'B', NULL),
+(951, 85, '3205054609060006', 87, 88, 'A', 'B', 'A', NULL),
+(952, 84, '3275060701060002', 75, 78, 'B', 'B', 'A', NULL),
+(953, 84, '3211116207070000', 75, 72, 'A', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(954, 84, '3211116111050000', 78, 80, 'A', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(955, 84, '3205210506050010', 77, 66, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(956, 84, '3204290310050000', 80, 79, 'B', 'A', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(957, 84, '3205216912850001', 80, 78, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(958, 84, '3205172311050002', 72, 80, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(959, 84, '3204080902060002', 81, 79, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(960, 84, '1007362003002732', 75, 78, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(961, 84, '3273265906050001', 82, 81, 'B', 'A', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarnya'),
+(962, 84, '7303022706060001', 66, 70, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(963, 84, '3205417009050001', 85, 80, 'B', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(964, 84, '3205174510060003', 71, 79, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(965, 84, '3207181801060004', 70, 79, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(966, 84, '3205171608040003', 70, 74, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(967, 84, '3204323007050009', 85, 80, 'B', 'A', 'A', 'Depertahankan dan ditingakatkan lagi dalam proses pembelajarannya'),
+(968, 84, '3204321911050001', 66, 78, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(969, 84, '3204282210050019', 67, 70, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(970, 84, '3277012203050004', 81, 80, 'B', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(971, 84, '3205051704060005', 68, 75, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(972, 84, '1050203005055001', 82, 81, 'B', 'A', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(973, 84, '3273282210050001', 80, 79, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(974, 84, '3205410703050002', 80, 82, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi'),
+(975, 84, '3204320104055535', 74, 75, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(976, 84, '3205211107060002', 70, 77, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(977, 84, '3205211403060004', 66, 76, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(978, 84, '3205214102070005', 78, 80, 'A', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(979, 84, '1050156903065001', 80, 79, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(980, 84, '3204090810060010', 73, 77, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(981, 84, '3205054609060006', 90, 82, 'B', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(982, 100, '3273024304060010', 81, 80, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(983, 100, '3205216309060000', 74, 73, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(984, 100, '3204096003060000', 75, 74, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(985, 100, '3207035502780000', 80, 79, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(986, 100, '3204546070500000', 77, 76, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(987, 100, '3205216802060001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(988, 100, '3205217012050003', 74, 73, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(989, 100, '3205212510090001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(990, 100, '3673010305060003', 77, 76, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(991, 100, '3210156806060001', 80, 79, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(992, 100, '3205065508060005', 73, 72, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(993, 100, '3276055912050005', 75, 74, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(994, 100, '3204280208060007', 75, 74, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(995, 100, '3204080902060012', 73, 72, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(996, 100, '3273240510108234', 72, 71, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(997, 100, '3204375503060006', 75, 74, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(998, 100, '3205072401060001', 72, 71, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(999, 100, '3216061803060006', 85, 84, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1000, 100, '3273152809060005', 80, 79, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1001, 100, '3306025508060001', 78, 77, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1002, 100, '3210155806060062', 76, 75, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1003, 100, '3205210107060001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1004, 100, '3205211101060005', 71, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1005, 100, '3205210402070003', 65, 65, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1006, 100, '3175074904060001', 65, 65, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1007, 100, '3205216805060002', 69, 68, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1008, 100, '3205210702050001', 65, 65, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1009, 100, '3204282012040002', 72, 71, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1010, 99, '3273024304060010', 81, 80, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1011, 99, '3205216309060000', 74, 71, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1012, 99, '3204096003060000', 76, 75, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1013, 99, '3207035502780000', 80, 79, 'A', 'B', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1014, 99, '3204546070500000', 77, 76, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1015, 99, '3205216802060001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1016, 99, '3205217012050003', 74, 73, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1017, 99, '3205212510090001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1018, 99, '3673010305060003', 77, 76, 'B', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1019, 99, '3210156806060001', 80, 79, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1020, 99, '3205065508060005', 73, 72, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1021, 99, '3276055912050005', 75, 74, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1022, 99, '3204280208060007', 75, 74, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1023, 99, '3204080902060012', 73, 72, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1024, 99, '3273240510108234', 72, 71, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1025, 99, '3204375503060006', 75, 74, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1026, 99, '3205072401060001', 72, 71, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1027, 99, '3216061803060006', 85, 84, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1028, 99, '3273152809060005', 80, 79, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1029, 99, '3306025508060001', 78, 77, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1030, 99, '3210155806060062', 76, 75, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1031, 99, '3205210107060001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1032, 99, '3205211101060005', 71, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1033, 99, '3205210402070003', 65, 65, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1034, 99, '3175074904060001', 65, 65, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1035, 99, '3205216805060002', 69, 68, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1036, 99, '3205210702050001', 65, 65, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1037, 99, '3204282012040002', 72, 71, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1038, 97, '3273024304060010', 78, 75, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1039, 97, '3205216309060000', 70, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1040, 97, '3204096003060000', 76, 76, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1041, 97, '3207035502780000', 80, 79, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1042, 97, '3204546070500000', 74, 73, 'A', 'B', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1043, 97, '3205216802060001', 77, 76, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1044, 97, '3205217012050003', 70, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1045, 97, '3205212510090001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1046, 97, '3673010305060003', 76, 75, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1047, 97, '3210156806060001', 74, 70, 'A', 'B', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1048, 97, '3205065508060005', 72, 71, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1049, 97, '3276055912050005', 75, 70, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1050, 97, '3204280208060007', 77, 75, 'B', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1051, 97, '3204080902060012', 79, 76, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1052, 97, '3273240510108234', 71, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1053, 97, '3204375503060006', 70, 70, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1054, 97, '3205072401060001', 83, 80, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1055, 97, '3216061803060006', 82, 80, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1056, 97, '3273152809060005', 82, 78, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1057, 97, '3306025508060001', 80, 79, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1058, 97, '3210155806060062', 70, 70, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1059, 97, '3205210107060001', 72, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1060, 97, '3205211101060005', 75, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1061, 97, '3205210402070003', 70, 70, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1062, 97, '3175074904060001', 70, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1063, 97, '3205216805060002', 75, 74, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1064, 97, '3205210702050001', 75, 74, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1065, 97, '3204282012040002', 75, 74, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1066, 96, '3273024304060010', 81, 82, 'B', 'B', 'B', NULL),
+(1067, 96, '3205216309060000', 78, 79, 'B', 'B', 'B', NULL),
+(1068, 96, '3204096003060000', 79, 81, 'B', 'B', 'B', NULL),
+(1069, 96, '3207035502780000', 79, 80, 'B', 'B', 'B', NULL),
+(1070, 96, '3204546070500000', 83, 82, 'B', 'B', 'B', NULL),
+(1071, 96, '3205216802060001', 81, 79, 'B', 'B', 'B', NULL),
+(1072, 96, '3205217012050003', 80, 80, 'B', 'B', 'B', NULL),
+(1073, 96, '3205212510090001', 79, 80, 'B', 'B', 'B', NULL),
+(1074, 96, '3673010305060003', 78, 81, 'B', 'B', 'B', NULL),
+(1075, 96, '3210156806060001', 79, 80, 'B', 'B', 'B', NULL),
+(1076, 96, '3205065508060005', 83, 81, 'B', 'B', 'B', NULL),
+(1077, 96, '3276055912050005', 81, 82, 'B', 'B', 'B', NULL),
+(1078, 96, '3204280208060007', 78, 80, 'B', 'B', 'B', NULL),
+(1079, 96, '3204080902060012', 77, 79, 'B', 'B', 'B', NULL),
+(1080, 96, '3273240510108234', 78, 79, 'B', 'B', 'B', NULL),
+(1081, 96, '3204375503060006', 78, 81, 'B', 'B', 'B', NULL),
+(1082, 96, '3205072401060001', 78, 82, 'B', 'B', 'B', NULL),
+(1083, 96, '3216061803060006', 78, 79, 'B', 'B', 'B', NULL),
+(1084, 96, '3273152809060005', 80, 83, 'B', 'B', 'B', NULL),
+(1085, 96, '3306025508060001', 84, 81, 'B', 'B', 'B', NULL),
+(1086, 96, '3210155806060062', 82, 81, 'B', 'B', 'B', NULL),
+(1087, 96, '3205210107060001', 82, 79, 'B', 'B', 'B', NULL),
+(1088, 96, '3205211101060005', 79, 82, 'B', 'B', 'B', NULL),
+(1089, 96, '3205210402070003', 79, 79, 'B', 'B', 'B', NULL),
+(1090, 96, '3175074904060001', 77, 80, 'B', 'B', 'B', NULL),
+(1091, 96, '3205216805060002', 80, 79, 'B', 'B', 'B', NULL),
+(1092, 96, '3205210702050001', 77, 79, 'B', 'B', 'B', NULL),
+(1093, 96, '3204282012040002', 78, 82, 'B', 'B', 'B', NULL),
+(1094, 95, '3273024304060010', 90, 80, 'A', 'A', 'A', NULL),
+(1095, 95, '3205216309060000', 68, 68, 'B', 'B', 'B', NULL),
+(1096, 95, '3204096003060000', 70, 70, 'B', 'A', 'A', NULL),
+(1097, 95, '3207035502780000', 68, 70, 'B', 'A', 'A', NULL),
+(1098, 95, '3204546070500000', 81, 80, 'A', 'A', 'A', NULL),
+(1099, 95, '3205216802060001', 69, 70, 'B', 'A', 'A', NULL),
+(1100, 95, '3205217012050003', 68, 70, 'B', 'A', 'A', NULL),
+(1101, 95, '3205212510090001', 69, 70, 'B', 'A', 'A', NULL),
+(1102, 95, '3673010305060003', 82, 80, 'A', 'A', 'A', NULL),
+(1103, 95, '3210156806060001', 88, 80, 'A', 'A', 'A', NULL),
+(1104, 95, '3205065508060005', 71, 70, 'B', 'A', 'A', NULL),
+(1105, 95, '3276055912050005', 84, 80, 'A', 'A', 'A', NULL),
+(1106, 95, '3204280208060007', 68, 70, 'B', 'A', 'A', NULL),
+(1107, 95, '3204080902060012', 82, 80, 'A', 'A', 'A', NULL),
+(1108, 95, '3273240510108234', 80, 80, 'A', 'A', 'A', NULL),
+(1109, 95, '3204375503060006', 83, 80, 'A', 'A', 'A', NULL),
+(1110, 95, '3205072401060001', 69, 70, 'B', 'A', 'A', NULL),
+(1111, 95, '3216061803060006', 84, 80, 'A', 'A', 'A', NULL),
+(1112, 95, '3273152809060005', 86, 80, 'A', 'A', 'A', NULL),
+(1113, 95, '3306025508060001', 76, 70, 'B', 'A', 'A', NULL),
+(1114, 95, '3210155806060062', 75, 70, 'B', 'A', 'A', NULL),
+(1115, 95, '3205210107060001', 71, 70, 'B', 'A', 'A', NULL),
+(1116, 95, '3205211101060005', 71, 70, 'B', 'A', 'A', NULL),
+(1117, 95, '3205210402070003', 68, 68, 'B', 'A', 'A', NULL),
+(1118, 95, '3175074904060001', 68, 70, 'B', 'A', 'A', NULL),
+(1119, 95, '3205216805060002', 68, 70, 'B', 'A', 'A', NULL),
+(1120, 95, '3205210702050001', 68, 68, 'B', 'A', 'A', NULL),
+(1121, 95, '3204282012040002', 80, 70, 'B', 'A', 'A', NULL),
+(1122, 94, '3273024304060010', 90, 80, 'B', 'B', 'B', NULL),
+(1123, 94, '3205216309060000', 75, 70, 'C', 'B', 'B', NULL),
+(1124, 94, '3204096003060000', 90, 75, 'B', 'B', 'B', NULL),
+(1125, 94, '3207035502780000', 80, 70, 'C', 'B', 'B', NULL),
+(1126, 94, '3204546070500000', 80, 75, 'B', 'B', 'B', NULL),
+(1127, 94, '3205216802060001', 75, 70, 'C', 'B', 'B', NULL),
+(1128, 94, '3205217012050003', 75, 70, 'C', 'B', 'B', NULL),
+(1129, 94, '3205212510090001', 75, 70, 'C', 'B', 'B', NULL),
+(1130, 94, '3673010305060003', 85, 80, 'B', 'B', 'B', NULL),
+(1131, 94, '3210156806060001', 85, 75, 'B', 'B', 'B', NULL),
+(1132, 94, '3205065508060005', 80, 70, 'B', 'B', 'B', NULL),
+(1133, 94, '3276055912050005', 80, 70, 'B', 'B', 'B', NULL),
+(1134, 94, '3204280208060007', 85, 75, 'B', 'B', 'B', NULL),
+(1135, 94, '3204080902060012', 80, 75, 'B', 'B', 'B', NULL),
+(1136, 94, '3273240510108234', 80, 70, 'B', 'B', 'B', NULL),
+(1137, 94, '3204375503060006', 80, 70, 'B', 'B', 'B', NULL),
+(1138, 94, '3205072401060001', 80, 75, 'B', 'B', 'B', NULL),
+(1139, 94, '3216061803060006', 85, 75, 'B', 'B', 'B', NULL),
+(1140, 94, '3273152809060005', 90, 80, 'B', 'B', 'B', NULL),
+(1141, 94, '3306025508060001', 80, 75, 'B', 'B', 'B', NULL),
+(1142, 94, '3210155806060062', 80, 70, 'B', 'B', 'B', NULL),
+(1143, 94, '3205210107060001', 80, 70, 'B', 'B', 'B', NULL),
+(1144, 94, '3205211101060005', 80, 70, 'B', 'B', 'B', NULL),
+(1145, 94, '3205210402070003', 75, 70, 'C', 'B', 'B', NULL),
+(1146, 94, '3175074904060001', 80, 75, 'B', 'B', 'B', NULL),
+(1147, 94, '3205216805060002', 80, 70, 'B', 'B', 'B', NULL),
+(1148, 94, '3205210702050001', 75, 70, 'C', 'B', 'B', NULL),
+(1149, 94, '3204282012040002', 80, 70, 'B', 'B', 'B', NULL),
+(1150, 93, '3273024304060010', 85, 85, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
+(1151, 93, '3205216309060000', 68, 80, 'C', 'C', 'B', 'Semangat untuk lebih giat belajar'),
+(1152, 93, '3204096003060000', 70, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1153, 93, '3207035502780000', 68, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1154, 93, '3204546070500000', 70, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1155, 93, '3205216802060001', 70, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1156, 93, '3205217012050003', 71, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1157, 93, '3205212510090001', 68, 80, 'C', 'B', 'B', 'Semangat untuk lebih giat belajar'),
+(1158, 93, '3673010305060003', 71, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1159, 93, '3210156806060001', 75, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1160, 93, '3205065508060005', 70, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1161, 93, '3276055912050005', 71, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1162, 93, '3204280208060007', 69, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1163, 93, '3204080902060012', 75, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1164, 93, '3273240510108234', 70, 81, 'B', 'B', 'A', NULL),
+(1165, 93, '3204375503060006', 68, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1166, 93, '3205072401060001', 68, 80, 'C', 'B', 'B', 'Semangat untuk lebih giat belajar'),
+(1167, 93, '3216061803060006', 81, 83, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
+(1168, 93, '3273152809060005', 82, 84, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
+(1169, 93, '3306025508060001', 72, 81, 'A', 'A', 'A', 'Semangat untuk lebih giat belajar'),
+(1170, 93, '3210155806060062', 71, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1171, 93, '3205210107060001', 70, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1172, 93, '3205211101060005', 70, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1173, 93, '3205210402070003', 68, 80, 'C', 'B', 'B', 'Semangat untuk lebih giat belajar'),
+(1174, 93, '3175074904060001', 68, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1175, 93, '3205216805060002', 68, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1176, 93, '3205210702050001', 68, 80, 'C', 'B', 'B', 'Semangat untuk lebih giat belajar'),
+(1177, 93, '3204282012040002', 70, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1178, 92, '3273024304060010', 85, 86, 'A', 'B', 'A', NULL),
+(1179, 92, '3205216309060000', 70, 73, 'C', 'C', 'B', NULL),
+(1180, 92, '3204096003060000', 74, 74, 'B', 'B', 'B', NULL),
+(1181, 92, '3207035502780000', 75, 77, 'B', 'B', 'B', NULL),
+(1182, 92, '3204546070500000', 81, 82, 'B', 'B', 'B', NULL),
+(1183, 92, '3205216802060001', 71, 72, 'B', 'B', 'B', NULL),
+(1184, 92, '3205217012050003', 71, 72, 'B', 'B', 'B', NULL),
+(1185, 92, '3205212510090001', 70, 72, 'C', 'C', 'C', NULL),
+(1186, 92, '3673010305060003', 79, 80, 'B', 'B', 'B', NULL),
+(1187, 92, '3210156806060001', 81, 82, 'B', 'B', 'B', NULL),
+(1188, 92, '3205065508060005', 75, 77, 'B', 'B', 'B', NULL),
+(1189, 92, '3276055912050005', 78, 80, 'B', 'B', 'B', NULL),
+(1190, 92, '3204280208060007', 77, 79, 'B', 'B', 'B', NULL),
+(1191, 92, '3204080902060012', 81, 83, 'B', 'B', 'B', NULL),
+(1192, 92, '3273240510108234', 80, 82, 'A', 'B', 'A', NULL),
+(1193, 92, '3204375503060006', 71, 73, 'B', 'B', 'B', NULL),
+(1194, 92, '3205072401060001', 73, 75, 'B', 'B', 'B', NULL),
+(1195, 92, '3216061803060006', 86, 88, 'B', 'B', 'B', NULL),
+(1196, 92, '3273152809060005', 86, 88, 'B', 'B', 'B', NULL),
+(1197, 92, '3306025508060001', 81, 82, 'B', 'B', 'B', NULL),
+(1198, 92, '3210155806060062', 80, 82, 'A', 'B', 'B', NULL),
+(1199, 92, '3205210107060001', 75, 77, 'B', 'B', 'B', NULL),
+(1200, 92, '3205211101060005', 79, 80, 'B', 'B', 'B', NULL),
+(1201, 92, '3205210402070003', 70, 71, 'C', 'C', 'C', NULL),
+(1202, 92, '3175074904060001', 72, 73, 'B', 'B', 'B', NULL),
+(1203, 92, '3205216805060002', 70, 73, 'C', 'B', 'B', NULL),
+(1204, 92, '3205210702050001', 70, 73, 'C', 'C', 'C', NULL),
+(1205, 92, '3204282012040002', 81, 82, 'B', 'B', 'B', NULL),
+(1206, 98, '3273024304060010', 83, 88, 'B', 'B', 'B', NULL),
+(1207, 98, '3205216309060000', 68, 70, 'B', 'C', 'C', NULL),
+(1208, 98, '3204096003060000', 80, 82, 'B', 'B', 'B', NULL),
+(1209, 98, '3207035502780000', 78, 75, 'B', 'B', 'B', NULL),
+(1210, 98, '3204546070500000', 85, 86, 'B', 'B', 'B', NULL),
+(1211, 98, '3205216802060001', 75, 77, 'B', 'B', 'B', NULL),
+(1212, 98, '3205217012050003', 77, 79, 'B', 'B', 'B', NULL),
+(1213, 98, '3205212510090001', 69, 70, 'C', 'B', 'B', NULL),
+(1214, 98, '3673010305060003', 77, 78, 'B', 'B', 'B', NULL),
+(1215, 98, '3210156806060001', 80, 82, 'B', 'B', 'B', NULL),
+(1216, 98, '3205065508060005', 78, 80, 'B', 'B', 'B', NULL),
+(1217, 98, '3276055912050005', 80, 82, 'B', 'B', 'B', NULL),
+(1218, 98, '3204280208060007', 75, 77, 'B', 'B', 'B', NULL),
+(1219, 98, '3204080902060012', 82, 84, 'B', 'B', 'B', NULL),
+(1220, 98, '3273240510108234', 83, 85, 'B', 'B', 'B', NULL),
+(1221, 98, '3204375503060006', 78, 80, 'B', 'B', 'B', NULL),
+(1222, 98, '3205072401060001', 75, 78, 'B', 'B', 'B', NULL),
+(1223, 98, '3216061803060006', 84, 87, 'B', 'B', 'B', NULL),
+(1224, 98, '3273152809060005', 82, 85, 'B', 'B', 'B', NULL),
+(1225, 98, '3306025508060001', 80, 82, 'B', 'B', 'B', NULL),
+(1226, 98, '3210155806060062', 80, 81, 'B', 'B', 'B', NULL),
+(1227, 98, '3205210107060001', 74, 75, 'B', 'B', 'B', NULL),
+(1228, 98, '3205211101060005', 75, 76, 'B', 'B', 'B', NULL),
+(1229, 98, '3205210402070003', 69, 69, 'B', 'B', 'B', NULL),
+(1230, 98, '3175074904060001', 80, 81, 'B', 'B', 'B', NULL),
+(1231, 98, '3205216805060002', 70, 72, 'B', 'B', 'B', NULL),
+(1232, 98, '3205210702050001', 69, 70, 'B', 'B', 'B', NULL),
+(1233, 98, '3204282012040002', 78, 80, 'B', 'B', 'B', NULL),
+(1234, 91, '3273024304060010', 89, 88, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1235, 91, '3205216309060000', 65, 79, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1236, 91, '3204096003060000', 81, 80, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1237, 91, '3207035502780000', 69, 70, 'A', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(1238, 91, '3204546070500000', 74, 80, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(1239, 91, '3205216802060001', 81, 70, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1240, 91, '3205217012050003', 66, 79, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1241, 91, '3205212510090001', 76, 79, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1242, 91, '3673010305060003', 75, 80, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1243, 91, '3210156806060001', 79, 80, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(1244, 91, '3205065508060005', 73, 79, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(1245, 91, '3276055912050005', 74, 80, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(1246, 91, '3204280208060007', 67, 70, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1247, 91, '3204080902060012', 81, 80, 'B', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1248, 91, '3273240510108234', 74, 80, 'A', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(1249, 91, '3204375503060006', 72, 80, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1250, 91, '3205072401060001', 74, 74, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1251, 91, '3216061803060006', 77, 85, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1252, 91, '3273152809060005', 89, 90, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1253, 91, '3306025508060001', 80, 80, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1254, 91, '3210155806060062', 80, 81, 'B', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1255, 91, '3205210107060001', 81, 82, 'B', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1256, 91, '3205211101060005', 69, 72, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1257, 91, '3205210402070003', 65, 68, 'B', 'B', 'B', NULL),
+(1258, 91, '3175074904060001', 66, 76, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1259, 91, '3205216805060002', 74, 76, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1260, 91, '3205210702050001', 65, 65, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1261, 91, '3204282012040002', 75, 78, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1262, 103, '3205210206050000', 79, 79, 'B', 'C', 'B', NULL),
+(1263, 103, '3205210911040000', 82, 86, 'B', 'B', 'B', NULL),
+(1264, 103, '3276055002040010', 86, 87, 'B', 'B', 'B', NULL),
+(1265, 103, '3205211404030000', 84, 87, 'B', 'B', 'B', NULL),
+(1266, 103, '3205214408050010', 80, 81, 'B', 'B', 'B', NULL),
+(1267, 103, '3276056503040010', 87, 88, 'B', 'B', 'B', NULL),
+(1268, 103, '3205171908030004', 83, 86, 'B', 'B', 'A', NULL),
+(1269, 103, '3205214810030002', 82, 86, 'B', 'B', 'B', NULL),
+(1270, 103, '3205214510030002', 84, 86, 'B', 'B', 'A', NULL),
+(1271, 103, '3205312112040003', 84, 85, 'B', 'B', 'B', NULL),
+(1272, 103, '3205214606030004', 90, 95, 'A', 'B', 'A', NULL),
+(1273, 103, '3205021504040008', 84, 86, 'B', 'B', 'A', NULL),
+(1274, 103, '3205021306040005', 84, 87, 'B', 'B', 'B', NULL),
+(1275, 103, '3205056410050002', 89, 90, 'A', 'B', 'B', NULL),
+(1276, 103, '3205214909030005', 83, 86, 'B', 'B', 'A', NULL),
+(1277, 103, '3205172908040006', 88, 90, 'A', 'B', 'A', NULL),
+(1278, 103, '3204322307030009', 80, 80, 'C', 'B', 'B', NULL),
+(1279, 103, '3205041911030007', 85, 87, 'A', 'B', 'A', NULL),
+(1280, 103, '3205211512030001', 80, 80, 'B', 'B', 'B', NULL),
+(1281, 103, '3674020305040004', 86, 88, 'A', 'B', 'A', NULL),
+(1282, 103, '1050192612035001', 85, 87, 'B', 'B', 'B', NULL),
+(1283, 104, '3205210206050000', 78, 76, 'B', 'B', 'B', NULL),
+(1284, 104, '3205210911040000', 80, 80, 'B', 'B', 'B', NULL),
+(1285, 104, '3276055002040010', 82, 79, 'B', 'B', 'B', NULL),
+(1286, 104, '3205211404030000', 80, 80, 'B', 'B', 'B', NULL),
+(1287, 104, '3205214408050010', 78, 75, 'B', 'B', 'B', NULL),
+(1288, 104, '3276056503040010', 83, 80, 'B', 'B', 'A', NULL),
+(1289, 104, '3205171908030004', 80, 80, 'B', 'B', 'B', NULL),
+(1290, 104, '3205214810030002', 78, 75, 'B', 'B', 'B', NULL),
+(1291, 104, '3205214510030002', 83, 80, 'A', 'B', 'B', NULL),
+(1292, 104, '3205312112040003', 78, 78, 'B', 'B', 'B', NULL),
+(1293, 104, '3205214606030004', 85, 80, 'A', 'B', 'B', NULL),
+(1294, 104, '3205021504040008', 80, 80, 'B', 'A', 'B', NULL),
+(1295, 104, '3205021306040005', 81, 80, 'B', 'B', 'B', NULL),
+(1296, 104, '3205056410050002', 81, 80, 'B', 'B', 'B', NULL),
+(1297, 104, '3205214909030005', 80, 79, 'B', 'B', 'B', NULL),
+(1298, 104, '3205172908040006', 83, 80, 'B', 'A', 'B', NULL),
+(1299, 104, '3204322307030009', 80, 79, 'B', 'B', 'B', NULL),
+(1300, 104, '3205041911030007', 81, 80, 'B', 'B', 'B', NULL),
+(1301, 104, '3205211512030001', 79, 78, 'B', 'B', 'B', NULL),
+(1302, 104, '3674020305040004', 82, 80, 'B', 'B', 'B', NULL),
+(1303, 104, '1050192612035001', 80, 80, 'B', 'B', 'B', NULL),
+(1304, 105, '3205210206050000', 78, 80, 'B', 'C', 'B', NULL),
+(1305, 105, '3205210911040000', 77, 79, 'B', 'B', 'B', NULL),
+(1306, 105, '3276055002040010', 80, 85, 'B', 'B', 'B', NULL),
+(1307, 105, '3205211404030000', 82, 86, 'B', 'B', 'B', NULL),
+(1308, 105, '3205214408050010', 78, 82, 'C', 'B', 'C', NULL),
+(1309, 105, '3276056503040010', 85, 90, 'B', 'B', 'B', NULL),
+(1310, 105, '3205171908030004', 82, 85, 'B', 'B', 'B', NULL),
+(1311, 105, '3205214810030002', 78, 80, 'B', 'B', 'B', NULL),
+(1312, 105, '3205214510030002', 80, 85, 'B', 'B', 'B', NULL),
+(1313, 105, '3205312112040003', 76, 79, 'B', 'B', 'B', NULL),
+(1314, 105, '3205214606030004', 86, 95, 'B', 'B', 'B', NULL),
+(1315, 105, '3205021504040008', 82, 86, 'B', 'B', 'B', NULL),
+(1316, 105, '3205021306040005', 80, 84, 'B', 'B', 'B', NULL),
+(1317, 105, '3205056410050002', 80, 85, 'B', 'B', 'B', NULL),
+(1318, 105, '3205214909030005', 80, 84, 'B', 'B', 'B', NULL),
+(1319, 105, '3205172908040006', 82, 86, 'B', 'B', 'B', NULL),
+(1320, 105, '3204322307030009', 80, 85, 'B', 'B', 'B', NULL),
+(1321, 105, '3205041911030007', 83, 89, 'B', 'B', 'B', NULL),
+(1322, 105, '3205211512030001', 80, 82, 'B', 'B', 'B', NULL),
+(1323, 105, '3674020305040004', 82, 87, 'B', 'B', 'B', NULL),
+(1324, 105, '1050192612035001', 80, 84, 'B', 'B', 'B', NULL),
+(1325, 112, '3205212702040000', 79, 79, 'B', 'B', 'B', NULL),
+(1326, 112, '3205211809040000', 80, 80, 'B', 'B', 'B', NULL),
+(1327, 112, '3205211003060000', 78, 77, 'B', 'B', 'B', NULL),
+(1328, 112, '3205056106050010', 85, 85, 'B', 'B', 'B', NULL),
+(1329, 112, '3205176104040010', 86, 86, 'B', 'B', 'B', NULL),
+(1330, 112, '3205172407050000', 80, 79, 'B', 'B', 'B', NULL);
+INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetahuan`, `nilai_keterampilan`, `nilai_sikap`, `nilai_sosial`, `nilai_spritual`, `catatan`) VALUES
+(1331, 112, '3205210509050000', 86, 82, 'B', 'B', 'B', NULL),
+(1332, 112, '3205215611030000', 83, 80, 'B', 'B', 'B', NULL),
+(1333, 112, '3205214104060000', 82, 81, 'B', 'B', 'B', NULL),
+(1334, 112, '3201012707050001', 80, 80, 'B', 'B', 'B', NULL),
+(1335, 112, '3273055606810002', 81, 80, 'B', 'B', 'B', NULL),
+(1336, 112, '3175083011050004', 81, 79, 'B', 'B', 'B', NULL),
+(1337, 112, '3205216002050001', 80, 80, 'B', 'B', 'B', NULL),
+(1338, 112, '3205020405050006', 82, 80, 'B', 'B', 'B', NULL),
+(1339, 112, '3277020908040009', 82, 81, 'B', 'B', 'B', NULL),
+(1340, 112, '3205215411040001', 86, 85, 'B', 'B', 'B', NULL),
+(1341, 112, '3205212009050001', 80, 79, 'B', 'B', 'B', NULL),
+(1342, 112, '3205215206050003', 80, 80, 'B', 'B', 'B', NULL),
+(1343, 112, '3205214103050002', 81, 80, 'B', 'B', 'B', NULL),
+(1344, 112, '3205091907040005', 82, 82, 'B', 'B', 'B', NULL),
+(1345, 112, '3210151304050001', 81, 78, 'B', 'B', 'B', NULL),
+(1346, 112, '3205212310050001', 79, 80, 'B', 'B', 'B', NULL),
+(1347, 112, '3205215003040007', 79, 79, 'B', 'B', 'B', NULL),
+(1348, 112, '3205216809040001', 80, 79, 'B', 'B', 'B', NULL),
+(1349, 112, '3205210704090001', 80, 80, 'B', 'B', 'B', NULL),
+(1350, 112, '3205174405050004', 80, 80, 'B', 'B', 'B', NULL),
+(1351, 112, '3205214510050005', 81, 80, 'B', 'B', 'B', NULL),
+(1352, 112, '3205210401060004', 80, 79, 'C', 'B', 'B', NULL),
+(1353, 112, '3205213105040001', 79, 78, 'C', 'C', 'B', NULL),
+(1354, 112, '3205212309050004', 79, 79, 'C', 'B', 'B', NULL),
+(1355, 112, '1007362003002698', 81, 80, 'B', 'B', 'B', NULL),
+(1356, 113, '3205212702040000', 77, 78, 'B', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
+(1357, 113, '3205211809040000', 76, 78, 'B', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
+(1358, 113, '3205211003060000', 75, 77, 'C', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
+(1359, 113, '3205056106050010', 82, 88, 'A', 'B', 'B', 'Pertahankan prestasinya'),
+(1360, 113, '3205176104040010', 90, 95, 'A', 'B', 'A', 'Pertahankan prestasinya'),
+(1361, 113, '3205172407050000', 77, 78, 'B', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
+(1362, 113, '3205210509050000', 85, 88, 'B', 'B', 'B', NULL),
+(1363, 113, '3205215611030000', 77, 78, 'B', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
+(1364, 113, '3205214104060000', 78, 79, 'B', 'B', 'B', NULL),
+(1365, 113, '3201012707050001', 75, 75, 'C', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
+(1366, 113, '3273055606810002', 77, 78, 'B', 'B', 'B', NULL),
+(1367, 113, '3175083011050004', 78, 88, 'B', 'B', 'B', NULL),
+(1368, 113, '3205216002050001', 78, 78, 'B', 'B', 'B', NULL),
+(1369, 113, '3205020405050006', 77, 83, 'B', 'B', 'B', NULL),
+(1370, 113, '3277020908040009', 78, 80, 'B', 'B', 'A', NULL),
+(1371, 113, '3205215411040001', 78, 84, 'B', 'B', 'B', NULL),
+(1372, 113, '3205212009050001', 77, 78, 'B', 'B', 'B', NULL),
+(1373, 113, '3205215206050003', 77, 78, 'B', 'B', 'B', NULL),
+(1374, 113, '3205214103050002', 76, 78, 'B', 'B', 'B', NULL),
+(1375, 113, '3205091907040005', 89, 94, 'B', 'B', 'B', NULL),
+(1376, 113, '3210151304050001', 79, 85, 'B', 'B', 'B', NULL),
+(1377, 113, '3205212310050001', 76, 77, 'B', 'B', 'B', NULL),
+(1378, 113, '3205215003040007', 76, 77, 'B', 'B', 'B', NULL),
+(1379, 113, '3205216809040001', 77, 78, 'B', 'B', 'B', NULL),
+(1380, 113, '3205210704090001', 77, 78, 'B', 'B', 'B', NULL),
+(1381, 113, '3205174405050004', 77, 80, 'B', 'B', 'B', NULL),
+(1382, 113, '3205214510050005', 77, 78, 'B', 'B', 'B', NULL),
+(1383, 113, '3205210401060004', 75, 77, 'B', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
+(1384, 113, '3205213105040001', 75, 75, 'C', 'B', 'C', 'Lebih Giat Lagi Belajarnya !!!'),
+(1385, 113, '3205212309050004', 77, 78, 'B', 'B', 'B', NULL),
+(1386, 113, '1007362003002698', 76, 78, 'B', 'B', 'B', NULL),
+(1387, 114, '3205210206050000', 77, 76, 'B', 'B', 'B', NULL),
+(1388, 114, '3205210911040000', 76, 77, 'B', 'B', 'B', NULL),
+(1389, 114, '3276055002040010', 80, 83, 'A', 'A', 'A', NULL),
+(1390, 114, '3205211404030000', 78, 77, 'B', 'A', 'A', NULL),
+(1391, 114, '3205214408050010', 77, 79, 'B', 'B', 'B', NULL),
+(1392, 114, '3276056503040010', 82, 84, 'A', 'A', 'A', NULL),
+(1393, 114, '3205171908030004', 77, 76, 'B', 'B', 'A', NULL),
+(1394, 114, '3205214810030002', 77, 78, 'B', 'B', 'A', NULL),
+(1395, 114, '3205214510030002', 80, 82, 'B', 'B', 'A', NULL),
+(1396, 114, '3205312112040003', 76, 77, 'B', 'B', 'A', NULL),
+(1397, 114, '3205214606030004', 85, 88, 'A', 'A', 'A', NULL),
+(1398, 114, '3205021504040008', 80, 82, 'A', 'A', 'A', NULL),
+(1399, 114, '3205021306040005', 77, 80, 'A', 'A', 'A', NULL),
+(1400, 114, '3205056410050002', 80, 82, 'B', 'B', 'A', NULL),
+(1401, 114, '3205214909030005', 77, 79, 'B', 'B', 'B', NULL),
+(1402, 114, '3205172908040006', 80, 82, 'A', 'B', 'A', NULL),
+(1403, 114, '3204322307030009', 80, 87, 'B', 'B', 'B', NULL),
+(1404, 114, '3205041911030007', 84, 88, 'A', 'B', 'A', NULL),
+(1405, 114, '3205211512030001', 78, 75, 'B', 'B', 'B', NULL),
+(1406, 114, '3674020305040004', 85, 88, 'A', 'A', 'A', NULL),
+(1407, 114, '1050192612035001', 80, 82, 'B', 'B', 'A', NULL),
+(1408, 115, '3205210206050000', 76, 83, 'B', 'B', 'B', NULL),
+(1409, 115, '3205210911040000', 80, 82, 'B', 'A', 'B', NULL),
+(1410, 115, '3276055002040010', 80, 75, 'A', 'B', 'B', NULL),
+(1411, 115, '3205211404030000', 79, 80, 'A', 'A', 'A', NULL),
+(1412, 115, '3205214408050010', 76, 77, 'B', 'B', 'B', NULL),
+(1413, 115, '3276056503040010', 87, 79, 'B', 'B', 'A', NULL),
+(1414, 115, '3205171908030004', 85, 83, 'A', 'B', 'B', NULL),
+(1415, 115, '3205214810030002', 77, 75, 'B', 'B', 'B', NULL),
+(1416, 115, '3205214510030002', 80, 80, 'A', 'A', 'A', NULL),
+(1417, 115, '3205312112040003', 76, 78, 'C', 'A', 'B', NULL),
+(1418, 115, '3205214606030004', 80, 83, 'A', 'A', 'A', NULL),
+(1419, 115, '3205021504040008', 86, 82, 'A', 'A', 'A', NULL),
+(1420, 115, '3205021306040005', 88, 87, 'B', 'A', 'A', NULL),
+(1421, 115, '3205056410050002', 78, 79, 'B', 'B', 'A', NULL),
+(1422, 115, '3205214909030005', 77, 80, 'B', 'B', 'B', NULL),
+(1423, 115, '3205172908040006', 84, 86, 'A', 'B', 'B', NULL),
+(1424, 115, '3204322307030009', 82, 84, 'A', 'B', 'B', NULL),
+(1425, 115, '3205041911030007', 90, 81, 'A', 'A', 'B', NULL),
+(1426, 115, '3205211512030001', 81, 79, 'B', 'A', 'B', NULL),
+(1427, 115, '3674020305040004', 88, 83, 'A', 'A', 'A', NULL),
+(1428, 115, '1050192612035001', 87, 82, 'B', 'B', 'B', NULL),
+(1429, 116, '3205212702040000', 79, 76, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1430, 116, '3205211809040000', 80, 80, 'B', 'B', 'B', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1431, 116, '3205211003060000', 77, 80, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1432, 116, '3205056106050010', 80, 84, 'B', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1433, 116, '3205176104040010', 85, 87, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1434, 116, '3205172407050000', 76, 77, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1435, 116, '3205210509050000', 87, 87, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1436, 116, '3205215611030000', 85, 85, 'A', 'B', 'B', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1437, 116, '3205214104060000', 79, 80, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1438, 116, '3201012707050001', 75, 75, 'B', 'B', 'B', 'Ditingkatkan lagi dalam proses pembelajarannya'),
+(1439, 116, '3273055606810002', 79, 78, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1440, 116, '3175083011050004', 78, 77, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1441, 116, '3205216002050001', 79, 76, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1442, 116, '3205020405050006', 76, 76, 'A', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(1443, 116, '3277020908040009', 82, 83, 'A', 'B', 'B', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1444, 116, '3205215411040001', 78, 80, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1445, 116, '3205212009050001', 78, 76, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(1446, 116, '3205215206050003', 75, 75, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1447, 116, '3205214103050002', 80, 82, 'A', 'B', 'A', NULL),
+(1448, 116, '3205091907040005', 87, 85, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1449, 116, '3210151304050001', 79, 76, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1450, 116, '3205212310050001', 79, 75, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1451, 116, '3205215003040007', 76, 75, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1452, 116, '3205216809040001', 80, 80, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1453, 116, '3205210704090001', 78, 72, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1454, 116, '3205174405050004', 82, 84, 'A', 'B', 'A', NULL),
+(1455, 116, '3205214510050005', 78, 79, 'A', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1456, 116, '3205210401060004', 75, 75, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1457, 116, '3205213105040001', 75, 75, 'C', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1458, 116, '3205212309050004', 78, 76, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1459, 116, '1007362003002698', 77, 75, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1460, 106, '3205210206050000', 75, 75, 'B', 'B', 'B', NULL),
+(1461, 106, '3205210911040000', 75, 75, 'B', 'A', 'A', NULL),
+(1462, 106, '3276055002040010', 78, 80, 'A', 'A', 'A', NULL),
+(1463, 106, '3205211404030000', 75, 75, 'A', 'A', 'A', NULL),
+(1464, 106, '3205214408050010', 75, 75, 'A', 'B', 'B', NULL),
+(1465, 106, '3276056503040010', 90, 80, 'A', 'A', 'A', NULL),
+(1466, 106, '3205171908030004', 87, 80, 'A', 'A', 'A', NULL),
+(1467, 106, '3205214810030002', 75, 75, 'A', 'B', 'B', NULL),
+(1468, 106, '3205214510030002', 76, 75, 'A', 'A', 'A', NULL),
+(1469, 106, '3205312112040003', 75, 75, 'B', 'B', 'B', NULL),
+(1470, 106, '3205214606030004', 92, 80, 'A', 'A', 'A', NULL),
+(1471, 106, '3205021504040008', 80, 75, 'A', 'A', 'A', NULL),
+(1472, 106, '3205021306040005', 82, 75, 'A', 'A', 'A', NULL),
+(1473, 106, '3205056410050002', 80, 75, 'A', 'A', 'A', NULL),
+(1474, 106, '3205214909030005', 75, 75, 'A', 'A', 'A', NULL),
+(1475, 106, '3205172908040006', 88, 80, 'A', 'A', 'A', NULL),
+(1476, 106, '3204322307030009', 83, 80, 'A', 'A', 'A', NULL),
+(1477, 106, '3205041911030007', 88, 80, 'A', 'A', 'A', NULL),
+(1478, 106, '3205211512030001', 75, 75, 'A', 'A', 'A', NULL),
+(1479, 106, '3674020305040004', 87, 80, 'A', 'A', 'A', NULL),
+(1480, 106, '1050192612035001', 88, 80, 'A', 'A', 'A', NULL),
+(1481, 123, '3275060701060002', 80, 85, 'B', 'B', 'B', NULL),
+(1482, 123, '3211116207070000', 82, 85, 'B', 'B', 'B', NULL),
+(1483, 123, '3211116111050000', 83, 84, 'B', 'B', 'B', NULL),
+(1484, 123, '3205210506050010', 75, 76, 'B', 'B', 'B', NULL),
+(1485, 123, '3204290310050000', 82, 85, 'B', 'B', 'B', NULL),
+(1486, 123, '3205216912850001', 72, 73, 'B', 'B', 'B', NULL),
+(1487, 123, '3205172311050002', 85, 90, 'B', 'B', 'B', NULL),
+(1488, 123, '3204080902060002', 87, 90, 'B', 'B', 'B', NULL),
+(1489, 123, '1007362003002732', 84, 88, 'B', 'B', 'B', NULL),
+(1490, 123, '3273265906050001', 85, 88, 'B', 'B', 'B', NULL),
+(1491, 123, '7303022706060001', 74, 78, 'B', 'B', 'B', NULL),
+(1492, 123, '3205417009050001', 82, 88, 'B', 'B', 'B', NULL),
+(1493, 123, '3205174510060003', 80, 85, 'B', 'B', 'B', NULL),
+(1494, 123, '3207181801060004', 82, 86, 'B', 'B', 'B', NULL),
+(1495, 123, '3205171608040003', 70, 75, 'B', 'B', 'B', NULL),
+(1496, 123, '3204323007050009', 82, 87, 'B', 'B', 'B', NULL),
+(1497, 123, '3204321911050001', 70, 72, 'B', 'B', 'B', NULL),
+(1498, 123, '3204282210050019', 81, 87, 'B', 'B', 'B', NULL),
+(1499, 123, '3277012203050004', 80, 86, 'B', 'B', 'B', NULL),
+(1500, 123, '3205051704060005', 80, 85, 'B', 'B', 'B', NULL),
+(1501, 123, '1050203005055001', 78, 83, 'B', 'B', 'B', NULL),
+(1502, 123, '3273282210050001', 80, 86, 'B', 'B', 'B', NULL),
+(1503, 123, '3205410703050002', 82, 86, 'B', 'B', 'B', NULL),
+(1504, 123, '3204320104055535', 85, 88, 'B', 'B', 'B', NULL),
+(1505, 123, '3205211107060002', 72, 76, 'B', 'B', 'B', NULL),
+(1506, 123, '3205211403060004', 70, 72, 'B', 'C', 'C', NULL),
+(1507, 123, '3205214102070005', 72, 75, 'B', 'C', 'B', NULL),
+(1508, 123, '1050156903065001', 80, 85, 'B', 'B', 'B', NULL),
+(1509, 123, '3204090810060010', 78, 82, 'B', 'B', 'B', NULL),
+(1510, 123, '3205054609060006', 82, 86, 'B', 'B', 'B', NULL),
+(1511, 121, '3205212702040000', 80, 83, 'B', 'B', 'B', NULL),
+(1512, 121, '3205211809040000', 81, 84, 'B', 'B', 'B', NULL),
+(1513, 121, '3205211003060000', 78, 80, 'C', 'C', 'C', NULL),
+(1514, 121, '3205056106050010', 90, 85, 'B', 'B', 'B', NULL),
+(1515, 121, '3205176104040010', 93, 85, 'B', 'B', 'B', NULL),
+(1516, 121, '3205172407050000', 82, 82, 'B', 'B', 'B', NULL),
+(1517, 121, '3205210509050000', 84, 84, 'B', 'B', 'B', NULL),
+(1518, 121, '3205215611030000', 85, 84, 'A', 'B', 'B', NULL),
+(1519, 121, '3205214104060000', 82, 83, 'B', 'B', 'B', NULL),
+(1520, 121, '3201012707050001', 76, 77, 'C', 'B', 'B', NULL),
+(1521, 121, '3273055606810002', 80, 81, 'B', 'B', 'B', NULL),
+(1522, 121, '3175083011050004', 84, 83, 'B', 'B', 'B', NULL),
+(1523, 121, '3205216002050001', 80, 84, 'B', 'B', 'B', NULL),
+(1524, 121, '3205020405050006', 87, 85, 'B', 'B', 'B', NULL),
+(1525, 121, '3277020908040009', 90, 85, 'B', 'B', 'B', NULL),
+(1526, 121, '3205215411040001', 84, 84, 'B', 'B', 'B', NULL),
+(1527, 121, '3205212009050001', 82, 86, 'B', 'B', 'B', NULL),
+(1528, 121, '3205215206050003', 80, 81, 'B', 'B', 'B', NULL),
+(1529, 121, '3205214103050002', 84, 84, 'B', 'B', 'B', NULL),
+(1530, 121, '3205091907040005', 95, 90, 'B', 'C', 'B', NULL),
+(1531, 121, '3210151304050001', 83, 83, 'B', 'B', 'B', NULL),
+(1532, 121, '3205212310050001', 79, 82, 'C', 'C', 'B', NULL),
+(1533, 121, '3205215003040007', 80, 81, 'B', 'B', 'B', NULL),
+(1534, 121, '3205216809040001', 81, 84, 'B', 'B', 'B', NULL),
+(1535, 121, '3205210704090001', 80, 85, 'B', 'B', 'B', NULL),
+(1536, 121, '3205174405050004', 80, 85, 'B', 'B', 'B', NULL),
+(1537, 121, '3205214510050005', 80, 83, 'B', 'B', 'B', NULL),
+(1538, 121, '3205210401060004', 78, 78, 'C', 'C', 'C', NULL),
+(1539, 121, '3205212309050004', 80, 80, 'C', 'B', 'B', NULL),
+(1540, 121, '1007362003002698', 79, 78, 'C', 'B', 'B', NULL),
+(1541, 117, '3205212702040000', 78, 80, 'B', 'B', 'B', NULL),
+(1542, 117, '3205211809040000', 77, 80, 'B', 'B', 'B', NULL),
+(1543, 117, '3205211003060000', 76, 82, 'B', 'B', 'B', NULL),
+(1544, 117, '3205056106050010', 86, 90, 'B', 'B', 'A', NULL),
+(1545, 117, '3205176104040010', 87, 93, 'B', 'B', 'B', NULL),
+(1546, 117, '3205172407050000', 81, 85, 'B', 'B', 'B', NULL),
+(1547, 117, '3205210509050000', 88, 90, 'B', 'B', 'B', NULL),
+(1548, 117, '3205215611030000', 88, 95, 'B', 'B', 'B', NULL),
+(1549, 117, '3205214104060000', 82, 85, 'B', 'B', 'B', NULL),
+(1550, 117, '3201012707050001', 80, 85, 'B', 'B', 'B', NULL),
+(1551, 117, '3273055606810002', 80, 84, 'B', 'B', 'B', NULL),
+(1552, 117, '3175083011050004', 80, 83, 'B', 'B', 'B', NULL),
+(1553, 117, '3205216002050001', 77, 80, 'B', 'B', 'B', NULL),
+(1554, 117, '3205020405050006', 80, 83, 'B', 'B', 'B', NULL),
+(1555, 117, '3277020908040009', 84, 89, 'B', 'B', 'B', NULL),
+(1556, 117, '3205215411040001', 80, 85, 'B', 'B', 'B', NULL),
+(1557, 117, '3205212009050001', 75, 79, 'B', 'B', 'B', NULL),
+(1558, 117, '3205215206050003', 79, 83, 'B', 'B', 'B', NULL),
+(1559, 117, '3205214103050002', 80, 84, 'B', 'B', 'B', NULL),
+(1560, 117, '3205091907040005', 84, 89, 'B', 'B', 'B', NULL),
+(1561, 117, '3210151304050001', 78, 80, 'B', 'B', 'B', NULL),
+(1562, 117, '3205212310050001', 77, 80, 'B', 'B', 'B', NULL),
+(1563, 117, '3205215003040007', 79, 80, 'B', 'B', 'B', NULL),
+(1564, 117, '3205216809040001', 79, 82, 'B', 'B', 'B', NULL),
+(1565, 117, '3205210704090001', 80, 84, 'B', 'B', 'B', NULL),
+(1566, 117, '3205174405050004', 80, 85, 'B', 'B', 'B', NULL),
+(1567, 117, '3205214510050005', 80, 82, 'B', 'B', 'B', NULL),
+(1568, 117, '3205210401060004', 78, 82, 'B', 'B', 'B', NULL),
+(1569, 117, '3205212309050004', 77, 83, 'C', 'B', 'B', NULL),
+(1570, 117, '1007362003002698', 79, 82, 'B', 'B', 'B', NULL),
+(1571, 122, '3205212702040000', 78, 78, 'B', 'B', 'B', NULL),
+(1572, 122, '3205211809040000', 79, 78, 'B', 'B', 'B', NULL),
+(1573, 122, '3205211003060000', 77, 76, 'C', 'C', 'C', NULL),
+(1574, 122, '3205056106050010', 88, 80, 'B', 'B', 'B', NULL),
+(1575, 122, '3205176104040010', 89, 80, 'B', 'B', 'B', NULL),
+(1576, 122, '3205172407050000', 79, 78, 'B', 'B', 'B', NULL),
+(1577, 122, '3205210509050000', 91, 85, 'B', 'B', 'B', NULL),
+(1578, 122, '3205215611030000', 80, 85, 'B', 'B', 'B', NULL),
+(1579, 122, '3205214104060000', 80, 80, 'B', 'B', 'B', NULL),
+(1580, 122, '3201012707050001', 75, 75, 'C', 'C', 'C', NULL),
+(1581, 122, '3273055606810002', 80, 80, 'B', 'B', 'B', NULL),
+(1582, 122, '3175083011050004', 80, 79, 'B', 'B', 'B', NULL),
+(1583, 122, '3205216002050001', 79, 79, 'B', 'B', 'B', NULL),
+(1584, 122, '3205020405050006', 81, 80, 'B', 'B', 'B', NULL),
+(1585, 122, '3277020908040009', 78, 79, 'B', 'B', 'B', NULL),
+(1586, 122, '3205215411040001', 79, 82, 'B', 'B', 'B', NULL),
+(1587, 122, '3205212009050001', 78, 78, 'B', 'B', 'B', NULL),
+(1588, 122, '3205215206050003', 78, 78, 'B', 'B', 'B', NULL),
+(1589, 122, '3205214103050002', 87, 83, 'B', 'B', 'B', NULL),
+(1590, 122, '3205091907040005', 79, 78, 'B', 'B', 'B', NULL),
+(1591, 122, '3210151304050001', 80, 79, 'B', 'B', 'B', NULL),
+(1592, 122, '3205212310050001', 78, 78, 'B', 'B', 'B', NULL),
+(1593, 122, '3205215003040007', 79, 79, 'B', 'B', 'B', NULL),
+(1594, 122, '3205216809040001', 79, 79, 'B', 'B', 'B', NULL),
+(1595, 122, '3205210704090001', 86, 82, 'B', 'B', 'B', NULL),
+(1596, 122, '3205174405050004', 83, 79, 'B', 'B', 'B', NULL),
+(1597, 122, '3205214510050005', 79, 80, 'B', 'B', 'B', NULL),
+(1598, 122, '3205210401060004', 78, 78, 'C', 'C', 'C', NULL),
+(1599, 122, '3205212309050004', 78, 78, 'C', 'C', 'C', NULL),
+(1600, 122, '1007362003002698', 78, 78, 'C', 'C', 'C', NULL),
+(1601, 118, '3205212702040000', 85, 70, 'B', 'B', 'B', NULL),
+(1602, 118, '3205211809040000', 85, 70, 'C', 'B', 'B', NULL),
+(1603, 118, '3205211003060000', 80, 70, 'C', 'B', 'B', NULL),
+(1604, 118, '3205056106050010', 90, 75, 'B', 'B', 'B', NULL),
+(1605, 118, '3205176104040010', 90, 75, 'B', 'B', 'B', NULL),
+(1606, 118, '3205172407050000', 88, 70, 'B', 'B', 'B', NULL),
+(1607, 118, '3205210509050000', 90, 75, 'B', 'B', 'B', NULL),
+(1608, 118, '3205215611030000', 90, 75, 'B', 'B', 'B', NULL),
+(1609, 118, '3205214104060000', 90, 75, 'B', 'B', 'B', NULL),
+(1610, 118, '3201012707050001', 78, 70, 'B', 'B', 'B', NULL),
+(1611, 118, '3273055606810002', 80, 70, 'C', 'B', 'B', NULL),
+(1612, 118, '3175083011050004', 80, 70, 'C', 'B', 'B', NULL),
+(1613, 118, '3205216002050001', 80, 70, 'B', 'B', 'B', NULL),
+(1614, 118, '3205020405050006', 90, 75, 'B', 'B', 'B', NULL),
+(1615, 118, '3277020908040009', 85, 75, 'B', 'B', 'B', NULL),
+(1616, 118, '3205215411040001', 90, 75, 'B', 'B', 'B', NULL),
+(1617, 118, '3205212009050001', 85, 70, 'C', 'B', 'B', NULL),
+(1618, 118, '3205215206050003', 85, 70, 'B', 'B', 'B', NULL),
+(1619, 118, '3205214103050002', 90, 70, 'B', 'B', 'B', NULL),
+(1620, 118, '3205091907040005', 85, 70, 'B', 'B', 'B', NULL),
+(1621, 118, '3210151304050001', 85, 75, 'B', 'B', 'B', NULL),
+(1622, 118, '3205212310050001', 78, 70, 'C', 'B', 'B', NULL),
+(1623, 118, '3205215003040007', 80, 70, 'C', 'B', 'B', NULL),
+(1624, 118, '3205216809040001', 80, 70, 'B', 'B', 'B', NULL),
+(1625, 118, '3205210704090001', 80, 70, 'B', 'B', 'B', NULL),
+(1626, 118, '3205174405050004', 85, 75, 'B', 'B', 'B', NULL),
+(1627, 118, '3205214510050005', 80, 70, 'B', 'B', 'B', NULL),
+(1628, 118, '3205210401060004', 78, 70, 'C', 'B', 'B', NULL),
+(1629, 118, '3205213105040001', 78, 70, 'C', 'B', 'B', NULL),
+(1630, 118, '3205212309050004', 78, 70, 'C', 'B', 'B', NULL),
+(1631, 118, '1007362003002698', 78, 70, 'C', 'B', 'B', NULL),
+(1632, 117, '3205213105040001', 77, 80, 'B', 'C', 'B', NULL),
+(1633, 119, '3205212702040000', 79, 78, 'B', 'B', 'B', NULL),
+(1634, 119, '3205211809040000', 76, 78, 'B', 'B', 'B', NULL),
+(1635, 119, '3205211003060000', 75, 78, 'C', 'C', 'C', NULL),
+(1636, 119, '3205056106050010', 80, 78, 'B', 'B', 'B', NULL),
+(1637, 119, '3205176104040010', 83, 81, 'B', 'B', 'B', NULL),
+(1638, 119, '3205172407050000', 77, 79, 'B', 'B', 'B', NULL),
+(1639, 119, '3205210509050000', 77, 79, 'B', 'B', 'B', NULL),
+(1640, 119, '3205215611030000', 82, 78, 'B', 'B', 'B', NULL),
+(1641, 119, '3205214104060000', 80, 83, 'B', 'B', 'B', NULL),
+(1642, 119, '3201012707050001', 75, 78, 'C', 'B', 'C', NULL),
+(1643, 119, '3273055606810002', 80, 76, 'B', 'B', 'B', NULL),
+(1644, 119, '3175083011050004', 78, 78, 'B', 'B', 'B', NULL),
+(1645, 119, '3205216002050001', 80, 80, 'B', 'B', 'B', NULL),
+(1646, 119, '3205020405050006', 80, 78, 'B', 'B', 'B', NULL),
+(1647, 119, '3277020908040009', 79, 79, 'B', 'B', 'B', NULL),
+(1648, 119, '3205215411040001', 80, 84, 'B', 'B', 'B', NULL),
+(1649, 119, '3205212009050001', 78, 78, 'B', 'B', 'B', NULL),
+(1650, 119, '3205215206050003', 79, 81, 'B', 'B', 'B', NULL),
+(1651, 119, '3205214103050002', 83, 78, 'B', 'B', 'B', NULL),
+(1652, 119, '3205091907040005', 79, 78, 'B', 'B', 'B', NULL),
+(1653, 119, '3210151304050001', 78, 78, 'B', 'B', 'B', NULL),
+(1654, 119, '3205212310050001', 77, 78, 'B', 'B', 'B', NULL),
+(1655, 119, '3205215003040007', 81, 78, 'B', 'B', 'B', NULL),
+(1656, 119, '3205216809040001', 80, 80, 'B', 'B', 'B', NULL),
+(1657, 119, '3205210704090001', 83, 78, 'B', 'B', 'B', NULL),
+(1658, 119, '3205174405050004', 82, 78, 'B', 'B', 'B', NULL),
+(1659, 119, '3205214510050005', 80, 78, 'B', 'B', 'B', NULL),
+(1660, 119, '3205210401060004', 75, 78, 'B', 'B', 'B', NULL),
+(1661, 119, '3205213105040001', 76, 78, 'C', 'C', 'C', NULL),
+(1662, 119, '3205212309050004', 76, 78, 'C', 'C', 'C', NULL),
+(1663, 119, '1007362003002698', 76, 78, 'C', 'C', 'C', NULL),
+(1664, 124, '3205212702040000', 79, 77, 'B', 'B', 'B', NULL),
+(1665, 124, '3205211809040000', 78, 78, 'B', 'B', 'B', NULL),
+(1666, 124, '3205211003060000', 75, 75, 'C', 'B', 'C', NULL),
+(1667, 124, '3205056106050010', 83, 80, 'B', 'B', 'B', NULL),
+(1668, 124, '3205176104040010', 86, 80, 'A', 'B', 'A', NULL),
+(1669, 124, '3205172407050000', 81, 80, 'A', 'B', 'A', NULL),
+(1670, 124, '3205210509050000', 84, 80, 'B', 'B', 'B', NULL),
+(1671, 124, '3205215611030000', 86, 80, 'B', 'B', 'A', NULL),
+(1672, 124, '3205214104060000', 79, 75, 'B', 'B', 'B', NULL),
+(1673, 124, '3201012707050001', 75, 75, 'B', 'B', 'B', NULL),
+(1674, 124, '3273055606810002', 79, 77, 'B', 'B', 'B', NULL),
+(1675, 124, '3175083011050004', 78, 80, 'B', 'B', 'B', NULL),
+(1676, 124, '3205216002050001', 75, 76, 'B', 'B', 'B', NULL),
+(1677, 124, '3205020405050006', 80, 80, 'B', 'B', 'B', NULL),
+(1678, 124, '3277020908040009', 83, 80, 'B', 'A', 'B', NULL),
+(1679, 124, '3205215411040001', 83, 78, 'B', 'B', 'B', NULL),
+(1680, 124, '3205212009050001', 83, 80, 'B', 'B', 'B', NULL),
+(1681, 124, '3205215206050003', 78, 79, 'B', 'B', 'B', NULL),
+(1682, 124, '3205214103050002', 79, 78, 'B', 'B', 'B', NULL),
+(1683, 124, '3205091907040005', 80, 80, 'A', 'A', 'B', NULL),
+(1684, 124, '3210151304050001', 81, 80, 'B', 'B', 'B', NULL),
+(1685, 124, '3205212310050001', 79, 77, 'B', 'B', 'B', NULL),
+(1686, 124, '3205215003040007', 79, 76, 'B', 'B', 'B', NULL),
+(1687, 124, '3205216809040001', 78, 76, 'B', 'B', 'B', NULL),
+(1688, 124, '3205210704090001', 77, 76, 'B', 'B', 'B', NULL),
+(1689, 124, '3205174405050004', 81, 80, 'B', 'B', 'A', NULL),
+(1690, 124, '3205214510050005', 78, 78, 'B', 'B', 'B', NULL),
+(1691, 124, '3205210401060004', 75, 76, 'B', 'B', 'B', NULL),
+(1692, 124, '3205213105040001', 75, 75, 'C', 'B', 'C', NULL),
+(1693, 124, '3205212309050004', 77, 76, 'B', 'B', 'B', NULL),
+(1694, 124, '1007362003002698', 75, 75, 'B', 'B', 'C', NULL),
+(1695, 121, '3205213105040001', 78, 78, 'C', 'C', 'C', NULL),
+(1696, 122, '3205213105040001', 77, 77, 'C', 'C', 'C', NULL),
+(1697, 120, '3205212702040000', 79, 80, 'B', 'B', 'B', NULL),
+(1698, 120, '3205211809040000', 79, 75, 'B', 'B', 'B', NULL),
+(1699, 120, '3205211003060000', 77, 75, 'B', 'B', 'C', NULL),
+(1700, 120, '3205056106050010', 83, 82, 'A', 'B', 'B', NULL),
+(1701, 120, '3205176104040010', 81, 79, 'A', 'B', 'B', NULL),
+(1702, 120, '3205172407050000', 79, 81, 'B', 'B', 'B', NULL),
+(1703, 120, '3205210509050000', 80, 76, 'A', 'B', 'B', NULL),
+(1704, 120, '3205215611030000', 77, 77, 'A', 'B', 'B', NULL),
+(1705, 120, '3205214104060000', 78, 86, 'A', 'B', 'B', NULL),
+(1706, 120, '3201012707050001', 75, 75, 'B', 'B', 'B', NULL),
+(1707, 120, '3273055606810002', 79, 81, 'A', 'B', 'B', NULL),
+(1708, 120, '3175083011050004', 81, 85, 'B', 'B', 'B', NULL),
+(1709, 120, '3205216002050001', 75, 83, 'A', 'B', 'B', NULL),
+(1710, 120, '3205020405050006', 79, 77, 'A', 'A', 'B', NULL),
+(1711, 120, '3277020908040009', 79, 72, 'A', 'B', 'B', NULL),
+(1712, 120, '3205215411040001', 78, 86, 'A', 'B', 'B', NULL),
+(1713, 120, '3205212009050001', 77, 77, 'A', 'B', 'B', NULL),
+(1714, 120, '3205215206050003', 79, 82, 'A', 'B', 'B', NULL),
+(1715, 120, '3205214103050002', 80, 79, 'A', 'B', 'B', NULL),
+(1716, 120, '3205091907040005', 80, 83, 'A', 'B', 'B', NULL),
+(1717, 120, '3210151304050001', 80, 76, 'A', 'B', 'B', NULL),
+(1718, 120, '3205212310050001', 78, 77, 'B', 'B', 'B', NULL),
+(1719, 120, '3205215003040007', 77, 77, 'B', 'B', 'B', NULL),
+(1720, 120, '3205216809040001', 77, 81, 'A', 'B', 'B', NULL),
+(1721, 120, '3205210704090001', 75, 77, 'A', 'B', 'B', NULL),
+(1722, 120, '3205174405050004', 79, 76, 'A', 'B', 'B', NULL),
+(1723, 120, '3205214510050005', 77, 82, 'A', 'B', 'B', NULL),
+(1724, 120, '3205210401060004', 80, 80, 'A', 'B', 'B', NULL),
+(1725, 120, '3205213105040001', 79, 75, 'C', 'C', 'C', NULL),
+(1726, 120, '3205212309050004', 76, 75, 'C', 'C', 'C', NULL),
+(1727, 120, '1007362003002698', 76, 76, 'B', 'C', 'C', NULL),
+(1728, 108, '3205210206050000', 80, 75, 'C', 'B', 'B', NULL),
+(1729, 108, '3205210911040000', 80, 75, 'C', 'B', 'B', NULL),
+(1730, 108, '3276055002040010', 85, 78, 'B', 'B', 'B', NULL),
+(1731, 108, '3205211404030000', 85, 78, 'B', 'B', 'B', NULL),
+(1732, 108, '3205214408050010', 80, 70, 'C', 'B', 'B', NULL),
+(1733, 108, '3276056503040010', 90, 80, 'B', 'B', 'B', NULL),
+(1734, 108, '3205171908030004', 85, 80, 'B', 'B', 'B', NULL),
+(1735, 108, '3205214810030002', 80, 70, 'C', 'B', 'B', NULL),
+(1736, 108, '3205214510030002', 85, 80, 'B', 'B', 'B', NULL),
+(1737, 108, '3205312112040003', 80, 70, 'C', 'B', 'B', NULL),
+(1738, 108, '3205214606030004', 90, 80, 'B', 'B', 'B', NULL),
+(1739, 108, '3205021504040008', 85, 78, 'C', 'B', 'B', NULL),
+(1740, 108, '3205021306040005', 85, 75, 'C', 'B', 'B', NULL),
+(1741, 108, '3205056410050002', 80, 75, 'B', 'B', 'B', NULL),
+(1742, 108, '3205214909030005', 80, 75, 'B', 'B', 'B', NULL),
+(1743, 108, '3205172908040006', 90, 80, 'B', 'B', 'B', NULL),
+(1744, 108, '3204322307030009', 80, 75, 'C', 'B', 'B', NULL),
+(1745, 108, '3205041911030007', 90, 80, 'B', 'B', 'B', NULL),
+(1746, 108, '3205211512030001', 80, 70, 'C', 'B', 'B', NULL),
+(1747, 108, '3674020305040004', 88, 80, 'B', 'B', 'B', NULL),
+(1748, 108, '1050192612035001', 80, 75, 'C', 'B', 'B', NULL),
+(1749, 125, '3205212702040000', 71, 70, 'B', 'B', 'B', NULL),
+(1750, 125, '3205211809040000', 71, 70, 'A', 'B', 'B', NULL),
+(1751, 125, '3205211003060000', 72, 72, 'B', 'B', 'B', NULL),
+(1752, 125, '3205056106050010', 74, 74, 'B', 'B', 'B', NULL),
+(1753, 125, '3205176104040010', 75, 74, 'B', 'B', 'A', NULL),
+(1754, 125, '3205172407050000', 70, 70, 'B', 'B', 'B', NULL),
+(1755, 125, '3205210509050000', 78, 75, 'B', 'B', 'B', NULL),
+(1756, 125, '3205215611030000', 70, 75, 'B', 'B', 'B', NULL),
+(1757, 125, '3205214104060000', 70, 75, 'B', 'B', 'B', NULL),
+(1758, 125, '3201012707050001', 70, 70, 'B', 'B', 'B', NULL),
+(1759, 125, '3273055606810002', 72, 75, 'B', 'A', 'B', NULL),
+(1760, 125, '3175083011050004', 78, 75, 'A', 'B', 'A', NULL),
+(1761, 125, '3205216002050001', 70, 70, 'B', 'B', 'B', NULL),
+(1762, 125, '3205020405050006', 74, 77, 'A', 'B', 'A', NULL),
+(1763, 125, '3277020908040009', 72, 77, 'B', 'B', 'A', NULL),
+(1764, 125, '3205215411040001', 76, 75, 'A', 'B', 'B', NULL),
+(1765, 125, '3205212009050001', 70, 70, 'A', 'B', 'B', NULL),
+(1766, 125, '3205215206050003', 72, 70, 'B', 'B', 'B', NULL),
+(1767, 125, '3205214103050002', 74, 75, 'A', 'A', 'B', NULL),
+(1768, 125, '3205091907040005', 72, 72, 'A', 'B', 'A', NULL),
+(1769, 125, '3210151304050001', 72, 72, 'B', 'B', 'B', NULL),
+(1770, 125, '3205212310050001', 71, 70, 'B', 'B', 'B', NULL),
+(1771, 125, '3205215003040007', 70, 70, 'A', 'B', 'B', NULL),
+(1772, 125, '3205216809040001', 71, 71, 'A', 'B', 'B', NULL),
+(1773, 125, '3205210704090001', 75, 75, 'B', 'A', 'B', NULL),
+(1774, 125, '3205174405050004', 72, 72, 'A', 'B', 'B', NULL),
+(1775, 125, '3205214510050005', 71, 75, 'A', 'B', 'B', NULL),
+(1776, 125, '3205210401060004', 71, 71, 'B', 'B', 'B', NULL),
+(1777, 125, '3205213105040001', 73, 73, 'C', 'B', 'C', NULL),
+(1778, 125, '3205212309050004', 72, 72, 'B', 'B', 'B', NULL),
+(1779, 125, '1007362003002698', 72, 77, 'A', 'B', 'B', NULL),
+(1780, 127, '3205212702040000', 77, 85, 'B', 'B', 'B', 'Ditingkan kembali dan belajarnya & bisa lebih meningkatkan tatakramanya '),
+(1781, 127, '3205211809040000', 75, 80, 'B', 'B', 'B', 'Ditingkan kembali dan belajarnya & bisa lebih meningkatkan tatakramanya '),
+(1782, 127, '3205211003060000', 76, 80, 'C', 'C', 'C', 'Ditingkan kembali dan belajarnya & bisa lebih meningkatkan tatakramanya '),
+(1783, 127, '3205056106050010', 82, 85, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1784, 127, '3205176104040010', 89, 85, 'A', 'A', 'A', 'ditingkatkan kembali dalam mengajarnya '),
+(1785, 127, '3205172407050000', 80, 80, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1786, 127, '3205210509050000', 84, 85, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1787, 127, '3205215611030000', 88, 88, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1788, 127, '3205214104060000', 84, 84, 'A', 'A', 'A', 'ditingkatkan kembali dalam mengajarnya '),
+(1789, 127, '3201012707050001', 75, 85, 'C', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1790, 127, '3273055606810002', 80, 80, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1791, 127, '3175083011050004', 80, 80, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1792, 127, '3205216002050001', 80, 90, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1793, 127, '3205020405050006', 80, 80, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1794, 127, '3277020908040009', 81, 80, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1795, 127, '3205215411040001', 85, 90, 'A', 'A', 'A', 'ditingkatkan kembali dalam belajarnya '),
+(1796, 127, '3205212009050001', 80, 79, 'B', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1797, 127, '3205215206050003', 80, 80, 'B', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1798, 127, '3205214103050002', 87, 90, 'A', 'A', 'A', 'ditingkatkan kembali dalam mengajarnya '),
+(1799, 127, '3205091907040005', 84, 75, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1800, 127, '3210151304050001', 83, 80, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1801, 127, '3205212310050001', 81, 78, 'B', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1802, 127, '3205215003040007', 80, 90, 'B', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1803, 127, '3205216809040001', 81, 89, 'A', 'A', 'A', 'ditingkatkan kembali dalam mengajarnya '),
+(1804, 127, '3205210704090001', 82, 90, 'A', 'A', 'A', 'ditingkatkan kembali dalam mengajarnya '),
+(1805, 127, '3205174405050004', 83, 89, 'A', 'A', 'A', 'ditingkatkan kembali dalam belajarnya '),
+(1806, 127, '3205214510050005', 83, 89, 'A', 'A', 'A', 'ditingkatkan kembali dalam belajarnya '),
+(1807, 127, '3205210401060004', 85, 80, 'B', 'B', 'B', 'ditingkatkan kembali dalam belajarnya '),
+(1808, 127, '3205213105040001', 75, 70, 'C', 'C', 'C', 'Jaga Tatakrama kesopan kepada kedua orang taua baik di sekolah maupun du rumah, Ade terlalu banyak bolos sekolah'),
+(1809, 127, '3205212309050004', 78, 75, 'C', 'C', 'C', 'Jaga Tatakrama kesopan kepada kedua orang taua baik di sekolah maupun di rumah'),
+(1810, 127, '1007362003002698', 75, 81, 'C', 'B', 'B', 'Jaga Tatakrama kesopan kepada kedua orang taua baik di sekolah maupun di rumah'),
+(1811, 101, '3205215308060001', 70, 76, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1812, 102, '3205215308060001', 83, 78, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarny'),
+(1813, 90, '3205215308060001', 71, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1814, 89, '3205215308060001', 82, 80, 'B', 'B', 'B', NULL),
+(1815, 88, '3205215308060001', 86, 80, 'A', 'A', 'A', NULL),
+(1816, 87, '3205215308060001', 80, 75, 'B', 'B', 'B', NULL),
+(1817, 86, '3205215308060001', 70, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1818, 123, '3205215308060001', 80, 85, 'A', 'B', 'A', NULL),
+(1819, 85, '3205215308060001', 75, 78, 'B', 'B', 'B', NULL),
+(1820, 84, '3205215308060001', 76, 79, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
+(1821, 107, '3205210206050000', 78, 78, 'B', 'B', 'B', NULL),
+(1822, 107, '3205210911040000', 80, 82, 'B', 'B', 'B', NULL),
+(1823, 107, '3276055002040010', 82, 83, 'B', 'B', 'B', NULL),
+(1824, 107, '3205211404030000', 80, 82, 'A', 'A', 'A', NULL),
+(1825, 107, '3205214408050010', 78, 78, 'C', 'B', 'B', NULL),
+(1826, 107, '3276056503040010', 84, 90, 'A', 'A', 'A', NULL),
+(1827, 107, '3205171908030004', 81, 82, 'A', 'B', 'A', NULL),
+(1828, 107, '3205214810030002', 80, 82, 'C', 'B', 'B', NULL),
+(1829, 107, '3205214510030002', 80, 82, 'A', 'A', 'A', NULL),
+(1830, 107, '3205312112040003', 78, 78, 'C', 'B', 'B', NULL),
+(1831, 107, '3205214606030004', 90, 92, 'A', 'A', 'A', NULL),
+(1832, 107, '3205021504040008', 80, 82, 'A', 'A', 'A', NULL),
+(1833, 107, '3205021306040005', 80, 82, 'A', 'A', 'A', NULL),
+(1834, 107, '3205056410050002', 80, 82, 'A', 'B', 'A', NULL),
+(1835, 107, '3205214909030005', 80, 82, 'C', 'B', 'B', NULL),
+(1836, 107, '3205172908040006', 85, 86, 'A', 'A', 'A', NULL),
+(1837, 107, '3204322307030009', 85, 86, 'B', 'B', 'B', NULL),
+(1838, 107, '3205041911030007', 85, 86, 'A', 'A', 'A', NULL),
+(1839, 107, '3205211512030001', 80, 82, 'B', 'B', 'B', NULL),
+(1840, 107, '3674020305040004', 90, 92, 'B', 'A', 'A', NULL),
+(1841, 107, '1050192612035001', 82, 83, 'B', 'B', 'A', NULL),
+(1842, 109, '3205210206050000', 76, 78, 'B', 'B', 'B', 'Lebih semangat lagi dalam belajar'),
+(1843, 109, '3205210911040000', 78, 80, 'B', 'B', 'B', 'Lebih semangat lagi dalam belajar'),
+(1844, 109, '3276055002040010', 80, 81, 'B', 'B', 'A', 'Lebih semangat lagi dalam belajar'),
+(1845, 109, '3205211404030000', 79, 80, 'B', 'B', 'A', 'Lebih semangat lagi dalam belajar'),
+(1846, 109, '3205214408050010', 78, 80, 'C', 'B', 'B', 'Lebih semangat lagi dalam belajar'),
+(1847, 109, '3276056503040010', 84, 84, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
+(1848, 109, '3205171908030004', 79, 80, 'B', 'B', 'A', 'Lebih semangat lagi dalam belajar'),
+(1849, 109, '3205214810030002', 78, 80, 'C', 'B', 'B', 'Lebih semangat lagi dalam belajar'),
+(1850, 109, '3205214510030002', 79, 82, 'A', 'A', 'A', 'Lebih semangat lagi dalam belajar'),
+(1851, 109, '3205312112040003', 78, 80, 'B', 'C', 'B', 'Lebih semangat lagi dalam belajar'),
+(1852, 109, '3205214606030004', 85, 85, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
+(1853, 109, '3205021504040008', 79, 82, 'B', 'B', 'B', 'Lebih semangat lagi dalam belajar'),
+(1854, 109, '3205021306040005', 79, 80, 'B', 'B', 'B', 'Lebih semangat lagi dalam belajar'),
+(1855, 109, '3205056410050002', 80, 82, 'A', 'B', 'A', 'Lebih semangat lagi dalam belajar'),
+(1856, 109, '3205214909030005', 78, 80, 'C', 'B', 'B', 'Lebih semangat lagi dalam belajar'),
+(1857, 109, '3205172908040006', 82, 83, 'A', 'A', 'A', 'Lebih semangat lagi dalam belajar'),
+(1858, 109, '3204322307030009', 80, 82, 'B', 'B', 'A', 'Lebih semangat lagi dalam belajar'),
+(1859, 109, '3205041911030007', 84, 85, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
+(1860, 109, '3205211512030001', 78, 80, 'B', 'B', 'B', 'Lebih semangat lagi dalam belajar'),
+(1861, 109, '3674020305040004', 82, 84, 'B', 'A', 'A', 'Pertahankan dan tingkatkan'),
+(1862, 109, '1050192612035001', 79, 81, 'B', 'B', 'B', 'Lebih semangat lagi dalam belajar'),
+(1863, 110, '3205210206050000', 75, 78, 'B', 'B', 'B', NULL),
+(1864, 110, '3205210911040000', 78, 78, 'B', 'B', 'B', NULL),
+(1865, 110, '3276055002040010', 82, 80, 'B', 'B', 'B', NULL),
+(1866, 110, '3205211404030000', 78, 80, 'B', 'B', 'B', NULL),
+(1867, 110, '3205214408050010', 80, 80, 'B', 'B', 'B', NULL),
+(1868, 110, '3276056503040010', 82, 80, 'B', 'B', 'B', NULL),
+(1869, 110, '3205171908030004', 82, 80, 'B', 'B', 'B', NULL),
+(1870, 110, '3205214810030002', 80, 78, 'B', 'B', 'B', NULL),
+(1871, 110, '3205214510030002', 80, 80, 'B', 'B', 'B', NULL),
+(1872, 110, '3205312112040003', 79, 80, 'B', 'B', 'B', NULL),
+(1873, 110, '3205214606030004', 87, 85, 'A', 'A', 'B', NULL),
+(1874, 110, '3205021504040008', 82, 80, 'B', 'B', 'B', NULL),
+(1875, 110, '3205021306040005', 80, 78, 'A', 'B', 'B', NULL),
+(1876, 110, '3205056410050002', 85, 82, 'B', 'B', 'B', NULL),
+(1877, 110, '3205214909030005', 80, 80, 'B', 'B', 'B', NULL),
+(1878, 110, '3205172908040006', 82, 82, 'B', 'B', 'B', NULL),
+(1879, 110, '3204322307030009', 78, 80, 'B', 'B', 'B', NULL),
+(1880, 110, '3205041911030007', 78, 80, 'B', 'B', 'B', NULL),
+(1881, 110, '3205211512030001', 78, 80, 'B', 'B', 'B', NULL),
+(1882, 110, '3674020305040004', 80, 78, 'B', 'B', 'B', NULL),
+(1883, 110, '1050192612035001', 75, 78, 'B', 'B', 'B', NULL),
+(1884, 111, '3205210206050000', 75, 75, 'B', 'B', 'B', NULL),
+(1885, 111, '3205210911040000', 78, 80, 'A', 'B', 'B', NULL),
+(1886, 111, '3276055002040010', 78, 75, 'A', 'B', 'B', NULL),
+(1887, 111, '3205211404030000', 80, 80, 'A', 'B', 'B', NULL),
+(1888, 111, '3205214408050010', 79, 80, 'B', 'B', 'B', NULL),
+(1889, 111, '3276056503040010', 80, 78, 'A', 'B', 'B', NULL),
+(1890, 111, '3205171908030004', 80, 80, 'B', 'A', 'B', NULL),
+(1891, 111, '3205214810030002', 75, 78, 'B', 'B', 'B', NULL),
+(1892, 111, '3205214510030002', 78, 78, 'B', 'B', 'B', NULL),
+(1893, 111, '3205312112040003', 75, 75, 'B', 'B', 'B', NULL),
+(1894, 111, '3205214606030004', 80, 78, 'A', 'A', 'B', NULL),
+(1895, 111, '3205021504040008', 78, 80, 'A', 'A', 'B', NULL),
+(1896, 111, '3205021306040005', 78, 80, 'A', 'B', 'B', NULL),
+(1897, 111, '3205056410050002', 80, 78, 'A', 'B', 'B', NULL),
+(1898, 111, '3205214909030005', 75, 75, 'B', 'B', 'B', NULL),
+(1899, 111, '3205172908040006', 78, 78, 'B', 'B', 'A', NULL),
+(1900, 111, '3204322307030009', 75, 79, 'B', 'B', 'B', NULL),
+(1901, 111, '3205041911030007', 80, 80, 'A', 'A', 'B', NULL),
+(1902, 111, '3205211512030001', 78, 78, 'B', 'B', 'B', NULL),
+(1903, 111, '3674020305040004', 78, 80, 'A', 'A', 'B', NULL),
+(1904, 111, '1050192612035001', 80, 80, 'A', 'B', 'B', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `leger_nilai_ekskul`
+-- Table structure for table `leger_nilai_ekskul`
 --
 
 CREATE TABLE `leger_nilai_ekskul` (
@@ -91255,7 +92265,7 @@ CREATE TABLE `leger_nilai_ekskul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `leger_nilai_ekskul`
+-- Dumping data for table `leger_nilai_ekskul`
 --
 
 INSERT INTO `leger_nilai_ekskul` (`idLeger_nilai_ekskul`, `idLeger_ekskul`, `NIK_pd`, `nilai_ekskul`, `deskripsi_nilai_ekskul`) VALUES
@@ -91369,121 +92379,121 @@ INSERT INTO `leger_nilai_ekskul` (`idLeger_nilai_ekskul`, `idLeger_ekskul`, `NIK
 (123, 7, '3205211512030001', 'B', 'Baik'),
 (124, 7, '3674020305040004', 'A', 'Sangat Baik'),
 (125, 7, '1050192612035001', 'A', 'Sangat Baik'),
-(126, 13, '3205170511050010', '', ''),
-(127, 13, '3211116207070000', '', ''),
-(128, 13, '3211116111050000', '', ''),
-(129, 13, '3205210506050010', '', ''),
-(130, 13, '3204290310050000', '', ''),
-(131, 13, '3205214605050000', '', ''),
-(132, 13, '3205172311050002', '', ''),
-(133, 13, '3204080902060002', '', ''),
-(134, 13, '1007362003002732', '', ''),
-(135, 13, '3273265906050001', '', ''),
-(136, 13, '7303022706060001', '', ''),
-(137, 13, '3205417009050001', '', ''),
-(138, 13, '3205174510060003', '', ''),
-(139, 13, '3207181801060004', '', ''),
-(140, 13, '3205171608040003', '', ''),
-(141, 13, '3204323007050009', '', ''),
-(142, 13, '3204321911050001', '', ''),
-(143, 13, '3204282210050019', '', ''),
-(144, 13, '3277012203050004', '', ''),
-(145, 13, '3205051704060005', '', ''),
-(146, 13, '1050203005055001', '', ''),
-(147, 13, '3273282210050001', '', ''),
-(148, 13, '3205410703050002', '', ''),
-(149, 13, '3204320104055535', '', ''),
-(150, 13, '3205211107060002', '', ''),
-(151, 13, '3205211403060004', '', ''),
-(152, 13, '3205210102070001', '', ''),
-(153, 13, '1050156903065001', '', ''),
-(154, 13, '3204090810060010', '', ''),
-(155, 13, '3205052305080010', '', ''),
-(156, 14, '3273024304060010', '', ''),
-(157, 14, '3205216309060000', '', ''),
-(158, 14, '3204096003060000', '', ''),
-(159, 14, '3207035502780000', '', ''),
-(160, 14, '3204546070500000', '', ''),
-(161, 14, '3205216802060001', '', ''),
-(162, 14, '3205217012050003', '', ''),
-(163, 14, '3205212510090001', '', ''),
-(164, 14, '3673010305060003', '', ''),
-(165, 14, '3210156806060001', '', ''),
-(166, 14, '3205065508060005', '', ''),
-(167, 14, '3276055912050005', '', ''),
-(168, 14, '3204280208060007', '', ''),
-(169, 14, '3204080902060012', '', ''),
-(170, 14, '3273240510108234', '', ''),
-(171, 14, '3204375503060006', '', ''),
-(172, 14, '3205072401060001', '', ''),
-(173, 14, '3216061803060006', '', ''),
-(174, 14, '3273152809060005', '', ''),
-(175, 14, '3306025508060001', '', ''),
-(176, 14, '3210155806060062', '', ''),
-(177, 14, '3205210107060001', '', ''),
-(178, 14, '3205211101060005', '', ''),
-(179, 14, '3205210402070003', '', ''),
-(180, 14, '3175074904060001', '', ''),
-(181, 14, '3205216805060002', '', ''),
-(182, 14, '3205210702050001', '', ''),
-(183, 14, '3204282012040002', '', ''),
-(184, 12, '3205212702040000', '', ''),
-(185, 12, '3205211809040000', '', ''),
-(186, 12, '3205211003060000', '', ''),
-(187, 12, '3205056106050010', '', ''),
-(188, 12, '3205176104040010', '', ''),
-(189, 12, '3205172407050000', '', ''),
-(190, 12, '3205210509050000', '', ''),
-(191, 12, '3205215611030000', '', ''),
-(192, 12, '3205214104060000', '', ''),
-(193, 12, '3201012707050001', '', ''),
-(194, 12, '3273055606810002', '', ''),
-(195, 12, '3175083011050004', '', ''),
-(196, 12, '3205216002050001', '', ''),
-(197, 12, '3205020405050006', '', ''),
-(198, 12, '3277020908040009', '', ''),
-(199, 12, '3205215411040001', '', ''),
-(200, 12, '3205212009050001', '', ''),
-(201, 12, '3205215206050003', '', ''),
-(202, 12, '3205214103050002', '', ''),
-(203, 12, '3205091907040005', '', ''),
-(204, 12, '3210151304050001', '', ''),
-(205, 12, '3205212310050001', '', ''),
-(206, 12, '3205215003040007', '', ''),
-(207, 12, '3205216809040001', '', ''),
-(208, 12, '3205210704090001', '', ''),
-(209, 12, '3205174405050004', '', ''),
-(210, 12, '3205214510050005', '', ''),
-(211, 12, '3205210401060004', '', ''),
-(212, 12, '3205213105040001', '', ''),
-(213, 12, '3205212309050004', '', ''),
-(214, 12, '1007362003002698', '', ''),
-(215, 11, '3205210206050000', '', ''),
-(216, 11, '3205210911040000', '', ''),
-(217, 11, '3276055002040010', '', ''),
-(218, 11, '3205211404030000', '', ''),
-(219, 11, '3205214408050010', '', ''),
-(220, 11, '3276056503040010', '', ''),
-(221, 11, '3205171908030004', '', ''),
-(222, 11, '3205214810030002', '', ''),
-(223, 11, '3205214510030002', '', ''),
-(224, 11, '3205312112040003', '', ''),
-(225, 11, '3205214606030004', '', ''),
-(226, 11, '3205021504040008', '', ''),
-(227, 11, '3205021306040005', '', ''),
-(228, 11, '3205056410050002', '', ''),
-(229, 11, '3205214909030005', '', ''),
-(230, 11, '3205172908040006', '', ''),
-(231, 11, '3204322307030009', '', ''),
-(232, 11, '3205041911030007', '', ''),
-(233, 11, '3205211512030001', '', ''),
-(234, 11, '3674020305040004', '', ''),
-(235, 11, '1050192612035001', '', '');
+(126, 13, '3205170511050010', 'B', 'Baik'),
+(127, 13, '3211116207070000', 'C', 'Cukup Baik'),
+(128, 13, '3211116111050000', 'C', 'Cukup Baik'),
+(129, 13, '3205210506050010', 'D', 'Kurang Baik'),
+(130, 13, '3204290310050000', 'C', 'Cukup Baik'),
+(131, 13, '3205214605050000', 'C', 'Kurang Baik'),
+(132, 13, '3205172311050002', 'D', 'Kurang Baik'),
+(133, 13, '3204080902060002', 'A', 'Sangat Baik'),
+(134, 13, '1007362003002732', 'B', 'Baik'),
+(135, 13, '3273265906050001', 'C', 'Kurang Baik'),
+(136, 13, '7303022706060001', 'B', 'Baik'),
+(137, 13, '3205417009050001', 'C', 'Cukup Baik'),
+(138, 13, '3205174510060003', 'C', 'Cukup Baik'),
+(139, 13, '3207181801060004', 'A', 'Sangat baik'),
+(140, 13, '3205171608040003', 'A', 'Sangat Baik'),
+(141, 13, '3204323007050009', 'C', 'Cukup Baik'),
+(142, 13, '3204321911050001', 'A', 'Sangat Baik'),
+(143, 13, '3204282210050019', 'B', 'Baik'),
+(144, 13, '3277012203050004', 'C', 'Cukup Baik'),
+(145, 13, '3205051704060005', 'A', 'Sangat Baik'),
+(146, 13, '1050203005055001', 'C', 'Cukup Baik'),
+(147, 13, '3273282210050001', 'B', 'Baik'),
+(148, 13, '3205410703050002', 'C', 'Cukup Baik'),
+(149, 13, '3204320104055535', 'C', 'Cukup Baik'),
+(150, 13, '3205211107060002', 'D', 'Kurang Baik'),
+(151, 13, '3205211403060004', 'D', 'Kurang Baik'),
+(152, 13, '3205210102070001', 'C', 'Cukup Baik'),
+(153, 13, '1050156903065001', 'D', 'Kurang Baik'),
+(154, 13, '3204090810060010', 'B', 'Baik'),
+(155, 13, '3205052305080010', 'C', 'Cukup Baik'),
+(156, 14, '3273024304060010', 'C', 'Cukup Baik'),
+(157, 14, '3205216309060000', 'D', 'Kurang Baik'),
+(158, 14, '3204096003060000', 'B', 'Baik'),
+(159, 14, '3207035502780000', 'A', 'Sangat Baik'),
+(160, 14, '3204546070500000', 'B', 'Baik'),
+(161, 14, '3205216802060001', 'C', 'Cukup Baik'),
+(162, 14, '3205217012050003', 'C', 'Cukup Baik'),
+(163, 14, '3205212510090001', 'B', 'Baik'),
+(164, 14, '3673010305060003', 'B', 'Baik'),
+(165, 14, '3210156806060001', 'D', 'Kurang Baik'),
+(166, 14, '3205065508060005', 'D', 'Kurang Baik'),
+(167, 14, '3276055912050005', 'B', 'Baik'),
+(168, 14, '3204280208060007', 'C', 'Cukup Baik'),
+(169, 14, '3204080902060012', 'C', 'Cukup Baik'),
+(170, 14, '3273240510108234', 'C', 'Cukup Baik'),
+(171, 14, '3204375503060006', 'B', 'Baik'),
+(172, 14, '3205072401060001', 'D', 'Kurang Baik'),
+(173, 14, '3216061803060006', 'A', 'Sangat Baik'),
+(174, 14, '3273152809060005', 'A', 'Sangat Baik'),
+(175, 14, '3306025508060001', 'B', 'Baik'),
+(176, 14, '3210155806060062', 'C', 'Cukup Baik'),
+(177, 14, '3205210107060001', 'B', 'Baik'),
+(178, 14, '3205211101060005', 'D', 'Kurang Baik'),
+(179, 14, '3205210402070003', 'D', 'Kurang Baik'),
+(180, 14, '3175074904060001', 'C', 'Cukup Baik'),
+(181, 14, '3205216805060002', 'C', 'Cukup Baik'),
+(182, 14, '3205210702050001', 'D', 'Kurang Baik'),
+(183, 14, '3204282012040002', 'D', 'Kurang Baik'),
+(184, 12, '3205212702040000', 'B', 'Baik'),
+(185, 12, '3205211809040000', 'B', 'Baik'),
+(186, 12, '3205211003060000', 'D', 'Kurang Baik'),
+(187, 12, '3205056106050010', 'B', 'Baik'),
+(188, 12, '3205176104040010', 'B', 'Baik'),
+(189, 12, '3205172407050000', 'A', 'Sangat Baik'),
+(190, 12, '3205210509050000', 'A', 'Sangat Baik'),
+(191, 12, '3205215611030000', 'A', 'Sangat Baik'),
+(192, 12, '3205214104060000', 'A', 'Sangat Baik'),
+(193, 12, '3201012707050001', 'D', 'Kurang Baik'),
+(194, 12, '3273055606810002', 'B', 'Baik'),
+(195, 12, '3175083011050004', 'B', 'Baik'),
+(196, 12, '3205216002050001', 'A', 'Sangat Baik'),
+(197, 12, '3205020405050006', 'B', 'Baik'),
+(198, 12, '3277020908040009', 'A', 'Sangat Baik'),
+(199, 12, '3205215411040001', 'A', 'Sangat Baik'),
+(200, 12, '3205212009050001', 'B', 'Baik'),
+(201, 12, '3205215206050003', 'B', 'Baik'),
+(202, 12, '3205214103050002', 'A', 'Sangat Baik'),
+(203, 12, '3205091907040005', 'B', 'Baik'),
+(204, 12, '3210151304050001', 'B', 'Baik'),
+(205, 12, '3205212310050001', 'C', 'Cukup Baik'),
+(206, 12, '3205215003040007', 'B', 'Baik'),
+(207, 12, '3205216809040001', 'A', 'Sangat Baik'),
+(208, 12, '3205210704090001', 'A', 'Sangat Baik'),
+(209, 12, '3205174405050004', 'A', 'Sangat Baik'),
+(210, 12, '3205214510050005', 'A', 'Sangat Baik'),
+(211, 12, '3205210401060004', 'B', 'Baik'),
+(212, 12, '3205213105040001', 'D', 'Kurang Baik'),
+(213, 12, '3205212309050004', 'B', 'Baik'),
+(214, 12, '1007362003002698', 'D', 'Kurang Baik'),
+(215, 11, '3205210206050000', 'D', 'Kurang Baik'),
+(216, 11, '3205210911040000', 'A', 'Sangat Baik'),
+(217, 11, '3276055002040010', 'A', 'Sangat Baik'),
+(218, 11, '3205211404030000', 'A', 'Sangat Baik'),
+(219, 11, '3205214408050010', 'C', 'Cukup Baik'),
+(220, 11, '3276056503040010', 'A', 'Sangat Baik'),
+(221, 11, '3205171908030004', 'D', 'Sangat Baik'),
+(222, 11, '3205214810030002', 'D', 'Kurang Baik'),
+(223, 11, '3205214510030002', 'B', 'Baik'),
+(224, 11, '3205312112040003', 'D', 'Kurang Baik'),
+(225, 11, '3205214606030004', 'A', 'Sangat Baik'),
+(226, 11, '3205021504040008', 'D', 'Kurang Baik'),
+(227, 11, '3205021306040005', 'D', 'Kurang Baik'),
+(228, 11, '3205056410050002', 'A', 'Sangat Baik'),
+(229, 11, '3205214909030005', 'B', 'Baik'),
+(230, 11, '3205172908040006', 'B', 'Baik'),
+(231, 11, '3204322307030009', 'B', 'Baik'),
+(232, 11, '3205041911030007', 'B', 'Baik'),
+(233, 11, '3205211512030001', 'D', 'Kurang Baik'),
+(234, 11, '3674020305040004', 'B', 'Baik'),
+(235, 11, '1050192612035001', 'C', 'Cukup Baik');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login_attempts`
+-- Table structure for table `login_attempts`
 --
 
 CREATE TABLE `login_attempts` (
@@ -91496,7 +92506,7 @@ CREATE TABLE `login_attempts` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `master_leger`
+-- Table structure for table `master_leger`
 --
 
 CREATE TABLE `master_leger` (
@@ -91507,7 +92517,7 @@ CREATE TABLE `master_leger` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `master_leger`
+-- Dumping data for table `master_leger`
 --
 
 INSERT INTO `master_leger` (`idMaster_leger`, `idKelas`, `tahun_angkatan`, `semester`) VALUES
@@ -91519,7 +92529,7 @@ INSERT INTO `master_leger` (`idMaster_leger`, `idKelas`, `tahun_angkatan`, `seme
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mata_pelajaran`
+-- Table structure for table `mata_pelajaran`
 --
 
 CREATE TABLE `mata_pelajaran` (
@@ -91530,7 +92540,7 @@ CREATE TABLE `mata_pelajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mata_pelajaran`
+-- Dumping data for table `mata_pelajaran`
 --
 
 INSERT INTO `mata_pelajaran` (`idMata_pelajaran`, `idKurikulum`, `idKelompok_mapel`, `nama_mata_pelajaran`) VALUES
@@ -91556,12 +92566,14 @@ INSERT INTO `mata_pelajaran` (`idMata_pelajaran`, `idKurikulum`, `idKelompok_map
 (20, 2, 1, 'Ilmu Pengetahuan Sosial'),
 (22, 2, 1, 'Pendidikan Jasmani, Olahraga dan Kesehatan'),
 (23, 2, 1, 'Teknologi Informasi dan Komunikasi'),
-(24, 2, 1, 'Seni Budaya');
+(24, 2, 1, 'Seni Budaya'),
+(25, 2, 2, 'Bahasa Sunda'),
+(26, 2, 4, 'Ekonomi Syariah');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `menu`
+-- Table structure for table `menu`
 --
 
 CREATE TABLE `menu` (
@@ -91577,7 +92589,7 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `menu`
+-- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`, `menu_id`, `level_one`, `level_two`) VALUES
@@ -91617,14 +92629,12 @@ INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`,
 (128, 2, 3, 'Kelola Leger Nilai', 'line-graph', 'LegerNilai', '', 127, 0),
 (129, 0, 3, 'Jabatan Tenaga Pendidik', 'customer', 'JabatanTenpen', '', 0, 0),
 (130, 1, 3, 'Atur Nilai Deskripsi', 'doc', 'DeskripsiNilai', '', 127, 0),
-(131, 3, 3, 'E-Raport', 'graphic', '#', '', 0, 0),
-(132, 1, 3, 'Raport PerKelas', 'notes', 'Raport/RaportKelas', '', 131, 0),
-(133, 2, 3, 'Raport PerSiswa', 'user-ok', 'Raport/RaportSiswa', '', 131, 0);
+(134, 3, 3, 'E-Raport', 'graphic', 'Raport/RaportKelas', '', 127, 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ortu_peserta_didik`
+-- Table structure for table `ortu_peserta_didik`
 --
 
 CREATE TABLE `ortu_peserta_didik` (
@@ -91645,35 +92655,35 @@ CREATE TABLE `ortu_peserta_didik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ortu_peserta_didik`
+-- Dumping data for table `ortu_peserta_didik`
 --
 
 INSERT INTO `ortu_peserta_didik` (`idOrtu_pd`, `NIK_pd`, `NIK_ayah`, `nama_ayah`, `tahun_lahir_ayah`, `pendidikan_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `NIK_ibu`, `nama_ibu`, `tahun_lahir_ibu`, `pendidikan_ibu`, `pekerjaan_ibu`, `penghasilan_ibu`) VALUES
-(8, '3205170511050010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, '3205212702040000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, '3205211809040000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, '3205211003060000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, '3273024304060010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, '3205210206050000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, '3205216309060000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, '3205056106050010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, '3275060701060002', '3275081511730015', 'Achsan Indriadi', '1973', 'S1', 'SWASTA', 'Rp.3.000.000-Rp.5.000.000', '3275086303720019', 'NINA MARLINA', '1972', 'S1', 'Tidak Bekerja', '>Rp.5.000.000'),
+(9, '3205212702040000', '3205211002800002', 'Asep Setiawan', '1980', 'SMP', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205211007810005', 'Ade Ratna', '1981', 'SD', 'Tidak Bekerja', NULL),
+(10, '3205211809040000', '3205212003690001', 'Nasrudin', '1969', 'SMP', 'WIRASWASTA', 'Rp.1.500.000-Rp.2.000.000', '3205214105710002', 'Maryati', '1971', 'SD', 'Tidak Bekerja', NULL),
+(11, '3205211003060000', '3205213012790001', 'Dodo', '1979', 'SD', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205216309810003', 'Iis Nuraeni', '1981', 'SD', 'Tidak Bekerja', NULL),
+(12, '3273024304060010', NULL, 'Achirul Syahrianto', '1977', 'SMA', 'SWASTA', 'Rp.3.000.000-Rp.5.000.000', NULL, 'Ratna Astuti', '1981', 'S1', 'PNS', 'Rp.500.000-Rp.1000.000'),
+(13, '3205210206050000', NULL, 'Ihim', '1961', 'SD', 'WIRASWASTA', '<Rp.500.000', NULL, 'Empok', '1968', 'SD', NULL, NULL),
+(14, '3205216309060000', '3205212204830002', 'Bangbang Haeroni', '1983', 'SMA', 'Buruh', 'Rp.500.000-Rp.1000.000', '0205214803840003', 'Karina', '1984', 'SMP', 'Buruh', 'Rp.500.000-Rp.1000.000'),
+(15, '3205056106050010', '3205051005720005', 'Bukhori Muslim', '1972', 'S1', 'SWASTA', 'Rp.1.500.000-Rp.2.000.000', '3205056412750006', 'Natalina Aryanti', '1973', 'SMA', 'Tidak Bekerja', NULL),
 (16, '3211116207070000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(17, '3205176104040010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, '3205172407050000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, '3205210911040000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, '3276055002040010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, '3204096003060000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(17, '3205176104040010', NULL, 'Daryono', NULL, NULL, NULL, NULL, '3205174106830002', 'Y Rohmatika', '1963', 'SMP', 'Tidak Bekerja', NULL),
+(18, '3205172407050000', '3205170701540004', 'Cepi Nurjaman', '1984', 'SD', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3205175612830002', 'Ai Imas Umamah', '1983', 'SD', 'Tidak Bekerja', NULL),
+(19, '3205210911040000', '3205212411750001', 'Rusmana', '1974', NULL, 'SWASTA', NULL, '3205214909740001', 'Rahmatiya Sanang', '1974', NULL, 'Tidak Bekerja', NULL),
+(20, '3276055002040010', '3276052909800013', 'Abdul Rahman', '1980', 'SMA', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3276054601820011', 'Rina Almayanti', '1982', 'SMA', 'Tidak Bekerja', NULL),
+(21, '3204096003060000', NULL, 'Wardy', '1965', 'SMA', 'WIRASWASTA', '<Rp.500.000', '3204096003780008', 'Ida Karwati', '1978', 'SMP', 'Tidak Bekerja', NULL),
 (22, '3211116111050000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, '3207035502780000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, '3205210506050010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, '3205210509050000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, '3204290310050000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, '3205211404030000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(28, '3205214408050010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(29, '3204546070500000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(30, '3205215611030000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(31, '3205214605050000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(32, '3205214104060000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, '3207035502780000', '3207031311670001', 'Heri Supiansyah', '1267', 'SMA', 'WIRASWASTA', 'Rp.3.000.000-Rp.5.000.000', '3207035502780001', 'Vina Nafiyanti', '1978', 'SMA', 'Tidak Bekerja', NULL),
+(24, '3205210506050010', '3205211006810003', NULL, '1981', 'SD', NULL, NULL, NULL, 'Imas', '1984', 'SD', 'Tidak Bekerja', NULL),
+(25, '3205210509050000', NULL, 'Angwar Mulya', NULL, NULL, NULL, NULL, '3205215205680004', 'Aena', '1968', 'SD', 'Tidak Bekerja', NULL),
+(26, '3204290310050000', '3204290701610002', 'Wawan Wandi', '1961', 'SMA', 'Tidak Bekerja', NULL, '3204294606690009', 'Lilis Dini Nurkolisoh', NULL, NULL, NULL, NULL),
+(27, '3205211404030000', '3205211703800002', 'Hendar', '1980', 'SD', 'WIRASWASTA', '<Rp.500.000', '3205214107630182', 'Yanti', '1983', 'SD', 'Tidak Bekerja', NULL),
+(28, '3205214408050010', '3205210107590029', 'Agus', '1959', 'SMP', 'WIRASWASTA', '<Rp.500.000', '3205215101690002', 'Mimih', '1969', 'SD', 'Tidak Bekerja', NULL),
+(29, '3204546070500000', '3204050108800004', 'Harri Wibawa', '1980', 'S1', 'WIRASWASTA', 'Rp.3.000.000-Rp.5.000.000', '3204054909790005', 'Eri Trisnawati', '1979', 'SMA', 'Tidak Bekerja', NULL),
+(30, '3205215611030000', '3205211307670002', 'Iya Suryadi', '1967', 'SD', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205214407690004', 'Omah', '1969', 'SD', 'Buruh', NULL),
+(31, '3205216912850001', '3205211911810001', 'Jajang Nurjaman', '1981', 'SD', 'Buruh', 'Rp.1.500.000-Rp.2.000.000', '3205216912850001', 'Dede Nurlela', '1985', 'SMP', 'Tidak Bekerja', NULL),
+(32, '3205214104060000', '3205210211750002', 'Suryana', '1975', 'SMP', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205215109850003', 'Sumiati', '1985', 'SMP', 'Tidak Bekerja', NULL),
 (33, '3205074110940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (34, '3205074120940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (35, '3205074130940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -91684,97 +92694,97 @@ INSERT INTO `ortu_peserta_didik` (`idOrtu_pd`, `NIK_pd`, `NIK_ayah`, `nama_ayah`
 (40, '3205074180940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (41, '3205074190940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (42, '3205074200940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(43, '3201012707050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(44, '3276056503040010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(45, '3205216802060001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(46, '3205217012050003', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(47, '3205172311050002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(48, '3205171908030004', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(43, '3201012707050001', '3201010507620002', 'Duryun', '1962', 'S1', 'PNS', 'Rp.2.000.000-Rp.2.500.000', '3201014705640001', 'Sri Djuwitaningsih', '1964', 'S2', 'GURU', 'Rp.2.000.000-Rp.2.500.000'),
+(44, '3276056503040010', '3276050708730013', 'TOMMY ROCHDIANA', '1973', 'S1', 'SWASTA', '>Rp.5.000.000', '3276054208750018', 'ELIS EVA', '1975', 'SMA', 'Tidak Bekerja', NULL),
+(45, '3205216802060001', '325260807640001', 'Adin', '1964', 'SD', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205215301700002', 'Euis', '1970', 'SD', 'Tidak Bekerja', NULL),
+(46, '3205217012050003', '3205211906660001', 'Aceng Suryana', '1968', 'SD', 'WIRASWASTA', '<Rp.500.000', '3205214208710001', 'Neneh', '1971', 'SD', 'Tidak Bekerja', NULL),
+(47, '3205172311050002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Tidak Bekerja', NULL),
+(48, '3205171908030004', '320517140977000', 'WAWAN SETIAWAN', '1977', 'SMA', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3205175605850004', 'RIDA FARIDA', '1985', 'SMP', 'Tidak Bekerja', NULL),
 (49, '3204080902060002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(50, '3205214810030002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(51, '1007362003002732', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(52, '3273055606810002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(53, '3273265906050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(54, '3175083011050004', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(55, '3205216002050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(56, '3205214510030002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(57, '3205020405050006', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(58, '3205212510090001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(59, '3205312112040003', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(60, '3673010305060003', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(61, '7303022706060001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(62, '3210156806060001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(63, '3205214606030004', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(64, '3205417009050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(65, '3205065508060005', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(66, '3277020908040009', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(67, '3205174510060003', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(68, '3205215411040001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(69, '3205212009050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(70, '3205215206050003', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(71, '3276055912050005', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, '3205214810030002', '3205210409690001', 'Iip', '1969', 'SD', 'WIRASWASTA', '<Rp.500.000', '3205214301640001', 'IDA', '1984', 'SD', 'Tidak Bekerja', NULL),
+(51, '1007362003002732', '3205213009770002', 'Dono', '1977', 'SMA', 'WIRASWASTA', NULL, '3205216510550001', 'Wiwi Siti Fatimah', '1985', 'SMA', NULL, NULL),
+(52, '3273055606810002', NULL, 'Ate', NULL, NULL, NULL, NULL, '327055606810002', 'Nina', '1981', 'SD', 'Tidak Bekerja', NULL),
+(53, '3273265906050001', '3273262303150002', 'Tanwir Faried Junaedi', '1975', 'SMA', 'SWASTA', '>Rp.5.000.000', '3273265607850006', NULL, NULL, NULL, NULL, NULL),
+(54, '3175083011050004', '3175063011660006', 'Tyas Mulyawan', '1966', 'SMA', 'WIRASWASTA', 'Rp.1.500.000-Rp.2.000.000', '3176065805730009', 'Qiptiyah', '1973', 'SMA', 'Tidak Bekerja', NULL),
+(55, '3205216002050001', '3205211207860004', 'Ayi Maman', '1986', 'SD', 'Buruh', '<Rp.500.000', '3205214604880007', 'Pupu', '1988', 'SD', 'Tidak Bekerja', NULL),
+(56, '3205214510030002', '3205211206750001', 'Gandi', '1975', 'SD', 'Buruh', '<Rp.500.000', '3205216009770001', 'Wida', '1977', 'SD', 'Tidak Bekerja', NULL),
+(57, '3205020405050006', '3205022912670001', 'Iwan Sadarwahyu', '1967', 'S1', 'WIRASWASTA', 'Rp.1.500.000-Rp.2.000.000', '3205024810690007', 'Ika Rochmatika', '1969', 'SMA', 'Tidak Bekerja', NULL),
+(58, '3205212510090001', '3205911112949002', 'Mumung', '1978', 'SD', 'Buruh', '<Rp.500.000', '3205214908850004', 'Nita Bonita', '1985', 'SMA', 'Buruh', '<Rp.500.000'),
+(59, '3205312112040003', '3205312101730001', 'Hikmat Karyadi', '1973', 'S1', 'PNS', 'Rp.3.000.000-Rp.5.000.000', '3205316606790001', 'Idawati', '1976', 'SMP', 'Tidak Bekerja', NULL),
+(60, '3673010305060003', '3673010702760000', 'Supriatna (alm)', '1976', 'S1', 'PNS', 'Rp.500.000-Rp.1000.000', '3670014701800004', 'Rika Sartika', '1980', 'S1', 'PNS', 'Rp.3.000.000-Rp.5.000.000'),
+(61, '7303022706060001', '7303020808780006', 'Upardi', '1978', 'S1', 'SWASTA', 'Rp.2.000.000-Rp.2.500.000', '7303026008840009', 'Reni Sri Kartini', '1984', 'S1', 'Tidak Bekerja', NULL),
+(62, '3210156806060001', '3210150701760001', 'Hilmi Permana', '1976', 'S1', 'PNS', 'Rp.3.000.000-Rp.5.000.000', '3210154806740001', 'Iis Rosyiah', '1979', 'S1', 'PNS', 'Rp.3.000.000-Rp.5.000.000'),
+(63, '3205214606030004', NULL, 'Angwar Mulya', '1956', 'SMA', NULL, NULL, '3205215205680004', 'Aena', '1968', 'SD', 'Tidak Bekerja', NULL),
+(64, '3205417009050001', '3205411601700001', 'Saepuloh', '1973', 'SMA', 'WIRASWASTA', 'Rp.2.000.000-Rp.2.500.000', '3205414107800080', 'Rini Hermawati', '1984', 'SMP', 'Tidak Bekerja', NULL),
+(65, '3205065508060005', '3205060410620007', 'Iwan Herdiana', '1962', 'S1', 'PNS', 'Rp.3.000.000-Rp.5.000.000', '3205066509640001', 'Rosana', '1964', 'S1', 'PNS', 'Rp.3.000.000-Rp.5.000.000'),
+(66, '3277020908040009', '3277021602570005', 'Cecep Syarifudin Ramawijaya', '1957', 'SMA', 'Tidak Bekerja', NULL, '3277024807940001', 'Neneng Dewi Indriasari', '1972', 'SMA', 'SWASTA', NULL),
+(67, '3205174510060003', '320517102740002', 'Tedi Ansah', '1974', 'SMA', 'WIRASWASTA', 'Rp.2.000.000-Rp.2.500.000', '3205175012870006', 'Iim Sumiati', '1988', 'SD', 'Tidak Bekerja', NULL),
+(68, '3205215411040001', '3205212912800003', 'Sugiharo', '1980', 'SMA', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3205214304800003', 'Elin Herlina', '1980', 'SMA', 'Tidak Bekerja', NULL),
+(69, '3205212009050001', '3205210510690001', 'Soleh', '1969', 'SMA', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205216505740001', 'Helin', '1974', 'SMA', 'Tidak Bekerja', NULL),
+(70, '3205215206050003', '3205211611730005', 'Triana Soleh', '1971', 'SMA', 'Buruh', '<Rp.500.000', '3205215412760001', 'Neni Rohaeni', '1976', 'SMA', 'Tidak Bekerja', NULL),
+(71, '3276055912050005', NULL, 'Tommy Rochdiana', '1973', 'S1', 'WIRASWASTA', '>Rp.5.000.000', NULL, 'Elis Eva', '1975', 'SMA', 'Tidak Bekerja', NULL),
 (72, '3204280208060007', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(73, '3205021504040008', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(74, '3205021306040005', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(75, '3207181801060004', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(76, '3204080902060012', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(73, '3205021504040008', '3205020509770007', 'TOMI SUCIHADI', '1977', 'SMA', 'WIRASWASTA', NULL, '3205024105840007', 'TRI WAHYUNI', '1984', 'SMA', 'Tidak Bekerja', NULL),
+(74, '3205021306040005', '3205021203540002', 'DAYAT HIDAYAT', '1954', 'SMP', 'PNS', 'Rp.1.500.000-Rp.2.000.000', '3205026606620005', 'EUIS NURHASANAH', '1962', 'SMP', 'Tidak Bekerja', NULL),
+(75, '3207181801060004', '3207182604710002', 'Aep Suherman', '1972', NULL, 'SWASTA', 'Rp.1.500.000-Rp.2.000.000', '3207187004430001', 'Evi Rofi Hayati', '1972', 'S1', 'Tidak Bekerja', NULL),
+(76, '3204080902060012', '3204081812810002', 'Syarifan Robbanyina', '1981', 'S1', 'WIRASWASTA', '>Rp.5.000.000', '3204086302850004', 'Annisa Nur Fitria', '1985', 'SMA', 'Tidak Bekerja', NULL),
 (77, '3273240510108234', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(78, '3204375503060006', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(79, '3205056410050002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(80, '3205214909030005', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(81, '3205171608040003', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(82, '3204323007050009', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(83, '3205172908040006', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(84, '3205214103050002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(85, '3205072401060001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(86, '3204322307030009', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(87, '3204321911050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(88, '3205041911030007', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(89, '3205091907040005', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(90, '3204282210050019', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(91, '3277012203050004', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(92, '3205051704060005', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(93, '1050203005055001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(78, '3204375503060006', '3204370606760001', 'Muhammad Nur Syamsika', '1976', 'SMA', 'SWASTA', 'Rp.1.500.000-Rp.2.000.000', '3204374804830019', 'Santi Kamila', '1983', 'SD', 'Tidak Bekerja', NULL),
+(79, '3205056410050002', '3205171709600003', 'Edi Sumpena', '1961', 'SMA', 'SWASTA', '<Rp.500.000', '3205174403600001', 'N Heni Yuhaeni Arni', '1968', NULL, NULL, 'Rp.500.000-Rp.1000.000'),
+(80, '3205214909030005', '3205211006790004', 'IRAWAN', '1979', 'SMA', 'Buruh', 'Rp.500.000-Rp.1000.000', '320521450279005', 'DEDAH', '1979', 'SMP', 'Tidak Bekerja', NULL),
+(81, '3205171608040003', '320517011278006', 'SARTOYO RIFKY MAULANA', '1972', 'SD', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3205175708780007', 'EVI HASBIA', '1978', 'SD', 'Tidak Bekerja', NULL),
+(82, '3204323007050009', '3204322509730005', 'Dadan Rusdiana', '1973', 'SMA', 'SWASTA', 'Rp.2.500.000-Rp.3.000.000', '3204325409690005', 'Neni Rohaeni', '1969', 'SMA', 'Tidak Bekerja', NULL),
+(83, '3205172908040006', '3205170607720004', 'UJANG SURYANA', '1972', 'SMA', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3205176706810002', 'TUTI HANDAYANI', '1981', 'SMP', 'Tidak Bekerja', NULL),
+(84, '3205214103050002', '3205212103700003', 'Momo', '1970', 'SD', 'Buruh', '<Rp.500.000', '3205217001750002', 'Tati', '1975', 'SD', 'Tidak Bekerja', NULL),
+(85, '3205072401060001', '3205072709810001', 'Yayat Zihad Hidayatulloh', '1981', 'SMA', 'WIRASWASTA', '<Rp.500.000', '3205074508820002', 'Ai Reni', '1982', 'S1', 'WIRASWASTA', '<Rp.500.000'),
+(86, '3204322307030009', '3204320708760023', 'AUP RUSTANDI', '1976', 'SMA', 'WIRASWASTA', NULL, '3204326911810010', 'Laila Wati', '1981', 'SMP', 'Tidak Bekerja', NULL),
+(87, '3204321911050001', '3204321001780011', 'TRIYANTO', '1978', 'SMA', 'SWASTA', 'Rp.2.500.000-Rp.3.000.000', '3264324405800012', 'LINA MEILINA', '1980', 'SMP', 'Tidak Bekerja', NULL),
+(88, '3205041911030007', '3205012010760005', 'R SONI SRIHANDOKO', '1976', 'S1', 'WIRASWASTA', NULL, '3205016711780078', 'MAWARIKA', '1978', 'S1', 'SWASTA', NULL),
+(89, '3205091907040005', '3205095280967000', 'Anjar Abdul Rahman Anwar', '1967', 'S1', 'SWASTA', 'Rp.2.000.000-Rp.2.500.000', '3205096306670003', 'Elly Srinawati', '1967', 'S1', 'Tidak Bekerja', NULL),
+(90, '3204282210050019', '3204280306690010', 'DANI PRIYATNA,ST', '1969', 'S1', 'SWASTA', NULL, '3204285104730007', 'KUMALA SARI', '1973', 'SMA', 'Tidak Bekerja', NULL),
+(91, '3277012203050004', '3277013004810012', 'HERI SUTOMO', NULL, NULL, 'SWASTA', '<Rp.500.000', '327701690680016', 'KARMILA WATI', '', NULL, 'Tidak Bekerja', 'Rp.2.000.000-Rp.2.500.000'),
+(92, '3205051704060005', '3205190507710002', 'Marjuli', '1971', 'SMA', 'SWASTA', 'Rp.1.500.000-Rp.2.000.000', '3205194201690005', 'Nunung Rohanah', '1969', NULL, 'PNS', 'Rp.2.000.000-Rp.2.500.000'),
+(93, '1050203005055001', '3273252304790001', 'GUNTUR HALIM', '1979', 'S1', 'SWASTA', NULL, '3273255102789998', 'SRI HENDRIANI', '1979', 'S2', 'PNS', NULL),
 (94, '3210151304050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(95, '3216061803060006', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(96, '3273152809060005', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(97, '3205212310050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(98, '3273282210050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(99, '3306025508060001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(100, '3210155806060062', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(95, '3216061803060006', '3216062101760012', 'Andi Romiadi', '1976', 'S1', 'SWASTA', '>Rp.5.000.000', '3216065111810019', 'Epi Nurpianti Rd', '1981', 'S1', 'Tidak Bekerja', NULL),
+(96, '3273152809060005', '3273152308650008', 'Agus Pranoro', '1965', 'S1', 'PNS', '>Rp.5.000.000', '3273154408670010', 'Neni Suryani', '1967', 'S1', 'PNS', '>Rp.5.000.000'),
+(97, '3205212310050001', '3205210707770004', 'Momon', '1977', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(98, '3273282210050001', '3273280304670002', 'Agus Yahya Sukmana', '1967', 'SMP', 'WIRASWASTA', '<Rp.500.000', '3204076711800002', 'Ratmawulan', '1980', 'SMA', NULL, NULL),
+(99, '3306025508060001', '3306022612820004', 'Abdus Shomad Affan', '1982', 'S1', 'WIRASWASTA', 'Rp.1.500.000-Rp.2.000.000', '3306024302830008', 'Rika Uswatun Kasanah', '1983', 'SMA', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000'),
+(100, '3210155806060062', '3210152407800142', 'Amad', '1980', 'SD', 'SWASTA', '>Rp.5.000.000', '3210154606800182', 'Lina Melani', '1986', 'S1', 'Tidak Bekerja', NULL),
 (101, '3205215003040007', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(102, '3205216809040001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(103, '3205210704090001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(104, '3205410703050002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(105, '3205211512030001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(106, '3205215308060001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(107, '3205210107060001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(108, '3205174405050004', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(109, '3204320104055535', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(110, '3205211101060005', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(111, '3205214510050005', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(112, '3205211107060002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(113, '3205210402070003', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(114, '3205210401060004', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(115, '3205213105040001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(116, '3674020305040004', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(117, '3175074904060001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(118, '3205212309050004', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(119, '3205216805060002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(102, '3205216809040001', '3205211007710001', 'Miman', '1971', 'SD', 'Buruh', '<Rp.500.000', '3205214606750003', 'Kanah', '1975', 'SD', 'Tidak Bekerja', NULL),
+(103, '3205210704090001', '3205210210750005', 'Ade Wahid', '1975', 'SD', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205215003790002', 'Nengsih', '1979', 'SD', 'Tidak Bekerja', NULL),
+(104, '3205410703050002', '3205411510670001', 'KUNKUN KURNIAWAN', '1967', 'S1', 'WIRASWASTA', 'Rp.2.500.000-Rp.3.000.000', '3205417009790001', 'FUJI ASTUTI ASIA NINGRUM', '1979', 'SMA', 'Tidak Bekerja', NULL),
+(105, '3205211512030001', '3205211004650001', 'Sona', '1965', 'SD', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3205215510650001', 'Popon', '1965', 'SD', 'Tidak Bekerja', NULL),
+(106, '3205215308060001', '3205211202800004', 'JAJAT SUDRAJAT', '1980', 'SMP', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205214111870002', 'ROSITA', '1987', 'SMP', 'WIRASWASTA', NULL),
+(107, '3205210107060001', '3205211005800003', 'Alowahid', '1985', 'SMP', 'WIRASWASTA', '<Rp.500.000', '3205215406900004', 'Dede (alm)', '1990', 'SD', 'Tidak Bekerja', NULL),
+(108, '3205174405050004', '3205171409770003', 'Wawan Setiawan', '1977', 'SMA', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3205175605850004', 'Rida Farida', '1985', 'SMP', 'Tidak Bekerja', NULL),
+(109, '3204320104055535', '3204321603580003', 'h. ashari', '1958', 'SMA', 'WIRASWASTA', NULL, '3204325408690002', 'hj.lilis nurhanah,s.st', '1969', 'S1', 'PNS', NULL),
+(110, '3205211101060005', '3205210307790003', 'Wawan Setiawan', '1979', 'SMP', 'WIRASWASTA', '<Rp.500.000', '3205215101060001', 'Risma Novianti', '1983', 'SMP', 'Tidak Bekerja', NULL),
+(111, '3205214510050005', '3205210910820002', 'Supena', '1982', 'SMP', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205214307880001', 'Nanih', '1988', 'SMP', 'Tidak Bekerja', NULL),
+(112, '3205211107060002', '3205210205680002', 'Ayi Jainudin', '1967', 'SMP', 'Buruh', NULL, '3205214808720002', 'Ade Omih Sumiartini', '1972', 'SD', 'Tidak Bekerja', NULL),
+(113, '3205210402070003', NULL, NULL, NULL, 'SD', 'Buruh', '<Rp.500.000', NULL, NULL, NULL, 'SD', 'Tidak Bekerja', NULL),
+(114, '3205210401060004', '3205214307880001', 'Obar', '1963', 'SD', 'Buruh', '<Rp.500.000', '3205214109680001', 'Aah', '1968', 'SD', 'Tidak Bekerja', NULL),
+(115, '3205213105040001', '3205210902720001', 'Usep Sanjaya', '1972', 'SD', 'Buruh', '<Rp.500.000', '3205215803730002', 'Tini', '1973', 'SD', 'Tidak Bekerja', NULL),
+(116, '3674020305040004', '3674021511690006', 'TANTAN RUSTANDI', '1969', 'S1', 'WIRASWASTA', '>Rp.5.000.000', '367402570280003', 'ANNISA KAYUNGYUN', '1984', 'SMA', 'Tidak Bekerja', NULL),
+(117, '3175074904060001', NULL, 'Dadang Wardiana', '1978', 'SMA', 'SWASTA', 'Rp.1.500.000-Rp.2.000.000', NULL, 'Rita', '1982', 'SMA', 'Tidak Bekerja', NULL),
+(118, '3205212309050004', '3205211008680003', 'Iron Suherman', '1968', 'SMP', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3205214806650004', 'Eem', '1965', 'SD', 'Tidak Bekerja', NULL),
+(119, '3205216805060002', NULL, 'Dadang wardiana', '1978', 'SMA', 'SWASTA', 'Rp.1.500.000-Rp.2.000.000', NULL, 'Rita', '1982', 'SMA', 'Tidak Bekerja', NULL),
 (120, '3205211403060004', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(121, '3205210702050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(122, '3205210102070001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(123, '1050156903065001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(124, '3204090810060010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(125, '1007362003002698', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(126, '1050192612035001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(127, '3205052305080010', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(121, '3205210702050001', '3205211206750002', 'Muslim', '1975', 'SD', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205214610850003', 'Rida', '1985', 'SMP', 'Tidak Bekerja', NULL),
+(122, '3205214102070005', '3205210304820003', 'Jajang', '1982', 'SD', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205214406670005', 'Neneng Sulastri', '1967', 'SMP', 'Tidak Bekerja', NULL),
+(123, '1050156903065001', '3273170209770005', 'KIKI FAHD BAIHAQI', '1977', 'SMA', 'WIRASWASTA', 'Rp.1.500.000-Rp.2.000.000', '3273176610790006', 'EVI MARYANI', '1979', 'SMA', 'SWASTA', 'Rp.500.000-Rp.1000.000'),
+(124, '3204090810060010', '3204091508590006', 'DRS.H.BAHRUDIN MM', '1959', 'S1', 'WIRASWASTA', '>Rp.5.000.000', '3204096611750007', 'HJ.SUSANTI FATIMAH', '1975', NULL, 'WIRASWASTA', '>Rp.5.000.000'),
+(125, '1007362003002698', '1007362003002698', 'Asep dani Ramdani', '1983', 'S1', 'SWASTA', 'Rp.1.500.000-Rp.2.000.000', '1007362003002698', 'Yayah Rohimah', '1982', 'SMP', 'Tidak Bekerja', NULL),
+(126, '1050192612035001', '3273262303750002', 'TANWIR FARIED JUNAEDI', '1975', 'SMA', 'SWASTA', 'Rp.3.000.000-Rp.5.000.000', '3273265607850006', 'SYIFA NURUL AFIAN', '1985', 'SMA', 'Tidak Bekerja', NULL),
+(127, '3205054609060006', '3205050409740004', 'Idam Juanda', '1973', 'S1', 'PNS', '>Rp.5.000.000', '3205054808730007', 'Nina Mutmainah', '1973', 'SMA', 'Tidak Bekerja', NULL),
 (128, '3204282012040002', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ortu_tenaga_pendidik`
+-- Table structure for table `ortu_tenaga_pendidik`
 --
 
 CREATE TABLE `ortu_tenaga_pendidik` (
@@ -91787,7 +92797,7 @@ CREATE TABLE `ortu_tenaga_pendidik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ortu_tenaga_pendidik`
+-- Dumping data for table `ortu_tenaga_pendidik`
 --
 
 INSERT INTO `ortu_tenaga_pendidik` (`idOrtu_tenpen`, `NIK_tenpen`, `nama_ayah`, `tahun_lahir_ayah`, `nama_ibu`, `tahun_lahir_ibu`) VALUES
@@ -91810,12 +92820,13 @@ INSERT INTO `ortu_tenaga_pendidik` (`idOrtu_tenpen`, `NIK_tenpen`, `nama_ayah`, 
 (17, '1871116705000001', NULL, NULL, NULL, NULL),
 (18, '3205210505940006', NULL, NULL, NULL, NULL),
 (19, '3205172306950002', NULL, NULL, NULL, NULL),
-(20, '4323354635234323', NULL, NULL, NULL, NULL);
+(20, '4323354635234323', NULL, NULL, NULL, NULL),
+(21, '3205324307950001', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `peserta_didik`
+-- Table structure for table `peserta_didik`
 --
 
 CREATE TABLE `peserta_didik` (
@@ -91845,136 +92856,136 @@ CREATE TABLE `peserta_didik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `peserta_didik`
+-- Dumping data for table `peserta_didik`
 --
 
 INSERT INTO `peserta_didik` (`idPd`, `idSekolah`, `NIK_pd`, `tahun_angkatan`, `nisn`, `nipd`, `nama_pd`, `jk_pd`, `tempat_lahir_pd`, `tanggal_lahir_pd`, `agama`, `alamat`, `idProvinsi`, `idKabupaten`, `idKecamatan`, `idKelurahan`, `no_telp_pd`, `email_pd`, `foto_pd`, `facebook`, `instagram`, `twitter`, `status_pd`) VALUES
-(24, 1, '3205170511050010', 2018, '4535245234', '5435452452', 'Achmar Farid Ryven', 'Laki-Laki', 'Garut', '2006-04-04', 'Islam', '', 36, 3601, 360120, '2147483647', '085277889900', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(25, 1, '3205212702040000', 2017, '6757567567', '7679678545', 'Adi Tia Lesmana', 'Laki-Laki', 'Garut', '2004-02-27', 'Islam', '', NULL, NULL, NULL, '0', '085123456789', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(26, 1, '3205211809040000', 2017, '5673450875', '171807002', 'Agus Sukarno', 'Laki-Laki', 'Garut', '2004-10-18', 'Islam', '', NULL, NULL, NULL, '0', '085213456543', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(27, 1, '3205211003060000', 2017, '6775745709', '4423253425', 'Aldi Ahmad Muharom', 'Laki-Laki', 'Garut', '2006-03-20', 'Islam', '', 51, 5106, 510603, '5106032004', '085212345678', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(28, 1, '3273024304060010', 2018, '0069891736', '181907004', 'Alifa Mutiara Zahra', 'Perempuan', 'Garut', '2006-04-03', 'Islam', '', NULL, NULL, NULL, '0', '08212345678', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(29, 1, '3205210206050000', 2016, '0051404180', '161707001', 'Aliyansah', 'Laki-Laki', 'Garut', '2005-06-02', 'Islam', '', NULL, NULL, NULL, '0', '08128765345', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(30, 1, '3205216309060000', 2018, '0068874907', '181907003', 'Alpa Resta', 'Perempuan', 'Garut', '2006-02-24', 'Islam', '', NULL, NULL, NULL, '0', '082176534356', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(31, 1, '3205056106050010', 2017, '0055799810', '171807004', 'Alysha Nurfiddina Putri Muslim', 'Perempuan', 'Garut', '2006-06-21', 'Islam', '', NULL, NULL, NULL, '0', '082165748379', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(32, 1, '3211116207070000', 2018, '0076784572', '181907033', 'Annisa Malika Utami', 'Perempuan', 'Garut', '2007-07-22', 'Islam', '', NULL, NULL, NULL, '0', '0987653674837', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(33, 1, '3205176104040010', 2017, '0048704384', '171807005', 'Annisa Wangi Nusantara', 'Perempuan', 'Garut', '2004-04-21', 'Islam', '', NULL, NULL, NULL, '0', '081267854352', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(34, 1, '3205172407050000', 2017, '0055709712', '171807006', 'Ardy Putra Nurjaman', 'Laki-Laki', 'Garut', '2005-06-23', 'Islam', '', NULL, NULL, NULL, '0', '089765432453', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(35, 1, '3205210911040000', 2016, '5343345345', '3453234534', 'Arya Prasetya', 'Laki-Laki', 'Timika', '2002-12-28', 'Islam', '', NULL, NULL, NULL, '0', '082367898223', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(36, 1, '3276055002040010', 2016, '0042312763', '161707003', 'Aryani Febriyanti', 'Perempuan', 'Garut', '2004-02-10', 'Islam', '', NULL, NULL, NULL, '0', '082187645367', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(37, 1, '3204096003060000', 2018, '0061540185', '181907005', 'Aulia Khoiru Nisa', 'Perempuan', 'Garut', '2006-03-20', 'Islam', '', NULL, NULL, NULL, '0', '082134567893', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(38, 1, '3211116111050000', 2018, '0054198660', '181907034', 'Aulia Putri Madinah', 'Perempuan', 'Garut', '2005-11-21', 'Islam', '', NULL, NULL, NULL, '0', '081234523456', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(39, 1, '3207035502780000', 2018, '0053763240', '181907002', 'Azri Akbar Khoiri', 'Laki-Laki', 'Garut', '2005-05-01', 'Islam', '', 32, 3205, 320510, '3205102006', '09873637463722', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(40, 1, '3205210506050010', 2018, '0059695333', '181907035', 'Bayu Permana', 'Laki-Laki', 'Garut', '2005-05-05', 'Islam', '', NULL, NULL, NULL, '0', '089374846387', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(41, 1, '3205210509050000', 2017, '6765475675', '7567456745', 'Bima Budiarto Mulya', 'Laki-Laki', 'Garut', '2005-09-05', 'Islam', '', 36, 3603, 360323, '3603232006', '082137465847', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(42, 1, '3204290310050000', 2018, '0069548405', '181907036', 'Boyke Rofiqu Ikhwan', 'Laki-Laki', 'Garut', '2005-10-03', 'Islam', '', NULL, NULL, NULL, '0', '082183746574', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(43, 1, '3205211404030000', 2016, '6798767545', '7689089867', 'Cep Ilham  Nurhakim', 'Laki-Laki', 'Garut', '2003-04-14', 'Islam', '', NULL, NULL, NULL, '0', '081267363546', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(44, 1, '3205214408050010', 2016, '5656756745', '5765764564', 'Dea Anita', 'Perempuan', 'Garut', '2004-08-04', 'Islam', '', NULL, NULL, NULL, '0', '082176534256', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(45, 1, '3204546070500000', 2018, '0052987578', '181907006', 'Devana Kayyisa Wibawa', 'Perempuan', 'Garut', '2005-07-06', 'Islam', '', NULL, NULL, NULL, '0', '082174657483', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(46, 1, '3205215611030000', 2017, '3035953200', '171807009', 'Devi Sapitri', 'Perempuan', 'Garut', '2003-11-16', 'Islam', '', NULL, NULL, NULL, '0', '081236456575', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(47, 1, '3205214605050000', 2018, '0052033155', '181907037', 'Dewi Mulyani', 'Perempuan', 'Garut', '2005-05-06', 'Islam', '', NULL, NULL, NULL, '0', '098465768574', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(48, 1, '3205214104060000', 2017, '5476575675', '4567353223', 'Dinda Apriliani', 'Perempuan', 'Garut', '2006-04-19', 'Islam', '', NULL, NULL, NULL, '0', '081236475867', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(49, 2, '3205074110940000', 2018, '0025423936', '181910046', 'Sela Selvia', 'Perempuan', 'Garut', '2002-11-22', 'Islam', '', NULL, NULL, NULL, '0', '098736453612', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(50, 2, '3205074120940000', 2018, '0037663774', '181910024', 'Yora', 'Perempuan', 'Garut', '2003-08-31', 'Islam', '', NULL, NULL, NULL, '0', '089764536272', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(51, 2, '3205074130940000', 2018, '0020289635', '181910045', 'Sandi Nasrulloh', 'Laki-Laki', 'Garut', '2002-02-11', 'Islam', '', NULL, NULL, NULL, '0', '087363524152', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(52, 2, '3205074140940000', 2018, '0034771680', '181910027', 'Bilal Farel Taghsya', 'Laki-Laki', 'Bandung', '2003-01-04', 'Islam', '', NULL, NULL, NULL, '0', '089272837362', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(53, 2, '3205074150940000', 2018, '0038465991', '181910031', 'Jihan Fitrianisa', 'Perempuan', 'Bandung', '2002-11-22', 'Islam', '', NULL, NULL, NULL, '0', '08767261526', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(54, 2, '3205074160940000', 2018, '0477431003', '181910009', 'Maudy Meliany Deryana', 'Perempuan', ' Bandung', '2002-05-16', 'Islam', '', NULL, NULL, NULL, '0', '087362516273', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(55, 2, '3205074170940000', 2018, '0020102401', '181910022', 'Wildan Ohaina Yusuf', 'Laki-Laki', 'Bandung', '1970-01-01', 'Islam', '', NULL, NULL, NULL, '0', '087635462736', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(56, 2, '3205074180940000', 2018, '0031075176', '181910019', 'Satria Hadetata', 'Laki-Laki', 'Garut', '2003-04-12', 'Islam', '', NULL, NULL, NULL, '0', '087736367263', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(57, 2, '3205074190940000', 2018, '0026961801', '181910016', 'Ripa Junior', 'Laki-Laki', 'Garut', '2003-03-23', 'Islam', '', NULL, NULL, NULL, '0', '087635263526', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(58, 2, '3205074200940000', 2018, '0039305967', '181910030', 'Febbyana Maharani', 'Laki-Laki', 'Bandung', '2003-02-23', 'Islam', '', NULL, NULL, NULL, '0', '081276352627', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(59, 1, '3201012707050001', 2017, '0051432411', '12345434', 'Ahmad Fauzan', 'Laki-Laki', 'Bogor', '2005-07-27', 'Islam', '', NULL, NULL, NULL, '0', '081237483736', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(60, 1, '3276056503040010', 2016, '0040917114', '171808019', 'Farah Naura Rahmah', 'Perempuan', 'Tasikmalaya', '2004-03-25', 'Islam', '', NULL, NULL, NULL, '0', '0837363536352', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(61, 1, '3205216802060001', 2018, '0069150455', '12345625', 'Yulianti', 'Perempuan', 'Garut', '2006-02-28', 'Islam', '', NULL, NULL, NULL, '0', '087736747546', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(62, 1, '3205217012050003', 2018, '0061678609', '53737829', 'Tuti Nurhayati', 'Perempuan', 'Garut', '2006-12-30', 'Islam', '', NULL, NULL, NULL, '0', '543789200186', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(63, 1, '3205172311050002', 2018, '0055321728', '54637899', 'Tulus Pitutur', 'Laki-Laki', 'Garut', '2005-11-23', 'Islam', '', NULL, NULL, NULL, '0', '081452678765', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(64, 1, '3205171908030004', 2016, '0036893334', '161707016', 'Teguh Dwi Putra Setiawan', 'Laki-Laki', 'Garut', '2003-08-19', 'Islam', '', NULL, NULL, NULL, '0', '728764536789', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(65, 1, '3204080902060002', 2018, '0053145832', '63546655', 'Wildan Khalid Wijaya', 'Laki-Laki', 'Bandung', '2005-03-01', 'Islam', '', NULL, NULL, NULL, '0', '089983746354', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(66, 1, '3205214810030002', 2016, '0039108484', '161707017', 'Yulianti', 'Perempuan', 'Garut', '2003-10-08', 'Islam', '', NULL, NULL, NULL, '0', '087736427654', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(67, 1, '1007362003002732', 2018, '0055500167', '16725372', 'Winarti Lestari', 'Perempuan', 'Garut', '2005-07-20', 'Islam', '', NULL, NULL, NULL, '0', '0897252567217', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(68, 1, '3273055606810002', 2017, '0041660199', '171807030', 'Wildan Taupik Nurwahid', 'Laki-Laki', 'Garut', '2004-06-19', 'Islam', '', NULL, NULL, NULL, '0', '08973628374625', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(69, 1, '3273265906050001', 2018, '0052946460', '167263527', 'Vanya Maula Zalfadhyla', 'Perempuan', 'Bandung', '2005-06-19', 'Islam', '', NULL, NULL, NULL, '0', '089754323456', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(70, 1, '3175083011050004', 2017, '0053089820', '62748273', 'Ubayd Tsaqiif Thufayl', 'Laki-Laki', 'Jakarta', '2005-11-30', 'Islam', '', NULL, NULL, NULL, '0', '098673564726', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(71, 1, '3205216002050001', 2017, '0056498440', '171807028', 'Sita Handini', 'Perempuan', 'Garut', '2005-02-20', 'Islam', '', NULL, NULL, NULL, '0', '089765465765', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(72, 1, '3205214510030002', 2016, '0039530678', '161707015', 'Silpa', 'Laki-Laki', 'Garut', '2003-06-29', 'Islam', '', NULL, NULL, NULL, '0', '089765354634', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(76, 1, '3205020405050006', 2017, '0059447195', '15267318', 'Irsad Asadilah Maulana', 'Laki-Laki', 'Garut', '2005-05-04', 'Islam', '', 32, 3205, 320507, '3205072010', '087656786546', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(77, 1, '3205212510090001', 2018, '0063611930', '53672876', 'Intan Nur Azizah', 'Perempuan', 'Garut', '2006-03-06', 'Islam', '', NULL, NULL, NULL, '0', '087656754678', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(78, 1, '3205312112040003', 2016, '0033728462', '171808021', 'Ikhwan Abdilah', 'Laki-Laki', 'Garut', '2004-12-21', 'Islam', '', NULL, NULL, NULL, '0', '089765676453', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(79, 1, '3673010305060003', 2018, '0069583886', '16726536', 'Ibrahim Adjie', 'Laki-Laki', 'Cimahi', '2006-05-03', 'Islam', '', NULL, NULL, NULL, '0', '089767643123', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(80, 1, '7303022706060001', 2018, '0068313694', '72536715', 'Hizqil Ubaidillahil Achyar', 'Laki-Laki', 'Bantaeng', '2006-06-27', 'Islam', '', NULL, NULL, NULL, '0', '08976534234', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(81, 1, '3210156806060001', 2018, '0064554565', '623273846', 'Hizkia Samhan Rezayoshi', 'Perempuan', 'Majalengka', '2006-06-28', 'Islam', '', NULL, NULL, NULL, '0', '087651234543', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(82, 1, '3205214606030004', 2016, '0037527580', '161707007', 'Helmina', 'Perempuan', 'Garut', '2003-06-06', 'Islam', '', NULL, NULL, NULL, '0', '087827130571', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(83, 1, '3205417009050001', 2018, '0053636362', '09876543', 'Havia Khoirunnisa', 'Perempuan', 'Garut', '2005-09-30', 'Islam', '', NULL, NULL, NULL, '0', '087653647284', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(84, 1, '3205065508060005', 2018, '0061584891', '87598764', 'Gusti Mujiba Ahsana', 'Perempuan', 'Garut', '2006-08-13', 'Islam', '', NULL, NULL, NULL, '0', '089876728498', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(85, 1, '3277020908040009', 2017, '0049313376', '83647584', 'Ginding Luginasakti', 'Laki-Laki', 'Cimahi', '2004-08-09', 'Islam', '', NULL, NULL, NULL, '0', '098753543654', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(86, 1, '3205174510060003', 2018, '0069246859', '765433454', 'Gesha Alia Feradi', 'Perempuan', 'LAMPUNG', '2006-10-05', 'Islam', '', NULL, NULL, NULL, '0', '08976543435', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(87, 1, '3205215411040001', 2017, '0049589694', '78765456', 'Fitria Harlina', 'Perempuan', 'Garut', '2004-11-14', 'Islam', '', NULL, NULL, NULL, '0', '098987656765', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(88, 1, '3205212009050001', 2017, '0058160582', '8987364', 'Fazar Pirdaus', 'Laki-Laki', 'Garut', '2005-09-20', 'Islam', '', NULL, NULL, NULL, '0', '098765676545', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(89, 1, '3205215206050003', 2017, '3056114605', '89837465', 'Fauziah Noer Rahmi', 'Perempuan', 'Bandung', '2005-06-12', 'Islam', '', NULL, NULL, NULL, '0', '098987678765', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(90, 1, '3276055912050005', 2018, '0053548385', '87679876', 'Fatimah Azzahra', 'Perempuan', 'CIAMIS	2005-12-19', '2005-12-19', 'Islam', '', NULL, NULL, NULL, '0', '098789876576', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(91, 1, '3204280208060007', 2018, '0065142830', '0065142830', 'Fariel Agutian Firdaus', 'Laki-Laki', 'Garut', '2008-01-27', 'Islam', '', NULL, NULL, NULL, '0', '089746547364', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(92, 1, '3205021504040008', 2016, '0049243243', '171808022', 'Faris Julfiker Irfani', 'Laki-Laki', 'Garut', '2004-04-15', 'Islam', '', NULL, NULL, NULL, '0', '087362543562', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(93, 1, '3205021306040005', 2016, '0049759855', '171808023', 'Farrel Azhar Nurhidayat', 'Laki-Laki', 'Garut', '2004-06-13', 'Islam', '', NULL, NULL, NULL, '0', '0584747463637', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(102, 1, '3207181801060004', 2018, '0067913377', '0067913377', 'Kamil Nugraha', 'Laki-Laki', 'Ciamis', '2006-01-18', 'Islam', '', NULL, NULL, NULL, '0', '087635242673', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(104, 1, '3204080902060012', 2018, '0061698366', '0061698366', 'Sidqi Bimasakti', 'Laki-Laki', 'Bandung', '2006-02-09', 'Islam', '', NULL, NULL, NULL, '0', '08736251625', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(105, 1, '3273240510108234', 2018, '0071688380', '0071688380', 'Kania Nurul Aini', 'Laki-Laki', 'Bandung', '2007-06-27', 'Islam', '', NULL, NULL, NULL, '0', '08763524253', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(106, 1, '3204375503060006', 2018, '0067542725', '0067542725', 'Lahya Ghuita Maylan', 'Perempuan', 'Bandung', '2006-05-15', 'Islam', '', NULL, NULL, NULL, '0', '087635242123', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(107, 1, '3205056410050002', 2016, '0056992066', '161707008', 'Laila Fitri Annisa', 'Perempuan', 'Garut', '2005-10-24', 'Islam', '', NULL, NULL, NULL, '0', '089765454321', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(108, 1, '3205214909030005', 2016, '0034085844', '161707009', 'Lisbahi Aljaatsiyah', 'Perempuan', 'Garut', '2003-09-09', 'Islam', '', NULL, NULL, NULL, '0', '087564746354', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(109, 1, '3205171608040003', 2018, '0046586413', '0046586413', 'Luzia Fakiha', 'Laki-Laki', 'Garut', '2004-08-16', 'Islam', '', NULL, NULL, NULL, '0', '08645342532', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(110, 1, '3204323007050009', 2018, '0056553530', '0056553530', 'M. RIFQI BAHARA ILMAN', 'Laki-Laki', 'Bandung', '2005-07-30', 'Islam', '', NULL, NULL, NULL, '0', '087653425241', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(111, 1, '3205172908040006', 2016, '0042129372', '0042129372', 'M.rizki Padilah', 'Laki-Laki', 'Garut', '2004-08-29', 'Islam', '', NULL, NULL, NULL, '0', '084746363525', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(112, 1, '3205214103050002', 2017, '0057424439', '171807015', 'Mamay Mariam', 'Perempuan', 'Garut', '2005-03-01', 'Islam', '', NULL, NULL, NULL, '0', '08765656543', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(113, 1, '3205072401060001', 2018, '0065352069', '0065352069', 'Moch Adrian Putra Hidayat', 'Laki-Laki', 'Garut', '2006-01-24', 'Islam', '', NULL, NULL, NULL, '0', '08746353523', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(114, 1, '3204322307030009', 2016, '0039418541', '161707011', 'Mohamad Rizaldi', 'Laki-Laki', 'Garut', '2003-07-23', 'Islam', '', NULL, NULL, NULL, '0', '087464535342', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(115, 1, '3204321911050001', 2018, '0057443607', '0057443607', 'Mohammad Azka Maulana', 'Laki-Laki', 'Bandung', '2005-11-19', 'Islam', '', NULL, NULL, NULL, '0', '087645353623', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(116, 1, '3205041911030007', 2016, '0030143774', '171808020', 'Muhamad Emir Faturohman', 'Laki-Laki', 'Garut', '2003-11-19', 'Islam', '', NULL, NULL, NULL, '0', '087656454536', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(117, 1, '3205091907040005', 2017, '0057107742', '171807016', 'Muhamad Razidan Anwar Fauzi', 'Laki-Laki', 'Bandung', '2004-07-19', 'Islam', '', NULL, NULL, NULL, '0', '08756545463', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(118, 1, '3204282210050019', 2018, '0056770496', '0056770496', 'Muhamad Rian Darmawan', 'Laki-Laki', 'Bandung', '2005-10-22', 'Islam', '', NULL, NULL, NULL, '0', '088798764532', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(119, 1, '3277012203050004', 2018, '0073463591', '0073463591', 'Muhammad Akmal Chandra Wiguna', 'Laki-Laki', 'Bandung', '2005-03-22', 'Islam', '', NULL, NULL, NULL, '0', '08764536453', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(120, 1, '3205051704060005', 2018, '0065352664', '0065352664', 'Muhammad Fadli Fairuza', 'Laki-Laki', 'GARUT', '2006-04-17', 'Islam', '', NULL, NULL, NULL, '0', '083213243536', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(121, 1, '1050203005055001', 2018, '0057842328', '0057842328', 'Muhammad Hilman Dzakwanurrofiq', 'Laki-Laki', 'Bandung', '2005-05-30', 'Islam', '', NULL, NULL, NULL, '0', '085456567654', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(122, 1, '3210151304050001', 2017, '0052534218', '0052534218', 'Muhammad Hizkil Rezayoshi', 'Laki-Laki', 'Bandung', '2005-04-13', 'Islam', '', NULL, NULL, NULL, '0', '045364758676', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(123, 1, '3216061803060006', 2018, '0064138120', '0064138120', 'Muhammad Raya Marjuwan', 'Laki-Laki', 'Bekasi', '2006-03-18', 'Islam', '', NULL, NULL, NULL, '0', '084746464563', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(124, 1, '3273152809060005', 2018, '0061877002', '0061877002', 'Muhammad Ridwan Firdaus', 'Laki-Laki', 'Bandung', '2006-09-28', 'Islam', '', NULL, NULL, NULL, '0', '08746453643', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(125, 1, '3205212310050001', 2017, '0056272792', '171807014', 'Mulana', 'Laki-Laki', 'Garut', '2005-10-23', 'Islam', '', NULL, NULL, NULL, '0', '087653425487', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(126, 1, '3273282210050001', 2018, '0064402741', '0064402741', 'Nabila Inten Pertiwi', 'Perempuan', 'CIMAHI', '2005-10-22', 'Islam', '', NULL, NULL, NULL, '0', '098734673345', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(127, 1, '3306025508060001', 2018, '0069049581', '0069049581', 'Nabilah Affan Zahrotul Kasanah', 'Perempuan', 'Purworejo', '2006-08-15', 'Islam', '', NULL, NULL, NULL, '0', '08765435243', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(128, 1, '3210155806060062', 2018, '0068873945', '0068873945', 'Naila Putri Ahmaliani', 'Perempuan', 'Majalengka', '2006-06-18', 'Islam', '', NULL, NULL, NULL, '0', '087654652412', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(129, 1, '3205215003040007', 2017, '0048561835', '171807019', 'Neli', 'Perempuan', 'Garut', '2004-03-10', 'Islam', '', NULL, NULL, NULL, '0', '087657465743', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(130, 1, '3205216809040001', 2017, '0049835844', '171807020', 'Nurmalasari', 'Laki-Laki', 'Garut', '2004-09-28', 'Islam', '', NULL, NULL, NULL, '0', '087656767687', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(131, 1, '3205210704090001', 2017, '0054805047', '171807021', 'Nyimas Rohmah Putriyani', 'Perempuan', 'Garut', '2005-06-09', 'Islam', '', NULL, NULL, NULL, '0', '087654324354', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(132, 1, '3205410703050002', 2018, '0056119430', '0056119430', 'Rafli Ikhwanus Sidik', 'Laki-Laki', 'Garut', '2005-03-07', 'Islam', '', NULL, NULL, NULL, '0', '087878765423', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(133, 1, '3205211512030001', 2016, '0039728107', '0039728107', 'Randi Sopiyandi', 'Laki-Laki', 'Garut', '2003-12-15', 'Islam', '', NULL, NULL, NULL, '0', '08976776766', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(134, 1, '3205215308060001', 2017, '0063304482', '0063304482', 'Resa Agustina', 'Perempuan', 'Garut', '2006-08-13', 'Islam', '', NULL, NULL, NULL, '0', '089876565456', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(135, 1, '3205210107060001', 2018, '0069706321', '0069706321', 'Resti Pujiyanti', 'Perempuan', 'Garut', '2006-07-01', 'Islam', '', NULL, NULL, NULL, '0', '0843234543445', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(136, 1, '3205174405050004', 2017, '0057442719', '0057442719', 'Resty Melyani Setiawan', 'Perempuan', 'Garut', '2005-05-04', 'Islam', '', NULL, NULL, NULL, '0', '084321324231', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(137, 1, '3204320104055535', 2018, '0067366997', '0067366997', 'Reva Ramadhani Putri', 'Perempuan', 'Bandung', '2006-10-21', 'Islam', '', NULL, NULL, NULL, '0', '0984234372872', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(138, 1, '3205211101060005', 2018, '0065465770', '0065465770', 'Rian Robiana', 'Laki-Laki', 'Bandung', '2006-01-11', 'Islam', '', NULL, NULL, NULL, '0', '076876766554', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(139, 1, '3205214510050005', 2017, '0057242028', '0057242028', 'Rika Sapitri', 'Perempuan', 'Garut', '2005-10-05', 'Islam', '', NULL, NULL, NULL, '0', '0846453635', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(140, 1, '3205211107060002', 2018, '0061052767', '0061052767', 'Ripaldi', 'Laki-Laki', 'Garut', '2006-07-11', 'Islam', '', NULL, NULL, NULL, '0', '078764464534', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(141, 1, '3205210402070003', 2018, '0075845275', '0075845275', 'Rizal Laksana', 'Laki-Laki', 'Garut', '2007-01-07', 'Islam', '', NULL, NULL, NULL, '0', '0858575846746', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(142, 1, '3205210401060004', 2017, '3062177134', '3062177134', 'Robi', 'Laki-Laki', 'Garut', '2006-01-04', 'Islam', '', NULL, NULL, NULL, '0', '087363534253', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(143, 1, '3205213105040001', 2017, '3042706531', '171807025', 'Roby Fauzi', 'Laki-Laki', 'Garut', '2004-05-31', 'Islam', '', NULL, NULL, NULL, '0', '089765654352', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(144, 1, '3674020305040004', 2016, '0048975878', '161707013', 'Rofatan Nazwa', 'Laki-Laki', 'Bandung', '2004-05-03', 'Islam', '', NULL, NULL, NULL, '0', '08746347369', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(145, 1, '3175074904060001', 2018, '0066781848', '0066781848', 'Sabrina Audy Nafisa', 'Perempuan', 'Jakarta', '2006-04-09', 'Islam', '', NULL, NULL, NULL, '0', '078574647363', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(146, 1, '3205212309050004', 2017, '0053777460', '171807026', 'Sahril Hakim', 'Laki-Laki', 'Garut', '2005-09-23', 'Islam', '', NULL, NULL, NULL, '0', '0874646465373', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(147, 1, '3205216805060002', 2018, '0069893398', '0069893398', 'Salsa Nurul Azmi', 'Perempuan', 'Garut', '2006-05-28', 'Islam', '', NULL, NULL, NULL, '0', '084746353652', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(148, 1, '3205211403060004', 2018, '0064558407', '0064558407', 'Sandi Hermawan', 'Laki-Laki', 'Garut', '2006-03-14', 'Islam', '', NULL, NULL, NULL, '0', '087654323234', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(149, 1, '3205210702050001', 2018, '0066203694', '0066203694', 'Sandi Koswara', 'Laki-Laki', 'Garut', '2005-02-07', 'Islam', '', NULL, NULL, NULL, '0', '08787876545', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(150, 1, '3205210102070001', 2018, '0073971533', '0073971533', 'Sani Nur Rahmayanti', 'Perempuan', 'Garut', '2007-02-01', 'Islam', '', NULL, NULL, NULL, '0', '078764756454', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(151, 1, '1050156903065001', 2018, '0068751172', '0068751172', 'Saskia Alifa Nadhira', 'Perempuan', 'Bandung', '2006-03-29', 'Islam', '', NULL, NULL, NULL, '0', '087645363543', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(152, 1, '3204090810060010', 2018, '0065959989', '0065959989', 'Shaffa Fauzi Ramdhani', 'Laki-Laki', 'Bandung', '2006-10-08', 'Islam', '', NULL, NULL, NULL, '0', '08757484746', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(153, 1, '1007362003002698', 2017, '3054385036', '3054385036', 'Shaqi Saputra Ardani', 'Laki-Laki', 'Garut', '2005-02-10', 'Islam', '', NULL, NULL, NULL, '0', '087574646353', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(154, 1, '1050192612035001', 2016, '0037352648', '171808024', 'Fabian Haykal Bihar Ilmi', 'Laki-Laki', 'Karawang', '2003-12-26', 'Islam', '', NULL, NULL, NULL, '0', '084746463736', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(155, 1, '3205052305080010', 2018, '0066932598', '181907039', 'Farah Neyla Salma', 'Perempuan', 'Garut', '2006-06-06', 'Islam', '', NULL, NULL, NULL, NULL, '0876474635362', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(156, 1, '3204282012040002', 2018, '0043169565', '181907013', 'Khafid Khoirul Najiya', 'Laki-Laki', 'Bandung', '2004-12-20', 'Islam', '', NULL, NULL, NULL, NULL, '0867685758474', '', NULL, NULL, NULL, NULL, 'Aktif');
+(24, 1, '3275060701060002', 2018, '0067113482', '181907032', 'Achmar Farid Ryven', 'Laki-Laki', 'Bandung', '2006-01-07', 'Islam', '', 32, 3275, 327508, '3275081002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(25, 1, '3205212702040000', 2017, '0045895124', '171807001', 'Aditia Lesmana', 'Laki-Laki', 'Garut', '2004-02-27', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(26, 1, '3205211809040000', 2017, '5673450875', '171807002', 'Agus Sukarno', 'Laki-Laki', 'Garut', '2004-08-18', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(27, 1, '3205211003060000', 2017, '3069094365', '171807003', 'Aldi Ahmad Muharom', 'Laki-Laki', 'Garut', '2005-03-10', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(28, 1, '3273024304060010', 2018, '0069891736', '181907004', 'Alifa Mutiara Zahra', 'Perempuan', 'Garut', '2006-04-03', 'Islam', '', 32, 3207, 320701, '3207011007', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(29, 1, '3205210206050000', 2016, '0051404180', '161707001', 'Aliyansah', 'Laki-Laki', 'Garut', '2005-06-02', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(30, 1, '3205216309060000', 2018, '0068874907', '181907003', 'Alpa Resta', 'Perempuan', 'Garut', '2006-02-24', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(31, 1, '3205056106050010', 2017, '0055799810', '171807004', 'Alysha Nurfiddina Putri Muslim', 'Perempuan', 'Bandung', '2005-06-21', 'Islam', '', 32, 3205, 320505, '3205051001', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(32, 1, '3211116207070000', 2018, '0076784572', '181907033', 'Annisa Malika Utami', 'Perempuan', 'Garut', '2007-07-22', 'Islam', '', 32, 3211, 321111, '3211112005', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(33, 1, '3205176104040010', 2017, '0048704384', '171807005', 'Annisa Wangi Nusantara', 'Perempuan', 'Garut', '2004-04-21', 'Islam', '', 32, 3205, 320517, '3205172010', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(34, 1, '3205172407050000', 2017, '0055709712', '171807006', 'Ardy Putra Nurjaman', 'Laki-Laki', 'Garut', '2005-07-23', 'Islam', '', 32, 3205, 320517, '3205172018', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(35, 1, '3205210911040000', 2016, '5343345345', '161707018', 'Arya Prasetya', 'Laki-Laki', 'Timika', '2002-12-28', 'Islam', '', 32, 3205, 320504, '3205042010', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(36, 1, '3276055002040010', 2016, '0042312763', '161707003', 'Aryani Febriyanti', 'Perempuan', 'Garut', '2004-02-10', 'Islam', '', 32, 3276, 327608, '3276081003', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(37, 1, '3204096003060000', 2018, '0061540185', '181907005', 'Aulia Khoiru Nisa', 'Perempuan', 'Garut', '2006-03-20', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(38, 1, '3211116111050000', 2018, '0054198660', '181907034', 'Aulia Putri Madinah', 'Perempuan', 'Garut', '2005-11-21', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(39, 1, '3207035502780000', 2018, '0053763240', '181907002', 'Azri Akbar Khoiri', 'Laki-Laki', 'Garut', '2005-05-01', 'Islam', '', 32, 3207, 320703, '3207032006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(40, 1, '3205210506050010', 2018, '0059695333', '181907035', 'Bayu Permana', 'Laki-Laki', 'Garut', '2005-05-05', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(41, 1, '3205210509050000', 2017, '6765475675', '171807008', 'Bima Budiarto Mulya', 'Laki-Laki', 'Garut', '2005-09-05', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(42, 1, '3204290310050000', 2018, '0069548405', '181907036', 'Boyke Rofiqu Ikhwan', 'Laki-Laki', 'Garut', '2005-10-03', 'Islam', '', 32, 3204, 320429, '3204292002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(43, 1, '3205211404030000', 2016, '6798767545', '161707004', 'Cep Ilham  Nurhakim', 'Laki-Laki', 'Garut', '2003-04-14', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(44, 1, '3205214408050010', 2016, '5656756745', '161707005', 'Dea Anita', 'Perempuan', 'Garut', '2004-08-04', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(45, 1, '3204546070500000', 2018, '0052987578', '181907006', 'Devana Kayyisa Wibawa', 'Perempuan', 'Garut', '2005-07-06', 'Islam', '', 32, 3204, 320405, '3204052004', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(46, 1, '3205215611030000', 2017, '3035953200', '171807009', 'Devi Sapitri', 'Perempuan', 'Garut', '2003-11-16', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(47, 1, '3205216912850001', 2018, '0052033155', '181907037', 'Dewi Mulyani', 'Perempuan', 'Garut', '2005-05-06', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(48, 1, '3205214104060000', 2017, '5476575675', '171807010', 'Dinda Apriliani', 'Perempuan', 'Garut', '2006-04-01', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(49, 2, '3205074110940000', 2018, '0025423936', '181910046', 'Sela Selvia', 'Perempuan', 'Garut', '2002-11-22', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(50, 2, '3205074120940000', 2018, '0037663774', '181910024', 'Yora', 'Perempuan', 'Garut', '2003-08-31', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(51, 2, '3205074130940000', 2018, '0020289635', '181910045', 'Sandi Nasrulloh', 'Laki-Laki', 'Garut', '2002-02-11', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(52, 2, '3205074140940000', 2018, '0034771680', '181910027', 'Bilal Farel Taghsya', 'Laki-Laki', 'Bandung', '2003-01-04', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(53, 2, '3205074150940000', 2018, '0038465991', '181910031', 'Jihan Fitrianisa', 'Perempuan', 'Bandung', '2002-11-22', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(54, 2, '3205074160940000', 2018, '0477431003', '181910009', 'Maudy Meliany Deryana', 'Perempuan', ' Bandung', '2002-05-16', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(55, 2, '3205074170940000', 2018, '0020102401', '181910022', 'Wildan Ohaina Yusuf', 'Laki-Laki', 'Bandung', '1970-01-01', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(56, 2, '3205074180940000', 2018, '0031075176', '181910019', 'Satria Hadetata', 'Laki-Laki', 'Garut', '2003-04-12', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(57, 2, '3205074190940000', 2018, '0026961801', '181910016', 'Ripa Junior', 'Laki-Laki', 'Garut', '2003-03-23', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(58, 2, '3205074200940000', 2018, '0039305967', '181910030', 'Febbyana Maharani', 'Laki-Laki', 'Bandung', '2003-02-23', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(59, 1, '3201012707050001', 2017, '0051432411', '181908034', 'Ahmad Fauzan', 'Laki-Laki', 'Bogor', '2005-07-27', 'Islam', '', 32, 3201, 320101, '3201011002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(60, 1, '3276056503040010', 2016, '0040917114', '171808019', 'Farah Naura Rahmah', 'Perempuan', 'Tasikmalaya', '2004-03-25', 'Islam', '', 32, 3206, 0, 'Pilih Terl', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(61, 1, '3205216802060001', 2018, '0069150455', '181907031', 'Yulianti', 'Perempuan', 'Garut', '2006-02-28', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(62, 1, '3205217012050003', 2018, '0061678609', '181907030', 'Tuti Nurhayati', 'Perempuan', 'Garut', '2006-12-30', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(63, 1, '3205172311050002', 2018, '0055321728', '181907060', 'Tulus Pitutur', 'Laki-Laki', 'Garut', '2005-11-23', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(64, 1, '3205171908030004', 2016, '0036893334', '161707016', 'Teguh Dwi Putra Setiawan', 'Laki-Laki', 'Garut', '2003-08-19', 'Islam', '', 32, 3205, 320517, '3205172001', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(65, 1, '3204080902060002', 2018, '0053145832', '181907061', 'Wildan Khalid Wijaya', 'Laki-Laki', 'Bandung', '2005-03-01', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(66, 1, '3205214810030002', 2016, '0039108484', '161707017', 'Yulianti', 'Perempuan', 'Garut', '2003-10-08', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(67, 1, '1007362003002732', 2018, '0055500167', '181907062', 'Winarti Lestari', 'Perempuan', 'Garut', '2005-07-20', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(68, 1, '3273055606810002', 2017, '0041660199', '171807030', 'Wildan Taupik Nurwahid', 'Laki-Laki', 'Garut', '2004-06-19', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(69, 1, '3273265906050001', 2018, '0052946460', '181907038', 'Vanya Maula Zalfadhyla', 'Perempuan', 'Bandung', '2005-06-19', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(70, 1, '3175083011050004', 2017, '0053089820', '171807029', 'Ubayd Tsaqiif Thufayl', 'Laki-Laki', 'Jakarta', '2005-11-30', 'Islam', '', 31, 3175, 317506, '3175061005', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(71, 1, '3205216002050001', 2017, '0056498440', '171807028', 'Sita Handini', 'Perempuan', 'Garut', '2005-02-20', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(72, 1, '3205214510030002', 2016, '0039530678', '161707015', 'Silpa', 'Laki-Laki', 'Garut', '2003-06-29', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(76, 1, '3205020405050006', 2017, '0059447195', '171807014', 'Irsad Asadilah Maulana', 'Laki-Laki', 'Garut', '2005-05-04', 'Islam', '', 32, 3205, 320502, '3205021002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(77, 1, '3205212510090001', 2018, '0063611930', '181907012', 'Intan Nur Azizah', 'Perempuan', 'Garut', '2006-03-06', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(78, 1, '3205312112040003', 2016, '0033728462', '171808021', 'Ikhwan Abdilah', 'Laki-Laki', 'Garut', '2004-12-21', 'Islam', '', 32, 3205, 320531, '3205312001', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(79, 1, '3673010305060003', 2018, '0069583886', '181907011', 'Ibrahim Adjie', 'Laki-Laki', 'Cimahi', '2006-05-03', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(80, 1, '7303022706060001', 2018, '0068313694', '181907042', 'Hizqil Ubaidillahil Achyar', 'Laki-Laki', 'Bantaeng', '2006-06-27', 'Islam', '', 32, 3273, 327328, '3273281001', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(81, 1, '3210156806060001', 2018, '0064554565', '181907010', 'Hizkia Samhan Rezayoshi', 'Perempuan', 'Majalengka', '2006-06-28', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(82, 1, '3205214606030004', 2016, '0037527580', '161707007', 'Helmina', 'Perempuan', 'Garut', '2003-06-06', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(83, 1, '3205417009050001', 2018, '0053636362', '181907041', 'Havia Khoirunnisa', 'Perempuan', 'Garut', '2005-09-30', 'Islam', '', 32, 3205, 320541, '3205412005', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(84, 1, '3205065508060005', 2018, '0061584891', '181907009', 'Gusti Mujiba Ahsana', 'Perempuan', 'Garut', '2006-08-13', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(85, 1, '3277020908040009', 2017, '0049313376', '171807033', 'Ginding Luginasakti', 'Laki-Laki', 'Cimahi', '2004-08-09', 'Islam', '', 32, 3217, 321710, '3217102006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(86, 1, '3205174510060003', 2018, '0069246859', '181907040', 'Gesha Alia Feradi', 'Perempuan', 'LAMPUNG', '2006-10-05', 'Islam', '', 32, 3205, 320517, '3205172012', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(87, 1, '3205215411040001', 2017, '0049589694', '171807013', 'Fitria Herlina', 'Perempuan', 'Garut', '2004-11-14', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(88, 1, '3205212009050001', 2017, '0058160582', '171807012', 'Fazar Pirdaus', 'Laki-Laki', 'Garut', '2005-09-20', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(89, 1, '3205215206050003', 2017, '3056114605', '171807011', 'Fauziah Noerul Rahmi', 'Perempuan', 'Garut', '2005-11-13', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(90, 1, '3276055912050005', 2018, '0053548385', '181907008', 'Fatimah Azzahra', 'Perempuan', 'CIAMIS	2005-12-19', '2005-12-19', 'Islam', '', 32, 3207, 0, 'Pilih Terl', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(91, 1, '3204280208060007', 2018, '0065142830', '181907007', 'Fariel Agutian Firdaus', 'Laki-Laki', 'Garut', '2008-01-27', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(92, 1, '3205021504040008', 2016, '0049243243', '171808022', 'Faris Julfiker Irfani', 'Laki-Laki', 'Garut', '2004-04-15', 'Islam', '', 32, 3205, 320502, '3205021002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(93, 1, '3205021306040005', 2016, '0049759855', '171808023', 'Farrel Azhar Nurhidayat', 'Laki-Laki', 'Garut', '2004-06-13', 'Islam', '', 32, 3205, 320502, '3205021002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(102, 1, '3207181801060004', 2018, '0067913377', '181907059', 'Kamil Nugraha', 'Laki-Laki', 'Ciamis', '2006-01-18', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(104, 1, '3204080902060012', 2018, '0061698366', '181907029', 'Sidqi Bimasakti', 'Laki-Laki', 'Bandung', '2006-02-09', 'Islam', '', 32, 3204, 320409, '3204092003', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(105, 1, '3273240510108234', 2018, '0071688380', '181907063', 'Kania Nurul Aini', 'Perempuan', 'Bandung', '2007-06-27', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(106, 1, '3204375503060006', 2018, '0067542725', '181907014', 'Lahya Ghuita Maylan', 'Perempuan', 'Bandung', '2006-05-15', 'Islam', '', 32, 3204, 320437, '3204372011', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(107, 1, '3205056410050002', 2016, '0056992066', '161707008', 'Laila Fitri Annisa', 'Perempuan', 'Garut', '2005-10-24', 'Islam', '', 32, 3205, 320517, '3205172001', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(108, 1, '3205214909030005', 2016, '0034085844', '161707009', 'Lisbahi Aljaatsiyah', 'Perempuan', 'Garut', '2003-09-09', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(109, 1, '3205171608040003', 2018, '0046586413', '181907044', 'Luzia Fakiha', 'Laki-Laki', 'Garut', '2004-08-16', 'Islam', '', 32, 3205, 320517, '3205172001', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(110, 1, '3204323007050009', 2018, '0056553530', '181907048', 'M. RIFQI BAHARA ILMAN', 'Laki-Laki', 'Bandung', '2005-07-30', 'Islam', '', 32, 3204, 0, 'Pilih Terl', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(111, 1, '3205172908040006', 2016, '0042129372', '161707011', 'M.rizki Padilah', 'Laki-Laki', 'Garut', '2004-08-29', 'Islam', '', 32, 3205, 320517, '3205172006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(112, 1, '3205214103050002', 2017, '0057424439', '171807015', 'Mamay Maryam', 'Perempuan', 'Garut', '2005-03-01', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(113, 1, '3205072401060001', 2018, '0065352069', '181907017', 'Moch Adrian Putra Hidayat', 'Laki-Laki', 'Garut', '2006-01-24', 'Islam', '', 32, 3205, 320507, '3205072011', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(114, 1, '3204322307030009', 2016, '0039418541', '161707010', 'Mohamad Rizaldi', 'Laki-Laki', 'Garut', '2003-07-23', 'Islam', '', 32, 3204, 320432, '3204321001', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(115, 1, '3204321911050001', 2018, '0057443607', '181907049', 'Mohammad Azka Maulana', 'Laki-Laki', 'Bandung', '2005-11-19', 'Islam', '', 32, 3204, 320432, '3204321001', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(116, 1, '3205041911030007', 2016, '0030143774', '171808020', 'Muhamad Emir Faturohman', 'Laki-Laki', 'Garut', '2003-11-19', 'Islam', '', 32, 3205, 320504, '3205042009', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(117, 1, '3205091907040005', 2017, '0057107742', '171807016', 'Muhamad Razidan Anwar Fauzi', 'Laki-Laki', 'Bandung', '2004-07-19', 'Islam', '', 32, 3205, 320509, '3205092001', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(118, 1, '3204282210050019', 2018, '0056770496', '181907047', 'Muhamad Rian Darmawan', 'Laki-Laki', 'Bandung', '2005-10-22', 'Islam', '', 32, 3204, 320428, '3204281014', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(119, 1, '3277012203050004', 2018, '0073463591', '181907045', 'Muhammad Akmal Chandra Wiguna', 'Laki-Laki', 'Bandung', '2005-03-22', 'Islam', '', 32, 3204, 0, 'Pilih Terl', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(120, 1, '3205051704060005', 2018, '0065352664', '181907046', 'Muhammad Fadli Fairuza', 'Laki-Laki', 'GARUT', '2006-04-17', 'Islam', '', 32, 3205, 320505, '3205052003', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(121, 1, '1050203005055001', 2018, '0057842328', '181907050', 'Muhammad Hilman Dzakwanurrofiq', 'Laki-Laki', 'Bandung', '2005-05-30', 'Islam', '', 32, 3276, 327607, '3276071004', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(122, 1, '3210151304050001', 2017, '0052534218', '171807017', 'Muhammad Hizkil Rezayoshi', 'Laki-Laki', 'Majalengka', '2005-04-13', 'Islam', '', 32, 3210, 321015, '3210152006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(123, 1, '3216061803060006', 2018, '0064138120', '181907019', 'Muhammad Raya Marjuwan', 'Laki-Laki', 'Bekasi', '2006-03-18', 'Islam', '', 32, 3275, 0, 'Pilih Terl', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(124, 1, '3273152809060005', 2018, '0061877002', '181907016', 'Muhammad Ridwan Firdaus', 'Laki-Laki', 'Bandung', '2006-09-28', 'Islam', '', 32, 3273, 327315, '3273151006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(125, 1, '3205212310050001', 2017, '0056272792', '171807018', 'Mulana', 'Laki-Laki', 'Garut', '2005-10-23', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(126, 1, '3273282210050001', 2018, '0064402741', '181907051', 'Nabila Inten Pertiwi ', 'Perempuan', 'CIMAHI', '2005-10-22', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(127, 1, '3306025508060001', 2018, '0069049581', '181907020', 'Nabilah Affan Zahrotul Kasanah', 'Perempuan', 'Purworejo', '2006-08-15', 'Islam', '', 33, 3306, 330602, '3306022055', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(128, 1, '3210155806060062', 2018, '0068873945', '181907021', 'Naila Putri Ahmaliani', 'Perempuan', 'Majalengka', '2006-06-18', 'Islam', '', 32, 3210, 321015, '3210152006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(129, 1, '3205215003040007', 2017, '0048561835', '171807019', 'Neli', 'Perempuan', 'Garut', '2004-03-10', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(130, 1, '3205216809040001', 2017, '0049835844', '171807020', 'Nurmalasari', 'Perempuan', 'Garut', '2004-09-28', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(131, 1, '3205210704090001', 2017, '0054805047', '171807021', 'Nyimas Rohmah Putriyani', 'Perempuan', 'Garut', '2005-06-09', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(132, 1, '3205410703050002', 2018, '0056119430', '181907052', 'Rafli Ikhwanus Sidik', 'Laki-Laki', 'Garut', '2005-03-07', 'Islam', '', 32, 3205, 320541, '3205412007', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(133, 1, '3205211512030001', 2016, '0039728107', '161707012', 'Randi Sopiyandi', 'Laki-Laki', 'Garut', '2003-12-15', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(134, 1, '3205215308060001', 2018, '0063304482', '181907053', 'Resa Agustina', 'Perempuan', 'Garut', '2006-08-13', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(135, 1, '3205210107060001', 2018, '0069706321', '181907022', 'Resti Pujiyanti', 'Perempuan', 'Garut', '2006-07-01', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(136, 1, '3205174405050004', 2017, '0057442719', '171807022', 'Resty Melyani Setiawan', 'Perempuan', 'Garut', '2005-05-04', 'Islam', '', 32, 3205, 320517, '3205172001', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(137, 1, '3204320104055535', 2018, '0067366997', '181907054', 'Reva Ramadhani Putri', 'Perempuan', 'Bandung', '2006-10-21', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(138, 1, '3205211101060005', 2018, '0065465770', '181907023', 'Rian Robiana', 'Laki-Laki', 'Bandung', '2006-01-11', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(139, 1, '3205214510050005', 2017, '0057242028', '171807023', 'Rika Sapitri', 'Perempuan', 'Garut', '2005-12-05', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(140, 1, '3205211107060002', 2018, '0061052767', '181907055', 'Ripaldi', 'Laki-Laki', 'Garut', '2006-07-11', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(141, 1, '3205210402070003', 2018, '0075845275', '181907025', 'Rizal Laksana', 'Laki-Laki', 'Garut', '2007-01-07', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(142, 1, '3205210401060004', 2017, '3062177134', '171807024', 'Robi ', 'Laki-Laki', 'Garut', '2006-06-04', 'Islam', '', 32, 3205, 320521, '3205212002', '087363534253', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(143, 1, '3205213105040001', 2017, '3042706531', '171807025', 'Roby Fauzi', 'Laki-Laki', 'Garut', '2004-05-31', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(144, 1, '3674020305040004', 2016, '0048975878', '161707013', 'Rofatan Nazwa', 'Laki-Laki', 'Bandung', '2004-05-03', 'Islam', '', 32, 3205, 320505, '3205052008', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(145, 1, '3175074904060001', 2018, '0066781848', '181907026', 'Sabrina Audy Nafisa', 'Perempuan', 'Jakarta', '2006-04-09', 'Islam', '', 31, 0, 0, 'Pilih Terl', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(146, 1, '3205212309050004', 2017, '0053777460', '171807026', 'Sahril Hakim', 'Laki-Laki', 'Garut', '2005-09-03', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(147, 1, '3205216805060002', 2018, '0069893398', '181907027', 'Salsa Nurul Azmi', 'Perempuan', 'Garut', '2006-05-28', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(148, 1, '3205211403060004', 2018, '0064558407', '181907056', 'Sandi Hermawan', 'Laki-Laki', 'Garut', '2006-03-14', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(149, 1, '3205210702050001', 2018, '0066203694', '181907028', 'Sandi Koswara', 'Laki-Laki', 'Garut', '2005-02-07', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(150, 1, '3205214102070005', 2018, '0073971533', '181907057', 'Sani Nur Rahmayanti', 'Perempuan', 'Garut', '2007-02-01', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(151, 1, '1050156903065001', 2018, '0068751172', '181907058', 'Saskia Alifa Nadhira', 'Perempuan', 'Bandung', '2006-03-29', 'Islam', '', 32, 3204, 0, '', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(152, 1, '3204090810060010', 2018, '0065959989', '181907064', 'Shaffa Fauzi Ramdhani', 'Laki-Laki', 'Bandung', '2006-10-08', 'Islam', '', 32, 3204, 320409, '3204092003', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(153, 1, '1007362003002698', 2017, '3054385036', '171807027', 'Shaqi Saputra Ardani', 'Laki-Laki', 'Garut', '2005-02-10', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(154, 1, '1050192612035001', 2016, '0037352648', '171808024', 'Fabian Haykal Bihar Ilmi', 'Laki-Laki', 'Karawang', '2003-12-26', 'Islam', '', 32, 3273, 327326, '3273261005', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(155, 1, '3205054609060006', 2018, '0066932598', '181907039', 'Farah Neyla Salma', 'Perempuan', 'Garut', '2006-09-06', 'Islam', '', 32, 3205, 320505, '3205052003', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(156, 1, '3204282012040002', 2018, '0043169565', '181907013', 'Khafid Khoirul Najiya', 'Laki-Laki', 'Bandung', '2004-12-20', 'Islam', '', 32, 3204, 320428, '3204281014', '', '', NULL, NULL, NULL, NULL, 'Aktif');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `program_studi`
+-- Table structure for table `program_studi`
 --
 
 CREATE TABLE `program_studi` (
@@ -91986,7 +92997,7 @@ CREATE TABLE `program_studi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `program_studi`
+-- Dumping data for table `program_studi`
 --
 
 INSERT INTO `program_studi` (`idProdi`, `idSekolah`, `nama_prodi`, `singkatan_prodi`, `jumlah_semester`) VALUES
@@ -91996,7 +93007,7 @@ INSERT INTO `program_studi` (`idProdi`, `idSekolah`, `nama_prodi`, `singkatan_pr
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `provinsi`
+-- Table structure for table `provinsi`
 --
 
 CREATE TABLE `provinsi` (
@@ -92005,7 +93016,7 @@ CREATE TABLE `provinsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `provinsi`
+-- Dumping data for table `provinsi`
 --
 
 INSERT INTO `provinsi` (`id_prov`, `nama_provinsi`) VALUES
@@ -92047,7 +93058,7 @@ INSERT INTO `provinsi` (`id_prov`, `nama_provinsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sekolah`
+-- Table structure for table `sekolah`
 --
 
 CREATE TABLE `sekolah` (
@@ -92064,7 +93075,7 @@ CREATE TABLE `sekolah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `sekolah`
+-- Dumping data for table `sekolah`
 --
 
 INSERT INTO `sekolah` (`idSekolah`, `jenjang_sekolah`, `npsn`, `nama_sekolah`, `alamat_sekolah`, `desa_sekolah`, `kecamatan_sekolah`, `kabupaten_sekolah`, `provinsi_sekolah`, `logo_sekolah`) VALUES
@@ -92074,7 +93085,7 @@ INSERT INTO `sekolah` (`idSekolah`, `jenjang_sekolah`, `npsn`, `nama_sekolah`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `settings`
+-- Table structure for table `settings`
 --
 
 CREATE TABLE `settings` (
@@ -92087,7 +93098,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `settings`
+-- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`id_settings`, `judul`, `instansi`, `alamat`, `logo`, `versi`) VALUES
@@ -92096,7 +93107,7 @@ INSERT INTO `settings` (`id_settings`, `judul`, `instansi`, `alamat`, `logo`, `v
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tahun_ajaran`
+-- Table structure for table `tahun_ajaran`
 --
 
 CREATE TABLE `tahun_ajaran` (
@@ -92105,7 +93116,7 @@ CREATE TABLE `tahun_ajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tahun_ajaran`
+-- Dumping data for table `tahun_ajaran`
 --
 
 INSERT INTO `tahun_ajaran` (`idTahun_ajaran`, `nama_tahun_ajaran`) VALUES
@@ -92116,7 +93127,7 @@ INSERT INTO `tahun_ajaran` (`idTahun_ajaran`, `nama_tahun_ajaran`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tenaga_pendidik`
+-- Table structure for table `tenaga_pendidik`
 --
 
 CREATE TABLE `tenaga_pendidik` (
@@ -92139,7 +93150,7 @@ CREATE TABLE `tenaga_pendidik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tenaga_pendidik`
+-- Dumping data for table `tenaga_pendidik`
 --
 
 INSERT INTO `tenaga_pendidik` (`idTenpen`, `idSekolah`, `NIK_tenpen`, `nama_tenpen`, `jk_tenpen`, `tempat_lahir`, `tanggal_lahir`, `agama`, `alamat`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `no_telp_tenpen`, `email_tenpen`, `foto_tenpen`) VALUES
@@ -92162,12 +93173,13 @@ INSERT INTO `tenaga_pendidik` (`idTenpen`, `idSekolah`, `NIK_tenpen`, `nama_tenp
 (19, 1, '1871116705000001', 'Retno Maulidi Fiddyina', 'Perempuan', 'Palembang', '2000-05-27', 'Islam', NULL, NULL, NULL, NULL, NULL, '081515931496', NULL, NULL),
 (20, 1, '3205210505940006', 'Abdul Ropik', 'Laki-Laki', 'Garut', '1994-05-05', 'Islam', NULL, NULL, NULL, NULL, NULL, '085352320400', NULL, NULL),
 (23, 1, '3205172306950002', 'Faris Abdillah', 'Laki-Laki', 'Garut', '1995-06-23', 'Islam', NULL, NULL, NULL, NULL, NULL, '082115395676', NULL, NULL),
-(24, 1, '4323354635234323', 'Gian Filman Suganda', 'Laki-Laki', 'Garut', '1995-01-08', 'Islam', NULL, NULL, NULL, NULL, NULL, '087364547362', NULL, NULL);
+(24, 1, '4323354635234323', 'Gian Filman Suganda', 'Laki-Laki', 'Garut', '1995-01-08', 'Islam', NULL, NULL, NULL, NULL, NULL, '087364547362', NULL, NULL),
+(25, 1, '3205324307950001', 'Siti Fatwa Alqorina', 'Perempuan', 'Garut', '1995-07-13', 'Islam', NULL, NULL, NULL, NULL, NULL, '089676808958', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -92191,22 +93203,22 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1555619530, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
-(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1558446496, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314'),
-(3, '::1', 'fajard', '$2y$08$iSx0LPd0We2xIwBtXj1qNuccFL/pcxmyVns7x5PpDch/zi4ju6N12', NULL, 'fajar0maulana@gmail.com', NULL, NULL, NULL, NULL, 1557525781, 1558541038, 1, 'Fajar ', 'Maulana', NULL, '081295794067'),
-(4, '192.168.43.249', 'wkelas7a', '$2y$08$jiRvLWUxeutQoHoP4ofOn.QHliNVMuxiIMuTHnx3/U0/tNbWXM9iK', NULL, 'iissn000@gmail.com', NULL, NULL, NULL, NULL, 1558449453, 1558513824, 1, 'Iis Siti', 'Nurfadilah', '', '0817262516152'),
-(5, '192.168.43.249', 'wkelas7b', '$2y$08$F/YSQOM8jafPH74eRFkoAeaxACnUxxSt1QDuDIeTJv2jWrv8K/zYO', NULL, 'fitrirahma111@gmail.com', NULL, NULL, NULL, NULL, 1558449549, NULL, 1, 'Fitri', 'Rahmawati', NULL, '094847363726'),
-(6, '192.168.43.249', 'wkelas8', '$2y$08$tPdEeVaFbGF4jZefqARFdu6Su/oNickGJgwpzP9RviyNKiLn6jkw.', NULL, 'risnar123@gmail.com', NULL, NULL, NULL, NULL, 1558449770, 1558512542, 1, 'risna', 'rahmawati', NULL, '0696867585757'),
-(7, '192.168.43.249', 'wkelas9', '$2y$08$VJhgLWHcIPYGr5kCRfWNwOOR2nwrDAUqyB7fQiQxrx.WWUvR3LpAe', NULL, 'agusfahmicucho@gmail.com', NULL, NULL, NULL, NULL, 1558449849, 1558514109, 1, 'agus', 'fahmi', NULL, '9598585495484');
+(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1558721308, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314'),
+(3, '::1', 'fajard', '$2y$08$iSx0LPd0We2xIwBtXj1qNuccFL/pcxmyVns7x5PpDch/zi4ju6N12', NULL, 'fajar0maulana@gmail.com', NULL, NULL, NULL, NULL, 1557525781, 1558662220, 1, 'Fajar ', 'Maulana', NULL, '081295794067'),
+(4, '192.168.43.249', 'wkelas7a', '$2y$08$jiRvLWUxeutQoHoP4ofOn.QHliNVMuxiIMuTHnx3/U0/tNbWXM9iK', NULL, 'iissn000@gmail.com', NULL, NULL, NULL, NULL, 1558449453, 1558683040, 1, 'Iis Siti', 'Nurfadilah', '', '0817262516152'),
+(5, '192.168.43.249', 'wkelas7b', '$2y$08$F/YSQOM8jafPH74eRFkoAeaxACnUxxSt1QDuDIeTJv2jWrv8K/zYO', NULL, 'fitrirahma111@gmail.com', NULL, NULL, NULL, NULL, 1558449549, 1558684286, 1, 'Fitri', 'Rahmawati', NULL, '094847363726'),
+(6, '192.168.43.249', 'wkelas8', '$2y$08$tPdEeVaFbGF4jZefqARFdu6Su/oNickGJgwpzP9RviyNKiLn6jkw.', NULL, 'risnar123@gmail.com', NULL, NULL, NULL, NULL, 1558449770, 1558684288, 1, 'risna', 'rahmawati', NULL, '0696867585757'),
+(7, '192.168.43.249', 'wkelas9', '$2y$08$VJhgLWHcIPYGr5kCRfWNwOOR2nwrDAUqyB7fQiQxrx.WWUvR3LpAe', NULL, 'agusfahmicucho@gmail.com', NULL, NULL, NULL, NULL, 1558449849, 1558683816, 1, 'agus', 'fahmi', NULL, '9598585495484');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users_groups`
+-- Table structure for table `users_groups`
 --
 
 CREATE TABLE `users_groups` (
@@ -92216,7 +93228,7 @@ CREATE TABLE `users_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `users_groups`
+-- Dumping data for table `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
@@ -92231,8 +93243,8 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `view_header_menu`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `view_header_menu`
+-- (See below for the actual view)
 --
 CREATE TABLE `view_header_menu` (
 `id_groups` int(11)
@@ -92244,8 +93256,8 @@ CREATE TABLE `view_header_menu` (
 -- --------------------------------------------------------
 
 --
--- Stand-in struktur untuk tampilan `view_menu`
--- (Lihat di bawah untuk tampilan aktual)
+-- Stand-in structure for view `view_menu`
+-- (See below for the actual view)
 --
 CREATE TABLE `view_menu` (
 `id_groups` int(11)
@@ -92263,7 +93275,7 @@ CREATE TABLE `view_menu` (
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `view_header_menu`
+-- Structure for view `view_header_menu`
 --
 DROP TABLE IF EXISTS `view_header_menu`;
 
@@ -92272,7 +93284,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`u5883191`@`localhost` SQL SECURITY DEFINER V
 -- --------------------------------------------------------
 
 --
--- Struktur untuk view `view_menu`
+-- Structure for view `view_menu`
 --
 DROP TABLE IF EXISTS `view_menu`;
 
@@ -92283,38 +93295,38 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`u5883191`@`localhost` SQL SECURITY DEFINER V
 --
 
 --
--- Indeks untuk tabel `alamat_desa`
+-- Indexes for table `alamat_desa`
 --
 ALTER TABLE `alamat_desa`
   ADD PRIMARY KEY (`idDesa`);
 
 --
--- Indeks untuk tabel `alamat_kabupaten`
+-- Indexes for table `alamat_kabupaten`
 --
 ALTER TABLE `alamat_kabupaten`
   ADD PRIMARY KEY (`idKabupaten`);
 
 --
--- Indeks untuk tabel `alamat_kecamatan`
+-- Indexes for table `alamat_kecamatan`
 --
 ALTER TABLE `alamat_kecamatan`
   ADD PRIMARY KEY (`idKecamatan`);
 
 --
--- Indeks untuk tabel `alamat_provinsi`
+-- Indexes for table `alamat_provinsi`
 --
 ALTER TABLE `alamat_provinsi`
   ADD PRIMARY KEY (`idProvinsi`);
 
 --
--- Indeks untuk tabel `deskripsi_nilai_prilaku`
+-- Indexes for table `deskripsi_nilai_prilaku`
 --
 ALTER TABLE `deskripsi_nilai_prilaku`
   ADD PRIMARY KEY (`idDeskripsi_nilai`),
   ADD KEY `nilai_deskripsi_2` (`nilai_deskripsi`);
 
 --
--- Indeks untuk tabel `detail_peserta_didik`
+-- Indexes for table `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   ADD PRIMARY KEY (`idDetail_pd`),
@@ -92322,7 +93334,7 @@ ALTER TABLE `detail_peserta_didik`
   ADD KEY `NIK_pd` (`NIK_pd`);
 
 --
--- Indeks untuk tabel `detail_tenaga_pendidik`
+-- Indexes for table `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
   ADD PRIMARY KEY (`idDetail_tenpen`),
@@ -92333,31 +93345,31 @@ ALTER TABLE `detail_tenaga_pendidik`
   ADD KEY `pekerjaan_pasangan` (`pekerjaan_pasangan`);
 
 --
--- Indeks untuk tabel `ekstrakulikuler`
+-- Indexes for table `ekstrakulikuler`
 --
 ALTER TABLE `ekstrakulikuler`
   ADD PRIMARY KEY (`idEkstrakulikuler`);
 
 --
--- Indeks untuk tabel `groups`
+-- Indexes for table `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `header_menu`
+-- Indexes for table `header_menu`
 --
 ALTER TABLE `header_menu`
   ADD PRIMARY KEY (`id_header_menu`);
 
 --
--- Indeks untuk tabel `jabatan`
+-- Indexes for table `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`idJabatan`);
 
 --
--- Indeks untuk tabel `jabatan_tenpen`
+-- Indexes for table `jabatan_tenpen`
 --
 ALTER TABLE `jabatan_tenpen`
   ADD PRIMARY KEY (`idJabatan_tenpen`),
@@ -92365,19 +93377,19 @@ ALTER TABLE `jabatan_tenpen`
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indeks untuk tabel `kabupaten`
+-- Indexes for table `kabupaten`
 --
 ALTER TABLE `kabupaten`
   ADD PRIMARY KEY (`id_kab`);
 
 --
--- Indeks untuk tabel `kecamatan`
+-- Indexes for table `kecamatan`
 --
 ALTER TABLE `kecamatan`
   ADD PRIMARY KEY (`id_kec`);
 
 --
--- Indeks untuk tabel `kelas`
+-- Indexes for table `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`idKelas`),
@@ -92386,19 +93398,19 @@ ALTER TABLE `kelas`
   ADD KEY `idKurikulum` (`idKurikulum`);
 
 --
--- Indeks untuk tabel `kelompok_mapel`
+-- Indexes for table `kelompok_mapel`
 --
 ALTER TABLE `kelompok_mapel`
   ADD PRIMARY KEY (`idKelompok_mapel`);
 
 --
--- Indeks untuk tabel `kelurahan`
+-- Indexes for table `kelurahan`
 --
 ALTER TABLE `kelurahan`
   ADD PRIMARY KEY (`id_kel`);
 
 --
--- Indeks untuk tabel `kurikulum`
+-- Indexes for table `kurikulum`
 --
 ALTER TABLE `kurikulum`
   ADD PRIMARY KEY (`idKurikulum`),
@@ -92406,7 +93418,7 @@ ALTER TABLE `kurikulum`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `leger`
+-- Indexes for table `leger`
 --
 ALTER TABLE `leger`
   ADD PRIMARY KEY (`idLeger`),
@@ -92415,14 +93427,14 @@ ALTER TABLE `leger`
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indeks untuk tabel `leger_ekskul`
+-- Indexes for table `leger_ekskul`
 --
 ALTER TABLE `leger_ekskul`
   ADD PRIMARY KEY (`idLeger_ekskul`),
   ADD KEY `idMaster_leger` (`idMaster_leger`);
 
 --
--- Indeks untuk tabel `leger_nilai`
+-- Indexes for table `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
   ADD PRIMARY KEY (`idLeger_nilai`),
@@ -92433,7 +93445,7 @@ ALTER TABLE `leger_nilai`
   ADD KEY `nilai_spritual` (`nilai_spritual`);
 
 --
--- Indeks untuk tabel `leger_nilai_ekskul`
+-- Indexes for table `leger_nilai_ekskul`
 --
 ALTER TABLE `leger_nilai_ekskul`
   ADD PRIMARY KEY (`idLeger_nilai_ekskul`),
@@ -92441,20 +93453,20 @@ ALTER TABLE `leger_nilai_ekskul`
   ADD KEY `idLeger_ekskul` (`idLeger_ekskul`);
 
 --
--- Indeks untuk tabel `login_attempts`
+-- Indexes for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `master_leger`
+-- Indexes for table `master_leger`
 --
 ALTER TABLE `master_leger`
   ADD PRIMARY KEY (`idMaster_leger`),
   ADD KEY `idKelas` (`idKelas`);
 
 --
--- Indeks untuk tabel `mata_pelajaran`
+-- Indexes for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
   ADD PRIMARY KEY (`idMata_pelajaran`),
@@ -92462,13 +93474,13 @@ ALTER TABLE `mata_pelajaran`
   ADD KEY `idKelompok_mapel` (`idKelompok_mapel`);
 
 --
--- Indeks untuk tabel `menu`
+-- Indexes for table `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id_menu`);
 
 --
--- Indeks untuk tabel `ortu_peserta_didik`
+-- Indexes for table `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   ADD PRIMARY KEY (`idOrtu_pd`),
@@ -92478,14 +93490,14 @@ ALTER TABLE `ortu_peserta_didik`
   ADD KEY `NIK_pd` (`NIK_pd`);
 
 --
--- Indeks untuk tabel `ortu_tenaga_pendidik`
+-- Indexes for table `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   ADD PRIMARY KEY (`idOrtu_tenpen`),
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
--- Indeks untuk tabel `peserta_didik`
+-- Indexes for table `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
   ADD PRIMARY KEY (`idPd`),
@@ -92496,38 +93508,38 @@ ALTER TABLE `peserta_didik`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `program_studi`
+-- Indexes for table `program_studi`
 --
 ALTER TABLE `program_studi`
   ADD PRIMARY KEY (`idProdi`),
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `provinsi`
+-- Indexes for table `provinsi`
 --
 ALTER TABLE `provinsi`
   ADD PRIMARY KEY (`id_prov`);
 
 --
--- Indeks untuk tabel `sekolah`
+-- Indexes for table `sekolah`
 --
 ALTER TABLE `sekolah`
   ADD PRIMARY KEY (`idSekolah`);
 
 --
--- Indeks untuk tabel `settings`
+-- Indexes for table `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id_settings`);
 
 --
--- Indeks untuk tabel `tahun_ajaran`
+-- Indexes for table `tahun_ajaran`
 --
 ALTER TABLE `tahun_ajaran`
   ADD PRIMARY KEY (`idTahun_ajaran`);
 
 --
--- Indeks untuk tabel `tenaga_pendidik`
+-- Indexes for table `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
   ADD PRIMARY KEY (`idTenpen`),
@@ -92535,13 +93547,13 @@ ALTER TABLE `tenaga_pendidik`
   ADD KEY `idSekolah` (`idSekolah`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `users_groups`
+-- Indexes for table `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD PRIMARY KEY (`id`),
@@ -92550,233 +93562,233 @@ ALTER TABLE `users_groups`
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_desa`
+-- AUTO_INCREMENT for table `alamat_desa`
 --
 ALTER TABLE `alamat_desa`
   MODIFY `idDesa` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_kabupaten`
+-- AUTO_INCREMENT for table `alamat_kabupaten`
 --
 ALTER TABLE `alamat_kabupaten`
   MODIFY `idKabupaten` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_kecamatan`
+-- AUTO_INCREMENT for table `alamat_kecamatan`
 --
 ALTER TABLE `alamat_kecamatan`
   MODIFY `idKecamatan` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `alamat_provinsi`
+-- AUTO_INCREMENT for table `alamat_provinsi`
 --
 ALTER TABLE `alamat_provinsi`
   MODIFY `idProvinsi` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `deskripsi_nilai_prilaku`
+-- AUTO_INCREMENT for table `deskripsi_nilai_prilaku`
 --
 ALTER TABLE `deskripsi_nilai_prilaku`
   MODIFY `idDeskripsi_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `detail_peserta_didik`
+-- AUTO_INCREMENT for table `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   MODIFY `idDetail_pd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
--- AUTO_INCREMENT untuk tabel `detail_tenaga_pendidik`
+-- AUTO_INCREMENT for table `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
-  MODIFY `idDetail_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idDetail_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `ekstrakulikuler`
+-- AUTO_INCREMENT for table `ekstrakulikuler`
 --
 ALTER TABLE `ekstrakulikuler`
   MODIFY `idEkstrakulikuler` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `groups`
+-- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `header_menu`
+-- AUTO_INCREMENT for table `header_menu`
 --
 ALTER TABLE `header_menu`
   MODIFY `id_header_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `jabatan`
+-- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
   MODIFY `idJabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `jabatan_tenpen`
+-- AUTO_INCREMENT for table `jabatan_tenpen`
 --
 ALTER TABLE `jabatan_tenpen`
   MODIFY `idJabatan_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT untuk tabel `kelas`
+-- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `idKelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `kelompok_mapel`
+-- AUTO_INCREMENT for table `kelompok_mapel`
 --
 ALTER TABLE `kelompok_mapel`
   MODIFY `idKelompok_mapel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `kurikulum`
+-- AUTO_INCREMENT for table `kurikulum`
 --
 ALTER TABLE `kurikulum`
   MODIFY `idKurikulum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `leger`
+-- AUTO_INCREMENT for table `leger`
 --
 ALTER TABLE `leger`
-  MODIFY `idLeger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `idLeger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
 
 --
--- AUTO_INCREMENT untuk tabel `leger_ekskul`
+-- AUTO_INCREMENT for table `leger_ekskul`
 --
 ALTER TABLE `leger_ekskul`
   MODIFY `idLeger_ekskul` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT untuk tabel `leger_nilai`
+-- AUTO_INCREMENT for table `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
-  MODIFY `idLeger_nilai` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=712;
+  MODIFY `idLeger_nilai` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1925;
 
 --
--- AUTO_INCREMENT untuk tabel `leger_nilai_ekskul`
+-- AUTO_INCREMENT for table `leger_nilai_ekskul`
 --
 ALTER TABLE `leger_nilai_ekskul`
   MODIFY `idLeger_nilai_ekskul` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=236;
 
 --
--- AUTO_INCREMENT untuk tabel `login_attempts`
+-- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `master_leger`
+-- AUTO_INCREMENT for table `master_leger`
 --
 ALTER TABLE `master_leger`
-  MODIFY `idMaster_leger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idMaster_leger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT untuk tabel `mata_pelajaran`
+-- AUTO_INCREMENT for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
-  MODIFY `idMata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `idMata_pelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT untuk tabel `menu`
+-- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
--- AUTO_INCREMENT untuk tabel `ortu_peserta_didik`
+-- AUTO_INCREMENT for table `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   MODIFY `idOrtu_pd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
--- AUTO_INCREMENT untuk tabel `ortu_tenaga_pendidik`
+-- AUTO_INCREMENT for table `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
-  MODIFY `idOrtu_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idOrtu_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `peserta_didik`
+-- AUTO_INCREMENT for table `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
-  MODIFY `idPd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+  MODIFY `idPd` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
 
 --
--- AUTO_INCREMENT untuk tabel `program_studi`
+-- AUTO_INCREMENT for table `program_studi`
 --
 ALTER TABLE `program_studi`
   MODIFY `idProdi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `sekolah`
+-- AUTO_INCREMENT for table `sekolah`
 --
 ALTER TABLE `sekolah`
   MODIFY `idSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `settings`
+-- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id_settings` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tahun_ajaran`
+-- AUTO_INCREMENT for table `tahun_ajaran`
 --
 ALTER TABLE `tahun_ajaran`
   MODIFY `idTahun_ajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tenaga_pendidik`
+-- AUTO_INCREMENT for table `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
-  MODIFY `idTenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `idTenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `users_groups`
+-- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `detail_peserta_didik`
+-- Constraints for table `detail_peserta_didik`
 --
 ALTER TABLE `detail_peserta_didik`
   ADD CONSTRAINT `detail_peserta_didik_ibfk_4` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `detail_peserta_didik_ibfk_5` FOREIGN KEY (`NIK_pd`) REFERENCES `peserta_didik` (`NIK_pd`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `detail_tenaga_pendidik`
+-- Constraints for table `detail_tenaga_pendidik`
 --
 ALTER TABLE `detail_tenaga_pendidik`
   ADD CONSTRAINT `detail_tenaga_pendidik_ibfk_2` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `jabatan_tenpen`
+-- Constraints for table `jabatan_tenpen`
 --
 ALTER TABLE `jabatan_tenpen`
   ADD CONSTRAINT `jabatan_tenpen_ibfk_1` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `jabatan_tenpen_ibfk_2` FOREIGN KEY (`idJabatan`) REFERENCES `jabatan` (`idJabatan`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kelas`
+-- Constraints for table `kelas`
 --
 ALTER TABLE `kelas`
   ADD CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`idProdi`) REFERENCES `program_studi` (`idProdi`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -92784,27 +93796,27 @@ ALTER TABLE `kelas`
   ADD CONSTRAINT `kelas_ibfk_3` FOREIGN KEY (`idKurikulum`) REFERENCES `kurikulum` (`idKurikulum`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `kurikulum`
+-- Constraints for table `kurikulum`
 --
 ALTER TABLE `kurikulum`
   ADD CONSTRAINT `kurikulum_ibfk_3` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `leger`
+-- Constraints for table `leger`
 --
 ALTER TABLE `leger`
-  ADD CONSTRAINT `leger_ibfk_1` FOREIGN KEY (`idMaster_leger`) REFERENCES `master_leger` (`idMaster_leger`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `leger_ibfk_1` FOREIGN KEY (`idMaster_leger`) REFERENCES `master_leger` (`idMaster_leger`) ON UPDATE CASCADE,
   ADD CONSTRAINT `leger_ibfk_3` FOREIGN KEY (`idMata_pelajaran`) REFERENCES `mata_pelajaran` (`idMata_pelajaran`) ON UPDATE CASCADE,
   ADD CONSTRAINT `leger_ibfk_4` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `leger_ekskul`
+-- Constraints for table `leger_ekskul`
 --
 ALTER TABLE `leger_ekskul`
   ADD CONSTRAINT `leger_ekskul_ibfk_1` FOREIGN KEY (`idMaster_leger`) REFERENCES `master_leger` (`idMaster_leger`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `leger_nilai`
+-- Constraints for table `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
   ADD CONSTRAINT `leger_nilai_ibfk_1` FOREIGN KEY (`idLeger`) REFERENCES `leger` (`idLeger`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -92814,56 +93826,56 @@ ALTER TABLE `leger_nilai`
   ADD CONSTRAINT `leger_nilai_ibfk_5` FOREIGN KEY (`nilai_spritual`) REFERENCES `deskripsi_nilai_prilaku` (`nilai_deskripsi`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `leger_nilai_ekskul`
+-- Constraints for table `leger_nilai_ekskul`
 --
 ALTER TABLE `leger_nilai_ekskul`
   ADD CONSTRAINT `leger_nilai_ekskul_ibfk_1` FOREIGN KEY (`idLeger_ekskul`) REFERENCES `leger_ekskul` (`idLeger_ekskul`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `master_leger`
+-- Constraints for table `master_leger`
 --
 ALTER TABLE `master_leger`
   ADD CONSTRAINT `master_leger_ibfk_2` FOREIGN KEY (`idKelas`) REFERENCES `kelas` (`idKelas`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `mata_pelajaran`
+-- Constraints for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
   ADD CONSTRAINT `mata_pelajaran_ibfk_1` FOREIGN KEY (`idKurikulum`) REFERENCES `kurikulum` (`idKurikulum`) ON UPDATE CASCADE,
   ADD CONSTRAINT `mata_pelajaran_ibfk_2` FOREIGN KEY (`idKelompok_mapel`) REFERENCES `kelompok_mapel` (`idKelompok_mapel`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `ortu_peserta_didik`
+-- Constraints for table `ortu_peserta_didik`
 --
 ALTER TABLE `ortu_peserta_didik`
   ADD CONSTRAINT `ortu_peserta_didik_ibfk_1` FOREIGN KEY (`NIK_pd`) REFERENCES `peserta_didik` (`NIK_pd`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `ortu_tenaga_pendidik`
+-- Constraints for table `ortu_tenaga_pendidik`
 --
 ALTER TABLE `ortu_tenaga_pendidik`
   ADD CONSTRAINT `ortu_tenaga_pendidik_ibfk_1` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `peserta_didik`
+-- Constraints for table `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
   ADD CONSTRAINT `peserta_didik_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `program_studi`
+-- Constraints for table `program_studi`
 --
 ALTER TABLE `program_studi`
   ADD CONSTRAINT `program_studi_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `tenaga_pendidik`
+-- Constraints for table `tenaga_pendidik`
 --
 ALTER TABLE `tenaga_pendidik`
   ADD CONSTRAINT `tenaga_pendidik_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `users_groups`
+-- Constraints for table `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,

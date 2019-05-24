@@ -68,8 +68,8 @@
                                 </th>
                                 <th>Nama Siswa</th>
                                 <th>Jenis Kelamin</th>
-                                <th>NIPD</th>
                                 <th>NISN</th>
+                                <th>NIPD</th>
                                 <th>Sekolah</th>
                             </tr>
                         </thead>
