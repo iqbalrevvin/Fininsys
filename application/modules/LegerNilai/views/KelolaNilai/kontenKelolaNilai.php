@@ -9,7 +9,7 @@
 			</div>
 			<div class="m-portlet m-portlet--mobile" id="kontenTambahPenilaianSiswa">
                 <div class="m-portlet__body">
-                	Tekan Enter Setelah Mengisi Nilai Pengetahuan & Keterampilan!
+                	<b>Perhatian!!!</b>, Pastikan Siswa Sudah Dalam Kelas Yang Benar & <i>Fixed</i> Sebelum Mulai Mengelola Penilaian!
                 </div>
             </div>
 		</div>
