@@ -110,8 +110,8 @@
 		<?php endforeach ?>
     	<?php $no = 1; ?>
     	<?php foreach ($dataSiswa as $list): ?>
-	    	<?php $idKelas 				= $list->idKelas; ?>
-	    	<?php $angkatan 			= $list->tahun_angkatan; ?>
+	    	<!-- <?php $idKelas 				= $list->idKelas; ?> -->
+	    	<!-- <?php $angkatan 			= $list->tahun_angkatan; ?> -->
             <?php $raportModel          = $this->Raport_m; ?>
 	    	<?php $countMapel 			= $this->Raport_m->countMapel($idMasterLeger, $list->NIK_pd); ?>
 	    	<?php $jmlNilaiPengetahuan 	= $this->Raport_m->sumNilaiPengetahuan($idMasterLeger, $list->NIK_pd); ?>
@@ -233,7 +233,7 @@ var DatatableHtmlTableDemo = {
             translate: {
                 records: {
                     processing: 'Memuat Data Siswa...',
-                    noRecords: 'Tidak Ditemukan Siswa Untuk Angkatan & Kelas Yang Dipilih!',
+                    noRecords: 'Tidak Ditemukan Riwayat Penilaian Siswa Untuk Angkatan & Kelas Yang Dipilih!',
                 },
                 toolbar: {
                     pagination: {

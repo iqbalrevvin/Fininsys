@@ -71,8 +71,8 @@ class RaportKelas extends CI_Controller {
 		$idKelas 					= $this->input->post('idKelas');
 		$semester 					= $this->input->post('semester');
 		$masterLeger 				= $this->Raport_m->identiMasterLeger($idKelas, $angkatan, $semester);
-		$dataSiswa 					= $this->Raport_m->tampilSiswaKelas($angkatan, $idKelas);
-		//$dataTest 					= $this->Raport_m->dataTest();
+		//$dataSiswa 				= $this->Raport_m->tampilSiswaKelas($angkatan, $idKelas);
+		$dataSiswa					= $this->Raport_m->tampilSiswaKelas($masterLeger);
 		$data['dataSiswa'] 			= $dataSiswa;
 		$data['semester'] 			= $semester;
 		$data['idMasterLeger'] 		= $masterLeger;

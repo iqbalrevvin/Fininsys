@@ -22,7 +22,7 @@ class Raport_m extends CI_Model {
 		return $execute;
 	}
 
- 	public function tampilSiswaKelas($angkatan, $idKelas){
+ 	/*public function tampilSiswaKelas($angkatan, $idKelas){
 	 	$this->db->select('peserta_didik.*, detail_peserta_didik.idKelas');
 	 	$this->db->from('peserta_didik');
 	 	$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
@@ -31,7 +31,24 @@ class Raport_m extends CI_Model {
 	 	$query 		= $this->db->get();
 	 	$execute 	= $query->result();
 	 	return $execute;
- 	}	
+ 	}	*/
+
+
+ 	public function tampilSiswaKelas($masterLeger){
+ 		$this->db->distinct();
+ 		$this->db->select('DISTINCT(leger_nilai.NIK_pd), peserta_didik.nama_pd, 
+ 				peserta_didik.nipd, peserta_didik.nisn, peserta_didik.jk_pd');  
+ 		$this->db->from('leger_nilai');
+ 		$this->db->join('leger', 'leger_nilai.idLeger = leger.idLeger', 'left');
+  		$this->db->join('peserta_didik', 'leger_nilai.NIK_pd = peserta_didik.NIK_pd', 'left');
+ 		$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
+ 		$this->db->where('leger.idMaster_leger', $masterLeger);
+ 		$this->db->order_by('peserta_didik.nama_pd', 'asc');
+
+	 	$query 		= $this->db->get();
+	 	$execute 	= $query->result();
+	 	return $execute;
+ 	}
 
  	public function identiMasterLeger($idKelas, $angkatan, $semester){
  		$this->db->select('*');
