@@ -681,7 +681,7 @@
                     </div>
                     <div class="m-widget3__body">
                         <p class="m-widget3__text">
-                                DSFADFADFASDGDFGSDFGSFGSDF TAI
+                                
                         </p>
                     </div>
                 </div>
