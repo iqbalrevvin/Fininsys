@@ -6,77 +6,34 @@ class CetakRaport extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('pdf');
+        $this->load->library('OutputView');
+        $this->load->library('M_pdf');
+        $this->load->model('GetData_m');
+        $this->load->model('CetakRaport_m');
 	}
 	public function index(){
 		$this->load->view('error_page/error');
 	}
 
 	public function SelfPrint(){
+		$data = [];
+        $html=$this->load->view('CetakRaport/testMpdf.php', $data, true);
+        $pdfFilePath = "output_pdf_name.pdf";
+        $this->m_pdf->pdf->WriteHTML($html);
+        $this->m_pdf->pdf->Output('test.pdf', 'I');   
+    }
 
-		
-		/*$view = $this->load->view('CetakRaport/test',$data,true);*/
-		 $pdf = new FPDF('P','mm','A4');
-        // membuat halaman baru
-        $pdf->AddPage();
-        // setting jenis font yang akan digunakan
-        $pdf->SetFont('Arial','B',16);
-        // mencetak string 
-        $pdf->Cell(190,7,'SEKOLAH MENENGAH KEJURUSAN NEEGRI 2 LANGSA',0,1,'C');
-        $pdf->SetFont('Arial','B',12);
-        $pdf->Cell(190,7,'DAFTAR SISWA KELAS IX JURUSAN REKAYASA PERANGKAT LUNAK',0,1,'C');
-        // Memberikan space kebawah agar tidak terlalu rapat
-        $pdf->Cell(10,7,'',0,1);
-        $pdf->SetFont('Arial','B',10);
-        $pdf->Cell(20,6,'NIM',1,0);
-        $pdf->Cell(85,6,'NAMA MAHASISWA',1,0);
-        $pdf->Cell(27,6,'NO HP',1,0);
-        $pdf->Cell(25,6,'TANGGAL LHR',1,1);
-        $pdf->SetFont('Arial','',10);
-        $mahasiswa = $this->db->get('peserta_didik')->result();
-        foreach ($mahasiswa as $row){
-            $pdf->Cell(20,6,$row->nipd,1,0);
-            $pdf->Cell(85,6,$row->nama_pd,1,0);
-            $pdf->Cell(27,6,$row->no_telp_pd,1,0);
-            $pdf->Cell(25,6,$row->tanggal_lahir_pd,1,1); 
-        }
-$pdf->AddPage('P', 'A4');
-$pdf->SetAutoPageBreak(true, 10);
-$pdf->SetFont('Arial', '', 12);
-$pdf->SetTopMargin(10);
-$pdf->SetLeftMargin(10);
-$pdf->SetRightMargin(10);
+    public function selfPrintCover(){
+        $siswaID                    = $this->input->get('StudentID');
+        $masterID                   = $this->input->get('MasterID');
+        $data['pengaturan']         = $this->GetData_m->dataPengaturan();
+        $data['identitasSekolah']   = $this->CetakRaport_m->getIdentitasSekolah($masterID);
+        $data['identitasPD']        = $this->CetakRaport_m->getIdentitasPD($siswaID);
+        #$data['test']               = $NIK; 
+        
+        $this->load->view('CetakRaport/test', $data);
 
-
-/* --- Cell --- */
-$pdf->SetXY(47, 38);
-$pdf->Cell(0, 4, 'Cell', 0, 1, 'L', false);
-/* --- Cell --- */
-$pdf->SetXY(11, 44);
-$pdf->Cell(0, 4, 'Cell', 0, 1, 'L', false);
-/* --- Cell --- */
-$pdf->SetXY(61, 52);
-$pdf->Cell(0, 4, 'Cell', 0, 1, 'L', false);
-$pdf->AddPage('P', 'A4');
-$pdf->SetAutoPageBreak(true, 10);
-$pdf->SetFont('Arial', '', 12);
-$pdf->SetTopMargin(10);
-$pdf->SetLeftMargin(10);
-$pdf->SetRightMargin(10);
-
-
-/* --- Cell --- */
-$pdf->Cell(20,6,'NIM',0,0);
-$pdf->Cell(173, 4, 'Cell', 0, 1);
-/* --- Cell --- */
-
-$pdf->Cell(176, 4, 'Cell', 0, 1);
-/* --- Write --- */
-$pdf->SetY(26);
-$pdf->Write(5, 'Write');
-/* --- Text --- */
-$pdf->Text(11, 38, 'Textsdfasff');
-        $pdf->Output();
-	}
+    }
 
 }
 

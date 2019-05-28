@@ -8,7 +8,7 @@
 
 <script src="<?= base_url('assets/vendors/pace-preload/pace.js') ?>" type="text/javascript"></script>
 <!--BOOTSRAP FILE UPLOAD-->
-<script src="<?= base_url('assets/vendors/bootstrap-fileupload/bootstrap-fileupload.js') ?>"></script>
+<script src="<?php //echo base_url('assets/vendors/bootstrap-fileupload/bootstrap-fileupload.js') ?>"></script>
 
 <!---///////////////////////////////////////////////////-->
 
@@ -22,16 +22,20 @@
   <script src="<?= base_url('assets/vendors/datatables/datatables.bundle.js') ?>" type="text/javascript"></script>
 <?php endif; ?>
 
-<script src="<?= base_url('assets/js/components/blockui.js') ?>"></script>
-<script src="<?= base_url('assets/js/demo/bootstrap-maxlength.js') ?>"></script>
-<script src="<?= base_url('assets/js/demo/bootstrap-select.js') ?>"></script>
-<script src="<?= base_url('assets/js/demo/select2.js') ?>"></script>
-<script src="<?= base_url('assets/vendors/x-editable/bootstrap-editable.min.js') ?>"></script>
+
 
 <!-- GroceryCRUD JS -->
-<?php if (isset($js_files)) { foreach($js_files as $file): ?> 
+<?php if (isset($js_files)){ ?>
+  <?php foreach($js_files as $file): ?> 
     <script src="<?php echo $file; ?>"></script>
-<?php endforeach; } ?>
+  <?php endforeach; ?>
+<?php }else{ ?>
+  <script src="<?= base_url('assets/js/components/blockui.js') ?>"></script>
+  <script src="<?= base_url('assets/js/demo/bootstrap-maxlength.js') ?>"></script>
+  <script src="<?= base_url('assets/js/demo/bootstrap-select.js') ?>"></script>
+  <script src="<?= base_url('assets/js/demo/select2.js') ?>"></script>
+  <script src="<?= base_url('assets/vendors/x-editable/bootstrap-editable.min.js') ?>"></script>
+<?php } ?>
 
 <script>
     site         = '<?php echo site_url(); ?>';

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 24, 2019 at 08:50 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 5.6.33
+-- Host: localhost:3306
+-- Generation Time: May 29, 2019 at 01:47 AM
+-- Server version: 10.2.24-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fininsys`
+-- Database: `u5883191_fininsys`
 --
 
 -- --------------------------------------------------------
@@ -163,16 +163,16 @@ INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `pindaha
 (37, '3205172407050000', 4, NULL, NULL, '0', 'Tidak', ''),
 (38, '3205210911040000', 3, NULL, NULL, '0', 'Tidak', ''),
 (39, '3276055002040010', 3, NULL, NULL, '0', 'Tidak', ''),
-(40, '3204096003060000', 1, NULL, NULL, '0', 'Tidak', ''),
-(41, '3211116111050000', 2, NULL, NULL, '0', 'Tidak', ''),
+(40, '3204096003060003', 1, NULL, NULL, '0', 'Tidak', ''),
+(41, '3211116111050001', 2, NULL, NULL, '0', 'Tidak', ''),
 (42, '3207035502780000', 1, NULL, NULL, '0', 'Tidak', ''),
 (43, '3205210506050010', 2, NULL, NULL, '0', 'Tidak', ''),
-(44, '3205210509050000', 4, NULL, NULL, '0', 'Tidak', ''),
+(44, '3205210509050001', 4, NULL, NULL, '0', 'Tidak', ''),
 (45, '3204290310050000', 2, NULL, NULL, '0', 'Tidak', ''),
 (46, '3205211404030000', 3, NULL, NULL, '0', 'Tidak', ''),
 (47, '3205214408050010', 3, NULL, NULL, '0', 'Tidak', ''),
-(48, '3204546070500000', 1, NULL, NULL, '0', 'Tidak', ''),
-(49, '3205215611030000', 4, NULL, NULL, '0', 'Tidak', ''),
+(48, '3204546070500003', 1, NULL, NULL, '0', 'Tidak', ''),
+(49, '3205215611030001', 4, NULL, NULL, '0', 'Tidak', ''),
 (50, '3205216912850001', 2, NULL, NULL, '0', 'Tidak', ''),
 (51, '3205214104060000', 4, NULL, NULL, '0', 'Tidak', ''),
 (52, '3205074110940000', 5, NULL, NULL, '0', 'Tidak', ''),
@@ -8276,7 +8276,7 @@ INSERT INTO `kelompok_mapel` (`idKelompok_mapel`, `nama_kelompok_mapel`, `ketera
 CREATE TABLE `kelurahan` (
   `id_kel` char(10) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `id_kec` char(6) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
-  `nama_kelurahan` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci,
+  `nama_kelurahan` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `id_jenis` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -90988,7 +90988,7 @@ CREATE TABLE `leger_nilai` (
   `nilai_sikap` char(1) DEFAULT NULL,
   `nilai_sosial` char(1) DEFAULT NULL,
   `nilai_spritual` char(1) DEFAULT NULL,
-  `catatan` text
+  `catatan` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -90998,7 +90998,7 @@ CREATE TABLE `leger_nilai` (
 INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetahuan`, `nilai_keterampilan`, `nilai_sikap`, `nilai_sosial`, `nilai_spritual`, `catatan`) VALUES
 (429, 71, '3275060701060002', 80, 80, 'B', 'B', 'A', NULL),
 (430, 71, '3211116207070000', 80, 80, 'B', 'B', 'B', NULL),
-(431, 71, '3211116111050000', 80, 80, 'B', 'A', 'B', NULL),
+(431, 71, '3211116111050001', 80, 80, 'B', 'A', 'B', NULL),
 (432, 71, '3205210506050010', 74, 76, 'B', 'B', 'B', NULL),
 (433, 71, '3204290310050000', 83, 80, 'B', 'B', 'B', NULL),
 (434, 71, '3205216912850001', 76, 77, 'B', 'B', 'B', NULL),
@@ -91029,9 +91029,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (459, 71, '3205054609060006', 90, 80, 'A', 'A', 'B', NULL),
 (460, 72, '3273024304060010', 81, 80, 'A', 'B', 'B', NULL),
 (461, 72, '3205216309060000', 75, 75, 'B', 'B', 'C', NULL),
-(462, 72, '3204096003060000', 79, 80, 'B', 'B', 'A', NULL),
+(462, 72, '3204096003060003', 79, 80, 'B', 'B', 'A', NULL),
 (463, 72, '3207035502780000', 80, 80, 'A', 'B', 'B', NULL),
-(464, 72, '3204546070500000', 80, 80, 'B', 'B', 'B', NULL),
+(464, 72, '3204546070500003', 80, 80, 'B', 'B', 'B', NULL),
 (465, 72, '3205216802060001', 76, 75, 'B', 'B', 'B', NULL),
 (466, 72, '3205217012050003', 78, 75, 'B', 'B', 'B', NULL),
 (467, 72, '3205212510090001', 78, 75, 'B', 'B', 'B', NULL),
@@ -91057,7 +91057,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (487, 72, '3204282012040002', 80, 80, 'A', 'B', 'B', NULL),
 (712, 102, '3275060701060002', 76, 76, 'A', 'B', 'B', 'Ditingkatkan kembali beljarnya '),
 (713, 102, '3211116207070000', 76, 75, 'A', 'B', 'B', 'Lebih aktif dalam bersosial '),
-(714, 102, '3211116111050000', 79, 74, 'A', 'B', 'B', 'Lebih aktif dalam kegiatan belajar'),
+(714, 102, '3211116111050001', 79, 74, 'A', 'B', 'B', 'Lebih aktif dalam kegiatan belajar'),
 (715, 102, '3205210506050010', 70, 73, 'B', 'B', 'B', 'Diringkatkan kembali belajarnya'),
 (716, 102, '3204290310050000', 79, 78, 'B', 'B', 'B', 'Lebih aktif dalam belajarnya'),
 (717, 102, '3205216912850001', 80, 79, 'A', 'A', 'A', 'Dipertahankan dan ditingkatkan kembali belajarnya'),
@@ -91087,7 +91087,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (741, 102, '3205054609060006', 90, 80, 'A', 'B', 'B', 'Dioertahankan dan ditingkat kembali belajarnya '),
 (742, 101, '3275060701060002', 72, 77, 'B', 'B', 'A', 'Ditingkatkan kembali dalam belajarnya'),
 (743, 101, '3211116207070000', 76, 81, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
-(744, 101, '3211116111050000', 75, 81, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(744, 101, '3211116111050001', 75, 81, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (745, 101, '3205210506050010', 72, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (746, 101, '3204290310050000', 73, 77, 'B', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
 (747, 101, '3205216912850001', 73, 77, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
@@ -91117,7 +91117,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (771, 101, '3205054609060006', 76, 81, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (772, 90, '3275060701060002', 74, 76, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
 (773, 90, '3211116207070000', 73, 72, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
-(774, 90, '3211116111050000', 74, 73, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(774, 90, '3211116111050001', 74, 73, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
 (775, 90, '3205210506050010', 73, 75, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (776, 90, '3204290310050000', 82, 80, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
 (777, 90, '3205216912850001', 73, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
@@ -91147,7 +91147,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (801, 90, '3205054609060006', 74, 72, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
 (802, 89, '3275060701060002', 81, 83, 'B', 'B', 'B', NULL),
 (803, 89, '3211116207070000', 80, 80, 'B', 'B', 'B', NULL),
-(804, 89, '3211116111050000', 83, 80, 'B', 'B', 'B', NULL),
+(804, 89, '3211116111050001', 83, 80, 'B', 'B', 'B', NULL),
 (805, 89, '3205210506050010', 80, 80, 'B', 'B', 'B', NULL),
 (806, 89, '3204290310050000', 82, 80, 'B', 'B', 'B', NULL),
 (807, 89, '3205216912850001', 81, 80, 'B', 'B', 'B', NULL),
@@ -91177,7 +91177,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (831, 89, '3205054609060006', 84, 80, 'B', 'B', 'B', NULL),
 (832, 88, '3275060701060002', 86, 80, 'A', 'A', 'A', NULL),
 (833, 88, '3211116207070000', 83, 80, 'A', 'A', 'A', NULL),
-(834, 88, '3211116111050000', 83, 80, 'A', 'A', 'A', NULL),
+(834, 88, '3211116111050001', 83, 80, 'A', 'A', 'A', NULL),
 (835, 88, '3205210506050010', 68, 68, 'B', 'A', 'A', NULL),
 (836, 88, '3204290310050000', 88, 80, 'A', 'A', 'A', NULL),
 (837, 88, '3205216912850001', 68, 68, 'B', 'B', 'B', NULL),
@@ -91207,7 +91207,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (861, 88, '3205054609060006', 88, 80, 'A', 'A', 'A', NULL),
 (862, 87, '3275060701060002', 80, 78, 'B', 'B', 'B', NULL),
 (863, 87, '3211116207070000', 80, 75, 'C', 'B', 'B', NULL),
-(864, 87, '3211116111050000', 85, 78, 'B', 'B', 'B', NULL),
+(864, 87, '3211116111050001', 85, 78, 'B', 'B', 'B', NULL),
 (865, 87, '3205210506050010', 80, 70, 'C', 'B', 'B', NULL),
 (866, 87, '3204290310050000', 90, 80, 'B', 'B', 'B', NULL),
 (867, 87, '3205216912850001', 80, 75, 'C', 'B', 'B', NULL),
@@ -91237,7 +91237,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (891, 87, '3205054609060006', 85, 75, 'B', 'B', 'B', NULL),
 (892, 86, '3275060701060002', 72, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
 (893, 86, '3211116207070000', 69, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
-(894, 86, '3211116111050000', 71, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(894, 86, '3211116111050001', 71, 82, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
 (895, 86, '3205210506050010', 68, 80, 'C', 'C', 'B', 'Semangat untuk lebih giat belajar'),
 (896, 86, '3204290310050000', 78, 83, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
 (897, 86, '3205216912850001', 69, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
@@ -91267,7 +91267,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (921, 86, '3205054609060006', 85, 85, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
 (922, 85, '3275060701060002', 82, 84, 'A', 'A', 'A', NULL),
 (923, 85, '3211116207070000', 80, 82, 'A', 'A', 'A', NULL),
-(924, 85, '3211116111050000', 78, 80, 'B', 'B', 'A', NULL),
+(924, 85, '3211116111050001', 78, 80, 'B', 'B', 'A', NULL),
 (925, 85, '3205210506050010', 70, 70, 'C', 'B', 'B', NULL),
 (926, 85, '3204290310050000', 82, 84, 'A', 'B', 'A', NULL),
 (927, 85, '3205216912850001', 75, 78, 'C', 'B', 'B', NULL),
@@ -91297,7 +91297,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (951, 85, '3205054609060006', 87, 88, 'A', 'B', 'A', NULL),
 (952, 84, '3275060701060002', 75, 78, 'B', 'B', 'A', NULL),
 (953, 84, '3211116207070000', 75, 72, 'A', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
-(954, 84, '3211116111050000', 78, 80, 'A', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(954, 84, '3211116111050001', 78, 80, 'A', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
 (955, 84, '3205210506050010', 77, 66, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
 (956, 84, '3204290310050000', 80, 79, 'B', 'A', 'A', 'Ditingkatkan lagi dalam belajarnya'),
 (957, 84, '3205216912850001', 80, 78, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
@@ -91327,9 +91327,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (981, 84, '3205054609060006', 90, 82, 'B', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
 (982, 100, '3273024304060010', 81, 80, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (983, 100, '3205216309060000', 74, 73, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
-(984, 100, '3204096003060000', 75, 74, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(984, 100, '3204096003060003', 75, 74, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (985, 100, '3207035502780000', 80, 79, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
-(986, 100, '3204546070500000', 77, 76, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(986, 100, '3204546070500003', 77, 76, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (987, 100, '3205216802060001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (988, 100, '3205217012050003', 74, 73, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (989, 100, '3205212510090001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
@@ -91355,9 +91355,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1009, 100, '3204282012040002', 72, 71, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1010, 99, '3273024304060010', 81, 80, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
 (1011, 99, '3205216309060000', 74, 71, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
-(1012, 99, '3204096003060000', 76, 75, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1012, 99, '3204096003060003', 76, 75, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1013, 99, '3207035502780000', 80, 79, 'A', 'B', 'A', 'Ditingkatkan kembali dalam belajarnya'),
-(1014, 99, '3204546070500000', 77, 76, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1014, 99, '3204546070500003', 77, 76, 'A', 'A', 'A', 'Ditingkatkan kembali dalam belajarnya'),
 (1015, 99, '3205216802060001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1016, 99, '3205217012050003', 74, 73, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1017, 99, '3205212510090001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
@@ -91383,9 +91383,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1037, 99, '3204282012040002', 72, 71, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1038, 97, '3273024304060010', 78, 75, 'A', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1039, 97, '3205216309060000', 70, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
-(1040, 97, '3204096003060000', 76, 76, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
+(1040, 97, '3204096003060003', 76, 76, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1041, 97, '3207035502780000', 80, 79, 'A', 'A', 'B', 'Ditingkatkan kembali dalam belajarnya'),
-(1042, 97, '3204546070500000', 74, 73, 'A', 'B', 'A', 'Ditingkatkan kembali dalam belajarnya'),
+(1042, 97, '3204546070500003', 74, 73, 'A', 'B', 'A', 'Ditingkatkan kembali dalam belajarnya'),
 (1043, 97, '3205216802060001', 77, 76, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1044, 97, '3205217012050003', 70, 70, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1045, 97, '3205212510090001', 73, 72, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
@@ -91411,9 +91411,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1065, 97, '3204282012040002', 75, 74, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1066, 96, '3273024304060010', 81, 82, 'B', 'B', 'B', NULL),
 (1067, 96, '3205216309060000', 78, 79, 'B', 'B', 'B', NULL),
-(1068, 96, '3204096003060000', 79, 81, 'B', 'B', 'B', NULL),
+(1068, 96, '3204096003060003', 79, 81, 'B', 'B', 'B', NULL),
 (1069, 96, '3207035502780000', 79, 80, 'B', 'B', 'B', NULL),
-(1070, 96, '3204546070500000', 83, 82, 'B', 'B', 'B', NULL),
+(1070, 96, '3204546070500003', 83, 82, 'B', 'B', 'B', NULL),
 (1071, 96, '3205216802060001', 81, 79, 'B', 'B', 'B', NULL),
 (1072, 96, '3205217012050003', 80, 80, 'B', 'B', 'B', NULL),
 (1073, 96, '3205212510090001', 79, 80, 'B', 'B', 'B', NULL),
@@ -91439,9 +91439,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1093, 96, '3204282012040002', 78, 82, 'B', 'B', 'B', NULL),
 (1094, 95, '3273024304060010', 90, 80, 'A', 'A', 'A', NULL),
 (1095, 95, '3205216309060000', 68, 68, 'B', 'B', 'B', NULL),
-(1096, 95, '3204096003060000', 70, 70, 'B', 'A', 'A', NULL),
+(1096, 95, '3204096003060003', 70, 70, 'B', 'A', 'A', NULL),
 (1097, 95, '3207035502780000', 68, 70, 'B', 'A', 'A', NULL),
-(1098, 95, '3204546070500000', 81, 80, 'A', 'A', 'A', NULL),
+(1098, 95, '3204546070500003', 81, 80, 'A', 'A', 'A', NULL),
 (1099, 95, '3205216802060001', 69, 70, 'B', 'A', 'A', NULL),
 (1100, 95, '3205217012050003', 68, 70, 'B', 'A', 'A', NULL),
 (1101, 95, '3205212510090001', 69, 70, 'B', 'A', 'A', NULL),
@@ -91467,9 +91467,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1121, 95, '3204282012040002', 80, 70, 'B', 'A', 'A', NULL),
 (1122, 94, '3273024304060010', 90, 80, 'B', 'B', 'B', NULL),
 (1123, 94, '3205216309060000', 75, 70, 'C', 'B', 'B', NULL),
-(1124, 94, '3204096003060000', 90, 75, 'B', 'B', 'B', NULL),
+(1124, 94, '3204096003060003', 90, 75, 'B', 'B', 'B', NULL),
 (1125, 94, '3207035502780000', 80, 70, 'C', 'B', 'B', NULL),
-(1126, 94, '3204546070500000', 80, 75, 'B', 'B', 'B', NULL),
+(1126, 94, '3204546070500003', 80, 75, 'B', 'B', 'B', NULL),
 (1127, 94, '3205216802060001', 75, 70, 'C', 'B', 'B', NULL),
 (1128, 94, '3205217012050003', 75, 70, 'C', 'B', 'B', NULL),
 (1129, 94, '3205212510090001', 75, 70, 'C', 'B', 'B', NULL),
@@ -91495,9 +91495,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1149, 94, '3204282012040002', 80, 70, 'B', 'B', 'B', NULL),
 (1150, 93, '3273024304060010', 85, 85, 'A', 'A', 'A', 'Pertahankan dan tingkatkan'),
 (1151, 93, '3205216309060000', 68, 80, 'C', 'C', 'B', 'Semangat untuk lebih giat belajar'),
-(1152, 93, '3204096003060000', 70, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1152, 93, '3204096003060003', 70, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
 (1153, 93, '3207035502780000', 68, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
-(1154, 93, '3204546070500000', 70, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
+(1154, 93, '3204546070500003', 70, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
 (1155, 93, '3205216802060001', 70, 80, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
 (1156, 93, '3205217012050003', 71, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
 (1157, 93, '3205212510090001', 68, 80, 'C', 'B', 'B', 'Semangat untuk lebih giat belajar'),
@@ -91523,9 +91523,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1177, 93, '3204282012040002', 70, 81, 'B', 'B', 'A', 'Semangat untuk lebih giat belajar'),
 (1178, 92, '3273024304060010', 85, 86, 'A', 'B', 'A', NULL),
 (1179, 92, '3205216309060000', 70, 73, 'C', 'C', 'B', NULL),
-(1180, 92, '3204096003060000', 74, 74, 'B', 'B', 'B', NULL),
+(1180, 92, '3204096003060003', 74, 74, 'B', 'B', 'B', NULL),
 (1181, 92, '3207035502780000', 75, 77, 'B', 'B', 'B', NULL),
-(1182, 92, '3204546070500000', 81, 82, 'B', 'B', 'B', NULL),
+(1182, 92, '3204546070500003', 81, 82, 'B', 'B', 'B', NULL),
 (1183, 92, '3205216802060001', 71, 72, 'B', 'B', 'B', NULL),
 (1184, 92, '3205217012050003', 71, 72, 'B', 'B', 'B', NULL),
 (1185, 92, '3205212510090001', 70, 72, 'C', 'C', 'C', NULL),
@@ -91551,9 +91551,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1205, 92, '3204282012040002', 81, 82, 'B', 'B', 'B', NULL),
 (1206, 98, '3273024304060010', 83, 88, 'B', 'B', 'B', NULL),
 (1207, 98, '3205216309060000', 68, 70, 'B', 'C', 'C', NULL),
-(1208, 98, '3204096003060000', 80, 82, 'B', 'B', 'B', NULL),
+(1208, 98, '3204096003060003', 80, 82, 'B', 'B', 'B', NULL),
 (1209, 98, '3207035502780000', 78, 75, 'B', 'B', 'B', NULL),
-(1210, 98, '3204546070500000', 85, 86, 'B', 'B', 'B', NULL),
+(1210, 98, '3204546070500003', 85, 86, 'B', 'B', 'B', NULL),
 (1211, 98, '3205216802060001', 75, 77, 'B', 'B', 'B', NULL),
 (1212, 98, '3205217012050003', 77, 79, 'B', 'B', 'B', NULL),
 (1213, 98, '3205212510090001', 69, 70, 'C', 'B', 'B', NULL),
@@ -91579,9 +91579,9 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1233, 98, '3204282012040002', 78, 80, 'B', 'B', 'B', NULL),
 (1234, 91, '3273024304060010', 89, 88, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
 (1235, 91, '3205216309060000', 65, 79, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
-(1236, 91, '3204096003060000', 81, 80, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1236, 91, '3204096003060003', 81, 80, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
 (1237, 91, '3207035502780000', 69, 70, 'A', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
-(1238, 91, '3204546070500000', 74, 80, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
+(1238, 91, '3204546070500003', 74, 80, 'B', 'B', 'A', 'Ditingkatkan lagi dalam belajarnya'),
 (1239, 91, '3205216802060001', 81, 70, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
 (1240, 91, '3205217012050003', 66, 79, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
 (1241, 91, '3205212510090001', 76, 79, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
@@ -91675,8 +91675,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1329, 112, '3205176104040010', 86, 86, 'B', 'B', 'B', NULL),
 (1330, 112, '3205172407050000', 80, 79, 'B', 'B', 'B', NULL);
 INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetahuan`, `nilai_keterampilan`, `nilai_sikap`, `nilai_sosial`, `nilai_spritual`, `catatan`) VALUES
-(1331, 112, '3205210509050000', 86, 82, 'B', 'B', 'B', NULL),
-(1332, 112, '3205215611030000', 83, 80, 'B', 'B', 'B', NULL),
+(1331, 112, '3205210509050001', 86, 82, 'B', 'B', 'B', NULL),
+(1332, 112, '3205215611030001', 83, 80, 'B', 'B', 'B', NULL),
 (1333, 112, '3205214104060000', 82, 81, 'B', 'B', 'B', NULL),
 (1334, 112, '3201012707050001', 80, 80, 'B', 'B', 'B', NULL),
 (1335, 112, '3273055606810002', 81, 80, 'B', 'B', 'B', NULL),
@@ -91706,8 +91706,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1359, 113, '3205056106050010', 82, 88, 'A', 'B', 'B', 'Pertahankan prestasinya'),
 (1360, 113, '3205176104040010', 90, 95, 'A', 'B', 'A', 'Pertahankan prestasinya'),
 (1361, 113, '3205172407050000', 77, 78, 'B', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
-(1362, 113, '3205210509050000', 85, 88, 'B', 'B', 'B', NULL),
-(1363, 113, '3205215611030000', 77, 78, 'B', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
+(1362, 113, '3205210509050001', 85, 88, 'B', 'B', 'B', NULL),
+(1363, 113, '3205215611030001', 77, 78, 'B', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
 (1364, 113, '3205214104060000', 78, 79, 'B', 'B', 'B', NULL),
 (1365, 113, '3201012707050001', 75, 75, 'C', 'B', 'B', 'Lebih Giat Lagi Belajarnya !!!'),
 (1366, 113, '3273055606810002', 77, 78, 'B', 'B', 'B', NULL),
@@ -91779,8 +91779,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1432, 116, '3205056106050010', 80, 84, 'B', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
 (1433, 116, '3205176104040010', 85, 87, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
 (1434, 116, '3205172407050000', 76, 77, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
-(1435, 116, '3205210509050000', 87, 87, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
-(1436, 116, '3205215611030000', 85, 85, 'A', 'B', 'B', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1435, 116, '3205210509050001', 87, 87, 'A', 'B', 'A', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
+(1436, 116, '3205215611030001', 85, 85, 'A', 'B', 'B', 'Dipertahankan dan ditingkatkan lagi dalam proses pembelajarannya'),
 (1437, 116, '3205214104060000', 79, 80, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
 (1438, 116, '3201012707050001', 75, 75, 'B', 'B', 'B', 'Ditingkatkan lagi dalam proses pembelajarannya'),
 (1439, 116, '3273055606810002', 79, 78, 'B', 'B', 'B', 'Ditingkatkan lagi dalam belajarnya'),
@@ -91827,7 +91827,7 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1480, 106, '1050192612035001', 88, 80, 'A', 'A', 'A', NULL),
 (1481, 123, '3275060701060002', 80, 85, 'B', 'B', 'B', NULL),
 (1482, 123, '3211116207070000', 82, 85, 'B', 'B', 'B', NULL),
-(1483, 123, '3211116111050000', 83, 84, 'B', 'B', 'B', NULL),
+(1483, 123, '3211116111050001', 83, 84, 'B', 'B', 'B', NULL),
 (1484, 123, '3205210506050010', 75, 76, 'B', 'B', 'B', NULL),
 (1485, 123, '3204290310050000', 82, 85, 'B', 'B', 'B', NULL),
 (1486, 123, '3205216912850001', 72, 73, 'B', 'B', 'B', NULL),
@@ -91861,8 +91861,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1514, 121, '3205056106050010', 90, 85, 'B', 'B', 'B', NULL),
 (1515, 121, '3205176104040010', 93, 85, 'B', 'B', 'B', NULL),
 (1516, 121, '3205172407050000', 82, 82, 'B', 'B', 'B', NULL),
-(1517, 121, '3205210509050000', 84, 84, 'B', 'B', 'B', NULL),
-(1518, 121, '3205215611030000', 85, 84, 'A', 'B', 'B', NULL),
+(1517, 121, '3205210509050001', 84, 84, 'B', 'B', 'B', NULL),
+(1518, 121, '3205215611030001', 85, 84, 'A', 'B', 'B', NULL),
 (1519, 121, '3205214104060000', 82, 83, 'B', 'B', 'B', NULL),
 (1520, 121, '3201012707050001', 76, 77, 'C', 'B', 'B', NULL),
 (1521, 121, '3273055606810002', 80, 81, 'B', 'B', 'B', NULL),
@@ -91891,8 +91891,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1544, 117, '3205056106050010', 86, 90, 'B', 'B', 'A', NULL),
 (1545, 117, '3205176104040010', 87, 93, 'B', 'B', 'B', NULL),
 (1546, 117, '3205172407050000', 81, 85, 'B', 'B', 'B', NULL),
-(1547, 117, '3205210509050000', 88, 90, 'B', 'B', 'B', NULL),
-(1548, 117, '3205215611030000', 88, 95, 'B', 'B', 'B', NULL),
+(1547, 117, '3205210509050001', 88, 90, 'B', 'B', 'B', NULL),
+(1548, 117, '3205215611030001', 88, 95, 'B', 'B', 'B', NULL),
 (1549, 117, '3205214104060000', 82, 85, 'B', 'B', 'B', NULL),
 (1550, 117, '3201012707050001', 80, 85, 'B', 'B', 'B', NULL),
 (1551, 117, '3273055606810002', 80, 84, 'B', 'B', 'B', NULL),
@@ -91921,8 +91921,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1574, 122, '3205056106050010', 88, 80, 'B', 'B', 'B', NULL),
 (1575, 122, '3205176104040010', 89, 80, 'B', 'B', 'B', NULL),
 (1576, 122, '3205172407050000', 79, 78, 'B', 'B', 'B', NULL),
-(1577, 122, '3205210509050000', 91, 85, 'B', 'B', 'B', NULL),
-(1578, 122, '3205215611030000', 80, 85, 'B', 'B', 'B', NULL),
+(1577, 122, '3205210509050001', 91, 85, 'B', 'B', 'B', NULL),
+(1578, 122, '3205215611030001', 80, 85, 'B', 'B', 'B', NULL),
 (1579, 122, '3205214104060000', 80, 80, 'B', 'B', 'B', NULL),
 (1580, 122, '3201012707050001', 75, 75, 'C', 'C', 'C', NULL),
 (1581, 122, '3273055606810002', 80, 80, 'B', 'B', 'B', NULL),
@@ -91951,8 +91951,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1604, 118, '3205056106050010', 90, 75, 'B', 'B', 'B', NULL),
 (1605, 118, '3205176104040010', 90, 75, 'B', 'B', 'B', NULL),
 (1606, 118, '3205172407050000', 88, 70, 'B', 'B', 'B', NULL),
-(1607, 118, '3205210509050000', 90, 75, 'B', 'B', 'B', NULL),
-(1608, 118, '3205215611030000', 90, 75, 'B', 'B', 'B', NULL),
+(1607, 118, '3205210509050001', 90, 75, 'B', 'B', 'B', NULL),
+(1608, 118, '3205215611030001', 90, 75, 'B', 'B', 'B', NULL),
 (1609, 118, '3205214104060000', 90, 75, 'B', 'B', 'B', NULL),
 (1610, 118, '3201012707050001', 78, 70, 'B', 'B', 'B', NULL),
 (1611, 118, '3273055606810002', 80, 70, 'C', 'B', 'B', NULL),
@@ -91983,8 +91983,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1636, 119, '3205056106050010', 80, 78, 'B', 'B', 'B', NULL),
 (1637, 119, '3205176104040010', 83, 81, 'B', 'B', 'B', NULL),
 (1638, 119, '3205172407050000', 77, 79, 'B', 'B', 'B', NULL),
-(1639, 119, '3205210509050000', 77, 79, 'B', 'B', 'B', NULL),
-(1640, 119, '3205215611030000', 82, 78, 'B', 'B', 'B', NULL),
+(1639, 119, '3205210509050001', 77, 79, 'B', 'B', 'B', NULL),
+(1640, 119, '3205215611030001', 82, 78, 'B', 'B', 'B', NULL),
 (1641, 119, '3205214104060000', 80, 83, 'B', 'B', 'B', NULL),
 (1642, 119, '3201012707050001', 75, 78, 'C', 'B', 'C', NULL),
 (1643, 119, '3273055606810002', 80, 76, 'B', 'B', 'B', NULL),
@@ -92014,8 +92014,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1667, 124, '3205056106050010', 83, 80, 'B', 'B', 'B', NULL),
 (1668, 124, '3205176104040010', 86, 80, 'A', 'B', 'A', NULL),
 (1669, 124, '3205172407050000', 81, 80, 'A', 'B', 'A', NULL),
-(1670, 124, '3205210509050000', 84, 80, 'B', 'B', 'B', NULL),
-(1671, 124, '3205215611030000', 86, 80, 'B', 'B', 'A', NULL),
+(1670, 124, '3205210509050001', 84, 80, 'B', 'B', 'B', NULL),
+(1671, 124, '3205215611030001', 86, 80, 'B', 'B', 'A', NULL),
 (1672, 124, '3205214104060000', 79, 75, 'B', 'B', 'B', NULL),
 (1673, 124, '3201012707050001', 75, 75, 'B', 'B', 'B', NULL),
 (1674, 124, '3273055606810002', 79, 77, 'B', 'B', 'B', NULL),
@@ -92047,8 +92047,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1700, 120, '3205056106050010', 83, 82, 'A', 'B', 'B', NULL),
 (1701, 120, '3205176104040010', 81, 79, 'A', 'B', 'B', NULL),
 (1702, 120, '3205172407050000', 79, 81, 'B', 'B', 'B', NULL),
-(1703, 120, '3205210509050000', 80, 76, 'A', 'B', 'B', NULL),
-(1704, 120, '3205215611030000', 77, 77, 'A', 'B', 'B', NULL),
+(1703, 120, '3205210509050001', 80, 76, 'A', 'B', 'B', NULL),
+(1704, 120, '3205215611030001', 77, 77, 'A', 'B', 'B', NULL),
 (1705, 120, '3205214104060000', 78, 86, 'A', 'B', 'B', NULL),
 (1706, 120, '3201012707050001', 75, 75, 'B', 'B', 'B', NULL),
 (1707, 120, '3273055606810002', 79, 81, 'A', 'B', 'B', NULL),
@@ -92099,8 +92099,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1752, 125, '3205056106050010', 74, 74, 'B', 'B', 'B', NULL),
 (1753, 125, '3205176104040010', 75, 74, 'B', 'B', 'A', NULL),
 (1754, 125, '3205172407050000', 70, 70, 'B', 'B', 'B', NULL),
-(1755, 125, '3205210509050000', 78, 75, 'B', 'B', 'B', NULL),
-(1756, 125, '3205215611030000', 70, 75, 'B', 'B', 'B', NULL),
+(1755, 125, '3205210509050001', 78, 75, 'B', 'B', 'B', NULL),
+(1756, 125, '3205215611030001', 70, 75, 'B', 'B', 'B', NULL),
 (1757, 125, '3205214104060000', 70, 75, 'B', 'B', 'B', NULL),
 (1758, 125, '3201012707050001', 70, 70, 'B', 'B', 'B', NULL),
 (1759, 125, '3273055606810002', 72, 75, 'B', 'A', 'B', NULL),
@@ -92130,8 +92130,8 @@ INSERT INTO `leger_nilai` (`idLeger_nilai`, `idLeger`, `NIK_pd`, `nilai_pengetah
 (1783, 127, '3205056106050010', 82, 85, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
 (1784, 127, '3205176104040010', 89, 85, 'A', 'A', 'A', 'ditingkatkan kembali dalam mengajarnya '),
 (1785, 127, '3205172407050000', 80, 80, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
-(1786, 127, '3205210509050000', 84, 85, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
-(1787, 127, '3205215611030000', 88, 88, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1786, 127, '3205210509050001', 84, 85, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
+(1787, 127, '3205215611030001', 88, 88, 'A', 'B', 'B', 'ditingkatkan kembali dalam mengajarnya '),
 (1788, 127, '3205214104060000', 84, 84, 'A', 'A', 'A', 'ditingkatkan kembali dalam mengajarnya '),
 (1789, 127, '3201012707050001', 75, 85, 'C', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
 (1790, 127, '3273055606810002', 80, 80, 'B', 'B', 'B', 'Ditingkatkan kembali dalam belajarnya'),
@@ -92584,8 +92584,8 @@ CREATE TABLE `menu` (
   `icon` varchar(50) NOT NULL,
   `url` varchar(150) NOT NULL,
   `menu_id` varchar(150) NOT NULL,
-  `level_one` int(11) NOT NULL DEFAULT '0',
-  `level_two` int(11) NOT NULL DEFAULT '0'
+  `level_one` int(11) NOT NULL DEFAULT 0,
+  `level_two` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -92659,7 +92659,7 @@ CREATE TABLE `ortu_peserta_didik` (
 --
 
 INSERT INTO `ortu_peserta_didik` (`idOrtu_pd`, `NIK_pd`, `NIK_ayah`, `nama_ayah`, `tahun_lahir_ayah`, `pendidikan_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `NIK_ibu`, `nama_ibu`, `tahun_lahir_ibu`, `pendidikan_ibu`, `pekerjaan_ibu`, `penghasilan_ibu`) VALUES
-(8, '3275060701060002', '3275081511730015', 'Achsan Indriadi', '1973', 'S1', 'SWASTA', 'Rp.3.000.000-Rp.5.000.000', '3275086303720019', 'NINA MARLINA', '1972', 'S1', 'Tidak Bekerja', '>Rp.5.000.000'),
+(8, '3275060701060002', '1235', 'Achsan Indriadi', '1973', 'S1', 'SWASTA', 'Rp.3.000.000-Rp.5.000.000', '3275086303720019', 'NINA MARLINA', '1972', 'S1', 'Tidak Bekerja', '>Rp.5.000.000'),
 (9, '3205212702040000', '3205211002800002', 'Asep Setiawan', '1980', 'SMP', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205211007810005', 'Ade Ratna', '1981', 'SD', 'Tidak Bekerja', NULL),
 (10, '3205211809040000', '3205212003690001', 'Nasrudin', '1969', 'SMP', 'WIRASWASTA', 'Rp.1.500.000-Rp.2.000.000', '3205214105710002', 'Maryati', '1971', 'SD', 'Tidak Bekerja', NULL),
 (11, '3205211003060000', '3205213012790001', 'Dodo', '1979', 'SD', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205216309810003', 'Iis Nuraeni', '1981', 'SD', 'Tidak Bekerja', NULL),
@@ -92672,16 +92672,16 @@ INSERT INTO `ortu_peserta_didik` (`idOrtu_pd`, `NIK_pd`, `NIK_ayah`, `nama_ayah`
 (18, '3205172407050000', '3205170701540004', 'Cepi Nurjaman', '1984', 'SD', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3205175612830002', 'Ai Imas Umamah', '1983', 'SD', 'Tidak Bekerja', NULL),
 (19, '3205210911040000', '3205212411750001', 'Rusmana', '1974', NULL, 'SWASTA', NULL, '3205214909740001', 'Rahmatiya Sanang', '1974', NULL, 'Tidak Bekerja', NULL),
 (20, '3276055002040010', '3276052909800013', 'Abdul Rahman', '1980', 'SMA', 'WIRASWASTA', 'Rp.500.000-Rp.1000.000', '3276054601820011', 'Rina Almayanti', '1982', 'SMA', 'Tidak Bekerja', NULL),
-(21, '3204096003060000', NULL, 'Wardy', '1965', 'SMA', 'WIRASWASTA', '<Rp.500.000', '3204096003780008', 'Ida Karwati', '1978', 'SMP', 'Tidak Bekerja', NULL),
-(22, '3211116111050000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, '3204096003060003', NULL, 'Wardy', '1965', 'SMA', 'WIRASWASTA', '<Rp.500.000', '3204096003780008', 'Ida Karwati', '1978', 'SMP', 'Tidak Bekerja', NULL),
+(22, '3211116111050001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (23, '3207035502780000', '3207031311670001', 'Heri Supiansyah', '1267', 'SMA', 'WIRASWASTA', 'Rp.3.000.000-Rp.5.000.000', '3207035502780001', 'Vina Nafiyanti', '1978', 'SMA', 'Tidak Bekerja', NULL),
 (24, '3205210506050010', '3205211006810003', NULL, '1981', 'SD', NULL, NULL, NULL, 'Imas', '1984', 'SD', 'Tidak Bekerja', NULL),
-(25, '3205210509050000', NULL, 'Angwar Mulya', NULL, NULL, NULL, NULL, '3205215205680004', 'Aena', '1968', 'SD', 'Tidak Bekerja', NULL),
+(25, '3205210509050001', NULL, 'Angwar Mulya', NULL, NULL, NULL, NULL, '3205215205680004', 'Aena', '1968', 'SD', 'Tidak Bekerja', NULL),
 (26, '3204290310050000', '3204290701610002', 'Wawan Wandi', '1961', 'SMA', 'Tidak Bekerja', NULL, '3204294606690009', 'Lilis Dini Nurkolisoh', NULL, NULL, NULL, NULL),
 (27, '3205211404030000', '3205211703800002', 'Hendar', '1980', 'SD', 'WIRASWASTA', '<Rp.500.000', '3205214107630182', 'Yanti', '1983', 'SD', 'Tidak Bekerja', NULL),
 (28, '3205214408050010', '3205210107590029', 'Agus', '1959', 'SMP', 'WIRASWASTA', '<Rp.500.000', '3205215101690002', 'Mimih', '1969', 'SD', 'Tidak Bekerja', NULL),
-(29, '3204546070500000', '3204050108800004', 'Harri Wibawa', '1980', 'S1', 'WIRASWASTA', 'Rp.3.000.000-Rp.5.000.000', '3204054909790005', 'Eri Trisnawati', '1979', 'SMA', 'Tidak Bekerja', NULL),
-(30, '3205215611030000', '3205211307670002', 'Iya Suryadi', '1967', 'SD', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205214407690004', 'Omah', '1969', 'SD', 'Buruh', NULL),
+(29, '3204546070500003', '3204050108800004', 'Harri Wibawa', '1980', 'S1', 'WIRASWASTA', 'Rp.3.000.000-Rp.5.000.000', '3204054909790005', 'Eri Trisnawati', '1979', 'SMA', 'Tidak Bekerja', NULL),
+(30, '3205215611030001', '3205211307670002', 'Iya Suryadi', '1967', 'SD', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205214407690004', 'Omah', '1969', 'SD', 'Buruh', NULL),
 (31, '3205216912850001', '3205211911810001', 'Jajang Nurjaman', '1981', 'SD', 'Buruh', 'Rp.1.500.000-Rp.2.000.000', '3205216912850001', 'Dede Nurlela', '1985', 'SMP', 'Tidak Bekerja', NULL),
 (32, '3205214104060000', '3205210211750002', 'Suryana', '1975', 'SMP', 'Buruh', 'Rp.500.000-Rp.1000.000', '3205215109850003', 'Sumiati', '1985', 'SMP', 'Tidak Bekerja', NULL),
 (33, '3205074110940000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -92873,16 +92873,16 @@ INSERT INTO `peserta_didik` (`idPd`, `idSekolah`, `NIK_pd`, `tahun_angkatan`, `n
 (34, 1, '3205172407050000', 2017, '0055709712', '171807006', 'Ardy Putra Nurjaman', 'Laki-Laki', 'Garut', '2005-07-23', 'Islam', '', 32, 3205, 320517, '3205172018', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (35, 1, '3205210911040000', 2016, '5343345345', '161707018', 'Arya Prasetya', 'Laki-Laki', 'Timika', '2002-12-28', 'Islam', '', 32, 3205, 320504, '3205042010', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (36, 1, '3276055002040010', 2016, '0042312763', '161707003', 'Aryani Febriyanti', 'Perempuan', 'Garut', '2004-02-10', 'Islam', '', 32, 3276, 327608, '3276081003', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(37, 1, '3204096003060000', 2018, '0061540185', '181907005', 'Aulia Khoiru Nisa', 'Perempuan', 'Garut', '2006-03-20', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(38, 1, '3211116111050000', 2018, '0054198660', '181907034', 'Aulia Putri Madinah', 'Perempuan', 'Garut', '2005-11-21', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(37, 1, '3204096003060003', 2018, '0061540185', '181907005', 'Aulia Khoiru Nisa', 'Perempuan', 'Garut', '2006-03-20', 'Islam', '', 32, 3204, 320409, '3204092002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(38, 1, '3211116111050001', 2018, '0054198660', '181907034', 'Aulia Putri Madinah', 'Perempuan', 'Garut', '2005-11-21', 'Islam', '', 32, 3211, 321111, '3211112005', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (39, 1, '3207035502780000', 2018, '0053763240', '181907002', 'Azri Akbar Khoiri', 'Laki-Laki', 'Garut', '2005-05-01', 'Islam', '', 32, 3207, 320703, '3207032006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (40, 1, '3205210506050010', 2018, '0059695333', '181907035', 'Bayu Permana', 'Laki-Laki', 'Garut', '2005-05-05', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(41, 1, '3205210509050000', 2017, '6765475675', '171807008', 'Bima Budiarto Mulya', 'Laki-Laki', 'Garut', '2005-09-05', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(41, 1, '3205210509050001', 2017, '0054398460', '171807008', 'Bima Budiarto Mulya', 'Laki-Laki', 'Garut', '2005-09-05', 'Islam', '', 32, 3205, 320521, '3205212002', '08123456765454', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (42, 1, '3204290310050000', 2018, '0069548405', '181907036', 'Boyke Rofiqu Ikhwan', 'Laki-Laki', 'Garut', '2005-10-03', 'Islam', '', 32, 3204, 320429, '3204292002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (43, 1, '3205211404030000', 2016, '6798767545', '161707004', 'Cep Ilham  Nurhakim', 'Laki-Laki', 'Garut', '2003-04-14', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (44, 1, '3205214408050010', 2016, '5656756745', '161707005', 'Dea Anita', 'Perempuan', 'Garut', '2004-08-04', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(45, 1, '3204546070500000', 2018, '0052987578', '181907006', 'Devana Kayyisa Wibawa', 'Perempuan', 'Garut', '2005-07-06', 'Islam', '', 32, 3204, 320405, '3204052004', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(46, 1, '3205215611030000', 2017, '3035953200', '171807009', 'Devi Sapitri', 'Perempuan', 'Garut', '2003-11-16', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(45, 1, '3204546070500003', 2018, '0052987578', '181907006', 'Devana Kayyisa Wibawa', 'Perempuan', 'Garut', '2005-07-06', 'Islam', '', 32, 3204, 320405, '3204052004', '123454344543', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(46, 1, '3205215611030001', 2017, '3035953200', '171807009', 'Devi Sapitri', 'Perempuan', 'Garut', '2003-11-16', 'Islam', '', 32, 3205, 320521, '3205212006', '083101590816', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (47, 1, '3205216912850001', 2018, '0052033155', '181907037', 'Dewi Mulyani', 'Perempuan', 'Garut', '2005-05-06', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (48, 1, '3205214104060000', 2017, '5476575675', '171807010', 'Dinda Apriliani', 'Perempuan', 'Garut', '2006-04-01', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (49, 2, '3205074110940000', 2018, '0025423936', '181910046', 'Sela Selvia', 'Perempuan', 'Garut', '2002-11-22', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
@@ -92952,7 +92952,7 @@ INSERT INTO `peserta_didik` (`idPd`, `idSekolah`, `NIK_pd`, `tahun_angkatan`, `n
 (125, 1, '3205212310050001', 2017, '0056272792', '171807018', 'Mulana', 'Laki-Laki', 'Garut', '2005-10-23', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (126, 1, '3273282210050001', 2018, '0064402741', '181907051', 'Nabila Inten Pertiwi ', 'Perempuan', 'CIMAHI', '2005-10-22', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (127, 1, '3306025508060001', 2018, '0069049581', '181907020', 'Nabilah Affan Zahrotul Kasanah', 'Perempuan', 'Purworejo', '2006-08-15', 'Islam', '', 33, 3306, 330602, '3306022055', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
-(128, 1, '3210155806060062', 2018, '0068873945', '181907021', 'Naila Putri Ahmaliani', 'Perempuan', 'Majalengka', '2006-06-18', 'Islam', '', 32, 3210, 321015, '3210152006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
+(128, 1, '3210155806060062', 2018, '0068873945', '181907021', 'Naila Putri Ahmaliani', 'Perempuan', 'Majalengka', '2006-06-18', 'Islam', '', 32, 3210, 321015, '3210152006', '085219822141', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (129, 1, '3205215003040007', 2017, '0048561835', '171807019', 'Neli', 'Perempuan', 'Garut', '2004-03-10', 'Islam', '', NULL, NULL, NULL, '0', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (130, 1, '3205216809040001', 2017, '0049835844', '171807020', 'Nurmalasari', 'Perempuan', 'Garut', '2004-09-28', 'Islam', '', 32, 3205, 320521, '3205212006', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
 (131, 1, '3205210704090001', 2017, '0054805047', '171807021', 'Nyimas Rohmah Putriyani', 'Perempuan', 'Garut', '2005-06-09', 'Islam', '', 32, 3205, 320521, '3205212002', '', '', NULL, NULL, NULL, NULL, 'Aktif'),
@@ -93209,7 +93209,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1555619530, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
 (2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1558721308, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314'),
-(3, '::1', 'fajard', '$2y$08$iSx0LPd0We2xIwBtXj1qNuccFL/pcxmyVns7x5PpDch/zi4ju6N12', NULL, 'fajar0maulana@gmail.com', NULL, NULL, NULL, NULL, 1557525781, 1558662220, 1, 'Fajar ', 'Maulana', NULL, '081295794067'),
+(3, '::1', 'fajard', '$2y$08$iSx0LPd0We2xIwBtXj1qNuccFL/pcxmyVns7x5PpDch/zi4ju6N12', NULL, 'fajar0maulana@gmail.com', NULL, NULL, NULL, NULL, 1557525781, 1558920383, 1, 'Fajar ', 'Maulana', NULL, '081295794067'),
 (4, '192.168.43.249', 'wkelas7a', '$2y$08$jiRvLWUxeutQoHoP4ofOn.QHliNVMuxiIMuTHnx3/U0/tNbWXM9iK', NULL, 'iissn000@gmail.com', NULL, NULL, NULL, NULL, 1558449453, 1558683040, 1, 'Iis Siti', 'Nurfadilah', '', '0817262516152'),
 (5, '192.168.43.249', 'wkelas7b', '$2y$08$F/YSQOM8jafPH74eRFkoAeaxACnUxxSt1QDuDIeTJv2jWrv8K/zYO', NULL, 'fitrirahma111@gmail.com', NULL, NULL, NULL, NULL, 1558449549, 1558684286, 1, 'Fitri', 'Rahmawati', NULL, '094847363726'),
 (6, '192.168.43.249', 'wkelas8', '$2y$08$tPdEeVaFbGF4jZefqARFdu6Su/oNickGJgwpzP9RviyNKiLn6jkw.', NULL, 'risnar123@gmail.com', NULL, NULL, NULL, NULL, 1558449770, 1558684288, 1, 'risna', 'rahmawati', NULL, '0696867585757'),
@@ -93279,7 +93279,7 @@ CREATE TABLE `view_menu` (
 --
 DROP TABLE IF EXISTS `view_header_menu`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_header_menu`  AS  select `gh`.`id_groups` AS `id_groups`,`hm`.`id_header_menu` AS `id_header_menu`,`hm`.`header` AS `header`,`hm`.`sort` AS `sort` from (`groups_header` `gh` join `header_menu` `hm` on((`gh`.`id_header_menu` = `hm`.`id_header_menu`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_header_menu`  AS  select `gh`.`id_groups` AS `id_groups`,`hm`.`id_header_menu` AS `id_header_menu`,`hm`.`header` AS `header`,`hm`.`sort` AS `sort` from (`groups_header` `gh` join `header_menu` `hm` on(`gh`.`id_header_menu` = `hm`.`id_header_menu`)) ;
 
 -- --------------------------------------------------------
 
@@ -93288,7 +93288,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `view_menu`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_menu`  AS  select `gm`.`id_groups` AS `id_groups`,`m`.`id_menu` AS `id_menu`,`m`.`sort` AS `sort`,`m`.`id_header_menu` AS `id_header_menu`,`m`.`label` AS `label`,`m`.`icon` AS `icon`,`m`.`url` AS `url`,`m`.`menu_id` AS `menu_id`,`m`.`level_one` AS `level_one`,`m`.`level_two` AS `level_two` from (`groups_menu` `gm` join `menu` `m` on((`gm`.`id_menu` = `m`.`id_menu`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_menu`  AS  select `gm`.`id_groups` AS `id_groups`,`m`.`id_menu` AS `id_menu`,`m`.`sort` AS `sort`,`m`.`id_header_menu` AS `id_header_menu`,`m`.`label` AS `label`,`m`.`icon` AS `icon`,`m`.`url` AS `url`,`m`.`menu_id` AS `menu_id`,`m`.`level_one` AS `level_one`,`m`.`level_two` AS `level_two` from (`groups_menu` `gm` join `menu` `m` on(`gm`.`id_menu` = `m`.`id_menu`)) ;
 
 --
 -- Indexes for dumped tables

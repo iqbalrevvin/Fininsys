@@ -9,6 +9,36 @@ class GetData_m extends CI_Model {
 		return $execute;
 	}
 
+	public function dataPengaturan(){
+		$query = $this->db->get('settings');
+		$execute = $query->row();
+
+		return $execute;
+	}
+
+	public function getDataDesa(){
+		$query = $this->db->get('alamat_desa');
+		$execution = $query->result();
+		return $execution;
+	}
+	public function getDataKecamatan(){
+		$query = $this->db->get('alamat_kecamatan');
+		$execution = $query->result();
+		return $execution;
+	}
+
+	public function getDataKabupaten(){
+		$query = $this->db->get('alamat_kabupaten');
+		$execution = $query->result();
+		return $execution;
+	}
+
+	public function getDataProvinsi(){
+		$query = $this->db->get('alamat_provinsi');
+		$execution = $query->result();
+		return $execution;
+	}
+
 }
 
 /* End of file GetData.php */

@@ -151,7 +151,7 @@
 													<span class="m-nav__section-text">Cetak Halaman Raport</span>
 												</li>
 												<li class="m-nav__item">
-													<a href="<?= base_url('Raport/CetakRaport/SelfPrint?StudentID='.$list->NIK_pd.'&MasterID='.$idMasterLeger) ?>" 
+													<a href="<?= base_url('Raport/CetakRaport/SelfPrintCover?StudentID='.$list->NIK_pd.'&MasterID='.$idMasterLeger) ?>" 
                                                     class="m-nav__link" target="_blank">
 														<i class="m-nav__link-icon flaticon-notes"></i>
 														<span class="m-nav__link-text">Hal. Cover</span>
