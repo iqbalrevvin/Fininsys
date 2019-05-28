@@ -17,21 +17,18 @@ class CetakRaport extends CI_Controller {
 
 	public function SelfPrint(){
 		$data = [];
-        $html=$this->load->view('CetakRaport/testMpdf.php', $data, true);
+        $html=$this->load->view('CetakRaport/RaportIndividu/Cover/hal1', $data, true);
         $pdfFilePath = "output_pdf_name.pdf";
         $this->m_pdf->pdf->WriteHTML($html);
         $this->m_pdf->pdf->Output('test.pdf', 'I');   
     }
 
     public function selfPrintCover(){
-        $siswaID                    = $this->input->get('StudentID');
-        $masterID                   = $this->input->get('MasterID');
-        $data['pengaturan']         = $this->GetData_m->dataPengaturan();
-        $data['identitasSekolah']   = $this->CetakRaport_m->getIdentitasSekolah($masterID);
-        $data['identitasPD']        = $this->CetakRaport_m->getIdentitasPD($siswaID);
-        #$data['test']               = $NIK; 
-        
-        $this->load->view('CetakRaport/test', $data);
+        $data = [];
+        $html=$this->load->view('CetakRaport/testMpdf.php', $data, true);
+        $pdfFilePath = "output_pdf_name.pdf";
+        $this->m_pdf->pdf->WriteHTML($html);
+        $this->m_pdf->pdf->Output('test.pdf', 'I');   
 
     }
 
