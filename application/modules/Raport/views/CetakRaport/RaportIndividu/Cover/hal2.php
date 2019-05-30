@@ -1,0 +1,1 @@
+<?= $kontenHal2->konten_pengaturan ?>

@@ -204,6 +204,7 @@
 	      	var kelas 		= $('#pilihKelas').val();
 	      	var angkatan 	= $('#pilihAngkatan').val();
 	      	var semester 	= $('#pilihSemester').val();
+	      	var titimangsa 	= $('#titimangsaRaport').val();
 	      	$.ajax({
 		          url: '<?= base_url('Raport/RaportKelas/tampilSiswaKelas') ?>',
 		          type: 'POST',
@@ -212,6 +213,7 @@
 		          	angkatan 	: angkatan,
 		          	idKelas 	: kelas,
 		          	semester 	: semester,
+		          	titimangsa  : titimangsa,
 		            show 		: 1
 		          },
 		          	success: function(response){

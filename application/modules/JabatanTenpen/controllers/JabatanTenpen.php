@@ -16,9 +16,12 @@ class JabatanTenpen extends CI_Controller {
 
 		$crud->set_table('jabatan_tenpen');
 		$crud->set_subject('Jabatan Tenaga Pendidik');
+		$crud->display_as('idSekolah', 'Sekolah');
 		$crud->display_as('NIK_tenpen', 'Tenaga Pendidik');
 		$crud->display_as('idJabatan', 'Jabatan');
 		$crud->order_by('NIK_tenpen', 'asc');
+
+		$crud->set_relation('idSekolah','sekolah','nama_sekolah');
 
 		/*LIST DATA TENAGA PENDIDIK*/
 		$listTenpen = $this->TenagaPendidik_m->getTenpen();
@@ -28,7 +31,6 @@ class JabatanTenpen extends CI_Controller {
 		}
 		$crud->field_type('NIK_tenpen','dropdown',$finalArray);
 		/*----------------------------------------------------*/
-
 
 		/*LIST DATA JABATAN*/
 		$listJabatan = $this->JabatanTenpen_m->getJabatan();

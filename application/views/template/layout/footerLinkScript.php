@@ -11,11 +11,16 @@
 <script src="<?php //echo base_url('assets/vendors/bootstrap-fileupload/bootstrap-fileupload.js') ?>"></script>
 
 <!---///////////////////////////////////////////////////-->
+<?php if ($this->uri->segment(1) == 'PageEditor'): ?>
 
+<script src="<?= base_url('assets/vendors/tinymce/tinymce.min.js') ?>" type="text/javascript"></script>
+<?php endif; ?>
 <!--Alertify JS-->
 <script src="<?= base_url('assets/js/alertify.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/vendors.bundle.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/scripts.bundle.js') ?>" type="text/javascript"></script>
+
+
 
 <?php if ($this->uri->segment(1) == 'ManajemenKelas' || $this->uri->segment(1) == 'LegerNilai'): ?>
   <script src="<?= base_url('assets/vendors/datatables-metronic/datatables.bundle.js') ?>" type="text/javascript"></script>

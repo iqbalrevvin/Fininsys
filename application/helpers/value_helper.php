@@ -10,3 +10,23 @@ if (! function_exists('value')){
 		return $getValue;
 	}
 }
+if(! function_exists('valueRaport')){
+	function valueRaport($value){
+		if($value == ''){
+			$getValue = '-';
+		}else{
+			$getValue = $value;
+		}
+		return $getValue;
+	}
+}
+if(! function_exists('valueRaport2')){
+	function valueRaport2($value){
+		if($value == ''){
+			$getValue = '(Belum Ditetapkan)';
+		}else{
+			$getValue = $value;
+		}
+		return $getValue;
+	}
+}

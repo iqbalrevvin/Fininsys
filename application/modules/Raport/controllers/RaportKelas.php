@@ -9,6 +9,7 @@ class RaportKelas extends CI_Controller {
 		$this->load->model('ListData_m');
 		$this->load->model('Raport_m');
 		$this->load->helper('value_helper');
+		$this->load->helper('tglindo_helper');
 	}
 	public function index(){	
 		$listSekolah 			= $this->ListData_m->listSekolah();
@@ -70,16 +71,19 @@ class RaportKelas extends CI_Controller {
 		$angkatan 					= $this->input->post('angkatan');
 		$idKelas 					= $this->input->post('idKelas');
 		$semester 					= $this->input->post('semester');
+		$titimangsa 				= $this->input->post('titimangsa');
 		$masterLeger 				= $this->Raport_m->identiMasterLeger($idKelas, $angkatan, $semester);
 		//$dataSiswa 				= $this->Raport_m->tampilSiswaKelas($angkatan, $idKelas);
 		$dataSiswa					= $this->Raport_m->tampilSiswaKelas($masterLeger);
 		$data['dataSiswa'] 			= $dataSiswa;
 		$data['semester'] 			= $semester;
 		$data['idMasterLeger'] 		= $masterLeger;
+		$data['titimangsa'] 		= $titimangsa;
 		//$data['dataTest'] 			= $dataTest;
 
 		$this->load->view('RaportKelas/daftarSiswa', $data, FALSE);
 	}
+
 
 }
 

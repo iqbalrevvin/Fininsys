@@ -10,7 +10,7 @@ class PageEditor extends CI_Controller {
 
 	public function index(){
 		$data['judul'] 	= "Editor Halaman";
-		$view 			= 'listEditorViewer';
+		$view 			= 'editorViewer';
 		$template 		= 'admin_template';
 		$this->outputview->output_admin($view, $template, $data);
 	}
