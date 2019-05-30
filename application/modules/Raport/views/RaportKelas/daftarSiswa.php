@@ -91,14 +91,15 @@
         <tr>
             <th data-field="no">#</th>
             <th data-field="nipd">NIPD</th>
-            <th data-field="nisn">NISN</th>
+    
             <th data-field="namaPesertaDidik">Nama Peserta Didik</th>
             <th data-field="jenisKelamin">JK</th>
             <th data-field="jmlMapel">Jml Mapel</th>
             <th data-field="jmlNilaiPengetahuan">Jml Nilai Pengetahuan</th>
             <th data-field="jmlNilaiKeterampilan">Jml Nilai Keterampilan</th>
             <th data-field="peringkat">Peringkat</th>
-            <th data-field="action">Act</th>
+            <th data-field="cetakRaport">Cetak Raport</th>
+            <th data-field="rekapAbsen">Act</th>
         </tr>
     </thead>
     <tbody>
@@ -124,7 +125,6 @@
            <tr data-id=>
                 <td><?= $no++ ?></td>
                 <td><?= value($list->nipd) ?></td>
-                <td><?= value($list->nisn) ?></td>
                 <td><b><?= $list->nama_pd ?></b></td>
                 <td><?= $list->jk_pd ?></td>
                 <td><b><?= $countMapel ?></b></td>
@@ -181,8 +181,45 @@
 								<span class="m-dropdown__arrow m-dropdown__arrow--left"></span>
 							</div>
 						</div>
-					</div>
+					</div> 
                 </td>
+                <td>
+                    <a href="#" class="btn btn-info btn-sm" data-toggle="modal" data-backdrop="static"
+                        data-target="#modalRekapAbsen<?= $list->NIK_pd ?>" title="Rekap Absen">
+                        Rekap Absen
+                    </a>
+                </td>
+                <div class="modal fade" id="modalRekapAbsen<?= $list->NIK_pd ?>" tabindex="-1" role="dialog" 
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title" id="exampleModalLabel">
+                                    Rekap Absen <b><?= $list->nama_pd ?></b><br>Semester <b><?= $semester ?></b>
+                                </h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="m-portlet m-portlet--mobile" id="">
+                                 <div class="m-portlet__body">
+                                    <p>Isi Rekapitulasi Absen Peserta Didik Untuk Ditampilan Pada Raport</p>
+                                    <ul>
+                                        <li>
+                                            Jumlah Alpa : <a href="#" class="jumlahAlpa"
+                                            data-type="number" data-placement="left" data-title="Jumlah Alpa" 
+                                            data-name="jumlah_alpa" 
+                                            data-pk=''>
+                                            20
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- END EXAMPLE TABLE PORTLET-->
+                        </div>
+                    </div>
+                </div>
             </tr>
          <?php endforeach ?>
     </tbody>
@@ -216,6 +253,23 @@
 <!--end: Datatable -->
 
 <script>
+$('.jumlahAlpa').editable({
+        //id : $(this).data('id'),
+        anim : 'true',
+        onblur : 'submit',
+        showbuttons: false,
+        mode: 'inline',   
+        type: 'number',
+        step: '1.00',
+        min: '0.00',
+        max: '100',
+        emptytext: 'Kosong',
+        title: 'Enter Value',
+        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
+        ajaxOptions: {
+            type: 'POST',
+        }
+    });
 
 var DatatableHtmlTableDemo = {
     init: function() {
@@ -334,10 +388,17 @@ var DatatableHtmlTableDemo = {
                     //responsive: {visible: 'lg'},
                 },
                 {
-                    field: "action",
+                    field: "cetakRaport",
                     //sortable: 'asc',
                     textAlign: "left",
-                    width: 150,
+                    width: 100,
+                    //responsive: {visible: 'lg'},
+                },
+                {
+                    field: "rekapAbsen",
+                    //sortable: 'asc',
+                    textAlign: "left",
+                    width: 100,
                     //responsive: {visible: 'lg'},
                 },
                 

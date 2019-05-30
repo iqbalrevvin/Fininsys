@@ -41,7 +41,7 @@ class CetakRaport extends CI_Controller {
         ];
         /*INIT PDF*/
         $pdf            = $this->m_pdf->pdf;
-        $pdfFileName    = "Raport-".$siswaID.".pdf";
+        $pdfFileName    = "RaportCover-".$siswaID.".pdf";
         /*-----------------------------------------*/
         /*INIT PAGE*/
         $hal1           = $this->load->view('CetakRaport/RaportIndividu/Cover/hal1', $data, true);
@@ -70,7 +70,7 @@ class CetakRaport extends CI_Controller {
         ];
         /*INIT PDF*/
         $pdf            = $this->m_pdf->pdf;
-        $pdfFileName    = "Raport-".$siswaID.".pdf";
+        $pdfFileName    = "RaportIdentitas-".$siswaID.".pdf";
         /*-----------------------------------------*/
         /*INIT PAGE*/
         $hal1           = $this->load->view('CetakRaport/RaportIndividu/Identitas/hal1', $data, true);
@@ -80,7 +80,6 @@ class CetakRaport extends CI_Controller {
         $pdf->WriteHTML($hal1);
         /*--------------------------------------*/
         $pdf->Output($pdfFileName, 'I');   
- 
     }
 
 }
