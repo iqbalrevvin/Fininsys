@@ -158,9 +158,9 @@
 													</a>
 												</li>
 												<li class="m-nav__item">
-													<a href="" class="m-nav__link">
+													<a href="<?= base_url('Raport/CetakRaport/SelfPrintIdentity?StudentID='.$list->NIK_pd.'&MasterID='.$idMasterLeger) ?>&DateOfDistribution=<?= date_indo($titimangsa) ?>" class="m-nav__link" target="_blank">
 														<i class="m-nav__link-icon flaticon-file-2"></i>
-														<span class="m-nav__link-text">Hal. Biodata</span>
+														<span class="m-nav__link-text">Hal. Identitas</span>
 													</a>
 												</li>
 												<li class="m-nav__item">
