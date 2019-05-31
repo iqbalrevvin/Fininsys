@@ -44,5 +44,6 @@
 	<?= $identitasSekolah->alamat_sekolah ?> Ds./Kel. <?= $identitasSekolah->desa_sekolah ?><br>
 	Kec. <?= $identitasSekolah->kecamatan_sekolah ?> Kab/Kota <?= $identitasSekolah->kabupaten_sekolah ?><br>
 	Prov. <?= $identitasSekolah->provinsi_sekolah ?><br>
-	<?= date('Y') ?>
+	<?= date("Y",strtotime($titimangsa)) ?>
+
 </p>

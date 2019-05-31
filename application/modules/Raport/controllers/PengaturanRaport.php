@@ -13,8 +13,8 @@ class PengaturanRaport extends CI_Controller {
 
 		$crud->set_table('pengaturan_raport');
 		$crud->set_subject('Pengaturan Raport');
-		$crud->unset_add();
-		$crud->unset_delete();
+		/*$crud->unset_add();
+		$crud->unset_delete();*/
 
 		$output = $crud->render();
 		$data['judul'] 	= 'Pengaturan Raport';

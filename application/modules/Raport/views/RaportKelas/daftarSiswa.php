@@ -151,24 +151,32 @@
 													<span class="m-nav__section-text">Cetak Halaman Raport</span>
 												</li>
 												<li class="m-nav__item">
-													<a href="<?= base_url('Raport/CetakRaport/SelfPrintCover?StudentID='.$list->NIK_pd.'&MasterID='.$idMasterLeger) ?>&DateOfDistribution=<?= date_indo($titimangsa) ?>" 
+													<a href="<?= base_url('Raport/CetakRaport/SelfPrintCover?StudentID='.$list->NIK_pd.'&MasterID='.$idMasterLeger) ?>&DateOfDistribution=<?= $titimangsa ?>" 
                                                     class="m-nav__link" target="_blank">
 														<i class="m-nav__link-icon flaticon-notes"></i>
 														<span class="m-nav__link-text">Hal. Cover</span>
 													</a>
 												</li>
 												<li class="m-nav__item">
-													<a href="<?= base_url('Raport/CetakRaport/SelfPrintIdentity?StudentID='.$list->NIK_pd.'&MasterID='.$idMasterLeger) ?>&DateOfDistribution=<?= date_indo($titimangsa) ?>" class="m-nav__link" target="_blank">
+													<a href="<?= base_url('Raport/CetakRaport/SelfPrintIdentity?StudentID='.$list->NIK_pd.'&MasterID='.$idMasterLeger) ?>&DateOfDistribution=<?= $titimangsa ?>" class="m-nav__link" target="_blank">
 														<i class="m-nav__link-icon flaticon-file-2"></i>
 														<span class="m-nav__link-text">Hal. Identitas</span>
 													</a>
 												</li>
 												<li class="m-nav__item">
-													<a href="" class="m-nav__link">
+													<a href="<?= base_url('Raport/CetakRaport/SelfPrintNilai?StudentID='.$list->NIK_pd.'&MasterID='.$idMasterLeger) ?>&Semester=<?= $semester ?>&DateOfDistribution=<?= $titimangsa ?>" 
+                                                        class="m-nav__link" target="_blank">
 														<i class="m-nav__link-icon flaticon-statistics"></i>
 														<span class="m-nav__link-text">Hal. Nilai</span>
 													</a>
 												</li>
+                                                <li class="m-nav__item">
+                                                    <a href="<?= base_url('Raport/CetakRaport/SelfPrintBundle?StudentID='.$list->NIK_pd.'&MasterID='.$idMasterLeger) ?>&Semester=<?= $semester ?>&DateOfDistribution=<?= $titimangsa ?>" 
+                                                        class="m-nav__link" target="_blank">
+                                                        <i class="m-nav__link-icon flaticon-layers"></i>
+                                                        <span class="m-nav__link-text">Hal. Keseluruhan</span>
+                                                    </a>
+                                                </li>
 												<!-- <li class="m-nav__separator m-nav__separator--fit">
 												</li> -->
 												<!-- <li class="m-nav__item">

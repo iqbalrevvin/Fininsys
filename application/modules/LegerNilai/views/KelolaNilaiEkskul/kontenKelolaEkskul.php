@@ -32,9 +32,9 @@
 			                <div class="m-widget3__header">
 			                    <div class="m-widget3__info">
 			                        <span class="m-widget3__username">
-			                            <b>(<?= $data->no_urut_ekskul ?>)<?= $data->ekstrakulikuler ?></b> 
-			                            | <?= $data->pembimbing ?>
-			                        </span><br>
+			                            <b>(<?= $data->no_urut_ekskul ?>)<?= $data->ekstrakulikuler ?></b><br>
+			                            Pembina : <?= $data->pembimbing ?>
+			                        </span>
 			                        <span class="m-widget3__time">
 			                            &nbsp;<br>
 			                            <a href="#" class="btnKelolaNilai btn btn-sm btn-success m-btn m-btn--pill m-btn--air" 

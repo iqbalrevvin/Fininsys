@@ -3,7 +3,7 @@
 function semester($tglMasuk, $jmlSmst){
   date_default_timezone_set('Asia/Jakarta');
   $date 		= date("Y-m-d");
-  $tglMasuk 	= $tglMasuk."-06-20";
+  $tglMasuk 	= $tglMasuk."-07-01";
   $timeStart = strtotime($tglMasuk);
     $timeEnd = strtotime("$date");
     // Menambah bulan ini + semua bulan pada tahun sebelumnya

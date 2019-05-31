@@ -6,7 +6,7 @@ function grade($tglMasuk, $jmlSmst){
   if($tglMasuk == NULL){
     $grade = '...';
   }else{
-    $tglMasuk   = $tglMasuk."-06-20";
+    $tglMasuk   = $tglMasuk."-07-01";
     $timeStart  = strtotime($tglMasuk);
     $timeEnd  = strtotime("$date");
     // Menambah bulan ini + semua bulan pada tahun sebelumnya
