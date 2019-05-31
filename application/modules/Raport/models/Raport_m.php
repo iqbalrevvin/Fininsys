@@ -130,6 +130,26 @@ class Raport_m extends CI_Model {
  		return $execute;
  	}
 
+ 	public function rekapAbsen($NIK_pd, $semester){
+ 		$query = $this->db->get_where('rekap_absen_peserta_didik', ['NIK_pd' => $NIK_pd, 'semester' => $semester]);
+ 		$execute = $query->row();
+ 		return $execute;
+ 	}
+
+ 	public function updateRekapAbsen($data, $pk){
+ 		$this->db->select('*');
+		$this->db->from('rekap_absen_peserta_didik');
+		$this->db->where('idRekap_absen', $pk);
+		$cekNilai = $this->db->get();
+		$jmlCek = $cekNilai->num_rows();
+		if($jmlCek == 0){
+			$execute = $this->db->insert('rekap_absen_peserta_didik', $data);
+		}else{
+			$this->db->where('idRekap_absen', $pk);
+			$execute = $this->db->update('rekap_absen_peserta_didik', $data);
+		}
+		return $execute;
+ 	}
 
 }
 

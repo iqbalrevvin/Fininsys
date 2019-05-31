@@ -167,6 +167,27 @@ class LegerNilai_m extends CI_Model {
 		return $jmlCek;
 	}
 
+	public function dataSemester($idMasterLeger){
+		$query 		= $this->db->get_where('master_leger', ['idMaster_leger' => $idMasterLeger]);
+		$execute 	= $query->row()->semester;
+		return $execute;
+	}
+
+	public function inputAbsen($dataAbsen){
+		$this->db->select('*');
+		$this->db->from('rekap_absen_peserta_didik');
+		$this->db->where('NIK_pd', $dataAbsen['NIK_pd']);
+		$this->db->where('semester', $dataAbsen['semester']);
+		$query 		= $this->db->get();
+		$cekData 	= $query->num_rows();
+		if($cekData == 0){
+			$execute = $this->db->insert('rekap_absen_peserta_didik', $dataAbsen);
+		}else{
+			$execute = '';
+		}
+		return $execute;
+
+	}
 
 	public function tambahNilaiSiswa($data){
 		$this->db->select('*');
@@ -267,6 +288,7 @@ class LegerNilai_m extends CI_Model {
 		$execute 	= $query->result();
 		return $execute; 
 	}
+
 
 	public function tambahNilaiEkskulSiswa($data){
 		$this->db->select('*');

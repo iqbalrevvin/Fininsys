@@ -84,6 +84,16 @@ class RaportKelas extends CI_Controller {
 		$this->load->view('RaportKelas/daftarSiswa', $data, FALSE);
 	}
 
+	public function updateRekapAbsen(){
+		$field 	= $this->input->post('name');
+		$pk 	= $this->input->post('pk');
+		$value 	= $this->input->post('value');
+		$data = [
+		    $field => $value
+		];
+		$this->Raport_m->updateRekapAbsen($data, $pk);
+	}
+
 
 }
 

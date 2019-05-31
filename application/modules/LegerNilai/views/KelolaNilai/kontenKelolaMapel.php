@@ -42,7 +42,8 @@
 			                            <a href="#" class="btnKelolaNilai btn btn-sm btn-success m-btn m-btn--pill m-btn--air" 
 					                    	data-kelas="<?= $data->idKelas ?>" data-leger="<?= $data->idLeger ?>" 
 					                    	data-mapel="<?= $data->nama_mata_pelajaran ?>" 
-					                    	data-angkatan="<?= $data->tahun_angkatan ?>">
+					                    	data-angkatan="<?= $data->tahun_angkatan ?>"
+					                    	data-master="<?= $data->idMaster_leger ?>">
 					                        <b>Kelola Nilai</b>
 					                    </a>
 					                    <button class="btnHapusMapel btn btn-sm btn-danger m-btn m-btn--pill m-btn--air" 
@@ -118,6 +119,7 @@
 	    	var namaMapel			= $(this).data('mapel');
 	    	var idLeger				= $(this).data('leger');
 	    	var angkatan 			= $(this).data('angkatan');
+	    	var idMaster 			= $(this).data('master');
 	    	$.ajax({
 	          url: '<?= base_url('LegerNilai/getKontenKelolaNilai') ?>',
 	          type: 'POST',
@@ -127,7 +129,8 @@
 	          	idLeger 	: idLeger,
 	          	namaMapel 	: namaMapel,
 	          	angkatan 	: angkatan,
-	            show: 1
+	          	idMaster 	: idMaster,
+	            show 		: 1
 	          },
 	          	success: function(response){
 	              	$('#resultKontenKelolaNilai').fadeIn("slow").html(response);

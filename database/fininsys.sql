@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 29, 2019 at 01:47 AM
--- Server version: 10.2.24-MariaDB
--- PHP Version: 7.2.7
+-- Host: 127.0.0.1
+-- Generation Time: May 31, 2019 at 03:04 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u5883191_fininsys`
+-- Database: `fininsys`
 --
 
 -- --------------------------------------------------------
@@ -323,6 +323,18 @@ INSERT INTO `detail_tenaga_pendidik` (`idDetail_tenpen`, `NIK_tenpen`, `NUPTK`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `editor_page`
+--
+
+CREATE TABLE `editor_page` (
+  `idEditor_page` int(11) NOT NULL,
+  `title` varchar(150) NOT NULL,
+  `content` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ekstrakulikuler`
 --
 
@@ -492,7 +504,12 @@ INSERT INTO `groups_menu` (`id_groups`, `id_menu`) VALUES
 (1, 133),
 (3, 133),
 (1, 134),
-(3, 134);
+(3, 134),
+(3, 135),
+(1, 136),
+(3, 136),
+(1, 137),
+(3, 137);
 
 -- --------------------------------------------------------
 
@@ -554,6 +571,7 @@ INSERT INTO `jabatan` (`idJabatan`, `nama_jabatan`, `keterangan_jabatan`) VALUES
 
 CREATE TABLE `jabatan_tenpen` (
   `idJabatan_tenpen` int(111) NOT NULL,
+  `idSekolah` int(11) DEFAULT NULL,
   `NIK_tenpen` char(16) DEFAULT NULL,
   `idJabatan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -562,13 +580,14 @@ CREATE TABLE `jabatan_tenpen` (
 -- Dumping data for table `jabatan_tenpen`
 --
 
-INSERT INTO `jabatan_tenpen` (`idJabatan_tenpen`, `NIK_tenpen`, `idJabatan`) VALUES
-(15, '3205081706920001', 6),
-(16, '3205062012940013', 6),
-(17, '3205054909940006', 6),
-(18, '3205205502940004', 6),
-(19, '3205020801950006', 6),
-(20, '3205081706920001', 7);
+INSERT INTO `jabatan_tenpen` (`idJabatan_tenpen`, `idSekolah`, `NIK_tenpen`, `idJabatan`) VALUES
+(15, 1, '3205081706920001', 6),
+(16, 1, '3205062012940013', 6),
+(17, 1, '3205054909940006', 6),
+(18, 1, '3205205502940004', 6),
+(19, 1, '3205020801950006', 6),
+(20, 1, '3205081706920001', 7),
+(22, 1, '1803141911870002', 1);
 
 -- --------------------------------------------------------
 
@@ -8276,7 +8295,7 @@ INSERT INTO `kelompok_mapel` (`idKelompok_mapel`, `nama_kelompok_mapel`, `ketera
 CREATE TABLE `kelurahan` (
   `id_kel` char(10) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `id_kec` char(6) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
-  `nama_kelurahan` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `nama_kelurahan` tinytext CHARACTER SET latin1 COLLATE latin1_general_ci,
   `id_jenis` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -90988,7 +91007,7 @@ CREATE TABLE `leger_nilai` (
   `nilai_sikap` char(1) DEFAULT NULL,
   `nilai_sosial` char(1) DEFAULT NULL,
   `nilai_spritual` char(1) DEFAULT NULL,
-  `catatan` text DEFAULT NULL
+  `catatan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -92584,8 +92603,8 @@ CREATE TABLE `menu` (
   `icon` varchar(50) NOT NULL,
   `url` varchar(150) NOT NULL,
   `menu_id` varchar(150) NOT NULL,
-  `level_one` int(11) NOT NULL DEFAULT 0,
-  `level_two` int(11) NOT NULL DEFAULT 0
+  `level_one` int(11) NOT NULL DEFAULT '0',
+  `level_two` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -92629,7 +92648,10 @@ INSERT INTO `menu` (`id_menu`, `sort`, `id_header_menu`, `label`, `icon`, `url`,
 (128, 2, 3, 'Kelola Leger Nilai', 'line-graph', 'LegerNilai', '', 127, 0),
 (129, 0, 3, 'Jabatan Tenaga Pendidik', 'customer', 'JabatanTenpen', '', 0, 0),
 (130, 1, 3, 'Atur Nilai Deskripsi', 'doc', 'DeskripsiNilai', '', 127, 0),
-(134, 3, 3, 'E-Raport', 'graphic', 'Raport/RaportKelas', '', 127, 0);
+(134, 3, 3, 'E-Raport', 'graphic', '#', '', 127, 0),
+(135, 7, 1, 'Editor Halaman', 'edit', 'PageEditor', '', 0, 0),
+(136, 1, 3, 'Pengaturan Raport', 'settings', 'Raport/PengaturanRaport', '', 127, 134),
+(137, 2, 3, 'Cetak Raport', 'doc', 'Raport/RaportKelas', '', 127, 134);
 
 -- --------------------------------------------------------
 
@@ -92822,6 +92844,25 @@ INSERT INTO `ortu_tenaga_pendidik` (`idOrtu_tenpen`, `NIK_tenpen`, `nama_ayah`, 
 (19, '3205172306950002', NULL, NULL, NULL, NULL),
 (20, '4323354635234323', NULL, NULL, NULL, NULL),
 (21, '3205324307950001', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengaturan_raport`
+--
+
+CREATE TABLE `pengaturan_raport` (
+  `idPengaturan_raport` int(11) NOT NULL,
+  `jenis_pengaturan` varchar(200) NOT NULL,
+  `konten_pengaturan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pengaturan_raport`
+--
+
+INSERT INTO `pengaturan_raport` (`idPengaturan_raport`, `jenis_pengaturan`, `konten_pengaturan`) VALUES
+(1, 'PetunjukPenggunaan', '<p><strong>PETUNJUK PENGGUNAAN</strong></p>\n\n<ol>\n	<li>Laporan Hasil Belajar merupakan ringkasan hasil penilaian terhadap seluruh aktivitas pembelajaran yang dilakukan siswa dalam kurun waktu tertentu. Laporan Hasil Belajar dipergunakan selama siswa yang bersangkutan mengikuti seluruh program pembelajaran di Sekolah.</li>\n	<li>Buku Laporan Hasil Belajar ini digunakan selama peserta didik mengikuti pembelajaran di Sekolah.</li>\n	<li>Apabila buku Laporan Hasil Belajar peserta didik hilang, dapat diganti dengan buku LaporanHasil Belajar Pengganti dan diisi dengan nilai-nilai yang dikutip dari Buku Induk Sekolah asalpeserta didik dan disahkan oleh Kepala Sekolah yang bersangkutan.</li>\n	<li>Apabila ada kesalahan dalam dalam Laporan Hasil Belajar Peserta Didik mohon untuk mengonfirmasikan kesalahan tersebut kepada pihak wali kelas.</li>\n	<li>Buku Laporan Hasil Belajar peserta didik ini harus dilengkapi dengan pas foto terbaru ukuran 4x6 cm, dan pengisiannya dilakukan oleh wali kelas.</li>\n</ol>\n');
 
 -- --------------------------------------------------------
 
@@ -93058,6 +93099,139 @@ INSERT INTO `provinsi` (`id_prov`, `nama_provinsi`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rekap_absen_peserta_didik`
+--
+
+CREATE TABLE `rekap_absen_peserta_didik` (
+  `idRekap_absen` int(11) NOT NULL,
+  `semester` int(2) DEFAULT NULL,
+  `NIK_pd` char(16) DEFAULT NULL,
+  `jumlah_alpa` int(3) DEFAULT NULL,
+  `jumlah_izin` int(3) DEFAULT NULL,
+  `jumlah_sakit` int(3) DEFAULT NULL,
+  `jumlah_terlambat` int(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rekap_absen_peserta_didik`
+--
+
+INSERT INTO `rekap_absen_peserta_didik` (`idRekap_absen`, `semester`, `NIK_pd`, `jumlah_alpa`, `jumlah_izin`, `jumlah_sakit`, `jumlah_terlambat`) VALUES
+(1, 2, '3275060701060002', 0, 0, 0, 0),
+(2, 2, '3211116207070000', 0, 0, 0, 0),
+(3, 2, '3211116111050001', 0, 0, 0, 0),
+(4, 2, '3205210506050010', 0, 0, 0, 0),
+(5, 2, '3204290310050000', 0, 0, 0, 0),
+(6, 2, '3205216912850001', 0, 0, 0, 0),
+(7, 2, '3205172311050002', 0, 0, 0, 0),
+(8, 2, '3204080902060002', 0, 0, 0, 0),
+(9, 2, '1007362003002732', 0, 0, 0, 0),
+(10, 2, '3273265906050001', 0, 0, 0, 0),
+(11, 2, '7303022706060001', 0, 0, 0, 0),
+(12, 2, '3205417009050001', 0, 0, 0, 0),
+(13, 2, '3205174510060003', 0, 0, 0, 0),
+(14, 2, '3207181801060004', 0, 0, 0, 0),
+(15, 2, '3205171608040003', 0, 0, 0, 0),
+(16, 2, '3204323007050009', 0, 0, 0, 0),
+(17, 2, '3204321911050001', 0, 0, 0, 0),
+(18, 2, '3204282210050019', 0, 0, 0, 0),
+(19, 2, '3277012203050004', 0, 0, 0, 0),
+(20, 2, '3205051704060005', 0, 0, 0, 0),
+(21, 2, '1050203005055001', 0, 0, 0, 0),
+(22, 2, '3273282210050001', 0, 0, 0, 0),
+(23, 2, '3205410703050002', 0, 0, 0, 0),
+(24, 2, '3205215308060001', 0, 0, 0, 0),
+(25, 2, '3204320104055535', 0, 0, 0, 0),
+(26, 2, '3205211107060002', 0, 0, 0, 0),
+(27, 2, '3205211403060004', 0, 0, 0, 0),
+(28, 2, '3205214102070005', 0, 0, 0, 0),
+(29, 2, '1050156903065001', 0, 0, 0, 0),
+(30, 2, '3204090810060010', 0, 0, 0, 0),
+(31, 2, '3205054609060006', 0, 0, 0, 0),
+(32, 2, '3273024304060010', 6, 0, 0, 0),
+(33, 2, '3205216309060000', 0, 0, 0, 0),
+(34, 2, '3204096003060003', 0, 0, 0, 0),
+(35, 2, '3207035502780000', 0, 0, 0, 0),
+(36, 2, '3204546070500003', 0, 0, 0, 0),
+(37, 2, '3205216802060001', 0, 0, 0, 0),
+(38, 2, '3205217012050003', 0, 0, 0, 0),
+(39, 2, '3205212510090001', 0, 0, 0, 0),
+(40, 2, '3673010305060003', 0, 0, 0, 0),
+(41, 2, '3210156806060001', 0, 0, 0, 0),
+(42, 2, '3205065508060005', 0, 0, 0, 0),
+(43, 2, '3276055912050005', 0, 0, 0, 0),
+(44, 2, '3204280208060007', 0, 0, 0, 0),
+(45, 2, '3204080902060012', 0, 0, 0, 0),
+(46, 2, '3273240510108234', 0, 0, 0, 0),
+(47, 2, '3204375503060006', 0, 0, 0, 0),
+(48, 2, '3205072401060001', 0, 0, 0, 0),
+(49, 2, '3216061803060006', 0, 0, 0, 0),
+(50, 2, '3273152809060005', 0, 0, 0, 0),
+(51, 2, '3306025508060001', 0, 0, 0, 0),
+(52, 2, '3210155806060062', 0, 0, 0, 0),
+(53, 2, '3205210107060001', 0, 0, 0, 0),
+(54, 2, '3205211101060005', 0, 0, 0, 0),
+(55, 2, '3205210402070003', 0, 0, 0, 0),
+(56, 2, '3175074904060001', 0, 0, 0, 0),
+(57, 2, '3205216805060002', 0, 0, 0, 0),
+(58, 2, '3205210702050001', 0, 0, 0, 0),
+(59, 2, '3204282012040002', 0, 0, 0, 0),
+(60, 4, '3205212702040000', 0, 0, 0, 0),
+(61, 4, '3205211809040000', 0, 0, 0, 0),
+(62, 4, '3205211003060000', 0, 0, 0, 0),
+(63, 4, '3205056106050010', 0, 0, 0, 0),
+(64, 4, '3205176104040010', 0, 0, 0, 0),
+(65, 4, '3205172407050000', 0, 0, 0, 0),
+(66, 4, '3205210509050001', 0, 0, 0, 0),
+(67, 4, '3205215611030001', 0, 0, 0, 0),
+(68, 4, '3205214104060000', 0, 0, 0, 0),
+(69, 4, '3201012707050001', 0, 0, 0, 0),
+(70, 4, '3273055606810002', 0, 0, 0, 0),
+(71, 4, '3175083011050004', 0, 0, 0, 0),
+(72, 4, '3205216002050001', 0, 0, 0, 0),
+(73, 4, '3205020405050006', 0, 0, 0, 0),
+(74, 4, '3277020908040009', 0, 0, 0, 0),
+(75, 4, '3205215411040001', 0, 0, 0, 0),
+(76, 4, '3205212009050001', 0, 0, 0, 0),
+(77, 4, '3205215206050003', 0, 0, 0, 0),
+(78, 4, '3205214103050002', 0, 0, 0, 0),
+(79, 4, '3205091907040005', 0, 0, 0, 0),
+(80, 4, '3210151304050001', 0, 0, 0, 0),
+(81, 4, '3205212310050001', 0, 0, 0, 0),
+(82, 4, '3205215003040007', 0, 0, 0, 0),
+(83, 4, '3205216809040001', 0, 0, 0, 0),
+(84, 4, '3205210704090001', 0, 0, 0, 0),
+(85, 4, '3205174405050004', 0, 0, 0, 0),
+(86, 4, '3205214510050005', 0, 0, 0, 0),
+(87, 4, '3205210401060004', 0, 0, 0, 0),
+(88, 4, '3205213105040001', 0, 0, 0, 0),
+(89, 4, '3205212309050004', 0, 0, 0, 0),
+(90, 4, '1007362003002698', 0, 0, 0, 0),
+(91, 6, '3205210206050000', 0, 0, 0, 0),
+(92, 6, '3205210911040000', 0, 0, 0, 0),
+(93, 6, '3276055002040010', 0, 0, 0, 0),
+(94, 6, '3205211404030000', 0, 0, 0, 0),
+(95, 6, '3205214408050010', 0, 0, 0, 0),
+(96, 6, '3276056503040010', 0, 0, 0, 0),
+(97, 6, '3205171908030004', 0, 0, 0, 0),
+(98, 6, '3205214810030002', 0, 0, 0, 0),
+(99, 6, '3205214510030002', 0, 0, 0, 0),
+(100, 6, '3205312112040003', 0, 0, 0, 0),
+(101, 6, '3205214606030004', 0, 0, 0, 0),
+(102, 6, '3205021504040008', 0, 0, 0, 0),
+(103, 6, '3205021306040005', 0, 0, 0, 0),
+(104, 6, '3205056410050002', 0, 0, 0, 0),
+(105, 6, '3205214909030005', 0, 0, 0, 0),
+(106, 6, '3205172908040006', 0, 0, 0, 0),
+(107, 6, '3204322307030009', 0, 0, 0, 0),
+(108, 6, '3205041911030007', 0, 0, 0, 0),
+(109, 6, '3205211512030001', 0, 0, 0, 0),
+(110, 6, '3674020305040004', 0, 0, 0, 0),
+(111, 6, '1050192612035001', 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sekolah`
 --
 
@@ -93079,8 +93253,8 @@ CREATE TABLE `sekolah` (
 --
 
 INSERT INTO `sekolah` (`idSekolah`, `jenjang_sekolah`, `npsn`, `nama_sekolah`, `alamat_sekolah`, `desa_sekolah`, `kecamatan_sekolah`, `kabupaten_sekolah`, `provinsi_sekolah`, `logo_sekolah`) VALUES
-(1, 'SMP', 69953278, 'SMP Plus Rasana Rasyidah', 'Kp. Buleud RT 02 RW 04', '1', '1', '1', '1', '5e18e-logo-smp-baru.jpg'),
-(2, 'SMK', 12345678, 'SMK Plus Rasana Rasyidah', 'Kp Cintadamai RT 04 RW 04', '1', '1', '1', '1', 'f0efc-smk.jpg');
+(1, 'SMP', 69953278, 'SMP Plus Rasana Rasyidah', 'Kp. Buleud RT 02 RW 04', 'Cintadamai', 'Sukaresmi', 'Garut', 'Jawa Barat', '5e18e-logo-smp-baru.jpg'),
+(2, 'SMK', 12345678, 'SMK Plus Rasana Rasyidah', 'Kp Cintadamai RT 04 RW 04', 'Cintadamai', 'Sukaresmi', 'Garut', 'Jawa Barat', 'f0efc-smk.jpg');
 
 -- --------------------------------------------------------
 
@@ -93208,7 +93382,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1555619530, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
-(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1558721308, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314'),
+(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1559305982, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314'),
 (3, '::1', 'fajard', '$2y$08$iSx0LPd0We2xIwBtXj1qNuccFL/pcxmyVns7x5PpDch/zi4ju6N12', NULL, 'fajar0maulana@gmail.com', NULL, NULL, NULL, NULL, 1557525781, 1558920383, 1, 'Fajar ', 'Maulana', NULL, '081295794067'),
 (4, '192.168.43.249', 'wkelas7a', '$2y$08$jiRvLWUxeutQoHoP4ofOn.QHliNVMuxiIMuTHnx3/U0/tNbWXM9iK', NULL, 'iissn000@gmail.com', NULL, NULL, NULL, NULL, 1558449453, 1558683040, 1, 'Iis Siti', 'Nurfadilah', '', '0817262516152'),
 (5, '192.168.43.249', 'wkelas7b', '$2y$08$F/YSQOM8jafPH74eRFkoAeaxACnUxxSt1QDuDIeTJv2jWrv8K/zYO', NULL, 'fitrirahma111@gmail.com', NULL, NULL, NULL, NULL, 1558449549, 1558684286, 1, 'Fitri', 'Rahmawati', NULL, '094847363726'),
@@ -93279,7 +93453,7 @@ CREATE TABLE `view_menu` (
 --
 DROP TABLE IF EXISTS `view_header_menu`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_header_menu`  AS  select `gh`.`id_groups` AS `id_groups`,`hm`.`id_header_menu` AS `id_header_menu`,`hm`.`header` AS `header`,`hm`.`sort` AS `sort` from (`groups_header` `gh` join `header_menu` `hm` on(`gh`.`id_header_menu` = `hm`.`id_header_menu`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_header_menu`  AS  select `gh`.`id_groups` AS `id_groups`,`hm`.`id_header_menu` AS `id_header_menu`,`hm`.`header` AS `header`,`hm`.`sort` AS `sort` from (`groups_header` `gh` join `header_menu` `hm` on((`gh`.`id_header_menu` = `hm`.`id_header_menu`))) ;
 
 -- --------------------------------------------------------
 
@@ -93288,7 +93462,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `view_menu`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_menu`  AS  select `gm`.`id_groups` AS `id_groups`,`m`.`id_menu` AS `id_menu`,`m`.`sort` AS `sort`,`m`.`id_header_menu` AS `id_header_menu`,`m`.`label` AS `label`,`m`.`icon` AS `icon`,`m`.`url` AS `url`,`m`.`menu_id` AS `menu_id`,`m`.`level_one` AS `level_one`,`m`.`level_two` AS `level_two` from (`groups_menu` `gm` join `menu` `m` on(`gm`.`id_menu` = `m`.`id_menu`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_menu`  AS  select `gm`.`id_groups` AS `id_groups`,`m`.`id_menu` AS `id_menu`,`m`.`sort` AS `sort`,`m`.`id_header_menu` AS `id_header_menu`,`m`.`label` AS `label`,`m`.`icon` AS `icon`,`m`.`url` AS `url`,`m`.`menu_id` AS `menu_id`,`m`.`level_one` AS `level_one`,`m`.`level_two` AS `level_two` from (`groups_menu` `gm` join `menu` `m` on((`gm`.`id_menu` = `m`.`id_menu`))) ;
 
 --
 -- Indexes for dumped tables
@@ -93345,6 +93519,12 @@ ALTER TABLE `detail_tenaga_pendidik`
   ADD KEY `pekerjaan_pasangan` (`pekerjaan_pasangan`);
 
 --
+-- Indexes for table `editor_page`
+--
+ALTER TABLE `editor_page`
+  ADD PRIMARY KEY (`idEditor_page`);
+
+--
 -- Indexes for table `ekstrakulikuler`
 --
 ALTER TABLE `ekstrakulikuler`
@@ -93374,7 +93554,8 @@ ALTER TABLE `jabatan`
 ALTER TABLE `jabatan_tenpen`
   ADD PRIMARY KEY (`idJabatan_tenpen`),
   ADD KEY `idJabatan` (`idJabatan`),
-  ADD KEY `NIK_tenpen` (`NIK_tenpen`);
+  ADD KEY `NIK_tenpen` (`NIK_tenpen`),
+  ADD KEY `idSekolah` (`idSekolah`);
 
 --
 -- Indexes for table `kabupaten`
@@ -93497,6 +93678,13 @@ ALTER TABLE `ortu_tenaga_pendidik`
   ADD KEY `NIK_tenpen` (`NIK_tenpen`);
 
 --
+-- Indexes for table `pengaturan_raport`
+--
+ALTER TABLE `pengaturan_raport`
+  ADD PRIMARY KEY (`idPengaturan_raport`),
+  ADD UNIQUE KEY `jenis_pengaturan` (`jenis_pengaturan`);
+
+--
 -- Indexes for table `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
@@ -93519,6 +93707,13 @@ ALTER TABLE `program_studi`
 --
 ALTER TABLE `provinsi`
   ADD PRIMARY KEY (`id_prov`);
+
+--
+-- Indexes for table `rekap_absen_peserta_didik`
+--
+ALTER TABLE `rekap_absen_peserta_didik`
+  ADD PRIMARY KEY (`idRekap_absen`),
+  ADD KEY `NIK_pd` (`NIK_pd`);
 
 --
 -- Indexes for table `sekolah`
@@ -93608,6 +93803,12 @@ ALTER TABLE `detail_tenaga_pendidik`
   MODIFY `idDetail_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT for table `editor_page`
+--
+ALTER TABLE `editor_page`
+  MODIFY `idEditor_page` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `ekstrakulikuler`
 --
 ALTER TABLE `ekstrakulikuler`
@@ -93635,7 +93836,7 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `jabatan_tenpen`
 --
 ALTER TABLE `jabatan_tenpen`
-  MODIFY `idJabatan_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idJabatan_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `kelas`
@@ -93659,7 +93860,7 @@ ALTER TABLE `kurikulum`
 -- AUTO_INCREMENT for table `leger`
 --
 ALTER TABLE `leger`
-  MODIFY `idLeger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `idLeger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
 -- AUTO_INCREMENT for table `leger_ekskul`
@@ -93671,7 +93872,7 @@ ALTER TABLE `leger_ekskul`
 -- AUTO_INCREMENT for table `leger_nilai`
 --
 ALTER TABLE `leger_nilai`
-  MODIFY `idLeger_nilai` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1925;
+  MODIFY `idLeger_nilai` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1905;
 
 --
 -- AUTO_INCREMENT for table `leger_nilai_ekskul`
@@ -93689,7 +93890,7 @@ ALTER TABLE `login_attempts`
 -- AUTO_INCREMENT for table `master_leger`
 --
 ALTER TABLE `master_leger`
-  MODIFY `idMaster_leger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idMaster_leger` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
@@ -93701,7 +93902,7 @@ ALTER TABLE `mata_pelajaran`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 
 --
 -- AUTO_INCREMENT for table `ortu_peserta_didik`
@@ -93716,6 +93917,12 @@ ALTER TABLE `ortu_tenaga_pendidik`
   MODIFY `idOrtu_tenpen` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT for table `pengaturan_raport`
+--
+ALTER TABLE `pengaturan_raport`
+  MODIFY `idPengaturan_raport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `peserta_didik`
 --
 ALTER TABLE `peserta_didik`
@@ -93726,6 +93933,12 @@ ALTER TABLE `peserta_didik`
 --
 ALTER TABLE `program_studi`
   MODIFY `idProdi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `rekap_absen_peserta_didik`
+--
+ALTER TABLE `rekap_absen_peserta_didik`
+  MODIFY `idRekap_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `sekolah`
@@ -93785,7 +93998,8 @@ ALTER TABLE `detail_tenaga_pendidik`
 --
 ALTER TABLE `jabatan_tenpen`
   ADD CONSTRAINT `jabatan_tenpen_ibfk_1` FOREIGN KEY (`NIK_tenpen`) REFERENCES `tenaga_pendidik` (`NIK_tenpen`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `jabatan_tenpen_ibfk_2` FOREIGN KEY (`idJabatan`) REFERENCES `jabatan` (`idJabatan`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `jabatan_tenpen_ibfk_2` FOREIGN KEY (`idJabatan`) REFERENCES `jabatan` (`idJabatan`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `jabatan_tenpen_ibfk_3` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`);
 
 --
 -- Constraints for table `kelas`
@@ -93867,6 +94081,12 @@ ALTER TABLE `peserta_didik`
 --
 ALTER TABLE `program_studi`
   ADD CONSTRAINT `program_studi_ibfk_1` FOREIGN KEY (`idSekolah`) REFERENCES `sekolah` (`idSekolah`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rekap_absen_peserta_didik`
+--
+ALTER TABLE `rekap_absen_peserta_didik`
+  ADD CONSTRAINT `rekap_absen_peserta_didik_ibfk_1` FOREIGN KEY (`NIK_pd`) REFERENCES `peserta_didik` (`NIK_pd`);
 
 --
 -- Constraints for table `tenaga_pendidik`

@@ -19,8 +19,8 @@ class LegerNilai extends CI_Controller {
 		$crud->set_subject('Master Leger Nilai');
 		$crud->display_as('idKelas', 'Kelas/Sekolah');
 		$crud->unset_read();
-		$crud->add_action('Nilai Reguler', 'fa fa-cog', '', '',array($this,'linkReguler'));
-		$crud->add_action('Nilai Ekskul', 'fa fa-cog', '', '',array($this,'linkEkskul'));
+		$crud->add_action('Nilai Reguler', 'fa fa-cog', '', 'navigation',array($this,'linkReguler'));
+		$crud->add_action('Nilai Ekskul', 'fa fa-cog', '', 'navigation',array($this,'linkEkskul'));
 
 		/*LIST DATA KELAS*/
 		$listKelas = $this->LegerNilai_m->getKelas();
@@ -201,6 +201,7 @@ class LegerNilai extends CI_Controller {
 		$idLeger 	= $this->input->post('idLeger');
 		$namaMapel 	= $this->input->post('namaMapel');
 		$angkatan 	= $this->input->post('angkatan');
+		$idMaster 	= $this->input->post('idMaster');
 		$listSiswa 	= $this->LegerNilai_m->getlistPD($idKelas, $angkatan);
 		$listNilai  = $this->LegerNilai_m->getListNilaiPD($idLeger);
 		$kelas  	= $this->GetData_m->getDataKelas($idKelas); 
@@ -221,19 +222,36 @@ class LegerNilai extends CI_Controller {
 		$data['listNilai'] 	= $listNilai;
 		$data['namaMapel'] 	= $namaMapel;
 		$data['idLeger'] 	= $idLeger;
+		$data['idMaster'] 	= $idMaster;
 
 		$this->load->view('KelolaNilai/kontenKelolaNilai', $data, FALSE);
 	}
 
 	public function tambahPenilainSiswa(){
-		$listPD = $this->input->post('id');
-		$idLeger = $this->input->post('idLeger');
+		$listPD 		= $this->input->post('id');
+		$idMasterLeger 	= $this->input->post('idMaster');
+		$idLeger 		= $this->input->post('idLeger');
+		$semester 		= $this->LegerNilai_m->dataSemester($idMasterLeger);
 		foreach ($listPD as $id) {
+			/*INPUT SISWA KE DATA PENILAIAN*/
 			$data = [
 			    'NIK_pd' => $id,
 			    'idLeger' => $idLeger
 			];
 			$this->LegerNilai_m->tambahNilaiSiswa($data);
+			/*------------------------------------------*/
+			/*INPUT SISWA KE DATA REKAP ABSEN*/
+			$dataAbsen = [
+			    'NIK_pd' 			=> $id,
+			    'semester' 			=> $semester,
+			    'jumlah_alpa' 		=> 0,
+			    'jumlah_izin' 		=> 0,
+			    'jumlah_sakit' 		=> 0,
+			    'jumlah_terlambat' 	=> 0,
+			];
+			$this->LegerNilai_m->inputAbsen($dataAbsen);
+			/*-------------------------------*/
+
 		}
 		echo json_encode(array("status" => TRUE));
 	}

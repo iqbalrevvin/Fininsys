@@ -54,6 +54,7 @@
                 <input type="hidden" id="namaMapel" value="<?= $namaMapel ?>"></input>
                 <input type="hidden" id="idKelas" value="<?= $idKelas ?>"></input>
                 <input type="hidden" id="angkatan" value="<?= $angkatan ?>"></input>
+                <input type="hidden" id="idMaster" value="<?= $idMaster ?>"></input>
                     <!--begin: Datatable -->
                     <table class="table table-striped- table-bordered table-hover table-checkable" id="tabelSiswaPenilaian">
                         <thead>
@@ -247,17 +248,11 @@ var PortletTools = {
     init: function() {
         var e;
         toastr.options.showDuration = 1e3, (e = new mPortlet("portletNilai")).on("beforeCollapse", function(e) {
-               
-            }), e.on("afterCollapse", function(e) {
-                
+            }), e.on("afterCollapse", function(e) {                
             }), e.on("beforeExpand", function(e) {
-              
             }), e.on("afterExpand", function(e) {
-              
             }), e.on("beforeRemove", function(e) {
-         
             }), e.on("afterRemove", function(e) {
-
             }), e.on("reload", function(e) {
                 mApp.block(e.getSelf(), {
                     overlayColor: "#ffffff",
@@ -428,6 +423,7 @@ $("#check-all").click(function () {
 
 /*TOMBOL TAMBAH SISWA KE KELAS*/
 $(document).on('click', '#btnTambahPenilaiSiswa', function() {
+	var idMaster 	= $('#idMaster').val();
 	var idLeger 	= $('#idLeger').val();
 	var mapel 		= $('#namaMapel').val();
 	var angkatan 	= $('#angkatan').val();
@@ -445,7 +441,6 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
 	        confirmButtonColor: "#DD6B55",
 	        confirmButtonText: "Ya, Lanjutkan!",
 	        cancelButtonText: "Tidak, Kembali!",
-
 		}).then((result) => {
   			if(result.value) {
     			mApp.block("#kontenTambahPenilaianSiswa", {
@@ -457,11 +452,12 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
     			$.ajax({
 	                type: "POST",
 	                data: {
-	                	id:list_id,
-	                	idLeger:idLeger,
-	                	idKelas:idKelas,
-	                	angkatan:angkatan,
-	                	show:1,
+	                	id 			:list_id,
+	                	idMaster 	:idMaster,
+	                	idLeger 	:idLeger,
+	                	idKelas 	:idKelas,
+	                	angkatan 	:angkatan,
+	                	show 		:1,
 	                },
 	                url: "<?php echo site_url('LegerNilai/tambahPenilainSiswa')?>",
 	                dataType: "JSON",
@@ -498,7 +494,12 @@ $(document).on('click', '#btnTambahPenilaiSiswa', function() {
   			}/*KONDISI JIKA MEMILIH YA UNTUK MEMASUKAN DATA SISWA*/
 		});
 	}else{
-		toastr.error("Pilih Terlebih Dahulu Siswa Untuk Penilaian Mata Pelajaran ", "Pilih Siswa!");
+		swal({
+            title: "SISWA BELUM DI PILIH",
+            text: "Pilih Terlebih Dahulu Siswa Yang Akan Ditambahkan Ke Penilaian!",
+            type: "error",
+        });
+
 	}
 });
 /*---------------*/

@@ -203,15 +203,39 @@
                             </div>
                             <div class="m-portlet m-portlet--mobile" id="">
                                  <div class="m-portlet__body">
-                                    <p>Isi Rekapitulasi Absen Peserta Didik Untuk Ditampilan Pada Raport</p>
+                                    <p>Isi Rekapitulasi Absen Peserta Didik Untuk Ditampilkan Pada Raport</p>
+                                    <?php $absen = $this->Raport_m->rekapAbsen($list->NIK_pd, $semester) ?>
                                     <ul>
                                         <li>
-                                            Jumlah Alpa : <a href="#" class="jumlahAlpa"
-                                            data-type="number" data-placement="left" data-title="Jumlah Alpa" 
-                                            data-name="jumlah_alpa" 
-                                            data-pk=''>
-                                            20
-                                        </a>
+                                            Jumlah Alpa : 
+                                            <a href="#" class="jumlahAlpa" data-type="number" data-placement="left" 
+                                                data-title="Jumlah Alpa" data-name="jumlah_alpa" 
+                                                data-pk='<?= $absen->idRekap_absen ?>'>
+                                                <?= $absen->jumlah_alpa ?> 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            Jumlah Izin : 
+                                            <a href="#" class="jumlahIzin" data-type="number" data-placement="left" 
+                                                data-title="Jumlah Izin" data-name="jumlah_izin" 
+                                                data-pk='<?= $absen->idRekap_absen ?>'>
+                                                <?= $absen->jumlah_izin ?>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            Jumlah Sakit : 
+                                            <a href="#" class="jumlahSakit" data-type="number" data-placement="left" 
+                                                data-title="Jumlah Sakit" data-name="jumlah_sakit" 
+                                                data-pk='<?= $absen->idRekap_absen ?>'>
+                                                <?= $absen->jumlah_sakit ?>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            Jumlah Terlambat : 
+                                            <a href="#" class="jumlahTerlambat" data-type="number" data-placement="left" 
+                                                data-title="Jumlah Terlambat" data-name="jumlah_terlambat" data-pk=''>
+                                                <?= $absen->jumlah_terlambat ?>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -253,7 +277,7 @@
 <!--end: Datatable -->
 
 <script>
-$('.jumlahAlpa').editable({
+    $('.jumlahAlpa').editable({
         //id : $(this).data('id'),
         anim : 'true',
         onblur : 'submit',
@@ -265,7 +289,58 @@ $('.jumlahAlpa').editable({
         max: '100',
         emptytext: 'Kosong',
         title: 'Enter Value',
-        url : '<?= base_url('LegerNilai/simpanNilai') ?>',
+        url : '<?= base_url('Raport/RaportKelas/updateRekapAbsen') ?>',
+        ajaxOptions: {
+            type: 'POST',
+        }
+    });
+    $('.jumlahIzin').editable({
+        //id : $(this).data('id'),
+        anim : 'true',
+        onblur : 'submit',
+        showbuttons: false,
+        mode: 'inline',   
+        type: 'number',
+        step: '1.00',
+        min: '0.00',
+        max: '100',
+        emptytext: 'Kosong',
+        title: 'Enter Value',
+        url : '<?= base_url('Raport/RaportKelas/updateRekapAbsen') ?>',
+        ajaxOptions: {
+            type: 'POST',
+        }
+    });
+    $('.jumlahSakit').editable({
+        //id : $(this).data('id'),
+        anim : 'true',
+        onblur : 'submit',
+        showbuttons: false,
+        mode: 'inline',   
+        type: 'number',
+        step: '1.00',
+        min: '0.00',
+        max: '100',
+        emptytext: 'Kosong',
+        title: 'Enter Value',
+        url : '<?= base_url('Raport/RaportKelas/updateRekapAbsen') ?>',
+        ajaxOptions: {
+            type: 'POST',
+        }
+    });
+    $('.jumlahTerlambat').editable({
+        //id : $(this).data('id'),
+        anim : 'true',
+        onblur : 'submit',
+        showbuttons: false,
+        mode: 'inline',   
+        type: 'number',
+        step: '1.00',
+        min: '0.00',
+        max: '100',
+        emptytext: 'Kosong',
+        title: 'Enter Value',
+        url : '<?= base_url('Raport/RaportKelas/updateRekapAbsen') ?>',
         ajaxOptions: {
             type: 'POST',
         }
