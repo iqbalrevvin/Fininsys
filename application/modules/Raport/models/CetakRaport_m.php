@@ -103,7 +103,6 @@ class CetakRaport_m extends CI_Model {
 		return $query;
 	}
 
-	
 
 	public function reapitulasiAbsen($NIK_pd, $semester){
 		$query 		= $this->db->get_where('rekap_absen_peserta_didik', ['NIK_pd' => $NIK_pd, 'semester' => $semester]);

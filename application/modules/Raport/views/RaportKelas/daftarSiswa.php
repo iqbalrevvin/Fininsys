@@ -1,3 +1,25 @@
+<div class="modal fade" id="modalCetakRaportKolektif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">
+                    Cetak Raport Kolektif
+                </h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="m-portlet m-portlet--mobile" id="">
+                 <div class="m-portlet__body">
+                    <p>Cetak Raport Seluruh Siswa Kelas Pada Kelas Ini</p>
+                    <p>Cetak Raport secara kolektif belum tersedia dikarenakan akan memuat halaman raport yang cukup banyak dan menyebabkan <i>Load Resource</i> Perangkat Keras menjadi lumpuh.</p>
+                </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->
+        </div>
+    </div>
+</div>
 <!--begin: Search Form -->
 <div class="m-form m-form--label-align-right m--margin-top-10 m--margin-bottom-10">
     <div class="row align-items-center">
@@ -38,49 +60,15 @@
                     </span>
                 </span>
             </a>
-            <div class="m-dropdown m-dropdown--inline m-dropdown--small m-dropdown--arrow m-dropdown--align-left" 
-				m-dropdown-toggle="hover">
-				<a href="#" class="m-dropdown__toggle btn btn-secondary  dropdown-toggle">
-					<i class="la flaticon-technology"></i> Raport Kolektif
-				</a>
-				<div class="m-dropdown__wrapper">
-					<div class="m-dropdown__inner">
-						<div class="m-dropdown__body">
-							<div class="m-dropdown__content">
-								<ul class="m-nav">
-									<li class="m-nav__section m-nav__section--first">
-										<span class="m-nav__section-text">Cetak Raport Kolektif</span>
-									</li>
-									<li class="m-nav__item">
-										<a href="" class="m-nav__link">
-											<i class="m-nav__link-icon flaticon-notes"></i>
-											<span class="m-nav__link-text">Hal. Cover</span>
-										</a>
-									</li>
-									<li class="m-nav__item">
-										<a href="" class="m-nav__link">
-											<i class="m-nav__link-icon flaticon-file-2"></i>
-											<span class="m-nav__link-text">Hal. Biodata</span>
-										</a>
-									</li>
-									<li class="m-nav__item">
-										<a href="" class="m-nav__link">
-											<i class="m-nav__link-icon flaticon-statistics"></i>
-											<span class="m-nav__link-text">Hal. Nilai</span>
-										</a>
-									</li>
-									<!-- <li class="m-nav__separator m-nav__separator--fit">
-									</li> -->
-									<!-- <li class="m-nav__item">
-										<a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">Logout</a>
-									</li> -->
-								</ul>
-							</div>
-						</div>
-					</div>
-					<span class="m-dropdown__arrow m-dropdown__arrow--left"></span>
-				</div>
-			</div>
+            <a href="#" data-toggle="modal" data-target="#modalCetakRaportKolektif" 
+                class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" title="Cetak Raport Kolektif">
+                <span>
+                    <i class="la flaticon-technology"></i>
+                    <span>
+                        Raport Kolektif
+                    </span>
+                </span>
+            </a>
             <div class="m-separator m-separator--dashed d-xl-none"></div>
         </div>
     </div>
@@ -91,7 +79,6 @@
         <tr>
             <th data-field="no">#</th>
             <th data-field="nipd">NIPD</th>
-    
             <th data-field="namaPesertaDidik">Nama Peserta Didik</th>
             <th data-field="jenisKelamin">JK</th>
             <th data-field="jmlMapel">Jml Mapel</th>
@@ -241,7 +228,8 @@
                                         <li>
                                             Jumlah Terlambat : 
                                             <a href="#" class="jumlahTerlambat" data-type="number" data-placement="left" 
-                                                data-title="Jumlah Terlambat" data-name="jumlah_terlambat" data-pk=''>
+                                                data-title="Jumlah Terlambat" data-name="jumlah_terlambat" 
+                                                data-pk='<?= $absen->idRekap_absen ?>'>
                                                 <?= $absen->jumlah_terlambat ?>
                                             </a>
                                         </li>

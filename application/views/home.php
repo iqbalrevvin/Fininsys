@@ -5,8 +5,7 @@
         <i class="flaticon-exclamation m--font-brand"></i>
     </div>
     <div class="m-alert__text">
-        The Metronic Datatable component supports local or remote data source. For the local data you can pass javascript array as data source. In this example the grid fetches its data from a javascript array data source. It also defines the schema
-        model of the data source. In addition to the visualization, the Datatable provides built-in support for operations over data such as sorting, filtering and paging performed in user browser(frontend).
+        <h6>Selamat Datang Di Aplikasi <b>Fininsys</b> (Financial & Information System)<br>Gunakan Sistem Informasi Ini Dengan Bijak!</h6>
     </div>
 </div>
 <!--Begin::Section-->
@@ -14,25 +13,30 @@
     <div class="m-portlet__body  m-portlet__body--no-padding">
         <div class="row m-row--no-padding m-row--col-separator-xl">
             <div class="col-xl-4">
-
                 <!--begin:: Widgets/Stats2-1 -->
                 <div class="m-widget1">
                     <div class="m-widget1__item">
                         <div class="row m-row--no-padding align-items-center">
                             <div class="col">
-                                <h3 class="m-widget1__title">Member Profit</h3>
-                                <span class="m-widget1__desc">Awerage Weekly Profit</span>
+                                <h3 class="m-widget1__title">Informasi Lembaga</h3>
+                                <span class="m-widget1__desc">
+                                    Nama Lembaga : <b><?= $settings->instansi ?></b><br>
+                                    Jumlah Sekolah : <b><?= $jumlahSekolah ?></b><br>
+                                    Jumlah Program Studi : <b><?= $jumlahProgramStudi ?></b><br>
+                                    Jumlah Kelas : <b><?= $jumlahKelas ?></b><br>
+                                    Alamat Instansi : <b><?= $settings->alamat ?></b>
+                                </span>
                             </div>
-                            <div class="col m--align-right">
+                            <!-- <div class="col m--align-right">
                                 <span class="m-widget1__number m--font-brand">+$17,800</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
-                    <div class="m-widget1__item">
+                  <!--   <div class="m-widget1__item">
                         <div class="row m-row--no-padding align-items-center">
                             <div class="col">
-                                <h3 class="m-widget1__title">Orders</h3>
-                                <span class="m-widget1__desc">Weekly Customer Orders</span>
+                                <h3 class="m-widget1__title">Tenaga Pendidik</h3>
+                                <span class="m-widget1__desc">Jumlah Tenaga Didik<br><?= $settings->instansi ?></span>
                             </div>
                             <div class="col m--align-right">
                                 <span class="m-widget1__number m--font-danger">+1,800</span>
@@ -49,7 +53,7 @@
                                 <span class="m-widget1__number m--font-success">-27,49%</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!--end:: Widgets/Stats2-1 -->
@@ -68,14 +72,14 @@
                     </div>
                     <div class="row  align-items-center">
                         <div class="col">
-                            <div id="m_chart_revenue_change" class="m-widget14__chart1" style="height: 180px">
+                            <div id="m_chart_revenue_change" class="m-widget14__chart1" style="height: 200px">
                             </div>
                         </div>
                         <div class="col">
                             <div class="m-widget14__legends">
                                 <div class="m-widget14__legend">
                                     <span class="m-widget14__legend-bullet m--bg-accent"></span>
-                                    <span class="m-widget14__legend-text">+10% New York</span>
+                                    <span class="m-widget14__legend-text">+10% New York123</span>
                                 </div>
                                 <div class="m-widget14__legend">
                                     <span class="m-widget14__legend-bullet m--bg-warning"></span>

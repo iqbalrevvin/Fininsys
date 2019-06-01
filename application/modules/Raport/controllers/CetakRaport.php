@@ -96,11 +96,10 @@ class CetakRaport extends CI_Controller {
             'identitasSekolah'  => $this->CetakRaport_m->getIdentitasSekolah($masterID),
             'identitasPD'       => $this->CetakRaport_m->getIdentitasPD($siswaID),
             'titimangsa'        => $titimangsa,
-
         ];
          /*INIT PDF*/
         $pdf            = $this->m_pdf->pdf;
-        $pdfFileName    = "RaportIdentitas-".$siswaID.".pdf";
+        $pdfFileName    = "RaportNilai-".$siswaID.".pdf";
         /*-----------------------------------------*/
         /*INIT PAGE*/
         $hal1           = $this->load->view('CetakRaport/RaportIndividu/Nilai/hal1', $data, true);
@@ -117,6 +116,53 @@ class CetakRaport extends CI_Controller {
         $pdf->WriteHTML($hal3);
         $pdf->AddPage('P','','','','',20,10,15,15,10,10);
         $pdf->WriteHTML($hal4);
+        /*--------------------------------------*/
+
+        $pdf->Output($pdfFileName, 'I');
+    }
+
+    public function selfPrintBundle(){
+        $siswaID            = $this->input->get('StudentID');
+        $masterID           = $this->input->get('MasterID');
+        $semester           = $this->input->get('Semester');
+        $titimangsa         = $this->input->get('DateOfDistribution');
+        $loopKelompokMapel  =
+        $data = [
+            'masterID'          => $masterID,
+            'semester'          => $semester,
+            'pengaturan'        => $this->GetData_m->dataPengaturan(),
+            'identitasSekolah'  => $this->CetakRaport_m->getIdentitasSekolah($masterID),
+            'identitasPD'       => $this->CetakRaport_m->getIdentitasPD($siswaID),
+            'titimangsa'        => $titimangsa,
+        ];
+         /*INIT PDF*/
+        $pdf            = $this->m_pdf->pdf;
+        $pdfFileName    = "RaportBundle-".$siswaID.".pdf";
+        /*-----------------------------------------*/
+        /*INIT PAGE*/
+        $hal1           = $this->load->view('CetakRaport/RaportIndividu/Cover/hal1', $data, true);
+        $hal2           = $this->load->view('CetakRaport/RaportIndividu/Cover/hal2', $data, true);
+        $hal3           = $this->load->view('CetakRaport/RaportIndividu/Identitas/hal1', $data, true);
+        $hal4           = $this->load->view('CetakRaport/RaportIndividu/Nilai/hal1', $data, true);
+        $hal5           = $this->load->view('CetakRaport/RaportIndividu/Nilai/hal2', $data, true);
+        $hal6           = $this->load->view('CetakRaport/RaportIndividu/Nilai/hal3', $data, true);
+        $hal7           = $this->load->view('CetakRaport/RaportIndividu/Nilai/hal4', $data, true);
+        /*---------------------------------------------------------------------------*/
+        /*INIT CONTENT*/
+        $pdf->AddPage('P','','','','',20,10,15,15,10,10);
+        $pdf->WriteHTML($hal1);
+        $pdf->AddPage('P','','','','',20,10,15,15,10,10);
+        $pdf->WriteHTML($hal2);
+        $pdf->AddPage('P','','','','',20,10,15,15,10,10);
+        $pdf->WriteHTML($hal3);
+        $pdf->AddPage('P','','','','',20,10,15,15,10,10);
+        $pdf->WriteHTML($hal4);
+        $pdf->AddPage('P','','','','',20,10,15,15,10,10);
+        $pdf->WriteHTML($hal5);
+        $pdf->AddPage('P','','','','',20,10,15,15,10,10);
+        $pdf->WriteHTML($hal6);
+        $pdf->AddPage('P','','','','',20,10,15,15,10,10);
+        $pdf->WriteHTML($hal7);
         /*--------------------------------------*/
 
         $pdf->Output($pdfFileName, 'I');

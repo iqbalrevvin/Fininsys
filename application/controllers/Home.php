@@ -6,13 +6,23 @@ class Home extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->library('OutputView');		
+		$this->load->library('OutputView');	
+		$this->load->model('Home_m');	
 	}
 
 	public function index(){
-		$data['judul'] = 'Halaman Beranda';
-		$template      = 'admin_template';
-		$view          = 'home.php';
+		$jumlahSekolah  	= $this->Home_m->jumlahSekolah();
+		$jumlahProgramStudi = $this->Home_m->jumlahProgramStudi();
+		$jumlahKelas = $this->Home_m->jumlahKelas();
+		$data = [
+		    'judul'	 				=> 'Beranda',
+		    'jumlahSekolah' 		=> $jumlahSekolah, 
+		    'jumlahProgramStudi' 	=> $jumlahProgramStudi,
+		    'jumlahKelas' 			=> $jumlahKelas
+		];
+		$template      	= 'admin_template';
+		$view          	= 'home.php';
+
         $this->outputview->output_admin($view, $template, $data);
 	}
 
