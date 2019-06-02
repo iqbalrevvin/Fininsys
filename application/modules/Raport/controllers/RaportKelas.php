@@ -30,7 +30,7 @@ class RaportKelas extends CI_Controller {
 		$lists .= "<option value=''>Pilih Kelas</option>";
 		
 		foreach($listKelas as $list){
-			$lists .= "<option value='".$list->idKelas."'>".$list->nama_kelas." | ".$list->nama_prodi."</option>";
+			$lists .= "<option value='".$list->idKelas."'>".$list->nama_kelas." | ".$list->singkatan_prodi."</option>";
 		}
 		$callback = array('listKelas'=>$lists); 
 

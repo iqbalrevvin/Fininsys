@@ -12,8 +12,8 @@
             </div>
             <div class="m-portlet m-portlet--mobile" id="">
                  <div class="m-portlet__body">
-                    <p>Cetak Raport Seluruh Siswa Kelas Pada Kelas Ini</p>
-                    <p>Cetak Raport secara kolektif belum tersedia dikarenakan akan memuat halaman raport yang cukup banyak dan menyebabkan <i>Load Resource</i> Perangkat Keras menjadi lumpuh.</p>
+                    <p class="text-dark">Cetak Raport Seluruh Siswa Kelas Pada Kelas Ini</p>
+                    <p class="text-danger">Cetak Raport secara kolektif belum tersedia dikarenakan akan memuat halaman raport yang cukup banyak dan menyebabkan <i>Load Resource</i> Perangkat Keras menjadi tinggi.</p>
                 </div>
             </div>
             <!-- END EXAMPLE TABLE PORTLET-->

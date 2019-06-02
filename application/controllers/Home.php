@@ -13,12 +13,18 @@ class Home extends CI_Controller {
 	public function index(){
 		$jumlahSekolah  	= $this->Home_m->jumlahSekolah();
 		$jumlahProgramStudi = $this->Home_m->jumlahProgramStudi();
-		$jumlahKelas = $this->Home_m->jumlahKelas();
+		$jumlahKelas 		= $this->Home_m->jumlahKelas();
+		$jumlahPD  			= $this->Home_m->jumlahPDMasukKelas();
+		$jumlahPDFull 		= $this->Home_m->jumlahPDFull();
+		$jumlahTenpen  		= $this->Home_m->jumlahTenpen();
 		$data = [
 		    'judul'	 				=> 'Beranda',
 		    'jumlahSekolah' 		=> $jumlahSekolah, 
 		    'jumlahProgramStudi' 	=> $jumlahProgramStudi,
-		    'jumlahKelas' 			=> $jumlahKelas
+		    'jumlahKelas' 			=> $jumlahKelas,
+		    'jumlahPD' 				=> $jumlahPD,
+		    'jumlahPDFull' 			=> $jumlahPDFull,
+		    'jumlahTenpen' 			=> $jumlahTenpen
 		];
 		$template      	= 'admin_template';
 		$view          	= 'home.php';
