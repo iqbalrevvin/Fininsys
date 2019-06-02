@@ -33,11 +33,23 @@ class Home_m extends CI_Model {
 		$this->db->from('peserta_didik');
 		$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
 		$this->db->where('status_pd', 'Aktif');
-		$this->db->where('idKelas !=', '');
+		$this->db->where('idKelas !=', NULL);
 		$query 		= $this->db->get();
 		$execute 	= $query->num_rows();
 		return $execute;
 	}
+
+	public function jumlahPDnullKelas(){
+		$this->db->select('*');
+		$this->db->from('peserta_didik');
+		$this->db->join('detail_peserta_didik', 'peserta_didik.NIK_pd = detail_peserta_didik.NIK_pd', 'left');
+		$this->db->where('status_pd', 'Aktif');
+		$this->db->where('idKelas', NULL);
+		$query 		= $this->db->get();
+		$execute 	= $query->num_rows();
+		return $execute;
+	}
+
 	public function jumlahTenpen(){
 		$query 		= $this->db->get('tenaga_pendidik');
 		$execute 	= $query->num_rows();

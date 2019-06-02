@@ -16,6 +16,7 @@ class Home extends CI_Controller {
 		$jumlahKelas 		= $this->Home_m->jumlahKelas();
 		$jumlahPD  			= $this->Home_m->jumlahPDMasukKelas();
 		$jumlahPDFull 		= $this->Home_m->jumlahPDFull();
+		$PDNullKelas 		= $this->Home_m->jumlahPDnullKelas();
 		$jumlahTenpen  		= $this->Home_m->jumlahTenpen();
 		$data = [
 		    'judul'	 				=> 'Beranda',
@@ -23,6 +24,7 @@ class Home extends CI_Controller {
 		    'jumlahProgramStudi' 	=> $jumlahProgramStudi,
 		    'jumlahKelas' 			=> $jumlahKelas,
 		    'jumlahPD' 				=> $jumlahPD,
+		    'PDNullKelas' 			=> $PDNullKelas,
 		    'jumlahPDFull' 			=> $jumlahPDFull,
 		    'jumlahTenpen' 			=> $jumlahTenpen
 		];

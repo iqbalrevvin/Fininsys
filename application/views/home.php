@@ -25,8 +25,9 @@
                                     Jumlah Program Studi : <b><?= $jumlahProgramStudi ?></b><br>
                                     Jumlah Kelas : <b><?= $jumlahKelas ?></b><br>
                                     Jumlah Peserta Didik : <b><?= $jumlahPDFull ?></b><br>
+                                    Peserta Didik Masuk Kelas : <b><?= $jumlahPD ?></b><br>
+                                    Peserta Didik Belum Masuk Kelas : <b><?= $PDNullKelas ?></b><br>
                                     Jumlah Tenaga Pendidik : <b><?= $jumlahTenpen ?></b><br>
-                                    Alamat Instansi : <b><?= $settings->alamat ?></b>
                                 </span>
                             </div>
                         </div>
@@ -40,7 +41,7 @@
                             Prosentasi Siswa
                         </h3>
                         <span class="m-widget14__desc">
-                            Grafik Prosentasi Siswa Kelas
+                            Grafik Prosentasi Siswa<br>Berdasarkan Kelas
                         </span>
                     </div>
                     <div class="row  align-items-center">
@@ -77,12 +78,12 @@
                             Prosentasi Siswa Prodi
                         </h3>
                         <span class="m-widget14__desc">
-                            Prosentasi Siswa Berdasarkan Program Studi
+                            Graifk Prosentasi Siswa<br>Berdasarkan Program Studi
                         </span>
                     </div>
                     <div class="row  align-items-center">
                         <div class="col">
-                            <div id="m_chart_profit_share" class="m-widget14__chart" style="height: 160px">
+                            <div id="m_chart_profit_share" class="m-widget14__chart1" style="height: 150px">
                                 
                             </div>
                         </div>

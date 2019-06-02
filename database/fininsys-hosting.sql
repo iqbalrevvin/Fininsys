@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2019 at 12:46 AM
+-- Generation Time: Jun 02, 2019 at 02:04 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -175,7 +175,7 @@ INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `pindaha
 (49, '3205215611030001', 4, NULL, NULL, '0', 'Tidak', ''),
 (50, '3205216912850001', 2, NULL, NULL, '0', 'Tidak', ''),
 (51, '3205214104060000', 4, NULL, NULL, '0', 'Tidak', ''),
-(52, '3205074110940000', 5, NULL, NULL, '0', 'Tidak', ''),
+(52, '3205074110940000', NULL, NULL, NULL, '0', 'Tidak', ''),
 (53, '3205074120940000', NULL, NULL, NULL, '0', 'Tidak', ''),
 (54, '3205074130940000', NULL, NULL, NULL, '0', 'Tidak', ''),
 (55, '3205074140940000', NULL, NULL, NULL, '0', 'Tidak', ''),
@@ -184,7 +184,7 @@ INSERT INTO `detail_peserta_didik` (`idDetail_pd`, `NIK_pd`, `idKelas`, `pindaha
 (58, '3205074170940000', NULL, NULL, NULL, '0', 'Tidak', ''),
 (59, '3205074180940000', NULL, NULL, NULL, '0', 'Tidak', ''),
 (60, '3205074190940000', NULL, NULL, NULL, '0', 'Tidak', ''),
-(61, '3205074200940000', 6, NULL, NULL, '0', 'Tidak', ''),
+(61, '3205074200940000', NULL, NULL, NULL, '0', 'Tidak', ''),
 (62, '3201012707050001', 4, NULL, NULL, '0', 'Tidak', ''),
 (63, '3276056503040010', 3, NULL, NULL, '0', 'Tidak', ''),
 (64, '3205216802060001', 1, NULL, NULL, '0', 'Tidak', ''),
@@ -8260,9 +8260,7 @@ INSERT INTO `kelas` (`idKelas`, `idKurikulum`, `idProdi`, `NIK_tenpen`, `nama_ke
 (1, 3, 1, '3205205502940004', 'VII-A'),
 (2, 3, 1, '3205062012940013', 'VII-B'),
 (3, 2, 1, '3205081706920001', 'IX'),
-(4, 2, 1, '3205054909940006', 'VIII'),
-(5, 3, 2, '3205174910920006', 'AI - 1'),
-(6, 3, 2, '3205074110940002', 'AI - 2');
+(4, 2, 1, '3205054909940006', 'VIII');
 
 -- --------------------------------------------------------
 
@@ -93139,7 +93137,7 @@ INSERT INTO `rekap_absen_peserta_didik` (`idRekap_absen`, `semester`, `NIK_pd`, 
 (29, 2, '1050156903065001', 0, 0, 0, 0),
 (30, 2, '3204090810060010', 0, 0, 0, 0),
 (31, 2, '3205054609060006', 0, 0, 0, 0),
-(32, 2, '3273024304060010', 0, 0, 0, 0),
+(32, 2, '3273024304060010', 10, 12, 11, 2),
 (33, 2, '3205216309060000', 0, 0, 0, 0),
 (34, 2, '3204096003060003', 0, 0, 0, 0),
 (35, 2, '3207035502780000', 0, 0, 0, 0),
@@ -93218,7 +93216,8 @@ INSERT INTO `rekap_absen_peserta_didik` (`idRekap_absen`, `semester`, `NIK_pd`, 
 (108, 6, '3205041911030007', 0, 0, 0, 0),
 (109, 6, '3205211512030001', 0, 0, 0, 0),
 (110, 6, '3674020305040004', 0, 0, 0, 0),
-(111, 6, '1050192612035001', 0, 0, 0, 0);
+(111, 6, '1050192612035001', 0, 0, 0, 0),
+(112, NULL, NULL, NULL, NULL, NULL, 5);
 
 -- --------------------------------------------------------
 
@@ -93267,7 +93266,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id_settings`, `judul`, `instansi`, `alamat`, `logo`, `versi`) VALUES
-(1, 'Fininsys', 'Rasana Rasyidah', 'kampung Buleud rt 04 rw 04 desa Cintadamai kecamatan Sukaresmi Garut - Jawa Barat.', 'c53ff-rasanarasyidah.png', '1.0.0');
+(1, 'Fininsys', 'Yayasan Rasana Rasyidah', 'Kp. Buleud RT/RW 04/04 Ds. Cintadamai Kec. Sukaresmi Kab.  Garut Prov. Jawa Barat', 'c53ff-rasanarasyidah.png', '1.0.0');
 
 -- --------------------------------------------------------
 
@@ -93373,7 +93372,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `photo`, `phone`) VALUES
 (1, '127.0.0.1', 'admin', '$2y$08$v.Lr4yujxQxzZNdmCpgJWu7WLR5hzFDxkh0mRRmSuBartWDE93ySO', '', 'admin@admin.com', NULL, 'asGsHoh0iWTpOuVLM.EMUO900526bdd0557906ac', 1421981304, NULL, 1268889823, 1555619530, 1, 'Administrator', '-', '9a7eb-ketua-yayasan.jpg', '1234567890'),
-(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1559305982, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314'),
+(2, '::1', 'iqbalrevvin', '$2y$08$i2cKnJ77aiX8YZJMr72kHeEzJOQrEvwXpxgFva9RcHgLxtZCfQyhq', NULL, 'iqbalrevvin@gmail.com', NULL, NULL, NULL, NULL, 1554396817, 1559426954, 1, 'Iqbal', 'Revvin', '2c158-iqbal.png', '081223142314'),
 (3, '::1', 'fajard', '$2y$08$iSx0LPd0We2xIwBtXj1qNuccFL/pcxmyVns7x5PpDch/zi4ju6N12', NULL, 'fajar0maulana@gmail.com', NULL, NULL, NULL, NULL, 1557525781, 1558920383, 1, 'Fajar ', 'Maulana', NULL, '081295794067'),
 (4, '192.168.43.249', 'wkelas7a', '$2y$08$jiRvLWUxeutQoHoP4ofOn.QHliNVMuxiIMuTHnx3/U0/tNbWXM9iK', NULL, 'iissn000@gmail.com', NULL, NULL, NULL, NULL, 1558449453, 1558683040, 1, 'Iis Siti', 'Nurfadilah', '', '0817262516152'),
 (5, '192.168.43.249', 'wkelas7b', '$2y$08$F/YSQOM8jafPH74eRFkoAeaxACnUxxSt1QDuDIeTJv2jWrv8K/zYO', NULL, 'fitrirahma111@gmail.com', NULL, NULL, NULL, NULL, 1558449549, 1558684286, 1, 'Fitri', 'Rahmawati', NULL, '094847363726'),
@@ -93929,7 +93928,7 @@ ALTER TABLE `program_studi`
 -- AUTO_INCREMENT for table `rekap_absen_peserta_didik`
 --
 ALTER TABLE `rekap_absen_peserta_didik`
-  MODIFY `idRekap_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `idRekap_absen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `sekolah`
