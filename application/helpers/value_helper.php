@@ -10,6 +10,16 @@ if (! function_exists('value')){
 		return $getValue;
 	}
 }
+if (! function_exists('valueCekKelas')){
+	function valueCekKelas($value){
+		if($value == ''){
+			$getValue = '<i>Belum Masuk Kelas</i>';
+		}else{
+			$getValue = $value;
+		}
+		return $getValue;
+	}
+}
 if(! function_exists('valueRaport')){
 	function valueRaport($value){
 		if($value == ''){
