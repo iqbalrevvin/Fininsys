@@ -435,7 +435,7 @@ if ( ! is_php('5.4'))
 				$error_method = 'index';
 			}
 
-			$error_class = ucfirst($error_class);
+			$error_class = ucwords($error_class);
 
 			if ( ! class_exists($error_class, FALSE))
 			{
