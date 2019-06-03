@@ -7,6 +7,7 @@ class Config extends CI_Controller {
 		parent::__construct();
 		$this->load->library('grocery_CRUD');
 		$this->load->library('OutputView');
+		$this->load->model('GetData_m');
     }
  	
     public function index()
@@ -44,6 +45,13 @@ class Config extends CI_Controller {
     	$crud->set_theme('datatables');
     	$crud->set_table('users');
     	$crud->set_subject('Pengguna');
+    	$crud->display_as('first_name', 'Nama Depan');
+    	$crud->display_as('last_name', 'Nama Belakang');
+    	$crud->display_as('phone', 'Telp/Hp');
+    	$crud->display_as('groups', 'Hak Akses');
+    	$crud->display_as('photo', 'Foto');
+    	$crud->display_as('password', 'Kata Sandi');
+    	$crud->display_as('password_confirm', 'Ulangi Kata Sandi');
     	$crud->set_field_upload('photo','assets/image/admin');
     	$crud->columns('photo','username','email','groups','active');
     	if ($this->uri->segment(3) !== 'read')
@@ -54,7 +62,14 @@ class Config extends CI_Controller {
 			$crud->set_read_fields('username','first_name', 'last_name', 'email', 'phone','groups', 'last_login');
 		}
 		$crud->set_relation_n_n('groups', 'users_groups', 'groups', 'user_id', 'group_id', 'name');
+		$crud->where('username !=','iqbalrevvin');
 
+		$listGroup = $this->GetData_m->getDataHakAkses();
+		$finalArray = array();
+		foreach ($listGroup->result() as $row){
+				$finalArray[$row->id]=$row->name;
+		}
+		$crud->field_type('groups','multiselect',$finalArray);
 		//VALIDATION
 		$crud->required_fields('username','first_name', 'last_name', 'email', 'phone', 'password', 'password_confirm');
 		$crud->set_rules('email', 'E-mail', 'required|valid_email');
@@ -90,6 +105,9 @@ class Config extends CI_Controller {
 
 		$crud->set_table('groups');
 		$crud->set_subject('Hak Akses');
+		$crud->display_as('name', 'Nama Hak Akses');
+		$crud->display_as('description', 'Deskripsi');
+		$crud->where('name !=','developer');
 
 		//VIEW
 		$output = $crud->render();

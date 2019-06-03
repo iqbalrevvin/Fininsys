@@ -35,8 +35,13 @@ class GetData_m extends CI_Model {
 
 	public function getDataProvinsi(){
 		$query = $this->db->get('alamat_provinsi');
-		$execution = $query->result();
-		return $execution;
+		
+		return $query;
+	}
+
+	public function getDataHakAkses(){
+		$query = $this->db->get_where('groups', ['name !=' => 'developer']);
+		return $query;
 	}
 
 }

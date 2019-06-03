@@ -99,7 +99,7 @@
                     <div class="m-stack__item m-topbar__nav-wrapper">
 					    <ul class="m-topbar__nav m-nav m-nav--inline">
                             <li class="m-nav__item">
-                                <a href="ChatRoom" class="m-nav__link">
+                                <a href="<?= base_url('ChatRoom') ?>" class="m-nav__link">
                                     <span class="m-nav__link-icon">
                                         <span class="m-nav__link-icon-wrapper">
                                             <i class="flaticon-chat text-danger"></i>
