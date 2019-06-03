@@ -7,7 +7,7 @@ class Config extends CI_Controller {
 		parent::__construct();
 		$this->load->library('grocery_CRUD');
 		$this->load->library('OutputView');
-		$this->load->model('GetData_m');
+		$this->load->model('Getdata_m');
     }
  	
     public function index()
