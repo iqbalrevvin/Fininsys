@@ -99,10 +99,10 @@ class Modules
 			
 			/* load the controller class */
 			$class = $class.CI::$APP->config->item('controller_suffix');
-			self::load_file(ucfirst($class), $path);
+			self::load_file(ucwords($class), $path);
 			
 			/* create and register the new controller */
-			$controller = ucfirst($class);	
+			$controller = ucwords($class);	
 			self::$registry[$alias] = new $controller($params);
 		}
 		
@@ -127,14 +127,14 @@ class Modules
 		}
 		
 		/* autoload core classes */
-		if(is_file($location = APPPATH.'core/'.ucfirst($class).EXT)) 
+		if(is_file($location = APPPATH.'core/'.ucwords($class).EXT)) 
 		{
 			include_once $location;
 			return;
 		}		
 		
 		/* autoload library classes */
-		if(is_file($location = APPPATH.'libraries/'.ucfirst($class).EXT)) 
+		if(is_file($location = APPPATH.'libraries/'.ucwords($class).EXT)) 
 		{
 			include_once $location;
 			return;
@@ -199,7 +199,7 @@ class Modules
 				
 				if ($base == 'libraries/' OR $base == 'models/')
 				{
-					if(is_file($fullpath.ucfirst($file_ext))) return array($fullpath, ucfirst($file));
+					if(is_file($fullpath.ucwords($file_ext))) return array($fullpath, ucwords($file));
 				}
 				else
 				/* load non-class files */

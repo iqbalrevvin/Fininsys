@@ -52,7 +52,7 @@ class grocery_CRUD_Field_Types
 			$field_info->display_as =
 				isset($this->display_as[$field_info->name]) ?
 					$this->display_as[$field_info->name] :
-					ucfirst(str_replace("_"," ",$field_info->name));
+					ucwords(str_replace("_"," ",$field_info->name));
 
 			if($this->change_field_type !== null && isset($this->change_field_type[$field_info->name]))
 			{
@@ -129,7 +129,7 @@ class grocery_CRUD_Field_Types
 				$field_info->display_as =
 					isset($this->display_as[$field_name]) ?
 						$this->display_as[$field_name] :
-						ucfirst(str_replace("_"," ",$field_name));
+						ucwords(str_replace("_"," ",$field_name));
 
 				$types[$field_name] = $field_info;
 			}
@@ -156,7 +156,7 @@ class grocery_CRUD_Field_Types
 											'string',
 						'display_as' => isset($this->display_as[$field_name]) ?
 												$this->display_as[$field_name] :
-												ucfirst(str_replace("_"," ",$field_name)),
+												ucwords(str_replace("_"," ",$field_name)),
 						'required'	=> !empty($this->required_fields) && in_array($field_name,$this->required_fields) ? true : false,
 						'extras'	=> $extras
 					);
@@ -186,7 +186,7 @@ class grocery_CRUD_Field_Types
 											'string',
 						'display_as' => isset($this->display_as[$field_name]) ?
 												$this->display_as[$field_name] :
-												ucfirst(str_replace("_"," ",$field_name)),
+												ucwords(str_replace("_"," ",$field_name)),
 						'required'	=> in_array($field_name,$this->required_fields) ? true : false,
 						'extras'	=> $extras
 					);
@@ -4109,7 +4109,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 					}
 					else
 					{
-						$this->display_as[$new_column] = ucfirst(str_replace('_',' ',$column));
+						$this->display_as[$new_column] = ucwords(str_replace('_',' ',$column));
 					}
 
 					$column = $new_column;
@@ -4133,7 +4133,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 								}
 								else
 								{
-									$this->display_as[$new_column] = ucfirst(str_replace('_',' ',$column));
+									$this->display_as[$new_column] = ucwords(str_replace('_',' ',$column));
 								}
 
 								$column = $new_column;
@@ -4150,7 +4150,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 					$this->columns[$col_num] = (object)array('field_name' => $column, 'display_as' => $field_types[$column]->display_as);
 				else
 					$this->columns[$col_num] = (object)array('field_name' => $column, 'display_as' =>
-						ucfirst(str_replace('_',' ',$column)));
+						ucwords(str_replace('_',' ',$column)));
 
 				if(!empty($this->unset_columns) && in_array($column,$this->unset_columns))
 				{
@@ -4183,7 +4183,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 					elseif(isset($field_types[$field]->display_as))
 						$this->add_fields[$field_num] = (object)array('field_name' => $field, 'display_as' => $field_types[$field]->display_as);
 					else
-						$this->add_fields[$field_num] = (object)array('field_name' => $field, 'display_as' => ucfirst(str_replace('_',' ',$field)));
+						$this->add_fields[$field_num] = (object)array('field_name' => $field, 'display_as' => ucwords(str_replace('_',' ',$field)));
 				}
 			}
 			else

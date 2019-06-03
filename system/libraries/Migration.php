@@ -245,7 +245,7 @@ class CI_Migration {
 			}
 
 			include_once($file);
-			$class = 'Migration_'.ucfirst(strtolower($this->_get_migration_name(basename($file, '.php'))));
+			$class = 'Migration_'.ucwords(strtolower($this->_get_migration_name(basename($file, '.php'))));
 
 			// Validate the migration file structure
 			if ( ! class_exists($class, FALSE))
