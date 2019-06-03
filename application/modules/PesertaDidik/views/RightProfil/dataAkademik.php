@@ -50,7 +50,7 @@
 			<div class="col-xs-12 col-sm-6 col-lg-6 ">
             	<label><b>Pindah Di Semester</b><small><i>(Kosongkan Jika Bukan Pindahan)</i></small></label> : 
             	<?php $jumlahSemester = $this->PesertaDidik_m->jumlahSemester($profil->idKelas); ?>
-                <select class="form-control col-lg-4" name="pindahan" id="pindahan">
+                <select class="form-control col-lg-4" name="pindahDiSemester" id="pindahDiSemester">
                 	<option value="">Semester</option>
                 		<?php for ($i = 1; $i <= $jumlahSemester->jumlah_semester; $i+=1): ?>
                 			<option <?= $i == $profil->pindah_di_semester ? 'selected="selected"' : '' ?> value="<?= $i ?>"><?= $i ?></option>
@@ -78,5 +78,9 @@
 			</div>
 	</form>
 <script>
+	jQuery(document).ready(function() {
+
+	});
+	
 	$('.select2').select2();
 </script>

@@ -142,7 +142,6 @@ $("#kabupaten").change(function(){
 		}
 	});
 });
-
 /*ALAMAT KELURAHAN*/
 $("#kecamatan").change(function(){ 
 	mApp.block(".kelurahan", {
