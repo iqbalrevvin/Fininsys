@@ -301,7 +301,7 @@ class CI_Router {
 			$method = 'index';
 		}
 
-		if ( ! file_exists(APPPATH.'controllers/'.$this->directory.$class.'.php'))
+		if ( ! file_exists(APPPATH.'controllers/'.$this->directory.ucfirst($class).'.php'))
 		{
 			// This will trigger 404 later
 			return;
@@ -338,7 +338,7 @@ class CI_Router {
 		while ($c-- > 0)
 		{
 			$test = $this->directory
-				.$this->translate_uri_dashes === TRUE ? str_replace('-', '_', $segments[0]) : $segments[0];
+				.ucfirst($this->translate_uri_dashes === TRUE ? str_replace('-', '_', $segments[0]) : $segments[0]);
 
 			if ( ! file_exists(APPPATH.'controllers/'.$test.'.php') && is_dir(APPPATH.'controllers/'.$this->directory.$segments[0]))
 			{

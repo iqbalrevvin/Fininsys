@@ -2977,7 +2977,7 @@ class Tag
 							$objattr['noprint'] = true;
 						}
 						if (!isset($attr['VALUE'])) {
-							$objattr['value'] = ucwords(strtolower($type));
+							$objattr['value'] = ucfirst(strtolower($type));
 						}
 
 						$texto = " " . $objattr['value'] . " ";

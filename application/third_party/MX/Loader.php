@@ -176,7 +176,7 @@ class MX_Loader extends CI_Loader
 		{
 			Modules::load_file($_library, $path);
 			
-			$library = $_library;
+			$library = ucfirst($_library);
 			CI::$APP->$_alias = new $library($params);
 			
 			$this->_ci_classes[$class] = $_alias;
@@ -221,7 +221,7 @@ class MX_Loader extends CI_Loader
 			
 			Modules::load_file($_model, $path);
 			
-			$model = $_model;
+			$model = ucfirst($_model);
 			CI::$APP->$_alias = new $model();
 			
 			$this->_ci_models[] = $_alias;

@@ -362,7 +362,7 @@ class CI_Calendar {
 		}
 
 		return ($this->CI->lang->line($month_names[$month]) === FALSE)
-			? ucwords(substr($month_names[$month], 4))
+			? ucfirst(substr($month_names[$month], 4))
 			: $this->CI->lang->line($month_names[$month]);
 	}
 
@@ -400,7 +400,7 @@ class CI_Calendar {
 		$days = array();
 		for ($i = 0, $c = count($day_names); $i < $c; $i++)
 		{
-			$days[] = ($this->CI->lang->line('cal_'.$day_names[$i]) === FALSE) ? ucwords($day_names[$i]) : $this->CI->lang->line('cal_'.$day_names[$i]);
+			$days[] = ($this->CI->lang->line('cal_'.$day_names[$i]) === FALSE) ? ucfirst($day_names[$i]) : $this->CI->lang->line('cal_'.$day_names[$i]);
 		}
 
 		return $days;
