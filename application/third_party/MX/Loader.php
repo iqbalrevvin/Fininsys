@@ -152,12 +152,12 @@ class MX_Loader extends CI_Loader
 	{
 		if (is_array($library)) return $this->libraries($library);		
 		
-		$class = strtolower(basename($library));
+		$class = basename($library);
 
 		if (isset($this->_ci_classes[$class]) && $_alias = $this->_ci_classes[$class])
 			return $this;
 			
-		($_alias = strtolower($object_name)) OR $_alias = $class;
+		($_alias = $object_name) OR $_alias = $class;
 		
 		list($path, $_library) = Modules::find($library, $this->_module, 'libraries/');
 		
@@ -202,7 +202,7 @@ class MX_Loader extends CI_Loader
 			return $this;
 			
 		/* check module */
-		list($path, $_model) = Modules::find(strtolower($model), $this->_module, 'models/');
+		list($path, $_model) = Modules::find($model, $this->_module, 'models/');
 		
 		if ($path == FALSE)
 		{
@@ -241,7 +241,7 @@ class MX_Loader extends CI_Loader
 	{
 		if (is_array($module)) return $this->modules($module);
 
-		$_alias = strtolower(basename($module));
+		$_alias = basename($module);
 		CI::$APP->$_alias = Modules::load(array($module => $params));
 		return $this;
 	}
