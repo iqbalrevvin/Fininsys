@@ -35,8 +35,8 @@ class Getdata_m extends CI_Model {
 
 	public function getDataProvinsi(){
 		$query = $this->db->get('alamat_provinsi');
-		
-		return $query;
+		$execution = $query->result();
+		return $execution;
 	}
 
 	public function getDataHakAkses(){
