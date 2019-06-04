@@ -9,7 +9,7 @@ class Profil extends CI_Controller {
 		$this->load->model('PesertaDidik_m');
 		$this->load->model('AlamatChain_m');
 		$this->load->model('ListData_m');
-		$this->load->helper('fotogender');
+		$this->load->helper('Other/fotogender');
 		$this->load->helper('tglindo');
 		$this->load->helper('semester');
 		$this->load->helper('grade');
