@@ -33,7 +33,7 @@ class Kelas extends CI_Controller {
 		$crud->required_fields('idProdi', 'nama_kelas', 'NIK_tenpen');
 		#$crud->set_rules('jumlah_semester', 'jumlah_semester', 'max_length[2]');
 		/*------------*/
-		$listTenpen = $this->TenagaPendidik_m->getTenpen();
+		$listTenpen = $this->Tenagapendidik_m->getTenpen();
 		$finalArray = array();
 		foreach ($listTenpen->result() as $row){
 				$finalArray[$row->NIK_tenpen]=$row->nama_tenpen;
