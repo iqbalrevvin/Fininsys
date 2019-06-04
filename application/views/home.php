@@ -123,7 +123,20 @@
                 </h4>
             </div>
         </div>
+        <div class="m-portlet__head-tools">
+            <ul class="m-portlet__nav">
+               <li class="m-portlet__nav-item">
+                    <a href="#" m-portlet-tool="reload" class="m-portlet__nav-link m-portlet__nav-link--icon"
+                        data-toggle="modal" data-target="#informasiKalender" data-backdrop="static" 
+                        data-keyboard="true" title="Informasi" data-placement="top" data-skin="dark">
+                        <i class="flaticon-information"></i></a>
+                    </a>
+                </li>
+     
+            </ul>
+        </div>
     </div>
+    
     <div class="m-portlet__body">
     <?php if ($settings->email_lembaga == NULL): ?>
         <h3>Email Lembaga Belum Terisi!, Silahkan lengkapi email lembaga dengan mengakses <a href="<?= base_url('config/settings') ?>">Konfigurasi->Pengaturan Aplikasi</a>
@@ -136,6 +149,31 @@
 </div>
 <!--End::Section-->
 
+<!-- MODAL INFORMASI GOOGLE KALENDER -->
+<div class="modal fade modalInput" id="informasiKalender" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">Informasi Google Kalender</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="la la-remove"></span>
+                </button>
+            </div>
+            <div class="m-portlet m-portlet--mobile" id="kontenTambahPenilaianSiswa">
+                <div class="m-portlet__body">
+                    <ul>
+                        <li>Kalender Kegiatan diadopsi dari <a href="https://calendar.google.com">Google Calendar</a>.</li>
+                        <li>Kalender di tautkan dengan akun <a href="gmail.com">Gmail</a> yang ditetapkan pada pengaturan aplikasi.</li>
+                        <li>Jika tidak melihat apapun di informasi kalender kegiatan, coba akses fininsys dengan browser <a href="https://www.google.com/chrome/">Google Chrome</a> atau browser versi terbaru.</li>
+                        <li>Jika kalender tetap tidak muncul coba untuk melakukan <a href="https://accounts.google.com">Login Akun Google</a> terlebih dahulu.</li>
+                        <li>Jika terdapat notifikasi <span class="text-danger"><i>acara dari satu atau beberapa kalender tidak dapat ditampilkan di sini karena Anda tidak memiliki izin untuk melihatnya.</i></span>, cobalah untuk melakukan <b>Konfigurasi</b> google kalender dan atur sebagai <b>Public</b>. <br><a href="https://support.google.com/calendar/answer/37083?hl=id" target="_blank">Panduan Google Kalender Public Access</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /////////////////////////////// -->
 
 
 <script>
