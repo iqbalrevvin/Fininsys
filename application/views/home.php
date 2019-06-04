@@ -142,7 +142,7 @@
         <h3>Email Lembaga Belum Terisi!, Silahkan lengkapi email lembaga dengan mengakses <a href="<?= base_url('config/settings') ?>">Konfigurasi->Pengaturan Aplikasi</a>
         </h3>
     <?php else: ?>
-        <iframe src="https://calendar.google.com/calendar/embed?src=<?= $settings->email_lembaga ?>&ctz=Asia%2FJakarta" style="border: 0" width="100%" height="750" frameborder="0" scrolling="no"></iframe>
+        <iframe src="https://calendar.google.com/calendar/embed?src=<?= $settings->email_lembaga ?>&ctz=Asia%2FJakarta" style="border: 0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
     <?php endif ?>
         
     </div>
