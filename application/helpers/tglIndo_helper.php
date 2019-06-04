@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
       
-    if (!function_exists('tgl_indo')){
+    if (!function_exists('date_indo')){
         function date_indo($tgl){
             $ubah = gmdate($tgl, time()+60*60*8);
             $pecah = explode("-",$ubah);
