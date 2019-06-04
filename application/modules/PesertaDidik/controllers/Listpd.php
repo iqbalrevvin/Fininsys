@@ -9,7 +9,7 @@ class Listpd extends CI_Controller {
 		$this->load->library('outputView');
 		$this->load->library('grocery_CRUD');
 		$this->load->model('PesertaDidik_m');
-		$this->load->model('Legernilai/Legernilai_m');
+		$this->load->model('Application/modules/Legernilai/models/Legernilai_m');
 	}
 
 	public function index(){
