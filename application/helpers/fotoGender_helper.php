@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  defined('BASEPATH') OR exit('No direct script access allowed');
 
 if (! function_exists('fotoGender')){
 	function fotoGender($foto, $JK){
@@ -15,10 +15,6 @@ if (! function_exists('fotoGender')){
 	}
 }
 
-function tester()
-{
-	$test = "test";
-	return $test;
-}
+
 
 ?>
