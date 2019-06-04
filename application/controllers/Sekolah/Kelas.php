@@ -7,7 +7,7 @@ class Kelas extends CI_Controller {
 		parent::__construct();
 		$this->load->library('outputView');
 		$this->load->library('grocery_CRUD');
-		$this->load->model('TenagaPendidik/TenagaPendidik_m');
+		$this->load->model('TenagaPendidik/Tenagapendidik_m');
 	}
 	public function index(){
 		$crud 		= new grocery_CRUD();
