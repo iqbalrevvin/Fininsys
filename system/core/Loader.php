@@ -171,7 +171,7 @@ class CI_Loader {
 	 */
 	public function is_loaded($class)
 	{
-		return array_search(ucwords($class), $this->_ci_classes, TRUE);
+		return array_search($class, $this->_ci_classes, TRUE);
 	}
 
 	// --------------------------------------------------------------------
@@ -290,7 +290,7 @@ class CI_Loader {
 			load_class('Model', 'core');
 		}
 
-		$model = ucwords(strtolower($model));
+		$model = $model;
 
 		foreach ($this->_ci_model_paths as $mod_path)
 		{
@@ -696,7 +696,7 @@ class CI_Loader {
 		// and typically identically named to the library
 		if ( ! strpos($library, '/'))
 		{
-			$library = ucwords($library).'/'.$library;
+			$library = $library.'/'.$library;
 		}
 
 		return $this->library($library, $params, $object_name);
@@ -981,7 +981,7 @@ class CI_Loader {
 			$subdir = '';
 		}
 
-		$class = ucwords($class);
+		$class = $class;
 
 		// Is this a stock library? There are a few special conditions if so ...
 		if (file_exists(BASEPATH.'libraries/'.$subdir.$class.'.php'))
@@ -1164,9 +1164,9 @@ class CI_Loader {
 						include($path.'config/'.strtolower($class).'.php');
 						$found = TRUE;
 					}
-					elseif (file_exists($path.'config/'.ucwords(strtolower($class)).'.php'))
+					elseif (file_exists($path.'config/'.$class.'.php'))
 					{
-						include($path.'config/'.ucwords(strtolower($class)).'.php');
+						include($path.'config/'.$class.'.php');
 						$found = TRUE;
 					}
 
@@ -1175,9 +1175,9 @@ class CI_Loader {
 						include($path.'config/'.ENVIRONMENT.'/'.strtolower($class).'.php');
 						$found = TRUE;
 					}
-					elseif (file_exists($path.'config/'.ENVIRONMENT.'/'.ucwords(strtolower($class)).'.php'))
+					elseif (file_exists($path.'config/'.ENVIRONMENT.'/'.$class.'.php'))
 					{
-						include($path.'config/'.ENVIRONMENT.'/'.ucwords(strtolower($class)).'.php');
+						include($path.'config/'.ENVIRONMENT.'/'.$class.'.php');
 						$found = TRUE;
 					}
 
