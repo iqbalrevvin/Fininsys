@@ -130,9 +130,12 @@ class MX_Loader extends CI_Loader
 	/** Load an array of helpers **/
 	public function helpers($helpers = array()) 
 	{
+		if (is_array($helpers) || is_object($helpers)){
 		foreach ($helpers as $_helper) {
             $this->helper($_helper);
         }
+    }
+
 	}
 
 	/** Load a module language file **/
