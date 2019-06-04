@@ -5,7 +5,7 @@ class RaportKelas extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library('Outputview');
+		$this->load->library('OutputView');
 		$this->load->model('ListData_m');
 		$this->load->model('Raport_m');
 		$this->load->helper('value_helper');
