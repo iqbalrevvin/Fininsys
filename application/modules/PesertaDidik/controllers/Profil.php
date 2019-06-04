@@ -10,10 +10,10 @@ class Profil extends CI_Controller {
 		$this->load->model('AlamatChain_m');
 		$this->load->model('ListData_m');
 		$this->load->helper('fotogender');
-		$this->load->helper('tglIndo_helper');
-		$this->load->helper('semester_helper');
-		$this->load->helper('grade_helper');
-		$this->load->helper('value_helper');
+		$this->load->helper('tglindo');
+		$this->load->helper('semester');
+		$this->load->helper('grade');
+		$this->load->helper('value');
 
 	}
 	public function index(){
