@@ -6,7 +6,7 @@ class Profil extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('OutputView');
-		$this->load->model('PesertaDidik/PesertaDidik_m');
+		$this->load->model('PesertaDidik_m');
 		$this->load->model('AlamatChain_m');
 		$this->load->model('ListData_m');
 		$this->load->helper('fotoGender_helper');
