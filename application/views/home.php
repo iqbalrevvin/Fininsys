@@ -109,7 +109,7 @@
                     <i class="flaticon-presentation"></i>
                 </span>
                 <h4 class="m-portlet__head-text">
-                    Google Calendar / Kalender Kegiatan <small>(Pastikan Email Akun Google Di Pengaturan Aplikasi Terisi!)</small>
+                    Google Calendar / Kalender Kegiatan <small>(Pastikan Email Akun Google Di Pengaturan Aplikasi Sudah Terisi!)</small>
                 </h4>
             </div>
         </div>
@@ -132,8 +132,9 @@
         <h3>Email Lembaga Belum Terisi!, Silahkan lengkapi email lembaga dengan mengakses <a href="<?= base_url('config/settings') ?>">Konfigurasi->Pengaturan Aplikasi</a>
         </h3>
     <?php else: ?>
-        <iframe src="https://calendar.google.com/calendar/embed?src=<?= $settings->email_lembaga ?>&ctz=Asia%2FJakarta" style="border: 0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+        <iframe src="https://calendar.google.com/calendar/embed?src=<?= $settings->email_lembaga ?>&ctz=Asia%2FJakarta&amp;title=Kalender Kagiatan/Akademik (<?= $settings->email_lembaga ?>)" style="border: 0" width="100%" height="500" frameborder="0" scrolling="no" title="Kalender Akademik"></iframe>
     <?php endif ?>
+  
         
     </div>
 </div>
