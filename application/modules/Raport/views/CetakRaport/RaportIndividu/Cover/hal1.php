@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-    <img src="http://localhost/Fininsys/assets/image/logo-garuda.png" style="width: 178.628px; height: 192.625px;">
+    <img src="<?= base_url('assets/image/logo-garuda.png') ?>" style="width: 178.628px; height: 192.625px;">
 </div>
 <h1 style="text-align: center;">
 	LAPORAN HASIL BELAJAR SISWA
