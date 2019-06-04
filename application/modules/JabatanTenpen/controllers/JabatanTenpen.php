@@ -24,7 +24,7 @@ class JabatanTenpen extends CI_Controller {
 		$crud->set_relation('idSekolah','sekolah','nama_sekolah');
 
 		/*LIST DATA TENAGA PENDIDIK*/
-		$listTenpen = $this->TenagaPendidik_m->getTenpen();
+		$listTenpen = $this->Tenagapendidik_m->getTenpen();
 		$finalArray = array();
 		foreach ($listTenpen->result() as $row){
 				$finalArray[$row->NIK_tenpen]=$row->nama_tenpen;
