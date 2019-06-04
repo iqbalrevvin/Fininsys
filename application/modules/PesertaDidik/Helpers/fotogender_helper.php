@@ -1,5 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-if (! function_exists('fotoGender')){
+
 	function fotoGender($foto, $JK){
 		if($foto == ''){
 			if($JK == 'Laki-Laki'){
@@ -12,5 +12,8 @@ if (! function_exists('fotoGender')){
 		}
 		return $viewFoto;
 	}
-}
+
+
+
+
 ?>
