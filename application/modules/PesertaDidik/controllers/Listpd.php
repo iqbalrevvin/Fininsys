@@ -13,7 +13,6 @@ class Listpd extends CI_Controller {
 	}
 
 	public function index(){
-		$this->load->model('LegerNilai/Legernilai_m');
 		$crud 		= new grocery_CRUD();
 
 		$crud->set_table('peserta_didik');
