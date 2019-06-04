@@ -7,7 +7,7 @@ class LegerNilai extends CI_Controller {
 		parent::__construct();
 		$this->load->library('OutputView');
 		$this->load->library('grocery_CRUD');
-		$this->load->model('LegerNilai_m');
+		$this->load->model('Legernilai_m');
 		$this->load->model('TenagaPendidik/TenagaPendidik_m');
 		$this->load->model('DataTableSiswa_m');
 		$this->load->model('Getdata_m');
@@ -23,7 +23,7 @@ class LegerNilai extends CI_Controller {
 		$crud->add_action('Nilai Ekskul', 'fa fa-cog', '', 'navigation',array($this,'linkEkskul'));
 
 		/*LIST DATA KELAS*/
-		$listKelas = $this->LegerNilai_m->getKelas();
+		$listKelas = $this->Legernilai_m->getKelas();
 		$finalArray = array();
 		foreach ($listKelas->result() as $row){
 				$finalArray[$row->idKelas]=$row->nama_kelas." | $row->nama_sekolah";
@@ -35,7 +35,7 @@ class LegerNilai extends CI_Controller {
 
 		
 		/*LIST DATA TAHUN AJARAN*/
-		$listTahunAngkatan = $this->LegerNilai_m->getTahunAjaran();
+		$listTahunAngkatan = $this->Legernilai_m->getTahunAjaran();
 		$finalArray = array();
 		foreach ($listTahunAngkatan->result() as $row){
 				$finalArray[substr($row->nama_tahun_ajaran,0,4)]=$row->nama_tahun_ajaran;
@@ -74,7 +74,7 @@ class LegerNilai extends CI_Controller {
 		    'semester' 			=> $semester
 		];
 
-		$insertMasterLeger = $this->LegerNilai_m->insertMasterLeger($data);
+		$insertMasterLeger = $this->Legernilai_m->insertMasterLeger($data);
 		return $insertMasterLeger;
 	}
 
@@ -89,7 +89,7 @@ class LegerNilai extends CI_Controller {
 		    'semester' 			=> $semester
 		];
 
-		$updateMasterLeger = $this->LegerNilai_m->updateMasterLeger($data, $id);
+		$updateMasterLeger = $this->Legernilai_m->updateMasterLeger($data, $id);
 		return $updateMasterLeger;
 	}
 
@@ -97,14 +97,14 @@ class LegerNilai extends CI_Controller {
 
 	public function KelolaNilai(){
 		$idMasterLeger 			= $this->input->get('IDMaster');
-		$getMapel 				= $this->LegerNilai_m->getMapel();
-		$getTenpen 				= $this->LegerNilai_m->getTenpen();
-		//$data['test']	= $this->LegerNilai_m->cekMapelNilaiKelas();
+		$getMapel 				= $this->Legernilai_m->getMapel();
+		$getTenpen 				= $this->Legernilai_m->getTenpen();
+		//$data['test']	= $this->Legernilai_m->cekMapelNilaiKelas();
 
 		$data['idMasterLeger'] 	= $idMasterLeger;
 		$data['tenpen'] 		= $getTenpen;
 		$data['mapel'] 			= $getMapel;
-		$data['MasterLeger'] 	= $this->LegerNilai_m->detailLeger($idMasterLeger);
+		$data['MasterLeger'] 	= $this->Legernilai_m->detailLeger($idMasterLeger);
 		$view 					= 'KelolaNilai/kelolaNilai';
 		$template 				= 'admin_template';
 		$data['crumb'] = array( 
@@ -117,9 +117,9 @@ class LegerNilai extends CI_Controller {
 
 	public function getKontenMapel(){
 		$idMasterLeger 		= $this->input->post('id');
-		$getMapel 			= $this->LegerNilai_m->getMapel();
-		$getTenpen 			= $this->LegerNilai_m->getTenpen();
-		$data['listMapel'] 	= $this->LegerNilai_m->getKontenMapel($idMasterLeger);
+		$getMapel 			= $this->Legernilai_m->getMapel();
+		$getTenpen 			= $this->Legernilai_m->getTenpen();
+		$data['listMapel'] 	= $this->Legernilai_m->getKontenMapel($idMasterLeger);
 		$data['mapel'] 		= $getMapel;
 		$data['tenpen'] 	= $getTenpen;
 		$this->load->view('KelolaNilai/kontenKelolaMapel', $data, FALSE);
@@ -139,14 +139,14 @@ class LegerNilai extends CI_Controller {
 			    'kkm_keterampilan' 	=> $i->post('kkmKeterampilan'),
 			    'no_urut_mapel' 	=> $i->post('noUrut')
 			];
-			$cekMapel = $this->LegerNilai_m->cekMapelNilaiKelas($data);
+			$cekMapel = $this->Legernilai_m->cekMapelNilaiKelas($data);
 			if($cekMapel == 0){
 				$callback = [
 			    	'status' 	=> 'sukses',
 			    	'pesan' 	=> 'Data Mata Pelajaran Berhasil Ditambahkan' 
 				];
 				
-				$this->LegerNilai_m->addMapelLeger($data);
+				$this->Legernilai_m->addMapelLeger($data);
 				
 			}else{
 				$callback = [
@@ -177,7 +177,7 @@ class LegerNilai extends CI_Controller {
 			    'kkm_keterampilan' 	=> $i->post('KKMKeterampilan'),
 			    'no_urut_mapel' 	=> $i->post('noUrut')
 			];
-			$this->LegerNilai_m->editMapelLeger($idLeger, $data);
+			$this->Legernilai_m->editMapelLeger($idLeger, $data);
 			$callback = [
 			    'status' 	=> 'sukses',
 			    'pesan' 	=> 'Data Mata Pelajaran Berhasil Diperbarui' 
@@ -193,7 +193,7 @@ class LegerNilai extends CI_Controller {
 
 	public function hapusKontenMapel(){
 		$idLeger = $this->input->post('id');
-		$this->LegerNilai_m->hapusKontenMapel($idLeger);
+		$this->Legernilai_m->hapusKontenMapel($idLeger);
 	}
 
 	public function getKontenKelolaNilai(){
@@ -202,19 +202,19 @@ class LegerNilai extends CI_Controller {
 		$namaMapel 	= $this->input->post('namaMapel');
 		$angkatan 	= $this->input->post('angkatan');
 		$idMaster 	= $this->input->post('idMaster');
-		$listSiswa 	= $this->LegerNilai_m->getlistPD($idKelas, $angkatan);
-		$listNilai  = $this->LegerNilai_m->getListNilaiPD($idLeger);
+		$listSiswa 	= $this->Legernilai_m->getlistPD($idKelas, $angkatan);
+		$listNilai  = $this->Legernilai_m->getListNilaiPD($idLeger);
 		$kelas  	= $this->Getdata_m->getDataKelas($idKelas); 
 		/*foreach ($listSiswa as $pd) {
 			$NIK = $pd->NIK_pd;
-			$nilai = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
+			$nilai = $this->Legernilai_m->getNilaiPD($NIK, $idLeger);
 			if(count($nilai) == 0){
 				$data['nilai'] = $nilai->nilai_pengetahuan;
 			}else{
 				$data['nilai'] = 0;
 			}
 		}*/
-		#$data['nilai'] = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
+		#$data['nilai'] = $this->Legernilai_m->getNilaiPD($NIK, $idLeger);
 		$data['angkatan'] 	= $angkatan;
 		$data['kelas'] 		= $kelas; 
 		$data['idKelas'] 	= $idKelas;
@@ -231,14 +231,14 @@ class LegerNilai extends CI_Controller {
 		$listPD 		= $this->input->post('id');
 		$idMasterLeger 	= $this->input->post('idMaster');
 		$idLeger 		= $this->input->post('idLeger');
-		$semester 		= $this->LegerNilai_m->dataSemester($idMasterLeger);
+		$semester 		= $this->Legernilai_m->dataSemester($idMasterLeger);
 		foreach ($listPD as $id) {
 			/*INPUT SISWA KE DATA PENILAIAN*/
 			$data = [
 			    'NIK_pd' => $id,
 			    'idLeger' => $idLeger
 			];
-			$this->LegerNilai_m->tambahNilaiSiswa($data);
+			$this->Legernilai_m->tambahNilaiSiswa($data);
 			/*------------------------------------------*/
 			/*INPUT SISWA KE DATA REKAP ABSEN*/
 			$dataAbsen = [
@@ -249,7 +249,7 @@ class LegerNilai extends CI_Controller {
 			    'jumlah_sakit' 		=> 0,
 			    'jumlah_terlambat' 	=> 0,
 			];
-			$this->LegerNilai_m->inputAbsen($dataAbsen);
+			$this->Legernilai_m->inputAbsen($dataAbsen);
 			/*-------------------------------*/
 
 		}
@@ -266,7 +266,7 @@ class LegerNilai extends CI_Controller {
 		    $field => $value,
 		    //'NIK_pd' => $NIK
 		];
-		$this->LegerNilai_m->simpanNilai($data, $pk);
+		$this->Legernilai_m->simpanNilai($data, $pk);
 	}
 
 
@@ -274,13 +274,13 @@ class LegerNilai extends CI_Controller {
 
 	public function KelolaNilaiEkskul(){
 		$idMasterLeger 			= $this->input->get('IDMaster');
-		$getEkskul 				= $this->LegerNilai_m->getEkskul();
-		$getTenpen 				= $this->LegerNilai_m->getTenpen();
+		$getEkskul 				= $this->Legernilai_m->getEkskul();
+		$getTenpen 				= $this->Legernilai_m->getTenpen();
 
 		$data['idMasterLeger'] 	= $idMasterLeger;
 		$data['tenpen'] 		= $getTenpen;
 		$data['ekskul'] 		= $getEkskul;
-		$data['MasterLeger'] 	= $this->LegerNilai_m->detailLeger($idMasterLeger);
+		$data['MasterLeger'] 	= $this->Legernilai_m->detailLeger($idMasterLeger);
 		$view 					= 'KelolaNilaiEkskul/kelolaNilaiEkskul';
 		$template 				= 'admin_template';
 		$data['crumb'] = array( 
@@ -293,7 +293,7 @@ class LegerNilai extends CI_Controller {
 
 	public function getKontenEkskul(){
 		$idMasterLeger = $this->input->post('id');
-		$data['listEkskul'] = $this->LegerNilai_m->getKontenEkskul($idMasterLeger);
+		$data['listEkskul'] = $this->Legernilai_m->getKontenEkskul($idMasterLeger);
 		$this->load->view('KelolaNilaiEkskul/kontenKelolaEkskul', $data, FALSE);
 	}
 
@@ -305,13 +305,13 @@ class LegerNilai extends CI_Controller {
 		    'pembimbing' 		=> $i->post('pembimbingEkskul'),
 		    'no_urut_ekskul' 	=> $i->post('noUrut')
 		];
-		$cekEkskul = $this->LegerNilai_m->cekEkskulNilai($data);
+		$cekEkskul = $this->Legernilai_m->cekEkskulNilai($data);
 		if($cekEkskul == 0){
 			$callback = [
 		    	'status' 	=> 'sukses',
 		    	'pesan' 	=> 'Data Berhasil Ditambahkan' 
 			];
-			$this->LegerNilai_m->addEkskulLeger($data);
+			$this->Legernilai_m->addEkskulLeger($data);
 			
 		}else{
 			$callback = [
@@ -324,7 +324,7 @@ class LegerNilai extends CI_Controller {
 	}
 	public function hapusKontenEkskul(){
 		$idLegerEkskul = $this->input->post('id');
-		$this->LegerNilai_m->hapusKontenEkskul($idLegerEkskul);
+		$this->Legernilai_m->hapusKontenEkskul($idLegerEkskul);
 	}
 
 	public function getKontenKelolaNilaiEkskul(){
@@ -332,18 +332,18 @@ class LegerNilai extends CI_Controller {
 		$idLeger 	= $this->input->post('idLeger');
 		$namaEkskul = $this->input->post('namaEkskul');
 		$angkatan 	= $this->input->post('angkatan');
-		$listSiswa 	= $this->LegerNilai_m->getlistPD($idKelas, $angkatan);
-		$listNilai  = $this->LegerNilai_m->getListNilaiEkskulPD($idLeger);
+		$listSiswa 	= $this->Legernilai_m->getlistPD($idKelas, $angkatan);
+		$listNilai  = $this->Legernilai_m->getListNilaiEkskulPD($idLeger);
 		/*foreach ($listSiswa as $pd) {
 			$NIK = $pd->NIK_pd;
-			$nilai = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
+			$nilai = $this->Legernilai_m->getNilaiPD($NIK, $idLeger);
 			if(count($nilai) == 0){
 				$data['nilai'] = $nilai->nilai_pengetahuan;
 			}else{
 				$data['nilai'] = 0;
 			}
 		}*/
-		#$data['nilai'] = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
+		#$data['nilai'] = $this->Legernilai_m->getNilaiPD($NIK, $idLeger);
 		$data['angkatan'] 	= $angkatan;
 		$data['idKelas'] 	= $idKelas;
 		$data['listSiswa'] 	= $listSiswa;
@@ -362,7 +362,7 @@ class LegerNilai extends CI_Controller {
 			    'NIK_pd' => $id,
 			    'idLeger_ekskul' => $idLeger
 			];
-			$this->LegerNilai_m->tambahNilaiEkskulSiswa($data);
+			$this->Legernilai_m->tambahNilaiEkskulSiswa($data);
 		}
 		echo json_encode(array("status" => TRUE));
 	}
@@ -377,12 +377,12 @@ class LegerNilai extends CI_Controller {
 		    $field => $value,
 		    //'NIK_pd' => $NIK
 		];
-		$this->LegerNilai_m->simpanNilaiEkskul($data, $pk);
+		$this->Legernilai_m->simpanNilaiEkskul($data, $pk);
 	}
 
 	public function hapusPenilaianSiswaEkskul(){
 		$id = $this->input->post('id');
-		$this->LegerNilai_m->hapusPenilaianSiswaEkskul($id);
+		$this->Legernilai_m->hapusPenilaianSiswaEkskul($id);
 	}
 
 

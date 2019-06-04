@@ -12,7 +12,7 @@ class Listpd extends CI_Controller {
 	}
 
 	public function index(){
-		$this->load->model('LegerNilai/LegerNilai_m');
+		$this->load->model('LegerNilai/Legernilai_m');
 		$crud 		= new grocery_CRUD();
 
 		$crud->set_table('peserta_didik');
@@ -49,7 +49,7 @@ class Listpd extends CI_Controller {
 		$crud->unset_edit_fields('idProvinsi','idKabupaten', 'idKecamatan', 'idKelurahan', 'alamat');
 
 		/*LIST DATA TAHUN AJARAN*/
-		$listTahunAngkatan = $this->LegerNilai_m->getTahunAjaran();
+		$listTahunAngkatan = $this->Legernilai_m->getTahunAjaran();
 		$finalArray = array();
 		foreach ($listTahunAngkatan->result() as $row){
 				$finalArray[substr($row->nama_tahun_ajaran,0,4)]=$row->nama_tahun_ajaran;

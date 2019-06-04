@@ -328,5 +328,5 @@ class Legernilai_m extends CI_Model {
 
 }
 
-/* End of file LegerNilai_m.php */
-/* Location: ./application/modules/LegerNilai/models/LegerNilai_m.php */
+/* End of file Legernilai_m.php */
+/* Location: ./application/modules/LegerNilai/models/Legernilai_m.php */
