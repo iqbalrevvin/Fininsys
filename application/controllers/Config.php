@@ -7,7 +7,7 @@ class Config extends CI_Controller {
 		parent::__construct();
 		$this->load->library('grocery_CRUD');
 		$this->load->library('OutputView');
-		$this->load->model('GetData_m');
+		$this->load->model('Getdata_m');
     }
  	
     public function index()
@@ -64,7 +64,7 @@ class Config extends CI_Controller {
 		$crud->set_relation_n_n('groups', 'users_groups', 'groups', 'user_id', 'group_id', 'name');
 		$crud->where('username !=','iqbalrevvin');
 
-		$listGroup = $this->GetData_m->getDataHakAkses();
+		$listGroup = $this->Getdata_m->getDataHakAkses();
 		$finalArray = array();
 		foreach ($listGroup->result() as $row){
 				$finalArray[$row->id]=$row->name;

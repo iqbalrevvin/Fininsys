@@ -1,7 +1,7 @@
 <?php
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class GetData_m extends CI_Model {
+class Getdata_m extends CI_Model {
 
 	public function getDataKelas($idKelas){
 		$query 		= $this->db->get_where('kelas', ['idKelas' => $idKelas]);

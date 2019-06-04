@@ -7,7 +7,7 @@ class Sekolah extends CI_Controller {
 		parent::__construct();
 		$this->load->library('outputView');
 		$this->load->library('grocery_CRUD');
-		$this->load->model('GetData_m');
+		$this->load->model('Getdata_m');
 	}
 
 	public function index(){
@@ -20,28 +20,28 @@ class Sekolah extends CI_Controller {
 
 		$crud->set_field_upload('logo_sekolah', 'assets/image/logosekolah');
 
-		$listDesa = $this->GetData_m->getDataDesa();
+		$listDesa = $this->Getdata_m->getDataDesa();
 		$finalArray = array();
 		foreach ($listDesa as $row){
 				$finalArray[$row->nama_desa]=$row->nama_desa;
 		}
 		$crud->field_type('desa_sekolah','dropdown',$finalArray);
 
-		$listKecamatan = $this->GetData_m->getDataKecamatan();
+		$listKecamatan = $this->Getdata_m->getDataKecamatan();
 		$finalArray = array();
 		foreach ($listKecamatan as $row){
 				$finalArray[$row->nama_kecamatan]=$row->nama_kecamatan;
 		}
 		$crud->field_type('kecamatan_sekolah','dropdown',$finalArray);
 
-		$listKabupaten = $this->GetData_m->getDataKabupaten();
+		$listKabupaten = $this->Getdata_m->getDataKabupaten();
 		$finalArray = array();
 		foreach ($listKabupaten as $row){
 				$finalArray[$row->nama_kabupaten]=$row->nama_kabupaten;
 		}
 		$crud->field_type('kabupaten_sekolah','dropdown',$finalArray);
 
-		$listProvinsi = $this->GetData_m->getDataProvinsi();
+		$listProvinsi = $this->Getdata_m->getDataProvinsi();
 		$finalArray = array();
 		foreach ($listProvinsi as $row){
 				$finalArray[$row->nama_provinsi]=$row->nama_provinsi;

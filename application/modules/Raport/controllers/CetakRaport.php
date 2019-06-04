@@ -8,7 +8,7 @@ class CetakRaport extends CI_Controller {
 		//$this->load->library('pdf');
         $this->load->library('OutputView');
         $this->load->library('M_pdf');
-        $this->load->model('GetData_m');
+        $this->load->model('Getdata_m');
         $this->load->model('CetakRaport_m');
         $this->load->model('Raport_m');
         $this->load->helper('tglindo_helper');
@@ -35,7 +35,7 @@ class CetakRaport extends CI_Controller {
         $titimangsa     = $this->input->get('DateOfDistribution');
 
         $data = [
-            'pengaturan'        => $this->GetData_m->dataPengaturan(),
+            'pengaturan'        => $this->Getdata_m->dataPengaturan(),
             'identitasSekolah'  => $this->CetakRaport_m->getIdentitasSekolah($masterID),
             'identitasPD'       => $this->CetakRaport_m->getIdentitasPD($siswaID),
             'titimangsa'        => $titimangsa,
@@ -63,7 +63,7 @@ class CetakRaport extends CI_Controller {
         $masterID       = $this->input->get('MasterID');
         $titimangsa     = $this->input->get('DateOfDistribution');
         $data = [
-            'pengaturan'        => $this->GetData_m->dataPengaturan(),
+            'pengaturan'        => $this->Getdata_m->dataPengaturan(),
             'identitasSekolah'  => $this->CetakRaport_m->getIdentitasSekolah($masterID),
             'identitasPD'       => $this->CetakRaport_m->getIdentitasPD($siswaID),
             'titimangsa'        => $titimangsa,
@@ -92,7 +92,7 @@ class CetakRaport extends CI_Controller {
         $data = [
             'masterID'          => $masterID,
             'semester'          => $semester,
-            'pengaturan'        => $this->GetData_m->dataPengaturan(),
+            'pengaturan'        => $this->Getdata_m->dataPengaturan(),
             'identitasSekolah'  => $this->CetakRaport_m->getIdentitasSekolah($masterID),
             'identitasPD'       => $this->CetakRaport_m->getIdentitasPD($siswaID),
             'titimangsa'        => $titimangsa,
@@ -130,7 +130,7 @@ class CetakRaport extends CI_Controller {
         $data = [
             'masterID'          => $masterID,
             'semester'          => $semester,
-            'pengaturan'        => $this->GetData_m->dataPengaturan(),
+            'pengaturan'        => $this->Getdata_m->dataPengaturan(),
             'identitasSekolah'  => $this->CetakRaport_m->getIdentitasSekolah($masterID),
             'identitasPD'       => $this->CetakRaport_m->getIdentitasPD($siswaID),
             'titimangsa'        => $titimangsa,

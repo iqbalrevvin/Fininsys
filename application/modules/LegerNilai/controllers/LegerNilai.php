@@ -10,7 +10,7 @@ class LegerNilai extends CI_Controller {
 		$this->load->model('LegerNilai_m');
 		$this->load->model('TenagaPendidik/TenagaPendidik_m');
 		$this->load->model('DataTableSiswa_m');
-		$this->load->model('GetData_m');
+		$this->load->model('Getdata_m');
 	}
 	public function index(){
 		$crud = new grocery_CRUD();
@@ -204,7 +204,7 @@ class LegerNilai extends CI_Controller {
 		$idMaster 	= $this->input->post('idMaster');
 		$listSiswa 	= $this->LegerNilai_m->getlistPD($idKelas, $angkatan);
 		$listNilai  = $this->LegerNilai_m->getListNilaiPD($idLeger);
-		$kelas  	= $this->GetData_m->getDataKelas($idKelas); 
+		$kelas  	= $this->Getdata_m->getDataKelas($idKelas); 
 		/*foreach ($listSiswa as $pd) {
 			$NIK = $pd->NIK_pd;
 			$nilai = $this->LegerNilai_m->getNilaiPD($NIK, $idLeger);
