@@ -17,7 +17,7 @@
 							<select class="form-control m_select2_1_modal" id="pilihEkskul" name="pilihEkskul">
 			                    <?php foreach ($ekskul as $data): ?>
 			                        <option value="<?= $data->nama_ekstrakulikuler ?>">
-			                        	<?= $data->nama_ekstrakulikuler ?> | <?= $data->Keterangan ?>
+			                        	<?= $data->nama_ekstrakulikuler ?> | <?= $data->keterangan ?>
 			                        </option>
 			                    <?php endforeach; ?>
 			                </select>
