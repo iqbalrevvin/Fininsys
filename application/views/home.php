@@ -6,6 +6,7 @@
     </div>
     <div class="m-alert__text">
         <h6>Selamat Datang Di Aplikasi <b>Fininsys</b> (Financial & Information System)<br>Gunakan Sistem Informasi Ini Dengan Bijak!</h6>
+        <?= $settings->email_lembaga ?>
     </div>
 </div>
 <!--Begin::Section-->
@@ -108,6 +109,29 @@
                 <!--end:: Widgets/Profit Share-->
             </div>
         </div>
+    </div>
+</div>
+<div class="m-portlet m-portlet--warning m-portlet--head-solid-bg m-portlet--head-sm m-portlet--mobile" m-portlet="true">
+    <div class="m-portlet__head">
+        <div class="m-portlet__head-caption">
+            <div class="m-portlet__head-title">
+                <span class="m-portlet__head-icon">
+                    <i class="flaticon-presentation"></i>
+                </span>
+                <h4 class="m-portlet__head-text">
+                    Google Calendar / Kalender Kegiatan <small>(Pastikan Email Akun Google Di Pengaturan Aplikasi Terisi!)</small>
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="m-portlet__body">
+    <?php if ($settings->email_lembaga == NULL): ?>
+        <h3>Email Lembaga Belum Terisi!, Silahkan lengkapi email lembaga dengan mengakses <a href="<?= base_url('config/settings') ?>">Konfigurasi->Pengaturan Aplikasi</a>
+        </h3>
+    <?php else: ?>
+        <iframe src="https://calendar.google.com/calendar/embed?src=<?= $settings->email_lembaga ?>&ctz=Asia%2FJakarta" style="border: 0" width="100%" height="750" frameborder="0" scrolling="no"></iframe>
+    <?php endif ?>
+        
     </div>
 </div>
 <!--End::Section-->
