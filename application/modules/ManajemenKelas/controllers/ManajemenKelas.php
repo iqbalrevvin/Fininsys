@@ -7,8 +7,8 @@ class ManajemenKelas extends CI_Controller {
 		parent::__construct();
 		$this->load->library('OutputView');
 		$this->load->model('ManajemenKelas_m');
-		$this->load->helper('fotoGender');
-		$this->load->helper('grade_helper');
+		$this->load->helper('fotogender');
+		$this->load->helper('grade');
 	}
 
 	public function index(){
