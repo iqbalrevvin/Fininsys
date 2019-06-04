@@ -112,10 +112,10 @@ class MX_Loader extends CI_Loader
 	}
 
 	/** Load a module helper **/
-	public function helper($helper = array()) 
+	public function helper($helper = array())
 	{
 		if (is_array($helper)) return $this->helpers($helper);
-		
+
 		if (isset($this->_ci_helpers[$helper]))	return;
 
 		list($path, $_helper) = Modules::find($helper.'_helper', $this->_module, 'helpers/');
@@ -128,9 +128,9 @@ class MX_Loader extends CI_Loader
 	}
 
 	/** Load an array of helpers **/
-	public function helpers($helpers = array()) 
+	public function helpers($helpers = array())
 	{
-		foreach ($helpers as $_helper) $this->helper($_helper);	
+		foreach ($helpers as $_helper) $this->helper($_helper);
 		return $this;
 	}
 
