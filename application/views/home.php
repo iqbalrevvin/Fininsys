@@ -131,8 +131,10 @@
     <?php if ($settings->email_lembaga == NULL): ?>
         <h3>Email Lembaga Belum Terisi!, Silahkan lengkapi email lembaga dengan mengakses <a href="<?= base_url('config/settings') ?>">Konfigurasi->Pengaturan Aplikasi</a>
         </h3>
-    <?php else: ?>
+    <?php elseif($settings->kode_embed_kalender == NULL): ?>
         <iframe src="https://calendar.google.com/calendar/embed?src=<?= $settings->email_lembaga ?>&ctz=Asia%2FJakarta&amp;title=Kalender Kagiatan/Akademik (<?= $settings->email_lembaga ?>)" style="border: 0" width="100%" height="500" frameborder="0" scrolling="no" title="Kalender Akademik"></iframe>
+    <?php else: ?>
+        <?= $settings->kode_embed_kalender ?>
     <?php endif ?>
   
         
@@ -154,7 +156,10 @@
                 <div class="m-portlet__body">
                     <ul>
                         <li>Kalender Kegiatan diadopsi dari <a href="https://calendar.google.com">Google Calendar</a>.</li>
-                        <li>Kalender di tautkan dengan akun <a href="gmail.com">Gmail</a> yang ditetapkan pada pengaturan aplikasi.</li>
+                        <li>
+                            Kalender di tautkan dengan akun <a href="gmail.com">Gmail</a> yang ditetapkan pada pengaturan aplikasi, atau anda bisa menyematkan kode pengaturan khusus untuk google kalender anda. 
+                            <br><i><small>(Kosongkan Inputan jika tidak akan menggunakan kode semat khusus)</small></i> 
+                        </li>
                         <li>Jika tidak melihat apapun di informasi kalender kegiatan, coba akses fininsys dengan browser <a href="https://www.google.com/chrome/">Google Chrome</a> atau browser versi terbaru.</li>
                         <li>Jika kalender tetap tidak muncul coba untuk melakukan <a href="https://accounts.google.com">Login Akun Google</a> terlebih dahulu.</li>
                         <li>Jika terdapat notifikasi <span class="text-danger"><i>acara dari satu atau beberapa kalender tidak dapat ditampilkan di sini karena Anda tidak memiliki izin untuk melihatnya.</i></span>, cobalah untuk melakukan <b>Konfigurasi</b> google kalender dan atur sebagai <b>Public</b>. <br><a href="https://support.google.com/calendar/answer/37083?hl=id" target="_blank">Panduan Google Kalender Public Access</a></li>
