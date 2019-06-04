@@ -1,14 +1,4 @@
 <?php require_once('template/other/preloader.php'); ?>
-
-<div class="m-alert m-alert--icon m-alert--air m-alert--square alert alert-dismissible m--margin-bottom-30" role="alert">
-    <div class="m-alert__icon">
-        <i class="flaticon-exclamation m--font-brand"></i>
-    </div>
-    <div class="m-alert__text">
-        <h6>Selamat Datang Di Aplikasi <b>Fininsys</b> (Financial & Information System)<br>Gunakan Sistem Informasi Ini Dengan Bijak!</h6>
-        <?= $settings->email_lembaga ?>
-    </div>
-</div>
 <!--Begin::Section-->
 <div class="m-portlet">
     <div class="m-portlet__body  m-portlet__body--no-padding">
