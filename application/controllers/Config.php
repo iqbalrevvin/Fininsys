@@ -210,6 +210,7 @@ class Config extends CI_Controller {
 		$crud->unset_print();
 		$crud->set_rules('email_lembaga', 'E-mail', 'required|valid_email');
 		$crud->required_fields('judul', 'email_lembaga');
+		$crud->unset_texteditor('kode_embed_kalender', 'full_text');
 
 		$output = $crud->render();
 		$data['judul'] = "Settings";
