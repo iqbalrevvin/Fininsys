@@ -8,7 +8,7 @@ class LegerNilai extends CI_Controller {
 		$this->load->library('OutputView');
 		$this->load->library('grocery_CRUD');
 		$this->load->model('Legernilai_m');
-		$this->load->model('TenagaPendidik/TenagaPendidik_m');
+		$this->load->model('TenagaPendidik/Tenagapendidik_m');
 		$this->load->model('DataTableSiswa_m');
 		$this->load->model('Getdata_m');
 	}
