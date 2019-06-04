@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class LegerNilai_m extends CI_Model {
+class Legernilai_m extends CI_Model {
 
 	public function insertMasterLeger($data){
 		$idKelas 		= $data['idKelas'];
