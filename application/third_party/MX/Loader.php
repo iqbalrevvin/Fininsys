@@ -124,7 +124,7 @@ class MX_Loader extends CI_Loader
 
 		Modules::load_file($_helper, $path);
 		$this->_ci_helpers[$_helper] = TRUE;
-		return $this;
+		#return $this;
 	}
 
 	/** Load an array of helpers **/
