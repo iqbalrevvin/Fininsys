@@ -10,9 +10,10 @@
 								<i class="flaticon-presentation"></i>
 							</span>
 							<h4 class="m-portlet__head-text">
-								<?= $kelas->nama_kelas ?> | <?= $kelas->nama_prodi ?> | <?= $kelas->nama_sekolah ?> 
+								<?= $kelas->nama_kelas ?> | <?= $kelas->nama_prodi ?><br>
+								<?= $kelas->nama_sekolah ?>
 								<?php $jumlah = count($this->ManajemenKelas_m->getPesdik($kelas->idKelas)); ?>
-								<small data-id="jumlahSiswa">(<?= $jumlah ?> Siswa)</small>
+								(<?= $jumlah ?> Siswa)
 							</h4>
 						</div>
 					</div>
