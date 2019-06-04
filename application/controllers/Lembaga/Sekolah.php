@@ -16,7 +16,7 @@ class Sekolah extends CI_Controller {
 		$crud->set_theme('datatables');
 		$crud->set_table('sekolah');
 		$crud->set_subject('Daftar Sekolah');
-		$crud->columns('logo_sekolah', 'npsn', 'nama_sekolah', 'alamat_sekolah');
+		$crud->columns('logo_sekolah', 'npsn', 'nama_sekolah', 'alamat_sekolah', 'email_sekolah');
 
 		$crud->set_field_upload('logo_sekolah', 'assets/image/logosekolah');
 
@@ -56,9 +56,10 @@ class Sekolah extends CI_Controller {
 		$crud->set_relation('provinsi_sekolah','alamat_provinsi','nama_provinsi');*/
 
 		/*VALIDATION*/
-		$crud->required_fields('npsn', 'nama_sekolah');
+		$crud->required_fields('npsn', 'nama_sekolah', 'email_sekolah');
 		$crud->set_rules('npsn', 'NPSN', 'required|min_length[8]|max_length[8]');
 		$crud->set_rules('nama_sekolah', 'Nama Sekolah', 'required');
+		$crud->set_rules('email_sekolah', 'E-mail', 'required|valid_email');
 		/*------------*/
 
 		/*CALLBACK*/
