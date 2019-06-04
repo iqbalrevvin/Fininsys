@@ -1,5 +1,5 @@
 <?php 
-function fotoGender($foto, $JK){
+	function fotoGender($foto, $JK){
 		if($foto == ''){
 			if($JK == 'Laki-Laki'){
 				$viewFoto = "siswa-L.png";

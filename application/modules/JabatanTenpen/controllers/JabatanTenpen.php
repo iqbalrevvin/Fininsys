@@ -7,7 +7,7 @@ class JabatanTenpen extends CI_Controller {
 		parent::__construct();
 		$this->load->library('OutputView');
 		$this->load->library('grocery_CRUD');
-		$this->load->model('TenagaPendidik/TenagaPendidik_m');
+		$this->load->model('TenagaPendidik/Tenagapendidik_m');
 		$this->load->model('JabatanTenpen_m');
 	}
 	public function index(){

@@ -12,9 +12,7 @@ class ManajemenKelas extends CI_Controller {
 	}
 
 	public function index(){
-
-		
-		#$data['siswa'] 		= $this->ManajemenKelas_m->getPesdik($idKelas);
+		#$data['siswa'] 	= $this->ManajemenKelas_m->getPesdik($idKelas);
 		$data['judul'] 		= 'Manajemen Kelas';
 		$template      		= 'admin_template';
 		$view          		= 'manajemenKelas';
