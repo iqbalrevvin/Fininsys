@@ -63,7 +63,7 @@ $(function(){
               $("#btnLoading").fadeOut();
               mApp.unblock("#loginArea");
             }else{
-              $('.message').html('<div class="m-alert m-alert--outline alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"></button><strong>Peringatan!</strong> ' + data.pesan + '.</div>').hide().slideDown();
+              $('.message').html('<div class="m-alert m-alert--outline alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"></button><strong>Terimaikasih!</strong> ' + data.pesan + '.</div>').hide().slideDown();
               window.location.href = redirect;
             }
             //$("#btnLoading").fadeOut();
