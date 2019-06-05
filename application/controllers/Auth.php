@@ -22,9 +22,10 @@ class Auth extends CI_Controller {
 	public function login()
 	{
 		if (!$this->ion_auth->logged_in()){
-			$data['redirect'] = site_url('home');
-			$view             = 'auth/login';
-			$template         = 'auth_template';
+			$data['redirect'] 	= site_url('home');
+			$data['error'] 		= $this->ion_auth->errors();
+ 			$view             	= 'auth/login';
+			$template         	= 'auth_template';
 			$this->outputview->output_front($view, $template, $data);
 		}else{
 			redirect('home');
@@ -37,10 +38,19 @@ class Auth extends CI_Controller {
 		$remember = (bool) $this->input->post('remember');
 	
 		if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember)){
-			echo "true";
+			$callback = [
+			    'status' 	=> 'true',
+			    'pesan' 	=> 'Login Berhasil' 
+			];
 		}else{
-			echo "false";
+			$callback = [
+			    'status' 	=> 'false',
+			    'pesan' 	=> $this->ion_auth->errors() 
+			];
+			#echo "false";
+			#echo "test";
 		}
+		echo json_encode($callback);
 	}
 
 	public function logout()
