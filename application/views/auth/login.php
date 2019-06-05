@@ -53,15 +53,17 @@ $(function(){
     $.ajax({
         url      : $(this).attr('action'),
         type     : 'POST',
+        dataType: 'json',
         data     : $(this).serialize(),
         success  : function(data) {
-            if (data == "false") {
-              $('.message').html('<div class="m-alert m-alert--outline alert alert-danger alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"></button><strong>Peringatan!</strong> Login Tidak Valid.</div>').hide().slideDown();
+            if (data.status == "false") {
+              $('.message').html(data.pesan).hide().slideDown();
               $('input').val('');
               $('input[name="identity"]').focus();
               $("#btnLoading").fadeOut();
               mApp.unblock("#loginArea");
             }else{
+              $('.message').html('<div class="m-alert m-alert--outline alert alert-success alert-dismissible fade show" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"></button><strong>Peringatan!</strong> ' + data.pesan + '.</div>').hide().slideDown();
               window.location.href = redirect;
             }
             //$("#btnLoading").fadeOut();
