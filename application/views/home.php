@@ -155,14 +155,14 @@
             <div class="m-portlet m-portlet--mobile" id="kontenTambahPenilaianSiswa">
                 <div class="m-portlet__body">
                     <ul>
-                        <li>Kalender Kegiatan diadopsi dari <a href="https://calendar.google.com">Google Calendar</a>.</li>
+                        <li>Kalender Kegiatan diadopsi dari <a href="https://calendar.google.com" target="_blank">Google Calendar</a>.</li>
                         <li>
-                            Kalender di tautkan dengan akun <a href="gmail.com">Gmail</a> yang ditetapkan pada pengaturan aplikasi, atau anda bisa menyematkan kode pengaturan khusus untuk google kalender anda. 
+                            Kalender di tautkan dengan akun <a href="https://accounts.google.com" target="_blank">Gmail</a> yang ditetapkan pada pengaturan aplikasi, atau anda bisa menyematkan kode pengaturan khusus untuk google kalender anda. 
                             <br><i><small>(Kosongkan Inputan jika tidak akan menggunakan kode semat khusus)</small></i> 
                         </li>
                         <li>Jika tidak melihat apapun di informasi kalender kegiatan, coba akses fininsys dengan browser <a href="https://www.google.com/chrome/">Google Chrome</a> atau browser versi terbaru.</li>
-                        <li>Jika kalender tetap tidak muncul coba untuk melakukan <a href="https://accounts.google.com">Login Akun Google</a> terlebih dahulu.</li>
-                        <li>Jika terdapat notifikasi <span class="text-danger"><i>acara dari satu atau beberapa kalender tidak dapat ditampilkan di sini karena Anda tidak memiliki izin untuk melihatnya.</i></span>, cobalah untuk melakukan <b>Konfigurasi</b> google kalender dan atur sebagai <b>Public</b>. <br><a href="https://support.google.com/calendar/answer/37083?hl=id" target="_blank">Panduan Google Kalender Public Access</a></li>
+                        <li>Jika kalender tetap tidak muncul coba untuk melakukan <a href="https://accounts.google.com" target="_blank">Login Akun Google</a> terlebih dahulu.</li>
+                        <li>Jika terdapat notifikasi <span class="text-danger">acara dari satu atau beberapa kalender tidak dapat ditampilkan di sini karena Anda tidak memiliki izin untuk melihatnya.</span>, cobalah untuk melakukan <b>Konfigurasi</b> google kalender dan atur sebagai <b>Public</b>. <br><a href="https://support.google.com/calendar/answer/37083?hl=id" target="_blank">Panduan Google Kalender Public Access</a></li>
                     </ul>
                 </div>
             </div>
