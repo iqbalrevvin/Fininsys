@@ -3,15 +3,15 @@
   <div id="resultLogin"></div>
   <div id="loginArea">
     <div class="form-group m-form__group">
-      <input class="form-control m-input" type="text" placeholder="Nama Pengguna" autocomplete="off" name="identity">
+      <input class="form-control m-input" type="text" placeholder="<?php echo lang('login_identity_label') ?>" autocomplete="off" name="identity">
     </div>
     <div class="form-group m-form__group">
-      <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Kata Sandi" name="password">
+      <input class="form-control m-input m-login__form-input--last" type="password" placeholder="<?php echo lang('login_password_label') ?>" name="password">
     </div>
 
     <div class="col m--align-left">
       <label class="">
-        <input type="checkbox" value="1"> Ingat Saya
+        <input type="checkbox" value="1"> <?php echo lang('login_remember_label') ?>
         <span></span>
       </label>
     </div>
@@ -27,14 +27,14 @@
       </div>
       <div class="col m--align-right">
         <a href="javascript:;" id="m_login_forget_password" class="m-link">
-          <b>Lupa Kata Sandi</b>
+          <b><?php echo lang('login_forgot_password') ?></b>
         </a>
       </div>
     </div>
   
     <div class="m-login__form-action">
       <button type="submit" id="submitAuthLogin" class="btn m-btn--pill m-btn--air m-btn m-btn--gradient-from-primary m-btn--gradient-to-info ">
-        <span id="btnLoading" ></span> Masuk
+        <span id="btnLoading" ></span> <?php echo lang('login_submit_btn') ?>
       </button>
     </div>
   </div>
