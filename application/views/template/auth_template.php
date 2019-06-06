@@ -19,7 +19,6 @@
     <meta property="og:url"             content="<?= base_url(); ?>" />
     <meta property="og:type"            content="website"/>
     <meta property="og:title"           content="Fininsys <?= $settings->instansi ?>" />
-    <meta property="og:description"     content="Fininsys <?= $settings->instansi ?>" />
     <meta property="og:description"     content="Financial & Information System" />
     <meta property="og:image"           content="<?= base_url('assets/image/'.$settings->logo) ?>">
     <meta http-equiv="X-UA-Compatible"  content="IE=edge" />
