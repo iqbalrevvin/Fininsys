@@ -15,7 +15,7 @@
 	    <meta http-equiv="X-UA-Compatible"  content="IE=edge" />
 	    <meta property="og:url"             content="<?= base_url('auth/login'); ?>" />
 	    <meta property="og:type"            content="website"/>
-	    <meta property="og:title"           content="Login Fininsys" />
+	    <meta property="og:title"           content="Fininsys" />
 	    <meta property="og:description"     content="Fininsys <?= $settings->instansi ?>" />
 	    <meta property="og:description"     content="Financial & Information System" />
 	    <meta property="og:image"           content="<?= base_url('assets/image/'.$settings->logo) ?>">
