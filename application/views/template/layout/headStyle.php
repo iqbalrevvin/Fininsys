@@ -29,11 +29,12 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta content="Financial Information System" name="description" />
     <meta content="Fininsys" name="@iqbalrevvin Development" />
     <meta http-equiv="X-UA-Compatible"  content="IE=edge" />
-    <meta property="og:url"             content="" />
+    <meta property="og:url"             content="<?= base_url(); ?>" />
     <meta property="og:type"            content="website"/>
     <meta property="og:title"           content="Fininsys" />
-    <meta property="og:description"     content="Kauangan & Sistem Informasi Sekolah" />
-    <meta http-equiv="Content-Type"     content="text/html; charset=utf-8" />
+    <meta property="og:description"     content="Fininsys <?= $settings->instansi ?>" />
+    <meta property="og:description"     content="Portal Sistem Akademik Siswa" />
+    <meta property="og:image"           content="<?= base_url('assets/image/'.$settings->logo) ?>">
     <meta http-equiv="X-UA-Compatible"  content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
