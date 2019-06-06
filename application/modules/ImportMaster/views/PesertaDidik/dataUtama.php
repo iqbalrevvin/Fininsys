@@ -36,20 +36,20 @@
 <div class="m-portlet portletTampil">
     <div class="m-portlet__head">
         <div class="m-portlet__head-caption">
+        <form method="POST" action="<?= base_url('ImportMaster/PesertaDidik/DataUtama') ?>" enctype="multipart/form-data">
             <div class="m-portlet__head-title">
-            	<div class="row col-md-6 col-6">
-					<b>Pilih File</b> : &nbsp;	
+            	<div class="row col-md-8 col-8">
+					<b>Unggah File</b> : &nbsp;	
 					<div class="custom-file">
-						<input type="file" class="custom-file-input" id="customFile" accept=".xlsx">
-						<label class="custom-file-label" for="customFile">Pilih Berkas</label>
+						<input type="file" class="custom-file-input" name="fileImport" id="customFile" accept=".xlsx">
+						<label class="custom-file-label" for="customFile">Klik Disini & Pilih Berkas</label>
 					</div>					
 				</div>
 
 				<div class="row col-md-4 col-4">
 					TampilKan Data : &nbsp;
-					<button type="button" class="btn btn-success m-btn m-btn--air m-btn--custom" id="btnTampilSiswa">
-						Tampilkan <span id="btnTampilLoading"></span>
-					</button>
+					<input type="submit" class="btn btn-success m-btn m-btn--air m-btn--custom" 
+						name="previewImport" value="Tampilkan"></input>
 				</div>
 
 				<div class="row col-md-3 col-3">
@@ -58,11 +58,24 @@
 						<i class="la la-info"></i>
 					</a>
 				</div>
+			
             </div>
+            </form>
         </div>
     </div>
     <div class="m-portlet__body">
-    	<div id="resultTampilSiswa">Pilih Berkas Dengan Format Excel Lalu Klik Tobol <b>Tampilkan</b> Untuk Mereview Data Yang Akan Di Import.</div>
+		<?php if(! $this->input->post('previewImport')): ?>
+			Pilih Berkas Dengan Format Excel Lalu Klik Tobol <b>Tampilkan</b> Untuk Mereview Data Yang Akan Di Import.
+		<?php else: ?>
+			<?php if(isset($upload_error)){ ?>
+				<div class="text-danger"><b><?= $upload_error ?></b></div>
+			<?php } ?>
+			<form action="<?= base_url('ImportMaster/PesertaDidik/ImportDataUtama') ?>" method="POST" >
+				<div class="text-danger" id="dataKosong">
+					Terdapat <span id='jumlah_kosong'></span> Masih Kosong, Lengkapi Data Lalu Upload Kembali File!
+				</div>
+			</form>
+		<?php endif; ?>
     </div>
 </div>
 
