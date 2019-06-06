@@ -14,6 +14,17 @@
             <div class="m-portlet m-portlet--mobile" id="">
                  <div class="m-portlet__body">
                  	<p>Pastikan Data Yang Di Upload Adalah File Dari Format Excel (.xlsx)</p>
+                 	<b>Hal Yang Perlu Diperhatikan Saat Mengimport Data Utama Siswa</b>
+                 	<ul>
+                 		<li>
+                 			<b>ID Sekolah</b> diisi dengan ID sekolah siswa saat ini 
+                 			(Cek ID di Menu <a href="<?= base_url('Lembaga/Sekolah') ?>" target="_blank">Master Data->Lembaga->Data Sekolah</a>)
+                 		</li>
+                 		<li>Pastikan <b>NIK,NISN,NIPD</b> Peserta Didik tidak ganda</li>
+                 		<li>
+                 			Setelah selesai mengimport, lengkapi data Peserta Didik melalui halaman profil Peserta Didik. <br>(<a href="<?= base_url('PesertaDidik/Listpd') ?>" target="_blank">Master Data->Peserta Didik->Profil</a>)
+                 		</li>
+                 	</ul>
                 </div>
             </div>
             <!-- END EXAMPLE TABLE PORTLET-->
@@ -38,26 +49,37 @@
         <div class="m-portlet__head-caption">
         <form method="POST" action="<?= base_url('ImportMaster/ImportPesertaDidik/DataUtama') ?>" enctype="multipart/form-data">
             <div class="m-portlet__head-title">
-            	<div class="row col-md-8 col-8">
-					<b>Unggah File</b> : &nbsp;	
-					<div class="custom-file">
-						<input type="file" class="custom-file-input" name="fileImport" id="customFile" accept=".xlsx">
-						<label class="custom-file-label" for="customFile">Klik Disini & Pilih Berkas</label>
-					</div>					
-				</div>
-
-				<div class="row col-md-4 col-4">
-					TampilKan Data : &nbsp;
-					<input type="submit" class="btn btn-success m-btn m-btn--air m-btn--custom navigation" 
-						name="previewImport" value="Tampilkan"></input>
-				</div>
-
-				<div class="row col-md-3 col-3">
-					<a href="#" class="btn btn-info m-btn m-btn--icon m-btn--icon-only" data-toggle="modal" 
-                        data-target="#modalKeterangan" title="Keterangan">
-						<i class="la la-info"></i>
-					</a>
-				</div>
+	        
+	            	<div class="row col-md-5 col-lg-5">
+						<b>Unggah File</b> : &nbsp;	
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" name="fileImport" id="customFile" accept=".xlsx">
+							<label class="custom-file-label" for="customFile">Klik Disini & Pilih Berkas</label>
+						</div>					
+					</div>
+					
+					<div class="row col-md-3 col-lg-2">
+						TampilKan Data : &nbsp;
+						<input type="submit" class="btn btn-info m-btn m-btn--air m-btn--custom navigation" 
+							name="previewImport" value="Tampilkan"></input>
+					</div>
+				
+		
+					<div class="col-md-3 col-lg-3">
+						Format Import : &nbsp;
+						<a href="<?= base_url('excel/format-data-utama-siswa.xlsx') ?>" 
+							class="btn btn-success m-btn m-btn--air m-btn--custom" target="_blank">
+							<i class="flaticon-file-2"></i> Format Import
+						</a>
+					</div>
+					
+					<div class="row col-md-2 col-lg-1">
+						<a href="#" class="btn btn-danger m-btn m-btn--icon m-btn--icon-only" data-toggle="modal" 
+	                        data-target="#modalKeterangan" title="Keterangan">
+							<i class="la la-info"></i>
+						</a>
+					</div>
+			
 			
             </div>
             </form>
@@ -74,14 +96,116 @@
 				<div class="text-danger" id="dataKosong">
 					<span id='jumlah_kosong'></span> Data Peserta Didik Belum Lengkap, Lengkapi Data Lalu Upload Kembali File!
 				</div>
+				<table class="table table-striped- table-bordered table-hover table-checkable" id="dataPreview">
+					<tr>
+						<th colspan='5'>Preview Data</th>
+					</tr>
+					<tr>
+						<th>ID Sekolah</th>
+						<th>NIK</th>
+						<th>TAHUN ANGKATAN</th>
+						<th>NISN</th>
+						<th>NIPD</th>
+						<th>NAMA PESERTA DIDIK</th>
+						<th>JENIS KELAMIN</th>
+						<th>TEMPAT LAHIR</th>
+						<th>TANGGAL LAHIR</th>
+						<th>AGAMA</th>
+						<th>HP/WA</th>
+						<th>EMAIL</th>
+						<th>LINK FACEBOOK</th>
+						<th>LINK INSTAGRAM</th>
+						<th>LINK TWITTER</th>
+					</tr>
+					<?php 
+						$numrow = 3;
+						$kosong = 0;
+
+						foreach ($sheet as $row) {
+							$idSekolah 			= $row['A']; 
+							$NIK 				= $row['B']; 
+							$tahunAngkatan 		= $row['C']; 
+							$NISN 				= $row['D']; 
+							$NIPD 				= $row['E']; 
+							$nama 				= $row['F']; 
+							$jk 				= $row['G']; 
+							$tempatLahir 		= $row['H']; 
+							$tanggalLahir 		= $row['I']; 
+							$agama 				= $row['J'];
+							$noHP 				= $row['K'];
+							$email 				= $row['L'];
+							$facebook 			= $row['M'];
+							$instagram 			= $row['N'];
+							$twitter 			= $row['O'];
+
+							if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir))
+							continue;
+							if($numrow > 3){
+								$idSekolah_td 	= ( ! empty($idSekolah))? "" : " style='background: #E07171;'";
+								$NIK_td 		= ( ! empty($NIK))? "" : " style='background: #E07171;'";
+								$tahunAngkatan_td = ( ! empty($tahunAngkatan))? "" : " style='background: #E07171;'";
+								$NISN_td 		= ( ! empty($NISN))? "" : " style='background: #E07171;'";
+								$NIPD_td 		= ( ! empty($NIPD))? "" : " style='background: #E07171;'";
+								$nama_td 		= ( ! empty($nama))? "" : " style='background: #E07171;'";
+								$jk_td 			= ( ! empty($jk))? "" : " style='background: #E07171;'";
+								$tempatLahir_td	= ( ! empty($tempatLahir))? "" : " style='background: #E07171;'";
+								$tanggalLahir_td = ( ! empty($tanggalLahir))? "" : " style='background: #E07171;'";
+								if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir)){
+									$kosong++; // Tambah 1 variabel $kosong
+								} ?>
+								<tr>
+									<td<?= $idSekolah_td ?>><?= $idSekolah ?></td>
+									<td<?= $NIK_td ?> ><?= $NIK ?></td>
+									<td<?= $tahunAngkatan_td ?> ><?= $tahunAngkatan ?></td>
+									<td<?= $NISN_td ?>><?= $NISN ?></td>
+									<td<?= $NIPD_td ?>><?= $NIPD ?></td>
+									<td<?= $nama_td ?>><?= $nama ?></td>
+									<td<?= $jk_td ?>><?= $jk ?></td>
+									<td<?= $tempatLahir_td ?>><?= $tempatLahir ?></td>
+									<td<?= $tanggalLahir_td ?>><?= $tanggalLahir ?></td>
+									<td><?= $agama ?></td>
+									<td><?= $noHP ?></td>
+									<td><?= $email ?></td>
+									<td><?= $facebook ?></td>
+									<td><?= $instagram ?></td>
+									<td><?= $twitter ?></td>
+								</tr><?php	
+							}
+							$numrow++;
+						}	
+					?>
+				</table>
+				<?php if ($kosong > 0): ?>
+					<script>
+						$(document).ready(function(){
+							$("#jumlah_kosong").html('<?php echo $kosong; ?>');
+							$("#kosong").show();
+						});
+					</script>
+				<?php else: ?>
+					<hr>
+					<button type="submit" name="import" 
+						class="btn btn-success m-btn m-btn--air m-btn--custom navigation">
+						<b><i class="flaticon-download"></i> Import Data</b>
+					</button>
+				<?php endif ?>
 			</form>
 		<?php endif; ?>
     </div>
 </div>
 
+
 <script>
-
-
+	$(document).ready(function(){
+		$("#dataKosong").hide();
+	});
+	$("#dataPreview").DataTable({
+        responsive: !1,
+    })
+/*	$(document).ready(function(){	
+		$("#jumlah_kosong").html('<?php echo $kosong; ?>');
+		$("#kosong").show(); // Munculkan alert validasi kosong
+	});*/
 
 
 </script>
