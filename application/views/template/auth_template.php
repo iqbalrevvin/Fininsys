@@ -13,7 +13,12 @@
 	    <meta property="og:description"     content="Kauangan & Sistem Informasi Sekolah" />
 	    <meta http-equiv="Content-Type"     content="text/html; charset=utf-8" />
 	    <meta http-equiv="X-UA-Compatible"  content="IE=edge" />
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta property="og:url"             content="<?= base_url('auth/login'); ?>" />
+	    <meta property="og:type"            content="website"/>
+	    <meta property="og:title"           content="Login Fininsys" />
+	    <meta property="og:description"     content="Fininsys <?= $settings->instansi ?>" />
+	    <meta property="og:description"     content="Financial & Information System" />
+	    <meta property="og:image"           content="<?= base_url('assets/image/'.$settings->logo) ?>">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
