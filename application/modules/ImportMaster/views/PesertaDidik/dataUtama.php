@@ -36,7 +36,7 @@
 <div class="m-portlet portletTampil">
     <div class="m-portlet__head">
         <div class="m-portlet__head-caption">
-        <form method="POST" action="<?= base_url('ImportMaster/PesertaDidik/DataUtama') ?>" enctype="multipart/form-data">
+        <form method="POST" action="<?= base_url('ImportMaster/ImportPesertaDidik/DataUtama') ?>" enctype="multipart/form-data">
             <div class="m-portlet__head-title">
             	<div class="row col-md-8 col-8">
 					<b>Unggah File</b> : &nbsp;	
@@ -48,7 +48,7 @@
 
 				<div class="row col-md-4 col-4">
 					TampilKan Data : &nbsp;
-					<input type="submit" class="btn btn-success m-btn m-btn--air m-btn--custom" 
+					<input type="submit" class="btn btn-success m-btn m-btn--air m-btn--custom navigation" 
 						name="previewImport" value="Tampilkan"></input>
 				</div>
 
@@ -72,7 +72,7 @@
 			<?php } ?>
 			<form action="<?= base_url('ImportMaster/PesertaDidik/ImportDataUtama') ?>" method="POST" >
 				<div class="text-danger" id="dataKosong">
-					Terdapat <span id='jumlah_kosong'></span> Masih Kosong, Lengkapi Data Lalu Upload Kembali File!
+					<span id='jumlah_kosong'></span> Data Peserta Didik Belum Lengkap, Lengkapi Data Lalu Upload Kembali File!
 				</div>
 			</form>
 		<?php endif; ?>
