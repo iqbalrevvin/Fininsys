@@ -2,26 +2,35 @@
 <html lang="en" >
 	<!-- begin::Head -->
 	<head>
-		<meta charset="utf-8" />
-		<title><?= $title ?></title>
-	    <meta content="<?= $title ?>" name="description" />
-	    <meta content="<?= $title ?>" name="@iqbalrevvin Development" />
-	    <meta http-equiv="X-UA-Compatible"  content="IE=edge" />
-	    <meta http-equiv="Content-Type"     content="text/html; charset=utf-8" />
-	    <meta http-equiv="X-UA-Compatible"  content="IE=edge" />
-	    <meta property="og:url"             content="<?= base_url('auth/login'); ?>" />
-	    <meta property="og:type"            content="website"/>
-	    <meta property="og:title"           content="Fininsys <?= $settings->instansi ?>" />
-	    <meta property="og:description"     content="Fininsys <?= $settings->instansi ?>" />
-	    <meta property="og:description"     content="Financial & Information System" />
-	    <meta property="og:image"           content="<?= base_url('assets/image/'.$settings->logo) ?>">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
-	    <meta name="apple-mobile-web-app-capable" content="yes" />
-	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-	    <meta name="theme-color" content="##00FFFF">
-	    <meta content='id' name='language'/>
+	<meta charset="utf-8" />
+    <title><?= $settings->judul ?> <?= $settings->versi ?></title>
+    <meta name="description" content="Latest updates and statistic charts">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="Financial Information System" name="description" />
+    <meta content="Fininsys" name="@iqbalrevvin Development" />
+    <meta http-equiv="X-UA-Compatible"  content="IE=edge" />
+    <meta property="og:url"             content="<?= base_url(); ?>" />
+    <meta property="og:type"            content="website"/>
+    <meta property="og:title"           content="Fininsys <?= $settings->instansi ?>" />
+    <meta property="og:description"     content="Fininsys <?= $settings->instansi ?>" />
+    <meta property="og:description"     content="Financial & Information System" />
+    <meta property="og:image"           content="<?= base_url('assets/image/'.$settings->logo) ?>">
+    <meta http-equiv="X-UA-Compatible"  content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="##00FFFF">
+    <meta content='id' name='language'/>
 
 		<!--begin::Web font -->
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
