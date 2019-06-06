@@ -119,7 +119,7 @@
                 </thead>
 					
 					<?php 
-						$numrow = 3;
+						$numrow = 1;
 						$kosong = 0;
 
 						foreach ($sheet as $row) {
@@ -139,9 +139,9 @@
 							$instagram 			= $row['N'];
 							$twitter 			= $row['O'];
 
-							if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir))
+							if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir) && empty($agama) && empty($noHP) && empty($email) && empty($facebook) && empty($instagram) && empty($twitter))
 							continue;
-							if($numrow > 3){
+							if($numrow > 1){
 								$idSekolah_td 	= ( ! empty($idSekolah))? "" : " style='background: #E07171;'";
 								$NIK_td 		= ( ! empty($NIK))? "" : " style='background: #E07171;'";
 								$tahunAngkatan_td = ( ! empty($tahunAngkatan))? "" : " style='background: #E07171;'";
@@ -151,7 +151,13 @@
 								$jk_td 			= ( ! empty($jk))? "" : " style='background: #E07171;'";
 								$tempatLahir_td	= ( ! empty($tempatLahir))? "" : " style='background: #E07171;'";
 								$tanggalLahir_td = ( ! empty($tanggalLahir))? "" : " style='background: #E07171;'";
-								if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir)){
+								$agama_td 			= ( ! empty($agama))? "" : " style='background: #E07171;'";
+								$noHP_td 			= ( ! empty($noHP))? "" : " style='background: #E07171;'";
+								$email_td 			= ( ! empty($email))? "" : " style='background: #E07171;'";
+								$facebook_td 		= ( ! empty($facebook))? "" : " style='background: #E07171;'";
+								$instagram_td 		= ( ! empty($instagram))? "" : " style='background: #E07171;'";
+								$twitter_td 		= ( ! empty($twitter))? "" : " style='background: #E07171;'";
+								if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir) && empty($agama) && empty($noHP) && empty($email) && empty($facebook) && empty($instagram) && empty($twitter)){
 									$kosong++; // Tambah 1 variabel $kosong
 								} ?>
 								<tbody>
@@ -164,12 +170,12 @@
 									<td<?= $jk_td ?>><?= $jk ?></td>
 									<td<?= $tempatLahir_td ?>><?= $tempatLahir ?></td>
 									<td<?= $tanggalLahir_td ?>><?= $tanggalLahir ?></td>
-									<td><?= $agama ?></td>
-									<td><?= $noHP ?></td>
-									<td><?= $email ?></td>
-									<td><?= $facebook ?></td>
-									<td><?= $instagram ?></td>
-									<td><?= $twitter ?></td>
+									<td<?= $agama_td ?>><?= $agama ?></td>
+									<td<?= $noHP_td ?>><?= $noHP ?></td>
+									<td<?= $email_td ?>><?= $email ?></td>
+									<td<?= $facebook_td ?>><?= $facebook ?></td>
+									<td<?= $instagram_td ?>><?= $instagram ?></td>
+									<td<?= $twitter_td ?>><?= $twitter ?></td>
 								</tbody><?php	
 							}
 							$numrow++;
