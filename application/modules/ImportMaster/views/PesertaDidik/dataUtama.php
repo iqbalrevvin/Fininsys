@@ -85,7 +85,12 @@
     </div>
     <div class="m-portlet__body">
 		<?php if(! $this->input->post('previewImport')): ?>
-			Pilih Berkas Dengan Format Excel Lalu Klik Tobol <b>Tampilkan</b> Untuk Mereview Data Yang Akan Di Import.
+			<?php if($this->session->flashdata('suksesImport')): ?>
+				<b><?= $this->session->flashdata('suksesImport') ?></b>
+			<?php else: ?>
+				Pilih Berkas Dengan Format Excel Lalu Klik Tobol <b>Tampilkan</b> Untuk Mereview Data Yang Akan Di Import.
+			<?php endif ?>
+			
 		<?php else: ?>
 			<?php if(isset($upload_error)): ?>
 				<div class="text-danger"><b><?= $upload_error ?></b></div>
