@@ -16,8 +16,8 @@ class Sekolah extends CI_Controller {
 		$crud->set_theme('datatables');
 		$crud->set_table('sekolah');
 		$crud->set_subject('Daftar Sekolah');
-		$crud->columns('logo_sekolah', 'idSekolah', 'npsn', 'nama_sekolah', 'alamat_sekolah', 'email_sekolah');
-		$crud->display_as('idSekolah', 'ID');
+		$crud->columns('logo_sekolah', 'npsn', 'nama_sekolah', 'alamat_sekolah', 'email_sekolah');
+
 		$crud->set_field_upload('logo_sekolah', 'assets/image/logosekolah');
 
 		$listDesa = $this->Getdata_m->getDataDesa();
@@ -64,7 +64,6 @@ class Sekolah extends CI_Controller {
 
 		/*CALLBACK*/
 		$crud->callback_column('npsn',array($this,'npsn_callback'));
-		$crud->callback_column('idSekolah',array($this,'id_callback'));
 		/*--------------*/
 
 
@@ -79,10 +78,6 @@ class Sekolah extends CI_Controller {
 	}
 
 	function npsn_callback($value, $primary_key = null){
-		$value = '<b>'.$value.'</b>';
-		return $value;
-	}
-	function id_callback($value, $primary_key = null){
 		$value = '<b>'.$value.'</b>';
 		return $value;
 	}
