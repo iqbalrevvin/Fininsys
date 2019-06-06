@@ -12,17 +12,14 @@
 
 <!---///////////////////////////////////////////////////-->
 <?php if ($this->uri->segment(1) == 'PageEditor'): ?>
-
-<script src="<?= base_url('assets/vendors/tinymce/tinymce.min.js') ?>" type="text/javascript"></script>
+  <script src="<?= base_url('assets/vendors/tinymce/tinymce.min.js') ?>" type="text/javascript"></script>
 <?php endif; ?>
 <!--Alertify JS-->
 <script src="<?= base_url('assets/js/alertify.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/vendors.bundle.js') ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/scripts.bundle.js') ?>" type="text/javascript"></script>
 
-
-
-<?php if ($this->uri->segment(1) == 'ManajemenKelas' || $this->uri->segment(1) == 'LegerNilai'): ?>
+<?php if ($this->uri->segment(1) == 'ManajemenKelas' || $this->uri->segment(1) == 'LegerNilai' || $this->uri->segment(1) == 'ImportMaster'): ?>
   <script src="<?= base_url('assets/vendors/datatables-metronic/datatables.bundle.js') ?>" type="text/javascript"></script>
   <script src="<?= base_url('assets/vendors/datatables/datatables.bundle.js') ?>" type="text/javascript"></script>
 <?php endif; ?>
@@ -61,9 +58,11 @@
 
     jQuery(document).ready(function() {
       BootstrapDatepicker.init()
+
       //DatatablesBasicPaginations.init();
       //PortletDraggable.init()
     });
+    
 
     // Fungsi Input HANYA ANGKA
     function inputAngka(evt) {
@@ -144,30 +143,6 @@
   }
 //-----------------------------------------------------
 
-/*var PortletDraggable = {
-    init: function() {
-        $(".m_sortable_portlets").sortable({
-            connectWith: ".m-portlet__head",
-            items: ".m-portlet",
-            opacity: .8,
-            handle: ".m-portlet__head",
-            coneHelperSize: !0,
-            placeholder: "m-portlet--sortable-placeholder",
-            forcePlaceholderSize: !0,
-            tolerance: "pointer",
-            helper: "clone",
-            tolerance: "pointer",
-            forcePlaceholderSize: !0,
-            helper: "clone",
-            cancel: ".m-portlet--sortable-empty",
-            revert: 250,
-            update: function(e, t) {
-                t.item.prev().hasClass("m-portlet--sortable-empty") && t.item.prev().before(t.item)
-            }
-        })
-    }
-};
-*/
 // FUNGSI REFRESH
 $(".navigation").click(function(){
   $("#loadPage").html('<div class="m-spinner m-spinner--brand m-spinner--sm"></div><div class="m-spinner m-spinner--primary m-spinner--sm"></div><div class="m-spinner m-spinner--success m-spinner--sm"></div><div class="m-spinner m-spinner--info m-spinner--sm"></div><div class="m-spinner m-spinner--warning m-spinner--sm"></div><div class="m-spinner m-spinner--danger m-spinner--sm"></div> ');

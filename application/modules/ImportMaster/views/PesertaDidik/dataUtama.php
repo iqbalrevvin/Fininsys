@@ -79,8 +79,6 @@
 							<i class="la la-info"></i>
 						</a>
 					</div>
-			
-			
             </div>
             </form>
         </div>
@@ -97,8 +95,9 @@
 					<span id='jumlah_kosong'></span> Data Peserta Didik Belum Lengkap, Lengkapi Data Lalu Upload Kembali File!
 				</div>
 				<table class="table table-striped- table-bordered table-hover table-checkable" id="dataPreview">
-					<tr>
-						<th colspan='5'>Preview Data</th>
+				<thead>
+                    <tr>
+						<td colspan="15" style="text-align: center;"><b>IMPORT DATA SISWA</b></td>
 					</tr>
 					<tr>
 						<th>ID Sekolah</th>
@@ -108,15 +107,17 @@
 						<th>NIPD</th>
 						<th>NAMA PESERTA DIDIK</th>
 						<th>JENIS KELAMIN</th>
+						<th>AGAMA</th>
 						<th>TEMPAT LAHIR</th>
 						<th>TANGGAL LAHIR</th>
-						<th>AGAMA</th>
 						<th>HP/WA</th>
 						<th>EMAIL</th>
 						<th>LINK FACEBOOK</th>
 						<th>LINK INSTAGRAM</th>
 						<th>LINK TWITTER</th>
 					</tr>
+                </thead>
+					
 					<?php 
 						$numrow = 3;
 						$kosong = 0;
@@ -153,7 +154,7 @@
 								if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir)){
 									$kosong++; // Tambah 1 variabel $kosong
 								} ?>
-								<tr>
+								<tbody>
 									<td<?= $idSekolah_td ?>><?= $idSekolah ?></td>
 									<td<?= $NIK_td ?> ><?= $NIK ?></td>
 									<td<?= $tahunAngkatan_td ?> ><?= $tahunAngkatan ?></td>
@@ -169,7 +170,7 @@
 									<td><?= $facebook ?></td>
 									<td><?= $instagram ?></td>
 									<td><?= $twitter ?></td>
-								</tr><?php	
+								</tbody><?php	
 							}
 							$numrow++;
 						}	
@@ -198,14 +199,11 @@
 <script>
 	$(document).ready(function(){
 		$("#dataKosong").hide();
+
+		$("#dataPreview").DataTable({
+	            responsive:1,
+	    });
 	});
-	$("#dataPreview").DataTable({
-        responsive: !1,
-    })
-/*	$(document).ready(function(){	
-		$("#jumlah_kosong").html('<?php echo $kosong; ?>');
-		$("#kosong").show(); // Munculkan alert validasi kosong
-	});*/
 
-
+	
 </script>
