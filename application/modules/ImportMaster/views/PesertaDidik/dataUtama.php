@@ -87,9 +87,9 @@
 		<?php if(! $this->input->post('previewImport')): ?>
 			Pilih Berkas Dengan Format Excel Lalu Klik Tobol <b>Tampilkan</b> Untuk Mereview Data Yang Akan Di Import.
 		<?php else: ?>
-			<?php if(isset($upload_error)){ ?>
+			<?php if(isset($upload_error)): ?>
 				<div class="text-danger"><b><?= $upload_error ?></b></div>
-			<?php } ?>
+			<?php else: ?>
 			<form action="<?= base_url('ImportMaster/PesertaDidik/ImportDataUtama') ?>" method="POST" >
 				<div class="text-danger" id="dataKosong">
 					<span id='jumlah_kosong'></span> Data Peserta Didik Belum Lengkap, Lengkapi Data Lalu Upload Kembali File!
@@ -191,6 +191,7 @@
 					</button>
 				<?php endif ?>
 			</form>
+			<?php endif; ?>
 		<?php endif; ?>
     </div>
 </div>
