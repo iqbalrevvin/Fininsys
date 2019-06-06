@@ -90,7 +90,7 @@
 			<?php if(isset($upload_error)): ?>
 				<div class="text-danger"><b><?= $upload_error ?></b></div>
 			<?php else: ?>
-			<form action="<?= base_url('ImportMaster/PesertaDidik/ImportDataUtama') ?>" method="POST" >
+			<form action="<?= base_url('ImportMaster/ImportPesertaDidik/ImportDataUtama') ?>" method="POST" >
 				<div class="text-danger" id="dataKosong">
 					<span id='jumlah_kosong'></span> Data Peserta Didik Belum Lengkap, Lengkapi Data Lalu Upload Kembali File!
 				</div>
