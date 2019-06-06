@@ -78,7 +78,7 @@ class ImportPesertaDidik extends CI_Controller {
 		$jumlahGagal = $jumlahData-$dataMasuk;
 		$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Diproses | <b class="text-success">'.$dataMasuk.'</b> Data Berhasil Terimport | <b class="text-danger">'.$jumlahGagal.'</b> Data Gagal Terimport');
 
-		redirect('refresh');
+		redirect($this->uri->uri_string(),'refresh');
 
 	}
 
