@@ -56,13 +56,13 @@ class ImportPesertaDidik extends CI_Controller {
 					'idSekolah'			=>$row['A'], 
 					'NIK_pd'			=>$row['B'],
 					'tahun_angkatan'	=>$row['C'], 
-					'alamat'			=>$row['D'], 
-					'nisn'				=>$row['E'], 
-					'nipd'				=>$row['F'], 
-					'nama_pd'			=>$row['G'], 
-					'jk_pd'				=>$row['H'], 
-					'tempat_lahir_pd'	=>$row['I'], 
-					'tanggal_lahir_pd'	=>$row['J'], 
+					'nisn'				=>$row['D'], 
+					'nipd'				=>$row['E'], 
+					'nama_pd'			=>$row['F'], 
+					'jk_pd'				=>$row['G'], 
+					'tempat_lahir_pd'	=>$row['H'], 
+					'tanggal_lahir_pd'	=>$row['I'], 
+					'agama'				=>$row['J'], 
 					'no_telp_pd'		=>$row['K'], 
 					'email_pd'			=>$row['L'], 
 					'facebook'			=>$row['M'], 
@@ -77,7 +77,8 @@ class ImportPesertaDidik extends CI_Controller {
 		$dataMasuk = $this->db->affected_rows();
 		$jumlahGagal = $jumlahData-$dataMasuk;
 		$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Diproses | <b class="text-success">'.$dataMasuk.'</b> Data Berhasil Terimport | <b class="text-danger">'.$jumlahGagal.'</b> Data Gagal Terimport');
-		redirect($this->uri->uri_string(),'refresh');
+
+		redirect('refresh');
 
 	}
 
