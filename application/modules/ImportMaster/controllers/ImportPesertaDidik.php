@@ -72,13 +72,13 @@ class ImportPesertaDidik extends CI_Controller {
 				$this->Importmaster_m->importDataUtama($data);
 				$dataMasuk[] = $this->db->affected_rows();
 			}
-			$numrow++;
+			#$numrow++;
 			
 		}
 		
-		$jumlahData = count($numrow);
+		$jumlahData = count($data);
 		
-		$jumlahGagal = $jumlahData-$dataMasuk;
+		$jumlahGagal = $jumlahData-sum($dataMasuk);
 		$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Diproses | <b class="text-success">'.sum($dataMasuk).'</b> Data Berhasil Terimport | <b class="text-danger">'.$jumlahGagal.'</b> Data Gagal Terimport');
 
 		redirect(base_url('ImportMaster/ImportPesertaDidik/DataUtama'));
