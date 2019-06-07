@@ -23,7 +23,7 @@ class Profil extends CI_Controller {
 		$profil 		= $this->PesertaDidik_m->getNameProfil($id);
 		#$data['judul'] 	= 'Profil Peserta Didik('.$id.')';
 		$data['crumb']  = [
-							'Peserta Didik' => 'PesertaDidik',
+							'Peserta Didik' => 'PesertaDidik/Listpd',
 							$profil->nama_pd => ''
 						];
 		$template      	= 'admin_template';
