@@ -44,7 +44,6 @@ class ImportPesertaDidik extends CI_Controller {
 
 	public function importDataUtama(){
 		include APPPATH.'third_party/PHPExcel/PHPExcel.php';
-		
 		$excelreader = new PHPExcel_Reader_Excel2007();
 		$loadexcel = $excelreader->load('excel/'.$this->filename.'.xlsx');
 		$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true);
@@ -69,17 +68,37 @@ class ImportPesertaDidik extends CI_Controller {
 					'instagram'			=>$row['N'],
 					'twitter'			=>$row['O'],
 				);
-				$this->Importmaster_m->importDataUtama($data);
+				$cekDataSekolah = $this->Importmaster_m->cekDataSekolah($row['A']);
+				$cekDataGanda = $this->Importmaster_m->cekDataGanda($row['B'],$row['D'],$row['E']);
+				if($cekDataSekolah == 1){
+					$this->Importmaster_m->importDataUtama($data);
+					/*IMPORT KE TABEL ORTU PESERTA DIDIK*/
+					$importOrtuPD = [
+				    	'NIK_pd' => $row['B']
+					];
+					$this->Importmaster_m->importOrtuPD($importOrtuPD);
+					/*-----------------------------------------------*/
+					/*IMPORT KE TABEL DETAIL PESERTA DIDIK*/
+					$importDetailPD = [
+					    'NIK_pd' => $row['B'] 
+					];
+					$this->Importmaster_m->importDetailPD($importDetailPD);
+					/*-------------------------------------------------*/	
+					$affrow = 1;
+				}
+
+				
 			}
 			#$numrow++;
 			$numr[] = $numrow++;
+			#$masuk[] = $affrow++;
 		}
 		
 		$jumlahData = count($numr)-1;
-		$dataMasuk = array_sum($masuk)-1;
+		$dataMasuk = array_sum($masuk);
 		$jumlahGagal = $jumlahData-$dataMasuk;
-		$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Berhasil Diproses, Silahkan Periksa Hasil Import Di <a href="'.base_url('PesertaDidik/Listpd').'">List Data Peserta Didik</a>');
-
+		$this->session->set_flashdata('suksesImport', 'Proses Import Selesai, Silahkan Periksa Hasil Import Di <a href="'.base_url('PesertaDidik/Listpd').'">List Data Peserta Didik</a>');
+		/*$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Diproses | <b class="text-success">'.$dataMasuk.'</b> Data Berhasil Terimport | <b class="text-danger">'.$jumlahGagal.'</b> Data Gagal Terimport');*/
 		redirect(base_url('ImportMaster/ImportPesertaDidik/DataUtama'));
 
 	}
