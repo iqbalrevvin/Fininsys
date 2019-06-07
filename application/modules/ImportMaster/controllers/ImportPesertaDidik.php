@@ -78,7 +78,7 @@ class ImportPesertaDidik extends CI_Controller {
 		$jumlahData = count($numr)-1;
 		$dataMasuk = array_sum($masuk)-1;
 		$jumlahGagal = $jumlahData-$dataMasuk;
-		$this->session->set_flashdata('suksesImport', '<b class="text-success">'.$jumlahData. '</b> Data Berhasil Diproses, Silahkan Periksa Hasil Import Di <a href="'.base_url('PesertaDidik/Listpd').'">List Data Peserta Didik</a>');
+		$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Berhasil Diproses, Silahkan Periksa Hasil Import Di <a href="'.base_url('PesertaDidik/Listpd').'">List Data Peserta Didik</a>');
 
 		redirect(base_url('ImportMaster/ImportPesertaDidik/DataUtama'));
 
