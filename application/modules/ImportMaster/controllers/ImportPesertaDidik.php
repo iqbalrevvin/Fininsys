@@ -74,7 +74,7 @@ class ImportPesertaDidik extends CI_Controller {
 			}
 			#$numrow++;
 			$numr[] = $numrow++;
-			if($affrow == 1) {
+			if($affrow) {
 				$masuk[] = $affrow++;
 			}
 			
