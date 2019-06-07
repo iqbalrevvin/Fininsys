@@ -70,16 +70,15 @@ class ImportPesertaDidik extends CI_Controller {
 					'twitter'			=>$row['O'],
 				);
 				$this->Importmaster_m->importDataUtama($data);
-				$dataMasuk[] = $this->db->affected_rows();
 			}
-			#$numrow++;
+			$numrow++;
 			
 		}
 		
 		$jumlahData = count($data);
-		
-		$jumlahGagal = $jumlahData-sum($dataMasuk);
-		$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Diproses | <b class="text-success">'.sum($dataMasuk).'</b> Data Berhasil Terimport | <b class="text-danger">'.$jumlahGagal.'</b> Data Gagal Terimport');
+		$dataMasuk = $this->db->affected_rows();
+		$jumlahGagal = $jumlahData-$dataMasuk;
+		$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Diproses | <b class="text-success">'.$dataMasuk.'</b> Data Berhasil Terimport | <b class="text-danger">'.$jumlahGagal.'</b> Data Gagal Terimport');
 
 		redirect(base_url('ImportMaster/ImportPesertaDidik/DataUtama'));
 
