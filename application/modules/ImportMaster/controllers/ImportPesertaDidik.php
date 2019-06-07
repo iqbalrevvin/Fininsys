@@ -72,7 +72,7 @@ class ImportPesertaDidik extends CI_Controller {
 				$this->Importmaster_m->importDataUtama($data);
 			}
 			$numrow++;
-			$numr[] = $numrow++
+			$numr[] = $numrow++;
 			
 		}
 		
