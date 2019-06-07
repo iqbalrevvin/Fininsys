@@ -48,11 +48,11 @@ class ImportPesertaDidik extends CI_Controller {
 		$excelreader = new PHPExcel_Reader_Excel2007();
 		$loadexcel = $excelreader->load('excel/'.$this->filename.'.xlsx');
 		$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true);
-		$data = array();
+		#$data = array();
 		$numrow = 1;
 		foreach($sheet as $row){
 			if($numrow > 1){
-				array_push($data, array(
+				$data = array(
 					'idSekolah'			=>$row['A'], 
 					'NIK_pd'			=>$row['B'],
 					'tahun_angkatan'	=>$row['C'], 
@@ -68,11 +68,13 @@ class ImportPesertaDidik extends CI_Controller {
 					'facebook'			=>$row['M'], 
 					'instagram'			=>$row['N'],
 					'twitter'			=>$row['O'],
-				));
+				);
+				$this->Importmaster_m->importDataUtama($data);
 			}
 			$numrow++;
+			
 		}
-		$this->Importmaster_m->importDataUtama($data);
+		
 		$jumlahData = count($data);
 		$dataMasuk = $this->db->affected_rows();
 		$jumlahGagal = $jumlahData-$dataMasuk;
