@@ -78,15 +78,15 @@ class ImportPesertaDidik extends CI_Controller {
 			}
 			#$numrow++;
 			$numr[] = $numrow++;
-			if($affrow == 1) {
-				$masuk[] = $affrow++;
-			}
 			
+				$masuk[] = $affrow++;
+			
+		
 			
 		}
 		
 		$jumlahData = count($numr)-1;
-		$dataMasuk = sum($masuk)-1;
+		$dataMasuk = array_sum($masuk)-1;
 		$jumlahGagal = $jumlahData-$dataMasuk;
 		$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Diproses | <b class="text-success">'.$dataMasuk.'</b> Data Berhasil Terimport | <b class="text-danger">'.$jumlahGagal.'</b> Data Gagal Terimport');
 
