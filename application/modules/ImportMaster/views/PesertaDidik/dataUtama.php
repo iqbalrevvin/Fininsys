@@ -165,7 +165,7 @@
 								if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir) && empty($agama) && empty($noHP) && empty($email) && empty($facebook) && empty($instagram) && empty($twitter)){
 									$kosong++; // Tambah 1 variabel $kosong
 								} ?>
-								<tbody>
+								<tr>
 									<td<?= $idSekolah_td ?>><?= $idSekolah ?></td>
 									<td<?= $NIK_td ?> ><?= $NIK ?></td>
 									<td<?= $tahunAngkatan_td ?> ><?= $tahunAngkatan ?></td>
@@ -181,7 +181,7 @@
 									<td<?= $facebook_td ?>><?= $facebook ?></td>
 									<td<?= $instagram_td ?>><?= $instagram ?></td>
 									<td<?= $twitter_td ?>><?= $twitter ?></td>
-								</tbody><?php	
+								</tr><?php	
 							}
 							$numrow++;
 						}	
