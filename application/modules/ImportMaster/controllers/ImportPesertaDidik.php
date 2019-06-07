@@ -72,11 +72,11 @@ class ImportPesertaDidik extends CI_Controller {
 				$this->Importmaster_m->importDataUtama($data);
 			}
 			#$numrow++;
-			$numr[] = ($numrow++)-1;
+			$numr[] = $numrow++;
 			
 		}
 		
-		$jumlahData = count($numr);
+		$jumlahData = count($numr)-1;
 		$dataMasuk = $this->db->affected_rows();
 		$jumlahGagal = $jumlahData-$dataMasuk;
 		$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Diproses | <b class="text-success">'.$dataMasuk.'</b> Data Berhasil Terimport | <b class="text-danger">'.$jumlahGagal.'</b> Data Gagal Terimport');
