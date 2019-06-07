@@ -70,11 +70,15 @@ class ImportPesertaDidik extends CI_Controller {
 					'twitter'			=>$row['O'],
 				);
 				$this->Importmaster_m->importDataUtama($data);
-				$affrow = $this->db->affected_rows();
+				 if($this->db->affected_rows()){
+				 	$affrow = 1;
+				 }else{
+				 	$affrow = 0;
+				 }
 			}
 			#$numrow++;
 			$numr[] = $numrow++;
-			if($affrow) {
+			if($affrow == 1) {
 				$masuk[] = $affrow++;
 			}
 			
@@ -82,7 +86,7 @@ class ImportPesertaDidik extends CI_Controller {
 		}
 		
 		$jumlahData = count($numr)-1;
-		$dataMasuk = count($masuk)-1;
+		$dataMasuk = sum($masuk)-1;
 		$jumlahGagal = $jumlahData-$dataMasuk;
 		$this->session->set_flashdata('suksesImport', '<b>'.$jumlahData. '</b> Data Diproses | <b class="text-success">'.$dataMasuk.'</b> Data Berhasil Terimport | <b class="text-danger">'.$jumlahGagal.'</b> Data Gagal Terimport');
 
