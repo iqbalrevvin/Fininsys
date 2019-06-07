@@ -89,16 +89,12 @@
 				<b><?= $this->session->flashdata('suksesImport') ?></b>
 			<?php else: ?>
 				Pilih Berkas Dengan Format Excel Lalu Klik Tobol <b>Tampilkan</b> Untuk Mereview Data Yang Akan Di Import.
-			<?php endif ?>
-			
+			<?php endif ?>	
 		<?php else: ?>
 			<?php if(isset($upload_error)): ?>
 				<div class="text-danger"><b><?= $upload_error ?></b></div>
 			<?php else: ?>
 			<form action="<?= base_url('ImportMaster/ImportPesertaDidik/ImportDataUtama') ?>" method="POST" >
-				<div class="text-danger" id="dataKosong">
-					<span id='jumlah_kosong'></span> Data Peserta Didik Belum Lengkap, Lengkapi Data Lalu Upload Kembali File!
-				</div>
 				<table class="table table-striped- table-bordered table-hover table-checkable" id="dataPreview">
 				<thead>
                     <tr>
@@ -162,7 +158,7 @@
 								$facebook_td 		= ( ! empty($facebook))? "" : " style='background: #E07171;'";
 								$instagram_td 		= ( ! empty($instagram))? "" : " style='background: #E07171;'";
 								$twitter_td 		= ( ! empty($twitter))? "" : " style='background: #E07171;'";
-								if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir) && empty($agama) && empty($noHP) && empty($email) && empty($facebook) && empty($instagram) && empty($twitter)){
+								if(empty($idSekolah) or empty($NIK) or empty($tahunAngkatan) or empty($NISN) or empty($NIPD) or empty($nama) or empty($jk) or empty($tempatLahir) or empty($tanggalLahir) or empty($agama) or empty($noHP) or empty($email) or empty($facebook) or empty($instagram) or empty($twitter)){
 									$kosong++; // Tambah 1 variabel $kosong
 								} ?>
 								<tr>
@@ -187,20 +183,17 @@
 						}	
 					?>
 				</table>
-				<?php if ($kosong > 0): ?>
-					<script>
-						$(document).ready(function(){
-							$("#jumlah_kosong").html('<?php echo $kosong; ?>');
-							$("#dataKosong").show();
-						});
-					</script>
-				<?php else: ?>
+				<?php if($kosong > 0){ ?>
+					<span class="text-danger">
+						<?= $kosong ?> Data Peserta Didik Masih Belum Lengkap
+					</span>
+				<?php }else{ ?>
 					<hr>
 					<button type="submit" name="import" 
 						class="btn btn-success m-btn m-btn--air m-btn--custom navigation">
 						<b><i class="flaticon-download"></i> Import Data</b>
 					</button>
-				<?php endif ?>
+				<?php } ?>
 			</form>
 			<?php endif; ?>
 		<?php endif; ?>
