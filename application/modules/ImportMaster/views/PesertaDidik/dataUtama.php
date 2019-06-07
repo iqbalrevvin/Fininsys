@@ -191,7 +191,7 @@
 					<script>
 						$(document).ready(function(){
 							$("#jumlah_kosong").html('<?php echo $kosong; ?>');
-							$("#kosong").show();
+							$("#dataKosong").show();
 						});
 					</script>
 				<?php else: ?>
