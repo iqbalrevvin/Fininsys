@@ -125,7 +125,7 @@
 					</a>
 				</li>
 				<li class="m-portlet__nav-item">
-					<a href="<?= base_url('LegerNilai/ImportNilai?IDMaster='.$idMaster.'&idLeger='.$idLeger) ?>" m-portlet-tool="test" class="m-portlet__nav-link m-portlet__nav-link--icon"
+					<a href="<?= base_url('LegerNilai/ImportNilai?IDMaster='.$idMaster.'&IDLeger='.$idLeger) ?>" m-portlet-tool="test" class="m-portlet__nav-link m-portlet__nav-link--icon"
 						title="Import Nilai" data-placement="top" data-skin="dark">
 						<i class="flaticon-download-1"></i></a>
 					</a>
