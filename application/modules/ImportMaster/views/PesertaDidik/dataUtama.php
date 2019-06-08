@@ -98,7 +98,7 @@
 				<table class="table table-striped- table-bordered table-hover table-checkable" id="dataPreview">
 				<thead>
                     <tr>
-						<td colspan="15" style="text-align: center;"><b>IMPORT DATA SISWA</b></td>
+						<td colspan="15" style="text-align: center;"><b>Preview Data Siswa</b></td>
 					</tr>
 					<tr>
 						<th>ID Sekolah</th>
