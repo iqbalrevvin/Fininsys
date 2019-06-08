@@ -386,6 +386,13 @@ class LegerNilai extends CI_Controller {
 	}
 
 
+	/*IMPORT LEGER NILAI*/
+	public function ImportNilai(){
+		$idMaster 	= $this->input->get('IDMaster');
+		$idLeger 	= $this->input->get('IDLeger');
+	}
+	/*---------------------*/
+
 
 	/*-----------------------------------------------------*/
 
