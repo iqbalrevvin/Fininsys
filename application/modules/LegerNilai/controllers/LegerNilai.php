@@ -390,6 +390,11 @@ class LegerNilai extends CI_Controller {
 	public function ImportNilai(){
 		$idMaster 	= $this->input->get('IDMaster');
 		$idLeger 	= $this->input->get('IDLeger');
+
+		$data['judul']  = 'Import Data Nilai';
+		$template 		= 'admin_template';
+		$view 			= 'ImportNilai/importNilai';
+		$this->outputview->output_admin($view, $template, $data);
 	}
 	/*---------------------*/
 
