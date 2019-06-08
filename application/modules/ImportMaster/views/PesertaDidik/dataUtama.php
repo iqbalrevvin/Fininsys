@@ -120,7 +120,7 @@
                 </thead>
 					
 					<?php 
-						$numrow = 2;
+						$numrow = 1;
 						$kosong = 0;
 
 						foreach ($sheet as $row) {
