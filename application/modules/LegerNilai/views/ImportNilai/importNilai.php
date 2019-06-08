@@ -19,6 +19,7 @@
                  		<li>
                  			Download terlebih dahulu format nilai!
                  		</li>
+                 		<li>Pastikan mengunggah file yang sesuai format nilai yang sudah didownload</li>
                  		<li>Pastikan Format Nilai bawaan tidak diubah</li>
                  		<li>
                  			Isilah hanya kolom nilai!
@@ -65,7 +66,7 @@
 				
 		
 					<div class="col-md-3 col-lg-3">
-						Format Nilai : &nbsp;
+						Unduh Format Nilai : &nbsp;
 						<a href="<?= base_url('excel/format-data-utama-siswa.xlsx') ?>" 
 							class="btn btn-success m-btn m-btn--air m-btn--custom" target="_blank">
 							<i class="flaticon-file-2"></i> Format Nilai
@@ -146,7 +147,6 @@
 						}
 					?>
 				</table>
-
 					<hr>
 					<button type="submit" name="import" 
 						class="btn btn-success m-btn m-btn--air m-btn--custom navigation">
