@@ -142,7 +142,7 @@
 
 							if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir) && empty($agama) && empty($noHP) && empty($email) && empty($facebook) && empty($instagram) && empty($twitter))
 							continue;
-							if($numrow > 2){
+							if($numrow > 3){
 								$idSekolah_td 	= ( ! empty($idSekolah))? "" : " style='background: #E07171;'";
 								$NIK_td 		= ( ! empty($NIK))? "" : " style='background: #E07171;'";
 								$tahunAngkatan_td = ( ! empty($tahunAngkatan))? "" : " style='background: #E07171;'";
