@@ -131,6 +131,12 @@
 						<i class="flaticon-add"></i></a>
 					</a>
 				</li>
+				<li class="m-portlet__nav-item">
+					<a href="#" m-portlet-tool="test" class="m-portlet__nav-link m-portlet__nav-link--icon"
+						title="Import Nilai" data-placement="top" data-skin="dark">
+						<i class="flaticon-download-1"></i></a>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
