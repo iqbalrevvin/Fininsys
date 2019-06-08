@@ -48,9 +48,9 @@ class ImportPesertaDidik extends CI_Controller {
 		$loadexcel = $excelreader->load('excel/'.$this->filename.'.xlsx');
 		$sheet = $loadexcel->getActiveSheet()->toArray(null, true, true ,true);
 		#$data = array();
-		$numrow =1;
+		$numrow =2;
 		foreach($sheet as $row){
-			if($numrow > 3){
+			if($numrow > 2){
 				$data = array(
 					'idSekolah'			=>$row['A'], 
 					'NIK_pd'			=>$row['B'],
