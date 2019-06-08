@@ -50,7 +50,7 @@ class ImportPesertaDidik extends CI_Controller {
 		#$data = array();
 		$numrow = 2;
 		foreach($sheet as $row){
-			if($numrow > 1){
+			if($numrow > 3){
 				$data = array(
 					'idSekolah'			=>$row['A'], 
 					'NIK_pd'			=>$row['B'],
