@@ -97,102 +97,61 @@
 				<table class="table table-striped- table-bordered table-hover table-checkable" id="dataPreview">
 				<thead>
                     <tr>
-						<td colspan="15" style="text-align: center;"><b>IMPORT DATA SISWA</b></td>
+						<td colspan="15" style="text-align: center;"><b>Preview Data Nilai</b></td>
 					</tr>
 					<tr>
-						<th>ID Sekolah</th>
-						<th>NIK</th>
-						<th>TAHUN ANGKATAN</th>
-						<th>NISN</th>
-						<th>NIPD</th>
-						<th>NAMA PESERTA DIDIK</th>
-						<th>JENIS KELAMIN</th>
-						<th>AGAMA</th>
-						<th>TEMPAT LAHIR</th>
-						<th>TANGGAL LAHIR</th>
-						<th>HP/WA</th>
-						<th>EMAIL</th>
-						<th>LINK FACEBOOK</th>
-						<th>LINK INSTAGRAM</th>
-						<th>LINK TWITTER</th>
-					</tr>
+						<th>ID Master</th>
+						<th>ID Leger</th>
+						<th>NIK Peserta Didik</th>
+						<th>Nama Peserta Didik</th>
+						<th>Nilai Pengetahuan</th>
+						<th>Nilai Keterampilan</th>
+						<th>Sikap</th>
+						<th>Sosial</th>
+						<th>Spiritual</th>
+						<th>Catatan</th>
                 </thead>
-					
 					<?php 
 						$numrow = 1;
 						$kosong = 0;
 
 						foreach ($sheet as $row) {
-							$idSekolah 			= $row['A']; 
-							$NIK 				= $row['B']; 
-							$tahunAngkatan 		= $row['C']; 
-							$NISN 				= $row['D']; 
-							$NIPD 				= $row['E']; 
-							$nama 				= $row['F']; 
-							$jk 				= $row['G']; 
-							$tempatLahir 		= $row['H']; 
-							$tanggalLahir 		= $row['I']; 
-							$agama 				= $row['J'];
-							$noHP 				= $row['K'];
-							$email 				= $row['L'];
-							$facebook 			= $row['M'];
-							$instagram 			= $row['N'];
-							$twitter 			= $row['O'];
-
-							if(empty($idSekolah) && empty($NIK) && empty($tahunAngkatan) && empty($NISN) && empty($NIPD) && empty($nama) && empty($jk) && empty($tempatLahir) && empty($tanggalLahir) && empty($agama) && empty($noHP) && empty($email) && empty($facebook) && empty($instagram) && empty($twitter))
-							continue;
+							$idMaster 			= $row['A']; 
+							$idLeger 			= $row['B']; 
+							$NIK_pd 			= $row['C']; 
+							$nama_pd 			= $row['D']; 
+							$nilaiPengetahuan 	= $row['E']; 
+							$nilaiKeterampilan 	= $row['F']; 
+							$sikap 				= $row['G']; 
+							$sosial 			= $row['H']; 
+							$spiritual 			= $row['I']; 
+							$catatan 			= $row['J']; 
 							if($numrow > 1){
-								$idSekolah_td 	= ( ! empty($idSekolah))? "" : " style='background: #E07171;'";
-								$NIK_td 		= ( ! empty($NIK))? "" : " style='background: #E07171;'";
-								$tahunAngkatan_td = ( ! empty($tahunAngkatan))? "" : " style='background: #E07171;'";
-								$NISN_td 		= ( ! empty($NISN))? "" : " style='background: #E07171;'";
-								$NIPD_td 		= ( ! empty($NIPD))? "" : " style='background: #E07171;'";
-								$nama_td 		= ( ! empty($nama))? "" : " style='background: #E07171;'";
-								$jk_td 			= ( ! empty($jk))? "" : " style='background: #E07171;'";
-								$tempatLahir_td	= ( ! empty($tempatLahir))? "" : " style='background: #E07171;'";
-								$tanggalLahir_td = ( ! empty($tanggalLahir))? "" : " style='background: #E07171;'";
-								$agama_td 			= ( ! empty($agama))? "" : " style='background: #E07171;'";
-								$noHP_td 			= ( ! empty($noHP))? "" : " style='background: #E07171;'";
-								$email_td 			= ( ! empty($email))? "" : " style='background: #E07171;'";
-								$facebook_td 		= ( ! empty($facebook))? "" : " style='background: #E07171;'";
-								$instagram_td 		= ( ! empty($instagram))? "" : " style='background: #E07171;'";
-								$twitter_td 		= ( ! empty($twitter))? "" : " style='background: #E07171;'";
-								if(empty($idSekolah) or empty($NIK) or empty($tahunAngkatan) or empty($NISN) or empty($NIPD) or empty($nama) or empty($jk) or empty($tempatLahir) or empty($tanggalLahir) or empty($agama) or empty($noHP) or empty($email) or empty($facebook) or empty($instagram) or empty($twitter)){
-									$kosong++; // Tambah 1 variabel $kosong
-								} ?>
+							 ?>
 								<tr>
-									<td<?= $idSekolah_td ?>><?= $idSekolah ?></td>
-									<td<?= $NIK_td ?> ><?= $NIK ?></td>
-									<td<?= $tahunAngkatan_td ?> ><?= $tahunAngkatan ?></td>
-									<td<?= $NISN_td ?>><?= $NISN ?></td>
-									<td<?= $NIPD_td ?>><?= $NIPD ?></td>
-									<td<?= $nama_td ?>><?= $nama ?></td>
-									<td<?= $jk_td ?>><?= $jk ?></td>
-									<td<?= $tempatLahir_td ?>><?= $tempatLahir ?></td>
-									<td<?= $tanggalLahir_td ?>><?= $tanggalLahir ?></td>
-									<td<?= $agama_td ?>><?= $agama ?></td>
-									<td<?= $noHP_td ?>><?= $noHP ?></td>
-									<td<?= $email_td ?>><?= $email ?></td>
-									<td<?= $facebook_td ?>><?= $facebook ?></td>
-									<td<?= $instagram_td ?>><?= $instagram ?></td>
-									<td<?= $twitter_td ?>><?= $twitter ?></td>
+									<td><?= $idMaster ?></td>
+									<td><?= $idLeger ?></td>
+									<td><?= $NIK_pd ?></td>
+									<td><?= $NIK_pd ?></td>
+									<td><?= $nama_pd ?></td>
+									<td><?= $nilaiPengetahuan ?></td>
+									<td><?= $nilaiKeterampilan ?></td>
+									<td><?= $sikap ?></td>
+									<td><?= $sosial ?></td>
+									<td><?= $spiritual ?></td>
+									<td><?= $catatan ?></td>
 								</tr><?php	
 							}
 							$numrow++;
-						}	
+						}
 					?>
 				</table>
-				<?php if($kosong > 0){ ?>
-					<span class="text-danger">
-						<?= $kosong ?> Data Peserta Didik Masih Belum Lengkap
-					</span>
-				<?php }else{ ?>
+
 					<hr>
 					<button type="submit" name="import" 
 						class="btn btn-success m-btn m-btn--air m-btn--custom navigation">
 						<b><i class="flaticon-download"></i> Import Data</b>
 					</button>
-				<?php } ?>
 			</form>
 			<?php endif; ?>
 		<?php endif; ?>
