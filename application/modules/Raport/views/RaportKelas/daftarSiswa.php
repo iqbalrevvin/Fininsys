@@ -95,6 +95,7 @@
 	    	<?php $sumNilaiPengetahuan = $data->nilai_pengetahuan ?>
 	    	<?php $sumNilaiKeterampilan = $data->nilai_keterampilan ?>
 	    	<?php $nilaiKelas[] = $sumNilaiPengetahuan+$sumNilaiKeterampilan ?>
+            <?php $arrayPengetahuan[] = $sumNilaiPengetahuan ?>
 		<?php endforeach ?>
     	<?php $no = 1; ?>
     	<?php foreach ($dataSiswa as $list): ?>
@@ -107,7 +108,7 @@
             <?php $nilaiPrilaku         = $this->Raport_m->nilaiPrilaku($idMasterLeger, $list->NIK_pd); ?>
 	    	<?php $nilaiAkhir 			= $jmlNilaiPengetahuan->nilai_pengetahuan+$jmlNilaiKeterampilan->nilai_keterampilan; ?>
 	    	<?php #$valueArray 			= "'1530,1531,1624,654,'"; ?>
-	    	<?php $valueArray 			= implode(',',$nilaiKelas); ?>
+	    	<?php $valueArray 			= implode(',',$arrayPengetahuan.$nilaiKelas); ?>
 
            <tr data-id=>
                 <td><?= $no++ ?></td>
