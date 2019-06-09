@@ -95,7 +95,7 @@ class Raport_m extends CI_Model {
  	}
 
  	public function sumNilaiKelas($idMasterLeger){
- 		$this->db->query("SELECT SUM(nilai_pengetahuan) AS nilai_pengetahuan, SUM(nilai_keterampilan) AS nilai_keterampilan FROM leger JOIN leger_nilai ON leger.idLeger = leger_nilai.idLeger WHERE leger.idMaster_leger = '$idMasterLeger' GROUP BY NIK_pd ");
+ 		$query = $this->db->query("SELECT SUM(nilai_pengetahuan) AS nilai_pengetahuan, SUM(nilai_keterampilan) AS nilai_keterampilan FROM leger JOIN leger_nilai ON leger.idLeger = leger_nilai.idLeger WHERE leger.idMaster_leger = '$idMasterLeger' GROUP BY NIK_pd ");
 
  		/*$this->db->select_sum('nilai_pengetahuan');
  		$this->db->select_sum('nilai_keterampilan');
@@ -104,7 +104,7 @@ class Raport_m extends CI_Model {
  		$this->db->where('leger.idMaster_leger', $idMasterLeger);
  		$this->db->group_by('NIK_pd');
  		$this->db->order_by('nilai_pengetahuan * nilai_keterampilan', 'desc');*/
- 		$query = $this->db->get();
+ 		#$query = $this->db->get();
  		$execute = $query->result();
  		return $execute;
  	}
