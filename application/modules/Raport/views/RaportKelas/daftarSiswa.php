@@ -242,7 +242,7 @@
                 </div>
             </tr>
          <?php endforeach ?>
-         <?= sort(array($valueArray)) ?>
+         <?= rsort($valueArray) ?>
     </tbody>
 </table>
 
