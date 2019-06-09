@@ -97,6 +97,7 @@
 	    	<?php $nilaiKelas[] = $sumNilaiPengetahuan+$sumNilaiKeterampilan ?>
 		<?php endforeach ?>
     	<?php $no = 1; ?>
+        <?= $valueArray ?>
     	<?php foreach ($dataSiswa as $list): ?>
 	    	<!-- <?php $idKelas 				= $list->idKelas; ?> -->
 	    	<!-- <?php $angkatan 			= $list->tahun_angkatan; ?> -->
@@ -108,7 +109,7 @@
 	    	<?php $nilaiAkhir 			= $jmlNilaiPengetahuan->nilai_pengetahuan+$jmlNilaiKeterampilan->nilai_keterampilan; ?>
 	    	<?php #$valueArray 			= "'1530,1531,1624,654,'"; ?>
 	    	<?php $valueArray 			= implode(',',$nilaiKelas); ?>
-            <?= $valueArray ?>
+
            <tr data-id=>
                 <td><?= $no++ ?></td>
                 <td><?= value($list->nipd) ?></td>
