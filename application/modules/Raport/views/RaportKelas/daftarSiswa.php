@@ -97,7 +97,6 @@
 	    	<?php $nilaiKelas[] = $sumNilaiPengetahuan+$sumNilaiKeterampilan ?>
 		<?php endforeach ?>
     	<?php $no = 1; ?>
-        <?= $valueArray ?>
     	<?php foreach ($dataSiswa as $list): ?>
 	    	<!-- <?php $idKelas 				= $list->idKelas; ?> -->
 	    	<!-- <?php $angkatan 			= $list->tahun_angkatan; ?> -->
@@ -243,6 +242,7 @@
                 </div>
             </tr>
          <?php endforeach ?>
+          <?= $valueArray ?>
     </tbody>
 </table>
 
