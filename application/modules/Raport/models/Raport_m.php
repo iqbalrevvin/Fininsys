@@ -95,7 +95,7 @@ class Raport_m extends CI_Model {
  	}
 
  	public function sumNilaiKelas($idMasterLeger){
- 		$query = $this->db->query("SELECT SUM(nilai_pengetahuan) AS nilai_pengetahuan, SUM(nilai_keterampilan) AS nilai_keterampilan FROM leger JOIN leger_nilai ON leger.idLeger = leger_nilai.idLeger WHERE leger.idMaster_leger = '$idMasterLeger' GROUP BY NIK_pd ");
+ 		$query = $this->db->query("SELECT SUM(nilai_pengetahuan) AS nilai_pengetahuan, SUM(nilai_keterampilan) AS nilai_keterampilan, nilai_pengetahuan + nilai_keterampilan AS nilai_seluruh FROM leger JOIN leger_nilai ON leger.idLeger = leger_nilai.idLeger WHERE leger.idMaster_leger = '$idMasterLeger' GROUP BY NIK_pd ");
 
  		/*$this->db->select_sum('nilai_pengetahuan');
  		$this->db->select_sum('nilai_keterampilan');
