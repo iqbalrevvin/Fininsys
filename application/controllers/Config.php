@@ -59,8 +59,8 @@ class Config extends CI_Controller {
     	$crud->columns('photo','username','email','groups','active');
     	if ($this->uri->segment(3) !== 'read')
 		{
-	    	$crud->add_fields('username','first_name', 'last_name', 'email', 'phone','groups' , 'photo', 'password', 'password_confirm');
-			$crud->edit_fields('username','first_name', 'last_name', 'email', 'phone','groups' , 'photo', 'last_login','old_password','new_password');
+	    	$crud->add_fields('identity_number','username','first_name', 'last_name', 'email', 'phone','groups' , 'photo', 'password', 'password_confirm');
+			$crud->edit_fields('identity_number','username','first_name', 'last_name', 'email', 'phone','groups' , 'photo', 'last_login','old_password','new_password');
 		}else{
 			$crud->set_read_fields('username','first_name', 'last_name', 'email', 'phone','groups', 'last_login');
 		}
@@ -74,7 +74,7 @@ class Config extends CI_Controller {
 		}
 		$crud->field_type('groups','multiselect',$finalArray);*/
 		//VALIDATION
-		$crud->required_fields('username','first_name', 'last_name', 'email', 'phone', 'password', 'password_confirm');
+		$crud->required_fields('identity_number','username','first_name', 'last_name', 'email', 'phone', 'password', 'password_confirm');
 		$crud->set_rules('email', 'E-mail', 'required|valid_email');
 		$crud->set_rules('phone', 'Phone', 'required|numeric');
 		$crud->set_rules('password', 'Password', 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
