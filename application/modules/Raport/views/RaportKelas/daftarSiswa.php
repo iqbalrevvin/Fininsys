@@ -242,7 +242,7 @@
                 </div>
             </tr>
          <?php endforeach ?>
-         <?php $asu = [$valueArray]; ?>
+         <?php $asu = [4,6,7,3,2]; ?>
          <?= sort($asu) ?>
     </tbody>
 </table>
