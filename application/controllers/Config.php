@@ -55,6 +55,7 @@ class Config extends CI_Controller {
     	$crud->display_as('password_confirm', 'Ulangi Kata Sandi');
     	$crud->display_as('old_password','Kata Sandi Lama');
     	$crud->display_as('new_password', 'Kata Sandi Baru');
+    	$crud->display_as('identity_number', 'No. Identitas/NIK');
     	$crud->set_field_upload('photo','assets/image/admin');
     	$crud->columns('photo','username','email','groups','active');
     	if ($this->uri->segment(3) !== 'read')
