@@ -242,7 +242,7 @@
                 </div>
             </tr>
          <?php endforeach ?>
-         <?= $nilaiKelas ?>
+         <?= $valueArray ?>
     </tbody>
 </table>
 
