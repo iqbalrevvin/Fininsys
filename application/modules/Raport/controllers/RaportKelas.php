@@ -46,7 +46,6 @@ class RaportKelas extends CI_Controller {
 			$lists .= "<option value='".$list->tahun_angkatan."'>".$list->tahun_angkatan."</option>";
 		}
 		$callback = array('listAngkatan'=>$lists); 
-
 		echo json_encode($callback); 
 	}
 
@@ -55,7 +54,6 @@ class RaportKelas extends CI_Controller {
 		$idKelas 		= $this->input->post('kelas');
 		$angkatan 		= $this->input->post('angkatan');
 		$listSemester 	= $this->Raport_m->listSemester($idKelas, $angkatan);
-
 		$lists = '<select class="form-control" name="pilihSemester" id="pilihSemester">';
 		$lists .= "<option value=''>Pilih Semester</option>";
 		
