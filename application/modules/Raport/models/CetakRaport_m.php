@@ -70,7 +70,7 @@ class CetakRaport_m extends CI_Model {
 		$this->db->join('mata_pelajaran', 'leger.idMata_pelajaran = mata_pelajaran.idMata_pelajaran', 'left');
 		$this->db->join('kelompok_mapel', 'mata_pelajaran.idKelompok_mapel = kelompok_mapel.idKelompok_mapel', 'left');
 		$this->db->where('leger.idMaster_leger', $masterID);
-		//$this->db->order_by('kelompok_mapel.nama_kelompok_mapel', 'asc');
+		$this->db->order_by('kelompok_mapel.nama_kelompok_mapel', 'asc');
 		$query = $this->db->get();
 		$execute = $query->result();
 		return $execute;
