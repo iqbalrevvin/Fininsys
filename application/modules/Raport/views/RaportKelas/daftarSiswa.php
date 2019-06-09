@@ -94,7 +94,7 @@
     	<?php foreach ($sumNilaiKelas as $data): ?>
 	    	<?php $sumNilaiPengetahuan = $data->nilai_pengetahuan ?>
 	    	<?php $sumNilaiKeterampilan = $data->nilai_keterampilan ?>
-	    	<?php $nilaiKelas[] = $sumNilaiPengetahuan+$sumNilaiKeterampilan ?>
+	    	<?php $nilaiKelas[] = ($sumNilaiPengetahuan+$sumNilaiKeterampilan).'-'.rand(1,99) ?>
             <?php $arrayPengetahuan[] = $sumNilaiPengetahuan ?>
 		<?php endforeach ?>
     	<?php $no = 1; ?>
