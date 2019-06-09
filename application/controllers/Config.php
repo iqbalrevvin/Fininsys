@@ -49,9 +49,12 @@ class Config extends CI_Controller {
     	$crud->display_as('last_name', 'Nama Belakang');
     	$crud->display_as('phone', 'Telp/Hp');
     	$crud->display_as('groups', 'Hak Akses');
+    	$crud->display_as('active','Status Akun');
     	$crud->display_as('photo', 'Foto');
     	$crud->display_as('password', 'Kata Sandi');
     	$crud->display_as('password_confirm', 'Ulangi Kata Sandi');
+    	$crud->display_as('old_password','Kata Sandi Lama');
+    	$crud->display_as('new_password', 'Kata Sandi Baru');
     	$crud->set_field_upload('photo','assets/image/admin');
     	$crud->columns('photo','username','email','groups','active');
     	if ($this->uri->segment(3) !== 'read')
@@ -64,12 +67,12 @@ class Config extends CI_Controller {
 		$crud->set_relation_n_n('groups', 'users_groups', 'groups', 'user_id', 'group_id', 'name');
 		$crud->where('username !=','iqbalrevvin');
 
-		$listGroup = $this->Getdata_m->getDataHakAkses();
+		/*$listGroup = $this->Getdata_m->getDataHakAkses();
 		$finalArray = array();
 		foreach ($listGroup->result() as $row){
 				$finalArray[$row->id]=$row->name;
 		}
-		$crud->field_type('groups','multiselect',$finalArray);
+		$crud->field_type('groups','multiselect',$finalArray);*/
 		//VALIDATION
 		$crud->required_fields('username','first_name', 'last_name', 'email', 'phone', 'password', 'password_confirm');
 		$crud->set_rules('email', 'E-mail', 'required|valid_email');
