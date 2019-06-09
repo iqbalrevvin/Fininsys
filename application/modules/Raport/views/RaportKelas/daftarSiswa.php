@@ -108,7 +108,7 @@
 	    	<?php $nilaiAkhir 			= $jmlNilaiPengetahuan->nilai_pengetahuan+$jmlNilaiKeterampilan->nilai_keterampilan; ?>
             <?php $nilaiArray           = $nilaiKelas ?>
 	    	<?php #$valueArray 			= "'1530,1531,1624,654,'"; ?>
-	    	<?php $valueArray 			= implode(',',$nilaiArray) ?>
+	    	<?php $valueArray 			= sort(implode(',',$nilaiArray)) ?>
            <tr data-id=>
                 <td><?= $no++ ?></td>
                 <td><?= value($list->nipd) ?></td>
@@ -242,7 +242,7 @@
                 </div>
             </tr>
          <?php endforeach ?>
-         <?= rsort($valueArray) ?>
+         <?= $valueArray ?>
     </tbody>
 </table>
 
