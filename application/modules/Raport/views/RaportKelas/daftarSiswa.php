@@ -95,9 +95,9 @@
 	    	<?php $sumNilaiPengetahuan = $data->nilai_pengetahuan ?>
 	    	<?php $sumNilaiKeterampilan = $data->nilai_keterampilan ?>
 	    	<?php $nilaiKelas[] = $sumNilaiPengetahuan+$sumNilaiKeterampilan ?>
-            <?php $arrayPengetahuan[] = $sumNilaiPengetahuan ?>
 		<?php endforeach ?>
     	<?php $no = 1; ?>
+        <?= $valueArray ?>
     	<?php foreach ($dataSiswa as $list): ?>
 	    	<!-- <?php $idKelas 				= $list->idKelas; ?> -->
 	    	<!-- <?php $angkatan 			= $list->tahun_angkatan; ?> -->
@@ -108,7 +108,7 @@
             <?php $nilaiPrilaku         = $this->Raport_m->nilaiPrilaku($idMasterLeger, $list->NIK_pd); ?>
 	    	<?php $nilaiAkhir 			= $jmlNilaiPengetahuan->nilai_pengetahuan+$jmlNilaiKeterampilan->nilai_keterampilan; ?>
 	    	<?php #$valueArray 			= "'1530,1531,1624,654,'"; ?>
-	    	<?php $valueArray 			= implode(',',$nilaiKelas.'-'.$list->nipd); ?>
+	    	<?php $valueArray 			= implode(',',$nilaiKelas); ?>
 
            <tr data-id=>
                 <td><?= $no++ ?></td>
@@ -119,7 +119,7 @@
                 <td><b><?= value($jmlNilaiPengetahuan->nilai_pengetahuan); ?></b></td>
                 <td><b><?= value($jmlNilaiKeterampilan->nilai_keterampilan); ?></b></td>
                 <td>
-                	<?php $rank = $this->Raport_m->rankSystem($nilaiAkhir.'-'.$list->nipd, "'$valueArray'");  ?>
+                	<?php $rank = $this->Raport_m->rankSystem($nilaiAkhir, "'$valueArray'");  ?>
 					<b class="m--font-focus"><?= $rank->rank ?></b>
                 </td>    
            
@@ -243,7 +243,6 @@
                 </div>
             </tr>
          <?php endforeach ?>
-          <?= $valueArray ?>
     </tbody>
 </table>
 
