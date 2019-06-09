@@ -95,16 +95,17 @@ class Raport_m extends CI_Model {
  	}
 
  	public function sumNilaiKelas($idMasterLeger){
- 		$query = $this->db->query("SELECT SUM(nilai_pengetahuan) AS nilai_pengetahuan, SUM(nilai_keterampilan) AS nilai_keterampilan, SUM(nilai_pengetahuan) + SUM(nilai_keterampilan) AS nilai_seluruh FROM leger JOIN leger_nilai ON leger.idLeger = leger_nilai.idLeger WHERE leger.idMaster_leger = '$idMasterLeger' GROUP BY NIK_pd ORDER BY nilai_seluruh DESC");
+ 		/*$query = $this->db->query("SELECT SUM(nilai_pengetahuan) AS nilai_pengetahuan, SUM(nilai_keterampilan) AS nilai_keterampilan, SUM(nilai_pengetahuan) + SUM(nilai_keterampilan) AS nilai_seluruh FROM leger JOIN leger_nilai ON leger.idLeger = leger_nilai.idLeger WHERE leger.idMaster_leger = '$idMasterLeger' GROUP BY NIK_pd ORDER BY nilai_seluruh DESC");*/
 
- 		/*$this->db->select_sum('nilai_pengetahuan');
+ 		$this->db->select_sum('nilai_pengetahuan');
  		$this->db->select_sum('nilai_keterampilan');
+ 		$this->db->select(SUM('nilai_pengetahuan')+SUM('nilai_keterampilan') AS 'nilai_seluruh');
  		$this->db->from('leger');
  		$this->db->join('leger_nilai', 'leger.idLeger = leger_nilai.idLeger', 'left');
  		$this->db->where('leger.idMaster_leger', $idMasterLeger);
  		$this->db->group_by('NIK_pd');
- 		$this->db->order_by('nilai_pengetahuan * nilai_keterampilan', 'desc');*/
- 		#$query = $this->db->get();
+ 		$this->db->order_by('nilai_seluruh', 'desc');
+ 		$query = $this->db->get();
  		$execute = $query->result();
  		return $execute;
  	}
