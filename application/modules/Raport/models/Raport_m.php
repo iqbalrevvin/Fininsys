@@ -99,7 +99,7 @@ class Raport_m extends CI_Model {
 
  		$this->db->select_sum('nilai_pengetahuan');
  		$this->db->select_sum('nilai_keterampilan');
- 		$this->db->select(SUM('nilai_pengetahuan')+SUM('nilai_keterampilan') AS 'nilai_seluruh');
+ 		$this->db->select('SUM(nilai_pengetahuan)+SUM(nilai_keterampilan) AS nilai_seluruh');
  		$this->db->from('leger');
  		$this->db->join('leger_nilai', 'leger.idLeger = leger_nilai.idLeger', 'left');
  		$this->db->where('leger.idMaster_leger', $idMasterLeger);
