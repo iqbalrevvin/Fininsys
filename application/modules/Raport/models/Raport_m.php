@@ -101,6 +101,7 @@ class Raport_m extends CI_Model {
  		$this->db->join('leger_nilai', 'leger.idLeger = leger_nilai.idLeger', 'left');
  		$this->db->where('leger.idMaster_leger', $idMasterLeger);
  		$this->db->group_by('NIK_pd');
+ 		$this->db->order_by('nilai_pengethuan', 'desc');
  		$this->db->order_by('nilai_keterampilan', 'desc');
  		$query = $this->db->get();
  		$execute = $query->result();
