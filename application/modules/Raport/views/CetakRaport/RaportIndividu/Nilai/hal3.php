@@ -70,7 +70,12 @@
 						<?= $listMapel->nama_mata_pelajaran ?><br>
 						<small>(Guru Mapel : <?= $listMapel->nama_tenpen ?>)</small>
 					</td>
-					<td style="width: 55.5254%;"><li><small><?= catatanGuruMapel($listMapel->catatan) ?></small></li></td>
+					<td style="width: 55.5254%;">
+						<ul>
+							<li><small><?= catatanGuruMapel($listMapel->catatan) ?></small></li>
+						</ul>
+						
+					</td>
 				</tr>
 			<?php endforeach; ?>
 		<?php endforeach; ?>
