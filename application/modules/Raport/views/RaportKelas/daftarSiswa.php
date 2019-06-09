@@ -108,7 +108,7 @@
             <?php $nilaiPrilaku         = $this->Raport_m->nilaiPrilaku($idMasterLeger, $list->NIK_pd); ?>
 	    	<?php $nilaiAkhir 			= $jmlNilaiPengetahuan->nilai_pengetahuan+$jmlNilaiKeterampilan->nilai_keterampilan; ?>
 	    	<?php #$valueArray 			= "'1530,1531,1624,654,'"; ?>
-	    	<?php $valueArray 			= implode(',',$arrayPengetahuan.$nilaiKelas); ?>
+	    	<?php $valueArray 			= implode(',',$list->nama_pd.$nilaiKelas); ?>
 
            <tr data-id=>
                 <td><?= $no++ ?></td>
