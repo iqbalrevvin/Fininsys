@@ -242,7 +242,7 @@
                 </div>
             </tr>
          <?php endforeach ?>
-         <?= sort($nilaiKelas) ?>
+         <?= rsort($nilaiKelas) ?>
     </tbody>
 </table>
 
