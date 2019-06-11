@@ -137,7 +137,7 @@
 <tr style="height: 18px;">
 <td style="width: 42.8571%; background-color: #dec349; height: 18px;" colspan="2"><strong>Peringkat</strong></td>
 <td style="width: 57.1427%; text-align: center; height: 18px;" colspan="8">
-	<strong>Peringkat <?= $rank->rank ?> Dari <?= count($nilaiKelas) ?> Siswa</strong>
+	<strong>Peringkat <?= $rank->rank ?> Dari <?= count($nilaiKelas) ?> Peserta Didik</strong>
 </td>
 </tr>
 </tbody>
