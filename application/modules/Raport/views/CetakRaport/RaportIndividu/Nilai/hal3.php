@@ -68,7 +68,7 @@
 					<td style="width: 5.07243%; text-align: center;"><?= $no++ ?>.</td>
 					<td style="width: 39.402%;">
 						<small><?= $listMapel->nama_mata_pelajaran ?></small><br>
-						<small>(Guru Mapel : <?= $listMapel->nama_tenpen ?>)</small>
+						<small style="font-size: 10;">(Guru Mapel : <?= $listMapel->nama_tenpen ?>)</small>
 					</td>
 					<td style="width: 55.5254%;">
 						<p><small><?= catatanGuruMapel($listMapel->catatan) ?></small></p>
