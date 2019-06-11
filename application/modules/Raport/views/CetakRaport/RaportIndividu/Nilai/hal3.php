@@ -67,7 +67,7 @@
 				<tr>
 					<td style="width: 5.07243%; text-align: center;"><?= $no++ ?>.</td>
 					<td style="width: 39.402%;">
-						<?= $listMapel->nama_mata_pelajaran ?><br>
+						<small><?= $listMapel->nama_mata_pelajaran ?></small><br>
 						<small>(Guru Mapel : <?= $listMapel->nama_tenpen ?>)</small>
 					</td>
 					<td style="width: 55.5254%;">
