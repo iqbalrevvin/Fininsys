@@ -242,7 +242,6 @@
                 </div>
             </tr>
          <?php endforeach ?>
-         <?= $valueArray ?>
     </tbody>
 </table>
 
