@@ -67,8 +67,9 @@
 				<tr>
 					<td style="width: 5.07243%; text-align: center;"><small><?= $no++ ?>.</small></td>
 					<td style="width: 39.402%;">
-						<small><?= $listMapel->nama_mata_pelajaran ?></small><br>
-						<small style="font-size: 10;">(Guru Mapel : <?= $listMapel->nama_tenpen ?>)</small>
+						<small><?= $listMapel->nama_mata_pelajaran ?></small>
+						<!-- <br>
+						<small style="font-size: 10;">(Guru Mapel : <?= $listMapel->nama_tenpen ?>)</small> -->
 					</td>
 					<td style="width: 55.5254%;">
 						<p><small><?= catatanGuruMapel($listMapel->catatan) ?></small></p>
@@ -112,7 +113,6 @@
 		<tr style="height: 18px;">
 		<td style="width: 33.3333%; height: 18px; text-align: left;"><u>.............................</u></td>
 		<td style="width: 33.3333%; height: 18px; text-align: left;">
-
 			<strong><?= $waliKelas->nama_tenpen ?></strong>
 		</td>
 		<td style="width: 33.3333%; height: 18px;"><strong><?= valueRaport2($kepalaSekolah->nama_tenpen) ?></strong></td>
