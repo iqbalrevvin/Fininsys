@@ -50,9 +50,9 @@
 			<td style="width: 99.9998%; text-align: center; height: 18px;" colspan="3"><strong>Catatan Guru Mata Pelajaran</strong></td>
 		</tr>
 		<tr style="height: 18px; background-color: #dec349;">
-			<td style="width: 5.07243%; height: 18px;"><strong>No.</strong></td>
-			<td style="width: 39.402%; height: 18px;"><strong>Nama Mata Pelajaran</strong></td>
-			<td style="width: 55.5254%; height: 18px;"><strong>Catatan Guru</strong></td>
+			<td style="width: 5.07243%; height: 18px; text-align: center;"><strong>No.</strong></td>
+			<td style="width: 39.402%; height: 18px; text-align: center;"><strong>Nama Mata Pelajaran</strong></td>
+			<td style="width: 55.5254%; height: 18px; text-align: center;"><strong>Catatan Guru</strong></td>
 		</tr>
 		<?php $kelompokMapel = $this->CetakRaport_m->loopingKelompokMapel($masterID) ?>
 		<?php foreach ($kelompokMapel as $listKelompok): ?>
