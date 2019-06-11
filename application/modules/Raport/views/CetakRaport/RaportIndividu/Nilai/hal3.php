@@ -65,7 +65,7 @@
 			<?php $no = 1; ?>
 			<?php foreach ($mapel as $listMapel): ?>
 				<tr>
-					<td style="width: 5.07243%; text-align: center;"><?= $no++ ?>.</td>
+					<td style="width: 5.07243%; text-align: center;"><small><?= $no++ ?>.</small></td>
 					<td style="width: 39.402%;">
 						<small><?= $listMapel->nama_mata_pelajaran ?></small><br>
 						<small style="font-size: 10;">(Guru Mapel : <?= $listMapel->nama_tenpen ?>)</small>
