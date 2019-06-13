@@ -78,6 +78,7 @@ class RaportKelas extends CI_Controller {
 		$data['idMasterLeger'] 		= $masterLeger;
 		$data['titimangsa'] 		= $titimangsa;
 		$data['idKelas'] 			= $idKelas;
+		$data['angkatan'] 			= $angkatan;
 		//$data['dataTest'] 			= $dataTest;
 
 		$this->load->view('RaportKelas/daftarSiswa', $data, FALSE);

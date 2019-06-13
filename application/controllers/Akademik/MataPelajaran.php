@@ -27,7 +27,7 @@ class MataPelajaran extends CI_Controller {
 		$crud->set_relation('idKelompok_mapel','kelompok_mapel','nama_kelompok_mapel');
 
 		/*VALIDATION*/
-		$crud->required_fields('idKurikulum', 'idKelompok_mapel', 'nama_mata_pelajaran');
+		$crud->required_fields('idKurikulum', 'idKelompok_mapel', 'nama_mata_pelajaran', 'singkatan_mata_pelajaran');
 		#$crud->set_rules('npsn', 'NPSN', 'required|min_length[8]|max_length[8]');
 		/*------------*/
 

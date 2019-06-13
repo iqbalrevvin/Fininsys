@@ -51,7 +51,15 @@
 
             </div>
         </div>
-        <div class="col-xl-4 order-1 order-xl-2 m--align-right">		
+        <div class="col-xl-4 order-1 order-xl-2 m--align-right">
+            <a href="<?= base_url('Raport/CetakLeger?MasterID='.$idMasterLeger.'&KelasID='.$idKelas.'&Angkatan='.$angkatan.'&semester='.$semester) ?>" target=_blank class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" title="Cetak Daftar Siswa">
+                <span>
+                    <i class="la flaticon-technology"></i>
+                    <span>
+                        Legger
+                    </span>
+                </span>
+            </a>		
         	<a href="#" class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" title="Cetak Daftar Siswa">
                 <span>
                     <i class="la flaticon-technology"></i>
@@ -60,7 +68,7 @@
                     </span>
                 </span>
             </a>
-            <a href="#" data-toggle="modal" data-target="#modalCetakRaportKolektif" 
+            <!-- <a href="#" data-toggle="modal" data-target="#modalCetakRaportKolektif" 
                 class="btn btn-secondary m-btn m-btn--custom m-btn--icon m-btn--air" title="Cetak Raport Kolektif">
                 <span>
                     <i class="la flaticon-technology"></i>
@@ -68,7 +76,7 @@
                         Raport Kolektif
                     </span>
                 </span>
-            </a>
+            </a> -->
             <div class="m-separator m-separator--dashed d-xl-none"></div>
         </div>
     </div>
