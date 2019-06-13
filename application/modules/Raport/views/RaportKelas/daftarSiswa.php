@@ -56,7 +56,7 @@
                 <span>
                     <i class="la flaticon-technology"></i>
                     <span>
-                        Daftar Siswa 
+                        Serah Terima
                     </span>
                 </span>
             </a>
