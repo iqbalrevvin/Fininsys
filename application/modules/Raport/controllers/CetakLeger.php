@@ -27,7 +27,7 @@ class CetakLeger extends CI_Controller {
         $hal1           = $this->load->view('CetakLeger/hal1', $data, true);
         /*---------------------------------------------------------------------------*/
         /*INIT CONTENT*/
-        $pdf->AddPage('L','','','','',0,0,15,15,10,10);
+        $pdf->AddPage('legal','L','','','','',0,0,15,15,10,10);
         $pdf->WriteHTML($hal1);
         /*--------------------------------------*/
         $pdf->Output($pdfFileName, 'I');   
