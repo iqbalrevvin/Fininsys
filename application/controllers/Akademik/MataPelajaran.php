@@ -19,6 +19,7 @@ class MataPelajaran extends CI_Controller {
 		$crud->display_as('idKurikulum', 'Kurikulum');
 		$crud->display_as('idKelompok_mapel', 'Kelompok Mapel');
 		$crud->display_as('no_urut_mapel', 'No. Urut');
+		$crud->display_as('singkatan_mata_pelajaran', 'Singkatan Mapel');
 		#$crud->order_by('no_urut_mapel', 'asc');
 
 		/*RELATION*/
