@@ -69,7 +69,7 @@
 <?php $kelompokMapel = $this->CetakRaport_m->loopingKelompokMapel($masterID) ?>
 <?php foreach ($kelompokMapel as $listKelompok): ?>
 	<tr style="height: 18px; background-color: #dec349;">
-		<td style="width: 99.9998%; height: 18px;" colspan="10"><strong><?= $listKelompok->nama_kelompok_mapel ?></strong></td>
+		<td style="width: 99.9998%; height: 18px;" colspan="8"><strong><?= $listKelompok->nama_kelompok_mapel ?></strong></td>
 	</tr>
 	<?php $mapel = $this->CetakRaport_m->loopingMapel($listKelompok->idKelompok_mapel, $masterID, $identitasPD->NIK_pd) ?>
 	<?php $no = 1; ?>
@@ -117,26 +117,26 @@
 
 <tr style="height: 18px;">
 <td style="width: 42.8571%; background-color: #dec349; height: 18px;" colspan="2"><strong>Jumlah</strong></td>
-<td style="text-align: center; width: 29.2391%; height: 18px;" colspan="4">
+<td style="text-align: center; width: 29.2391%; height: 18px;" colspan="3">
 	<strong><?= value($jmlNilaiPengetahuan->nilai_pengetahuan); ?></strong>
 </td>
-<td style="text-align: center; width: 27.9036%; height: 18px;" colspan="4">
+<td style="text-align: center; width: 27.9036%; height: 18px;" colspan="3">
 	<strong><?= value($jmlNilaiKeterampilan->nilai_keterampilan); ?></strong>
 </td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 42.8571%; background-color: #dec349; height: 18px;" colspan="2"><strong>Jumlah Nilai Keseluruhan</strong></td>
-<td style="text-align: center; width: 57.1427%; height: 18px;" colspan="8"><strong><?= $jumlahSeluruh ?></strong></td>
+<td style="text-align: center; width: 57.1427%; height: 18px;" colspan="6"><strong><?= $jumlahSeluruh ?></strong></td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 42.8571%; background-color: #dec349; height: 18px;" colspan="2"><strong>Rata-Rata Nilai/IP</strong></td>
-<td style="text-align: center; width: 57.1427%; height: 18px;" colspan="8">
+<td style="text-align: center; width: 57.1427%; height: 18px;" colspan="6">
 	<strong><?= number_format($rerata,1) ?> | <?= nilaiIP($rerata) ?></strong>
 </td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 42.8571%; background-color: #dec349; height: 18px;" colspan="2"><strong>Peringkat</strong></td>
-<td style="width: 57.1427%; text-align: center; height: 18px;" colspan="8">
+<td style="width: 57.1427%; text-align: center; height: 18px;" colspan="6">
 	<strong>Peringkat <?= $rank->rank ?> Dari <?= count($nilaiKelas) ?> Peserta Didik</strong>
 </td>
 </tr>
