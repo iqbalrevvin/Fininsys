@@ -85,13 +85,13 @@
 		<td style="width: 9.42381%; height: 18px; text-align: center;">
 			<?= nilai($kkmPengetahuan, $nilaiPengetahuan) ?>
 		</td>
-		<td style="width: 7.7734%; text-align: center; height: 18px;"><b><?= nilaiIP($nilaiPengetahuan) ?></b></td>
+		<!-- <td style="width: 7.7734%; text-align: center; height: 18px;"><b><?= nilaiIP($nilaiPengetahuan) ?></b></td> -->
 		<td style="width: 12.0419%; height: 18px; text-align: center;"><?= nilaiPredikat(nilaiIP($nilaiPengetahuan)) ?></td>
 		<td style="width: 8.49935%; height: 18px; text-align: center;"><?= $listMapel->kkm_keterampilan ?></td>
 		<td style="width: 8.68191%; height: 18px; text-align: center;">
 			<?= nilai($kkmKeterampilan, $nilaiKeterampilan) ?>
 		</td>
-		<td style="width: 7.0315%; text-align: center; height: 18px;"><b><?= nilaiIP($nilaiKeterampilan) ?></b></td>
+		<!-- <td style="width: 7.0315%; text-align: center; height: 18px;"><b><?= nilaiIP($nilaiKeterampilan) ?></b></td> -->
 		<td style="width: 12.1902%; height: 18px; text-align: center;"><?= nilaiPredikat(nilaiIP($nilaiKeterampilan)) ?></td>
 		</tr>
 	<?php endforeach ?>
