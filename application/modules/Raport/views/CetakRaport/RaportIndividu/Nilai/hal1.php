@@ -59,11 +59,11 @@
 <tr style="height: 18px; background-color: #dec349;">
 <td style="width: 9.42381%; height: 18px; text-align: center;"><strong>KKM</strong></td>
 <td style="width: 9.42381%; height: 18px; text-align: center;"><strong>Angka</strong></td>
-<td style="width: 7.7734%; text-align: center; height: 18px;"><strong>IP</strong></td>
+<!-- <td style="width: 7.7734%; text-align: center; height: 18px;"><strong>IP</strong></td> -->
 <td style="width: 12.0419%; height: 18px; text-align: center;"><strong>Predikat</strong></td>
 <td style="width: 9.42381%; height: 18px; text-align: center;"><strong>KKM</strong></td>
 <td style="width: 8.68191%; height: 18px; text-align: center;"><strong>Angka</strong></td>
-<td style="width: 7.0315%; text-align: center; height: 18px;"><strong>IP</strong></td>
+<!-- <td style="width: 7.0315%; text-align: center; height: 18px;"><strong>IP</strong></td> -->
 <td style="width: 12.1902%; height: 18px; text-align: center;"><strong>Predikat</strong></td>
 </tr>
 <?php $kelompokMapel = $this->CetakRaport_m->loopingKelompokMapel($masterID) ?>
