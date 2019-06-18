@@ -53,8 +53,8 @@
 <td style="width: 2.93555%; height: 36px; text-align: center;" rowspan="2"><strong>No.</strong></td>
 <td style="width: 31.4222%; height: 36px; text-align: center;" rowspan="2"><strong>Mata Pelajaran</strong></td>
 
-<td style="width: 29.2391%; height: 18px; text-align: center;" colspan="4"><strong>Pengetahuan</strong></td>
-<td style="width: 27.9036%; height: 18px; text-align: center;" colspan="4"><strong>Keterampilan</strong></td>
+<td style="width: 29.2391%; height: 18px; text-align: center;" colspan="3"><strong>Pengetahuan</strong></td>
+<td style="width: 27.9036%; height: 18px; text-align: center;" colspan="3"><strong>Keterampilan</strong></td>
 </tr>
 <tr style="height: 18px; background-color: #dec349;">
 <td style="width: 9.42381%; height: 18px; text-align: center;"><strong>KKM</strong></td>
