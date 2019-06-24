@@ -193,7 +193,7 @@
 </td>
 
 <td style="width: 33.3333%; height: 18px;">&nbsp;</td>
-<td style="width: 45.3333%; height: 18px;">Garut, <?= date_indo($titimangsa) ?></td>
+<td style="width: 45.3333%; height: 18px;"><?= $identitasSekolah->kabupaten_sekolah ?>, <?= date_indo($titimangsa) ?></td>
 </tr>
 <tr style="height: 18px;">
 

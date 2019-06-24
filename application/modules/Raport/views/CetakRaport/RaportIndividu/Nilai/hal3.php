@@ -87,7 +87,7 @@
 		<tr style="height: 18px;">
 		<td style="width: 33.3333%; height: 18px;">&nbsp;</td>
 		<td style="width: 33.3333%; height: 18px;">&nbsp;</td>
-		<td style="width: 33.3333%; height: 18px;">Diberikan di : <?= $identitasSekolah->desa_sekolah ?></td>
+		<td style="width: 33.3333%; height: 18px;">Diberikan di : <?= $identitasSekolah->kabupaten_sekolah ?></td>
 		</tr>
 		<tr style="height: 18px;">
 		<td style="width: 33.3333%; height: 18px;">&nbsp;</td>
