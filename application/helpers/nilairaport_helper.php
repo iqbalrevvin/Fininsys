@@ -49,7 +49,7 @@ if (! function_exists('nilaiPredikat')){
 	if (! function_exists('catatanGuruMapel')){
 	function catatanGuruMapel($catatan){
 		if($catatan == NULL){
-			$result = '<i><small>Belum Diisi</small></i>';
+			$result = '-';
 		}else{
 			$result = $catatan;
 		}
