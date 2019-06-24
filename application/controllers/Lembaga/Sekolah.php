@@ -64,7 +64,7 @@ class Sekolah extends CI_Controller {
 
 		/*CALLBACK*/
 		$crud->callback_column('npsn',array($this,'npsn_callback'));
-		$crud->callback_column('idSekolah',array($this,'id_callback'));
+		/*$crud->callback_column('idSekolah',array($this,'id_callback'));*/
 		/*--------------*/
 
 
@@ -82,10 +82,10 @@ class Sekolah extends CI_Controller {
 		$value = '<b>'.$value.'</b>';
 		return $value;
 	}
-	function id_callback($value, $primary_key = null){
+	/*function id_callback($value, $primary_key = null){
 		$value = '<b>'.$value.'</b>';
 		return $value;
-	}
+	}*/
 
 	// public function index(){
 	// 	$data['judul'] 		= 'Daftar Sekolah';

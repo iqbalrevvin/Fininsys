@@ -16,6 +16,7 @@ class CetakRaport extends CI_Controller {
         $this->load->helper('semester_helper');
         $this->load->helper('value_helper');
         $this->load->helper('nilairaport_helper');
+        $this->load->helper('predikat_helper');
 	}
 	public function index(){
 		$this->load->view('error_page/error');
